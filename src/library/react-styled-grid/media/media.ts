@@ -2,7 +2,7 @@ import {css, FlattenSimpleInterpolation} from 'styled-components/macro';
 import {themeName, defaultTheme} from '../config';
 
 const getBreakpoints = (props: any) => {
-  const theme = props.theme.imreactStyledGrid;
+  const theme = props.theme.reactStyledGrid;
   const gridBreakPoints = Object.assign({}, theme?.gridBreakpoints);
   return {
     ...defaultTheme.gridBreakpoints,

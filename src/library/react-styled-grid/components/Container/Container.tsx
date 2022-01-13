@@ -6,11 +6,11 @@ import {themeName} from '../../config';
 import media from '../../media';
 import getDataName from './getDataName';
 
-const generateMedia = (props: any) => Object.keys(props.theme.imreactStyledGrid.gridBreakpoints)
+const generateMedia = (props: any) => Object.keys(props.theme.reactStyledGrid.gridBreakpoints)
     .map(sizeName => {
-        if (props.theme.imreactStyledGrid.gridBreakpoints[sizeName] > 0) {
+        if (props.theme.reactStyledGrid.gridBreakpoints[sizeName] > 0) {
             return media[sizeName]`
-                max-width: ${props.theme.imreactStyledGrid.containerMaxWidths[sizeName]}px;
+                max-width: ${props.theme.reactStyledGrid.containerMaxWidths[sizeName]}px;
             `;
         }
         return false;
@@ -30,8 +30,8 @@ const Container: any = styled.div.attrs((props: ContainerProps) => ({
   margin-left: auto;
 
   ${(props: any) => css`
-     padding-right: ${props.theme.imreactStyledGrid?.gridGutterWidth}px;
-     padding-left: ${props.theme.imreactStyledGrid?.gridGutterWidth}px;
+     padding-right: ${props.theme.reactStyledGrid?.gridGutterWidth}px;
+     padding-left: ${props.theme.reactStyledGrid?.gridGutterWidth}px;
 
      ${!props.fluid && css`
         ${generateMedia(props)};

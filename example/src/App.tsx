@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import {GridThemeProvider, Col, Row, Container} from 'imreact-styled-grid';
+import {GridThemeProvider, Col, Row, Container} from 'react-styled-grid';
 
 
 function App() {

@@ -1,10 +1,10 @@
 {
-  "name": "imreact-styled-grid",
-  "version": "1.0.0",
+  "name": "@imagine10255/react-styled-grid",
+  "version": "1.0.2",
   "description": "Most modern mobile touch slider with hardware accelerated transitions by react",
   "author": "imagine10255",
   "license": "MIT",
-  "repository": "imagine10255/imreact-styled-grid",
+  "repository": "imagine10255/react-styled-grid",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",

@@ -10,14 +10,14 @@ import media from '../../media';
  * @param props
  * @returns {*}
  */
-const getRowMargin = (props: any) => (props.noGutters ? 0 : `-${props.theme.imreactStyledGrid.gridGutterWidth}px`);
+const getRowMargin = (props: any) => (props.noGutters ? 0 : `-${props.theme.reactStyledGrid.gridGutterWidth}px`);
 
-const generateMedia = (props: any) => Object.keys(props.theme.imreactStyledGrid.gridBreakpoints)
+const generateMedia = (props: any) => Object.keys(props.theme.reactStyledGrid.gridBreakpoints)
     .map(sizeName => {
-        if (props.theme.imreactStyledGrid.gridBreakpoints[sizeName] > 0) {
+        if (props.theme.reactStyledGrid.gridBreakpoints[sizeName] > 0) {
             return media[sizeName]`
-                margin-left: -${props.theme.imreactStyledGrid.gridGutterWidthMedia[sizeName]}px;
-                margin-right: -${props.theme.imreactStyledGrid.gridGutterWidthMedia[sizeName]}px;
+                margin-left: -${props.theme.reactStyledGrid.gridGutterWidthMedia[sizeName]}px;
+                margin-right: -${props.theme.reactStyledGrid.gridGutterWidthMedia[sizeName]}px;
             `;
         }
         return false;

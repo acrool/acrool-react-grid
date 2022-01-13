@@ -4,7 +4,7 @@
  * ps: please check your project setting `src/config/grid.ts`
  */
 
-export const themeName = 'imreactStyledGrid';
+export const themeName = 'reactStyledGrid';
 export const defaultTheme = {
     gridGutterWidth: 10,
     gridColumns: 24,

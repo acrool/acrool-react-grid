@@ -15,15 +15,15 @@ type Props = ColProps & {
 
 // eslint-disable-next-line array-callback-return
 const generateMedia = (props: any) => Object
-    .keys(props.theme.imreactStyledGrid.gridBreakpoints)
+    .keys(props.theme.reactStyledGrid.gridBreakpoints)
     .filter(sizeName => sizeName !== 'xs')
     .map(sizeName => {
         return media[sizeName]`
-             padding-right: ${props.theme.imreactStyledGrid.gridGutterWidthMedia[sizeName]}px;
-             padding-left: ${props.theme.imreactStyledGrid.gridGutterWidthMedia[sizeName]}px;
+             padding-right: ${props.theme.reactStyledGrid.gridGutterWidthMedia[sizeName]}px;
+             padding-left: ${props.theme.reactStyledGrid.gridGutterWidthMedia[sizeName]}px;
 
             ${!isEmpty(props[sizeName]) && css`
-                ${getCss.col(props[sizeName], props.theme.imreactStyledGrid.gridColumns)};
+                ${getCss.col(props[sizeName], props.theme.reactStyledGrid.gridColumns)};
             `}
     `;
     });
@@ -45,15 +45,15 @@ const Col: any = styled.div.attrs((props: Props) => ({
   min-height: 1px;
 
   ${(props: any) => css`
-     padding-right: ${props.theme.imreactStyledGrid.gridGutterWidth}px;
-     padding-left: ${props.theme.imreactStyledGrid.gridGutterWidth}px;
+     padding-right: ${props.theme.reactStyledGrid.gridGutterWidth}px;
+     padding-left: ${props.theme.reactStyledGrid.gridGutterWidth}px;
 
      >[data-grid=row]{
         flex: 0 1 100%;
     }
 
      min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
-     ${props.col && getCss.col(props.col, props.theme.imreactStyledGrid.gridColumns)};
+     ${props.col && getCss.col(props.col, props.theme.reactStyledGrid.gridColumns)};
 
      ${generateMedia(props)};
  `}
