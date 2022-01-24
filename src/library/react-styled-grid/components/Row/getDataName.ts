@@ -1,6 +1,6 @@
-import {RowProps} from './types';
+import {IRowProps} from './types';
 
-export default (p: RowProps) => (process.env.NODE_ENV === 'production'
+export default (p: IRowProps) => (process.env.NODE_ENV === 'production'
     ? undefined
     : [
         'row',

@@ -1,11 +1,21 @@
 /**
- * Library Default Setting
+ * bootstrap grid setting
  *
- * ps: please check your project setting `src/config/grid.ts`
+ * 單位值參考
+ * row.padding === col.padding === container.padding
+ *
+ * 更改格數
+ * import grid from "config/grid";
+ *
+ * <GridThemeProvider gridTheme={{
+ *     ...grid,
+ *     gridColumns: 35,
+ *     gridGutterWidth: 3,
+ * }}>
  */
+import {ITheme} from './media';
 
-export const themeName = 'reactStyledGrid';
-export const defaultTheme = {
+const defaultGridTheme: ITheme = {
     gridGutterWidth: 10,
     gridColumns: 24,
     gridBreakpoints: {
@@ -14,14 +24,14 @@ export const defaultTheme = {
         md: 768,
         lg: 992,
         xl: 1200,
-        xxl: 1920,
+        xxl: 1540,
     },
     containerMaxWidths: {
         sm: 540,
         md: 720,
         lg: 960,
         xl: 1140,
-        xxl: 1860,
+        xxl: 1540,
     },
     gridGutterWidthMedia: {
         sm: 10,
@@ -31,3 +41,6 @@ export const defaultTheme = {
         xxl: 10,
     }
 };
+
+
+export default defaultGridTheme;

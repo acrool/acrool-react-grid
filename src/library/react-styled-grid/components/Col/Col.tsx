@@ -3,27 +3,26 @@ import styled, {css} from 'styled-components/macro';
 
 import getCss from './css';
 import getDataName from './getDataName';
-import media from '../../media';
+import media, {NoXsMediaSize} from '../../media';
 import {isEmpty} from '../../utils';
-import {themeName} from '../../config';
+import defaultTheme from '../../config';
 import {ColProps} from './types';
-import {themeProps} from '../ThemeProvider/types';
+import {themeProps, TGridStyledComponent} from '../ThemeProvider/types';
 
 type Props = ColProps & {
     theme: themeProps;
 };
 
-// eslint-disable-next-line array-callback-return
-const generateMedia = (props: any) => Object
-    .keys(props.theme.reactStyledGrid.gridBreakpoints)
-    .filter(sizeName => sizeName !== 'xs')
+const mediaSizes = Object.keys(defaultTheme.containerMaxWidths) as NoXsMediaSize[];
+
+const generateMedia = (props: any) => mediaSizes
     .map(sizeName => {
         return media[sizeName]`
-             padding-right: ${props.theme.reactStyledGrid.gridGutterWidthMedia[sizeName]}px;
-             padding-left: ${props.theme.reactStyledGrid.gridGutterWidthMedia[sizeName]}px;
+             padding-right: ${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
+             padding-left: ${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
 
             ${!isEmpty(props[sizeName]) && css`
-                ${getCss.col(props[sizeName], props.theme.reactStyledGrid.gridColumns)};
+                ${getCss.col(props[sizeName], props.theme.styledGrid.gridColumns)};
             `}
     `;
     });
@@ -36,24 +35,25 @@ const generateMedia = (props: any) => Object
  * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
  *
  */
-const Col: any = styled.div.attrs((props: Props) => ({
+const Col: TGridStyledComponent = styled.div.attrs((props: Props) => ({
     'data-grid': 'col',
     'data-debug': getDataName(props),
 }))`
+  box-sizing: border-box;
   position: relative;
   width: 100%;
   min-height: 1px;
 
   ${(props: any) => css`
-     padding-right: ${props.theme.reactStyledGrid.gridGutterWidth}px;
-     padding-left: ${props.theme.reactStyledGrid.gridGutterWidth}px;
+     padding-right: ${props.theme.styledGrid.gridGutterWidth}px;
+     padding-left: ${props.theme.styledGrid.gridGutterWidth}px;
 
      >[data-grid=row]{
         flex: 0 1 100%;
     }
 
      min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
-     ${props.col && getCss.col(props.col, props.theme.reactStyledGrid.gridColumns)};
+     ${props.col && getCss.col(props.col, props.theme.styledGrid.gridColumns)};
 
      ${generateMedia(props)};
  `}

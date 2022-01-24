@@ -1,7 +1,7 @@
 import CSS from 'csstype';
 
 
-export interface ContainerProps {
+export declare interface IContainerProps {
     fluid?: boolean;
     sm?: boolean;
     md?: boolean;

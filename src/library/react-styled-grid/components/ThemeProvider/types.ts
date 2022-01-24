@@ -1,4 +1,8 @@
+import { ITheme } from 'library/react-styled-grid';
 import React from 'react';
+import {StyledComponentBase} from 'styled-components/macro';
+
+export type TGridStyledComponent = String & StyledComponentBase<'div', any, { 'data-grid': string; 'data-debug': string | undefined; }, 'data-grid' | 'data-debug'>;
 
 export type gridProps = {
     gridGutterWidth?: number;
@@ -21,6 +25,6 @@ export type gridProps = {
 };
 
 export type themeProps = {
-    gridTheme: gridProps;
-    children: React.ReactNode;
+    gridTheme: ITheme;
+    children: React.ReactElement;
 };

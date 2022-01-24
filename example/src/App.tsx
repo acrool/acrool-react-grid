@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import {GridThemeProvider, Col, Row, Container} from 'react-styled-grid';
+import {GridThemeProvider, Col, Row, Container} from '@imagine10255/react-styled-grid';
 
 
 function App() {
@@ -35,16 +35,15 @@ function App() {
     <GridThemeProvider gridTheme={defaultTheme}>
       <div className="bd-example-row">
 
-        <div className="bd-example">
           <Container>
             <Row>
-              <Col sm md={24}>
+              <Col sm md={8}>
                 One of three columns
               </Col>
-              <Col sm md={24}>
+              <Col sm md={8}>
                 One of three columns
               </Col>
-              <Col sm md={24}>
+              <Col sm md={8}>
                 One of three columns
               </Col>
             </Row>
@@ -66,7 +65,6 @@ function App() {
             </NavCol>
           </NavRow>
         </Container>
-      </div>
     </GridThemeProvider>
   );
 }
@@ -75,18 +73,15 @@ export default App;
 
 
 const NavRow = styled(Row).attrs(props  => ({
-  'as': 'ul',
+  'forwardAs': 'ul',
 }))`
     background-color: chocolate;
-    padding: 0;
-    opacity: .4;
 `;
 
 const NavCol = styled(Col).attrs(props  => ({
-  'as': 'li',
+  'forwardAs': 'li',
 }))`
     list-style: none;
-    margin: 0;
     text-align: center;
     background-color: cornflowerblue;
  `;

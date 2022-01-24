@@ -1,27 +1,26 @@
 import React from 'react';
-import styled, {css} from 'styled-components/macro';
-import {ContainerProps} from './types';
+import styled, {css, ThemeProps} from 'styled-components/macro';
+import {IContainerProps} from './types';
 
-import {themeName} from '../../config';
-import media from '../../media';
+import defaultTheme from '../../config';
+import media, {ITheme, NoXsMediaSize} from '../../media';
 import getDataName from './getDataName';
+import {TGridStyledComponent} from '../..';
 
-const generateMedia = (props: any) => Object.keys(props.theme.reactStyledGrid.gridBreakpoints)
+const mediaSizes = Object.keys(defaultTheme.containerMaxWidths) as NoXsMediaSize[];
+
+const generateMedia = (props: any) => mediaSizes
     .map(sizeName => {
-        if (props.theme.reactStyledGrid.gridBreakpoints[sizeName] > 0) {
-            return media[sizeName]`
-                max-width: ${props.theme.reactStyledGrid.containerMaxWidths[sizeName]}px;
-            `;
-        }
-        return false;
-    })
-    .filter(row => row !== false);
+        return media[sizeName]`
+            max-width: ${props.theme.styledGrid.containerMaxWidths[sizeName]}px;
+        `;
+    });
 ;
 
 /**
  * Row Component
  */
-const Container: any = styled.div.attrs((props: ContainerProps) => ({
+const Container: TGridStyledComponent = styled.div.attrs((props: IContainerProps) => ({
     'data-grid': 'container',
     'data-debug': getDataName(props),
 }))`
@@ -29,9 +28,12 @@ const Container: any = styled.div.attrs((props: ContainerProps) => ({
   margin-right: auto;
   margin-left: auto;
 
-  ${(props: any) => css`
-     padding-right: ${props.theme.reactStyledGrid?.gridGutterWidth}px;
-     padding-left: ${props.theme.reactStyledGrid?.gridGutterWidth}px;
+  ${(props: IContainerProps & ThemeProps<{
+    styledGrid: ITheme
+  }>) => css`
+     box-sizing: border-box;
+     padding-right: ${props.theme.styledGrid.gridGutterWidth}px;
+     padding-left: ${props.theme.styledGrid.gridGutterWidth}px;
 
      ${!props.fluid && css`
         ${generateMedia(props)};
@@ -39,4 +41,4 @@ const Container: any = styled.div.attrs((props: ContainerProps) => ({
  `}
 `;
 
-export default (props: ContainerProps) => <Container {...props}/>;
+export default (props: IContainerProps) => <Container {...props}/>;

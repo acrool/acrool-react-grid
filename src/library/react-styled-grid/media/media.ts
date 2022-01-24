@@ -1,30 +1,23 @@
-import {css, FlattenSimpleInterpolation} from 'styled-components/macro';
-import {themeName, defaultTheme} from '../config';
+import {css, CSSObject, FlattenSimpleInterpolation} from 'styled-components/macro';
+import defaultTheme from '../config';
+import {EMediaSize, TMedia, TStrings} from './types';
+import {SimpleInterpolation} from 'styled-components';
 
-const getBreakpoints = (props: any) => {
-  const theme = props.theme.reactStyledGrid;
-  const gridBreakPoints = Object.assign({}, theme?.gridBreakpoints);
-  return {
+const getBreakpoints = (props: any) => ({
     ...defaultTheme.gridBreakpoints,
-    ...gridBreakPoints,
-  };
-}
+    ...props.theme.styledGrid.gridBreakpoints,
+});
 
-const media: any = Object.keys(defaultTheme.gridBreakpoints).reduce(
-    (accumulator, label) => {
-        const minMedia = (strings: any, ...interpolations: any) => css`
-              @media (min-width: ${(props: any) => getBreakpoints(props)[label]}px) {
-                ${css(strings, ...interpolations)};
-              }
-        `;
-        // @ts-ignore
-        accumulator[label] = minMedia;
-        return accumulator;
-    },
-    {},
-);
 
-function px2vw(pixels: number, pixelTotal: number = 320) {
+
+
+
+/**
+ * 計算 PX 轉 VW
+ * @param pixels
+ * @param pixelTotal
+ */
+function px2vwCalc(pixels: number, pixelTotal: number = 320) {
     return `${(pixels / pixelTotal) * 100}vw`;
 }
 
@@ -38,7 +31,7 @@ const replacePx2Vw = (css: FlattenSimpleInterpolation) => {
                 if(px === 0){
                     return '0';
                 }else if(!isNaN(px)){
-                    return px2vw(px);
+                    return px2vwCalc(px);
                 }
                 return match;
             });
@@ -47,10 +40,45 @@ const replacePx2Vw = (css: FlattenSimpleInterpolation) => {
     });
 };
 
-media.px2vw = (strings: any, ...interpolations: any) => css`
-      @media (max-width: ${(props: any) => getBreakpoints(props).sm}px) {
-          ${replacePx2Vw(css(strings, ...interpolations))};
-      }
+
+/**
+ * 產生 px轉vw 的方法
+ * use:
+ *   ${media.px2vw`
+ *      width: 20px
+ *   `}
+ */
+const mediaPx2vw = (strings: TemplateStringsArray | CSSObject, ...interpolations: SimpleInterpolation[]) => css`
+  @media (max-width: ${(props: any) => getBreakpoints(props).sm}px) {
+      ${replacePx2Vw(css(strings, ...interpolations))};
+  }
 `;
+
+/**
+ * 產生 Media 的方法
+ * use:
+ *   ${media.sm`
+ *      width: 20px
+ *   `}
+ * @param size
+ */
+const mediaSize = (size: EMediaSize) => {
+    return (strings: TStrings, ...interpolations: SimpleInterpolation[]) => css`
+          @media (min-width: ${(props: any) => getBreakpoints(props)[size]}px) {
+            ${css(strings, ...interpolations)};
+          };
+    `;
+};
+
+const media: TMedia = {
+    px2vw: mediaPx2vw,
+    [EMediaSize.sm]: mediaSize(EMediaSize.sm),
+    [EMediaSize.md]: mediaSize(EMediaSize.md),
+    [EMediaSize.lg]: mediaSize(EMediaSize.lg),
+    [EMediaSize.xl]: mediaSize(EMediaSize.xl),
+    [EMediaSize.xxl]: mediaSize(EMediaSize.xxl),
+};
+
+
 
 export default media;

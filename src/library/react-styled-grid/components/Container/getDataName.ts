@@ -1,6 +1,6 @@
-import {ContainerProps} from './types';
+import {IContainerProps} from './types';
 
-export default (p: ContainerProps) => (process.env.NODE_ENV === 'production'
+export default (p: IContainerProps) => (process.env.NODE_ENV === 'production'
     ? undefined
     : [
         p.fluid ? 'container-fluid' : 'container',

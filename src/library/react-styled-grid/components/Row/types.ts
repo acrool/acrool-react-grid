@@ -1,6 +1,13 @@
 import CSS from 'csstype';
 
-export interface RowProps {
+export enum EAlign{
+    start='flex-start',
+    center='center',
+    end='flex-end',
+}
+
+
+export interface IRowProps {
     noGutters?: boolean;
     children?: React.ReactNode;
     className?: string;
@@ -10,4 +17,8 @@ export interface RowProps {
     id?: string;
     key?: string| number;
     onClick?: Function;
+
+    vertical?: EAlign;
+    horizontal?: EAlign;
+
 }
