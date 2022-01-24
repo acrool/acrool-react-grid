@@ -43,8 +43,8 @@ const Row: any = styled.div.attrs((props: IRowProps) => ({
      margin-right: ${getRowMargin(props)};
      margin-left: ${getRowMargin(props)};
      
-     justify-content: ${props.horizontal ?? EAlign.start};
-     align-items: ${props.vertical ?? EAlign.start};
+     justify-content: ${props.horizontal ? props.horizontal : EAlign.start};
+     align-items: ${props.vertical ? props.vertical : EAlign.start};
 
      // ps: 設定會 width 100% 會產生 margin 抵銷失敗
 

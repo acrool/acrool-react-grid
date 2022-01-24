@@ -26,5 +26,5 @@ export type gridProps = {
 
 export type themeProps = {
     gridTheme: ITheme;
-    children: React.ReactElement;
+    children: React.ReactNode;
 };

@@ -13,9 +13,9 @@ const Flex = styled.div<{
 }>`
   box-sizing: border-box;
   display: flex;
-  flex-direction: ${props => props.direction ?? EDirection.row};
-  justify-content: ${props => props.horizontal ?? EAlign.start};
-  align-items: ${props => props.vertical ?? EAlign.start};
+  flex-direction: ${props => props.direction ? props.direction : EDirection.row};
+  justify-content: ${props => props.horizontal ? props.horizontal : EAlign.start};
+  align-items: ${props => props.vertical ? props.vertical : EAlign.start};
 `;
 
 export default Flex;

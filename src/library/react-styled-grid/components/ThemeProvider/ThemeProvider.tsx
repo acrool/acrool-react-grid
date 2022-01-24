@@ -12,9 +12,9 @@ const GridThemeProvider = (props: themeProps) => {
         styledGrid: {
             ...baseDefaultTheme,
             ...gridTheme,
-            gridBreakpoints: {...gridBreakpoints, ...gridTheme?.gridBreakpoints ?? {}},
-            containerMaxWidths: {...containerMaxWidths, ...gridTheme?.containerMaxWidths ?? {}},
-            gridGutterWidthMedia: {...gridGutterWidthMedia, ...gridTheme?.gridGutterWidthMedia ?? {}},
+            // gridBreakpoints: {...gridBreakpoints, ...gridTheme?.gridBreakpoints ?? {}},
+            // containerMaxWidths: {...containerMaxWidths, ...gridTheme?.containerMaxWidths ?? {}},
+            // gridGutterWidthMedia: {...gridGutterWidthMedia, ...gridTheme?.gridGutterWidthMedia ?? {}},
         }
     };
 
