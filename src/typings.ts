@@ -1,8 +1,7 @@
 import {MouseEvent, ReactNode} from 'react';
 import CSS from 'csstype';
-import {CSSObject, ThemeProps} from 'styled-components/macro';
+import {ThemeProps} from 'styled-components/macro';
 
-export type TStrings = TemplateStringsArray | CSSObject
 
 export interface FCChildrenProps {
     style?: CSS.Properties,
@@ -35,14 +34,6 @@ export interface IBreakpoints {
 export type NoXsMediaSize = Exclude<EMediaSize, EMediaSize.xs>
 export type TContainerMaxWidths = Omit<IBreakpoints, EMediaSize.xs>
 export type TGridGutterWidthMedia = Omit<IBreakpoints, EMediaSize.xs>
-
-export type TMedia = Omit<
-    {
-        [size in EMediaSize]: Function
-    },
-    EMediaSize.xs
-    > & { px2vw: Function }
-
 
 export type TThemeProps = ThemeProps<{styledGrid: IGridSetting}>;
 export type TStyledProps<P> = TThemeProps & P;

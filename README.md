@@ -1,8 +1,16 @@
-# imagine-react-styled-grid
+# react-styled-grid
 
 > Most modern rwd grid system by react + styled-component
 
-[![NPM](https://img.shields.io/npm/v/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/imagine-react-styled-grid) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+[![NPM](https://img.shields.io/npm/v/react-styled-grid.svg)](https://www.npmjs.com/package/react-styled-grid)
+[![npm](https://img.shields.io/npm/dm/react-styled-grid.svg)](https://www.npmjs.com/package/react-styled-grid)
+[![Github](https://github.com/alioguzhan/react-styled-grid/workflows/build/badge.svg)](https://github.com/alioguzhan/react-styled-grid/actions)
+
+This project is generated from [react-typescript-library template](https://github.com/alioguzhan/react-typescript-library).
+
+
+https://codesandbox.io/s/react-styled-grid-hmyod?file=/src/App.js
 
 ## Install
 
@@ -57,6 +65,7 @@ const MyPage = () => {
     );
 }
 
+// use rwd
 const MyTitle = styled.div`
     font-size: 12px;
     ${media.md`
@@ -64,14 +73,85 @@ const MyTitle = styled.div`
     `}
 `
 
-export default MyPage;
 ```
 
+There is also a codesandbox template that you can fork and play with it:
 
-## Media & props
+[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-styled-grid-hmyod?file=/src/App.js)
 
-if your need props, not `${props => ...}` in `${media.md ...}` 
-```ts
+
+## Component Col
+> like to bootstrap col class
+```tsx
+import {Col} from 'imagine-react-styled-grid';
+
+<Col col={24} sm md lg xl={12} xxl>
+    content
+</Col>
+
+```
+Props
+
+| Prop                   | Type                | Required | Default       | Note                                                                                                                                                                                                         |
+| ---------------------- | ------------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| col                    | ECol|number|true    | **No**  |               |                                                                                                                                                             |
+
+## Component Row & Flex
+> like to bootstrap row class
+```tsx
+import {Row, Flex} from 'imagine-react-styled-grid';
+
+<Row noGutters>
+    content
+</Col>
+```
+Props
+
+| Prop                   | Type                | Required | Default       | Note                                                                                                                                                                                                         |
+| ---------------------- | ------------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| noGutters              | boolean             | **No**   |               |                                                                                                                                                             |
+| vertical               | ERowAlign           | **No**   |               |flex-start|center|flex-end                                                                                                          |                           
+| horizontal             | ERowAlign           | **No**   |               |flex-start|center|flex-end                                                                                                        |
+
+```tsx
+import {Flex} from 'imagine-react-styled-grid';
+
+<Flex direction={EDirection.row}>
+    content
+</Col>
+```
+Props
+
+| Prop                   | Type                | Required | Default       | Note                                                                                                                                                                                                         |
+| ---------------------- | ------------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| direction              | EDirection          | **No**   |                |row|column                                                                                                                                                     |
+| vertical               | ERowAlign           | **No**   |                |flex-start|center|flex-end                                                                                                                                   |
+| horizontal             | ERowAlign           | **No**   |                |flex-start|center|flex-end                                                                                                                                                  |
+
+
+## Component Container
+> like to bootstrap container class
+```tsx
+import {Container} from 'imagine-react-styled-grid';
+
+<Container fluid>
+    content
+</Col>
+
+```
+Props
+
+| Prop                   | Type                | Required | Default       | Note                                                                                                                                                                                                         |
+| ---------------------- | ------------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| fluid                  | boolean             | **No**   |                |                                                                                                                                                             |
+
+## media styled-component func
+> generate to css @media (min-width: 992px)
+> if your need props, not `${props => ...}` in `${media.md ...}` 
+
+```tsx
+import {media} from 'imagine-react-styled-grid';
+
 const Box = styled.div<{
     isActive: bool
 }>`
@@ -82,6 +162,8 @@ const Box = styled.div<{
     `}
 `
 ```
+
+
 ## WebStorm setting
 
 <img src="./docs/assets/install-plugin.jpg" height="150"/>
@@ -92,7 +174,7 @@ const Box = styled.div<{
 
 ## npm package manager
 
-ref: https://github.com/alioguzhan/react-editext
+ref: https://github.com/alioguzhan/react-styled-grid
 
 ```bash
 npm publish
