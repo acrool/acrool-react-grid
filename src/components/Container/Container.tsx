@@ -36,7 +36,7 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
     return mediaSizes
         .map(sizeName => {
             return media[sizeName]`
-            max-width: ${props.theme[themeName].containerMaxWidths[sizeName]}px;
+            max-width: ${props.theme[themeName]?.containerMaxWidths[sizeName]}px;
         `;
         });
 };
@@ -61,8 +61,8 @@ const Container = styled.div.attrs((props: TStyledProps<IProps>) => ({
 
   ${(props: TStyledProps<IProps>) => css`
      box-sizing: border-box;
-     padding-right: ${props.theme[themeName].gridGutterWidth}px;
-     padding-left: ${props.theme[themeName].gridGutterWidth}px;
+     padding-right: ${props.theme[themeName]?.gridGutterWidth}px;
+     padding-left: ${props.theme[themeName]?.gridGutterWidth}px;
 
      ${!props.fluid && css`
         ${generateRWDStyled(props)};

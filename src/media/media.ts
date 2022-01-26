@@ -48,7 +48,7 @@ const replacePx2Vw = (css: FlattenSimpleInterpolation) => {
  *   `}
  */
 const mediaPx2vw = (strings: TemplateStringsArray | CSSObject, ...interpolations: SimpleInterpolation[]) => css`
-  @media (max-width: ${(props: any) => props.theme[themeName].gridBreakpoints.sm}px) {
+  @media (max-width: ${(props: any) => props.theme[themeName]?.gridBreakpoints.sm}px) {
       ${replacePx2Vw(css(strings, ...interpolations))};
   }
 `;
@@ -63,7 +63,7 @@ const mediaPx2vw = (strings: TemplateStringsArray | CSSObject, ...interpolations
  */
 const mediaSize = (size: EMediaSize) => {
     return (strings: TStrings, ...interpolations: SimpleInterpolation[]) => css`
-          @media (min-width: ${(props: any) => props.theme[themeName].gridBreakpoints[size]}px) {
+          @media (min-width: ${(props: any) => props.theme[themeName]?.gridBreakpoints[size]}px) {
             ${css(strings, ...interpolations)};
           };
     `;

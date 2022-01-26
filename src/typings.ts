@@ -1,6 +1,7 @@
 import {MouseEvent, ReactNode} from 'react';
 import CSS from 'csstype';
 import {ThemeProps} from 'styled-components/macro';
+import {themeName} from './config';
 
 
 export interface FCChildrenProps {
@@ -35,7 +36,7 @@ export type NoXsMediaSize = Exclude<EMediaSize, EMediaSize.xs>
 export type TContainerMaxWidths = Omit<IBreakpoints, EMediaSize.xs>
 export type TGridGutterWidthMedia = Omit<IBreakpoints, EMediaSize.xs>
 
-export type TThemeProps = ThemeProps<{styledGrid: IGridSetting}>;
+export type TThemeProps = ThemeProps<{[themeName]: IGridSetting}>;
 export type TStyledProps<P> = TThemeProps & P;
 
 

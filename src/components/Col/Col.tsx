@@ -63,11 +63,11 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
     return mediaSizes
         .map(sizeName => {
             return media[sizeName]`
-             padding-right: ${props.theme[themeName].gridGutterWidthMedia[sizeName]}px;
-             padding-left: ${props.theme[themeName].gridGutterWidthMedia[sizeName]}px;
+             padding-right: ${props.theme[themeName]?.gridGutterWidthMedia[sizeName]}px;
+             padding-left: ${props.theme[themeName]?.gridGutterWidthMedia[sizeName]}px;
 
             ${typeof props[sizeName] !== 'undefined' && css`
-                ${getCss.col(props[sizeName], props.theme[themeName].gridColumns)};
+                ${getCss.col(props[sizeName], props.theme[themeName]?.gridColumns)};
             `}
     `;
         });
@@ -91,15 +91,15 @@ const Col = styled.div.attrs((props: TStyledProps<IProps>) => ({
   min-height: 1px;
 
   ${(props: TStyledProps<IProps>) => css`
-     padding-right: ${props.theme[themeName].gridGutterWidth}px;
-     padding-left: ${props.theme[themeName].gridGutterWidth}px;
+     padding-right: ${props.theme[themeName]?.gridGutterWidth}px;
+     padding-left: ${props.theme[themeName]?.gridGutterWidth}px;
 
      >[data-grid=row]{
         flex: 0 1 100%;
     }
 
      min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
-     ${props.col && getCss.col(props.col, props.theme[themeName].gridColumns)};
+     ${props.col && getCss.col(props.col, props.theme[themeName]?.gridColumns)};
 
      ${generateRWDStyled(props)};
  `}
