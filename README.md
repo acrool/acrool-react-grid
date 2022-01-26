@@ -6,7 +6,7 @@
 [![NPM](https://img.shields.io/npm/v/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/imagine-react-styled-grid)
 [![npm](https://img.shields.io/npm/dm/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/imagine-react-styled-grid)
 
-This project is generated from [react-typescript-library template](https://github.com/alioguzhan/react-typescript-library).
+This project [demo](https://imagine10255.github.io/react-styled-grid/)
 
 
 ## Install

@@ -7,8 +7,8 @@ import 'imagine-react-styled-grid/dist/index.css'
 
 function App() {
   const defaultTheme = {
-    gridGutterWidth: 15,
     gridColumns: 24,
+    gridGutterWidth: 15,
     gridBreakpoints: {
       xs: 0,
       sm: 576,
