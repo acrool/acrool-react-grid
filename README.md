@@ -3,9 +3,8 @@
 > Most modern rwd grid system by react + styled-component
 
 
-[![NPM](https://img.shields.io/npm/v/react-styled-grid.svg)](https://www.npmjs.com/package/react-styled-grid)
-[![npm](https://img.shields.io/npm/dm/react-styled-grid.svg)](https://www.npmjs.com/package/react-styled-grid)
-[![Github](https://github.com/alioguzhan/react-styled-grid/workflows/build/badge.svg)](https://github.com/alioguzhan/react-styled-grid/actions)
+[![NPM](https://img.shields.io/npm/v/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/react-styled-grid)
+[![npm](https://img.shields.io/npm/dm/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/react-styled-grid)
 
 This project is generated from [react-typescript-library template](https://github.com/alioguzhan/react-typescript-library).
 
@@ -174,10 +173,8 @@ const Box = styled.div<{
 
 ## npm package manager
 
-ref: https://github.com/alioguzhan/react-styled-grid
-
 ```bash
-npm publish
+npm publish --access public
 ```
 
 
