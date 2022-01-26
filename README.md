@@ -3,8 +3,8 @@
 > Most modern rwd grid system by react + styled-component
 
 
-[![NPM](https://img.shields.io/npm/v/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/react-styled-grid)
-[![npm](https://img.shields.io/npm/dm/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/react-styled-grid)
+[![NPM](https://img.shields.io/npm/v/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/imagine-react-styled-grid)
+[![npm](https://img.shields.io/npm/dm/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/imagine-react-styled-grid)
 
 This project is generated from [react-typescript-library template](https://github.com/alioguzhan/react-typescript-library).
 
