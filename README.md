@@ -9,8 +9,6 @@
 This project is generated from [react-typescript-library template](https://github.com/alioguzhan/react-typescript-library).
 
 
-https://codesandbox.io/s/react-styled-grid-hmyod?file=/src/App.js
-
 ## Install
 
 ```bash
