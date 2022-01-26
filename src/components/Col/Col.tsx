@@ -7,7 +7,7 @@ import media, {NoXsMediaSize} from '../../media';
 import {isEmpty} from '../../utils';
 import defaultTheme from '../../config';
 import {ColProps} from './types';
-import {themeProps, TGridStyledComponent} from '../ThemeProvider/types';
+import {themeProps, TGridStyledComponent} from '../GridThemeProvider/types';
 
 type Props = ColProps & {
     theme: themeProps;
