@@ -75,7 +75,7 @@ const MyTitle = styled.div`
 
 There is also a codesandbox template that you can fork and play with it:
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-styled-grid-hmyod?file=/src/App.js)
+[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-styled-grid-lqsn6)
 
 [Component and setup docs](./docs/component.md)
 
