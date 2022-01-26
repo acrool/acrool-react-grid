@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, {css} from 'styled-components/macro';
-import {FCChildrenProps, TStyledProps} from '../../typings';
+import media from 'media';
+import {mediaSizes, themeName} from 'config';
 
-import media from '../../media';
-import {mediaSizes, themeName} from '../../config';
+import {FCChildrenProps, TStyledProps} from 'typings';
 
 
 

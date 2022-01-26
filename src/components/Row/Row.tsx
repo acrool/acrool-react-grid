@@ -1,9 +1,10 @@
 import React from 'react';
 import styled, {css} from 'styled-components/macro';
 import {ERowAlign} from './types';
-import media from '../../media';
-import {FCChildrenProps, TStyledProps} from '../../typings';
-import {mediaSizes, themeName} from '../../config';
+import media from 'media';
+
+import {FCChildrenProps, TStyledProps} from 'typings';
+import {mediaSizes, themeName} from 'config';
 
 
 

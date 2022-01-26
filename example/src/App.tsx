@@ -15,14 +15,14 @@ function App() {
       md: 768,
       lg: 992,
       xl: 1200,
-      xxl: 1920,
+      xxl: 1540,
     },
     containerMaxWidths: {
       sm: 540,
       md: 720,
       lg: 960,
       xl: 1140,
-      xxl: 1860,
+      xxl: 1540,
     },
     gridGutterWidthMedia: {
       sm: 15,

@@ -1,11 +1,12 @@
 import React from 'react';
 import styled, {css} from 'styled-components/macro';
+import media from 'media';
+import {mediaSizes, themeName} from 'config';
+
+import {FCChildrenProps, TStyledProps} from 'typings';
 
 import getCss from './css';
 import {TColumn} from './types';
-import media from '../../media';
-import {mediaSizes, themeName} from '../../config';
-import {FCChildrenProps, TStyledProps} from '../../typings';
 
 
 interface IProps extends FCChildrenProps{
