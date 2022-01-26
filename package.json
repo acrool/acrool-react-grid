@@ -1,7 +1,7 @@
 {
   "name": "imagine-react-styled-grid",
   "version": "1.0.17",
-  "description": "Most modern mobile touch slider with hardware accelerated transitions by react",
+  "description": "Most modern rwd grid system by react + styled-component",
   "author": "imagine10255",
   "license": "MIT",
   "repository": {
