@@ -1,44 +1,73 @@
 import React from 'react';
-import styled, {css, ThemeProps} from 'styled-components/macro';
-import {IContainerProps} from './types';
+import styled, {css} from 'styled-components/macro';
+import { FCChildrenProps, TStyledProps } from '../../typings';
 
-import defaultTheme from '../../config';
-import media, {ITheme, NoXsMediaSize} from '../../media';
-import getDataName from './getDataName';
-import {TGridStyledComponent} from '../..';
+import media from '../../media';
+import {mediaSizes} from '../../config';
 
-const mediaSizes = Object.keys(defaultTheme.containerMaxWidths) as NoXsMediaSize[];
 
-const generateMedia = (props: any) => mediaSizes
-    .map(sizeName => {
-        return media[sizeName]`
-            max-width: ${props.theme.styledGrid.containerMaxWidths[sizeName]}px;
-        `;
-    });
-;
+
+interface IProps extends FCChildrenProps{
+    fluid?: boolean;
+}
+
 
 /**
- * Row Component
+ * 產生 Debug 資訊
+ * @param props
  */
-const Container: TGridStyledComponent = styled.div.attrs((props: IContainerProps) => ({
+const generateDebugData = (props: TStyledProps<IProps>) => {
+    if(process.env.NODE_ENV === 'production'){
+        return undefined;
+    }
+    return [
+        props.fluid ? 'container-fluid' : 'container',
+    ]
+        .filter(Boolean)
+        .join(' ');
+};
+
+
+/**
+ * 產生 RWD 樣式
+ * @param props
+ */
+const generateRWDStyled = (props: TStyledProps<IProps>) => {
+    return mediaSizes
+        .map(sizeName => {
+            return media[sizeName]`
+            max-width: ${props.theme.styledGrid.containerMaxWidths[sizeName]}px;
+        `;
+        });
+};
+
+
+
+
+
+
+
+
+/**
+ * 元件 Container
+ */
+const Container = styled.div.attrs((props: TStyledProps<IProps>) => ({
     'data-grid': 'container',
-    'data-debug': getDataName(props),
+    'data-debug': generateDebugData(props),
 }))`
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 
-  ${(props: IContainerProps & ThemeProps<{
-    styledGrid: ITheme
-  }>) => css`
+  ${(props: TStyledProps<IProps>) => css`
      box-sizing: border-box;
      padding-right: ${props.theme.styledGrid.gridGutterWidth}px;
      padding-left: ${props.theme.styledGrid.gridGutterWidth}px;
 
      ${!props.fluid && css`
-        ${generateMedia(props)};
+        ${generateRWDStyled(props)};
     `}
  `}
 `;
 
-export default (props: IContainerProps) => <Container {...props}/>;
+export default Container;
