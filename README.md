@@ -1,33 +1,16 @@
-# imreact-styled-grid
+# imagine-react-styled-grid
 
-> Most modern mobile touch slider with hardware accelerated transitions by react
+> Most modern rwd grid system by react + styled-component
 
-[![NPM](https://img.shields.io/npm/v/imreact-styled-grid.svg)](https://www.npmjs.com/package/imreact-styled-grid) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/imagine-react-styled-grid.svg)](https://www.npmjs.com/package/imagine-react-styled-grid) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-yarn add imreact-styled-grid
+yarn add imagine-react-styled-grid
 ```
 
 ## Usage
-add the your global css:
-
-```css
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -ms-overflow-style: scrollbar;
-}
-
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-```
-
 in your index.js add  
 `see the example/src/index.js`
 
@@ -60,7 +43,7 @@ import {GridThemeProvider} from 'styled-bs-grid';
 
 use in your page/component:
 ```tsx
-import {Container, Row, Col, media} from 'imreact-styled-grid';
+import {Container, Row, Col, media} from 'imagine-react-styled-grid';
 
 const MyPage = () => {
     return (
@@ -83,6 +66,29 @@ const MyTitle = styled.div`
 
 export default MyPage;
 ```
+
+
+## Media & props
+
+if your need props, not `${props => ...}` in `${media.md ...}` 
+```ts
+const Box = styled.div<{
+    isActive: bool
+}>`
+    ${props => css`
+        ${media.md`
+            display: ${props.isActive ? flex: none}
+        `}
+    `}
+`
+```
+## WebStorm setting
+
+<img src="./docs/assets/install-plugin.jpg" height="150"/>
+<img src="./docs/assets/setting-media.jpg" height="150"/>
+
+
+
 
 ## npm Push
 ```bash
