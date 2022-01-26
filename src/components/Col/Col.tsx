@@ -1,23 +1,55 @@
-import React from 'react';
+import React, {MouseEvent} from 'react';
 import styled, {css} from 'styled-components/macro';
 
 import getCss from './css';
-import getDataName from './getDataName';
-import media, {NoXsMediaSize} from '../../media';
-import {isEmpty} from '../../utils';
-import defaultTheme from '../../config';
-import {ColProps} from './types';
-import {themeProps, TGridStyledComponent} from '../GridThemeProvider/types';
+import {TColumn} from './types';
+import media from '../../media';
+import {isEmpty, suffix} from '../../utils';
+import {mediaSizes} from '../../config';
+import {FCChildrenProps, TStyledProps} from '../../typings';
 
-type Props = ColProps & {
-    theme: themeProps;
+
+interface IProps extends FCChildrenProps{
+    col?: TColumn;
+    sm?: TColumn;
+    md?: TColumn;
+    lg?: TColumn;
+    xl?: TColumn;
+    xxl?: TColumn;
+}
+
+
+
+/**
+ * 產生 Debug 資訊
+ * @param props
+ */
+const generateDebugData = (props: TStyledProps<IProps>) => {
+    if(process.env.NODE_ENV === 'production'){
+        return undefined;
+    }
+    return [
+        props.col && `col${suffix(props.col)}`,
+        props.sm && `col-sm${suffix(props.sm)}`,
+        props.md && `col-md${suffix(props.md)}`,
+        props.lg && `col-lg${suffix(props.lg)}`,
+        props.xl && `col-xl${suffix(props.xl)}`,
+        props.xxl && `col-xxl${suffix(props.xxl)}`,
+    ]
+        .filter(Boolean)
+        .join(' ');
 };
 
-const mediaSizes = Object.keys(defaultTheme.containerMaxWidths) as NoXsMediaSize[];
 
-const generateMedia = (props: any) => mediaSizes
-    .map(sizeName => {
-        return media[sizeName]`
+
+/**
+ * 產生 RWD 樣式
+ * @param props
+ */
+const generateRWDStyled = (props: TStyledProps<IProps>) => {
+    return mediaSizes
+        .map(sizeName => {
+            return media[sizeName]`
              padding-right: ${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
              padding-left: ${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
 
@@ -25,7 +57,8 @@ const generateMedia = (props: any) => mediaSizes
                 ${getCss.col(props[sizeName], props.theme.styledGrid.gridColumns)};
             `}
     `;
-    });
+        });
+};
 
 /**
  * Col Component
@@ -35,16 +68,16 @@ const generateMedia = (props: any) => mediaSizes
  * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
  *
  */
-const Col: TGridStyledComponent = styled.div.attrs((props: Props) => ({
+const Col = styled.div.attrs((props: TStyledProps<IProps>) => ({
     'data-grid': 'col',
-    'data-debug': getDataName(props),
+    'data-debug': generateDebugData(props),
 }))`
   box-sizing: border-box;
   position: relative;
   width: 100%;
   min-height: 1px;
 
-  ${(props: any) => css`
+  ${(props: TStyledProps<IProps>) => css`
      padding-right: ${props.theme.styledGrid.gridGutterWidth}px;
      padding-left: ${props.theme.styledGrid.gridGutterWidth}px;
 
@@ -55,8 +88,8 @@ const Col: TGridStyledComponent = styled.div.attrs((props: Props) => ({
      min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
      ${props.col && getCss.col(props.col, props.theme.styledGrid.gridColumns)};
 
-     ${generateMedia(props)};
+     ${generateRWDStyled(props)};
  `}
 `;
 
-export default ({forwardRef, forwardAs, ...props}: ColProps) => <Col ref={forwardRef} as={forwardAs} {...props}/>;
+export default Col;

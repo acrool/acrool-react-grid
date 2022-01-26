@@ -1,7 +1,11 @@
-import {ColCss, EColType} from './types';
+import {EColType, TColumn} from './types';
+
+export type ColCss = {
+    col: (column: TColumn, gridColumns: number) => string
+};
 
 const css: ColCss = {
-    col: (column: any, gridColumns: number) => {
+    col: (column, gridColumns) => {
         let colFlexBasis = 0;
 
         switch (column) {
@@ -31,7 +35,8 @@ const css: ColCss = {
           display: block;
         `;
         default:
-            colFlexBasis = (100 / gridColumns) * column;
+            const columnNumber = (typeof column === 'number' ? column : 0);
+            colFlexBasis = (100 / gridColumns) * columnNumber;
             return `
             display: block;
             -ms-flex: 0 0 ${colFlexBasis}%;

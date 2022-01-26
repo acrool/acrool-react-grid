@@ -67,6 +67,7 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
 
 /**
  * Row Component
+ * align-items 預設加上 flex-start, 會讓鄰居Col高度不會一致
  */
 const Row = styled.div.attrs((props: TStyledProps<IProps>) => ({
     'data-grid': 'row',
@@ -86,8 +87,8 @@ const Row = styled.div.attrs((props: TStyledProps<IProps>) => ({
      margin-right: ${getRowMargin(props)};
      margin-left: ${getRowMargin(props)};
      
-     justify-content: ${props.horizontal ? props.horizontal : ERowAlign.start};
-     align-items: ${props.vertical ? props.vertical : ERowAlign.start};
+     justify-content: ${props.horizontal ? props.horizontal : undefined};
+     align-items: ${props.vertical ? props.vertical : undefined};
 
      // ps: 設定會 width 100% 會產生 margin 抵銷失敗
 

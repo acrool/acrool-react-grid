@@ -1,3 +1,5 @@
+import './styles.css';
+
 export {default as media} from './media';
 export {default as Container} from './components/Container';
 export {default as Row} from './components/Row';
