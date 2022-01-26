@@ -31,7 +31,13 @@
     "storybook": "cd example && yarn install && yarn run storybook",
     "predeploy": "cd example && yarn install && yarn run build-storybook",
     "deploy": "gh-pages -d example/storybook-static",
-    "lint:fix": "eslint ./src --fix"
+    "gitlog": "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%cr)%Creset'",
+    "lint:fix": "eslint ./src --fix",
+    "cz": "git cz",
+    "release": "standard-version --release-as",
+    "release:major": "standard-version -r major",
+    "release:minor": "standard-version -r minor",
+    "release:patch": "standard-version -r patch"
   },
   "peerDependencies": {
     "react": "17.0.2"
@@ -56,7 +62,10 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "4.0.3",
-    "typescript": "4.1.5"
+    "typescript": "4.1.5",
+    "cz-conventional-changelog": "3.3.0",
+    "cz-customizable": "6.3.0",
+    "standard-version": "9.3.0"
   },
   "eslintConfig": {
     "extends": [
