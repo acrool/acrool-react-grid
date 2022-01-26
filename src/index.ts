@@ -10,4 +10,3 @@ export {default as GridThemeProvider} from './components/GridThemeProvider';
 export * from './media/types';
 export * from './components/Col/types';
 export * from './components/Row/types';
-export * from './components/GridThemeProvider/types';
