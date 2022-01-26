@@ -16,6 +16,7 @@
 import {ITheme} from './media';
 import {NoXsMediaSize} from './typings';
 
+const themeName = 'styledGrid';
 const defaultGridTheme: ITheme = {
     gridGutterWidth: 10,
     gridColumns: 24,
@@ -44,5 +45,6 @@ const defaultGridTheme: ITheme = {
 };
 const mediaSizes = Object.keys(defaultGridTheme.containerMaxWidths) as NoXsMediaSize[];
 
-export {defaultGridTheme, mediaSizes};
-export default defaultGridTheme;
+
+
+export {themeName, defaultGridTheme, mediaSizes};

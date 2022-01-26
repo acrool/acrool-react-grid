@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components/macro';
 import {ERowAlign} from './types';
 import media from '../../media';
 import {FCChildrenProps, TStyledProps} from '../../typings';
-import {mediaSizes} from '../../config';
+import {mediaSizes, themeName} from '../../config';
 
 
 
@@ -23,7 +23,7 @@ const getRowMargin = (props: TStyledProps<IProps>) => {
     if(props.noGutters){
         return 0;
     }
-    return `-${props.theme.styledGrid.gridGutterWidth}px`;
+    return `-${props.theme[themeName].gridGutterWidth}px`;
 };
 
 
@@ -54,8 +54,8 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
     return mediaSizes
         .map(sizeName => {
             return media[sizeName]`
-            margin-left: -${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
-            margin-right: -${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
+            margin-left: -${props.theme[themeName].gridGutterWidthMedia[sizeName]}px;
+            margin-right: -${props.theme[themeName].gridGutterWidthMedia[sizeName]}px;
         `;
         });
 };

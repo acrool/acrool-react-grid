@@ -72,7 +72,7 @@ export default App;
 
 const Test2 = styled(Row)`
 color: blue;
-  width: ${props => props.theme.styledGrid.gridGutterWidthMedia.lg ?? 100}px;
+  width: ${props => props.theme[themeName].gridGutterWidthMedia.lg ?? 100}px;
   background: blueviolet;
 
   ${media.lg`

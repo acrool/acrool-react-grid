@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components/macro';
 import {FCChildrenProps, TStyledProps} from '../../typings';
 
 import media from '../../media';
-import {mediaSizes} from '../../config';
+import {mediaSizes, themeName} from '../../config';
 
 
 
@@ -36,7 +36,7 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
     return mediaSizes
         .map(sizeName => {
             return media[sizeName]`
-            max-width: ${props.theme.styledGrid.containerMaxWidths[sizeName]}px;
+            max-width: ${props.theme[themeName].containerMaxWidths[sizeName]}px;
         `;
         });
 };
@@ -61,8 +61,8 @@ const Container = styled.div.attrs((props: TStyledProps<IProps>) => ({
 
   ${(props: TStyledProps<IProps>) => css`
      box-sizing: border-box;
-     padding-right: ${props.theme.styledGrid.gridGutterWidth}px;
-     padding-left: ${props.theme.styledGrid.gridGutterWidth}px;
+     padding-right: ${props.theme[themeName].gridGutterWidth}px;
+     padding-left: ${props.theme[themeName].gridGutterWidth}px;
 
      ${!props.fluid && css`
         ${generateRWDStyled(props)};

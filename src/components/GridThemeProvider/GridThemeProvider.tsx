@@ -1,7 +1,7 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components/macro';
 
-import defaultTheme from '../../config';
+import {defaultGridTheme} from '../../config';
 import {IGridSetting} from '../../typings';
 
 
@@ -21,7 +21,7 @@ interface IProps {
  */
 const GridThemeProvider = (props: IProps) => {
     const {gridTheme, children} = props;
-    const {gridBreakpoints, containerMaxWidths, gridGutterWidthMedia, ...baseDefaultTheme} = defaultTheme;
+    const {gridBreakpoints, containerMaxWidths, gridGutterWidthMedia, ...baseDefaultTheme} = defaultGridTheme;
 
     console.log('react-styled-grid version 8');
     const composeGridTheme = {
