@@ -23,11 +23,7 @@ function App() {
       xxl: 1860,
     },
     gridGutterWidthMedia: {
-      sm: 10,
-      md: 10,
-      lg: 10,
-      xl: 10,
-      xxl: 10,
+      lg: 15,
     }
   };
 
@@ -51,7 +47,8 @@ function App() {
         </div>
 
 
-      <Test>ddd</Test>
+      <Test>ddd212</Test>
+      <Test2>Test2</Test2>
 
         <Container>
           <NavRow>
@@ -72,6 +69,16 @@ function App() {
 
 export default App;
 
+
+const Test2 = styled(Row)`
+color: blue;
+  width: ${props => props.theme.styledGrid.gridGutterWidthMedia.lg ?? 100}px;
+  background: blueviolet;
+
+  ${media.lg`
+    color: green;
+  `}
+`;
 
 const Test = styled.div`
 color: blue;
