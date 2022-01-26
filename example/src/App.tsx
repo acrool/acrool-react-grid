@@ -250,9 +250,6 @@ const NavbarBrand = styled.div`
     color: #fff;
 `;
 
-const NavContainer = styled(Container)`
-  border-bottom: 1px solid #fff;
-`;
 
 const Nav = styled.nav`
    background-color: rgb(33, 37, 41);
