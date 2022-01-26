@@ -2,155 +2,165 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import {GridThemeProvider, Col, Row, Container, media} from 'imagine-react-styled-grid';
 
-import 'imagine-react-styled-grid/dist/index.css'
+import 'imagine-react-styled-grid/dist/index.css';
 
 
 function App() {
-  const defaultTheme = {
-    gridColumns: 24,
-    gridGutterWidth: 15,
-    gridBreakpoints: {
-      xs: 0,
-      sm: 576,
-      md: 768,
-      lg: 992,
-      xl: 1200,
-      xxl: 1540,
-    },
-    containerMaxWidths: {
-      sm: 540,
-      md: 720,
-      lg: 960,
-      xl: 1140,
-      xxl: 1540,
-    },
-    gridGutterWidthMedia: {
-      sm: 15,
-      md: 15,
-      lg: 15,
-      xl: 15,
-      xxl: 15,
-    }
-  };
+    const defaultTheme = {
+        gridColumns: 24,
+        gridGutterWidth: 15,
+        gridBreakpoints: {
+            xs: 0,
+            sm: 576,
+            md: 768,
+            lg: 992,
+            xl: 1200,
+            xxl: 1540,
+        },
+        containerMaxWidths: {
+            sm: 540,
+            md: 720,
+            lg: 960,
+            xl: 1140,
+            xxl: 1540,
+        },
+        gridGutterWidthMedia: {
+            sm: 15,
+            md: 15,
+            lg: 15,
+            xl: 15,
+            xxl: 15,
+        }
+    };
 
-  /**
+    /**
    * Nav
    */
-  const renderNav = () => {
-    return <Nav className="mb-5">
-      <NavContainer className="px-5 d-flex">
-        <NavbarBrand>Start Bootstrap</NavbarBrand>
+    const renderNav = () => {
+        return <Nav className="mb-5">
+            <Container className="px-5 d-flex">
+                <NavbarBrand>Start Bootstrap</NavbarBrand>
 
-        <NavbarNav className="ml-auto my-0 d-none d-md-flex">
-          <NavItem>
-            <NavLink href="#!" isActive>Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#!">About</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#!">Contact</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#!">Services</NavLink>
-          </NavItem>
+                <NavbarNav className="ml-auto my-0 d-none d-md-flex">
+                    <NavItem>
+                        <NavLink href="#!" isActive>Home</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="#!">About</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="#!">Contact</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="#!">Services</NavLink>
+                    </NavItem>
 
-        </NavbarNav>
-      </NavContainer>
-    </Nav>;
-  };
+                </NavbarNav>
+            </Container>
+        </Nav>;
+    };
 
-  /**
+
+    /**
+     * Header
+     */
+    const renderHeader = () => {
+        return <Container>
+            <Row>
+                <Col lg={14}>
+                    <img className="img-fluid mb-4 mb-lg-0 round" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="sample-img"/>
+                </Col>
+                <Col lg={10}>
+                    <Title>Business Name or Tagline</Title>
+                    <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+                    <a href="#!">Call to Action!</a>
+
+                    <StyledCol className="mt-3">Test Styled(Col)</StyledCol>
+                </Col>
+            </Row>
+
+        </Container>;
+    };
+
+    /**
    * News
    */
-  const renderNews = () => {
-    return <Container>
+    const renderNews = () => {
+        return <Container>
 
-      <NewCard className="my-5 py-4 text-center">
-        <CardBody>
-          <p>This call to action card is a great place to showcase some important information or display a clever tagline!
-          </p>
-          <p>https://startbootstrap.github.io/startbootstrap-small-business/
-          </p>
+            <NewCard className="my-5 py-4 text-center">
+                <CardBody>
+                    <p>This call to action card is a great place to showcase some important information or display a clever tagline!
+                    </p>
+                    <p>https://startbootstrap.github.io/startbootstrap-small-business/
+                    </p>
 
-        </CardBody>
-      </NewCard>
+                </CardBody>
+            </NewCard>
 
-    </Container>;
-  };
+        </Container>;
+    };
 
-  /**
-   * Header
-   */
-  const renderHeader = () => {
-    return <Container>
-      <Row>
-        <Col lg={14}>
-          <img className="img-fluid mb-4 mb-lg-0 round" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="sample-img"/>
-        </Col>
-        <Col lg={10}>
-          <Title>Business Name or Tagline</Title>
-          <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-          <a href="#!">Call to Action!</a>
-        </Col>
-      </Row>
-    </Container>;
-  };
 
-  /**
+    /**
    * Card List
    */
-  const renderCardList = () => {
-    const texts = [
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.',
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.,',
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.',
-    ];
+    const renderCardList = () => {
+        const texts = [
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.',
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.,',
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.',
+        ];
 
-      return (<Container>
-        <Row>
-          {texts.map((text, index) => {
-            return <Col md={8} key={`card_${index}`} className="mb-5">
-              <Card className="h-100">
-                <CardBody>
-                  <CardTitle>Card One</CardTitle>
-                  <CardText>{text}</CardText>
-                </CardBody>
-                <CardFooter>
-                  <a href="#!">More Info</a>
-                </CardFooter>
-              </Card>
-            </Col>;
-          })}
+        return (<Container>
+            <Row>
+                {texts.map((text, index) => {
+                    return <Col md={8} key={`card_${index}`} className="mb-5">
+                        <Card className="h-100">
+                            <CardBody>
+                                <CardTitle>Card One</CardTitle>
+                                <CardText>{text}</CardText>
+                            </CardBody>
+                            <CardFooter>
+                                <a href="#!">More Info</a>
+                            </CardFooter>
+                        </Card>
+                    </Col>;
+                })}
 
-        </Row>
-      </Container>);
+            </Row>
+        </Container>);
 
-  };
+    };
 
 
-  /**
+    /**
    * Footer
    */
-  const renderFooter = () => {
-    return <Footer className="py-5">
-      <Container className="px-4 px-lg-5"><p className="m-0 text-center">Copyright © Your Website 2022</p></Container>
-    </Footer>
-  };
+    const renderFooter = () => {
+        return <Footer className="py-5">
+            <Container className="px-4 px-lg-5"><p className="m-0 text-center">Copyright © Your Website 2022</p></Container>
+        </Footer>;
+    };
 
 
-  return (
-    <GridThemeProvider gridTheme={defaultTheme}>
-      {renderNav()}
-      {renderHeader()}
-      {renderNews()}
-      {renderCardList()}
-      {renderFooter()}
-    </GridThemeProvider>
-  );
+    return (
+        <GridThemeProvider gridTheme={defaultTheme}>
+            {renderNav()}
+            {renderHeader()}
+            {renderNews()}
+            {renderCardList()}
+            {renderFooter()}
+        </GridThemeProvider>
+    );
 }
 
 export default App;
+
+
+const StyledCol =styled(Col)`
+  border: dotted 1px #bdbdbd;
+`;
 
 
 const Footer = styled.footer`
