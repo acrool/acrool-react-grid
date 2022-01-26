@@ -1,10 +1,9 @@
-import React, {MouseEvent} from 'react';
+import React from 'react';
 import styled, {css} from 'styled-components/macro';
 
 import getCss from './css';
 import {TColumn} from './types';
 import media from '../../media';
-import {isEmpty, suffix} from '../../utils';
 import {mediaSizes} from '../../config';
 import {FCChildrenProps, TStyledProps} from '../../typings';
 
@@ -17,6 +16,20 @@ interface IProps extends FCChildrenProps{
     xl?: TColumn;
     xxl?: TColumn;
 }
+
+
+/**
+ * 判斷是否為空
+ * @param value
+ */
+const suffix = (value: any) => {
+    if (!!Number(value)) {
+        return `-${value}`;
+    } if (value === 'auto') {
+        return '-auto';
+    }
+    return '';
+};
 
 
 
@@ -53,7 +66,7 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
              padding-right: ${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
              padding-left: ${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
 
-            ${!isEmpty(props[sizeName]) && css`
+            ${typeof props[sizeName] !== 'undefined' && css`
                 ${getCss.col(props[sizeName], props.theme.styledGrid.gridColumns)};
             `}
     `;

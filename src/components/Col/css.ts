@@ -1,6 +1,6 @@
 import {EColType, TColumn} from './types';
 
-export type ColCss = {
+type ColCss = {
     col: (column: TColumn, gridColumns: number) => string
 };
 

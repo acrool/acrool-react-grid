@@ -90,7 +90,10 @@ const Box = styled.div<{
 
 
 
-## npm Push
+## npm package manager
+
+ref: https://github.com/alioguzhan/react-editext
+
 ```bash
 npm publish
 ```
