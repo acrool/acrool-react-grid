@@ -74,6 +74,7 @@ export default App;
 
 
 const Test = styled.div`
+color: blue;
   ${media.lg`
     color: red;
   `}

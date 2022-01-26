@@ -1,6 +1,6 @@
-import { ITheme } from 'library/react-styled-grid';
 import React from 'react';
 import {StyledComponentBase} from 'styled-components/macro';
+import { ITheme } from '../../media';
 
 export type TGridStyledComponent = String & StyledComponentBase<'div', any, { 'data-grid': string; 'data-debug': string | undefined; }, 'data-grid' | 'data-debug'>;
 
