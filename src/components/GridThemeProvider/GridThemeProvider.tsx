@@ -23,7 +23,7 @@ const GridThemeProvider = (props: IProps) => {
     const {gridTheme, children} = props;
     const {gridBreakpoints, containerMaxWidths, gridGutterWidthMedia, ...baseDefaultTheme} = defaultTheme;
 
-    console.log('react-styled-grid version 7');
+    console.log('react-styled-grid version 8');
     const composeGridTheme = {
         styledGrid: {
             ...baseDefaultTheme,

@@ -44,5 +44,5 @@ const defaultGridTheme: ITheme = {
 };
 const mediaSizes = Object.keys(defaultGridTheme.containerMaxWidths) as NoXsMediaSize[];
 
-export {defaultGridTheme, mediaSizes}
+export {defaultGridTheme, mediaSizes};
 export default defaultGridTheme;

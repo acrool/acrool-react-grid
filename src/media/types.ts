@@ -19,7 +19,6 @@ export interface IBreakpoints {
   [EMediaSize.xl]: number
   [EMediaSize.xxl]: number
 }
-export type NoXsMediaSize = Exclude<EMediaSize, EMediaSize.xs>
 export type TContainerMaxWidths = Omit<IBreakpoints, EMediaSize.xs>
 export type TGridGutterWidthMedia = Omit<IBreakpoints, EMediaSize.xs>
 
@@ -29,10 +28,6 @@ export type TMedia = Omit<
   },
   EMediaSize.xs
 > & { px2vw: Function }
-
-export type TMediaSizeFunc = {
-  [key in EMediaSize]: Function
-}
 
 export interface ITheme {
   gridGutterWidth: number

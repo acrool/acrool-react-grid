@@ -15,6 +15,10 @@ function px2vwCalc(pixels: number, pixelTotal: number = 320) {
     return `${(pixels / pixelTotal) * 100}vw`;
 }
 
+/**
+ * 尋找PX取代為VW
+ * @param css
+ */
 const replacePx2Vw = (css: FlattenSimpleInterpolation) => {
     let re = /(\d+)+(px)/gi;
 
