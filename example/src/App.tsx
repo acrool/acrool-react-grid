@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import {GridThemeProvider, Col, Row, Container} from '@imagine10255/react-styled-grid';
+import {GridThemeProvider, Col, Row, Container, media} from 'imagine-react-styled-grid';
 
 
 function App() {
@@ -51,6 +51,7 @@ function App() {
         </div>
 
 
+      <Test>ddd</Test>
 
         <Container>
           <NavRow>
@@ -71,6 +72,12 @@ function App() {
 
 export default App;
 
+
+const Test = styled.div`
+  ${media.lg`
+    color: red;
+  `}
+`;
 
 const NavRow = styled(Row).attrs(props  => ({
   'forwardAs': 'ul',

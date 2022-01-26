@@ -1,5 +1,5 @@
 {
-  "name": "@imagine10255/react-styled-grid",
+  "name": "imagine-react-styled-grid",
   "version": "1.0.4",
   "description": "Most modern mobile touch slider with hardware accelerated transitions by react",
   "author": "imagine10255",
@@ -16,7 +16,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --no-css-modules --format modern,cjs",
+    "build": "rm -rf ./dist && microbundle-crl --no-compress --no-css-modules --format modern,cjs",
     "dev": "cd example && yarn install && yarn run start",
     "start": "microbundle-crl watch --no-compress --no-css-modules --format modern,cjs",
     "prepare": "run-s build",
