@@ -81,12 +81,6 @@ There is also a codesandbox template that you can fork and play with it:
 
 [Component and setup docs](./docs/component.md)
 
-## WebStorm setting
-
-<img src="./docs/assets/setting-media.jpg" height="150"/>
-
-
-
 
 ## npm package manager
 
