@@ -1,4 +1,7 @@
 import {IsNumberFn, SuffixFn} from './types';
+import defaultGridTheme from '../config';
+
+
 
 export const isNumber: IsNumberFn = value => !Number(value) !== true;
 export const suffix: SuffixFn = value => {

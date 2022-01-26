@@ -14,6 +14,7 @@
  * }}>
  */
 import {ITheme} from './media';
+import {NoXsMediaSize} from './typings';
 
 const defaultGridTheme: ITheme = {
     gridGutterWidth: 10,
@@ -41,6 +42,7 @@ const defaultGridTheme: ITheme = {
         xxl: 10,
     }
 };
+const mediaSizes = Object.keys(defaultGridTheme.containerMaxWidths) as NoXsMediaSize[];
 
-
+export {defaultGridTheme, mediaSizes}
 export default defaultGridTheme;

@@ -1,21 +1,18 @@
 import styled from 'styled-components/macro';
-import {EAlign} from './types';
+import {EDirection, ERowAlign} from './types';
 
-export enum EDirection {
-    row='row',
-    column ='column'
-}
+
 
 const Flex = styled.div<{
     direction?: EDirection
-    vertical?: EAlign; // 垂直
-    horizontal?: EAlign; // 水平
+    vertical?: ERowAlign; // 垂直
+    horizontal?: ERowAlign; // 水平
 }>`
   box-sizing: border-box;
   display: flex;
   flex-direction: ${props => props.direction ? props.direction : EDirection.row};
-  justify-content: ${props => props.horizontal ? props.horizontal : EAlign.start};
-  align-items: ${props => props.vertical ? props.vertical : EAlign.start};
+  justify-content: ${props => props.horizontal ? props.horizontal : ERowAlign.start};
+  align-items: ${props => props.vertical ? props.vertical : ERowAlign.start};
 `;
 
 export default Flex;

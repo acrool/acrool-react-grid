@@ -1,33 +1,76 @@
 import React from 'react';
 import styled, {css} from 'styled-components/macro';
-import getDataName from './getDataName';
-import defaultTheme from '../../config';
-import {EAlign, IRowProps} from './types';
-import media, {NoXsMediaSize} from '../../media';
+import {ERowAlign} from './types';
+import media from '../../media';
+import {FCChildrenProps, TStyledProps} from '../../typings';
+import {mediaSizes} from '../../config';
+
+
+
+export interface IProps extends FCChildrenProps{
+    noGutters?: boolean;
+    vertical?: ERowAlign;
+    horizontal?: ERowAlign;
+}
+
 
 /**
  * Get Row Margin
  * @param props
  * @returns {*}
  */
-const getRowMargin = (props: any) => (props.noGutters ? 0 : `-${props.theme.styledGrid.gridGutterWidth}px`);
+const getRowMargin = (props: TStyledProps<IProps>) => {
+    if(props.noGutters){
+        return 0;
+    }
+    return `-${props.theme.styledGrid.gridGutterWidth}px`;
+};
 
-const mediaSizes = Object.keys(defaultTheme.containerMaxWidths) as NoXsMediaSize[];
 
-const generateMedia = (props: any) => mediaSizes
-    .map(sizeName => {
-        return media[sizeName]`
+
+/**
+ * 產生 Debug 資訊
+ * @param props
+ */
+const generateDebugData = (props: TStyledProps<IProps>) => {
+    if(process.env.NODE_ENV === 'production'){
+        return undefined;
+    }
+    return  [
+        'row',
+        props.noGutters ? 'no-gutter' : '',
+    ]
+        .filter(Boolean)
+        .join(' ');
+
+};
+
+
+/**
+ * 產生 RWD 樣式
+ * @param props
+ */
+const generateRWDStyled = (props: TStyledProps<IProps>) => {
+    return mediaSizes
+        .map(sizeName => {
+            return media[sizeName]`
             margin-left: -${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
             margin-right: -${props.theme.styledGrid.gridGutterWidthMedia[sizeName]}px;
         `;
-    });
+        });
+};
+
+
+
+
+
 
 /**
  * Row Component
  */
-const Row: any = styled.div.attrs((props: IRowProps) => ({
+const Row = styled.div.attrs((props: TStyledProps<IProps>) => ({
     'data-grid': 'row',
-    'data-debug': getDataName(props),
+    'data-debug': generateDebugData(props),
 }))`
   box-sizing: border-box;
   padding-inline-start: 0; // 避免 ul 預設樣式位移
@@ -39,18 +82,18 @@ const Row: any = styled.div.attrs((props: IRowProps) => ({
   
   
 
-  ${(props: IRowProps) => css`
+  ${(props: TStyledProps<IProps>) => css`
      margin-right: ${getRowMargin(props)};
      margin-left: ${getRowMargin(props)};
      
-     justify-content: ${props.horizontal ? props.horizontal : EAlign.start};
-     align-items: ${props.vertical ? props.vertical : EAlign.start};
+     justify-content: ${props.horizontal ? props.horizontal : ERowAlign.start};
+     align-items: ${props.vertical ? props.vertical : ERowAlign.start};
 
      // ps: 設定會 width 100% 會產生 margin 抵銷失敗
 
 
      ${!props.noGutters && css`
-        ${generateMedia(props)}
+        ${generateRWDStyled(props)}
      `}
 
      ${props.noGutters && css`
@@ -62,5 +105,5 @@ const Row: any = styled.div.attrs((props: IRowProps) => ({
  `}
 `;
 
-export default ({forwardRef, forwardAs, ...props}: IRowProps) => <Row ref={forwardRef} as={forwardAs} {...props}/>;
+export default Row;
 

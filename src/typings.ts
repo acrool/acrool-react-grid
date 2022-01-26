@@ -1,6 +1,19 @@
+import {MouseEvent, ReactNode} from 'react';
+import CSS from 'csstype';
 import {CSSObject, ThemeProps} from 'styled-components/macro';
 
 export type TStrings = TemplateStringsArray | CSSObject
+
+export interface FCChildrenProps {
+    style?: CSS.Properties,
+    className?: string,
+    forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p';
+    forwardRef?: any;
+    id?: string| number;
+    key?: string| number;
+    children?: ReactNode,
+    onClick?: (event: MouseEvent<HTMLElement>) => void;
+}
 
 export enum EMediaSize {
     xs = 'xs',
