@@ -263,6 +263,5 @@ const Nav = styled.nav`
     align-items: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-}
 
 `;
