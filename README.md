@@ -80,13 +80,6 @@ There is also a codesandbox template that you can fork and play with it:
 [Component and setup docs](./docs/component.md)
 
 
-## npm package manager
-
-```bash
-npm publish --access public
-```
-
-
 ## License
 
 MIT © [imagine10255](https://github.com/imagine10255)
