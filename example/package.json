@@ -15,7 +15,7 @@
     "@types/react": "link:../node_modules/@types/react",
     "@types/react-dom": "link:../node_modules/@types/react-dom",
     "@types/styled-components": "link:../node_modules/@types/styled-components",
-    "imagine-react-styled-grid": "link:..",
+    "bear-grid": "link:..",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",

@@ -2,7 +2,7 @@
 ## Component Col
 > like to bootstrap col class
 ```tsx
-import {Col} from 'imagine-react-styled-grid';
+import {Col} from 'bear-grid';
 
 <Col col={24} sm md lg xl={12} xxl>
     content
@@ -18,7 +18,7 @@ Props
 ## Component Row & Flex
 > like to bootstrap row class
 ```tsx
-import {Row, Flex} from 'imagine-react-styled-grid';
+import {Row, Flex} from 'bear-grid';
 
 <Row noGutters>
     content
@@ -33,7 +33,7 @@ Props
 | horizontal             | ERowAlign           | **No**   |               |flex-start|center|flex-end                                                                                                        |
 
 ```tsx
-import {Flex} from 'imagine-react-styled-grid';
+import {Flex} from 'bear-grid';
 
 <Flex direction={EDirection.row}>
     content
@@ -51,7 +51,7 @@ Props
 ## Component Container
 > like to bootstrap container class
 ```tsx
-import {Container} from 'imagine-react-styled-grid';
+import {Container} from 'bear-grid';
 
 <Container fluid>
     content
@@ -69,7 +69,7 @@ Props
 > if your need props, not `${props => ...}` in `${media.md ...}` 
 
 ```tsx
-import {media} from 'imagine-react-styled-grid';
+import {media} from 'bear-grid';
 
 const Box = styled.div<{
     isActive: bool

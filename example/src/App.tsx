@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import {GridThemeProvider, Col, Row, Container, media} from 'imagine-react-styled-grid';
+import {GridThemeProvider, Col, Row, Container, media} from 'bear-grid';
 
-import 'imagine-react-styled-grid/dist/index.css';
+import 'bear-grid/dist/index.css';
 
 
 function App() {
