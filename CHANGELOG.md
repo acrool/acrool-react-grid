@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* 更改 名稱為 bear-grid ([fb92f1b](https://github.com/imagine10255/react-styled-grid/commit/fb92f1b7f516aee8538c849772f079f7a96b948f))
+* 更改 名稱為 bear-styled-grid ([fb92f1b](https://github.com/imagine10255/react-styled-grid/commit/fb92f1b7f516aee8538c849772f079f7a96b948f))
 
 
 ### Bug Fixes

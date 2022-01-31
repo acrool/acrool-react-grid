@@ -3,8 +3,8 @@
 > Most modern rwd grid system by react + styled-component
 
 
-[![NPM](https://img.shields.io/npm/v/bear-grid.svg)](https://www.npmjs.com/package/bear-grid)
-[![npm](https://img.shields.io/npm/dm/bear-grid.svg)](https://www.npmjs.com/package/bear-grid)
+[![NPM](https://img.shields.io/npm/v/bear-styled-grid.svg)](https://www.npmjs.com/package/bear-styled-grid)
+[![npm](https://img.shields.io/npm/dm/bear-styled-grid.svg)](https://www.npmjs.com/package/bear-styled-grid)
 
 This project [demo](https://imagine10255.github.io/react-styled-grid/)
 
@@ -12,7 +12,7 @@ This project [demo](https://imagine10255.github.io/react-styled-grid/)
 ## Install
 
 ```bash
-yarn add bear-grid
+yarn add bear-styled-grid
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ in your index.js add
 
 ```tsx
 import {GridThemeProvider} from 'styled-bs-grid';
-import 'bear-grid/dist/index.css'
+import 'bear-styled-grid/dist/index.css'
 
 <GridThemeProvider gridTheme={{
           gridGutterWidth: 10,
@@ -49,7 +49,7 @@ import 'bear-grid/dist/index.css'
 
 use in your page/component:
 ```tsx
-import {Container, Row, Col, media} from 'bear-grid';
+import {Container, Row, Col, media} from 'bear-styled-grid';
 
 const MyPage = () => {
     return (
