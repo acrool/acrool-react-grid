@@ -1,4 +1,4 @@
-# react-styled-grid
+# bear-styled-grid
 
 > Most modern rwd grid system by react + styled-component
 
@@ -6,7 +6,7 @@
 [![NPM](https://img.shields.io/npm/v/bear-styled-grid.svg)](https://www.npmjs.com/package/bear-styled-grid)
 [![npm](https://img.shields.io/npm/dm/bear-styled-grid.svg)](https://www.npmjs.com/package/bear-styled-grid)
 
-This project [demo](https://imagine10255.github.io/react-styled-grid/)
+This project [demo](https://imagine10255.github.io/bear-styled-grid/)
 
 
 ## Install
@@ -75,7 +75,7 @@ const MyTitle = styled.div`
 
 There is also a codesandbox template that you can fork and play with it:
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-styled-grid-lqsn6)
+[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/bear-styled-grid-lqsn6)
 
 [Component and setup docs](./docs/component.md)
 
