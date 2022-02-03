@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.20](https://github.com/imagine10255/bear-styled-grid/compare/v1.0.19...v1.0.20) (2022-02-03)
+
+
+### Features
+
+* flex add className & style ([063083a](https://github.com/imagine10255/bear-styled-grid/commit/063083af17ff45b3f89e875ee5ab2c031f3d2be8))
+
 ### [1.0.19](https://github.com/imagine10255/bear-styled-grid/compare/v1.0.18...v1.0.19) (2022-01-31)
 
 
