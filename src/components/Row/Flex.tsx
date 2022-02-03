@@ -1,9 +1,12 @@
 import styled from 'styled-components/macro';
 import {EDirection, ERowAlign} from './types';
+import CSS from 'csstype';
 
 
 
 const Flex = styled.div<{
+    style?: CSS.Properties,
+    className?: string,
     direction?: EDirection
     vertical?: ERowAlign; // 垂直
     horizontal?: ERowAlign; // 水平
