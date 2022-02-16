@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.21](https://github.com/imagine10255/bear-styled-grid/compare/v1.0.20...v1.0.21) (2022-02-16)
+
+
+### Features
+
+* 新增 themeName ([f07681e](https://github.com/imagine10255/bear-styled-grid/commit/f07681e828f0d2c3f5ba8725a0ec1448fd10903e))
+
 ### [1.0.20](https://github.com/imagine10255/bear-styled-grid/compare/v1.0.19...v1.0.20) (2022-02-03)
 
 
