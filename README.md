@@ -1,18 +1,18 @@
-# bear-styled-grid
+# bear-react-grid
 
 > Most modern rwd grid system by react + styled-component
 
 
-[![NPM](https://img.shields.io/npm/v/bear-styled-grid.svg)](https://www.npmjs.com/package/bear-styled-grid)
-[![npm](https://img.shields.io/npm/dm/bear-styled-grid.svg)](https://www.npmjs.com/package/bear-styled-grid)
+[![NPM](https://img.shields.io/npm/v/bear-react-grid.svg)](https://www.npmjs.com/package/bear-react-grid)
+[![npm](https://img.shields.io/npm/dm/bear-react-grid.svg)](https://www.npmjs.com/package/bear-react-grid)
 
-This project [demo](https://imagine10255.github.io/bear-styled-grid/)
+This project [demo](https://imagine10255.github.io/bear-react-grid/)
 
 
 ## Install
 
 ```bash
-yarn add bear-styled-grid
+yarn add bear-react-grid
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ in your index.js add
 
 ```tsx
 import {GridThemeProvider} from 'styled-bs-grid';
-import 'bear-styled-grid/dist/index.css'
+import 'bear-react-grid/dist/index.css'
 
 <GridThemeProvider gridTheme={{
           gridGutterWidth: 10,
@@ -49,7 +49,7 @@ import 'bear-styled-grid/dist/index.css'
 
 use in your page/component:
 ```tsx
-import {Container, Row, Col, media} from 'bear-styled-grid';
+import {Container, Row, Col, media} from 'bear-react-grid';
 
 const MyPage = () => {
     return (
@@ -75,7 +75,7 @@ const MyTitle = styled.div`
 
 There is also a codesandbox template that you can fork and play with it:
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/bear-styled-grid-lqsn6)
+[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/bear-react-grid-lqsn6)
 
 [Component and setup docs](./docs/component.md)
 
