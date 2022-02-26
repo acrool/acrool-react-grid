@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.23](https://github.com/imagine10255/bear-react-grid/compare/v1.0.22...v1.0.23) (2022-02-26)
+
+
+### Features
+
+* change name ([762817f](https://github.com/imagine10255/bear-react-grid/commit/762817f6f7d675fb48707b80a96c8bba917dd88a))
+
 ### [1.0.22](https://github.com/imagine10255/bear-react-grid/compare/v1.0.21...v1.0.22) (2022-02-26)
 
 
