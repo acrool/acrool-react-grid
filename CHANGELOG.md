@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.22](https://github.com/imagine10255/bear-styled-grid/compare/v1.0.21...v1.0.22) (2022-02-26)
+
+
+### Features
+
+* change name bear-styled-grid -> bear-react-grid ([18fffb2](https://github.com/imagine10255/bear-styled-grid/commit/18fffb253a76c4e6bb9ba8eb2abab27d79bc6b1c))
+
 ### [1.0.21](https://github.com/imagine10255/bear-styled-grid/compare/v1.0.20...v1.0.21) (2022-02-16)
 
 
