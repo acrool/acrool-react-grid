@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/imagine10255/bear-react-grid/compare/v1.0.24-beta.0...v2.0.0) (2022-05-16)
+
+
+### Bug Fixes
+
+* 刪除 React.StrictMode (二次渲染) ([203a7b5](https://github.com/imagine10255/bear-react-grid/commit/203a7b599e0677de44074473135f981b4419f4ec))
+
 ### [1.0.24-beta.0](https://github.com/imagine10255/bear-react-grid/compare/v1.0.23...v1.0.24-beta.0) (2022-05-16)
 
 ### [1.0.23](https://github.com/imagine10255/bear-react-grid/compare/v1.0.22...v1.0.23) (2022-02-26)
