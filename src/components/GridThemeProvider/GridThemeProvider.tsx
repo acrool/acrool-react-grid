@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 import {ThemeProvider} from 'styled-components/macro';
 
 import {defaultGridTheme, themeName} from 'config';
@@ -9,6 +9,9 @@ interface IProps {
     gridTheme: Partial<IGridSetting>;
     children: React.ReactNode;
 }
+
+const ThemeProviderFixed = ThemeProvider as unknown as React.FC<PropsWithChildren<{ theme: any }>>;
+
 
 /**
  * Grid Theme Provider
@@ -34,7 +37,7 @@ const GridThemeProvider = (props: IProps) => {
         }
     };
 
-    return <ThemeProvider theme={composeGridTheme}>{children}</ThemeProvider>;
+    return <ThemeProviderFixed theme={composeGridTheme}>{children}</ThemeProviderFixed>;
 };
 
 export default GridThemeProvider;
