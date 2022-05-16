@@ -47,7 +47,7 @@
     "release:major": "standard-version -r major",
     "release:minor": "standard-version -r minor",
     "release:patch": "standard-version -r patch",
-    "release:alpha": "standard-version --prerelease alpha"
+    "release:beta": "standard-version --prerelease beta"
   },
   "resolutions": {
     "react-error-overlay": "6.0.9"
