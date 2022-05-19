@@ -22,11 +22,11 @@ yarn add bear-react-grid
 ```
 
 ## Usage
-in your index.js add  
-`see the example/src/index.js`
+in your App.js add  
+`see the example/src/App.js`
 
 ```tsx
-import {GridThemeProvider} from 'styled-bs-grid';
+import {GridThemeProvider} from 'bear-react-grid';
 import 'bear-react-grid/dist/index.css';
 
 <GridThemeProvider gridTheme={{
@@ -60,7 +60,7 @@ import {Container, Row, Col, media} from 'bear-react-grid';
 const MyPage = () => {
     return (
         <Container>
-            <MyTitle>styled-bs-grid</MyTitle>
+            <MyTitle>bear-react-grid</MyTitle>
             <Row>
                 <Col col>col2 (50%) </Col>
                 <Col col>col2 (50%) </Col>
