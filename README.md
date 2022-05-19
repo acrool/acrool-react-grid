@@ -27,7 +27,7 @@ in your index.js add
 
 ```tsx
 import {GridThemeProvider} from 'styled-bs-grid';
-import 'bear-react-grid/dist/index.css'
+import 'bear-react-grid/dist/index.css';
 
 <GridThemeProvider gridTheme={{
           gridGutterWidth: 10,
