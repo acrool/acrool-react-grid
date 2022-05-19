@@ -8,6 +8,12 @@
 
 This project [demo](https://imagine10255.github.io/bear-react-grid/)
 
+## Support
+
+React Version           | Bear React Grid Version | 
+--------------|:-----------------------:|
+React 18    |         v2.0.0          |
+React 17    |         v1.0.23         |  
 
 ## Install
 
