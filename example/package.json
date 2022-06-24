@@ -20,7 +20,8 @@
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
     "styled-components": "link:../node_modules/styled-components",
-    "typescript": "link:../node_modules/typescript"
+    "typescript": "link:../node_modules/typescript",
+    "eslint-config-react-app": "link:../node_modules/eslint-config-react-app"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "link:../node_modules/@testing-library/jest-dom",
