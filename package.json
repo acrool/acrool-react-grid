@@ -1,6 +1,6 @@
 {
   "name": "bear-react-grid",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Most modern rwd grid system by react + styled-component",
   "keywords": [
     "react",
@@ -80,7 +80,7 @@
     "cz-conventional-changelog": "3.3.0",
     "cz-customizable": "6.3.0",
     "standard-version": "9.3.0",
-    "eslint-config-react-app":  "7.0.1"
+    "eslint-config-react-app": "7.0.1"
   },
   "eslintConfig": {
     "extends": [
