@@ -662,7 +662,7 @@
   .order-xl-5{order: 5!important;}
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1540px) {
   /* display */
   .d-xxl-none {display: none !important;}
   .d-xxl-inline {display: inline !important;}
