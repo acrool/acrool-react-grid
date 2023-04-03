@@ -8,13 +8,6 @@
 
 This project [demo](https://imagine10255.github.io/bear-react-grid/)
 
-## Support Version Map
-
-React | React Scripts | Bear React Grid | 
-------|---------------|----------------:|
-18    | 5.0.1         |           2.0.0 |
-17    | 4.0.3         |          1.2.17 |
-
 ## Install
 
 ```bash

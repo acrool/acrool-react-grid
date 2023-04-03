@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import {GridThemeProvider, Col, Row, Container, media} from 'bear-react-grid';
 
 import 'bear-react-grid/dist/index.css';
@@ -34,8 +34,8 @@ function App() {
     };
 
     /**
-   * Nav
-   */
+     * Nav
+     */
     const renderNav = () => {
         return <Nav className="mb-5">
             <Container className="px-5 d-flex">
@@ -83,8 +83,8 @@ function App() {
     };
 
     /**
-   * News
-   */
+     * News
+     */
     const renderNews = () => {
         return <Container>
 
@@ -103,8 +103,8 @@ function App() {
 
 
     /**
-   * Card List
-   */
+     * Card List
+     */
     const renderCardList = () => {
         const texts = [
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.',
@@ -135,8 +135,8 @@ function App() {
 
 
     /**
-   * Footer
-   */
+     * Footer
+     */
     const renderFooter = () => {
         return <Footer className="py-5">
             <Container className="px-4 px-lg-5"><p className="m-0 text-center">Copyright © Your Website 2022</p></Container>
@@ -218,7 +218,7 @@ const Title = styled.h1`
 
 
 const NavLink = styled.a<{
-  isActive?: boolean
+    isActive?: boolean
 }>`
   display: block;
   padding: 0.5rem 1rem;

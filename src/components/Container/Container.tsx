@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {css} from 'styled-components/macro';
+import styled, {css} from 'styled-components';
 import media from 'media';
 import {mediaSizes, themeName} from 'config';
 

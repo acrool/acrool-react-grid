@@ -1,6 +1,6 @@
 import {MouseEvent, ReactNode} from 'react';
 import CSS from 'csstype';
-import {ThemeProps} from 'styled-components/macro';
+import {ThemeProps} from 'styled-components';
 import {themeName} from './config';
 
 

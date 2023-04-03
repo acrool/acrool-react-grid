@@ -1,4 +1,4 @@
-import {css, CSSObject, FlattenSimpleInterpolation} from 'styled-components/macro';
+import {css, CSSObject, FlattenSimpleInterpolation} from 'styled-components';
 import {SimpleInterpolation} from 'styled-components';
 import {themeName} from 'config';
 

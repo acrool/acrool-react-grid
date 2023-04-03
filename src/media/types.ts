@@ -1,4 +1,4 @@
-import {CSSObject} from 'styled-components/macro';
+import {CSSObject} from 'styled-components';
 
 export type TStrings = TemplateStringsArray | CSSObject
 

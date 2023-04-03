@@ -1,5 +1,5 @@
 import React, {PropsWithChildren} from 'react';
-import {ThemeProvider} from 'styled-components/macro';
+import {ThemeProvider} from 'styled-components';
 
 import {defaultGridTheme, themeName} from 'config';
 import {IGridSetting} from 'typings';
