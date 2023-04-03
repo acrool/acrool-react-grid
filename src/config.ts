@@ -14,7 +14,7 @@
  * }}>
  */
 import {ITheme} from './media';
-import {NoXsMediaSize} from './typings';
+import {NoXsMediaSize} from './types';
 
 const themeName = 'styledGrid';
 const defaultGridTheme: ITheme = {

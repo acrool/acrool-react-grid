@@ -2,7 +2,7 @@ import React, {PropsWithChildren} from 'react';
 import {ThemeProvider} from 'styled-components';
 
 import {defaultGridTheme, themeName} from 'config';
-import {IGridSetting} from 'typings';
+import {IGridSetting} from 'types';
 
 
 interface IProps {

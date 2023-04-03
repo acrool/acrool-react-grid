@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components';
 import media from 'media';
 import {mediaSizes, themeName} from 'config';
 
-import {FCChildrenProps, TStyledProps} from 'typings';
+import {FCChildrenProps, TStyledProps} from 'types';
 
 
 
