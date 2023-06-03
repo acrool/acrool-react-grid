@@ -14,6 +14,15 @@ This project [demo](https://imagine10255.github.io/bear-react-grid/)
 yarn add bear-react-grid
 ```
 
+in your packages. (Make the version of styled-component you use match the version of styled-component used in bear-react-gird)
+
+```json
+"resolutions": {
+   "styled-components": "5.3.9"
+}
+```
+
+
 ## Usage
 in your App.js add  
 `see the example/src/App.js`
