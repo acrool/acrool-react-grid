@@ -15,13 +15,6 @@ export default defineConfig({
         }),
         visualizer() as Plugin,
     ],
-    resolve: {
-        alias: {
-            'components': path.resolve(__dirname, 'src/components'),
-            'media': path.resolve(__dirname, 'src/media'),
-            'config': path.resolve(__dirname, 'src/config'),
-        }
-    },
     build: {
         sourcemap: process.env.NODE_ENV !== 'production',
         lib: {

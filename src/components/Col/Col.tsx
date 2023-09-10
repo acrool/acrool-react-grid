@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import media from 'media';
-import {mediaSizes, themeName} from 'config';
+import media from '../../media';
+import {mediaSizes, themeName} from '../../config';
 
-import {FCChildrenProps, TStyledProps} from 'types';
+import {FCChildrenProps, TStyledProps} from '../../types';
 
 import getCss from './css';
 import {TColumn} from './types';

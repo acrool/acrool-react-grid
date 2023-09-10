@@ -1,6 +1,6 @@
 import {css, CSSObject, FlattenSimpleInterpolation} from 'styled-components';
 import {SimpleInterpolation} from 'styled-components';
-import {themeName} from 'config';
+import {themeName} from '../config';
 
 import {EMediaSize, TMedia, TStrings} from './types';
 
