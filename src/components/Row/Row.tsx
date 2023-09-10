@@ -2,7 +2,6 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import {ERowAlign} from './types';
 import media from '../../media';
-
 import {FCChildrenProps, TStyledProps} from '../../types';
 import {mediaSizes, themeName} from '../../config';
 
@@ -55,8 +54,8 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
     return mediaSizes
         .map(sizeName => {
             return media[sizeName]`
-            margin-left: -${props.theme[themeName]?.gridGutterWidthMedia[sizeName]}px;
-            margin-right: -${props.theme[themeName]?.gridGutterWidthMedia[sizeName]}px;
+            --bs-gutter-x: ${props.theme[themeName]?.gridGutterWidthMedia[sizeName]};
+            --bs-gutter-y: 0;
         `;
         });
 };
@@ -71,22 +70,29 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
  * align-items 預設加上 flex-start, 會讓鄰居Col高度不會一致
  */
 const Row = styled.div.attrs((props: TStyledProps<IProps>) => ({
-    'data-grid': 'row',
-    'data-debug': generateDebugData(props),
+    'data-row': props.noGutters ? 'no-gutter': '',
 }))`
+  
+  --bs-gutter-x: 1.5rem;
+  
   box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
   padding-inline-start: 0; // 避免 ul 預設樣式位移
   
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  // bs5
+  
+  
+  
   
   
 
   ${(props: TStyledProps<IProps>) => css`
-     margin-right: ${getRowMargin(props)};
-     margin-left: ${getRowMargin(props)};
+     // margin-right: ${getRowMargin(props)};
+     // margin-left: ${getRowMargin(props)};
      
      justify-content: ${props.horizontal ? props.horizontal : undefined};
      align-items: ${props.vertical ? props.vertical : undefined};

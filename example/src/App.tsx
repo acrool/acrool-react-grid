@@ -8,7 +8,7 @@ import 'bear-react-grid/dist/index.css';
 function App() {
     const defaultTheme = {
         gridColumns: 24,
-        gridGutterWidth: 15,
+        gridGutterWidth: '1.5rem',
         gridBreakpoints: {
             xs: 0,
             sm: 576,
@@ -25,11 +25,11 @@ function App() {
             xxl: 1540,
         },
         gridGutterWidthMedia: {
-            sm: 15,
-            md: 15,
-            lg: 15,
-            xl: 15,
-            xxl: 15,
+            sm: '1.5rem',
+            md: '1.7rem',
+            lg: '2rem',
+            xl: '2.2rem',
+            xxl: '2.5rem',
         }
     };
 

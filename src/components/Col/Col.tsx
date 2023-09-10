@@ -39,9 +39,6 @@ const suffix = (value: any) => {
  * @param props
  */
 const generateDebugData = (props: TStyledProps<IProps>) => {
-    if(process.env.NODE_ENV === 'production'){
-        return undefined;
-    }
     return [
         props.col && `col${suffix(props.col)}`,
         props.sm && `col-sm${suffix(props.sm)}`,
@@ -64,9 +61,6 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
     return mediaSizes
         .map(sizeName => {
             return media[sizeName]`
-             padding-right: ${props.theme[themeName]?.gridGutterWidthMedia[sizeName]}px;
-             padding-left: ${props.theme[themeName]?.gridGutterWidthMedia[sizeName]}px;
-
             ${typeof props[sizeName] !== 'undefined' && css`
                 ${getCss.col(props[sizeName], props.theme[themeName]?.gridColumns)};
             `}
@@ -83,8 +77,7 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
  *
  */
 const Col = styled.div.attrs((props: TStyledProps<IProps>) => ({
-    'data-grid': 'col',
-    'data-debug': generateDebugData(props),
+    'data-col': generateDebugData(props),
 }))`
   box-sizing: border-box;
   position: relative;
@@ -92,8 +85,6 @@ const Col = styled.div.attrs((props: TStyledProps<IProps>) => ({
   min-height: 1px;
 
   ${(props: TStyledProps<IProps>) => css`
-     padding-right: ${props.theme[themeName]?.gridGutterWidth}px;
-     padding-left: ${props.theme[themeName]?.gridGutterWidth}px;
 
      >[data-grid=row]{
         flex: 0 1 100%;
