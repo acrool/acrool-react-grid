@@ -39,7 +39,7 @@ function App() {
      */
     const renderNav = () => {
         return <Nav className="mb-5">
-            <Container fluid className="d-flex">
+            <Container fluid className="d-flex d-md-">
                 <NavbarBrand>Bear React Grid</NavbarBrand>
 
                 <NavbarNav className="ml-auto my-0 d-none d-md-flex">
@@ -117,9 +117,8 @@ function App() {
             <Row noGutters>
                 {texts.map((text, index) => {
                     return <Col key={`card_${index}`}
-                        className="mb-5"
+                        className="la"
                         md={8}
-
                     >
                         <Card className="h-100">
                             <CardBody>
@@ -142,7 +141,7 @@ function App() {
                     >
                         <Card className="h-100">
                             <CardBody>
-                                <CardTitle>Card One</CardTitle>
+                                <CardTitle className="mb-md-5">teCard One</CardTitle>
                                 <CardText>{text}</CardText>
                             </CardBody>
                             <CardFooter>
