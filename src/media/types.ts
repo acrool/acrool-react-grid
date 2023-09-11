@@ -1,6 +1,8 @@
 import {CSSObject} from 'styled-components';
 
 export type TStrings = TemplateStringsArray | CSSObject
+export type sizeUnit = 'px' | 'rem';
+export type TGutterWidth = number|`${number}${sizeUnit}`;
 
 export enum EMediaSize {
   xs = 'xs',
@@ -19,8 +21,16 @@ export interface IBreakpoints {
   [EMediaSize.xl]: number
   [EMediaSize.xxl]: number
 }
+export interface IGutterBreakpoints {
+  [EMediaSize.xs]: TGutterWidth
+  [EMediaSize.sm]: TGutterWidth
+  [EMediaSize.md]: TGutterWidth
+  [EMediaSize.lg]: TGutterWidth
+  [EMediaSize.xl]: TGutterWidth
+  [EMediaSize.xxl]: TGutterWidth
+}
 export type TContainerMaxWidths = Omit<IBreakpoints, EMediaSize.xs>
-export type TGridGutterWidthMedia = Omit<IBreakpoints, EMediaSize.xs>
+export type TGridGutterWidthMedia = Omit<IGutterBreakpoints, EMediaSize.xs>
 
 export type TMedia = Omit<
   {
@@ -30,7 +40,7 @@ export type TMedia = Omit<
 > & { px2vw: Function }
 
 export interface ITheme {
-  gridGutterWidth: number
+  gridGutterWidth: TGutterWidth
   gridColumns: number
   gridBreakpoints: IBreakpoints
   containerMaxWidths: TContainerMaxWidths

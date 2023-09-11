@@ -1,4 +1,4 @@
-# bear-react-grid
+````# bear-react-grid
 
 > Most modern rwd grid system by react + styled-component
 
@@ -91,3 +91,4 @@ There is also a codesandbox template that you can fork and play with it:
 ## License
 
 MIT © [imagine10255](https://github.com/imagine10255)
+````
