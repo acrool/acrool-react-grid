@@ -35,6 +35,7 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
     return mediaSizes
         .map(sizeName => {
             return media[sizeName]`
+            --bear-gutter-x: ${props.theme[themeName]?.gridGutterWidth}; 
             max-width: ${props.theme[themeName]?.containerMaxWidths[sizeName]}px;
         `;
         });
@@ -51,17 +52,17 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
  * 元件 Container
  */
 const Container = styled.div.attrs((props: TStyledProps<IProps>) => ({
-    'data-grid': 'container',
-    'data-debug': generateDebugData(props),
+    'data-container': props.fluid ? 'fluid': '',
 }))`
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-
+  box-sizing: border-box;
+  padding-right: var(--bear-gutter-x);
+  padding-left: var(--bear-gutter-x);
+  
   ${(props: TStyledProps<IProps>) => css`
-     box-sizing: border-box;
-     padding-right: ${props.theme[themeName]?.gridGutterWidth}px;
-     padding-left: ${props.theme[themeName]?.gridGutterWidth}px;
+     --bear-gutter-x: ${props.theme[themeName]?.gridGutterWidth}; 
 
      ${!props.fluid && css`
         ${generateRWDStyled(props)};

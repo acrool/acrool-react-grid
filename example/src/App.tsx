@@ -25,11 +25,11 @@ function App() {
             xxl: 1540,
         },
         gridGutterWidthMedia: {
-            sm: '1.5rem',
-            md: '1.7rem',
-            lg: '2rem',
-            xl: '2.2rem',
-            xxl: '2.5rem',
+            sm: '0.75rem',
+            md: '0.85rem',
+            lg: '0.95rem',
+            xl: '1.05rem',
+            xxl: '1.15rem',
         }
     };
 
@@ -115,7 +115,11 @@ function App() {
         return (<Container>
             <Row>
                 {texts.map((text, index) => {
-                    return <Col md={8} key={`card_${index}`} className="mb-5">
+                    return <Col key={`card_${index}`} 
+                        className="mb-5"
+                        md={8}
+
+                    >
                         <Card className="h-100">
                             <CardBody>
                                 <CardTitle>Card One</CardTitle>
@@ -127,7 +131,25 @@ function App() {
                         </Card>
                     </Col>;
                 })}
+            </Row>
+            <Row>
+                {texts.map((text, index) => {
+                    return <Col key={`card_${index}`}
+                        className="mb-5"
+                        md={8}
 
+                    >
+                        <Card className="h-100">
+                            <CardBody>
+                                <CardTitle>Card One</CardTitle>
+                                <CardText>{text}</CardText>
+                            </CardBody>
+                            <CardFooter>
+                                <a href="#!">More Info</a>
+                            </CardFooter>
+                        </Card>
+                    </Col>;
+                })}
             </Row>
         </Container>);
 

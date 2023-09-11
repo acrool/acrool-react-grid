@@ -11,24 +11,12 @@ const css: ColCss = {
         switch (column) {
         case true:
             return `
-          display: block;
-          flex-basis: 0;
-          flex-grow: 1;
+          flex: 1 0 0%;
         `;
         case EColType.auto:
             return `
-          display: block;
           flex: 0 0 auto;
           width: auto;
-          max-width: none;
-        `;
-        case EColType.hidden:
-            return `
-          display: none;
-        `;
-        case EColType.visible:
-            return `
-          display: block;
         `;
         default:
             const columnNumber = (typeof column === 'number' ? column : 0);

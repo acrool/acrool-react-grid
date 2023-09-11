@@ -18,7 +18,7 @@ import {NoXsMediaSize} from './types';
 
 const themeName = 'styledGrid';
 const defaultGridTheme: ITheme = {
-    gridGutterWidth: 10,
+    gridGutterWidth: '10px',
     gridColumns: 24,
     gridBreakpoints: {
         xs: 0,

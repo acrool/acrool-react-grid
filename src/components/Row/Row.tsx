@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {ERowAlign} from './types';
 import media from '../../media';
 import {FCChildrenProps, TStyledProps} from '../../types';
 import {mediaSizes, themeName} from '../../config';
@@ -9,41 +8,9 @@ import {mediaSizes, themeName} from '../../config';
 
 export interface IProps extends FCChildrenProps{
     noGutters?: boolean;
-    vertical?: ERowAlign;
-    horizontal?: ERowAlign;
+    vertical?: 'top'|'center'|'bottom';
+    horizontal?: 'left'|'center'|'right';
 }
-
-
-/**
- * Get Row Margin
- * @param props
- * @returns {*}
- */
-const getRowMargin = (props: TStyledProps<IProps>) => {
-    if(props.noGutters){
-        return 0;
-    }
-    return `-${props.theme[themeName]?.gridGutterWidth}px`;
-};
-
-
-
-/**
- * 產生 Debug 資訊
- * @param props
- */
-const generateDebugData = (props: TStyledProps<IProps>) => {
-    if(process.env.NODE_ENV === 'production'){
-        return undefined;
-    }
-    return  [
-        'row',
-        props.noGutters ? 'no-gutter' : '',
-    ]
-        .filter(Boolean)
-        .join(' ');
-
-};
 
 
 /**
@@ -61,54 +28,19 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
 };
 
 
-
-
-
-
 /**
  * Row Component
  * align-items 預設加上 flex-start, 會讓鄰居Col高度不會一致
+ * ps: 設定會 width 100% 會產生 margin 抵銷失敗
  */
 const Row = styled.div.attrs((props: TStyledProps<IProps>) => ({
     'data-row': props.noGutters ? 'no-gutter': '',
+    'data-horizontal': props.horizontal ? props.horizontal: undefined,
+    'data-vertical': props.vertical ? props.vertical: undefined,
 }))`
-  
-  --bs-gutter-x: 1.5rem;
-  
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
-  padding-inline-start: 0; // 避免 ul 預設樣式位移
-  
-  // bs5
-  
-  
-  
-  
-  
-
   ${(props: TStyledProps<IProps>) => css`
-     // margin-right: ${getRowMargin(props)};
-     // margin-left: ${getRowMargin(props)};
-     
-     justify-content: ${props.horizontal ? props.horizontal : undefined};
-     align-items: ${props.vertical ? props.vertical : undefined};
-
-     // ps: 設定會 width 100% 會產生 margin 抵銷失敗
-
-
      ${!props.noGutters && css`
-        ${generateRWDStyled(props)}
-     `}
-
-     ${props.noGutters && css`
-        >[data-grid=col]{
-            padding-right: 0;
-            padding-left: 0;
-        }
+       ${generateRWDStyled(props)}
      `}
  `}
 `;

@@ -83,16 +83,10 @@ const Col = styled.div.attrs((props: TStyledProps<IProps>) => ({
   position: relative;
   width: 100%;
   min-height: 1px;
+  min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
 
   ${(props: TStyledProps<IProps>) => css`
-
-     >[data-grid=row]{
-        flex: 0 1 100%;
-    }
-
-     min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
      ${props.col && getCss.col(props.col, props.theme[themeName]?.gridColumns)};
-
      ${generateRWDStyled(props)};
  `}
 `;

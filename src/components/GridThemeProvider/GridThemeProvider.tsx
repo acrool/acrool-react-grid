@@ -1,5 +1,5 @@
 import React, {PropsWithChildren} from 'react';
-import {ThemeProvider} from 'styled-components';
+import {ThemeProvider, createGlobalStyle} from 'styled-components';
 
 import {defaultGridTheme, themeName} from '../../config';
 import {IGridSetting} from '../../types';
@@ -37,7 +37,15 @@ const GridThemeProvider = (props: IProps) => {
         }
     };
 
-    return <ThemeProviderFixed theme={composeGridTheme}>{children}</ThemeProviderFixed>;
+    return <ThemeProviderFixed theme={composeGridTheme}>
+        {children}
+        <GlobalStyled/>
+    </ThemeProviderFixed>;
 };
 
 export default GridThemeProvider;
+
+
+const GlobalStyled = createGlobalStyle`
+    
+`;
