@@ -1,22 +1,12 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import media from '../../media';
-import {mediaSizes, themeName} from '../../config';
+import {themeName} from '../../config';
 
-import {FCChildrenProps, TStyledProps} from '../../types';
+import {TStyledProps, IColProps} from '../../types';
 
 import getCss from './css';
-import {TColumn} from './types';
+import {generateRWDStyled} from './utils';
 
-
-interface IProps extends FCChildrenProps{
-    col?: TColumn;
-    sm?: TColumn;
-    md?: TColumn;
-    lg?: TColumn;
-    xl?: TColumn;
-    xxl?: TColumn;
-}
 
 
 /**
@@ -38,7 +28,7 @@ const suffix = (value: any) => {
  * 產生 Debug 資訊
  * @param props
  */
-const generateDebugData = (props: TStyledProps<IProps>) => {
+const generateDebugData = (props: TStyledProps<IColProps>) => {
     return [
         props.col && `col${suffix(props.col)}`,
         props.sm && `col-sm${suffix(props.sm)}`,
@@ -53,20 +43,6 @@ const generateDebugData = (props: TStyledProps<IProps>) => {
 
 
 
-/**
- * 產生 RWD 樣式
- * @param props
- */
-const generateRWDStyled = (props: TStyledProps<IProps>) => {
-    return mediaSizes
-        .map(sizeName => {
-            return media[sizeName]`
-            ${typeof props[sizeName] !== 'undefined' && css`
-                ${getCss.col(props[sizeName], props.theme[themeName]?.gridColumns)};
-            `}
-    `;
-        });
-};
 
 /**
  * Col Component
@@ -76,7 +52,7 @@ const generateRWDStyled = (props: TStyledProps<IProps>) => {
  * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
  *
  */
-const Col = styled.div.attrs((props: TStyledProps<IProps>) => ({
+const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
     'data-col': generateDebugData(props),
 }))`
   box-sizing: border-box;
@@ -85,7 +61,7 @@ const Col = styled.div.attrs((props: TStyledProps<IProps>) => ({
   min-height: 1px;
   min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
 
-  ${(props: TStyledProps<IProps>) => css`
+  ${(props: TStyledProps<IColProps>) => css`
      ${props.col && getCss.col(props.col, props.theme[themeName]?.gridColumns)};
      ${generateRWDStyled(props)};
  `}

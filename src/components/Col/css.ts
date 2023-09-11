@@ -1,7 +1,7 @@
-import {EColType, TColumn} from './types';
+import {TCol} from '../../types';
 
 type ColCss = {
-    col: (column: TColumn, gridColumns: number) => string
+    col: (column: TCol, gridColumns: number) => string
 };
 
 const css: ColCss = {
@@ -13,7 +13,7 @@ const css: ColCss = {
             return `
           flex: 1 0 0%;
         `;
-        case EColType.auto:
+        case 'auto':
             return `
           flex: 0 0 auto;
           width: auto;

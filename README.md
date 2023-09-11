@@ -1,12 +1,15 @@
 # bear-react-grid
 
-> Most modern rwd grid system by react + styled-component
-
+> Table library based for Reactjs
 
 [![NPM](https://img.shields.io/npm/v/bear-react-grid.svg)](https://www.npmjs.com/package/bear-react-grid)
 [![npm](https://img.shields.io/npm/dm/bear-react-grid.svg)](https://www.npmjs.com/package/bear-react-grid)
 
-This project [demo](https://imagine10255.github.io/bear-react-grid/)
+<div align="center">
+    <img src="https://github.com/imagine10255/bear-react-grid/blob/main/docs/table.jpg" alt="Table library based for Reactjs" />
+</div>
+
+
 
 ## Install
 
@@ -14,78 +17,156 @@ This project [demo](https://imagine10255.github.io/bear-react-grid/)
 yarn add bear-react-grid
 ```
 
-in your packages. (Make the version of styled-component you use match the version of styled-component used in bear-react-gird)
-
-```json
-"resolutions": {
-   "styled-components": "5.3.9"
-}
-```
-
-
 ## Usage
-in your App.js add  
-`see the example/src/App.js`
 
-```tsx
-import {GridThemeProvider} from 'bear-react-grid';
-import 'bear-react-grid/dist/index.css';
+add in your index.tsx
+```tst
+import "bear-react-grid/dist/index.css";
 
-<GridThemeProvider gridTheme={{
-          gridGutterWidth: 10,
-          gridColumns: 24,
-          gridBreakpoints: {
-              xs: 0,
-              sm: 576,
-              md: 768,
-              lg: 992,
-              xl: 1200,
-              xxl: 1540,
-          },
-          containerMaxWidths: {
-              xs: 540,
-              sm: 540,
-              md: 720,
-              lg: 960,
-              xl: 1140,
-              xxl: 1141,
-          },
-      }}>
-    <App/>
-</GridThemeProvider>
 ```
 
-use in your page/component:
+then in your page
 ```tsx
-import {Container, Row, Col, media} from 'bear-react-grid';
+import {Table} from 'bear-react-grid';
 
-const MyPage = () => {
-    return (
-        <Container>
-            <MyTitle>bear-react-grid</MyTitle>
-            <Row>
-                <Col col>col2 (50%) </Col>
-                <Col col>col2 (50%) </Col>
-            </Row>
-        </Container>
-    );
+
+const getPageData = (currentPage: number, pageLimit: number) => {
+    const pageStart = (currentPage -1) * pageLimit;
+    return data.slice(pageStart, pageStart + pageLimit );
 }
 
-// use rwd
-const MyTitle = styled.div`
+
+const BaseUsed = () => {
+
+    const [isFetching, setIsFetching] = useState(false);
+    const [paginateMeta, setPaginateMeta] = useState<IPaginateMeta>({
+        currentPage: 1,
+        pageLimit: 8,
+        sort: {field: 'name', orderBy: 'DESC'},
+    });
+    const [paginateData, setPaginateData] = useState<IPaginateData[]>(getPageData(paginateMeta.currentPage, paginateMeta.pageLimit));
+    const [paginateInfo, setPaginateInfo] = useState<IPaginateInfo>({
+        totalItems: data.length,
+        totalPages: Math.ceil(data.length / paginateMeta.pageLimit),
+    });
+
+
+
+    /**
+     * 查詢分頁
+     */
+    const handleFetchPaginate = useCallback((meta: IPaginateMeta) => {
+        // 取得查詢項目
+        setIsFetching(true);
+        setPaginateMeta(meta);
+
+        setTimeout(() => {
+            setPaginateData(getPageData(meta.currentPage, meta.pageLimit));
+            setIsFetching(false);
+        }, 400);
+    }, []);
+
+
+
+    return <TableContainer>
+        <Table
+            isDark={false}
+            isFetching={isFetching}
+            gap="8px"
+            isStickyHeader
+            title={{
+                plus:     {text: '',       col: 50,      titleAlign: 'center', dataAlign: 'center'},
+                avatar:   {text: '#',      col: 50,      titleAlign: 'center', dataAlign: 'center'},
+                name:     {text: 'Name',   col: 'auto',  isEnableSort: true},
+                amount:   {text: 'Amount', col: '80px',  titleAlign: 'right',  dataAlign: 'right'},
+                role:     {text: 'Role',   col: '120px'},
+                createdAt:{text: 'Crated', col: '110px', isEnableSort: true},
+                joined:  {text: 'Joined',  col: '80px'},
+            }}
+            footer={{
+                plus: {value: 'Total'},
+                name: {value: 'Total'},
+                amount: {value: calcAmount(data), dataAlign: 'right'},
+            }}
+            data={data.map(row => {
+                return {
+                    id: row.id,
+                    // detail: <>
+                    //     <div>{row.name}</div>
+                    //     <div>{row.amount}</div>
+                    //     <div>{row.role}</div>
+                    // </>,
+                    detail: {
+                        config: {plus: {colSpan: 2, dataAlign: 'right'}},
+                        data: [
+                            {plus: 'Deposit', amount: `$ ${formatCurrency(123456)}`},
+                            {plus: 'Withdrawal', amount: `$ ${formatCurrency(row.subAmount)}`},
+                        ],
+                    },
+                    field: {
+                        plus: (args) => <CollapseButton
+                            type="button" onClick={args.collapse}
+                            data-active={args.isActive ? '':undefined}
+                        >
+                            {args.isActive ? '-': '+'}
+                        </CollapseButton>,
+                        avatar: <Avatar src={row.avatar}/>,
+                        name: row.name,
+                        role: row.role,
+                        createdAt: dayjs(row.createdAt).format('MM/DD'),
+                        joined: row.isJoined ? 'Y':'N',
+                        amount: `$ ${formatCurrency(row.amount)}`,
+                    },
+                };
+            })}
+            onChangePage={handleFetchPaginate}
+            paginateMeta={paginateMeta}
+            paginateInfo={paginateInfo}
+        />
+    </TableContainer>
+};
+
+
+
+const CollapseButton = styled.button`
+    width: 20px;
+    height: 20px;
+    background-color: #535bf2;
+    border-radius: 4px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 12px;
-    ${media.md`
-        font-size: 14px;
-    `}
-`
+
+    &[data-active] {
+        background-color: #f25353;
+    }
+`;
+
+
+const Avatar = styled.img`
+   border-radius: 99em;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+`;
+
+const TableContainer = styled.div`
+    --primary-color: #17a254;
+
+    .${elClassNames.root} {
+        --header-line-height: 45px;
+        --body-line-height: 45px;
+    }
+`;
 
 ```
+
 
 There is also a codesandbox template that you can fork and play with it:
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/bear-react-grid-lqsn6)
-
-[Component and setup docs](./docs/component.md)
+[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/bear-react-grid-n0s8su?file=/src/App.tsx)
 
 
 ## License

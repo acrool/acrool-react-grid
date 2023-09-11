@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import {GridThemeProvider, Col, Row, Container, media} from 'bear-react-grid';
+import {GridThemeProvider, Col, Row, Container, media, TGridTheme} from 'bear-react-grid';
 
+import './index.css';
 import 'bear-react-grid/dist/index.css';
 
 
 function App() {
-    const defaultTheme = {
+    const defaultTheme: TGridTheme = {
         gridColumns: 24,
         gridGutterWidth: '1.5rem',
         gridBreakpoints: {
@@ -38,8 +39,8 @@ function App() {
      */
     const renderNav = () => {
         return <Nav className="mb-5">
-            <Container className="px-5 d-flex">
-                <NavbarBrand>Start Bootstrap</NavbarBrand>
+            <Container fluid className="d-flex">
+                <NavbarBrand>Bear React Grid</NavbarBrand>
 
                 <NavbarNav className="ml-auto my-0 d-none d-md-flex">
                     <NavItem>
@@ -113,16 +114,16 @@ function App() {
         ];
 
         return (<Container>
-            <Row>
+            <Row noGutters>
                 {texts.map((text, index) => {
-                    return <Col key={`card_${index}`} 
+                    return <Col key={`card_${index}`}
                         className="mb-5"
                         md={8}
 
                     >
                         <Card className="h-100">
                             <CardBody>
-                                <CardTitle>Card One</CardTitle>
+                                <CardTitle>no Gutters</CardTitle>
                                 <CardText>{text}</CardText>
                             </CardBody>
                             <CardFooter>
@@ -188,12 +189,12 @@ const StyledCol =styled(Col)`
 const Footer = styled.footer`
   background-color: rgb(33, 37, 41);
   color: #97e4ff;
-  
+
   ${media.md`
       color: #fff;
   `}
-  
-  
+
+
 
 `;
 
@@ -246,8 +247,8 @@ const NavLink = styled.a<{
   padding: 0.5rem 1rem;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  color: ${props => props.isActive ? '#fff' : 'rgba(255, 255, 255, 0.55)'}; 
-  
+  color: ${props => props.isActive ? '#fff' : 'rgba(255, 255, 255, 0.55)'};
+
 `;
 
 const NavItem = styled.li`
@@ -255,35 +256,35 @@ const NavItem = styled.li`
 `;
 
 const NavbarNav = styled.ul`
-   flex: 1;
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-end;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 `;
 
 const NavbarBrand = styled.div`
-  padding-top: 0.3125rem;
+    padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
     margin-right: 1rem;
     font-size: 1.25rem;
     text-decoration: none;
     white-space: nowrap;
-    
+
     color: #fff;
 `;
 
 
 const Nav = styled.nav`
-   background-color: rgb(33, 37, 41);
-   color: #fff;
-   
-     flex-wrap: nowrap;
-    justify-content: flex-start;
-    
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    background-color: rgb(33, 37, 41);
+    color: #fff;
+
+    //flex-wrap: nowrap;
+    //justify-content: flex-start;
+
+    //position: relative;
+    //display: flex;
+    //align-items: center;
+    //padding-top: 0.5rem;
+    //padding-bottom: 0.5rem;
 
 `;
