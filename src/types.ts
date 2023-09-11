@@ -1,4 +1,4 @@
-import {MouseEvent, ReactNode} from 'react';
+import React, {MouseEvent, ReactNode} from 'react';
 import CSS from 'csstype';
 import {ThemeProps, CSSObject} from 'styled-components';
 import {themeName} from './config';
@@ -77,8 +77,13 @@ export interface ITheme {
 /** -------------------------------
  *             GirdProvide
  * ------------------------------ */
+export interface IGridThemeProviderProps {
+    gridTheme: Partial<IGridSetting>
+    children: React.ReactNode
+}
+
 export interface IGridSetting {
-    gridGutterWidth: number
+    gridGutterWidth: TGutterWidth
     gridColumns: number
     gridBreakpoints: IBreakpoints
     containerMaxWidths: TContainerMaxWidths

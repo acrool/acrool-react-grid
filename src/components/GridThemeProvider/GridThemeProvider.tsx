@@ -1,15 +1,12 @@
 import React, {PropsWithChildren} from 'react';
-import {ThemeProvider, createGlobalStyle} from 'styled-components';
+import {ThemeProvider, createGlobalStyle, css} from 'styled-components';
 
 import {defaultGridTheme, themeName} from '../../config';
-import {IGridSetting} from '../../types';
+import {TStyledProps, TThemeProps, IGridThemeProviderProps} from '../../types';
+import {generateRWDStyled} from './utils';
 import '../../styles.css';
 
 
-interface IProps {
-    gridTheme: Partial<IGridSetting>
-    children: React.ReactNode
-}
 
 const ThemeProviderFixed = ThemeProvider as unknown as React.FC<PropsWithChildren<{ theme: any }>>;
 
@@ -23,7 +20,7 @@ const ThemeProviderFixed = ThemeProvider as unknown as React.FC<PropsWithChildre
  *          <Container>, <Row>, <Col> ...then eat this setting
  *     </GridThemeProvider>
  */
-const GridThemeProvider = (props: IProps) => {
+const GridThemeProvider = (props: IGridThemeProviderProps) => {
     const {gridTheme, children} = props;
     const {gridBreakpoints, containerMaxWidths, gridGutterWidthMedia, ...baseDefaultTheme} = defaultGridTheme;
 
@@ -48,6 +45,20 @@ export default GridThemeProvider;
 
 
 const GlobalStyled = createGlobalStyle`
+    :root{
+        --bear-spacer: 1rem;
+        --bear-spacer-1: calc(1rem * .25);
+        --bear-spacer-2: calc(1rem * .5);
+        --bear-spacer-3: calc(1rem);
+        --bear-spacer-4: calc(1rem * 1.5);
+        --bear-spacer-5: calc(1rem * 3);
+    }
+
+    ${(props: TStyledProps<TThemeProps>) => css`
+        ${generateRWDStyled(props)}
+    `}
+
+
 
     [data-container]{
         width: 100%;
