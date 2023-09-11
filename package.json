@@ -1,11 +1,14 @@
 {
   "name": "bear-react-grid",
   "version": "5.0.0-alpha.0",
-  "description": "Table library based for Reactjs",
+  "description": "Most modern rwd grid system by react + styled-component",
   "keywords": [
-    "react",
-    "typescript",
-    "table"
+      "react",
+      "typescript",
+      "flexbox",
+      "styled-component",
+      "bootstrap",
+      "grid-system"
   ],
   "private": false,
   "type": "module",

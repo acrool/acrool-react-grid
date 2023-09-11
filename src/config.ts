@@ -16,7 +16,7 @@
 import {ITheme} from './media';
 import {NoXsMediaSize} from './types';
 
-const themeName = 'bearReactGrid';
+const themeName = 'styledGrid';
 const defaultGridTheme: ITheme = {
     gridGutterWidth: 10,
     gridColumns: 24,
