@@ -2,7 +2,7 @@ import {CSSObject} from 'styled-components';
 
 export type TStrings = TemplateStringsArray | CSSObject
 export type sizeUnit = 'px' | 'rem';
-export type TGutterWidth = number|`${number}${sizeUnit}`;
+export type TGutterWidth = `${number}${sizeUnit}`;
 
 export enum EMediaSize {
   xs = 'xs',
