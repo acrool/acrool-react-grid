@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {GridThemeProvider, Col, Row, Container, media, TGridTheme} from 'bear-react-grid';
+import {GridThemeProvider, Col, Row, Container, Grid, GridCol, media, TGridTheme} from 'bear-react-grid';
 
 import './index.css';
 import 'bear-react-grid/dist/index.css';
@@ -9,7 +9,7 @@ import 'bear-react-grid/dist/index.css';
 function App() {
     const defaultTheme: TGridTheme = {
         gridColumns: 24,
-        gridGutterWidth: '1.5rem',
+        gridGutterWidth: '0.625rem',
         gridBreakpoints: {
             xs: 0,
             sm: 576,
@@ -26,11 +26,11 @@ function App() {
             xxl: 1540,
         },
         gridGutterWidthMedia: {
-            sm: '0.75rem',
-            md: '0.85rem',
-            lg: '0.95rem',
-            xl: '1.05rem',
-            xxl: '1.15rem',
+            sm: '0.625rem',
+            md: '0.625rem',
+            lg: '0.625rem',
+            xl: '0.625rem',
+            xxl: '0.625rem',
         }
     };
 
@@ -121,13 +121,13 @@ function App() {
                         md={8}
                     >
                         <Card className="h-100">
-                            <CardBody>
+                            <Grid col={2} row={4} >
                                 <CardTitle>no Gutters</CardTitle>
                                 <CardText>{text}</CardText>
-                            </CardBody>
-                            <CardFooter>
-                                <a href="#!">More Info</a>
-                            </CardFooter>
+                                <CardText>{text}</CardText>
+                                <CardText>{text}</CardText>
+                            </Grid>
+
                         </Card>
                     </Col>;
                 })}

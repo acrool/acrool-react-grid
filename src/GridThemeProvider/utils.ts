@@ -1,6 +1,6 @@
-import {TStyledProps, IRowProps, NoXsMediaSize} from '../../types';
-import {mediaSizes} from '../../config';
-import media from '../../media';
+import {TStyledProps, IRowProps, NoXsMediaSize} from '../types';
+import {mediaSizes} from '../config';
+import media from '../media';
 
 
 const renderMarginStyle = (sizeName: NoXsMediaSize) => {

@@ -11,7 +11,7 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
         .map(sizeName => {
             return media[sizeName]`
             --bear-gutter-x: ${props.theme[themeName]?.gridGutterWidthMedia[sizeName]};
-            --bs-gutter-y: 0;
+            --bear-gutter-y: 0;
         `;
         });
 };

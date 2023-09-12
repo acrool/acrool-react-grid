@@ -1,10 +1,10 @@
 import React, {PropsWithChildren} from 'react';
 import {ThemeProvider, createGlobalStyle, css} from 'styled-components';
 
-import {defaultGridTheme, themeName} from '../../config';
-import {TStyledProps, TThemeProps, IGridThemeProviderProps} from '../../types';
+import {defaultGridTheme, themeName} from '../config';
+import {TStyledProps, TThemeProps, IGridThemeProviderProps} from '../types';
 import {generateRWDStyled} from './utils';
-import '../../styles.css';
+import '../styles.css';
 
 
 
@@ -70,7 +70,7 @@ const GlobalStyled = createGlobalStyle`
     }
 
     [data-row]{
-        --bear-gutter-x: 1.5rem;
+        --bear-gutter-x: ${props => props.theme[themeName]?.gridGutterWidth});
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
@@ -107,5 +107,19 @@ const GlobalStyled = createGlobalStyle`
         padding-right: calc(var(--bear-gutter-x) * .5);
         padding-left: calc(var(--bear-gutter-x) * .5);
         margin-top: var(--bear-gutter-y);
+    }
+    [data-col] {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
+    }
+
+    [data-grid]{
+        display: grid;
+        grid-template-rows: repeat(var(--bear-rows, 1), 1fr);
+        grid-template-columns: repeat(var(--bear-columns, ${props => props.theme[themeName]?.gridColumns}), 1fr);
+        gap: var(--bear-gap, ${props => props.theme[themeName]?.gridGutterWidth});
     }
 `;

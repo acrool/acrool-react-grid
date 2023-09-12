@@ -31,8 +31,8 @@ export type TStyledProps<P> = TThemeProps & P;
 
 
 export type TStrings = TemplateStringsArray | CSSObject
-export type sizeUnit = 'px' | 'rem';
-export type TGutterWidth = number|`${number}${sizeUnit}`;
+export type TMediaSizeUnit = 'px' | 'rem';
+export type TGutterWidth = number|`${number}${TMediaSizeUnit}`;
 
 export enum EMediaSize {
     xs = 'xs',
@@ -102,7 +102,7 @@ export interface IContainerProps extends FCChildrenProps{
 
 
 /** -------------------------------
- *             Row
+ *       Grid System - Row
  * ------------------------------ */
 export interface IRowProps extends FCChildrenProps{
     noGutters?: boolean
@@ -116,7 +116,7 @@ export type TRowHorizontal = 'left'|'center'|'right';
 
 
 /** -------------------------------
- *             Col
+ *       Grid System - Col
  * ------------------------------ */
 export type TCol = number | true | 'auto' | undefined;
 export interface IColProps extends FCChildrenProps{
@@ -126,4 +126,46 @@ export interface IColProps extends FCChildrenProps{
     lg?: TCol;
     xl?: TCol;
     xxl?: TCol;
+}
+
+
+/** -------------------------------
+ *         CSS Grid - Grid
+ * ------------------------------ */
+export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
+export type TGridCol = true|'auto'|number|`${number}${TGridColSizeUnit}`|'min-content'|'max-content'|`minmax('${number}${TGridColSizeUnit}', '${number}${TGridColSizeUnit}')`;
+export type TGridGap = TGridCol|`${TGridCol} ${TGridCol}`
+
+export interface IGridProps extends FCChildrenProps{
+    gap?: TGridGap
+    columnGap?: TGridCol
+    rowGap?: TGridCol
+    vertical?: TRowVertical
+    horizontal?: TRowHorizontal
+
+    col?: TCol;
+    colSm?: TCol;
+    colMd?: TCol;
+    colLg?: TCol;
+    colXl?: TCol;
+    colXXl?: TCol;
+
+    row?: TCol;
+    rowSm?: TCol;
+    rowMd?: TCol;
+    rowLg?: TCol;
+    rowXl?: TCol;
+    rowXXl?: TCol;
+}
+
+/** -------------------------------
+ *       CSS Grid - Grid Col
+ * ------------------------------ */
+export interface IGridColProps extends FCChildrenProps{
+    col?: TGridCol;
+    sm?: TGridCol;
+    md?: TGridCol;
+    lg?: TGridCol;
+    xl?: TGridCol;
+    xxl?: TGridCol;
 }
