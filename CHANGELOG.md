@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-alpha.4](https://github.com/imagine10255/bear-react-grid/compare/v5.0.0-alpha.3...v5.0.0-alpha.4) (2023-09-12)
+
+
+### Bug Fixes
+
+* fix TGutterWidth no number ([4416b29](https://github.com/imagine10255/bear-react-grid/commit/4416b2966f5ee407d80c42f465948837b7545937))
+
 ## [5.0.0-alpha.3](https://github.com/imagine10255/bear-react-grid/compare/v5.0.0-alpha.2...v5.0.0-alpha.3) (2023-09-12)
 
 
