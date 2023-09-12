@@ -18,7 +18,7 @@ import {NoXsMediaSize} from './types';
 
 const themeName = 'bearReactGrid';
 const defaultGridTheme: ITheme = {
-    gridGutterWidth: '0.625rem',
+    gridGutterWidth: '.625rem',
     gridColumns: 24,
     gridBreakpoints: {
         xs: 0,
@@ -36,11 +36,11 @@ const defaultGridTheme: ITheme = {
         xxl: 1540,
     },
     gridGutterWidthMedia: {
-        sm: '0.625rem',
-        md: '0.625rem',
-        lg: '0.625rem',
-        xl: '0.625rem',
-        xxl: '0.625rem',
+        sm: '.625rem',
+        md: '.625rem',
+        lg: '.625rem',
+        xl: '.625rem',
+        xxl: '.625rem',
     }
 };
 const mediaSizes = Object.keys(defaultGridTheme.containerMaxWidths) as NoXsMediaSize[];
