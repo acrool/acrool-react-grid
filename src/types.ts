@@ -32,7 +32,7 @@ export type TStyledProps<P> = TThemeProps & P;
 
 export type TStrings = TemplateStringsArray | CSSObject
 export type TMediaSizeUnit = 'px' | 'rem';
-export type TGutterWidth = number|`${number}${TMediaSizeUnit}`;
+export type TGutterWidth = `${number}${TMediaSizeUnit}`;
 
 export enum EMediaSize {
     xs = 'xs',
@@ -75,7 +75,7 @@ export interface ITheme {
 
 
 /** -------------------------------
- *             GirdProvide
+ *         GirdProvide
  * ------------------------------ */
 export interface IGridThemeProviderProps {
     gridTheme: Partial<IGridSetting>
