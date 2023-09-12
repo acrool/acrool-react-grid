@@ -116,6 +116,7 @@ function App() {
         return (<Container>
             <Row noGutters>
                 <Col key={'card'}
+                    col="auto"
                     className="la"
                 >
                     <Card className="h-100">
@@ -138,6 +139,7 @@ function App() {
                 {texts.map((text, index) => {
                     return <Col key={`card_${index}`}
                         className="mb-5"
+                        col="auto"
                         md={8}
 
                     >

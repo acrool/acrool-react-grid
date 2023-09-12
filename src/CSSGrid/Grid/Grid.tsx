@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import {TStyledProps, IGridProps, IColProps, TGridTemplate} from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
+import {themeName} from '../../config';
 
 
 
@@ -66,6 +67,11 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-horizontal': props.horizontal ? props.horizontal: undefined,
     'data-vertical': props.vertical ? props.vertical: undefined,
 }))`
+  display: grid;
+  grid-template-rows: var(--bear-rows, ${props => 'repeat(1, 1fr)'});
+  grid-template-columns: var(--bear-columns, ${props => `repeat(${props.theme[themeName]?.gridColumns}, 1fr)`});
+  gap: var(--bear-gap, ${props => props.theme[themeName]?.gridGutterWidth});
+
   ${(props: TStyledProps<IGridProps>) => css`
       ${!!getDefaultSizeValue(props.columns) && cssGetter.columns(getDefaultSizeValue(props.columns))};
       ${!!getDefaultSizeValue(props.rows) && cssGetter.rows(getDefaultSizeValue(props.rows))};
