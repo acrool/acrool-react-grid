@@ -2,7 +2,7 @@ import {css, CSSObject, FlattenSimpleInterpolation} from 'styled-components';
 import {SimpleInterpolation} from 'styled-components';
 import {themeName} from '../config';
 
-import {EMediaSize, TMedia, TStrings} from '../types';
+import {TMediaSize, TMedia, TStrings} from '../types';
 
 
 
@@ -62,7 +62,7 @@ const mediaPx2vw = (strings: TemplateStringsArray | CSSObject, ...interpolations
  *   `}
  * @param size
  */
-const mediaSize = (size: EMediaSize) => {
+const mediaSize = (size: TMediaSize) => {
     return (strings: TStrings, ...interpolations: SimpleInterpolation[]) => css`
           @media (min-width: ${(props: any) => props.theme[themeName]?.gridBreakpoints[size]}px) {
             ${css(strings, ...interpolations)};
