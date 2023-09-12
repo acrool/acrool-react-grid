@@ -22,18 +22,18 @@ const suffix = (value: any) => {
  */
 const generateDebugData = (props: TStyledProps<IGridProps>) => {
     return [
-        props.col && `columns${suffix(props.col)}`,
-        props.colSm && `columns-sm${suffix(props.colSm)}`,
-        props.colMd && `columns-md${suffix(props.colMd)}`,
-        props.colLg && `columns-lg${suffix(props.colLg)}`,
-        props.colXl && `columns-xl${suffix(props.colXl)}`,
-        props.colXXl && `columns-xxl${suffix(props.colXXl)}`,
-        props.row && `rows${suffix(props.row)}`,
-        props.rowSm && `rows-sm${suffix(props.rowSm)}`,
-        props.rowMd && `rows-md${suffix(props.rowMd)}`,
-        props.rowLg && `rows-lg${suffix(props.rowLg)}`,
-        props.rowXl && `rows-xl${suffix(props.rowXl)}`,
-        props.rowXXl && `rows-xxl${suffix(props.rowXXl)}`,
+        props.column && `column${suffix(props.column)}`,
+        props.columnSm && `column-sm${suffix(props.columnSm)}`,
+        props.columnMd && `column-md${suffix(props.columnMd)}`,
+        props.columnLg && `column-lg${suffix(props.columnLg)}`,
+        props.columnXl && `column-xl${suffix(props.columnXl)}`,
+        props.columnXXl && `column-xxl${suffix(props.columnXXl)}`,
+        props.row && `row${suffix(props.row)}`,
+        props.rowSm && `row-sm${suffix(props.rowSm)}`,
+        props.rowMd && `row-md${suffix(props.rowMd)}`,
+        props.rowLg && `row-lg${suffix(props.rowLg)}`,
+        props.rowXl && `row-xl${suffix(props.rowXl)}`,
+        props.rowXXl && `row-xxl${suffix(props.rowXXl)}`,
         props.gap && `gap-[${props.gap}]`,
         props.columnGap && `gap-[${props.columnGap}]`,
         props.rowGap && `gap-[${props.rowGap}]`,
@@ -54,8 +54,8 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-vertical': props.vertical ? props.vertical: undefined,
 }))`
   ${(props: TStyledProps<IGridProps>) => css`
-      ${props.col && cssGetter.col(props.col)};
-      ${props.row && cssGetter.row(props.col)};
+      ${props.column && cssGetter.col(props.column)};
+      ${props.row && cssGetter.row(props.row)};
       ${props.gap && cssGetter.gap(props.gap)};
       ${props.columnGap && cssGetter.columnGap(props.columnGap)};
       ${props.rowGap && cssGetter.rowGap(props.rowGap)};

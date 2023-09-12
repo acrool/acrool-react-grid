@@ -19,7 +19,7 @@ export const cssGetter: ICSSGetterCss = {
         return `--bear-columns: ${column};`;
     },
     row: (column) => {
-        return `--bear-row: ${column};`;
+        return `--bear-rows: ${column};`;
     },
     gap: (gapNum) => {
         return `--bear-gap: ${gapNum};`;

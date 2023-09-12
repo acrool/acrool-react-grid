@@ -143,12 +143,12 @@ export interface IGridProps extends FCChildrenProps{
     vertical?: TRowVertical
     horizontal?: TRowHorizontal
 
-    col?: TCol;
-    colSm?: TCol;
-    colMd?: TCol;
-    colLg?: TCol;
-    colXl?: TCol;
-    colXXl?: TCol;
+    column?: TCol;
+    columnSm?: TCol;
+    columnMd?: TCol;
+    columnLg?: TCol;
+    columnXl?: TCol;
+    columnXXl?: TCol;
 
     row?: TCol;
     rowSm?: TCol;

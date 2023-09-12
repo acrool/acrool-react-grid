@@ -115,22 +115,17 @@ function App() {
 
         return (<Container>
             <Row noGutters>
-                {texts.map((text, index) => {
-                    return <Col key={`card_${index}`}
-                        className="la"
-                        md={8}
-                    >
-                        <Card className="h-100">
-                            <Grid col={2} row={4} >
-                                <CardTitle>no Gutters</CardTitle>
-                                <CardText>{text}</CardText>
-                                <CardText>{text}</CardText>
-                                <CardText>{text}</CardText>
-                            </Grid>
+                <Col key={'card'}
+                    className="la"
+                >
+                    <Card className="h-100">
+                        <Grid column={12} gap="20px 10px">
+                            <GridCol col={6}>Col-6</GridCol>
+                            <GridCol col={6}>Col-6</GridCol>
+                        </Grid>
 
-                        </Card>
-                    </Col>;
-                })}
+                    </Card>
+                </Col>
             </Row>
             <Row>
                 {texts.map((text, index) => {
