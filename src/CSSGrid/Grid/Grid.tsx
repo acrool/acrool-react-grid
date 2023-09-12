@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {TStyledProps, IGridProps, IColProps} from '../../types';
-import {cssGetter} from './utils';
+import {TStyledProps, IGridProps, IColProps, TGridTemplate} from '../../types';
+import {cssGetter, generateRWDStyled} from './utils';
 
 
 
@@ -13,6 +13,9 @@ const suffix = (value: any) => {
     if (!!Number(value)) {
         return `-${value}`;
     }
+    if (typeof value === 'string'){
+        return `-[${value}]`;
+    }
     return '';
 };
 
@@ -22,25 +25,35 @@ const suffix = (value: any) => {
  */
 const generateDebugData = (props: TStyledProps<IGridProps>) => {
     return [
-        props.column && `column${suffix(props.column)}`,
-        props.columnSm && `column-sm${suffix(props.columnSm)}`,
-        props.columnMd && `column-md${suffix(props.columnMd)}`,
-        props.columnLg && `column-lg${suffix(props.columnLg)}`,
-        props.columnXl && `column-xl${suffix(props.columnXl)}`,
-        props.columnXXl && `column-xxl${suffix(props.columnXXl)}`,
-        props.row && `row${suffix(props.row)}`,
-        props.rowSm && `row-sm${suffix(props.rowSm)}`,
-        props.rowMd && `row-md${suffix(props.rowMd)}`,
-        props.rowLg && `row-lg${suffix(props.rowLg)}`,
-        props.rowXl && `row-xl${suffix(props.rowXl)}`,
-        props.rowXXl && `row-xxl${suffix(props.rowXXl)}`,
+        !!getDefaultSizeValue(props.columns) && `columns${suffix(getDefaultSizeValue(props.columns))}`,
+        typeof props.columns === 'object' && ('sm' in props.columns) && `columns-sm${suffix(props.columns.sm)}`,
+        typeof props.columns === 'object' && ('md' in props.columns) && `columns-md${suffix(props.columns.md)}`,
+        typeof props.columns === 'object' && ('lg' in props.columns) && `columns-lg${suffix(props.columns.lg)}`,
+        typeof props.columns === 'object' && ('xl' in props.columns) && `columns-xl${suffix(props.columns.xl)}`,
+        typeof props.columns === 'object' && ('xxl' in props.columns) && `columns-xxl${suffix(props.columns.xxl)}`,
+        !!getDefaultSizeValue(props.rows) && `rows${suffix(getDefaultSizeValue(props.rows))}`,
+        typeof props.rows === 'object' && ('sm' in props.rows) && `rows-sm${suffix(props.rows.sm)}`,
+        typeof props.rows === 'object' && ('md' in props.rows) && `rows-md${suffix(props.rows.md)}`,
+        typeof props.rows === 'object' && ('lg' in props.rows) && `rows-lg${suffix(props.rows.lg)}`,
+        typeof props.rows === 'object' && ('xl' in props.rows) && `rows-xl${suffix(props.rows.xl)}`,
+        typeof props.rows === 'object' && ('xxl' in props.rows) && `rows-xxl${suffix(props.rows.xxl)}`,
+
         props.gap && `gap-[${props.gap}]`,
-        props.columnGap && `gap-[${props.columnGap}]`,
-        props.rowGap && `gap-[${props.rowGap}]`,
+        props.columnsGap && `gap-[${props.columnsGap}]`,
+        props.rowsGap && `gap-[${props.rowsGap}]`,
     ]
         .filter(Boolean)
         .join(' ');
 };
+
+
+const getDefaultSizeValue = (column?: TGridTemplate) => {
+    if((typeof column === 'object' && 'xs' in column)){
+        return column.xs;
+    }
+    return column;
+};
+
 
 
 /**
@@ -54,11 +67,13 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-vertical': props.vertical ? props.vertical: undefined,
 }))`
   ${(props: TStyledProps<IGridProps>) => css`
-      ${props.column && cssGetter.col(props.column)};
-      ${props.row && cssGetter.row(props.row)};
+      ${!!getDefaultSizeValue(props.columns) && cssGetter.columns(getDefaultSizeValue(props.columns))};
+      ${!!getDefaultSizeValue(props.rows) && cssGetter.rows(getDefaultSizeValue(props.rows))};
       ${props.gap && cssGetter.gap(props.gap)};
-      ${props.columnGap && cssGetter.columnGap(props.columnGap)};
-      ${props.rowGap && cssGetter.rowGap(props.rowGap)};
+      ${props.columnsGap && cssGetter.columnGap(props.columnsGap)};
+      ${props.rowsGap && cssGetter.rowGap(props.rowsGap)};
+
+      ${generateRWDStyled(props)};
  `}
 `;
 

@@ -118,8 +118,9 @@ const GlobalStyled = createGlobalStyle`
 
     [data-grid]{
         display: grid;
-        grid-template-rows: repeat(var(--bear-rows, 1), 1fr);
-        grid-template-columns: repeat(var(--bear-columns, ${props => props.theme[themeName]?.gridColumns}), 1fr);
+        grid-template-rows: var(--bear-rows, ${props => 'repeat(1, 1fr)'});
+        grid-template-columns: var(--bear-columns, ${props => `repeat(${props.theme[themeName]?.gridColumns}, 1fr)`});
         gap: var(--bear-gap, ${props => props.theme[themeName]?.gridGutterWidth});
     }
+
 `;

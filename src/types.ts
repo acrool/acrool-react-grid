@@ -3,6 +3,9 @@ import CSS from 'csstype';
 import {ThemeProps, CSSObject} from 'styled-components';
 import {themeName} from './config';
 
+type RecordOption<K extends keyof any, T> = {
+    [P in K]?: T;
+};
 
 export interface FCChildrenProps {
     style?: CSS.Properties,
@@ -16,7 +19,7 @@ export interface FCChildrenProps {
 }
 
 
-export type NoXsMediaSize = Exclude<EMediaSize, EMediaSize.xs>
+export type NoXsMediaSize = Exclude<EMediaSize, 'xs'>
 
 export type TThemeProps = ThemeProps<{[themeName]: IGridSetting}>;
 export type TStyledProps<P> = TThemeProps & P;
@@ -34,35 +37,28 @@ export type TStrings = TemplateStringsArray | CSSObject
 export type TMediaSizeUnit = 'px' | 'rem';
 export type TGutterWidth = `${number}${TMediaSizeUnit}`;
 
-export enum EMediaSize {
-    xs = 'xs',
-    sm = 'sm',
-    md = 'md',
-    lg = 'lg',
-    xl = 'xl',
-    xxl = 'xxl'
-}
+export type EMediaSize = 'xs'|'sm'|'md'|'lg'|'xl'|'xxl'
 
 export interface IBreakpoints {
-    [EMediaSize.xs]: number
-    [EMediaSize.sm]: number
-    [EMediaSize.md]: number
-    [EMediaSize.lg]: number
-    [EMediaSize.xl]: number
-    [EMediaSize.xxl]: number
+    xs: number
+    sm: number
+    md: number
+    lg: number
+    xl: number
+    xxl: number
 }
 export interface IGutterBreakpoints {
-    [EMediaSize.xs]: TGutterWidth
-    [EMediaSize.sm]: TGutterWidth
-    [EMediaSize.md]: TGutterWidth
-    [EMediaSize.lg]: TGutterWidth
-    [EMediaSize.xl]: TGutterWidth
-    [EMediaSize.xxl]: TGutterWidth
+    xs: TGutterWidth
+    sm: TGutterWidth
+    md: TGutterWidth
+    lg: TGutterWidth
+    xl: TGutterWidth
+    xxl: TGutterWidth
 }
-export type TContainerMaxWidths = Omit<IBreakpoints, EMediaSize.xs>
-export type TGridGutterWidthMedia = Omit<IGutterBreakpoints, EMediaSize.xs>
+export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>
+export type TGridGutterWidthMedia = Omit<IGutterBreakpoints, 'xs'>
 
-export type TMedia = Omit<{ [size in EMediaSize]: Function }, EMediaSize.xs> & { px2vw: Function }
+export type TMedia = Omit<{ [size in EMediaSize]: Function }, 'xs'> & { px2vw: Function }
 
 export interface ITheme {
     gridGutterWidth: TGutterWidth
@@ -133,29 +129,23 @@ export interface IColProps extends FCChildrenProps{
  *         CSS Grid - Grid
  * ------------------------------ */
 export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
-export type TGridCol = true|'auto'|number|`${number}${TGridColSizeUnit}`|'min-content'|'max-content'|`minmax('${number}${TGridColSizeUnit}', '${number}${TGridColSizeUnit}')`;
-export type TGridGap = TGridCol|`${TGridCol} ${TGridCol}`
+
+export type TGridCol = true|'auto'|string|number|`${number}${TGridColSizeUnit}`|'min-content'|'max-content'|`minmax('${number}${TGridColSizeUnit}', '${number}${TGridColSizeUnit}')`;
+export type TGridTemplate = TGridCol|RecordOption<EMediaSize, TGridCol>
+
+export type TGridGapUnit = 'px' | 'rem';
+export type TGridGap = `${number}${TGridGapUnit}`
+export type TGridGaps = TGridGap|string
 
 export interface IGridProps extends FCChildrenProps{
-    gap?: TGridGap
-    columnGap?: TGridCol
-    rowGap?: TGridCol
+    gap?: TGridGaps
+    columnsGap?: TGridGap
+    rowsGap?: TGridGap
     vertical?: TRowVertical
     horizontal?: TRowHorizontal
 
-    column?: TCol;
-    columnSm?: TCol;
-    columnMd?: TCol;
-    columnLg?: TCol;
-    columnXl?: TCol;
-    columnXXl?: TCol;
-
-    row?: TCol;
-    rowSm?: TCol;
-    rowMd?: TCol;
-    rowLg?: TCol;
-    rowXl?: TCol;
-    rowXXl?: TCol;
+    columns?: TGridTemplate;
+    rows?: TGridTemplate;
 }
 
 /** -------------------------------

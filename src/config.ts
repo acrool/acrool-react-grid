@@ -13,8 +13,7 @@
  *     gridGutterWidth: 3,
  * }}>
  */
-import {ITheme} from './media';
-import {NoXsMediaSize} from './types';
+import {NoXsMediaSize, ITheme} from './types';
 
 const themeName = 'bearReactGrid';
 const defaultGridTheme: ITheme = {

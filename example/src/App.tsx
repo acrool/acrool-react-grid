@@ -119,9 +119,16 @@ function App() {
                     className="la"
                 >
                     <Card className="h-100">
-                        <Grid column={12} gap="20px 10px">
-                            <GridCol col={6}>Col-6</GridCol>
-                            <GridCol col={6}>Col-6</GridCol>
+                        <Grid
+                            // columns="1fr auto"
+                            // columns={2}
+                            columns={{xs: '1fr auto', md: 3}}
+                            gap="50px 30px"
+                        >
+                            <div>test</div>
+                            <div>test2</div>
+                            {/*<GridCol col={6}>Col-6</GridCol>*/}
+                            {/*<GridCol col={6}>Col-6</GridCol>*/}
                         </Grid>
 
                     </Card>

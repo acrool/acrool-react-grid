@@ -2,7 +2,7 @@ import {css, CSSObject, FlattenSimpleInterpolation} from 'styled-components';
 import {SimpleInterpolation} from 'styled-components';
 import {themeName} from '../config';
 
-import {EMediaSize, TMedia, TStrings} from './types';
+import {EMediaSize, TMedia, TStrings} from '../types';
 
 
 
@@ -72,11 +72,11 @@ const mediaSize = (size: EMediaSize) => {
 
 const media: TMedia = {
     px2vw: mediaPx2vw,
-    [EMediaSize.sm]: mediaSize(EMediaSize.sm),
-    [EMediaSize.md]: mediaSize(EMediaSize.md),
-    [EMediaSize.lg]: mediaSize(EMediaSize.lg),
-    [EMediaSize.xl]: mediaSize(EMediaSize.xl),
-    [EMediaSize.xxl]: mediaSize(EMediaSize.xxl),
+    sm: mediaSize('sm'),
+    md: mediaSize('md'),
+    lg: mediaSize('lg'),
+    xl: mediaSize('xl'),
+    xxl: mediaSize('xxl'),
 };
 
 
