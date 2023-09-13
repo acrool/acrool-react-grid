@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/imagine10255/bear-react-grid/compare/v5.0.0-alpha.7...v5.0.0) (2023-09-13)
+
+
+### Features
+
+* add row grid, args: horizontal vertical ([bdc5a32](https://github.com/imagine10255/bear-react-grid/commit/bdc5a32bf8cf0b4fd479aab333c4b370f2666f4a))
+
 ## [5.0.0-alpha.7](https://github.com/imagine10255/bear-react-grid/compare/v5.0.0-alpha.6...v5.0.0-alpha.7) (2023-09-12)
 
 
