@@ -27,6 +27,15 @@ const renderPaddingStyle = (sizeName: NoXsMediaSize) => {
     }).join('');
 };
 
+const renderGapStyle = (sizeName: NoXsMediaSize) => {
+    return Array.from({length: 6}).map((row,idx) => {
+        return `
+        .gap-${sizeName}-${idx}, .gap-column-${sizeName}-${idx} {row-column: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
+        .gap-${sizeName}-${idx}, .gap-row-${sizeName}-${idx} {row-gap: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
+        `;
+    }).join('');
+};
+
 const renderOrderStyle = (sizeName: NoXsMediaSize) => {
     return Array.from({length: 6}).map((row,idx) => {
         return `
@@ -107,6 +116,7 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
 
             ${renderMarginStyle(sizeName)}
             ${renderPaddingStyle(sizeName)}
+            ${renderGapStyle(sizeName)}
             ${renderOrderStyle(sizeName)}
 
             .overflow-x-${sizeName}-hidden {overflow-x: hidden!important;}
