@@ -13,10 +13,11 @@
  *     gridGutterWidth: 3,
  * }}>
  */
-import {NoXsMediaSize, ITheme} from './types';
+import {NoXsMediaSize, IGridSetting} from './types';
 
 const themeName = 'bearReactGrid';
-const defaultGridTheme: ITheme = {
+const defaultGridTheme: IGridSetting = {
+    spacer: '1rem',
     gridGutterWidth: '.625rem',
     gridColumns: 24,
     gridBreakpoints: {

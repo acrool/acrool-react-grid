@@ -46,34 +46,24 @@ export default GridThemeProvider;
 
 const GlobalStyled = createGlobalStyle`
     :root{
-        --bear-spacer: 1rem;
-        --bear-spacer-1: calc(1rem * .25);
-        --bear-spacer-2: calc(1rem * .5);
-        --bear-spacer-3: calc(1rem);
-        --bear-spacer-4: calc(1rem * 1.5);
-        --bear-spacer-5: calc(1rem * 3);
+        --bear-spacer: ${props => props.theme.bearReactGrid.spacer};
+        --bear-spacer-1: calc(var(--bear-spacer) * .25);
+        --bear-spacer-2: calc(var(--bear-spacer) * .5);
+        --bear-spacer-3: var(--bear-spacer);
+        --bear-spacer-4: calc(var(--bear-spacer) * 1.5);
+        --bear-spacer-5: calc(var(--bear-spacer) * 3);
     }
 
     ${(props: TStyledProps<TThemeProps>) => css`
         ${generateRWDStyled(props)}
     `}
 
-    [data-row][data-horizontal="left"]{
-        justify-content: flex-start;
-    }
-    [data-row][data-horizontal="center"]{
-        justify-content: center;
-    }
-    [data-row][data-horizontal="right"]{
-        justify-content: flex-end;
-    }
-    [data-row][data-vertical="top"]{
-        justify-content: flex-start;
-    }
-    [data-row][data-vertical="center"]{
-        justify-content: center;
-    }
-    [data-row][data-vertical="bottom"]{
-        justify-content: flex-end;
-    }
+    // 水平
+    [data-row][data-horizontal="left"], [data-grid][data-vertical="bottom"]{justify-content: flex-start;}
+    [data-row][data-horizontal="center"], [data-grid][data-vertical="center"]{justify-content: center;}
+    [data-row][data-horizontal="right"], [data-grid][data-vertical="right"]{justify-content: flex-end;}
+    // 垂直
+    [data-row][data-vertical="top"], [data-grid][data-vertical="top"]{align-items: flex-start;}
+    [data-row][data-vertical="center"], [data-grid][data-vertical="center"]{align-items: center;}
+    [data-row][data-vertical="bottom"], [data-grid][data-vertical="bottom"]{align-items: flex-end;}
 `;

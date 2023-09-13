@@ -125,6 +125,8 @@ function App() {
                             // columns={2}
                             columns={{xs: '1fr auto', md: 3}}
                             gap="50px 30px"
+                            vertical="center"
+                            horizontal="center"
                         >
                             <div>test</div>
                             <div>test2</div>
