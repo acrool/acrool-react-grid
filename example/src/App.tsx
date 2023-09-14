@@ -71,7 +71,7 @@ function App() {
                 <Col lg={14}>
                     <img className="img-fluid mb-4 mb-lg-0 round" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="sample-img"/>
                 </Col>
-                <Col lg={10}>
+                <Col lg={10} className="gap-row-2">
                     <Title>Business Name or Tagline</Title>
                     <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
                     <a href="#!">Call to Action!</a>

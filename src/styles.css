@@ -139,14 +139,14 @@
 .gap-0, .gap-row-0 {row-gap: 0 !important}
 .gap-1, .gap-column-1 {column-gap: var(--bear-spacer-1) !important}
 .gap-1, .gap-row-1 {row-gap: var(--bear-spacer-1) !important}
-.gap-2, .gap-column-2 {gap: var(--bear-spacer-2) !important}
-.gap-2, .gap-row-2 {gap: var(--bear-spacer-2) !important}
-.gap-3, .gap-column-3 {gap: var(--bear-spacer-3) !important}
-.gap-3, .gap-row-3 {gap: var(--bear-spacer-3) !important}
-.gap-4, .gap-column-4 {gap: var(--bear-spacer-4) !important}
-.gap-4, .gap-row-4 {gap: var(--bear-spacer-4) !important}
-.gap-5, .gap-column-5 {gap: var(--bear-spacer-5) !important}
-.gap-5, .gap-row-5 {gap: var(--bear-spacer-5) !important}
+.gap-2, .gap-column-2 {column-gap: var(--bear-spacer-2) !important}
+.gap-2, .gap-row-2 {row-gap: var(--bear-spacer-2) !important}
+.gap-3, .gap-column-3 {column-gap: var(--bear-spacer-3) !important}
+.gap-3, .gap-row-3 {row-gap: var(--bear-spacer-3) !important}
+.gap-4, .gap-column-4 {column-gap: var(--bear-spacer-4) !important}
+.gap-4, .gap-row-4 {row-gap: var(--bear-spacer-4) !important}
+.gap-5, .gap-column-5 {column-gap: var(--bear-spacer-5) !important}
+.gap-5, .gap-row-5 {row-gap: var(--bear-spacer-5) !important}
 
 /* overflow */
 .overflow-x-hidden{overflow-x: hidden!important;}
