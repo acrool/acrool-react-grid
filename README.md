@@ -1,4 +1,4 @@
-````# bear-react-grid
+# bear-react-grid
 
 > Most modern rwd grid system by react + styled-component
 
@@ -6,7 +6,21 @@
 [![NPM](https://img.shields.io/npm/v/bear-react-grid.svg)](https://www.npmjs.com/package/bear-react-grid)
 [![npm](https://img.shields.io/npm/dm/bear-react-grid.svg)](https://www.npmjs.com/package/bear-react-grid)
 
-This project [demo](https://imagine10255.github.io/bear-react-grid/)
+
+</div>
+
+<p align="center">
+  <a href="https://bear-react-grid.github.io/docs/getting-started">Get started</a> | 
+</p>
+
+
+## Features
+
+- Use `React` + `Styled-component` and `styled-component themeProvider`
+- Easier to use
+- Refer to the design of `bootstrap 5` and change it to `CSS IN JS` method
+- Provides tool CSS for `Bootstrap 5` layout
+- Provide `RWD` Media query method
 
 ## Install
 
@@ -28,29 +42,40 @@ in your App.js add
 `see the example/src/App.js`
 
 ```tsx
-import {GridThemeProvider} from 'bear-react-grid';
+import {GridThemeProvider, IGridSetting} from 'bear-react-grid';
 import 'bear-react-grid/dist/index.css';
 
-<GridThemeProvider gridTheme={{
-          gridGutterWidth: 10,
-          gridColumns: 24,
-          gridBreakpoints: {
-              xs: 0,
-              sm: 576,
-              md: 768,
-              lg: 992,
-              xl: 1200,
-              xxl: 1540,
-          },
-          containerMaxWidths: {
-              xs: 540,
-              sm: 540,
-              md: 720,
-              lg: 960,
-              xl: 1140,
-              xxl: 1141,
-          },
-      }}>
+
+const gridTheme: IGridSetting = {
+    spacer: '1rem',
+    gridGutterWidth: '.625rem',
+    gridColumns: 24,
+    gridBreakpoints: {
+        xs: 0,
+        sm: 576,
+        md: 768,
+        lg: 992,
+        xl: 1200,
+        xxl: 1540,
+    },
+    containerMaxWidths: {
+        sm: 540,
+        md: 720,
+        lg: 960,
+        xl: 1140,
+        xxl: 1141,
+    },
+    gridGutterWidthMedia: {
+        sm: '.625rem',
+        md: '.625rem',
+        lg: '.625rem',
+        xl: '.625rem',
+        xxl: '.625rem',
+    }
+}
+
+
+<GridThemeProvider gridTheme={gridTheme}>
     <App/>
 </GridThemeProvider>
 ```
