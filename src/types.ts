@@ -124,8 +124,9 @@ export interface IColProps extends FCChildrenProps{
  *         CSS Grid - Grid
  * ------------------------------ */
 export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
+export type TGridColNumberSizeUnit = `${number}${TGridColSizeUnit}`;
 
-export type TGridCol = true|'auto'|string|number|`${number}${TGridColSizeUnit}`|'min-content'|'max-content'|`minmax('${number}${TGridColSizeUnit}', '${number}${TGridColSizeUnit}')`;
+export type TGridCol = 'auto'|string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
 export type TGridTemplate = TGridCol|RecordOption<TMediaSize, TGridCol>
 
 export type TGridGapUnit = 'px' | 'rem';

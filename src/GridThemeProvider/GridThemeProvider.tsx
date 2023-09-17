@@ -52,6 +52,13 @@ const GlobalStyled = createGlobalStyle`
         --bear-spacer-3: var(--bear-spacer);
         --bear-spacer-4: calc(var(--bear-spacer) * 1.5);
         --bear-spacer-5: calc(var(--bear-spacer) * 3);
+
+        --bear-gutter ${props => props.theme.bearReactGrid.gridGutterWidth};
+        --bear-gutter-1: calc(var(--bear-gutter) * .25);
+        --bear-gutter-2: calc(var(--bear-gutter) * .5);
+        --bear-gutter-3: var(--bear-gutter);
+        --bear-gutter-4: calc(var(--bear-gutter) * 1.5);
+        --bear-gutter-5: calc(var(--bear-gutter) * 3);
     }
 
     ${(props: TStyledProps<TThemeProps>) => css`
