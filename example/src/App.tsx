@@ -93,7 +93,7 @@ function App() {
                 <CardBody>
                     <p>This call to action card is a great place to showcase some important information or display a clever tagline!
                     </p>
-                    <p>https://startbootstrap.github.io/startbootstrap-small-business/
+                    <p>https://startBootstrap.github.io/startBootstrap-small-business/
                     </p>
 
                 </CardBody>

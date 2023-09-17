@@ -7,7 +7,7 @@
     "typescript",
     "flexbox",
     "styled-component",
-    "bootstrap",
+    "Bootstrap",
     "grid-system"
   ],
   "private": false,

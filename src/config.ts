@@ -1,5 +1,5 @@
 /**
- * bootstrap grid setting
+ * Bootstrap grid setting
  *
  * 單位值參考
  * row.padding === col.padding === container.padding

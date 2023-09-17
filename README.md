@@ -32,7 +32,7 @@
 
 - Use `React` + `Styled-component` and `styled-component themeProvider`
 - Easier to use
-- Refer to the design of `bootstrap 5` and change it to `CSS IN JS` method
+- Refer to the design of `Bootstrap 5` and change it to `CSS IN JS` method
 - Provides tool CSS for `Bootstrap 5` layout
 - Provide `RWD` Media query method
 
