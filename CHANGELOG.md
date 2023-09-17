@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.2-alpha.0](https://github.com/imagine10255/bear-react-grid/compare/v5.0.1...v5.0.2-alpha.0) (2023-09-17)
+
+
+### Bug Fixes
+
+* fix utils p- css, rounded var to -> .25rem, bear custom ([77ada83](https://github.com/imagine10255/bear-react-grid/commit/77ada83ecb5a348c6d6427f3ff15a47a950c06ed))
+
 ### [5.0.1](https://github.com/imagine10255/bear-react-grid/compare/v5.0.0...v5.0.1) (2023-09-14)
 
 
