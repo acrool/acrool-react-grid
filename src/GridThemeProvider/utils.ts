@@ -3,6 +3,34 @@ import {mediaSizes} from '../config';
 import media from '../media';
 
 
+/**
+ * 計算帶單位的數字
+ * @param unitSize
+ * @param fn
+ */
+export const calcUnitSize = (unitSize: string, fn: (num: number) => number): string => {
+    const match = unitSize.match(/([-+]?\d*\.?\d+)([a-zA-Z]+)/);
+    if (!match) {
+        // 如果字符串不包含數字和單位，返回原始值
+        return unitSize;
+    }
+
+    const num = parseFloat(match[1]);
+    const unit = match[2];
+
+    if (isNaN(num)) {
+        // 如果無法解析數字部分，返回原始值
+        return unitSize;
+    }
+
+    // 使用提供的函數計算數字部分
+    const result = fn(num);
+
+    // 將計算結果和單位部分組合成字符串
+    return `${result}${unit}`;
+};
+
+
 const renderMarginStyle = (sizeName: NoXsMediaSize) => {
     return Array.from({length: 6}).map((row,idx) => {
         return `
@@ -27,6 +55,14 @@ const renderPaddingStyle = (sizeName: NoXsMediaSize) => {
     }).join('');
 };
 
+const renderGutterStyle = (sizeName: NoXsMediaSize) => {
+    return Array.from({length: 6}).map((row,idx) => {
+        return `
+        .g-${sizeName}-${idx}, .g-y-${sizeName}-${idx} {--bear-gutter-y: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
+        .g-${sizeName}-${idx}, .g-x-${sizeName}-${idx} {--bear-gutter-x: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
+        `;
+    }).join('');
+};
 const renderGapStyle = (sizeName: NoXsMediaSize) => {
     return Array.from({length: 6}).map((row,idx) => {
         return `
@@ -103,6 +139,24 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .align-self-${sizeName}-baseline {align-self: baseline !important;}
             .align-self-${sizeName}-stretch {align-self: stretch !important;}
 
+
+            .row-${sizeName}-center, .row-x-${sizeName}-center{justify-content: center !important;}
+            .row-${sizeName}-center, .row-y-${sizeName}-center{align-items: center !important;}
+            .row-x-${sizeName}-left {justify-content: flex-start !important;}
+            .row-x-${sizeName}-right {justify-content: flex-end !important;}
+            .row-x-${sizeName}-between {justify-content: space-between !important;}
+            .row-x-${sizeName}-around {justify-content: space-around !important;}
+            .row-x-${sizeName}-evenly {justify-content: space-evenly !important;}
+            .row-y-${sizeName}-top {align-items: flex-start !important;}
+            .row-y-${sizeName}-bottom {align-items: flex-end !important;}
+            .column-${sizeName}-center, .column-x-${sizeName}-center{align-items: center !important;}
+            .column-${sizeName}-center, .column-y-${sizeName}-center{justify-content: center !important;}
+            .column-x-${sizeName}-left {align-items: flex-start !important;}
+            .column-x-${sizeName}-right {align-items: flex-end !important;}
+            .column-y-${sizeName}-top {justify-content: flex-start !important;}
+            .column-y-${sizeName}-bottom {justify-content: flex-end !important;}
+
+
             .text-${sizeName}-justify {text-align: justify !important;}
             .text-${sizeName}-left {text-align: left !important;}
             .text-${sizeName}-right {text-align: right !important;}
@@ -116,6 +170,7 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
 
             ${renderMarginStyle(sizeName)}
             ${renderPaddingStyle(sizeName)}
+            ${renderGutterStyle(sizeName)}
             ${renderGapStyle(sizeName)}
             ${renderOrderStyle(sizeName)}
 

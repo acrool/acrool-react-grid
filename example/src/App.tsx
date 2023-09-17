@@ -137,12 +137,13 @@ function App() {
                     </Card>
                 </Col>
             </Row>
-            <Row>
+            <Row className="g-0">
                 {texts.map((text, index) => {
                     return <Col key={`card_${index}`}
                         className="mb-5"
-                        col="auto"
-                        md={8}
+                        col={24}
+                        md
+                        lg={10}
 
                     >
                         <Card className="h-100">

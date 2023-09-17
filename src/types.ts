@@ -56,7 +56,6 @@ export interface IGutterBreakpoints {
     xxl: TGutterWidth
 }
 export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>
-export type TGridGutterWidthMedia = Omit<IGutterBreakpoints, 'xs'>
 
 export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: Function }
 
@@ -78,7 +77,6 @@ export interface IGridSetting {
     gridColumns: number
     gridBreakpoints: IBreakpoints
     containerMaxWidths: TContainerMaxWidths
-    gridGutterWidthMedia: Partial<TGridGutterWidthMedia>
 }
 export type TGridTheme = Partial<IGridSetting>;
 
