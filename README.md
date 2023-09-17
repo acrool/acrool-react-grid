@@ -4,7 +4,7 @@
 
 <div align="center">
         <a href="https://bear-react-grid.github.io" title="Bear Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
-            <img src="https://github.com/imagine10255/bear-react-grid/blob/main/logo.png" alt="Bear React Grid Logo - Most modern mobile touch slider with hardware accelerated transitions for ReactJS" />
+            <img src="https://github.com/imagine10255/bear-react-grid/blob/main/logo.png" alt="Bear React Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component" />
         </a>
 </div>
 
@@ -23,7 +23,7 @@
   <a href="https://bear-react-grid.github.io/docs/getting-started">Get started</a> |
   <a href="https://bear-react-grid.github.io/docs/config">Config</a> |
   <a href="https://bear-react-grid.github.io/docs/utilities">Utilities</a> |
-  <a href="https://bear-react-grid.github.io/docs/grid-system">Grid System</a>
+  <a href="https://bear-react-grid.github.io/docs/grid-system">Grid System</a> |
   <a href="https://bear-react-grid.github.io/docs/css-grid">CSS Grid</a>
 </p>
 
