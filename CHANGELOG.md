@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.2](https://github.com/imagine10255/bear-react-grid/compare/v5.0.2-alpha.8...v5.0.2) (2023-09-18)
+
+
+### Features
+
+* remove bear custom row-x y ([6728e63](https://github.com/imagine10255/bear-react-grid/commit/6728e63f02b89ca9ba78268c5923ff62cc872708))
+
 ### [5.0.2-alpha.8](https://github.com/imagine10255/bear-react-grid/compare/v5.0.2-alpha.7...v5.0.2-alpha.8) (2023-09-18)
 
 
