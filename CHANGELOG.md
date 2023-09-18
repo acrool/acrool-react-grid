@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.2-alpha.8](https://github.com/imagine10255/bear-react-grid/compare/v5.0.2-alpha.7...v5.0.2-alpha.8) (2023-09-18)
+
+
+### Bug Fixes
+
+* no package.json type module by nextjs ([ba18d12](https://github.com/imagine10255/bear-react-grid/commit/ba18d1214c2cf3b3a0f2b1446142eef118a86631))
+
 ### [5.0.2-alpha.7](https://github.com/imagine10255/bear-react-grid/compare/v5.0.2-alpha.6...v5.0.2-alpha.7) (2023-09-18)
 
 ### [5.0.2-alpha.6](https://github.com/imagine10255/bear-react-grid/compare/v5.0.2-alpha.5...v5.0.2-alpha.6) (2023-09-18)
