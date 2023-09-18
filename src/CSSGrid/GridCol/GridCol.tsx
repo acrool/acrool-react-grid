@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import styled, {css} from 'styled-components';
 
@@ -50,7 +48,9 @@ const generateDebugData = (props: TStyledProps<IGridColProps>) => {
  * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
  *
  */
-const GridCol = styled.div<TStyledProps<IGridColProps>>`
+const GridCol = styled.div.attrs((props: TStyledProps<IGridColProps>) => ({
+    'data-g-col': generateDebugData(props),
+}))`
   ${(props: TStyledProps<IGridColProps>) => css`
      ${props.col && cssGetter.col(props.col)};
      ${generateRWDStyled(props)};

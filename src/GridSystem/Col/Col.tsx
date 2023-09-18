@@ -1,10 +1,12 @@
-'use client';
-
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
+
 import {TStyledProps, IColProps} from '../../types';
+
 import {generateRWDStyled, cssGetter} from './utils';
+
+
 
 /**
  * 判斷是否為空
@@ -49,7 +51,9 @@ const generateDebugData = (props: TStyledProps<IColProps>) => {
  * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
  *
  */
-const Col = styled.div<TStyledProps<IColProps>>`
+const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
+    'data-col': generateDebugData(props),
+}))`
   box-sizing: border-box;
   position: relative;
   min-height: 1px;

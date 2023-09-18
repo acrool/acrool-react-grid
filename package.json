@@ -22,7 +22,8 @@
   "exports": {
     ".": {
       "browser": "./dist/bear-react-grid.es.js",
-      "import": "./dist/bear-react-grid.es.js"
+      "import": "./dist/bear-react-grid.es.js",
+      "require": "./dist/bear-react-grid.umd.cjs"
     },
     "./dist/index.css": "./dist/style.css"
   },

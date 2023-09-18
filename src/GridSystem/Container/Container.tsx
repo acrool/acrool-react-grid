@@ -1,5 +1,3 @@
-'use client';
-
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
 import {TStyledProps, IContainerProps} from '../../types';
@@ -8,7 +6,9 @@ import {generateRWDStyled} from './utils';
 /**
  * Container Component
  */
-const Container = styled.div<TStyledProps<IContainerProps>>`
+const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
+    'data-container': props.fluid ? 'fluid': '',
+}))`
   width: 100%;
   margin-right: auto;
   margin-left: auto;
