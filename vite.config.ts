@@ -5,6 +5,7 @@ import * as path from 'node:path';
 import {visualizer} from 'rollup-plugin-visualizer';
 import eslint from 'vite-plugin-eslint';
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
@@ -19,7 +20,7 @@ export default defineConfig({
         sourcemap: process.env.NODE_ENV !== 'production',
         lib: {
             entry: path.resolve(__dirname, 'src/index.ts'),
-            formats: ['es', 'cjs'],
+            formats: ['es'],
             fileName: (format) => `bear-react-grid.${format}.js`,
         },
         cssTarget: 'chrome61',
@@ -31,6 +32,7 @@ export default defineConfig({
                     'react-dom': 'ReactDOM',
                     'styled-components': 'styled'
                 },
+                interop: 'compat',
             },
         },
     },
