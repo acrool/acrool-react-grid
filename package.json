@@ -1,6 +1,6 @@
 {
   "name": "bear-react-grid",
-  "version": "5.0.2-alpha.6",
+  "version": "5.0.2-alpha.7",
   "description": "Most modern rwd grid system by react + styled-component",
   "keywords": [
     "react",
@@ -49,9 +49,9 @@
     "release:alpha": "standard-version --prerelease alpha"
   },
   "peerDependencies": {
-      "react": "^18.x",
-      "react-dom": "^18.x",
-      "styled-components": "^5.3.x"
+    "react": "^18.x",
+    "react-dom": "^18.x",
+    "styled-components": "^5.3.x"
   },
   "devDependencies": {
     "@swc/plugin-styled-components": "^1.5.68",
