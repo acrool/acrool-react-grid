@@ -139,24 +139,6 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .align-self-${sizeName}-baseline {align-self: baseline !important;}
             .align-self-${sizeName}-stretch {align-self: stretch !important;}
 
-
-            .row-${sizeName}-center, .row-x-${sizeName}-center{justify-content: center !important;}
-            .row-${sizeName}-center, .row-y-${sizeName}-center{align-items: center !important;}
-            .row-x-${sizeName}-left {justify-content: flex-start !important;}
-            .row-x-${sizeName}-right {justify-content: flex-end !important;}
-            .row-x-${sizeName}-between {justify-content: space-between !important;}
-            .row-x-${sizeName}-around {justify-content: space-around !important;}
-            .row-x-${sizeName}-evenly {justify-content: space-evenly !important;}
-            .row-y-${sizeName}-top {align-items: flex-start !important;}
-            .row-y-${sizeName}-bottom {align-items: flex-end !important;}
-            .column-${sizeName}-center, .column-x-${sizeName}-center{align-items: center !important;}
-            .column-${sizeName}-center, .column-y-${sizeName}-center{justify-content: center !important;}
-            .column-x-${sizeName}-left {align-items: flex-start !important;}
-            .column-x-${sizeName}-right {align-items: flex-end !important;}
-            .column-y-${sizeName}-top {justify-content: flex-start !important;}
-            .column-y-${sizeName}-bottom {justify-content: flex-end !important;}
-
-
             .text-${sizeName}-justify {text-align: justify !important;}
             .text-${sizeName}-left {text-align: left !important;}
             .text-${sizeName}-right {text-align: right !important;}
