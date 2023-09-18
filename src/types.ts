@@ -93,15 +93,9 @@ export interface IContainerProps extends FCChildrenProps{
 /** -------------------------------
  *       Grid System - Row
  * ------------------------------ */
-export interface IRowProps extends FCChildrenProps{
-    noGutters?: boolean
-    vertical?: TRowVertical
-    horizontal?: TRowHorizontal
-}
+export interface IRowProps extends FCChildrenProps{}
 
 export type TFlexDirection = 'column'|'row';
-export type TRowVertical = 'top'|'center'|'bottom';
-export type TRowHorizontal = 'left'|'center'|'right';
 
 
 /** -------------------------------
@@ -135,8 +129,6 @@ export interface IGridProps extends FCChildrenProps{
     gap?: TGridGaps
     columnsGap?: TGridGap
     rowsGap?: TGridGap
-    vertical?: TRowVertical
-    horizontal?: TRowHorizontal
 
     columns?: TGridTemplate;
     rows?: TGridTemplate;
