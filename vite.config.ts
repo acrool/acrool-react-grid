@@ -25,14 +25,13 @@ export default defineConfig({
         },
         cssTarget: 'chrome61',
         rollupOptions: {
-            external: ['react', 'react-dom', 'styled-components'],
+            external: ['react', 'react-dom', 'react/jsx-runtime', 'styled-components'],
             output: {
                 globals: {
                     react: 'React',
                     'react-dom': 'ReactDOM',
                     'styled-components': 'styled'
                 },
-                interop: 'compat',
             },
         },
     },
