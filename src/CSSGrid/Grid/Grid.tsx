@@ -64,11 +64,7 @@ const getDefaultSizeValue = (column?: TGridTemplate) => {
  * align-items 預設加上 flex-start, 會讓鄰居Col高度不會一致
  * ps: 設定會 width 100% 會產生 margin 抵銷失敗
  */
-const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
-    'data-grid': generateDebugData(props),
-    'data-horizontal': props.horizontal ? props.horizontal: undefined,
-    'data-vertical': props.vertical ? props.vertical: undefined,
-}))`
+const Grid = styled.div<TStyledProps<IGridProps>>`
   display: grid;
   grid-template-rows: var(--bear-rows, ${props => 'repeat(1, 1fr)'});
   grid-template-columns: var(--bear-columns, ${props => `repeat(${props.theme[themeName]?.gridColumns}, 1fr)`});

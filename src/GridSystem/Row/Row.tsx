@@ -11,9 +11,7 @@ import {themeName} from '../../config';
  * align-items 預設加上 flex-start, 會讓鄰居Col高度不會一致
  * ps: 設定會 width 100% 會產生 margin 抵銷失敗
  */
-const Row = styled.div.attrs((props: TStyledProps<IRowProps>) => ({
-    'data-row': 'row',
-}))`
+const Row = styled.div<TStyledProps<IRowProps>>`
     --bear-gutter-x: ${props => props.theme[themeName]?.gridGutterWidth ?? '.625rem'};
     --bear-gutter-y: 0;
     box-sizing: border-box;

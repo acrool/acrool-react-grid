@@ -8,9 +8,7 @@ import {generateRWDStyled} from './utils';
 /**
  * Container Component
  */
-const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
-    'data-container': props.fluid ? 'fluid': '',
-}))`
+const Container = styled.div<TStyledProps<IContainerProps>>`
   width: 100%;
   margin-right: auto;
   margin-left: auto;

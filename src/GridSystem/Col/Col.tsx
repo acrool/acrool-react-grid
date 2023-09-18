@@ -49,9 +49,7 @@ const generateDebugData = (props: TStyledProps<IColProps>) => {
  * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
  *
  */
-const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
-    'data-col': generateDebugData(props),
-}))`
+const Col = styled.div<TStyledProps<IColProps>>`
   box-sizing: border-box;
   position: relative;
   min-height: 1px;
