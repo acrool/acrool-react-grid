@@ -17,12 +17,14 @@
     "type": "git",
     "url": "https://github.com/imagine10255/bear-react-grid.git"
   },
+  "main": "./dist/bear-react-grid.cjs.js",
   "module": "./dist/bear-react-grid.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "browser": "./dist/bear-react-grid.es.js",
-      "import": "./dist/bear-react-grid.es.js"
+      "import": "./dist/bear-react-grid.es.js",
+      "require": "./dist/bear-react-grid.cjs.js"
     },
     "./dist/index.css": "./dist/style.css"
   },

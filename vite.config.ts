@@ -20,7 +20,7 @@ export default defineConfig({
         sourcemap: process.env.NODE_ENV !== 'production',
         lib: {
             entry: path.resolve(__dirname, 'src/index.ts'),
-            formats: ['es'],
+            formats: ['es','cjs'],
             fileName: (format) => `bear-react-grid.${format}.js`,
         },
         cssTarget: 'chrome61',
