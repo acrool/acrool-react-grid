@@ -1,12 +1,10 @@
+'use client';
+
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
-
 import {TStyledProps, IColProps} from '../../types';
-
 import {generateRWDStyled, cssGetter} from './utils';
-
-
 
 /**
  * 判斷是否為空

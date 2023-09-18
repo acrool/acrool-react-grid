@@ -1,3 +1,5 @@
+'use client';
+
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
 import {TStyledProps, IContainerProps} from '../../types';

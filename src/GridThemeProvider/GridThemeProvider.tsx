@@ -1,3 +1,5 @@
+'use client';
+
 import React, {PropsWithChildren} from 'react';
 import {ThemeProvider, createGlobalStyle, css} from 'styled-components';
 
