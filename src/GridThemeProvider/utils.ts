@@ -46,7 +46,7 @@ const renderMarginStyle = (sizeName: NoXsMediaSize) => {
 const renderPaddingStyle = (sizeName: NoXsMediaSize) => {
     return Array.from({length: 6}).map((row,idx) => {
         return `
-        .p-${sizeName}-${idx} {margin: var(--bear-spacer-${idx}) !important;}
+        .p-${sizeName}-${idx} {padding: var(--bear-spacer-${idx}) !important;}
         .pt-${sizeName}-${idx}, .py-${sizeName}-${idx} {padding-top: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
         .pr-${sizeName}-${idx}, .px-${sizeName}-${idx} {padding-right: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
         .pb-${sizeName}-${idx}, .py-${sizeName}-${idx} {padding-bottom: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
