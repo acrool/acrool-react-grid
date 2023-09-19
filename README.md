@@ -35,7 +35,7 @@
 - Refer to the design of `Bootstrap 5` and change it to `CSS IN JS` method
 - Provides tool CSS for `Bootstrap 5` layout
 - Provide `RWD` Media query method
-- Support NextJS 13 (v5.0.3+)
+- Support `NextJS 13` (v5.0.3+)
 
 ## Install
 
