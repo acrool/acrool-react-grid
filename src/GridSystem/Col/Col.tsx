@@ -52,7 +52,7 @@ const generateDebugData = (props: TStyledProps<IColProps>) => {
  *
  */
 const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
-    'data-col': generateDebugData(props),
+    'data-grid': generateDebugData(props),
 }))`
   box-sizing: border-box;
   position: relative;

@@ -7,7 +7,7 @@ import {generateRWDStyled} from './utils';
  * Container Component
  */
 const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
-    'data-container': props.fluid ? 'fluid': '',
+    'data-grid': props.fluid ? 'container-fluid': 'container',
 }))`
   width: 100%;
   margin-right: auto;
@@ -17,7 +17,7 @@ const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
   padding-left: var(--bear-gutter-x);
 
   ${(props: TStyledProps<IContainerProps>) => css`
-     --bear-gutter-x: ${props.theme[themeName]?.gridGutterWidth};
+     --bear-gutter-x: ${props.theme[themeName]?.gutter};
 
      ${!props.fluid && css`
         ${generateRWDStyled(props)};

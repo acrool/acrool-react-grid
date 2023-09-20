@@ -8,8 +8,9 @@ import 'bear-react-grid/dist/index.css';
 
 function App() {
     const defaultTheme: TGridTheme = {
+        spacer: '1rem',
+        gutter: '0.625rem',
         gridColumns: 24,
-        gridGutterWidth: '0.625rem',
         gridBreakpoints: {
             xs: 0,
             sm: 576,
@@ -25,13 +26,6 @@ function App() {
             xl: 1140,
             xxl: 1540,
         },
-        gridGutterWidthMedia: {
-            sm: '0.625rem',
-            md: '0.625rem',
-            lg: '0.625rem',
-            xl: '0.625rem',
-            xxl: '0.625rem',
-        }
     };
 
     /**
@@ -114,37 +108,14 @@ function App() {
         ];
 
         return (<Container>
-            <Row noGutters>
-                <Col key={'card'}
-                    col="auto"
-                    className="la"
-                >
-                    <Card className="h-100">
-                        <Grid
-                            // columns="1fr auto"
-                            // columns={2}
-                            columns={{xs: '1fr auto', md: 3}}
-                            gap="50px 30px"
-                            vertical="center"
-                            horizontal="center"
-                        >
-                            <div>test</div>
-                            <div>test2</div>
-                            {/*<GridCol col={6}>Col-6</GridCol>*/}
-                            {/*<GridCol col={6}>Col-6</GridCol>*/}
-                        </Grid>
 
-                    </Card>
-                </Col>
-            </Row>
-            <Row className="g-0">
+            <Row >
                 {texts.map((text, index) => {
                     return <Col key={`card_${index}`}
                         className="mb-5"
                         col={24}
-                        md
-                        lg={10}
-
+                        md={4}
+                        lg
                     >
                         <Card className="h-100">
                             <CardBody>

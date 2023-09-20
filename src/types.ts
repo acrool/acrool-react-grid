@@ -47,14 +47,14 @@ export interface IBreakpoints {
     xl: number
     xxl: number
 }
-export interface IGutterBreakpoints {
-    xs: TGutterWidth
-    sm: TGutterWidth
-    md: TGutterWidth
-    lg: TGutterWidth
-    xl: TGutterWidth
-    xxl: TGutterWidth
-}
+// export interface IGutterWidths {
+//     xs: TGutterWidth
+//     sm: TGutterWidth
+//     md: TGutterWidth
+//     lg: TGutterWidth
+//     xl: TGutterWidth
+//     xxl: TGutterWidth
+// }
 export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>
 
 export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: Function }
@@ -73,7 +73,7 @@ export interface IGridThemeProviderProps {
 
 export interface IGridSetting {
     spacer: TGutterWidth
-    gridGutterWidth: TGutterWidth
+    gutter: TGutterWidth
     gridColumns: number
     gridBreakpoints: IBreakpoints
     containerMaxWidths: TContainerMaxWidths

@@ -15,7 +15,7 @@ const ThemeProviderFixed = ThemeProvider as unknown as React.FC<PropsWithChildre
  * Grid Theme Provider
  * use :
  *     <GridThemeProvider gridTheme={{
- *         gridGutterWidth: 5,
+ *         gutter: 5,
  *     }}>
  *          <Container>, <Row>, <Col> ...then eat this setting
  *     </GridThemeProvider>
@@ -24,7 +24,6 @@ const GridThemeProvider = (props: IGridThemeProviderProps) => {
     const {gridTheme, children} = props;
     const {gridBreakpoints, containerMaxWidths, ...baseDefaultTheme} = defaultGridTheme;
 
-    // console.log('test render bear-react-grid version 10');
     const composeGridTheme = {
         [themeName]: {
             ...baseDefaultTheme,

@@ -17,7 +17,7 @@ export const cssGetter: ICSSGetter = {
         switch (column) {
         case true:
             return `
-          flex: 1 0 0%;
+          flex: 1 0 0;
         `;
         case 'auto':
             return `
@@ -28,8 +28,8 @@ export const cssGetter: ICSSGetter = {
             const columnNumber = (typeof column === 'number' ? column : 0);
             colFlexBasis = (100 / gridColumns) * columnNumber;
             return `
-            flex: 0 0 ${colFlexBasis}%;
-            width: ${colFlexBasis}%;
+            flex: 0 0 auto;
+            width: ${colFlexBasis > 0 ? `${columnNumber}%;`: 0};'
         `;
         }
     },

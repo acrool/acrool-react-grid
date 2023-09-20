@@ -10,7 +10,7 @@ export const generateRWDStyled = (props: TStyledProps<IContainerProps>) => {
     return mediaSizes
         .map(sizeName => {
             return media[sizeName]`
-            --bear-gutter-x: ${props.theme[themeName]?.gridGutterWidth};
+            --bear-gutter-x: ${props.theme[themeName]?.gutter};
             max-width: ${props.theme[themeName]?.containerMaxWidths[sizeName]}px;
         `;
         });

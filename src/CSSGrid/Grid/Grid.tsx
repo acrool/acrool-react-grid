@@ -68,7 +68,7 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
   display: grid;
   grid-template-rows: var(--bear-rows, ${props => 'repeat(1, 1fr)'});
   grid-template-columns: var(--bear-columns, ${props => `repeat(${props.theme[themeName]?.gridColumns}, 1fr)`});
-  gap: var(--bear-gap, ${props => props.theme[themeName]?.gridGutterWidth});
+  gap: var(--bear-gap, ${props => props.theme[themeName]?.gutter});
 
   ${(props: TStyledProps<IGridProps>) => css`
       ${!!getDefaultSizeValue(props.columns) && cssGetter.columns(getDefaultSizeValue(props.columns))};

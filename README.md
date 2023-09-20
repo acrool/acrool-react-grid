@@ -63,7 +63,7 @@ import 'bear-react-grid/dist/index.css';
 
 const gridTheme: IGridSetting = {
     spacer: '1rem',
-    gridGutterWidth: '.625rem',
+    gutter: '.625rem',
     gridColumns: 24,
     gridBreakpoints: {
         xs: 0,

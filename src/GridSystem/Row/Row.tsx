@@ -12,9 +12,9 @@ import {themeName} from '../../config';
  * ps: 設定會 width 100% 會產生 margin 抵銷失敗
  */
 const Row = styled.div.attrs((props: TStyledProps<IRowProps>) => ({
-    'data-row': 'row',
+    'data-grid': 'row',
 }))`
-    --bear-gutter-x: ${props => props.theme[themeName]?.gridGutterWidth ?? '.625rem'};
+    --bear-gutter-x: ${props => props.theme[themeName]?.gutter};
     --bear-gutter-y: 0;
     box-sizing: border-box;
     display: flex;
