@@ -156,10 +156,13 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             ${renderGapStyle(sizeName)}
             ${renderOrderStyle(sizeName)}
 
-            .overflow-x-${sizeName}-hidden {overflow-x: hidden!important;}
-            .overflow-y-${sizeName}-hidden {overflow-y: hidden!important;}
-            .overflow-x-${sizeName}-auto {overflow-x: auto!important;}
-            .overflow-y-${sizeName}-auto {overflow-y: auto!important;}
+            .order-${sizeName}-first {order: -1 !important;}
+            .order-${sizeName}-last {order: 6 !important;}
+
+            .overflow-x-${sizeName}-hidden {overflow-x: hidden !important;}
+            .overflow-y-${sizeName}-hidden {overflow-y: hidden !important;}
+            .overflow-x-${sizeName}-auto {overflow-x: auto !important;}
+            .overflow-y-${sizeName}-auto {overflow-y: auto !important;}
         `;
         });
 };
