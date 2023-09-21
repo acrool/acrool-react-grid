@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {GridThemeProvider, Col, Row, Container, Grid, GridCol, media, TGridTheme} from 'bear-react-grid';
+import {GridThemeProvider, Col, Row, Container, media, TGridTheme} from 'bear-react-grid';
 
 import './index.css';
 import 'bear-react-grid/dist/index.css';
