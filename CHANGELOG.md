@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.3-alpha.5](https://github.com/imagine10255/bear-react-grid/compare/v5.0.3-alpha.4...v5.0.3-alpha.5) (2023-09-21)
+
+
+### Bug Fixes
+
+* fix JSX.Element to ReactNode ([106d41d](https://github.com/imagine10255/bear-react-grid/commit/106d41d6d79ca5b6e683c2c5ddf98e5ac487f22d))
+
 ### [5.0.3-alpha.4](https://github.com/imagine10255/bear-react-grid/compare/v5.0.3-alpha.3...v5.0.3-alpha.4) (2023-09-21)
 
 
