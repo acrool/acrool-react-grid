@@ -1,4 +1,4 @@
-import {MouseEvent} from 'react';
+import React, {MouseEvent, ReactNode} from 'react';
 import CSS from 'csstype';
 import {ThemeProps, CSSObject} from 'styled-components';
 import {themeName} from './config';
@@ -14,7 +14,7 @@ export interface FCChildrenProps {
     forwardRef?: any;
     id?: string|number;
     key?: string|number;
-    children?: JSX.Element,
+    children?: ReactNode,
     onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
@@ -68,7 +68,7 @@ export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: F
  * ------------------------------ */
 export interface IGridThemeProviderProps {
     gridTheme: Partial<IGridSetting>
-    children: JSX.Element
+    children: React.ReactNode
 }
 
 export interface IGridSetting {

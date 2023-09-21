@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {GridThemeProvider, Col, Row, Container, media, TGridTheme} from 'bear-react-grid';
+import {GridThemeProvider, Col, Row, Container, media, TGridTheme, Grid} from 'bear-react-grid';
 
 import './index.css';
 import 'bear-react-grid/dist/index.css';
@@ -33,6 +33,9 @@ function App() {
      */
     const renderNav = () => {
         return <Nav className="mb-5">
+            <Grid>
+
+            </Grid>
             <Container fluid className="d-flex d-md-">
                 <NavbarBrand>Bear React Grid</NavbarBrand>
 
