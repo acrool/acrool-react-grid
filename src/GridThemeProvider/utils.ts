@@ -116,9 +116,14 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
 
             .justify-content-${sizeName}-start {justify-content: flex-start !important;}
             .justify-content-${sizeName}-end {justify-content: flex-end !important;}
-            .justify-content-${sizeName}-center {justify-content: flex-center !important;}
+            .justify-content-${sizeName}-center {justify-content: center !important;}
             .justify-content-${sizeName}-between {justify-content: space-between !important;}
             .justify-content-${sizeName}-around {justify-content: space-around !important;}
+
+            .justify-items-${sizeName}-start {justify-items: flex-start !important;}
+            .justify-items-${sizeName}-end {justify-items: flex-end !important;}
+            .justify-items-${sizeName}-center {justify-items: center !important;}
+            .justify-items-${sizeName}-stretch {justify-items: stretch !important;}
 
             .align-items-${sizeName}-start {align-items: flex-start !important;}
             .align-items-${sizeName}-end {align-items: flex-end !important;}
