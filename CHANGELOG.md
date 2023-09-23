@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.3-alpha.7](https://github.com/imagine10255/bear-react-grid/compare/v5.0.3-alpha.6...v5.0.3-alpha.7) (2023-09-23)
+
+
+### Bug Fixes
+
+* gird parent overwrite css var ([d75710e](https://github.com/imagine10255/bear-react-grid/commit/d75710e99ae5282dd1ab32dc4136157d9d890dd3))
+
 ### [5.0.3-alpha.6](https://github.com/imagine10255/bear-react-grid/compare/v5.0.3-alpha.5...v5.0.3-alpha.6) (2023-09-22)
 
 
