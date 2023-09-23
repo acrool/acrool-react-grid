@@ -33,7 +33,17 @@ function App() {
      */
     const renderNav = () => {
         return <Nav className="mb-5">
-            <Grid>
+            <Grid columns="auto 1fr" rows="1fr 1fr 1fr 2">
+                <div>
+                    test1
+                </div>
+                <div>
+                    <Grid columns={2}>
+                        <div>A</div>
+                        <div>B</div>
+                    </Grid>
+
+                </div>
 
             </Grid>
             <Container fluid className="d-flex d-md-">
