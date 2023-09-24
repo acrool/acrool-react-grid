@@ -53,6 +53,9 @@ const GridCol = styled.div.attrs((props: TStyledProps<IGridColProps>) => ({
 }))`
   ${(props: TStyledProps<IGridColProps>) => css`
      ${props.col && cssGetter.col(props.col)};
+     ${props.colSpan && cssGetter.colSpan(props.colSpan)};
+     ${props.rowSpan && cssGetter.rowSpan(props.rowSpan)};
+
      ${generateRWDStyled(props)};
  `}
 `;

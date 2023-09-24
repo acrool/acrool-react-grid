@@ -8,16 +8,22 @@ import {css} from 'styled-components';
 
 interface ICSSGetter {
     col: (column: TGridCol) => string
-    start: (column: TGridCol) => string
+    colSpan: (column: TGridCol) => string
+    rowSpan: (column: TGridCol) => string
 }
 
 export const cssGetter: ICSSGetter = {
-    col: (column) => {
-        return `grid-column: auto/span ${column};`;
+    col: (col) => {
+        return `grid-column: auto/span ${col};`;
     },
-    start: (column) => {
+    colSpan: (colSpan) => {
         return `
-            grid-column-start: ${column};
+            grid-column-start: span ${colSpan};
+        `;
+    },
+    rowSpan: (rowSpan) => {
+        return `
+            grid-row-start: span ${rowSpan};
         `;
     }
 };

@@ -144,4 +144,7 @@ export interface IGridColProps extends FCChildrenProps{
     lg?: TGridCol;
     xl?: TGridCol;
     xxl?: TGridCol;
+
+    colSpan?: number,
+    rowSpan?: number,
 }

@@ -18,26 +18,26 @@ export const cssGetter: ICSSGetterCss = {
     columns: (columns) => {
         if(typeof columns === 'string'){
             return `
-            --bear-columns: ${columns};
+            grid-template-columns: ${columns};
             `;
         }
         return `
-            --bear-columns: repeat(${columns}, 1fr)
+            grid-template-columns: repeat(${columns}, 1fr)
         `;
     },
     rows: (rows) => {
         if(typeof rows === 'string'){
             return `
-            --bear-rows: ${rows};
+            grid-template-rows: ${rows};
             `;
         }
         return `
-            --bear-rows: repeat(${rows}, 1fr)
+            grid-template-rows: ${rows === 1 ? '1fr' : `repeat(${rows}, 1fr)`}
         `;
     },
     gap: (gapNum) => {
         return `
-        --bear-gap: ${gapNum};
+        gap: ${gapNum};
         `;
     },
     columnGap: (gapNum) => {

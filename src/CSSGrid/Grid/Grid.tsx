@@ -65,16 +65,16 @@ const getDefaultSizeValue = (column?: TGridTemplate) => {
 const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-grid': generateDebugData(props),
 }))`
-  // 每次定義避免被上層影響
-  --bear-columns: ${props => `repeat(${props.theme[themeName]?.gridColumns}, 1fr)`};
-  --bear-rows: repeat(1, 1fr);
-
   display: grid;
-  grid-template-rows: var(--bear-rows);
-  grid-template-columns: var(--bear-columns);
-  gap: var(--bear-gap, ${props => props.theme[themeName]?.gutter});
 
   ${(props: TStyledProps<IGridProps>) => css`
+      gap: ${props.theme[themeName]?.gutter};
+      grid-template-rows: auto;
+
+      ${!props.columns && props.children && Array.isArray(props.children) && css`
+          grid-template-columns: ${`repeat(${props.children.length ?? 1}, auto)`};
+      `}
+
       ${!!getDefaultSizeValue(props.columns) && cssGetter.columns(getDefaultSizeValue(props.columns))};
       ${!!getDefaultSizeValue(props.rows) && cssGetter.rows(getDefaultSizeValue(props.rows))};
       ${props.gap && cssGetter.gap(props.gap)};

@@ -144,6 +144,10 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .align-self-${sizeName}-baseline {align-self: baseline !important;}
             .align-self-${sizeName}-stretch {align-self: stretch !important;}
 
+            .place-items-${sizeName}-start {place-items: start !important;}
+            .place-items-${sizeName}-end {place-items: end !important;}
+            .place-items-${sizeName}-center {place-items: center !important;}
+
             .text-${sizeName}-justify {text-align: justify !important;}
             .text-${sizeName}-left {text-align: left !important;}
             .text-${sizeName}-right {text-align: right !important;}
