@@ -95,6 +95,14 @@
 .text-right {text-align: right !important}
 .text-center {text-align: center !important}
 
+
+.g-colspan-1 {grid-column-start: span 1}
+.g-colspan-2 {grid-column-start: span 2}
+.g-colspan-3 {grid-column-start: span 3}
+.g-colspan-4 {grid-column-start: span 4}
+.g-colspan-5 {grid-column-start: span 5}
+
+
 /* gutter */
 .g-0, .gy-0 {--bear-gutter-y: 0 !important;}
 .g-0, .gx-0 {--bear-gutter-x: 0 !important;}

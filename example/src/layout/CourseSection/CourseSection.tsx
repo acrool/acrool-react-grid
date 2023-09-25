@@ -24,11 +24,11 @@ const CourseSection = ({
     const renderHeader = () => {
         return  <Wrapper columns={{
             xs: 'repeat(1,1fr)',
-            lg: '700px auto',
+            xl: '700px auto',
         }}
-        className="mb-4 text-center text-md-left"
+        className="mb-4 text-center text-xl-left"
         >
-            <Grid columns={1} className="mb-4 mb-md-0">
+            <Grid columns={1} className="mb-4 mb-xl-0">
                 <Caption>300 HOURS OF COURSES</Caption>
                 <Title>
                     Learn the best tools and platforms
@@ -39,7 +39,7 @@ const CourseSection = ({
                 </Description>
             </Grid>
 
-            <Grid className="justify-content-center justify-content-md-end">
+            <Grid className="justify-content-center justify-content-xl-end">
                 {platFormLogos.map(row => {
                     return <PlatformLogo key={row.text} src={row.imageUrl} alt={row.text}/>;
                 })}
@@ -71,7 +71,7 @@ const CourseSection = ({
             })}
         </Grid>
 
-        <Grid columns={5} className="overflow-x-auto overflow-x-md-initial mb-4">
+        <Grid columns={5} className="overflow-x-auto overflow-x-xl-initial mb-4">
             {Array.from({length: 5}).map((row, index) => {
                 return <PreviewCard key={`preview_${index}`}/>;
             })}

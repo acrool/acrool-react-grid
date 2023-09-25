@@ -1,7 +1,7 @@
 import React, {Children} from 'react';
 import styled, {css} from 'styled-components';
 import {TStyledProps, IGridProps, IColProps, TGridTemplate} from '../../types';
-import {cssGetter, generateRWDStyled, consoleLog} from './utils';
+import {cssGetter, generateRWDStyled} from './utils';
 import {themeName} from '../../config';
 
 

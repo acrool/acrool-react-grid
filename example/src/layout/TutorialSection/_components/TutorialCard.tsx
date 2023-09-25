@@ -8,26 +8,44 @@ interface IProps extends FCProps {
 const TutorialCard = ({
     className,
 }: IProps) => {
-    return <TutorialCardRoot>
-        <Card columns={1} className="align-content-start">
+    return <TutorialCardRoot className={className}>
+        <Card columns={1} className="align-content-start" gap="15px">
 
             <PlatformLogo src="https://designcode.io/images/logos/swiftui-logo.svg" className="justify-self-end"/>
             <Title>SwiftUI Handbook</Title>
             <Desc className="text-ellipsis">A comprehensive series of tutorials covering Xcode, SwiftUI and all the layout and development techniques</Desc>
 
-            <Item>
-                <img src="https://designcode.io/images/icons/file.svg" alt="file icon" />
-                107
-                free tutorials
-            </Item>
+            {Array.from({length: 2}).map((row, index) => {
+                return <Grid  key={`tutorialCar_${index}`} className="align-items-center justify-content-start" gap="8px">
+                    <ImageRound>
+                        <Image src="https://designcode.io/images/icons/file.svg" alt="file icon" />
+                    </ImageRound>
+                    <span>107 free tutorials</span>
+                </Grid>;
+            })}
+
         </Card>
-        <CardB color="linear-gradient(180deg, #408DD5 0%, #630B8C 100%)"
-            className="HandbookCard__SecondBackground-sc-7b5434-3 lcvTnr"/>
+        <CardB color="linear-gradient(180deg, #408DD5 0%, #630B8C 100%)"/>
     </TutorialCardRoot>;
 };
 
 export default TutorialCard;
 
+
+const Image = styled.img`
+    margin: auto;
+    width: 20px;
+    height: 20px;
+`;
+
+const ImageRound = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+`;
 
 
 const PlatformLogo = styled.img`
