@@ -86,9 +86,12 @@ export type TGridTheme = Partial<IGridSetting>;
  *             Container
  * ------------------------------ */
 export interface IContainerProps extends FCChildrenProps{
-    fluid?: boolean;
+    sm?: boolean;
+    md?: boolean;
+    lg?: boolean;
+    xl?: boolean;
+    xxl?: boolean;
 }
-
 
 /** -------------------------------
  *       Grid System - Row

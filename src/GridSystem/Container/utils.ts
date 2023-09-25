@@ -1,6 +1,7 @@
 import {TStyledProps, IContainerProps} from '../../types';
 import {mediaSizes, themeName} from '../../config';
 import media from '../../media';
+import {css} from 'styled-components';
 
 /**
  * 產生 RWD 樣式
@@ -11,7 +12,9 @@ export const generateRWDStyled = (props: TStyledProps<IContainerProps>) => {
         .map(sizeName => {
             return media[sizeName]`
             --bear-gutter-x: ${props.theme[themeName]?.gutter};
-            max-width: ${props.theme[themeName]?.containerMaxWidths[sizeName]}px;
+
+            max-width: ${props[sizeName] ? 'none': `${props.theme[themeName]?.containerMaxWidths[sizeName]}px`};
+
         `;
         });
 };

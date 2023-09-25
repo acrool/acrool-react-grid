@@ -70,7 +70,7 @@ const CourseSection = ({
             })}
         </Grid>
 
-        <Grid columns={5} className="overflow-x-auto">
+        <Grid columns={5} className="overflow-x-auto overflow-x-md-initial">
             {Array.from({length: 5}).map((row, index) => {
                 return <PreviewCard key={`preview_${index}`}/>;
             })}

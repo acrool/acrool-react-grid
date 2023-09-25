@@ -168,6 +168,8 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .order-${sizeName}-first {order: -1 !important;}
             .order-${sizeName}-last {order: 6 !important;}
 
+            .overflow-x-${sizeName}-initial {overflow-x: initial !important;}
+            .overflow-y-${sizeName}-initial {overflow-x: initial !important;}
             .overflow-x-${sizeName}-hidden {overflow-x: hidden !important;}
             .overflow-y-${sizeName}-hidden {overflow-y: hidden !important;}
             .overflow-x-${sizeName}-auto {overflow-x: auto !important;}
