@@ -6,25 +6,32 @@ import {Container, Col, Row, GridThemeProvider, Grid, GridCol} from 'bear-react-
 import styled from 'styled-components';
 import Navbar from './layout/Navbar';
 import Header from './layout/Header';
-import WaveWrapper from './layout/WaveWrapper';
+import WaveWrapper1 from './layout/WaveWrapper';
 import CourseSection from './layout/CourseSection';
 
 import './index.css';
 import 'bear-react-grid/dist/index.css';
 import gridTheme from '@/config/gridTheme';
+import WaveWrapper2 from '@/layout/WaveWrapper/WaveWrapper2';
+import TutorialSection from '@/layout/TutorialSection';
 
 export default function App() {
 
 
 
     return <GridThemeProvider gridTheme={gridTheme}>
-        <WaveWrapper/>
+        <WaveWrapper1/>
         <Wrapper>
             <Navbar className="mb-5"/>
             <Header/>
         </Wrapper>
 
-        <CourseSection/>
+        <CourseSection className="mb-5"/>
+
+        <Wrapper2>
+            <TutorialSection/>
+            <WaveWrapper2/>
+        </Wrapper2>
 
 
     </GridThemeProvider>;
@@ -32,6 +39,12 @@ export default function App() {
 }
 
 
+const Wrapper2 = styled.div`
+    height: 280px;
+    position: relative;
+    padding-top: 250px;
+
+`;
 
 
 const Wrapper = styled.div`

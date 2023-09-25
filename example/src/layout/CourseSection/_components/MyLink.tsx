@@ -11,10 +11,10 @@ const MyLink = ({
 }: IProps) => {
     return <MyLinkRoot gap="10px" columns="repeat(2, auto)">
         <No rowSpan={2}>{no}</No>
-        <Title className="test-ellipsis">
+        <Title className="text-ellipsis">
                Design and Code with ChatGPT and Midjourney
         </Title>
-        <Desc className="test-ellipsis">
+        <Desc className="text-ellipsis">
                Design and develop apps using GPT-4 and Midjourney with prompts for SwiftUI, React, CSS, app concepts, icons, and copywriting
         </Desc>
     </MyLinkRoot>;

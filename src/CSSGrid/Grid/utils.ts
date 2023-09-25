@@ -14,15 +14,17 @@ interface ICSSGetterCss {
     rowGap: (gapNum: TGridGap) => string
 }
 
+
 export const cssGetter: ICSSGetterCss = {
     columns: (columns) => {
+
         if(typeof columns === 'string'){
             return `
             grid-template-columns: ${columns};
             `;
         }
         return `
-            grid-template-columns: repeat(${columns}, 1fr)
+            grid-template-columns: repeat(${columns}, auto)
         `;
     },
     rows: (rows) => {

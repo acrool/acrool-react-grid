@@ -48,7 +48,7 @@ const CourseSection = ({
     };
 
 
-    return <CourseSectionRoot sm xl={false}>
+    return <CourseSectionRoot sm xl={false} className={className}>
         {renderHeader()}
 
         <Grid columns={2} gap="20px" className="overflow-x-auto">
@@ -153,7 +153,6 @@ const CourseDetailCard = styled(Grid)`
 const PlatformLogo = styled.img`
   width: 44px;
   height: 44px;
-  margin: 0px;
   opacity: 1;
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
 `;

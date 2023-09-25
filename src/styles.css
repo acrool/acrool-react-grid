@@ -13,7 +13,7 @@
 
 
 /* text */
-.test-ellipsis{
+.text-ellipsis{
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -62,6 +62,11 @@
 .justify-items-end {justify-items: flex-end !important;}
 .justify-items-center {justify-items: center !important;}
 .justify-items-stretch {justify-items: stretch !important;}
+
+.justify-self-start {justify-self: flex-start !important;}
+.justify-self-center {justify-self: center !important;}
+.justify-self-end {justify-self: flex-end !important;}
+
 .align-items-start {align-items: flex-start !important;}
 .align-items-end {align-items: flex-end !important;}
 .align-items-center {align-items: center !important;}
@@ -210,7 +215,10 @@
 
 @media (min-width: 576px) {
     .d-sm-none, .d-sm-inline, .d-sm-inline-block, .d-sm-block, .d-sm-flex, .d-sm-inline-flex, .d-sm-table, .d-sm-table-row, .d-sm-table-cell, .d-sm-grid, .d-sm-inline-grid{box-sizing: border-box;}
-    .flex-sm-row, .flex-sm-column, .flex-sm-row-reverse, .flex-sm-column-reverse, .flex-sm-wrap, .flex-sm-nowrap, .flex-sm-wrap-reverse, .flex-sm-fill, .flex-sm-grow-0, .flex-sm-grow-1, .flex-sm-shrink-0, .flex-sm-shrink-1, .justify-content-sm-start, .justify-content-sm-end, .justify-content-sm-center, .justify-content-sm-between, .justify-content-sm-around, .justify-items-sm-start, .justify-items-sm-end, .justify-items-sm-center, .justify-items-sm-stretch, .align-items-sm-start, .align-items-sm-end, .align-items-sm-center, .align-items-sm-baseline, .align-items-sm-stretch, .align-content-sm-start, .align-content-sm-end, .align-content-sm-center, .align-content-sm-between, .align-content-sm-around, .align-content-sm-stretch, .align-self-sm-auto, .align-self-sm-start, .align-self-sm-end, .align-self-sm-center, .align-self-sm-baseline, .align-self-sm-stretch{box-sizing: border-box;}
+    .flex-sm-row, .flex-sm-column, .flex-sm-row-reverse, .flex-sm-column-reverse, .flex-sm-wrap, .flex-sm-nowrap, .flex-sm-wrap-reverse, .flex-sm-fill, .flex-sm-grow-0, .flex-sm-grow-1, .flex-sm-shrink-0, .flex-sm-shrink-1 {box-sizing: border-box;}
+    .justify-content-sm-start, .justify-content-sm-end, .justify-content-sm-center, .justify-content-sm-between, .justify-content-sm-around, .justify-items-sm-start, .justify-items-sm-end, .justify-items-sm-center, .justify-items-sm-stretch, .justify-self-sm-start, .justify-self-sm-center, .justify-self-sm-end {box-sizing: border-box;}
+    .align-items-sm-start, .align-items-sm-end, .align-items-sm-center, .align-items-sm-baseline, .align-items-sm-stretch, .align-content-sm-start, .align-content-sm-end, .align-content-sm-center, .align-content-sm-between, .align-content-sm-around, .align-content-sm-stretch, .align-self-sm-auto, .align-self-sm-start, .align-self-sm-end, .align-self-sm-center, .align-self-sm-baseline, .align-self-sm-stretch{box-sizing: border-box;}
+
     .place-items-sm-start, .place-items-sm-end, .place-items-sm-center {box-sizing: border-box;}
 
     .text-sm-justify, .text-sm-left, .text-sm-right, .text-sm-center{box-sizing: border-box;}
@@ -226,7 +234,10 @@
 
 @media (min-width: 768px) {
     .d-md-none, .d-md-inline, .d-md-inline-block, .d-md-block, .d-md-flex, .d-md-inline-flex, .d-md-table, .d-md-table-row, .d-md-table-cell, .d-md-grid, .d-md-inline-grid{box-sizing: border-box;}
-    .flex-md-row, .flex-md-column, .flex-md-row-reverse, .flex-md-column-reverse, .flex-md-wrap, .flex-md-nowrap, .flex-md-wrap-reverse, .flex-md-fill, .flex-md-grow-0, .flex-md-grow-1, .flex-md-shrink-0, .flex-md-shrink-1, .justify-content-md-start, .justify-content-md-end, .justify-content-md-center, .justify-content-md-between, .justify-content-md-around, .justify-items-md-start, .justify-items-md-end, .justify-items-md-center, .justify-items-md-stretch, .align-items-md-start, .align-items-md-end, .align-items-md-center, .align-items-md-baseline, .align-items-md-stretch, .align-content-md-start, .align-content-md-end, .align-content-md-center, .align-content-md-between, .align-content-md-around, .align-content-md-stretch, .align-self-md-auto, .align-self-md-start, .align-self-md-end, .align-self-md-center, .align-self-md-baseline, .align-self-md-stretch{box-sizing: border-box;}
+    .flex-md-row, .flex-md-column, .flex-md-row-reverse, .flex-md-column-reverse, .flex-md-wrap, .flex-md-nowrap, .flex-md-wrap-reverse, .flex-md-fill, .flex-md-grow-0, .flex-md-grow-1, .flex-md-shrink-0, .flex-md-shrink-1 {box-sizing: border-box;}
+    .justify-content-md-start, .justify-content-md-end, .justify-content-md-center, .justify-content-md-between, .justify-content-md-around, .justify-items-md-start, .justify-items-md-end, .justify-items-md-center, .justify-items-md-stretch, .justify-self-md-start, .justify-self-md-center, .justify-self-md-end {box-sizing: border-box;}
+    .align-items-md-start, .align-items-md-end, .align-items-md-center, .align-items-md-baseline, .align-items-md-stretch, .align-content-md-start, .align-content-md-end, .align-content-md-center, .align-content-md-between, .align-content-md-around, .align-content-md-stretch, .align-self-md-auto, .align-self-md-start, .align-self-md-end, .align-self-md-center, .align-self-md-baseline, .align-self-md-stretch{box-sizing: border-box;}
+
     .place-items-md-start, .place-items-md-end, .place-items-md-center {box-sizing: border-box;}
 
     .text-md-justify, .text-md-left, .text-md-right, .text-md-center{box-sizing: border-box;}
@@ -242,7 +253,10 @@
 
 @media (min-width: 992px) {
     .d-lg-none, .d-lg-inline, .d-lg-inline-block, .d-lg-block, .d-lg-flex, .d-lg-inline-flex, .d-lg-table, .d-lg-table-row, .d-lg-table-cell, .d-lg-grid, .d-lg-inline-grid{box-sizing: border-box;}
-    .flex-lg-row, .flex-lg-column, .flex-lg-row-reverse, .flex-lg-column-reverse, .flex-lg-wrap, .flex-lg-nowrap, .flex-lg-wrap-reverse, .flex-lg-fill, .flex-lg-grow-0, .flex-lg-grow-1, .flex-lg-shrink-0, .flex-lg-shrink-1, .justify-content-lg-start, .justify-content-lg-end, .justify-content-lg-center, .justify-content-lg-between, .justify-content-lg-around, .justify-items-lg-start, .justify-items-lg-end, .justify-items-lg-center, .justify-items-lg-stretch, .align-items-lg-start, .align-items-lg-end, .align-items-lg-center, .align-items-lg-baseline, .align-items-lg-stretch, .align-content-lg-start, .align-content-lg-end, .align-content-lg-center, .align-content-lg-between, .align-content-lg-around, .align-content-lg-stretch, .align-self-lg-auto, .align-self-lg-start, .align-self-lg-end, .align-self-lg-center, .align-self-lg-baseline, .align-self-lg-stretch{box-sizing: border-box;}
+    .flex-lg-row, .flex-lg-column, .flex-lg-row-reverse, .flex-lg-column-reverse, .flex-lg-wrap, .flex-lg-nowrap, .flex-lg-wrap-reverse, .flex-lg-fill, .flex-lg-grow-0, .flex-lg-grow-1, .flex-lg-shrink-0, .flex-lg-shrink-1 {box-sizing: border-box;}
+    .justify-content-lg-start, .justify-content-lg-end, .justify-content-lg-center, .justify-content-lg-between, .justify-content-lg-around, .justify-items-lg-start, .justify-items-lg-end, .justify-items-lg-center, .justify-items-lg-stretch, .justify-self-lg-start, .justify-self-lg-center, .justify-self-lg-end {box-sizing: border-box;}
+    .align-items-lg-start, .align-items-lg-end, .align-items-lg-center, .align-items-lg-baseline, .align-items-lg-stretch, .align-content-lg-start, .align-content-lg-end, .align-content-lg-center, .align-content-lg-between, .align-content-lg-around, .align-content-lg-stretch, .align-self-lg-auto, .align-self-lg-start, .align-self-lg-end, .align-self-lg-center, .align-self-lg-baseline, .align-self-lg-stretch{box-sizing: border-box;}
+
     .place-items-lg-start, .place-items-lg-end, .place-items-lg-center {box-sizing: border-box;}
 
     .text-lg-justify, .text-lg-left, .text-lg-right, .text-lg-center{box-sizing: border-box;}
@@ -258,7 +272,10 @@
 
 @media (min-width: 1200px) {
     .d-xl-none, .d-xl-inline, .d-xl-inline-block, .d-xl-block, .d-xl-flex, .d-xl-inline-flex, .d-xl-table, .d-xl-table-row, .d-xl-table-cell, .d-xl-grid, .d-xl-inline-grid{box-sizing: border-box;}
-    .flex-xl-row, .flex-xl-column, .flex-xl-row-reverse, .flex-xl-column-reverse, .flex-xl-wrap, .flex-xl-nowrap, .flex-xl-wrap-reverse, .flex-xl-fill, .flex-xl-grow-0, .flex-xl-grow-1, .flex-xl-shrink-0, .flex-xl-shrink-1, .justify-content-xl-start, .justify-content-xl-end, .justify-content-xl-center, .justify-content-xl-between, .justify-content-xl-around, .justify-items-xl-start, .justify-items-xl-end, .justify-items-xl-center, .justify-items-xl-stretch, .align-items-xl-start, .align-items-xl-end, .align-items-xl-center, .align-items-xl-baseline, .align-items-xl-stretch, .align-content-xl-start, .align-content-xl-end, .align-content-xl-center, .align-content-xl-between, .align-content-xl-around, .align-content-xl-stretch, .align-self-xl-auto, .align-self-xl-start, .align-self-xl-end, .align-self-xl-center, .align-self-xl-baseline, .align-self-xl-stretch{box-sizing: border-box;}
+    .flex-xl-row, .flex-xl-column, .flex-xl-row-reverse, .flex-xl-column-reverse, .flex-xl-wrap, .flex-xl-nowrap, .flex-xl-wrap-reverse, .flex-xl-fill, .flex-xl-grow-0, .flex-xl-grow-1, .flex-xl-shrink-0, .flex-xl-shrink-1 {box-sizing: border-box;}
+    .justify-content-xl-start, .justify-content-xl-end, .justify-content-xl-center, .justify-content-xl-between, .justify-content-xl-around, .justify-items-xl-start, .justify-items-xl-end, .justify-items-xl-center, .justify-items-xl-stretch, .justify-self-xl-start, .justify-self-xl-center, .justify-self-xl-end {box-sizing: border-box;}
+    .align-items-xl-start, .align-items-xl-end, .align-items-xl-center, .align-items-xl-baseline, .align-items-xl-stretch, .align-content-xl-start, .align-content-xl-end, .align-content-xl-center, .align-content-xl-between, .align-content-xl-around, .align-content-xl-stretch, .align-self-xl-auto, .align-self-xl-start, .align-self-xl-end, .align-self-xl-center, .align-self-xl-baseline, .align-self-xl-stretch{box-sizing: border-box;}
+
     .place-items-xl-start, .place-items-xl-end, .place-items-xl-center {box-sizing: border-box;}
 
     .text-xl-justify, .text-xl-left, .text-xl-right, .text-xl-center{box-sizing: border-box;}
@@ -274,7 +291,10 @@
 
 @media (min-width: 1540px) {
     .d-xxl-none, .d-xxl-inline, .d-xxl-inline-block, .d-xxl-block, .d-xxl-flex, .d-xxl-inline-flex, .d-xxl-table, .d-xxl-table-row, .d-xxl-table-cell, .d-xxl-grid, .d-xxl-inline-grid{box-sizing: border-box;}
-    .flex-xxl-row, .flex-xxl-column, .flex-xxl-row-reverse, .flex-xxl-column-reverse, .flex-xxl-wrap, .flex-xxl-nowrap, .flex-xxl-wrap-reverse, .flex-xxl-fill, .flex-xxl-grow-0, .flex-xxl-grow-1, .flex-xxl-shrink-0, .flex-xxl-shrink-1, .justify-content-xxl-start, .justify-content-xxl-end, .justify-content-xxl-center, .justify-content-xxl-between, .justify-content-xxl-around, .justify-items-xxl-start, .justify-items-xxl-end, .justify-items-xxl-center, .justify-items-xxl-stretch, .align-items-xxl-start, .align-items-xxl-end, .align-items-xxl-center, .align-items-xxl-baseline, .align-items-xxl-stretch, .align-content-xxl-start, .align-content-xxl-end, .align-content-xxl-center, .align-content-xxl-between, .align-content-xxl-around, .align-content-xxl-stretch, .align-self-xxl-auto, .align-self-xxl-start, .align-self-xxl-end, .align-self-xxl-center, .align-self-xxl-baseline, .align-self-xxl-stretch{box-sizing: border-box;}
+    .flex-xxl-row, .flex-xxl-column, .flex-xxl-row-reverse, .flex-xxl-column-reverse, .flex-xxl-wrap, .flex-xxl-nowrap, .flex-xxl-wrap-reverse, .flex-xxl-fill, .flex-xxl-grow-0, .flex-xxl-grow-1, .flex-xxl-shrink-0, .flex-xxl-shrink-1 {box-sizing: border-box;}
+    .justify-content-xxl-start, .justify-content-xxl-end, .justify-content-xxl-center, .justify-content-xxl-between, .justify-content-xxl-around, .justify-items-xxl-start, .justify-items-xxl-end, .justify-items-xxl-center, .justify-items-xxl-stretch, .justify-self-xxl-start, .justify-self-xxl-center, .justify-self-xxl-end {box-sizing: border-box;}
+    .align-items-xxl-start, .align-items-xxl-end, .align-items-xxl-center, .align-items-xxl-baseline, .align-items-xxl-stretch, .align-content-xxl-start, .align-content-xxl-end, .align-content-xxl-center, .align-content-xxl-between, .align-content-xxl-around, .align-content-xxl-stretch, .align-self-xxl-auto, .align-self-xxl-start, .align-self-xxl-end, .align-self-xxl-center, .align-self-xxl-baseline, .align-self-xxl-stretch{box-sizing: border-box;}
+
     .place-items-xxl-start, .place-items-xxl-end, .place-items-xxl-center {box-sizing: border-box;}
 
     .text-xxl-justify, .text-xxl-left, .text-xxl-right, .text-xxl-center{box-sizing: border-box;}

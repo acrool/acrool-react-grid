@@ -5,11 +5,11 @@ interface IProps extends FCProps {
    className?: string
 }
 
-const WaveWrapper = ({
+const WaveWrapper1 = ({
     className,
 }: IProps) => {
     return <WaveWrapperRoot className={className}>
-        <Wave/>
+        <Wave1/>
         <BackgroundBlur/>
         <Wave2/>
         <Wave3>
@@ -23,7 +23,7 @@ const WaveWrapper = ({
     </WaveWrapperRoot>;
 };
 
-export default WaveWrapper;
+export default WaveWrapper1;
 
 
 
@@ -46,7 +46,7 @@ const BackgroundBlur = styled.div`
 
 
 
-const Wave = styled.div`
+const Wave1 = styled.div`
   position: absolute;
   width: 100%;
   background-position: center top;

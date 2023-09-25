@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Children} from 'react';
 import styled, {css} from 'styled-components';
 import {TStyledProps, IGridProps, IColProps, TGridTemplate} from '../../types';
-import {cssGetter, generateRWDStyled} from './utils';
+import {cssGetter, generateRWDStyled, consoleLog} from './utils';
 import {themeName} from '../../config';
 
 
@@ -72,7 +72,7 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
       grid-template-rows: auto;
 
       ${!props.columns && props.children && Array.isArray(props.children) && css`
-          grid-template-columns: ${`repeat(${props.children.length ?? 1}, auto)`};
+          grid-template-columns: ${`repeat(${Children.count(props.children) ?? 1}, auto)`};
       `}
 
       ${!!getDefaultSizeValue(props.columns) && cssGetter.columns(getDefaultSizeValue(props.columns))};
