@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {Grid, Container, media} from 'bear-react-grid';
 import React from 'react';
+import CourseButton from '@/layout/_components/CourseButton';
 
 interface IProps extends FCProps {
    className?: string
@@ -49,24 +50,12 @@ const Caption = styled.p`
   color: rgba(255, 255, 255, 0.7);
 `;
 
-const NavigatorButton = styled.a`
-    border-radius: 14px;
-    padding: 10px 20px;
-    transition: all 0.3s ease-in-out 0s;
-    display: none;
+const NavigatorButton = styled(CourseButton)`
 
     :nth-child(1), :nth-child(2){
         display: flex;
     }
 
-    :hover {
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow: rgba(31, 47, 71, 0.25) 0 20px 40px, rgba(0, 0, 0, 0.1) 0 1px 5px, rgba(255, 255, 255, 0.4) 0 0 0 0.5px inset;
-    }
-
-    ${media.lg`
-        display: flex;
-    `}
 `;
 
 

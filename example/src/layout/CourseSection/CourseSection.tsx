@@ -3,6 +3,7 @@ import React from 'react';
 import {Container, Grid, GridCol, media} from 'bear-react-grid';
 import MyLink from '@/layout/CourseSection/_components/MyLink';
 import PreviewCard from '@/layout/CourseSection/_components/PreviewCard';
+import CourseButton from '@/layout/_components/CourseButton';
 
 interface IProps extends FCProps {
     className?: string;
@@ -70,11 +71,19 @@ const CourseSection = ({
             })}
         </Grid>
 
-        <Grid columns={5} className="overflow-x-auto overflow-x-md-initial">
+        <Grid columns={5} className="overflow-x-auto overflow-x-md-initial mb-4">
             {Array.from({length: 5}).map((row, index) => {
                 return <PreviewCard key={`preview_${index}`}/>;
             })}
         </Grid>
+
+        <div className="d-flex justify-content-center mx-auto">
+            <CourseButton isOutline href="/">
+                <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
+                <span>Browse courses</span>
+            </CourseButton>
+        </div>
+
 
     </CourseSectionRoot>;
 };
