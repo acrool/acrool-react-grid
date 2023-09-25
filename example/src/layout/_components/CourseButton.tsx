@@ -38,9 +38,9 @@ const CourseButtonRoot = styled.a`
     gap: 5px;
     width: auto;
     border-radius: 30px;
-    background-image: linear-gradient(rgba(24, 32, 79, 0.4) 0%, rgba(24, 32, 79, 0.4) 100%);
 
     &[data-outline], :hover {
+        background-image: linear-gradient(rgba(24, 32, 79, 0.4) 0%, rgba(24, 32, 79, 0.4) 100%);
         box-shadow: rgba(31, 47, 71, 0.25) 0 20px 40px, rgba(0, 0, 0, 0.1) 0 1px 5px, rgba(255, 255, 255, 0.4) 0 0 0 0.5px inset;
     }
 
