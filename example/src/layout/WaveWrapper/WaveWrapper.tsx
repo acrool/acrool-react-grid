@@ -8,7 +8,7 @@ interface IProps extends FCProps {
 const WaveWrapper = ({
     className,
 }: IProps) => {
-    return <WaveWrapperRoot>
+    return <WaveWrapperRoot className={className}>
         <Wave/>
         <BackgroundBlur/>
         <Wave2/>

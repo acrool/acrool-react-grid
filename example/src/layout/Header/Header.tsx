@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 import PurchaseButton from './_components/PurchaseButton';
 import {Container, Grid, GridCol} from 'bear-react-grid';
-import Navbar from '@/layout/Navbar';
 
 interface IProps extends FCProps {
     className?: string;
@@ -68,7 +67,7 @@ const Header = ({
     };
 
 
-    return <HeaderRoot>
+    return <HeaderRoot className={className}>
         <Grid className="justify-content-between">
             {/*{renderAnimationWrapper()}*/}
             {renderTextWrapper()}

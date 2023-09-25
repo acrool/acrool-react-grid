@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Container, Grid, GridCol} from 'bear-react-grid';
+import {Container, Grid, GridCol, media} from 'bear-react-grid';
 import MyLink from '@/layout/CourseSection/_components/MyLink';
+import PreviewCard from '@/layout/CourseSection/_components/PreviewCard';
 
 interface IProps extends FCProps {
     className?: string;
@@ -24,9 +25,9 @@ const CourseSection = ({
             xs: 'repeat(1,1fr)',
             lg: '700px auto',
         }}
-        className="mb-4"
+        className="mb-4 text-center text-md-left"
         >
-            <Grid columns={1}>
+            <Grid columns={1} className="mb-4 mb-md-0">
                 <Caption>300 HOURS OF COURSES</Caption>
                 <Title>
                     Learn the best tools and platforms
@@ -37,7 +38,7 @@ const CourseSection = ({
                 </Description>
             </Grid>
 
-            <Grid className="justify-content-end">
+            <Grid className="justify-content-center justify-content-md-end">
                 {platFormLogos.map(row => {
                     return <PlatformLogo key={row.text} src={row.imageUrl} alt={row.text}/>;
                 })}
@@ -46,10 +47,10 @@ const CourseSection = ({
     };
 
 
-    return <CourseSectionRoot>
+    return <CourseSectionRoot sm xl={false}>
         {renderHeader()}
 
-        <Grid columns={2} gap="20px">
+        <Grid columns={2} gap="20px" className="overflow-x-auto">
 
             {Array.from({length: 2}).map((row, index) => {
 
@@ -59,27 +60,22 @@ const CourseSection = ({
                         <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
                         <MyLinkList>
                             {Array.from({length: 5}).map((row, index) => {
-                                return <MyLink key={`link_${index}`} no={index+1}/>
+                                return <MyLink key={`link_${index}`} no={index+1}/>;
                             })}
                         </MyLinkList>
                     </CurriculumWrapper>
 
-
-                    <CardWrapper columns={1} className="align-content-center">
-                        <CardWrapperImage
-                            src="https://images.ctfassets.net/ooa29xqb8tix/5jIBVIWEq7QQq1Tm03ViNR/b34fad96046114968b74016a678ac841/ios17-2.png?w=400&q=50"
-                            alt="Build SwiftUI Apps for iOS 17 icon"
-                        />
-                        <ContentTitle>Build SwiftUI Apps for iOS 17</ContentTitle>
-                        <ContentSubTitle>16 videos - 4 hours</ContentSubTitle>
-                        <StarImage src="https://designcode.io/images/icons/star.svg"/>
-                    </CardWrapper>
-
+                    <PreviewCard/>
                 </CourseDetailCard>;
             })}
-
-
         </Grid>
+
+        <Grid columns={5} className="overflow-x-auto">
+            {Array.from({length: 5}).map((row, index) => {
+                return <PreviewCard key={`preview_${index}`}/>;
+            })}
+        </Grid>
+
     </CourseSectionRoot>;
 };
 
@@ -87,59 +83,6 @@ export default CourseSection;
 
 
 
-const StarImage = styled.img`
-  width: 24px;
-  height: 24px;
-  margin: auto;
-`;
-
-const ButtonWrapper = styled.div`
-  position: relative;
-  width: 74px;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  margin: 10px auto 0px;
-`;
-
-const ContentSubTitle = styled.p`
-
-  font-weight: normal;
-  font-size: 15px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 10px 0px 0px;
-  color: rgba(255, 255, 255, 0.7);
-`;
-
-
-const ContentTitle = styled.p`
-
-
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin: 0px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-
-  color: rgb(255, 255, 255);
-`;
-
-const ContentWrapper = styled.div`
-`;
-
-
-const CardWrapperImage = styled.img`
-  max-width: 200px;
-  width: 100%;
-  height: 150px;
-
-  // opacity: 0;
-  animation: 1s ease 0s 1 normal forwards running jBcSpD;
-`;
 
 
 const CardWrapper = styled(Grid)`
@@ -212,22 +155,18 @@ const Description = styled.p`
 
   font-weight: normal;
   font-size: 17px;
-
-  color: rgb(255, 255, 255);
 `;
 
 const Title = styled.h2`
 
-  font-weight: bold;
+  font-weight: 800;
   font-size: 40px;
-  color: rgb(255, 255, 255);
 `;
 
 const Caption = styled.p`
-
   font-weight: 600;
   font-size: 15px;
-  margin: initial;
+
 `;
 
 
@@ -239,10 +178,13 @@ const Wrapper = styled(Grid)`
   margin: 0 auto;
   align-items: flex-end;
   pointer-events: none;
+  padding: 0 50px;
+
+  ${media.md`
+    padding: 0
+  `}
 `;
 
 const CourseSectionRoot = styled(Container)`
-  position: relative;
-  padding-top: 85px;
-  height: 1222px;
+
 `;

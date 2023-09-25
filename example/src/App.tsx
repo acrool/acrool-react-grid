@@ -11,7 +11,7 @@ import CourseSection from './layout/CourseSection';
 
 import './index.css';
 import 'bear-react-grid/dist/index.css';
-import gridTheme from '@/config/grid';
+import gridTheme from '@/config/gridTheme';
 
 export default function App() {
 
@@ -39,6 +39,7 @@ const Wrapper = styled.div`
     min-height: 100vh;
     position: relative;
     padding-top: 50px;
+    overflow: hidden;
 
     :before{
         content: '';
