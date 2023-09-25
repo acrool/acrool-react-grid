@@ -5,7 +5,14 @@ import path from 'node:path';
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
-        react(),
+        react({
+            plugins: [[
+                '@swc/plugin-styled-components', {
+                    'displayName': true,
+                    'ssr': false
+                }
+            ]],
+        }),
     ],
     resolve: {
         alias: {
