@@ -17,7 +17,7 @@ const Navbar = ({
         {text: 'Blog', path: '/docs/blog'},
     ];
 
-    return <NavbarRoot>
+    return <NavbarRoot className={className}>
         <a href="/">
             <Logo src="https://designcode.io/images/logos/logo.svg" alt="logo"/>
         </a>
@@ -43,55 +43,32 @@ export default Navbar;
 
 
 const Caption = styled.p`
-
   font-weight: 500;
   font-size: 15px;
-  -webkit-box-align: center;
-  align-items: center;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  margin: auto auto auto 10px;
-
-
+  margin-left: 10px;
   color: rgba(255, 255, 255, 0.7);
 `;
 
 const NavigatorButton = styled.a`
-  display: flex;
-  background: none;
-  border: none;
-  border-radius: 14px;
-  padding: 10px 20px;
-  transition: all 0.3s ease-in-out 0s;
-  cursor: pointer;
-  background-blend-mode: overlay;
+    display: flex;
+    border-radius: 14px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out 0s;
 
-  :hover {
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: rgba(31, 47, 71, 0.25) 0px 20px 40px, rgba(0, 0, 0, 0.1) 0px 1px 5px, rgba(255, 255, 255, 0.4) 0px 0px 0px 0.5px inset;
-  }
+    :hover {
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: rgba(31, 47, 71, 0.25) 0 20px 40px, rgba(0, 0, 0, 0.1) 0 1px 5px, rgba(255, 255, 255, 0.4) 0 0 0 0.5px inset;
+    }
 `;
-
-
 
 
 const Logo = styled.img`
   width: 44px;
   height: 44px;
-  margin: auto;
 `;
 
 
 const NavbarRoot = styled(Container)`
-  //position: absolute;
   display: flex;
-  //left: 0;
-  //right: 0;
-
   justify-content: space-between;
-  height: 44px;
-    top: 60px;
-  margin: 0 auto;
-  z-index: 3;
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import PurchaseButton from './_components/PurchaseButton';
-import {Container} from 'bear-react-grid';
+import {Container, Grid, GridCol} from 'bear-react-grid';
 import Navbar from '@/layout/Navbar';
 
 interface IProps extends FCProps {
@@ -36,15 +36,13 @@ const Header = ({
 
 
     const renderTextWrapper = () => {
-        return <TextWrapper>
+        return <TextWrapper columns={1} gap="20px">
             <Title>
                 Design
-                and code
-                <span>
-                    React
-                </span>
-                 apps
+                <div>and code</div>
+                <span>React</span>apps
             </Title>
+
             <SubTitle>
                 Don’t skip design. Learn design and code, by building real apps with React and Swift. Complete courses
                 about the best tools.
@@ -71,10 +69,11 @@ const Header = ({
 
 
     return <HeaderRoot>
-
-        {renderAnimationWrapper()}
-        {renderTextWrapper()}
-        {renderMockups()}
+        <Grid className="justify-content-between">
+            {/*{renderAnimationWrapper()}*/}
+            {renderTextWrapper()}
+            {renderMockups()}
+        </Grid>
     </HeaderRoot>;
 };
 
@@ -95,8 +94,8 @@ const Mockup5 = styled.div`
   height: 273px;
   border-radius: 10px;
   position: absolute;
-  top: 400px;
-  left: 340px;
+  top: 250px;
+  left: 410px;
   backdrop-filter: blur(10px);
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
 `;
@@ -115,8 +114,8 @@ const Mockup4 = styled.div`
   height: 273px;
   border-radius: 10px;
   position: absolute;
-  top: 370px;
-  left: 40px;
+  top: 220px;
+  left: 77px;
   backdrop-filter: blur(10px);
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
 `;
@@ -135,8 +134,8 @@ const MockupContent = styled.div`
   height: 428px;
   border-radius: 10px;
   position: absolute;
-  top: 200px;
-  left: 0;
+  top: 50px;
+  left: 37px;
   backdrop-filter: blur(10px);
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
 `;
@@ -154,8 +153,8 @@ const Mockup2 = styled.div`
   width: 183px;
   height: 120px;
   position: absolute;
-  top: 150px;
-  left: 176px;
+  top: 0;
+  left: 211px;
   border-radius: 10px;
 `;
 
@@ -173,8 +172,8 @@ const Mockup1 = styled.div`
   width: 183px;
   height: 120px;
   position: absolute;
-  top: 150px;
-  left: -37px;
+  top: 0;
+  left: 0;
   border-radius: 10px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
 `;
@@ -182,11 +181,7 @@ const Mockup1 = styled.div`
 
 const Mockups = styled.div`
   position: relative;
-  top: 30px;
-  left: -30px;
-  perspective: 5000px;
-  perspective-origin: left bottom;
-  transform-style: flat;
+  width: 825px;
 `;
 
 
@@ -213,32 +208,35 @@ const SubTitle = styled.div`
 const Title = styled.h1`
   word-wrap: break-word;
   color: rgb(255, 255, 255);
-
-  font-weight: bold;
-  font-size: 60px;
-  max-width: 400px;
-  margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-weight: 700;
+    font-size: 60px;
   background: linear-gradient(rgb(115, 0, 64) 0%, rgb(48, 28, 190) 100%);
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   -webkit-background-clip: text;
+
+ > div{
+     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+     font-weight: 700;
+     font-size: 60px;
+ }
 
   > span{
     margin: 0 5px;
     color: rgb(255, 255, 255);
     background: linear-gradient(rgb(255, 215, 255) 0%, rgb(255, 182, 255) 100%);
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     -webkit-background-clip: text;
   }
 `;
 
 
-const TextWrapper = styled.div`
-  position: relative;
-  top: 200px;
-  display: grid;
-  gap: 30px;
+const TextWrapper = styled(Grid)`
+  //position: relative;
+  //top: 200px;
+  //display: grid;
+  //  width: 400px;
+  //  grid-column: 1;
 `;
 
 
@@ -316,7 +314,6 @@ const Square = styled.div`
 const SquareAnimation = styled.div`
   position: relative;
   perspective: 3000px;
-  // opacity: 0;
   animation: 2s linear 2s 1 normal forwards paused gWpsBT;
   visibility: hidden;
   will-change: opacity;
@@ -331,11 +328,5 @@ const AnimationWrapper = styled.div`
 
 
 const HeaderRoot = styled(Container)`
-  display: grid;
-  grid-template-columns: 500px auto;
-  //max-width: 1234px;
-  margin: 0 auto;
-  //padding: 0 30px;
-  position: relative;
 `;
 

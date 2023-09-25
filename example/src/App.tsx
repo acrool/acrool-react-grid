@@ -18,9 +18,9 @@ export default function App() {
 
 
     return <GridThemeProvider gridTheme={gridTheme}>
+        <WaveWrapper/>
         <Wrapper>
-            <Navbar/>
-            <WaveWrapper/>
+            <Navbar className="mb-5"/>
             <Header/>
         </Wrapper>
 
@@ -36,6 +36,7 @@ export default function App() {
 
 const Wrapper = styled.div`
     height: 890px;
+    min-height: 100vh;
     position: relative;
     padding-top: 50px;
 
