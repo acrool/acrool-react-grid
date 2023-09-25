@@ -11,31 +11,23 @@ import CourseSection from './layout/CourseSection';
 
 import './index.css';
 import 'bear-react-grid/dist/index.css';
+import gridTheme from '@/config/grid';
 
 export default function App() {
 
 
 
-    return <GridThemeProvider gridTheme={{}}>
+    return <GridThemeProvider gridTheme={gridTheme}>
         <Wrapper>
             <Navbar/>
             <WaveWrapper/>
             <Header/>
-
-            <Container>
-                <Grid>
-                    <GridCol>
-                        {/*<LogoSvg width={100}/>*/}
-                    </GridCol>
-                </Grid>
-            </Container>
         </Wrapper>
 
         <CourseSection/>
 
 
-    </GridThemeProvider>
-
+    </GridThemeProvider>;
 
 }
 
@@ -44,8 +36,17 @@ export default function App() {
 
 const Wrapper = styled.div`
     height: 890px;
-    background: linear-gradient(189.16deg, rgb(67, 22, 219) 13.57%, rgb(144, 118, 231) 98.38%);
     position: relative;
-    overflow: hidden;
-    padding-top: 20px;
+    padding-top: 50px;
+
+    :before{
+        content: '';
+        background: linear-gradient(189.16deg, rgb(67, 22, 219) 13.57%, rgb(144, 118, 231) 98.38%);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: -2;
+        height: 100%;
+    }
 `;

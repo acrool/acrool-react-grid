@@ -13,9 +13,11 @@ const WaveWrapper = ({
         <BackgroundBlur/>
         <Wave2/>
         <Wave3>
-            <svg style={{
-                position: 'absolute'
-            }}><clipPath id="clip"><path d="M1175.65 35.7644C962.846 -46.1285 865.751 35.6288 643.768 54.6084C421.786 73.588 391.68 33.0436 226.292 14.4975C60.9034 -4.0486 11.1228 90.8729 -67.9998 110.654C-67.9998 198.586 -67.9998 516 -67.9998 516L1508.19 516L1508.19 8.45359C1508.19 8.45359 1388.84 117.807 1175.65 35.7644Z"></path></clipPath></svg>
+            <svg>
+                <clipPath id="clip">
+                    <path d="M1175.65 35.7644C962.846 -46.1285 865.751 35.6288 643.768 54.6084C421.786 73.588 391.68 33.0436 226.292 14.4975C60.9034 -4.0486 11.1228 90.8729 -67.9998 110.654C-67.9998 198.586 -67.9998 516 -67.9998 516L1508.19 516L1508.19 8.45359C1508.19 8.45359 1388.84 117.807 1175.65 35.7644Z"/>
+                </clipPath>
+            </svg>
         </Wave3>
         <Stars/>
     </WaveWrapperRoot>;
@@ -75,7 +77,10 @@ const Wave3 = styled.div`
   clip-path: url(#clip);
   transform-origin: left top;
   background: linear-gradient(rgba(31, 31, 71, 0.25) -18.72%, rgb(31, 31, 71) 37.6%);
-  transform: scale(1.5);
+
+  svg > clipPath{
+    transform: scale(1.5);
+  }
 `;
 
 const Stars = styled.div`
@@ -90,5 +95,9 @@ const Stars = styled.div`
 
 
 const WaveWrapperRoot = styled.div`
-
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
 `;

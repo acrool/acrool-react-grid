@@ -84,12 +84,13 @@ const Logo = styled.img`
 
 
 const NavbarRoot = styled(Container)`
-  position: absolute;
+  //position: absolute;
   display: flex;
+  //left: 0;
+  //right: 0;
+
   justify-content: space-between;
   height: 44px;
-  left: 0;
-  right: 0;
     top: 60px;
   margin: 0 auto;
   z-index: 3;

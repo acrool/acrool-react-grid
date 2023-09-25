@@ -114,3 +114,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:act
     /*noinspection CssUnresolvedCustomProperty*/
     --vh100: calc(var(--vh, 1vh) * 100);
 }
+
+
+
+body{
+    background: rgb(31, 31, 71);
+}
