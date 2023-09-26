@@ -14,6 +14,7 @@ import 'bear-react-grid/dist/index.css';
 import gridTheme from '@/config/gridTheme';
 import WaveWrapper2 from '@/layout/WaveWrapper/WaveWrapper2';
 import TutorialSection from '@/layout/TutorialSection';
+import Profile from '@/layout/Profile/Profile';
 
 export default function App() {
 
@@ -33,6 +34,9 @@ export default function App() {
             <WaveWrapper2/>
         </Wrapper2>
 
+        <Profile>
+
+        </Profile>
 
     </GridThemeProvider>;
 
@@ -40,7 +44,7 @@ export default function App() {
 
 
 const Wrapper2 = styled.div`
-    height: 280px;
+    height: 800px;
     position: relative;
     padding-top: 250px;
 
