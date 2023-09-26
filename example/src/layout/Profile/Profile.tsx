@@ -100,5 +100,5 @@ const CertificateCardList = styled(Grid)`
 `;
 
 const ProfileRoot = styled(Container)`
-
+    height: 500px;
 `;

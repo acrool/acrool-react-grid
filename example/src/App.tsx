@@ -15,6 +15,7 @@ import gridTheme from '@/config/gridTheme';
 import WaveWrapper2 from '@/layout/WaveWrapper/WaveWrapper2';
 import TutorialSection from '@/layout/TutorialSection';
 import Profile from '@/layout/Profile/Profile';
+import AppDownload from '@/layout/AppDownload/AppDownload';
 
 export default function App() {
 
@@ -34,9 +35,9 @@ export default function App() {
             <WaveWrapper2/>
         </Wrapper2>
 
-        <Profile>
+        <Profile/>
 
-        </Profile>
+        <AppDownload/>
 
     </GridThemeProvider>;
 
