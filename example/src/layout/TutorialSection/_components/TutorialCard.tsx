@@ -88,6 +88,8 @@ const Card = styled(Grid)`
 
     background: rgba(31, 31, 71, 0.6);
     box-shadow: rgba(0, 0, 0, 0.25) 0 40px 80px, rgba(255, 255, 255, 0.15) 0 0 0 0.5px inset;
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+
 `;
 
 
@@ -100,8 +102,22 @@ const CardB = styled.div`
     transform: skewY(8deg);
     transform-origin: left top;
     top: 0;
+
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 `;
 
 const TutorialCardRoot = styled.div`
     position: relative;
+
+    :hover{
+        ${CardB}{
+            transform: skewY(15deg);
+            width: 200px;
+        }
+
+        ${Card}{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 100px 100px, rgba(255, 255, 255, 0.15) 0px 0px 0px 0.5px inset;
+            transform: translateY(-3px);
+        }
+    }
 `;
