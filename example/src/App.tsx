@@ -45,10 +45,10 @@ export default function App() {
 
 
 const Wrapper2 = styled.div`
-    height: 800px;
+    min-height: 800px;
     position: relative;
     padding-top: 250px;
-
+    margin-bottom: 100px;
 `;
 
 

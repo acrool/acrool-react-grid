@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import CourseButton from '@/layout/_components/CourseButton';
-import { Grid } from 'bear-react-grid';
+import {Grid, Container} from 'bear-react-grid';
 import cx from 'classnames';
 
 interface IProps extends FCProps {
@@ -9,20 +9,23 @@ interface IProps extends FCProps {
 const Info = ({
     className,
 }: IProps) => {
-    return <InfoRoot className={cx(className, 'justify-items-start')} columns={1}>
-        <SubTitle>
+    return <InfoRoot className={className}>
+        <Grid className="justify-items-center text-center text-xl-left justify-items-xl-start" columns={1}>
+            <SubTitle>
             CREATE A PROFILE
-        </SubTitle>
-        <Title>
+            </SubTitle>
+            <Title>
             Get certificates
-        </Title>
-        <Desc>
+            </Title>
+            <Desc>
             After passing a test, we’ll award you with an online certificate. You can add them to your profile after completing the courses.
-        </Desc>
+            </Desc>
 
-        <CourseButton href="/" isOutline>
-            Create account
-        </CourseButton>
+            <CourseButton href="/" isOutline>
+                <img src="https://designcode.io/images/icons/account.svg" alt="Create account"/>
+                <span>Create account</span>
+            </CourseButton>
+        </Grid>
     </InfoRoot>;
 };
 
@@ -43,6 +46,6 @@ const SubTitle = styled.p`
     font-size: 15px;
 `;
 
-const InfoRoot = styled(Grid)`
+const InfoRoot = styled(Container)`
 
 `;

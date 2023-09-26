@@ -1,4 +1,4 @@
-import {Grid} from 'bear-react-grid';
+import {Grid, media} from 'bear-react-grid';
 import styled from 'styled-components';
 
 interface IProps extends FCProps {
@@ -91,4 +91,8 @@ const CertificateCardRoot = styled(Grid)`
     border-radius: 30px;
     backdrop-filter: blur(20px);
     padding: 20px;
+
+    ${media.md`
+       transform: scale(1);
+    `}
 `;

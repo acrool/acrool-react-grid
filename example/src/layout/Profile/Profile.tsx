@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Container, Grid} from 'bear-react-grid';
+import {Container, Grid, media} from 'bear-react-grid';
 import CertificateCard from '@/layout/Profile/_components/CertificateCard';
 import Info from '@/layout/Profile/_components/Info';
 
@@ -11,8 +11,11 @@ const Profile = ({
     className,
 }: IProps) => {
     return <ProfileRoot className={className}>
-        <Grid>
-            <CertificateCardList>
+        <Grid columns={{
+            xs: 'repeat(1, 1fr)',
+            xl: 'repeat(2, auto)',
+        }}>
+            <CertificateCardList className="order-1 order-xl-0 mx-auto">
                 {Array.from({length: 4}).map((row, index) => {
                     return <CustomCertificateCard
                         key={`certificateCard_${index}`}
@@ -65,40 +68,66 @@ const CustomCertificateCard = styled(CertificateCard)`
 const CertificateCardList = styled(Grid)`
   position: relative;
   transform-origin: left top;
-    width: 700px;
+    width: 100%;
+    transform: scale(0.6);
+
+    ${media.md`
+        transform: scale(1);
+        width: 700px;
+    `}
 
     :hover{
         ${CustomCertificateCard}:nth-child(1){
           transform: translate(-30px, 0px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
 
-          :hover{
-              transform: translate(-30px, -30px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
-          }
+          ${media.xl`
+              :hover{
+                  transform: translate(-30px, -30px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+              }
+          `}
+
         }
         ${CustomCertificateCard}:nth-child(2){
           transform: translate(-120px, -10px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
 
-            :hover{
+            ${media.xl`
+              :hover{
                 transform: translate(-120px, -40px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
-            }
+              }
+          `}
+
         }
         ${CustomCertificateCard}:nth-child(3){
           transform: translate(-90px, -20px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
 
-            :hover{
+
+            ${media.xl`
+               :hover{
                 transform: translate(-90px, -50px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
             }
+          `}
+
+
         }
         ${CustomCertificateCard}:nth-child(4){
             transform: translate(-30px, -30px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
 
-            :hover{
-                transform: translate(-30px, -60px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
-            }
+
+            ${media.xl`
+               :hover{
+                    transform: translate(-30px, -60px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+                }
+          `}
+
         }
     }
 `;
 
 const ProfileRoot = styled(Container)`
-    height: 500px;
+    height: 700px;
+
+    ${media.xl`
+        height: 500px;
+
+    `}
 `;
