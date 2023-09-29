@@ -48,11 +48,15 @@ const generateDebugData = (props: TStyledProps<IGridProps>) => {
 };
 
 
+/**
+ * 取得預設的尺寸(最小的)
+ * @param column
+ */
 const getDefaultSizeValue = (column?: TGridTemplate) => {
     if((typeof column === 'object' && 'xs' in column)){
         return column.xs;
     }
-    return column;
+    return column; // or undefined
 };
 
 
@@ -67,7 +71,10 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
 }))`
   display: grid;
 
-  ${(props: TStyledProps<IGridProps>) => css`
+  ${(props: TStyledProps<IGridProps>) => {
+        const defaultColumnArg = getDefaultSizeValue(props.columns);
+        const defaultRowArg = getDefaultSizeValue(props.rows);
+        return css`
       gap: ${props.theme[themeName]?.gutter};
       grid-template-rows: auto;
 
@@ -75,14 +82,17 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
           grid-template-columns: ${`repeat(${Children.count(props.children) ?? 1}, auto)`};
       `}
 
-      ${!!getDefaultSizeValue(props.columns) && cssGetter.columns(getDefaultSizeValue(props.columns))};
-      ${!!getDefaultSizeValue(props.rows) && cssGetter.rows(getDefaultSizeValue(props.rows))};
+      // 最小尺寸
+      ${defaultColumnArg && cssGetter.columns(defaultColumnArg)};
+      ${defaultRowArg && cssGetter.columns(defaultRowArg)};
+
       ${props.gap && cssGetter.gap(props.gap)};
       ${props.columnsGap && cssGetter.columnGap(props.columnsGap)};
       ${props.rowsGap && cssGetter.rowGap(props.rowsGap)};
 
       ${generateRWDStyled(props)};
- `}
+      `;
+    }}
 `;
 
 export default Grid;

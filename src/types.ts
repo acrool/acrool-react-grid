@@ -140,14 +140,14 @@ export interface IGridProps extends FCChildrenProps{
 /** -------------------------------
  *       CSS Grid - Grid Col
  * ------------------------------ */
-export interface IGridColProps extends FCChildrenProps{
-    col?: TGridCol;
-    sm?: TGridCol;
-    md?: TGridCol;
-    lg?: TGridCol;
-    xl?: TGridCol;
-    xxl?: TGridCol;
+type TGridColSize = {
+    [T in NoXsMediaSize]?: TGridCol
+}
 
+
+export interface IGridColProps extends TGridColSize{
+    col?: TGridCol;
     colSpan?: number,
     rowSpan?: number,
 }
+

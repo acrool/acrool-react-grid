@@ -63,12 +63,14 @@ export const cssGetter: ICSSGetterCss = {
 export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
     return mediaSizes
         .map(sizeName => {
+            const mediaColumnProps = typeof props.columns === 'object' ? props.columns[sizeName]: undefined;
+            const mediaRowProps = typeof props.rows === 'object' ? props.rows[sizeName]: undefined;
             return media[sizeName]`
-            ${typeof props.columns === 'object' && typeof props.columns[sizeName] !== 'undefined' && css`
-                ${cssGetter.columns(props.columns[sizeName])};
+            ${typeof mediaColumnProps !== 'undefined' && css`
+                ${cssGetter.columns(mediaColumnProps)};
             `}
-            ${typeof props.rows === 'object' && typeof props.rows[sizeName] !== 'undefined' && css`
-                ${cssGetter.rows(props.rows[sizeName])};
+            ${typeof mediaRowProps !== 'undefined' && css`
+                ${cssGetter.rows(mediaRowProps)};
             `}
         `;
         });
