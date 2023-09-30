@@ -77,6 +77,9 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
         return css`
       gap: ${props.theme[themeName]?.gutter};
       grid-template-rows: auto;
+      //justify-content: flex-start;
+      //justify-items: flex-start;
+      //align-content: flex-start;
 
       ${!props.columns && props.children && Array.isArray(props.children) && css`
           grid-template-columns: ${`repeat(${Children.count(props.children) ?? 1}, auto)`};

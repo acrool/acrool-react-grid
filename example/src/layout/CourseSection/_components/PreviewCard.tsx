@@ -10,13 +10,13 @@ interface IProps extends FCProps {
 const PreviewCard = ({
     className,
 }: IProps) => {
-    return <PreviewCardRoot columns={1} className={cx('align-content-center', className)}>
+    return <PreviewCardRoot columns={1} className={className}>
         <CardWrapperImage
             src="https://images.ctfassets.net/ooa29xqb8tix/5jIBVIWEq7QQq1Tm03ViNR/b34fad96046114968b74016a678ac841/ios17-2.png?w=400&q=50"
             alt="Build SwiftUI Apps for iOS 17 icon"
         />
-        <ContentTitle>Build SwiftUI Apps for iOS 17</ContentTitle>
-        <ContentSubTitle>16 videos - 4 hours</ContentSubTitle>
+        <Title>Build SwiftUI Apps for iOS 17</Title>
+        <SubTitle>16 videos - 4 hours</SubTitle>
         <StarImage src="https://designcode.io/images/icons/star.svg"/>
     </PreviewCardRoot>;
 };
@@ -33,26 +33,24 @@ const StarImage = styled.img`
 `;
 
 const ButtonWrapper = styled.div`
-  position: relative;
-  width: 74px;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  margin: 10px auto 0px;
+    position: relative;
+    width: 74px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 10px auto 0;
 `;
 
-const ContentSubTitle = styled.p`
+const SubTitle = styled.p`
 
-  font-weight: normal;
-  font-size: 15px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 10px 0px 0px;
-  color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 0;
+    color: rgba(255, 255, 255, 0.7);
 `;
 
 
-const ContentTitle = styled.p`
+const Title = styled.p`
 
 
   font-size: 24px;
@@ -83,6 +81,9 @@ const PreviewCardRoot = styled(Grid)`
     border-radius: 20px;
     background: linear-gradient(209.21deg, rgb(32, 25, 76) 13.57%, rgb(46, 42, 59) 98.38%);
     box-shadow: rgba(46, 42, 59, 0.3) 0px 20px 40px, rgba(0, 0, 0, 0.05) 0px 1px 3px;
+
+    justify-items: center;
+    align-content: center;
 
 
     transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;

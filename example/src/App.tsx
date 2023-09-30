@@ -16,6 +16,8 @@ import WaveWrapper2 from '@/layout/WaveWrapper/WaveWrapper2';
 import TutorialSection from '@/layout/TutorialSection';
 import Profile from '@/layout/Profile/Profile';
 import AppDownload from '@/layout/AppDownload/AppDownload';
+import Discounts from '@/layout/Discounts';
+import Trusted from '@/layout/Trusred';
 
 export default function App() {
 
@@ -38,6 +40,10 @@ export default function App() {
         <Profile/>
 
         <AppDownload/>
+
+        <Discounts/>
+
+        <Trusted/>
 
     </GridThemeProvider>;
 

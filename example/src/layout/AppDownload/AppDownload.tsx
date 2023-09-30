@@ -8,7 +8,7 @@ interface IProps extends FCProps {
 const AppDownload = ({
     className,
 }: IProps) => {
-    return <AppDownloadRoot className=" justify-items-center" columns={1}>
+    return <AppDownloadRoot className="justify-items-center" columns={1}>
         <SubTitle>
             NEW RELEASE
         </SubTitle>
@@ -57,4 +57,5 @@ const AppDownloadRoot = styled(Grid)`
     margin: auto;
     max-width: 300px;
     text-align: center;
+    height: 500px;
 `;
