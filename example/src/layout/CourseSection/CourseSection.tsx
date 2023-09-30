@@ -22,13 +22,10 @@ const CourseSection = ({
     ];
 
     const renderHeader = () => {
-        return  <Wrapper columns={{
-            xs: 'repeat(1,1fr)',
-            xl: '700px auto',
-        }}
-        className="mb-4 text-center text-xl-left"
+        return  <Grid columns={{xs: 1, xl: 2}}
+            className="align-items-end justify-items-center justify-content-xl-between mb-4"
         >
-            <Grid columns={1} className="mb-4 mb-xl-0">
+            <Info columns={1} className="mb-4 mb-xl-0 text-center text-xl-left">
                 <Caption>300 HOURS OF COURSES</Caption>
                 <Title>
                     Learn the best tools and platforms
@@ -37,14 +34,14 @@ const CourseSection = ({
                     We focus on industry leading platforms so that you can be prepared for your next job. Then we teach
                     all we can about them.
                 </Description>
-            </Grid>
+            </Info>
 
-            <Grid className="justify-self-center justify-self-xl-end">
+            <Grid>
                 {platFormLogos.map(row => {
                     return <PlatformLogo key={row.text} src={row.imageUrl} alt={row.text}/>;
                 })}
             </Grid>
-        </Wrapper>;
+        </Grid>;
     };
 
 
@@ -91,24 +88,6 @@ const CourseSection = ({
 export default CourseSection;
 
 
-
-
-
-const CardWrapper = styled(Grid)`
-  position: relative;
-  height: 100%;
-  border-radius: 20px;
-  background: linear-gradient(209.21deg, rgb(32, 25, 76) 13.57%, rgb(46, 42, 59) 98.38%);
-  box-shadow: rgba(46, 42, 59, 0.3) 0px 20px 40px, rgba(0, 0, 0, 0.05) 0px 1px 3px;
-
-
-    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-
-    :hover{
-        transform: scale(1.1);
-    }
-
-`;
 
 
 
@@ -177,21 +156,10 @@ const Caption = styled.p`
 
 `;
 
-
-const Wrapper = styled(Grid)`
-  position: relative;
-  //display: grid;
-  //grid-template-columns: 380px auto;
-  //column-gap: 80px;
-  margin: 0 auto;
-  align-items: flex-end;
-  pointer-events: none;
-  padding: 0 50px;
-
-  ${media.md`
-    padding: 0
-  `}
+const Info = styled(Grid)`
+    max-width: 700px;
 `;
+
 
 const CourseSectionRoot = styled(Container)`
 

@@ -43,7 +43,7 @@ export default function App() {
 
         <Discounts/>
 
-        {/*<Trusted/>*/}
+        <Trusted/>
 
     </GridThemeProvider>;
 

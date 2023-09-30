@@ -11,15 +11,21 @@ const Trusted = ({
     className,
 }: IProps) => {
     return <TrustedRoot className={className}>
-        <Grid gap="60px">
+        <Grid gap="60px"
+            columns={{xs: 1, xl: 2}}
+            className="align-items-start justify-items-center justify-content-xl-between"
+        >
 
-            <FeatureList gap="60px">
+            <FeatureList columnsGap="60px"
+                columns={{xs: 1, lg: 2}}
+                className="order-1 order-xl-0"
+            >
                 {Array.from({length: 2}).map((row, index) => {
                     return <TrustedCard key={`trusted_${index}`}/>;
                 })}
             </FeatureList>
 
-            <Info columns={1}>
+            <Info columns={1} className="justify-items-center justify-items-xl-start text-center text-xl-left">
                 <SubTitle>TRUSTED BY TEAMS</SubTitle>
                 <Title>110,000 people</Title>
                 <Desc>Many startups look for designers who code and developers who design. They use our courses to help train new hires and expand skill sets.</Desc>
@@ -60,11 +66,11 @@ const SubTitle = styled.div`
 
 
 const Info = styled(Grid)`
-    width: 360px;
+    max-width: 420px;
 `;
 
 
 
 const TrustedRoot = styled(Container)`
-    height: 400px;
+    margin-bottom: 50px;
 `;

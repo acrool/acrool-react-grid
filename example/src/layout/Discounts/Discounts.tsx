@@ -10,22 +10,16 @@ const Discounts = ({
     className,
 }: IProps) => {
     return <DiscountsRoot className={className}>
-        <Grid columns={{
-            xs: 1,
-            lg: 2,
-        }}
-        className="justify-content-center justify-content-md-between"
+        <Grid columns={{xs: 1, lg: 2}}
+            className="align-items-start justify-items-center justify-content-lg-between"
         >
-            <Info columns={1} className="align-self-start">
+            <Info columns={1} className="justify-items-center justify-items-lg-start text-center text-xl-left">
                 <SubTitle>START WITH MORE</SubTitle>
                 <Title>Get discounts</Title>
                 <Desc>We’ve partnered with the biggest design tools on the market to help you get started.</Desc>
             </Info>
 
-            <FeatureList columns={{
-                xs: 2,
-                lg: 4,
-            }}>
+            <FeatureList columns={{xs: 2, lg: 4}}>
                 {Array.from({length: 4}).map((row, index) => {
                     return <FeatureCard key={`feature_${index}`}/>;
                 })}
@@ -59,11 +53,11 @@ const SubTitle = styled.div`
 
 
 const Info = styled(Grid)`
-    width: 360px;
+    max-width: 420px;
 `;
 
 
 
 const DiscountsRoot = styled(Container)`
-    height: 500px;
+    margin-bottom: 200px;
 `;

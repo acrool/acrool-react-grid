@@ -11,10 +11,10 @@ const Profile = ({
     className,
 }: IProps) => {
     return <ProfileRoot className={className}>
-        <Grid columns={{
-            xs: 'repeat(1, 1fr)',
-            xl: 'repeat(2, auto)',
-        }}>
+        <Grid
+            columns={{xs: 1, xl: 2}}
+            className="align-items-start justify-items-center justify-content-xl-between"
+        >
             <CertificateCardList className="order-1 order-xl-0 mx-auto">
                 {Array.from({length: 4}).map((row, index) => {
                     return <CustomCertificateCard
@@ -124,10 +124,5 @@ const CertificateCardList = styled(Grid)`
 `;
 
 const ProfileRoot = styled(Container)`
-    height: 700px;
-
-    ${media.xl`
-        height: 500px;
-
-    `}
+    margin-bottom: 300px;
 `;

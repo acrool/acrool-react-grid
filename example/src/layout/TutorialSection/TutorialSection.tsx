@@ -14,11 +14,10 @@ const TutorialSection = ({
 
 
     return <TutorialSectionRoot className={className} sm xl={false}>
-        <Grid columns={{
-            xs: 'repeat(1, 1fr)',
-            lg: 'repeat(2, auto)',
-        }}>
-            <Info columns={1} className="justify-self-center justify-self-lg-start  mb-3">
+        <Grid columns={{xs: 1, lg: 2}}
+            className="align-items-start justify-items-center justify-content-lg-between"
+        >
+            <Info columns={1} className="justify-items-center justify-items-lg-start text-center text-lg-left mb-3">
                 <SubTitle>
                     PREMIUM TUTORIALS
                 </SubTitle>
@@ -35,12 +34,8 @@ const TutorialSection = ({
                 </CourseButton>
             </Info>
 
-            <Grid columns={{
-                xs: 'repeat(1, 1fr)',
-                lg: 'repeat(2, auto)',
-            }}
-            gap="60px"
-            className="justify-self-center justify-self-lg-end"
+            <Grid gap="60px"
+                columns={{xs: 1, lg: 2}}
             >
                 {Array.from({length: 2}).map((row, index) => {
                     return <TutorialCard key={`tutorial_${index}`}/>;
@@ -73,9 +68,9 @@ const SubTitle = styled.div`
 
 
 const Info = styled(Grid)`
-    width: 360px;
+    max-width: 420px;
 `;
 
 const TutorialSectionRoot = styled(Container)`
-
+  margin-bottom: 200px;
 `;
