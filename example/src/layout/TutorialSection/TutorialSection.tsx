@@ -17,8 +17,8 @@ const TutorialSection = ({
         <Grid columns={{
             xs: 'repeat(1, 1fr)',
             lg: 'repeat(2, auto)',
-        }} className="justify-items-center justify-content-lg-between">
-            <Info columns={1} className="justify-items-center justify-items-lg-start text-center text-lg-left mb-3">
+        }}>
+            <Info columns={1} className="justify-self-center justify-self-lg-start  mb-3">
                 <SubTitle>
                     PREMIUM TUTORIALS
                 </SubTitle>
@@ -40,6 +40,7 @@ const TutorialSection = ({
                 lg: 'repeat(2, auto)',
             }}
             gap="60px"
+            className="justify-self-center justify-self-lg-end"
             >
                 {Array.from({length: 2}).map((row, index) => {
                     return <TutorialCard key={`tutorial_${index}`}/>;

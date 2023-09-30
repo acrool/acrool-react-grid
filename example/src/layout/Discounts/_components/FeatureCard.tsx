@@ -50,6 +50,7 @@ const FeatureCardRoot = styled.div`
     padding-left: 12px;
     padding-right: 12px;
     text-align: center;
+    margin-top: 22px;
 
     position: relative;
     display: flex;

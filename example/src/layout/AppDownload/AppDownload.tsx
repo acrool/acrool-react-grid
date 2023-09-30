@@ -57,5 +57,6 @@ const AppDownloadRoot = styled(Grid)`
     margin: auto;
     max-width: 300px;
     text-align: center;
+    align-content: flex-start;
     height: 500px;
 `;

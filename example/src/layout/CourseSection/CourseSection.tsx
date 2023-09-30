@@ -39,7 +39,7 @@ const CourseSection = ({
                 </Description>
             </Grid>
 
-            <Grid className="justify-content-center justify-content-xl-end">
+            <Grid className="justify-self-center justify-self-xl-end">
                 {platFormLogos.map(row => {
                     return <PlatformLogo key={row.text} src={row.imageUrl} alt={row.text}/>;
                 })}
@@ -57,7 +57,7 @@ const CourseSection = ({
 
                 return <CourseDetailCard gap="20px" key={`card_${index}`}>
 
-                    <CurriculumWrapper columns={1}>
+                    <CurriculumWrapper columns={1} className="h-100">
                         <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
                         <MyLinkList>
                             {Array.from({length: 5}).map((row, index) => {
