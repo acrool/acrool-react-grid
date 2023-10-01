@@ -21,6 +21,7 @@ import Trusted from '@/layout/Trusred';
 import WaveWrapper3 from './layout/WaveWrapper/WaveWrapper3';
 import CompanyList from './layout/CompanyList';
 import Instructors from '@/layout/Instructors/Instructors';
+import Price from './layout/Price/Price';
 
 export default function App() {
 
@@ -53,6 +54,8 @@ export default function App() {
 
             <WaveWrapper3/>
         </Wrapper3>
+
+        <Price/>
 
 
     </GridThemeProvider>;

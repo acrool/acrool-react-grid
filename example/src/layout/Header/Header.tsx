@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
-import PurchaseButton from './_components/PurchaseButton';
+import PurchaseButton from '../_components/PurchaseButton';
 import {Container, Grid, GridCol} from 'bear-react-grid';
+import Button from '@/layout/Header/_components/Button';
 
 interface IProps extends FCProps {
     className?: string;
@@ -48,7 +49,7 @@ const Header = ({
             </SubTitle>
 
 
-            <PurchaseButton/>
+            <Button/>
 
             <P>Purchase includes access to 50+ courses, 320+ premium tutorials, 300+ hours of videos, source files and
                 certificates.</P>
