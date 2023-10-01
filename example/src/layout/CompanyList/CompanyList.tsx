@@ -37,5 +37,5 @@ const Logo = styled.img`
 `;
 
 const CompanyRoot = styled(Container)`
-
+  margin-bottom: 150px;
 `;

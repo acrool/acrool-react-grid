@@ -4,6 +4,7 @@ import {Container, Grid, GridCol, media} from 'bear-react-grid';
 import MyLink from '@/layout/CourseSection/_components/MyLink';
 import PreviewCard from '@/layout/CourseSection/_components/PreviewCard';
 import CourseButton from '@/layout/_components/CourseButton';
+import CourseCard from '../_components/CourseCard';
 
 interface IProps extends FCProps {
     className?: string;
@@ -51,20 +52,7 @@ const CourseSection = ({
         <Grid columns={2} gap="20px" className="overflow-x-auto">
 
             {Array.from({length: 2}).map((row, index) => {
-
-                return <CourseDetailCard gap="20px" key={`card_${index}`}>
-
-                    <CurriculumWrapper columns={1} className="h-100">
-                        <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
-                        <MyLinkList>
-                            {Array.from({length: 5}).map((row, index) => {
-                                return <MyLink key={`link_${index}`} no={index+1}/>;
-                            })}
-                        </MyLinkList>
-                    </CurriculumWrapper>
-
-                    <PreviewCard/>
-                </CourseDetailCard>;
+                return <CourseCard key={`card_${index}`}/>;
             })}
         </Grid>
 
@@ -90,43 +78,6 @@ export default CourseSection;
 
 
 
-
-const MyLinkList = styled.div`
-  height: 100%;
-  overflow: auto;
-
-  mask-image: linear-gradient(rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0) 100%);
-`;
-
-
-
-const CourseDetailCardTitle = styled.p`
-  font-size: 13px;
-  font-weight: 600;
-
-  color: rgba(255, 255, 255, 0.7);
-`;
-
-const CurriculumWrapper = styled(Grid)`
-  width: 287px;
-  overflow: hidden;
-
-`;
-
-const CourseDetailCard = styled(Grid)`
-    position: relative;
-    //display: grid;
-    //grid-template-columns: auto auto;
-    //column-gap: 20px;
-    //width: 586px;
-    height: 400px;
-    padding: 20px;
-    border-radius: 20px;
-
-    background: rgba(15, 14, 71, 0.3);
-    box-shadow: rgba(255, 255, 255, 0.2) 0 0 0 0.5px inset;
-
-`;
 
 
 const PlatformLogo = styled.img`

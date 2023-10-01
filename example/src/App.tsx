@@ -20,6 +20,7 @@ import Discounts from '@/layout/Discounts';
 import Trusted from '@/layout/Trusred';
 import WaveWrapper3 from './layout/WaveWrapper/WaveWrapper3';
 import CompanyList from './layout/CompanyList';
+import Instructors from '@/layout/Instructors/Instructors';
 
 export default function App() {
 
@@ -48,6 +49,8 @@ export default function App() {
         <Wrapper3>
             <Trusted/>
             <CompanyList/>
+            <Instructors/>
+
             <WaveWrapper3/>
         </Wrapper3>
 
