@@ -114,27 +114,32 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .flex-${sizeName}-shrink-0 {flex-shrink: 0 !important;}
             .flex-${sizeName}-shrink-1 {flex-shrink: 1 !important;}
 
+            .justify-content-${sizeName}-auto {justify-content: normal !important;}
             .justify-content-${sizeName}-start {justify-content: flex-start !important;}
             .justify-content-${sizeName}-end {justify-content: flex-end !important;}
             .justify-content-${sizeName}-center {justify-content: center !important;}
             .justify-content-${sizeName}-between {justify-content: space-between !important;}
             .justify-content-${sizeName}-around {justify-content: space-around !important;}
 
+            .justify-items-${sizeName}-auto {justify-items: normal !important;}
             .justify-items-${sizeName}-start {justify-items: flex-start !important;}
             .justify-items-${sizeName}-end {justify-items: flex-end !important;}
             .justify-items-${sizeName}-center {justify-items: center !important;}
             .justify-items-${sizeName}-stretch {justify-items: stretch !important;}
 
+            .justify-self-${sizeName}-auto {justify-self: auto !important;}
             .justify-self-${sizeName}-start {justify-self: flex-start !important;}
             .justify-self-${sizeName}-end {justify-self: flex-end !important;}
             .justify-self-${sizeName}-center {justify-self: center !important;}
 
+            .align-items-${sizeName}-auto {align-items: normal !important;}
             .align-items-${sizeName}-start {align-items: flex-start !important;}
             .align-items-${sizeName}-end {align-items: flex-end !important;}
             .align-items-${sizeName}-center {align-items: center !important;}
             .align-items-${sizeName}-baseline {align-items: baseline !important;}
             .align-items-${sizeName}-stretch {align-items: stretch !important;}
 
+            .align-content-${sizeName}-auto {align-content: normal !important;}
             .align-content-${sizeName}-start {align-content: start !important;}
             .align-content-${sizeName}-end {align-content: flex-end !important;}
             .align-content-${sizeName}-center {align-content: center !important;}
@@ -142,12 +147,14 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .align-content-${sizeName}-around {align-content: around !important;}
             .align-content-${sizeName}-stretch {align-content: stretch !important;}
 
+            .align-self-${sizeName}-auto {align-self: auto !important;}
             .align-self-${sizeName}-start {align-self: flex-start !important;}
             .align-self-${sizeName}-end {align-self: flex-end !important;}
             .align-self-${sizeName}-center {align-self: center !important;}
             .align-self-${sizeName}-baseline {align-self: baseline !important;}
             .align-self-${sizeName}-stretch {align-self: stretch !important;}
 
+            .place-items-${sizeName}-auto {place-items: normal !important;}
             .place-items-${sizeName}-start {place-items: start !important;}
             .place-items-${sizeName}-end {place-items: end !important;}
             .place-items-${sizeName}-center {place-items: center !important;}

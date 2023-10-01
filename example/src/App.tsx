@@ -18,6 +18,8 @@ import Profile from '@/layout/Profile/Profile';
 import AppDownload from '@/layout/AppDownload/AppDownload';
 import Discounts from '@/layout/Discounts';
 import Trusted from '@/layout/Trusred';
+import WaveWrapper3 from './layout/WaveWrapper/WaveWrapper3';
+import CompanyList from './layout/CompanyList';
 
 export default function App() {
 
@@ -43,11 +45,21 @@ export default function App() {
 
         <Discounts/>
 
-        <Trusted/>
+        <Wrapper3>
+            <Trusted/>
+            <CompanyList/>
+            <WaveWrapper3/>
+        </Wrapper3>
+
 
     </GridThemeProvider>;
 
 }
+
+
+const Wrapper3 = styled.div`
+  position: relative;
+`;
 
 
 const Wrapper2 = styled.div`
