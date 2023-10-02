@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.3](https://github.com/imagine10255/bear-react-grid/compare/v5.0.3-alpha.8...v5.0.3) (2023-10-02)
+
+
+### Features
+
+* add container fluid rwd config ([5041e52](https://github.com/imagine10255/bear-react-grid/commit/5041e52c378dddd7e8d38566d4183f4144afb655))
+
 ### [5.0.3-alpha.8](https://github.com/imagine10255/bear-react-grid/compare/v5.0.3-alpha.7...v5.0.3-alpha.8) (2023-09-26)
 
 ### [5.0.3-alpha.7](https://github.com/imagine10255/bear-react-grid/compare/v5.0.3-alpha.6...v5.0.3-alpha.7) (2023-09-23)
