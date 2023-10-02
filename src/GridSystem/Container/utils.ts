@@ -11,7 +11,6 @@ import media from '../../media';
  */
 export const generateRWDStyle = (props: TStyledProps<IContainerProps>) => {
     const maxSizeConfig = getRWDMaxSize(props);
-    console.log('maxSizeConfig', maxSizeConfig);
     return noXsMediaSizes
         .map(sizeName => {
             return media[sizeName]`
