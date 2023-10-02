@@ -34,10 +34,9 @@ const Logo = styled.img`
 `;
 
 
-const Text = styled.div`
+const Text = styled.p`
     font-size: 13px;
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.7);
 `;
 
 

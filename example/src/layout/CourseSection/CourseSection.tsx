@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
 import {Container, Grid, GridCol, media} from 'bear-react-grid';
-import MyLink from '@/layout/CourseSection/_components/MyLink';
 import PreviewCard from '@/layout/CourseSection/_components/PreviewCard';
 import CourseButton from '@/layout/_components/CourseButton';
 import CourseCard from '../_components/CourseCard';
@@ -46,30 +45,36 @@ const CourseSection = ({
     };
 
 
-    return <CourseSectionRoot sm xl={false} className={className}>
-        {renderHeader()}
+    return <CourseSectionRoot className={className}>
+        <Container>
+            {renderHeader()}
+        </Container>
 
-        <Grid columns={2} gap="20px" className="overflow-x-auto">
+        <Container className="overflow-x-auto overflow-x-xl-initial">
+            <Grid columns={2} gap="20px">
 
-            {Array.from({length: 2}).map((row, index) => {
-                return <CourseCard key={`card_${index}`}/>;
-            })}
-        </Grid>
+                {Array.from({length: 2}).map((row, index) => {
+                    return <CourseCard key={`card_${index}`}/>;
+                })}
+            </Grid>
+        </Container>
 
-        <Grid columns={5} className="overflow-x-auto overflow-x-xl-initial mb-4">
-            {Array.from({length: 5}).map((row, index) => {
-                return <PreviewCard key={`preview_${index}`}/>;
-            })}
-        </Grid>
+        <Container className="overflow-x-auto overflow-x-xl-initial">
+            <Grid columns={5} className="mb-4">
+                {Array.from({length: 5}).map((row, index) => {
+                    return <PreviewCard key={`preview_${index}`}/>;
+                })}
+            </Grid>
+        </Container>
 
-        <div className="d-flex justify-content-center mx-auto">
-            <CourseButton isOutline href="/">
-                <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
-                <span>Browse courses</span>
-            </CourseButton>
-        </div>
-
-
+        <Container>
+            <div className="d-flex justify-content-center mx-auto">
+                <CourseButton isOutline href="/">
+                    <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
+                    <span>Browse courses</span>
+                </CourseButton>
+            </div>
+        </Container>
     </CourseSectionRoot>;
 };
 
@@ -112,6 +117,5 @@ const Info = styled(Grid)`
 `;
 
 
-const CourseSectionRoot = styled(Container)`
-
+const CourseSectionRoot = styled.div`
 `;

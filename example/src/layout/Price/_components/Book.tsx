@@ -54,6 +54,9 @@ export default Book;
 
 const CustomPurchaseButton = styled(PurchaseButton)`
     width: 170px;
+    p{
+        color: #000;
+    }
 `;
 
 const ImageBox = styled.div`
@@ -87,7 +90,6 @@ const FeatureList = styled(Grid)`
 const Desc = styled.p`
     font-weight: 500;
     font-size: 15px;
-    color: rgba(255, 255, 255, 0.7);
     max-width: 200px;
     margin: 0 auto;
 `;

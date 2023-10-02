@@ -47,14 +47,6 @@ export interface IBreakpoints {
     xl: number
     xxl: number
 }
-// export interface IGutterWidths {
-//     xs: TGutterWidth
-//     sm: TGutterWidth
-//     md: TGutterWidth
-//     lg: TGutterWidth
-//     xl: TGutterWidth
-//     xxl: TGutterWidth
-// }
 export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>
 
 export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: Function }
@@ -85,12 +77,16 @@ export type TGridTheme = Partial<IGridSetting>;
 /** -------------------------------
  *             Container
  * ------------------------------ */
-export interface IContainerProps extends FCChildrenProps{
-    sm?: boolean;
-    md?: boolean;
-    lg?: boolean;
-    xl?: boolean;
-    xxl?: boolean;
+type TContainerFluidSize = {
+    [T in NoXsMediaSize]?: boolean
+}
+
+export type TRWDMaxSize = {
+    [size in NoXsMediaSize | 'fluid']: boolean
+}
+
+export interface IContainerProps extends FCChildrenProps, TContainerFluidSize{
+    fluid?: boolean;
 }
 
 /** -------------------------------
@@ -105,13 +101,13 @@ export type TFlexDirection = 'column'|'row';
  *       Grid System - Col
  * ------------------------------ */
 export type TCol = number | true | 'auto' | undefined;
-export interface IColProps extends FCChildrenProps{
+
+type TColSize = {
+    [T in NoXsMediaSize]?: TCol
+}
+
+export interface IColProps extends FCChildrenProps, TColSize{
     col?: TCol;
-    sm?: TCol;
-    md?: TCol;
-    lg?: TCol;
-    xl?: TCol;
-    xxl?: TCol;
 }
 
 

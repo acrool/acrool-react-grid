@@ -10,7 +10,7 @@ interface IProps {
 const Button = ({
     className,
 }: IProps) => {
-    return <PurchaseButton className={className}>
+    return <ButtonRoot className={className}>
         <RingWrapper>
             <IconWrapper>
                 <Icon src="https://designcode.io/images/icons/pricing-large.svg"/>
@@ -30,13 +30,14 @@ const Button = ({
 
         <div className="d-flex flex-column text-left my-auto ml-2">
             <Title className="mb-1">
-                Get Pro Access
+                    Get Pro Access
             </Title>
             <SubTitle>
-                $19 per month
+                    $19 per month
             </SubTitle>
         </div>
-    </PurchaseButton>;
+
+    </ButtonRoot>;
 };
 
 export default Button;
@@ -55,19 +56,11 @@ const SubTitle = styled.p`
 const Title = styled.p`
 
   font-size: 15px;
-  margin: 0px;
+  margin: 0;
   font-weight: 600;
   color: black !important;
 `;
 
-
-const TextWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 4px;
-  margin: auto auto auto 16px;
-  text-align: left;
-`;
 
 
 const Icon = styled.img`
@@ -100,4 +93,9 @@ const RingWrapper = styled.div`
   width: 55px;
   height: 55px;
 
+`;
+
+
+const ButtonRoot = styled(PurchaseButton)`
+  padding: 10px;
 `;

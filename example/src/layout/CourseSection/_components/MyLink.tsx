@@ -32,7 +32,6 @@ const Title = styled.p`
 
 const Desc = styled.p`
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.7);
 `;
 
 

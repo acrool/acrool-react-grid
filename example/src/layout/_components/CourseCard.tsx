@@ -44,7 +44,6 @@ const CourseDetailCardTitle = styled.p`
   font-size: 13px;
   font-weight: 600;
 
-  color: rgba(255, 255, 255, 0.7);
 `;
 
 const CurriculumWrapper = styled(Grid)`

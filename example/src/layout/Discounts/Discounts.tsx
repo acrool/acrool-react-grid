@@ -36,9 +36,8 @@ const FeatureList = styled(Grid)`
 
 `;
 
-const Desc = styled.div`
+const Desc = styled.p`
     font-size: 17px;
-    color: rgba(255, 255, 255, 0.7);
 `;
 
 const Title = styled.div`

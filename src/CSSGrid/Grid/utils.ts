@@ -1,5 +1,5 @@
-import {TStyledProps, TCol, IGridProps, TGridGap, TGridCol, TGridTemplate, TGridGaps} from '../../types';
-import {mediaSizes, themeName} from '../../config';
+import {TStyledProps, IGridProps, TGridGap, TGridTemplate, TGridGaps} from '../../types';
+import {noXsMediaSizes} from '../../config';
 import media from '../../media';
 import {css} from 'styled-components';
 
@@ -61,7 +61,7 @@ export const cssGetter: ICSSGetterCss = {
  * @param props
  */
 export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
-    return mediaSizes
+    return noXsMediaSizes
         .map(sizeName => {
             const mediaColumnProps = typeof props.columns === 'object' ? props.columns[sizeName]: undefined;
             const mediaRowProps = typeof props.rows === 'object' ? props.rows[sizeName]: undefined;

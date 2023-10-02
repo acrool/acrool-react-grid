@@ -4,6 +4,7 @@ import CertificateCard from '@/layout/Profile/_components/CertificateCard';
 import Info from './_components/Info';
 import CourseCard from '@/layout/_components/CourseCard';
 import Book, {IData} from '@/layout/Price/_components/Book';
+import Pay from './_components/Pay';
 
 interface IProps extends FCProps {
     className?: string
@@ -63,15 +64,22 @@ const Price = ({
     return <ProfileRoot className={className}>
         <Grid
             columns={{xs: 1}}
-            className=""
         >
             <Info/>
 
-            <Grid>
+            <Grid className="mb-5"
+                columns={{
+                    xs: 1,
+                    md: 3,
+                }}
+                rowsGap="80px"
+            >
                 {books.map((row, index) => {
                     return <Book key={`price_${index}`} data={row}/>;
                 })}
             </Grid>
+
+            <Pay/>
 
         </Grid>
     </ProfileRoot>;

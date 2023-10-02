@@ -11,13 +11,12 @@ interface IProps extends FCProps {
 const Instructors = ({
     className,
 }: IProps) => {
-    return <ProfileRoot className={className}>
-        <Grid
-            columns={{xs: 1}}
-            className="justify-items-center justify-content-center"
-        >
+    return <InstructorsRoot className={className}>
+        <Container>
             <Info/>
+        </Container>
 
+        <Container className="overflow-x-auto overflow-x-xl-initial">
             <Grid>
                 {Array.from({length: 2}).map((row, index) => {
                     return <CourseCard
@@ -25,9 +24,9 @@ const Instructors = ({
                     />;
                 })}
             </Grid>
+        </Container>
 
-        </Grid>
-    </ProfileRoot>;
+    </InstructorsRoot>;
 };
 
 export default Instructors;
@@ -125,6 +124,6 @@ const CertificateCardList = styled(Grid)`
     }
 `;
 
-const ProfileRoot = styled(Container)`
+const InstructorsRoot = styled.div`
     margin-bottom: 300px;
 `;

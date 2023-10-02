@@ -46,7 +46,6 @@ const SubTitle = styled.p`
     font-size: 15px;
     text-align: center;
     margin: 10px 0 0;
-    color: rgba(255, 255, 255, 0.7);
 `;
 
 

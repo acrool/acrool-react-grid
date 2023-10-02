@@ -1,4 +1,4 @@
-import { Container, Grid } from 'bear-react-grid';
+import {Container, Grid} from 'bear-react-grid';
 import styled from 'styled-components';
 
 interface IProps extends FCProps {
@@ -19,7 +19,9 @@ const CompanyList = ({
     ];
 
     return <CompanyRoot className={className}>
-        <Grid className="justify-content-center place-items-center" gap="60px">
+        <Grid gap="60px"
+            columns={{xs: 2, md: 3, lg: 6}}
+            className="justify-content-center place-items-center">
             {data.map(row => {
                 return <Logo key={row.text} src={row.imageUrl} alt={row.imageUrl}/>;
             })}

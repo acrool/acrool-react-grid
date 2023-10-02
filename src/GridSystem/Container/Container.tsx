@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
 import {TStyledProps, IContainerProps} from '../../types';
-import {generateRWDStyled} from './utils';
+import {generateRWDStyle} from './utils';
 
 
 
@@ -49,8 +49,14 @@ const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
   ${(props: TStyledProps<IContainerProps>) => css`
      --bear-gutter-x: ${props.theme[themeName]?.gutter};
 
-     ${generateRWDStyled(props)};
- `}
+      ${props.fluid && css`
+         max-width: none;
+     `}
+
+     ${generateRWDStyle(props)};
+
+
+  `}
 `;
 
 export default Container;

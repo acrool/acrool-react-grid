@@ -65,7 +65,6 @@ const Item = styled.div`
 
 const Desc = styled.p`
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
 `;
 
 const Title = styled.h3`

@@ -185,13 +185,12 @@ const Mockups = styled.div`
 `;
 
 
-const P = styled.div`
+const P = styled.p`
 
   font-weight: normal;
   font-size: 13px;
   margin: 0;
   max-width: 280px;
-  color: rgba(255, 255, 255, 0.7);
 `;
 
 

@@ -47,7 +47,6 @@ const Caption = styled.p`
   font-weight: 500;
   font-size: 15px;
   margin-left: 10px;
-  color: rgba(255, 255, 255, 0.7);
 `;
 
 const NavigatorButton = styled(CourseButton)`

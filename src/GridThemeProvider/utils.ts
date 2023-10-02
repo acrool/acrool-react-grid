@@ -1,5 +1,5 @@
 import {TStyledProps, IRowProps, NoXsMediaSize} from '../types';
-import {mediaSizes} from '../config';
+import {noXsMediaSizes} from '../config';
 import media from '../media';
 
 
@@ -86,7 +86,7 @@ const renderOrderStyle = (sizeName: NoXsMediaSize) => {
  * @param props
  */
 export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
-    return mediaSizes
+    return noXsMediaSizes
         .map(sizeName => {
             return media[sizeName]`
             .d-${sizeName}-none {display: none !important;}

@@ -27,7 +27,6 @@ export default TrustedCard;
 
 
 const Desc = styled.p`
-    color: rgba(255, 255, 255, 0.7);
 `;
 const Title = styled.p`
     font-size: 20px;
