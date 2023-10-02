@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
+import {media} from 'bear-react-grid';
 
 interface IProps extends FCProps {
    className?: string
@@ -51,10 +52,14 @@ const Wave1 = styled.div`
   width: 100%;
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 250%;
   top: 137px;
   height: 900px;
   background-image: url(https://designcode.io/images/waves/hero-wave1.svg);
+
+    ${media.lg`
+        background-size: 100%;
+    `}
 `;
 
 const Wave2 = styled.div`

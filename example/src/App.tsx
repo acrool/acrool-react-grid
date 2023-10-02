@@ -22,6 +22,8 @@ import WaveWrapper3 from './layout/WaveWrapper/WaveWrapper3';
 import CompanyList from './layout/CompanyList';
 import Instructors from '@/layout/Instructors/Instructors';
 import Price from './layout/Price/Price';
+import WaveWrapper4 from './layout/WaveWrapper/WaveWrapper4';
+import Footer from './layout/Footer';
 
 export default function App() {
 
@@ -57,6 +59,10 @@ export default function App() {
 
         <Price/>
 
+        <Wrapper4>
+            <WaveWrapper4/>
+            <Footer/>
+        </Wrapper4>
 
     </GridThemeProvider>;
 
@@ -67,6 +73,9 @@ const Wrapper3 = styled.div`
   position: relative;
 `;
 
+const Wrapper4 = styled.div`
+    position: relative;
+`;
 
 const Wrapper2 = styled.div`
     min-height: 800px;
