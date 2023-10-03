@@ -1,4 +1,4 @@
-import {TStyledProps, IGridColProps, TGridCol} from '../../types';
+import {TStyledProps, IGridColProps, TGridCol, TSpan} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
 import {css} from 'styled-components';
@@ -8,8 +8,8 @@ import {css} from 'styled-components';
 
 interface ICSSGetter {
     col: (column: TGridCol) => string
-    colSpan: (column: TGridCol) => string
-    rowSpan: (column: TGridCol) => string
+    colSpan: (column: TSpan) => string
+    rowSpan: (column: TSpan) => string
 }
 
 export const cssGetter: ICSSGetter = {
@@ -37,10 +37,20 @@ export const cssGetter: ICSSGetter = {
 export const generateRWDStyled = (props: TStyledProps<IGridColProps>) => {
     return noXsMediaSizes
         .map(sizeName => {
+            const mediaColSpanProps = typeof props.colSpans === 'object' ? props.colSpans[sizeName]: undefined;
+            const mediaRowSpanProps = typeof props.rowSpans === 'object' ? props.rowSpans[sizeName]: undefined;
+
             const mediaArg = props[sizeName];
             return media[sizeName]`
             ${typeof mediaArg !== 'undefined' && css`
                 ${cssGetter.col(mediaArg)};
+            `}
+
+            ${typeof mediaColSpanProps !== 'undefined' && css`
+                ${cssGetter.colSpan(mediaColSpanProps)};
+            `}
+            ${typeof mediaRowSpanProps !== 'undefined' && css`
+                ${cssGetter.rowSpan(mediaRowSpanProps)};
             `}
     `;
         });

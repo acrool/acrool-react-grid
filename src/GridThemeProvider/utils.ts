@@ -89,6 +89,14 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
     return noXsMediaSizes
         .map(sizeName => {
             return media[sizeName]`
+            .w-${sizeName}-0 {width: 0 !important;}
+            .w-${sizeName}-100 {width: 100% !important;}
+            .w-${sizeName}-auto {width: auto !important;}
+
+            .h-${sizeName}-0 {height: 0 !important;}
+            .h-${sizeName}-100 {height: 100% !important;}
+            .h-${sizeName}-auto {height: auto !important;}
+
             .d-${sizeName}-none {display: none !important;}
             .d-${sizeName}-inline {display: inline !important;}
             .d-${sizeName}-inline-block {display: inline-block !important;}

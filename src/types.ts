@@ -140,10 +140,15 @@ type TGridColSize = {
     [T in NoXsMediaSize]?: TGridCol
 }
 
+type TGridSpan = {
+    [T in TMediaSize]?: number
+}
+export type TSpan = number|TGridSpan;
 
 export interface IGridColProps extends TGridColSize{
-    col?: TGridCol;
-    colSpan?: number,
-    rowSpan?: number,
+    col?: TGridCol
+    colSpans?: TSpan
+    rowSpans?: TSpan
+    spanRow?: TSpan
 }
 

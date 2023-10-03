@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 
-import {TStyledProps, IGridColProps} from '../../types';
+import {TStyledProps, IGridColProps, IGridProps, TSpan} from '../../types';
 
 import {cssGetter, generateRWDStyled} from './utils';
 
@@ -39,25 +39,40 @@ const generateDebugData = (props: TStyledProps<IGridColProps>) => {
 
 
 
+/**
+ * 取得預設的尺寸(最小的)
+ * @param column
+ */
+const getDefaultSizeValue = (column?: TSpan) => {
+    if((typeof column === 'object' && 'xs' in column)){
+        return column.xs;
+    }
+    return column; // or undefined
+};
+
+
+
 
 /**
- * Col Component
- * breakpoints sort: sm => xl
- *
- * qa: min-height=1px
- * https://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
- *
+ * Grid Col Component
  */
 const GridCol = styled.div.attrs((props: TStyledProps<IGridColProps>) => ({
     'data-g-col': generateDebugData(props),
 }))`
-  ${(props: TStyledProps<IGridColProps>) => css`
-     ${props.col && cssGetter.col(props.col)};
-     ${props.colSpan && cssGetter.colSpan(props.colSpan)};
-     ${props.rowSpan && cssGetter.rowSpan(props.rowSpan)};
+    ${(props: TStyledProps<IGridColProps>) => {
+        const defaultColSpanArg = getDefaultSizeValue(props.colSpans);
+        const defaultRowSpanArg = getDefaultSizeValue(props.rowSpans);
 
-     ${generateRWDStyled(props)};
- `}
+        return css`
+            ${props.col && cssGetter.col(props.col)};
+
+            // 最小尺寸
+            ${defaultColSpanArg && cssGetter.colSpan(defaultColSpanArg)};
+            ${defaultRowSpanArg && cssGetter.rowSpan(defaultRowSpanArg)};
+
+            ${generateRWDStyled(props)};
+      `;
+    }}
 `;
 
 export default GridCol;
