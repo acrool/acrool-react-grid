@@ -1,8 +1,18 @@
 import React, {Children} from 'react';
 import styled, {css} from 'styled-components';
-import {TStyledProps, IGridProps, IColProps, TGridTemplate} from '../../types';
+import {
+    TStyledProps,
+    IGridProps,
+    IColProps,
+    TGridTemplate,
+    TGridGaps,
+    NoXsMediaSize,
+    TMediaSize,
+    TGridCol, RecordOption
+} from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
 import {themeName} from '../../config';
+import {getDefaultSizeValue} from '../../utils';
 
 
 
@@ -48,16 +58,7 @@ const generateDebugData = (props: TStyledProps<IGridProps>) => {
 };
 
 
-/**
- * 取得預設的尺寸(最小的)
- * @param column
- */
-const getDefaultSizeValue = (column?: TGridTemplate) => {
-    if((typeof column === 'object' && 'xs' in column)){
-        return column.xs;
-    }
-    return column; // or undefined
-};
+
 
 
 
@@ -74,6 +75,9 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
   ${(props: TStyledProps<IGridProps>) => {
         const defaultColumnArg = getDefaultSizeValue(props.columns);
         const defaultRowArg = getDefaultSizeValue(props.rows);
+        const defaultGapArg = getDefaultSizeValue(props.gap);
+        const defaultColumnsGapArg = getDefaultSizeValue(props.columnsGap);
+        const defaultRowsGapArg = getDefaultSizeValue(props.rowsGap);
         return css`
       gap: ${props.theme[themeName]?.gutter};
       grid-template-rows: auto;
@@ -86,9 +90,9 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
       ${defaultColumnArg && cssGetter.columns(defaultColumnArg)};
       ${defaultRowArg && cssGetter.columns(defaultRowArg)};
 
-      ${props.gap && cssGetter.gap(props.gap)};
-      ${props.columnsGap && cssGetter.columnGap(props.columnsGap)};
-      ${props.rowsGap && cssGetter.rowGap(props.rowsGap)};
+      ${defaultGapArg && cssGetter.gap(defaultGapArg)};
+      ${defaultColumnsGapArg && cssGetter.columnGap(defaultColumnsGapArg)};
+      ${defaultRowsGapArg && cssGetter.rowGap(defaultRowsGapArg)};
 
       ${generateRWDStyled(props)};
       `;

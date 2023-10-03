@@ -2,6 +2,8 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import {TStyledProps, IFlexProps, TDirection} from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
+import {getDefaultSizeValue} from '../../utils';
+import {themeName} from '../../config';
 
 
 
@@ -37,23 +39,16 @@ const generateDebugData = (props: TStyledProps<IFlexProps>) => {
         typeof props.direction === 'object' && ('lg' in props.direction) && `flex-direction-lg${suffix(props.direction.lg)}`,
         typeof props.direction === 'object' && ('xl' in props.direction) && `flex-direction-xl${suffix(props.direction.xl)}`,
         typeof props.direction === 'object' && ('xxl' in props.direction) && `flex-direction-xxl${suffix(props.direction.xxl)}`,
+
+        props.gap && `gap-[${props.gap}]`,
+        props.columnsGap && `gap-[${props.columnsGap}]`,
+        props.rowsGap && `gap-[${props.rowsGap}]`,
     ]
         .filter(Boolean)
         .join(' ');
 };
 
 
-
-/**
- * 取得預設的尺寸(最小的)
- * @param column
- */
-const getDefaultSizeValue = (column?: TDirection) => {
-    if((typeof column === 'object' && 'xs' in column)){
-        return column.xs;
-    }
-    return column; // or undefined
-};
 
 
 
@@ -71,9 +66,19 @@ const Flex = styled.div.attrs((props: TStyledProps<IFlexProps>) => ({
     ${(props: TStyledProps<IFlexProps>) => {
         const defaultColSpanArg = getDefaultSizeValue(props.direction);
 
+        const defaultGapArg = getDefaultSizeValue(props.gap);
+        const defaultColumnsGapArg = getDefaultSizeValue(props.columnsGap);
+        const defaultRowsGapArg = getDefaultSizeValue(props.rowsGap);
+
         return css`
+            gap: ${props.theme[themeName]?.gutter};
+            
             // 最小尺寸
             ${defaultColSpanArg && cssGetter.direction(defaultColSpanArg)};
+
+            ${defaultGapArg && cssGetter.gap(defaultGapArg)};
+            ${defaultColumnsGapArg && cssGetter.columnGap(defaultColumnsGapArg)};
+            ${defaultRowsGapArg && cssGetter.rowGap(defaultRowsGapArg)};
 
             ${generateRWDStyled(props)};
         `;

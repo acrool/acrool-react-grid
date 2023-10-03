@@ -3,7 +3,7 @@ import CSS from 'csstype';
 import {ThemeProps, CSSObject} from 'styled-components';
 import {themeName} from './config';
 
-type RecordOption<K extends keyof any, T> = {
+export type RecordOption<K extends keyof any, T> = {
     [P in K]?: T;
 };
 
@@ -77,15 +77,11 @@ export type TGridTheme = Partial<IGridSetting>;
 /** -------------------------------
  *             Container
  * ------------------------------ */
-type TContainerFluidSize = {
-    [T in NoXsMediaSize]?: boolean
-}
-
 export type TRWDMaxSize = {
     [size in NoXsMediaSize | 'fluid']: boolean
 }
 
-export interface IContainerProps extends FCChildrenProps, TContainerFluidSize{
+export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMediaSize, boolean>{
     fluid?: boolean;
 }
 
@@ -100,12 +96,7 @@ export interface IRowProps extends FCChildrenProps{}
  *       Grid System - Col
  * ------------------------------ */
 export type TCol = number | true | 'auto' | undefined;
-
-type TColSize = {
-    [T in NoXsMediaSize]?: TCol
-}
-
-export interface IColProps extends FCChildrenProps, TColSize{
+export interface IColProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TCol>{
     col?: TCol;
 }
 
@@ -120,8 +111,8 @@ export type TGridCol = 'auto'|string|number|TGridColNumberSizeUnit|'min-content'
 export type TGridTemplate = TGridCol|RecordOption<TMediaSize, TGridCol>
 
 export type TGridGapUnit = 'px' | 'rem';
-export type TGridGap = `${number}${TGridGapUnit}`
-export type TGridGaps = string|TGridGap
+export type TGridGap = string|`${number}${TGridGapUnit}`
+export type TGridGaps = TGridGap|RecordOption<TMediaSize, TGridGap>
 
 export interface IGridProps extends FCChildrenProps{
     gap?: TGridGaps
@@ -135,11 +126,7 @@ export interface IGridProps extends FCChildrenProps{
 /** -------------------------------
  *       CSS Grid - Grid Col
  * ------------------------------ */
-
-type TGridSpanRecord = {
-    [T in TMediaSize]?: TGridCol
-}
-export type TSpan = TGridCol|TGridSpanRecord;
+export type TSpan = TGridCol|RecordOption<TMediaSize, TGridCol>;
 
 export interface IGridColProps extends FCChildrenProps{
     col?: TSpan
@@ -153,12 +140,13 @@ export interface IGridColProps extends FCChildrenProps{
  * ------------------------------ */
 export type TFlexDirection = 'column'|'row';
 
-type TDirectionRecord = {
-    [T in TMediaSize]?: TFlexDirection
-}
-export type TDirection = TFlexDirection|TDirectionRecord;
+export type TDirection = TFlexDirection|RecordOption<TMediaSize, TFlexDirection>;
 
 export interface IFlexProps extends FCChildrenProps{
     direction?: TDirection
+
+    gap?: TGridGaps
+    columnsGap?: TGridGap
+    rowsGap?: TGridGap
 }
 

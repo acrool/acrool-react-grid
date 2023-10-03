@@ -9,7 +9,7 @@ import {css} from 'styled-components';
 interface ICSSGetterCss {
     columns: (columns: TGridTemplate) => string
     rows: (rows: TGridTemplate) => string
-    gap: (gapNum: TGridGaps) => string
+    gap: (gapNum: TGridGap) => string
     columnGap: (gapNum: TGridGap) => string
     rowGap: (gapNum: TGridGap) => string
 }
@@ -65,12 +65,28 @@ export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
         .map(sizeName => {
             const mediaColumnProps = typeof props.columns === 'object' ? props.columns[sizeName]: undefined;
             const mediaRowProps = typeof props.rows === 'object' ? props.rows[sizeName]: undefined;
+
+            const mediaGapProps = typeof props.gap === 'object' ? props.gap[sizeName]: undefined;
+            const mediaColumnGapProps = typeof props.columnsGap === 'object' ? props.columnsGap[sizeName]: undefined;
+            const mediaRowGapProps = typeof props.rowsGap === 'object' ? props.rowsGap[sizeName]: undefined;
+
             return media[sizeName]`
             ${typeof mediaColumnProps !== 'undefined' && css`
                 ${cssGetter.columns(mediaColumnProps)};
             `}
             ${typeof mediaRowProps !== 'undefined' && css`
                 ${cssGetter.rows(mediaRowProps)};
+            `}
+
+
+            ${typeof mediaGapProps !== 'undefined' && css`
+                ${cssGetter.gap(mediaGapProps)};
+            `}
+            ${typeof mediaColumnGapProps !== 'undefined' && css`
+                ${cssGetter.columnGap(mediaColumnGapProps)};
+            `}
+            ${typeof mediaRowGapProps !== 'undefined' && css`
+                ${cssGetter.rowGap(mediaRowGapProps)};
             `}
         `;
         });

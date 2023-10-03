@@ -2,6 +2,7 @@ import React, {Children} from 'react';
 import styled, {css} from 'styled-components';
 import {TStyledProps, TGridTemplate, IGridColProps, TSpan} from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
+import {getDefaultSizeValue} from '../../utils';
 
 
 
@@ -46,19 +47,6 @@ const generateDebugData = (props: TStyledProps<IGridColProps>) => {
     ]
         .filter(Boolean)
         .join(' ');
-};
-
-
-
-/**
- * 取得預設的尺寸(最小的)
- * @param column
- */
-const getDefaultSizeValue = (column?: TSpan) => {
-    if((typeof column === 'object' && 'xs' in column)){
-        return column.xs;
-    }
-    return column; // or undefined
 };
 
 
