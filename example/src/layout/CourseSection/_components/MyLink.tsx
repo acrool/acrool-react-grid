@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Grid, GridCol} from 'bear-react-grid';
+import {Grid, GridCol3} from 'bear-react-grid';
 
 interface IProps extends FCProps {
     no?: number
@@ -36,7 +36,7 @@ const Desc = styled.p`
 
 
 
-const No = styled(GridCol)`
+const No = styled(GridCol3)`
     width: 36px;
     height: 36px;
     border-radius: 50px;

@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {Children} from 'react';
 import styled, {css} from 'styled-components';
-
-import {TStyledProps, IGridColProps, IGridProps, TSpan} from '../../types';
-
+import {TStyledProps, TGridTemplate, IGridColProps, TSpan} from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
+
 
 
 
@@ -15,16 +14,22 @@ const suffix = (value: any) => {
     if (!!Number(value)) {
         return `-${value}`;
     }
+    if (typeof value === 'string'){
+        return `-[${value}]`;
+    }
     return '';
 };
-
-
 
 /**
  * 產生 Debug 資訊
  * @param props
  */
-const generateDebugData = (props: TStyledProps<IGridColProps>) => {
+
+/**
+ * 產生 Debug 資訊
+ * @param props
+ */
+const generateDebugData = (props: TStyledProps<any>) => {
     return [
         props.col && `g-col${suffix(props.col)}`,
         props.sm && `g-col-sm${suffix(props.sm)}`,
@@ -52,12 +57,13 @@ const getDefaultSizeValue = (column?: TSpan) => {
 
 
 
-
 /**
- * Grid Col Component
+ * Row Component
+ * align-items 預設加上 flex-start, 會讓鄰居Col高度不會一致
+ * ps: 設定會 width 100% 會產生 margin 抵銷失敗
  */
-const GridCol = styled.div.attrs((props: TStyledProps<IGridColProps>) => ({
-    'data-g-col': generateDebugData(props),
+const GridCol2 = styled.div.attrs((props: TStyledProps<IGridColProps>) => ({
+    'data-grid': generateDebugData(props),
 }))`
     ${(props: TStyledProps<IGridColProps>) => {
         const defaultColSpanArg = getDefaultSizeValue(props.colSpans);
@@ -67,12 +73,13 @@ const GridCol = styled.div.attrs((props: TStyledProps<IGridColProps>) => ({
             ${props.col && cssGetter.col(props.col)};
 
             // 最小尺寸
-            ${defaultColSpanArg && cssGetter.colSpan(defaultColSpanArg)};
-            ${defaultRowSpanArg && cssGetter.rowSpan(defaultRowSpanArg)};
+            ${defaultColSpanArg && cssGetter.colSpans(defaultColSpanArg)};
+            ${defaultRowSpanArg && cssGetter.rowSpans(defaultRowSpanArg)};
 
             ${generateRWDStyled(props)};
-      `;
+        `;
     }}
 `;
 
-export default GridCol;
+export default GridCol2;
+

@@ -145,7 +145,7 @@ type TGridSpan = {
 }
 export type TSpan = number|TGridSpan;
 
-export interface IGridColProps extends TGridColSize{
+export interface IGridColProps extends FCChildrenProps, TGridColSize{
     col?: TGridCol
     colSpans?: TSpan
     rowSpans?: TSpan

@@ -1,4 +1,13 @@
-import {TStyledProps, IGridColProps, TGridCol, TSpan} from '../../types';
+import {
+    TStyledProps,
+    IGridProps,
+    TGridGap,
+    TGridTemplate,
+    TGridGaps,
+    TGridCol,
+    TSpan,
+    IGridColProps
+} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
 import {css} from 'styled-components';
@@ -6,22 +15,23 @@ import {css} from 'styled-components';
 
 
 
+
 interface ICSSGetter {
     col: (column: TGridCol) => string
-    colSpan: (column: TSpan) => string
-    rowSpan: (column: TSpan) => string
+    colSpans: (span: TSpan) => string
+    rowSpans: (span: TSpan) => string
 }
 
 export const cssGetter: ICSSGetter = {
     col: (col) => {
         return `grid-column: auto/span ${col};`;
     },
-    colSpan: (colSpan) => {
+    colSpans: (colSpan) => {
         return `
             grid-column-start: span ${colSpan};
         `;
     },
-    rowSpan: (rowSpan) => {
+    rowSpans: (rowSpan) => {
         return `
             grid-row-start: span ${rowSpan};
         `;
@@ -47,11 +57,12 @@ export const generateRWDStyled = (props: TStyledProps<IGridColProps>) => {
             `}
 
             ${typeof mediaColSpanProps !== 'undefined' && css`
-                ${cssGetter.colSpan(mediaColSpanProps)};
+                ${cssGetter.colSpans(mediaColSpanProps)};
             `}
             ${typeof mediaRowSpanProps !== 'undefined' && css`
-                ${cssGetter.rowSpan(mediaRowSpanProps)};
+                ${cssGetter.rowSpans(mediaRowSpanProps)};
             `}
     `;
         });
 };
+
