@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Grid, GridCol3} from 'bear-react-grid';
+import {Grid, GridCol} from 'bear-react-grid';
 
 interface IProps extends FCProps {
     no?: number
@@ -10,7 +10,7 @@ const MyLink = ({
     no,
 }: IProps) => {
     return <MyLinkRoot gap="10px" columns="repeat(2, auto)">
-        <No rowSpan={2}>{no}</No>
+        <No rowSpans={2}>{no}</No>
         <Title className="text-ellipsis">
                Design and Code with ChatGPT and Midjourney
         </Title>
@@ -36,7 +36,7 @@ const Desc = styled.p`
 
 
 
-const No = styled(GridCol3)`
+const No = styled(GridCol)`
     width: 36px;
     height: 36px;
     border-radius: 50px;
