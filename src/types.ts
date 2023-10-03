@@ -89,12 +89,11 @@ export interface IContainerProps extends FCChildrenProps, TContainerFluidSize{
     fluid?: boolean;
 }
 
+
 /** -------------------------------
  *       Grid System - Row
  * ------------------------------ */
 export interface IRowProps extends FCChildrenProps{}
-
-export type TFlexDirection = 'column'|'row';
 
 
 /** -------------------------------
@@ -136,17 +135,30 @@ export interface IGridProps extends FCChildrenProps{
 /** -------------------------------
  *       CSS Grid - Grid Col
  * ------------------------------ */
-// type TGridColSize = {
-//     [T in NoXsMediaSize]?: TGridCol
-// }
 
-type TGridSpan = {
+type TGridSpanRecord = {
     [T in TMediaSize]?: TGridCol
 }
-export type TSpan = TGridCol|TGridSpan;
+export type TSpan = TGridCol|TGridSpanRecord;
 
 export interface IGridColProps extends FCChildrenProps{
     col?: TSpan
     row?: TSpan
+}
+
+
+
+/** -------------------------------
+ *       CSS Grid - Flex
+ * ------------------------------ */
+export type TFlexDirection = 'column'|'row';
+
+type TDirectionRecord = {
+    [T in TMediaSize]?: TFlexDirection
+}
+export type TDirection = TFlexDirection|TDirectionRecord;
+
+export interface IFlexProps extends FCChildrenProps{
+    direction?: TDirection
 }
 
