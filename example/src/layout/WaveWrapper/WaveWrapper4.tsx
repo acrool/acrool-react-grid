@@ -82,4 +82,6 @@ const WaveWrapperRoot = styled.div`
     animation: 1s ease 0s 1 normal forwards running jBcSpD;
     top: -200px;
     z-index: -1;
+    pointer-events: none;
+
 `;

@@ -122,7 +122,7 @@ export type TGridTemplate = TGridCol|RecordOption<TMediaSize, TGridCol>
 
 export type TGridGapUnit = 'px' | 'rem';
 export type TGridGap = `${number}${TGridGapUnit}`
-export type TGridGaps = TGridGap|string
+export type TGridGaps = string|TGridGap
 
 export interface IGridProps extends FCChildrenProps{
     gap?: TGridGaps
@@ -136,14 +136,17 @@ export interface IGridProps extends FCChildrenProps{
 /** -------------------------------
  *       CSS Grid - Grid Col
  * ------------------------------ */
-type TGridColSize = {
-    [T in NoXsMediaSize]?: TGridCol
+// type TGridColSize = {
+//     [T in NoXsMediaSize]?: TGridCol
+// }
+
+type TGridSpan = {
+    [T in TMediaSize]?: TGridCol
 }
+export type TSpan = TGridCol|TGridSpan;
 
-
-export interface IGridColProps extends TGridColSize{
-    col?: TGridCol;
-    colSpan?: number,
-    rowSpan?: number,
+export interface IGridColProps extends FCChildrenProps{
+    col?: TSpan
+    row?: TSpan
 }
 

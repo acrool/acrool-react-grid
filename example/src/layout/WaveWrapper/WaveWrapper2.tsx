@@ -141,5 +141,6 @@ const WaveWrapperRoot = styled.div`
     width: 100%;
     overflow: hidden;
     display: block;
+    pointer-events: none;
 
 `;
