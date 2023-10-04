@@ -24,7 +24,7 @@ export const cssGetter: ICSSGetterCss = {
             `;
         }
         return `
-            grid-template-columns: repeat(${columns}, auto)
+            grid-template-columns: ${columns === 1 ? 'auto' : `repeat(${columns}, auto)`}
         `;
     },
     rows: (rows) => {
@@ -34,7 +34,7 @@ export const cssGetter: ICSSGetterCss = {
             `;
         }
         return `
-            grid-template-rows: ${rows === 1 ? '1fr' : `repeat(${rows}, 1fr)`}
+            grid-template-rows: ${rows === 1 ? 'auto' : `repeat(${rows}, auto)`}
         `;
     },
     gap: (gapNum) => {

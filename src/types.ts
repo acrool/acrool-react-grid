@@ -111,7 +111,7 @@ export type TGridCol = 'auto'|string|number|TGridColNumberSizeUnit|'min-content'
 export type TGridTemplate = TGridCol|RecordOption<TMediaSize, TGridCol>
 
 export type TGridGapUnit = 'px' | 'rem';
-export type TGridGap = string|`${number}${TGridGapUnit}`
+export type TGridGap = 0|`${number}${TGridGapUnit}`
 export type TGridGaps = TGridGap|RecordOption<TMediaSize, TGridGap>
 
 export interface IGridProps extends FCChildrenProps{

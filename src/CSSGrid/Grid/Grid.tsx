@@ -88,7 +88,7 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
 
       // 最小尺寸
       ${defaultColumnArg && cssGetter.columns(defaultColumnArg)};
-      ${defaultRowArg && cssGetter.columns(defaultRowArg)};
+      ${defaultRowArg && cssGetter.rows(defaultRowArg)};
 
       ${defaultGapArg && cssGetter.gap(defaultGapArg)};
       ${defaultColumnsGapArg && cssGetter.columnGap(defaultColumnsGapArg)};
