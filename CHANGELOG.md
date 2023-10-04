@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.4-alpha.8](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.7...v5.0.4-alpha.8) (2023-10-04)
+
+
+### Bug Fixes
+
+* fix columnsGap -> columnGap, and rows is same, check 0 not undefined ([3480647](https://github.com/imagine10255/bear-react-grid/commit/348064782c37a632fb88904971959345f01127fa))
+
 ### [5.0.4-alpha.7](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.6...v5.0.4-alpha.7) (2023-10-04)
 
 
