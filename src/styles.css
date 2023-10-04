@@ -8,7 +8,7 @@
 .w-auto {width: auto !important;}
 
 /* img */
-.img-fluid {max-width: 100%; height: auto; !important;}
+.img-fluid {max-width: 100% !important; height: auto !important;}
 
 /* rounded */
 .rounded {border-radius: .25rem !important;}
