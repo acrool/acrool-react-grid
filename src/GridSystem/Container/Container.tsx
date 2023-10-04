@@ -22,11 +22,11 @@ const suffix = (value: any) => {
  */
 const generateDebugData = (props: TStyledProps<IContainerProps>) => {
     return [
-        props.sm && `fluid-sm${suffix(props.sm)}`,
-        props.md && `fluid-md${suffix(props.md)}`,
-        props.lg && `fluid-lg${suffix(props.lg)}`,
-        props.xl && `fluid-xl${suffix(props.xl)}`,
-        props.xxl && `fluid-xxl${suffix(props.xxl)}`,
+        props.sm && `container-fluid-sm${suffix(props.sm)}`,
+        props.md && `container-fluid-md${suffix(props.md)}`,
+        props.lg && `container-fluid-lg${suffix(props.lg)}`,
+        props.xl && `container-fluid-xl${suffix(props.xl)}`,
+        props.xxl && `container-fluid-xxl${suffix(props.xxl)}`,
     ]
         .filter(Boolean)
         .join(' ');
