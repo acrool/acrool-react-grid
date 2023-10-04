@@ -49,9 +49,9 @@ const generateDebugData = (props: TStyledProps<IGridProps>) => {
         typeof props.rows === 'object' && ('xl' in props.rows) && `rows-xl${suffix(props.rows.xl)}`,
         typeof props.rows === 'object' && ('xxl' in props.rows) && `rows-xxl${suffix(props.rows.xxl)}`,
 
-        props.gap && `gap-[${props.gap}]`,
-        props.columnsGap && `gap-[${props.columnsGap}]`,
-        props.rowsGap && `gap-[${props.rowsGap}]`,
+        typeof props.gap !== 'undefined' && `gap-[${props.gap}]`,
+        typeof props.columnGap !== 'undefined' && `gap-[${props.columnGap}]`,
+        typeof props.rowGap !== 'undefined' && `gap-[${props.rowGap}]`,
     ]
         .filter(Boolean)
         .join(' ');
@@ -76,8 +76,8 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
         const defaultColumnArg = getDefaultSizeValue(props.columns);
         const defaultRowArg = getDefaultSizeValue(props.rows);
         const defaultGapArg = getDefaultSizeValue(props.gap);
-        const defaultColumnsGapArg = getDefaultSizeValue(props.columnsGap);
-        const defaultRowsGapArg = getDefaultSizeValue(props.rowsGap);
+        const defaultColumnsGapArg = getDefaultSizeValue(props.columnGap);
+        const defaultRowsGapArg = getDefaultSizeValue(props.rowGap);
         return css`
       gap: ${props.theme[themeName]?.gutter};
       grid-template-rows: auto;
@@ -90,9 +90,9 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
       ${defaultColumnArg && cssGetter.columns(defaultColumnArg)};
       ${defaultRowArg && cssGetter.rows(defaultRowArg)};
 
-      ${defaultGapArg && cssGetter.gap(defaultGapArg)};
-      ${defaultColumnsGapArg && cssGetter.columnGap(defaultColumnsGapArg)};
-      ${defaultRowsGapArg && cssGetter.rowGap(defaultRowsGapArg)};
+      ${typeof defaultGapArg !== 'undefined' && cssGetter.gap(defaultGapArg)};
+      ${typeof defaultColumnsGapArg !== 'undefined' && cssGetter.columnGap(defaultColumnsGapArg)};
+      ${typeof defaultRowsGapArg !== 'undefined' && cssGetter.rowGap(defaultRowsGapArg)};
 
       ${generateRWDStyled(props)};
       `;

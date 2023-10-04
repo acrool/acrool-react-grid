@@ -67,8 +67,8 @@ export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
             const mediaRowProps = typeof props.rows === 'object' ? props.rows[sizeName]: undefined;
 
             const mediaGapProps = typeof props.gap === 'object' ? props.gap[sizeName]: undefined;
-            const mediaColumnGapProps = typeof props.columnsGap === 'object' ? props.columnsGap[sizeName]: undefined;
-            const mediaRowGapProps = typeof props.rowsGap === 'object' ? props.rowsGap[sizeName]: undefined;
+            const mediaColumnGapProps = typeof props.columnGap === 'object' ? props.columnGap[sizeName]: undefined;
+            const mediaRowGapProps = typeof props.rowGap === 'object' ? props.rowGap[sizeName]: undefined;
 
             return media[sizeName]`
             ${typeof mediaColumnProps !== 'undefined' && css`

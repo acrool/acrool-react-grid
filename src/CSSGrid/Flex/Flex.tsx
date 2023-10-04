@@ -41,8 +41,8 @@ const generateDebugData = (props: TStyledProps<IFlexProps>) => {
         typeof props.direction === 'object' && ('xxl' in props.direction) && `flex-direction-xxl${suffix(props.direction.xxl)}`,
 
         props.gap && `gap-[${props.gap}]`,
-        props.columnsGap && `gap-[${props.columnsGap}]`,
-        props.rowsGap && `gap-[${props.rowsGap}]`,
+        props.columnGap && `gap-[${props.columnGap}]`,
+        props.rowGap && `gap-[${props.rowGap}]`,
     ]
         .filter(Boolean)
         .join(' ');
@@ -67,18 +67,18 @@ const Flex = styled.div.attrs((props: TStyledProps<IFlexProps>) => ({
         const defaultColSpanArg = getDefaultSizeValue(props.direction);
 
         const defaultGapArg = getDefaultSizeValue(props.gap);
-        const defaultColumnsGapArg = getDefaultSizeValue(props.columnsGap);
-        const defaultRowsGapArg = getDefaultSizeValue(props.rowsGap);
+        const defaultColumnGapArg = getDefaultSizeValue(props.columnGap);
+        const defaultRowGapArg = getDefaultSizeValue(props.rowGap);
 
         return css`
             gap: ${props.theme[themeName]?.gutter};
-            
+
             // 最小尺寸
             ${defaultColSpanArg && cssGetter.direction(defaultColSpanArg)};
 
-            ${defaultGapArg && cssGetter.gap(defaultGapArg)};
-            ${defaultColumnsGapArg && cssGetter.columnGap(defaultColumnsGapArg)};
-            ${defaultRowsGapArg && cssGetter.rowGap(defaultRowsGapArg)};
+            ${typeof defaultGapArg !== 'undefined' && cssGetter.gap(defaultGapArg)};
+            ${typeof defaultColumnGapArg !== 'undefined' && cssGetter.columnGap(defaultColumnGapArg)};
+            ${typeof defaultRowGapArg !== 'undefined' && cssGetter.rowGap(defaultRowGapArg)};
 
             ${generateRWDStyled(props)};
         `;

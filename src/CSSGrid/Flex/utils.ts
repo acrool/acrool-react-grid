@@ -56,8 +56,8 @@ export const generateRWDStyled = (props: TStyledProps<IFlexProps>) => {
         .map(sizeName => {
             const mediaColSpanProps = typeof props.direction === 'object' ? props.direction[sizeName]: undefined;
             const mediaGapProps = typeof props.gap === 'object' ? props.gap[sizeName]: undefined;
-            const mediaColumnGapProps = typeof props.columnsGap === 'object' ? props.columnsGap[sizeName]: undefined;
-            const mediaRowGapProps = typeof props.rowsGap === 'object' ? props.rowsGap[sizeName]: undefined;
+            const mediaColumnGapProps = typeof props.columnGap === 'object' ? props.columnGap[sizeName]: undefined;
+            const mediaRowGapProps = typeof props.rowGap === 'object' ? props.rowGap[sizeName]: undefined;
 
             return media[sizeName]`
 

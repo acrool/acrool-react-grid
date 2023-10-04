@@ -116,8 +116,8 @@ export type TGridGaps = TGridGap|RecordOption<TMediaSize, TGridGap>
 
 export interface IGridProps extends FCChildrenProps{
     gap?: TGridGaps
-    columnsGap?: TGridGap
-    rowsGap?: TGridGap
+    columnGap?: TGridGap
+    rowGap?: TGridGap
 
     columns?: TGridTemplate;
     rows?: TGridTemplate;
@@ -146,7 +146,7 @@ export interface IFlexProps extends FCChildrenProps{
     direction?: TDirection
 
     gap?: TGridGaps
-    columnsGap?: TGridGap
-    rowsGap?: TGridGap
+    columnGap?: TGridGap
+    rowGap?: TGridGap
 }
 
