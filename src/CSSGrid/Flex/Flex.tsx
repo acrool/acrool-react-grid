@@ -71,8 +71,6 @@ const Flex = styled.div.attrs((props: TStyledProps<IFlexProps>) => ({
         const defaultRowGapArg = getDefaultSizeValue(props.rowGap);
 
         return css`
-            gap: ${props.theme[themeName]?.gutter};
-
             // 最小尺寸
             ${defaultColSpanArg && cssGetter.direction(defaultColSpanArg)};
 
