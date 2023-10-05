@@ -49,6 +49,9 @@
 .filter-gray {
     filter: grayscale(1) !important;
 }
+.filter-mask-b{
+    mask-image: linear-gradient(to bottom, white, white, transparent) !important;
+}
 
 /* position */
 .position-static {position: static !important;}
