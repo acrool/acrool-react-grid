@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.4-alpha.12](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.11...v5.0.4-alpha.12) (2023-10-05)
+
+
+### Features
+
+* add utils class filter-gray ([7091f55](https://github.com/imagine10255/bear-react-grid/commit/7091f55e2160c087c449d25a0056ebd8273debc9))
+
 ### [5.0.4-alpha.11](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.10...v5.0.4-alpha.11) (2023-10-05)
 
 
