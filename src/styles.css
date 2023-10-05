@@ -46,8 +46,8 @@
 
 
 /* filter */
-.filter-gray-0 {
-    -webkit-filter: grayscale(0) !important;
+.filter-gray {
+    filter: grayscale(1) !important;
 }
 
 /* position */
