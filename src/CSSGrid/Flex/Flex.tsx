@@ -1,9 +1,8 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {TStyledProps, IFlexProps, TDirection} from '../../types';
+import {TStyledProps, IFlexProps} from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
 import {getDefaultSizeValue} from '../../utils';
-import {themeName} from '../../config';
 
 
 
