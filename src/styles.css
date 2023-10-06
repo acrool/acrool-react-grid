@@ -9,6 +9,7 @@
 
 /* img */
 .img-fluid {max-width: 100% !important; height: auto !important;}
+.img-cover {width: 100% !important;object-fit: cover !important;}
 
 /* rotate */
 .rotate-90 {transform: rotate(90deg) !important;}
