@@ -15,10 +15,10 @@ export function getDefaultSizeValue<D>(column?: RecordOption<TMediaSize, D> | D)
 /**
  * Grid 產生器 repeat
  * @param count
- * @param unitNum
+ * @param unit
  */
-export function repeat(count: number, unitNum: TGridColNumberSizeUnit){
-    return `repeat(${count}, ${unitNum})`;
+export function repeat(count: number, unit: TGridColNumberSizeUnit){
+    return `repeat(${count}, ${unit})`;
 }
 
 /**

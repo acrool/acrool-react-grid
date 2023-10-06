@@ -105,9 +105,9 @@ export interface IColProps extends FCChildrenProps, RecordOption<NoXsMediaSize, 
  *         CSS Grid - Grid
  * ------------------------------ */
 export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
-export type TGridColNumberSizeUnit = `${number}${TGridColSizeUnit}`;
+export type TGridColNumberSizeUnit = 'auto'|`${number}${TGridColSizeUnit}`;
 
-export type TGridCol = 'auto'|string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
+export type TGridCol = string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
 export type TGridTemplate = TGridCol|RecordOption<TMediaSize, TGridCol>
 
 export type TGridGapUnit = 'px' | 'rem';

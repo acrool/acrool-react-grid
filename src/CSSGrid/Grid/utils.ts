@@ -2,6 +2,7 @@ import {TStyledProps, IGridProps, TGridGap, TGridTemplate, TGridGaps} from '../.
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
 import {css} from 'styled-components';
+import {repeat} from '../../utils';
 
 
 
@@ -17,15 +18,18 @@ interface ICSSGetterCss {
 
 export const cssGetter: ICSSGetterCss = {
     columns: (columns) => {
-
         if(typeof columns === 'string'){
             return `
             grid-template-columns: ${columns};
             `;
         }
-        return `
-            grid-template-columns: ${columns === 1 ? 'auto' : `repeat(${columns}, auto)`}
-        `;
+        if(typeof columns === 'number'){
+            return `
+                grid-template-columns: ${columns === 1 ? 'auto' : repeat(columns, 'auto')}
+            `;
+        }
+
+        return '';
     },
     rows: (rows) => {
         if(typeof rows === 'string'){
@@ -33,9 +37,13 @@ export const cssGetter: ICSSGetterCss = {
             grid-template-rows: ${rows};
             `;
         }
-        return `
-            grid-template-rows: ${rows === 1 ? 'auto' : `repeat(${rows}, auto)`}
-        `;
+        if(typeof rows === 'number'){
+            return `
+                grid-template-rows: ${rows === 1 ? 'auto' : repeat(rows, 'auto')}
+            `;
+        }
+        return '';
+
     },
     gap: (gapNum) => {
         return `
