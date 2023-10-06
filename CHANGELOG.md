@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.4-alpha.14](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.13...v5.0.4-alpha.14) (2023-10-06)
+
+
+### Features
+
+* add utils repeat, minmax and use in grid cssGetter ([c934495](https://github.com/imagine10255/bear-react-grid/commit/c9344956bd4d667dcbeaa0dbdc3c233b51d666e5))
+
 ### [5.0.4-alpha.13](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.12...v5.0.4-alpha.13) (2023-10-06)
 
 ### [5.0.4-alpha.12](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.11...v5.0.4-alpha.12) (2023-10-05)
