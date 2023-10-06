@@ -1,4 +1,4 @@
-/* width, height */
+/* Size */
 .h-inherit{height: inherit !important;}
 .h-0{height: 0 !important;}
 .h-100{height: 100% !important;}
@@ -7,16 +7,16 @@
 .w-100{width: 100% !important;}
 .w-auto {width: auto !important;}
 
-/* img */
+/* Image */
 .img-fluid {max-width: 100% !important; height: auto !important;}
 .img-cover {width: 100% !important;object-fit: cover !important;}
 
-/* rotate */
+/* Rotate */
 .rotate-90 {transform: rotate(90deg) !important;}
 .rotate-180 {transform: rotate(180deg) !important;}
 .rotate-270 {transform: rotate(270deg) !important;}
 
-/* rounded */
+/* Rounded */
 .rounded {border-radius: .25rem !important;}
 .rounded-top {
     border-top-left-radius: var(--bear-border-radius) !important;
@@ -38,7 +38,7 @@
     border-radius: 50% !important;
 }
 
-/* text-overflow */
+/* Text Overflow */
 .text-area-overflow{display: -webkit-box !important;overflow: hidden !important;text-overflow: ellipsis !important;-webkit-line-clamp: var(--overflow-line, 2) !important;-webkit-box-orient: vertical !important;}
 .text-area-overflow-3{--overflow-line: 3 !important;}
 .text-area-overflow-4{--overflow-line: 4 !important;}
@@ -46,19 +46,15 @@
 .text-overflow{white-space: nowrap !important;overflow: hidden !important;text-overflow: ellipsis !important;}
 
 
-/* filter */
-.filter-gray {
-    filter: grayscale(1) !important;
-}
-.filter-mask-b{
-    mask-image: linear-gradient(to bottom, white, white, transparent) !important;
-}
+/* Filter */
+.filter-gray {filter: grayscale(1) !important;}
+.filter-mask-b{mask-image: linear-gradient(to bottom, white, white, transparent) !important;}
 
-/* position */
+/* Position */
 .position-static {position: static !important;}
 .position-relative {position: relative !important;}
 
-/* display */
+/* Display */
 .d-none {display: none !important;}
 .d-inline {display: inline !important;}
 .d-inline-block {display: inline-block !important;}
@@ -71,7 +67,7 @@
 .d-grid {display: grid !important}
 .d-inline-grid {display: inline-grid !important}
 
-/* flex */
+/* Flex */
 .flex-row {flex-direction: row !important;}
 .flex-column {flex-direction: column !important;}
 .flex-row-reverse {flex-direction: row-reverse !important;}
@@ -126,21 +122,22 @@
 .place-items-end {place-items: end !important;}
 .place-items-center {place-items: center !important;}
 
-/* text-align */
+/* Text Align */
 .text-justify {text-align: justify !important}
 .text-left {text-align: left !important}
 .text-right {text-align: right !important}
 .text-center {text-align: center !important}
 
 
-.g-colspan-1 {grid-column-start: span 1}
-.g-colspan-2 {grid-column-start: span 2}
-.g-colspan-3 {grid-column-start: span 3}
-.g-colspan-4 {grid-column-start: span 4}
-.g-colspan-5 {grid-column-start: span 5}
+/* ColSpan */
+.g-colspan-1 {grid-column-start: span 1 !important;}
+.g-colspan-2 {grid-column-start: span 2 !important;}
+.g-colspan-3 {grid-column-start: span 3 !important;}
+.g-colspan-4 {grid-column-start: span 4 !important;}
+.g-colspan-5 {grid-column-start: span 5 !important;}
 
 
-/* gutter */
+/* Gutter */
 .g-0, .gy-0 {--bear-gutter-y: 0 !important;}
 .g-0, .gx-0 {--bear-gutter-x: 0 !important;}
 .g-1, .gy-1 {--bear-gutter-y: var(--bear-gutter-1) !important;}
