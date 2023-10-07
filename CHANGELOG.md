@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.5-alpha.0](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4...v5.0.5-alpha.0) (2023-10-07)
+
+
+### Features
+
+* add d-contents utils class css ([5e2b9f3](https://github.com/imagine10255/bear-react-grid/commit/5e2b9f32e4ec82674adf306c2c810d576f98a8db))
+
 ### [5.0.4](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.15...v5.0.4) (2023-10-06)
 
 ### [5.0.4-alpha.15](https://github.com/imagine10255/bear-react-grid/compare/v5.0.4-alpha.14...v5.0.4-alpha.15) (2023-10-06)

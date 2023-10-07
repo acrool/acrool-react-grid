@@ -1,6 +1,6 @@
 {
   "name": "bear-react-grid",
-  "version": "5.0.4",
+  "version": "5.0.5-alpha.0",
   "description": "Most modern rwd grid system by react + styled-component",
   "keywords": [
     "react",
