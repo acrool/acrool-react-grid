@@ -6,6 +6,7 @@ export const GlobalCSSVar = createGlobalStyle`
 
     ${(props: TStyledProps<TThemeProps>) => css`
         :root{
+            --bear-border-radius: .375rem;
             --bear-spacer-1: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .25)};
             --bear-spacer-2: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .5)};
             --bear-spacer-3: ${props.theme.bearReactGrid.spacer};

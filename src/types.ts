@@ -3,7 +3,7 @@ import CSS from 'csstype';
 import {ThemeProps, CSSObject} from 'styled-components';
 import {themeName} from './config';
 
-type RecordOption<K extends keyof any, T> = {
+export type RecordOption<K extends keyof any, T> = {
     [P in K]?: T;
 };
 
@@ -47,14 +47,6 @@ export interface IBreakpoints {
     xl: number
     xxl: number
 }
-// export interface IGutterWidths {
-//     xs: TGutterWidth
-//     sm: TGutterWidth
-//     md: TGutterWidth
-//     lg: TGutterWidth
-//     xl: TGutterWidth
-//     xxl: TGutterWidth
-// }
 export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>
 
 export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: Function }
@@ -85,7 +77,11 @@ export type TGridTheme = Partial<IGridSetting>;
 /** -------------------------------
  *             Container
  * ------------------------------ */
-export interface IContainerProps extends FCChildrenProps{
+export type TRWDMaxSize = {
+    [size in NoXsMediaSize | 'fluid']: boolean
+}
+
+export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMediaSize, boolean>{
     fluid?: boolean;
 }
 
@@ -95,20 +91,13 @@ export interface IContainerProps extends FCChildrenProps{
  * ------------------------------ */
 export interface IRowProps extends FCChildrenProps{}
 
-export type TFlexDirection = 'column'|'row';
-
 
 /** -------------------------------
  *       Grid System - Col
  * ------------------------------ */
 export type TCol = number | true | 'auto' | undefined;
-export interface IColProps extends FCChildrenProps{
+export interface IColProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TCol>{
     col?: TCol;
-    sm?: TCol;
-    md?: TCol;
-    lg?: TCol;
-    xl?: TCol;
-    xxl?: TCol;
 }
 
 
@@ -116,19 +105,19 @@ export interface IColProps extends FCChildrenProps{
  *         CSS Grid - Grid
  * ------------------------------ */
 export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
-export type TGridColNumberSizeUnit = `${number}${TGridColSizeUnit}`;
+export type TGridColNumberSizeUnit = 'auto'|`${number}${TGridColSizeUnit}`;
 
-export type TGridCol = 'auto'|string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
+export type TGridCol = string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
 export type TGridTemplate = TGridCol|RecordOption<TMediaSize, TGridCol>
 
 export type TGridGapUnit = 'px' | 'rem';
-export type TGridGap = `${number}${TGridGapUnit}`
-export type TGridGaps = TGridGap|string
+export type TGridGap = 0|`${number}${TGridGapUnit}`
+export type TGridGaps = TGridGap|RecordOption<TMediaSize, TGridGap>
 
 export interface IGridProps extends FCChildrenProps{
     gap?: TGridGaps
-    columnsGap?: TGridGap
-    rowsGap?: TGridGap
+    columnGap?: TGridGap
+    rowGap?: TGridGap
 
     columns?: TGridTemplate;
     rows?: TGridTemplate;
@@ -137,11 +126,27 @@ export interface IGridProps extends FCChildrenProps{
 /** -------------------------------
  *       CSS Grid - Grid Col
  * ------------------------------ */
+export type TSpan = TGridCol|RecordOption<TMediaSize, TGridCol>;
+
 export interface IGridColProps extends FCChildrenProps{
-    col?: TGridCol;
-    sm?: TGridCol;
-    md?: TGridCol;
-    lg?: TGridCol;
-    xl?: TGridCol;
-    xxl?: TGridCol;
+    col?: TSpan
+    row?: TSpan
 }
+
+
+
+/** -------------------------------
+ *       CSS Grid - Flex
+ * ------------------------------ */
+export type TFlexDirection = 'column'|'row';
+
+export type TDirection = TFlexDirection|RecordOption<TMediaSize, TFlexDirection>;
+
+export interface IFlexProps extends FCChildrenProps{
+    direction?: TDirection
+
+    gap?: TGridGaps
+    columnGap?: TGridGap
+    rowGap?: TGridGap
+}
+

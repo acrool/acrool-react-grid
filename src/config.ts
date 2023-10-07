@@ -13,7 +13,7 @@
  *     gutter: 3,
  * }}>
  */
-import {NoXsMediaSize, IGridSetting} from './types';
+import {NoXsMediaSize, IGridSetting, TMediaSize} from './types';
 
 const themeName = 'bearReactGrid';
 const defaultGridTheme: IGridSetting = {
@@ -36,8 +36,9 @@ const defaultGridTheme: IGridSetting = {
         xxl: 1540,
     },
 };
-const mediaSizes = Object.keys(defaultGridTheme.containerMaxWidths) as NoXsMediaSize[];
+const noXsMediaSizes = Object.keys(defaultGridTheme.containerMaxWidths) as NoXsMediaSize[];
+const mediaSizes = Object.keys(defaultGridTheme.gridBreakpoints) as TMediaSize[];
 
 
 
-export {themeName, defaultGridTheme, mediaSizes};
+export {themeName, defaultGridTheme, noXsMediaSizes, mediaSizes};

@@ -1,5 +1,5 @@
 import {TStyledProps, IColProps, TCol} from '../../types';
-import {mediaSizes, themeName} from '../../config';
+import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
 import {css} from 'styled-components';
 
@@ -42,7 +42,7 @@ export const cssGetter: ICSSGetter = {
  * @param props
  */
 export const generateRWDStyled = (props: TStyledProps<IColProps>) => {
-    return mediaSizes
+    return noXsMediaSizes
         .map(sizeName => {
             return media[sizeName]`
             ${typeof props[sizeName] !== 'undefined' && css`

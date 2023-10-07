@@ -1,8 +1,18 @@
-import React from 'react';
+import React, {Children} from 'react';
 import styled, {css} from 'styled-components';
-import {TStyledProps, IGridProps, IColProps, TGridTemplate} from '../../types';
+import {
+    TStyledProps,
+    IGridProps,
+    IColProps,
+    TGridTemplate,
+    TGridGaps,
+    NoXsMediaSize,
+    TMediaSize,
+    TGridCol, RecordOption
+} from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
 import {themeName} from '../../config';
+import {getDefaultSizeValue} from '../../utils';
 
 
 
@@ -39,21 +49,16 @@ const generateDebugData = (props: TStyledProps<IGridProps>) => {
         typeof props.rows === 'object' && ('xl' in props.rows) && `rows-xl${suffix(props.rows.xl)}`,
         typeof props.rows === 'object' && ('xxl' in props.rows) && `rows-xxl${suffix(props.rows.xxl)}`,
 
-        props.gap && `gap-[${props.gap}]`,
-        props.columnsGap && `gap-[${props.columnsGap}]`,
-        props.rowsGap && `gap-[${props.rowsGap}]`,
+        typeof props.gap !== 'undefined' && `gap-[${props.gap}]`,
+        typeof props.columnGap !== 'undefined' && `gap-[${props.columnGap}]`,
+        typeof props.rowGap !== 'undefined' && `gap-[${props.rowGap}]`,
     ]
         .filter(Boolean)
         .join(' ');
 };
 
 
-const getDefaultSizeValue = (column?: TGridTemplate) => {
-    if((typeof column === 'object' && 'xs' in column)){
-        return column.xs;
-    }
-    return column;
-};
+
 
 
 
@@ -65,24 +70,33 @@ const getDefaultSizeValue = (column?: TGridTemplate) => {
 const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-grid': generateDebugData(props),
 }))`
-  // 每次定義避免被上層影響
-  --bear-columns: ${props => `repeat(${props.theme[themeName]?.gridColumns}, 1fr)`};
-  --bear-rows: repeat(1, 1fr);
-
   display: grid;
-  grid-template-rows: var(--bear-rows);
-  grid-template-columns: var(--bear-columns);
-  gap: var(--bear-gap, ${props => props.theme[themeName]?.gutter});
 
-  ${(props: TStyledProps<IGridProps>) => css`
-      ${!!getDefaultSizeValue(props.columns) && cssGetter.columns(getDefaultSizeValue(props.columns))};
-      ${!!getDefaultSizeValue(props.rows) && cssGetter.rows(getDefaultSizeValue(props.rows))};
-      ${props.gap && cssGetter.gap(props.gap)};
-      ${props.columnsGap && cssGetter.columnGap(props.columnsGap)};
-      ${props.rowsGap && cssGetter.rowGap(props.rowsGap)};
+  ${(props: TStyledProps<IGridProps>) => {
+        const defaultColumnArg = getDefaultSizeValue(props.columns);
+        const defaultRowArg = getDefaultSizeValue(props.rows);
+        const defaultGapArg = getDefaultSizeValue(props.gap);
+        const defaultColumnsGapArg = getDefaultSizeValue(props.columnGap);
+        const defaultRowsGapArg = getDefaultSizeValue(props.rowGap);
+        return css`
+      gap: ${props.theme[themeName]?.gutter};
+      grid-template-rows: auto;
+
+      ${!props.columns && props.children && Array.isArray(props.children) && css`
+          grid-template-columns: ${`repeat(${Children.count(props.children) ?? 1}, auto)`};
+      `}
+
+      // 最小尺寸
+      ${defaultColumnArg && cssGetter.columns(defaultColumnArg)};
+      ${defaultRowArg && cssGetter.rows(defaultRowArg)};
+
+      ${typeof defaultGapArg !== 'undefined' && cssGetter.gap(defaultGapArg)};
+      ${typeof defaultColumnsGapArg !== 'undefined' && cssGetter.columnGap(defaultColumnsGapArg)};
+      ${typeof defaultRowsGapArg !== 'undefined' && cssGetter.rowGap(defaultRowsGapArg)};
 
       ${generateRWDStyled(props)};
- `}
+      `;
+    }}
 `;
 
 export default Grid;

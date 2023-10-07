@@ -1,5 +1,5 @@
 import {TStyledProps, IRowProps, NoXsMediaSize} from '../types';
-import {mediaSizes} from '../config';
+import {noXsMediaSizes} from '../config';
 import media from '../media';
 
 
@@ -86,18 +86,26 @@ const renderOrderStyle = (sizeName: NoXsMediaSize) => {
  * @param props
  */
 export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
-    return mediaSizes
+    return noXsMediaSizes
         .map(sizeName => {
             return media[sizeName]`
+            .w-${sizeName}-0 {width: 0 !important;}
+            .w-${sizeName}-100 {width: 100% !important;}
+            .w-${sizeName}-auto {width: auto !important;}
+
+            .h-${sizeName}-0 {height: 0 !important;}
+            .h-${sizeName}-100 {height: 100% !important;}
+            .h-${sizeName}-auto {height: auto !important;}
+
             .d-${sizeName}-none {display: none !important;}
             .d-${sizeName}-inline {display: inline !important;}
             .d-${sizeName}-inline-block {display: inline-block !important;}
             .d-${sizeName}-block {display: block !important;}
             .d-${sizeName}-flex {display: flex !important;}
             .d-${sizeName}-inline-flex {display: inline-flex !important;}
-            .d-${sizeName}-table-cell {display: table-cell !important;}
-            .d-${sizeName}-table {display: table !important;}
-            .d-${sizeName}-table-row {display: table-row !important;}
+            .d-${sizeName}-grid {display: grid !important;}
+            .d-${sizeName}-inline-grid {display: inline-grid !important;}
+            .d-${sizeName}-contents {display: contents !important;}
 
             .flex-${sizeName}-row {flex-direction: row !important;}
             .flex-${sizeName}-column {flex-direction: column !important;}
@@ -114,23 +122,32 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .flex-${sizeName}-shrink-0 {flex-shrink: 0 !important;}
             .flex-${sizeName}-shrink-1 {flex-shrink: 1 !important;}
 
+            .justify-content-${sizeName}-auto {justify-content: normal !important;}
             .justify-content-${sizeName}-start {justify-content: flex-start !important;}
             .justify-content-${sizeName}-end {justify-content: flex-end !important;}
             .justify-content-${sizeName}-center {justify-content: center !important;}
             .justify-content-${sizeName}-between {justify-content: space-between !important;}
             .justify-content-${sizeName}-around {justify-content: space-around !important;}
 
+            .justify-items-${sizeName}-auto {justify-items: normal !important;}
             .justify-items-${sizeName}-start {justify-items: flex-start !important;}
             .justify-items-${sizeName}-end {justify-items: flex-end !important;}
             .justify-items-${sizeName}-center {justify-items: center !important;}
             .justify-items-${sizeName}-stretch {justify-items: stretch !important;}
 
+            .justify-self-${sizeName}-auto {justify-self: auto !important;}
+            .justify-self-${sizeName}-start {justify-self: flex-start !important;}
+            .justify-self-${sizeName}-end {justify-self: flex-end !important;}
+            .justify-self-${sizeName}-center {justify-self: center !important;}
+
+            .align-items-${sizeName}-auto {align-items: normal !important;}
             .align-items-${sizeName}-start {align-items: flex-start !important;}
             .align-items-${sizeName}-end {align-items: flex-end !important;}
             .align-items-${sizeName}-center {align-items: center !important;}
             .align-items-${sizeName}-baseline {align-items: baseline !important;}
             .align-items-${sizeName}-stretch {align-items: stretch !important;}
 
+            .align-content-${sizeName}-auto {align-content: normal !important;}
             .align-content-${sizeName}-start {align-content: start !important;}
             .align-content-${sizeName}-end {align-content: flex-end !important;}
             .align-content-${sizeName}-center {align-content: center !important;}
@@ -138,11 +155,17 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .align-content-${sizeName}-around {align-content: around !important;}
             .align-content-${sizeName}-stretch {align-content: stretch !important;}
 
+            .align-self-${sizeName}-auto {align-self: auto !important;}
             .align-self-${sizeName}-start {align-self: flex-start !important;}
             .align-self-${sizeName}-end {align-self: flex-end !important;}
             .align-self-${sizeName}-center {align-self: center !important;}
             .align-self-${sizeName}-baseline {align-self: baseline !important;}
             .align-self-${sizeName}-stretch {align-self: stretch !important;}
+
+            .place-items-${sizeName}-auto {place-items: normal !important;}
+            .place-items-${sizeName}-start {place-items: start !important;}
+            .place-items-${sizeName}-end {place-items: end !important;}
+            .place-items-${sizeName}-center {place-items: center !important;}
 
             .text-${sizeName}-justify {text-align: justify !important;}
             .text-${sizeName}-left {text-align: left !important;}
@@ -164,10 +187,12 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .order-${sizeName}-first {order: -1 !important;}
             .order-${sizeName}-last {order: 6 !important;}
 
-            .overflow-x-${sizeName}-hidden {overflow-x: hidden !important;}
-            .overflow-y-${sizeName}-hidden {overflow-y: hidden !important;}
-            .overflow-x-${sizeName}-auto {overflow-x: auto !important;}
-            .overflow-y-${sizeName}-auto {overflow-y: auto !important;}
+            .overflow-${sizeName}-initial, .overflow-x-${sizeName}-initial {overflow-x: initial !important;}
+            .overflow-${sizeName}-initial, .overflow-y-${sizeName}-initial {overflow-x: initial !important;}
+            .overflow-${sizeName}-hidden, .overflow-x-${sizeName}-hidden {overflow-x: hidden !important;}
+            .overflow-${sizeName}-hidden, .overflow-y-${sizeName}-hidden {overflow-y: hidden !important;}
+            .overflow-${sizeName}-auto, .overflow-x-${sizeName}-auto {overflow-x: auto !important;}
+            .overflow-${sizeName}-auto, .overflow-y-${sizeName}-auto {overflow-y: auto !important;}
         `;
         });
 };

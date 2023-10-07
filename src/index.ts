@@ -5,8 +5,11 @@ export {default as Col} from './GridSystem/Col';
 
 export {default as Grid} from './CSSGrid/Grid';
 export {default as GridCol} from './CSSGrid/GridCol';
+export {default as Flex} from './CSSGrid/Flex';
 
 export {default as GridThemeProvider} from './GridThemeProvider';
+export {minmax, repeat} from './utils';
+
 export * from './config';
 
 export * from './types';
