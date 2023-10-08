@@ -63,7 +63,6 @@
 .d-inline-flex {display: -ms-inline-flexbox !important;display: inline-flex !important;}
 .d-grid {display: grid !important;}
 .d-inline-grid {display: inline-grid !important;}
-.d-contents {display: contents !important;}
 
 /* Flex */
 .flex-row {flex-direction: row !important;}

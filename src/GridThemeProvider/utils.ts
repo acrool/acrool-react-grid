@@ -105,7 +105,6 @@ export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
             .d-${sizeName}-inline-flex {display: inline-flex !important;}
             .d-${sizeName}-grid {display: grid !important;}
             .d-${sizeName}-inline-grid {display: inline-grid !important;}
-            .d-${sizeName}-contents {display: contents !important;}
 
             .flex-${sizeName}-row {flex-direction: row !important;}
             .flex-${sizeName}-column {flex-direction: column !important;}
