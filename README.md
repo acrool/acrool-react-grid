@@ -20,11 +20,11 @@
 </div>
 
 <p align="center">
-  <a href="https://bear-react-grid.github.io/docs/getting-started">Get started</a> |
-  <a href="https://bear-react-grid.github.io/docs/config">Config</a> |
-  <a href="https://bear-react-grid.github.io/docs/utilities">Utilities</a> |
-  <a href="https://bear-react-grid.github.io/docs/grid-system">Grid System</a> |
-  <a href="https://bear-react-grid.github.io/docs/css-grid">CSS Grid</a>
+  <a href="https://bear-react-grid.pages.dev/docs/getting-started">Get started</a> |
+  <a href="https://bear-react-grid.pages.dev/docs/config">Config</a> |
+  <a href="https://bear-react-grid.pages.dev/docs/utilities">Utilities</a> |
+  <a href="https://bear-react-grid.pages.dev/docs/grid-system">Grid System</a> |
+  <a href="https://bear-react-grid.pages.dev/docs/css-grid">CSS Grid</a>
 </p>
 
 
