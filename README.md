@@ -23,8 +23,8 @@
   <a href="https://bear-react-grid.pages.dev/docs/getting-started">Get started</a> |
   <a href="https://bear-react-grid.pages.dev/docs/config">Config</a> |
   <a href="https://bear-react-grid.pages.dev/docs/utilities">Utilities</a> |
-  <a href="https://bear-react-grid.pages.dev/docs/grid-system">Grid System</a> |
-  <a href="https://bear-react-grid.pages.dev/docs/css-grid">CSS Grid</a>
+  <a href="https://bear-react-grid.pages.dev/docs/category/grid-system">Grid System</a> |
+  <a href="https://bear-react-grid.pages.dev/docs/category/css-grid">CSS Grid</a>
 </p>
 
 
