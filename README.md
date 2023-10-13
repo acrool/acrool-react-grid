@@ -1,10 +1,9 @@
 # Bear React Grid
 
-<div style="text-align: center">
-    <a href="https://bear-react-grid.pages.dev/" title="Bear Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
-        <img src="https://bear-react-grid.pages.dev/img/banner.webp" alt="Bear React Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component" />
-    </a>
-</div>
+<a href="https://bear-react-grid.pages.dev/" title="Bear Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
+    <img src="https://bear-react-grid.pages.dev/img/banner.webp" alt="Bear React Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component" />
+</a>
+
 <p align="center">
     CSS IN JS following Bootstrap RWD design, composed of React + Styled Component
 </p>
@@ -38,7 +37,7 @@
 - Provide `RWD` Media query method
 - Support `NextJS 13` (v5.0.3+)
 
-## installation
+## Installation
 
 ```bash
 yarn add bear-react-grid
