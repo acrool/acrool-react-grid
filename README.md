@@ -1,16 +1,15 @@
-# bear-react-grid
+# Bear React Grid
 
-
-
-<div align="center">
-        <a href="https://bear-react-grid.pages.dev/" title="Bear Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
-            <img src="https://github.com/imagine10255/bear-react-grid/blob/main/logo.png" alt="Bear React Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component" />
-        </a>
+<div style="text-align: center">
+    <a href="https://bear-react-grid.pages.dev/" title="Bear Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
+        <img src="https://bear-react-grid.pages.dev/img/banner.webp" alt="Bear React Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component" />
+    </a>
 </div>
+<p style="text-align: center;font-size: 20px;color: #0a66c2">
+    CSS IN JS following Bootstrap RWD design, composed of React + Styled Component
+</p>
 
-<div align="center">
-
-
+<div style="text-align: center;">
 
 [![NPM](https://img.shields.io/npm/v/bear-react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/bear-react-grid)
 [![npm downloads](https://img.shields.io/npm/dm/bear-react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/bear-react-grid)
@@ -19,13 +18,15 @@
 
 </div>
 
-<p align="center">
-  <a href="https://bear-react-grid.pages.dev/docs/getting-started">Get started</a> |
-  <a href="https://bear-react-grid.pages.dev/docs/config">Config</a> |
-  <a href="https://bear-react-grid.pages.dev/docs/utilities">Utilities</a> |
-  <a href="https://bear-react-grid.pages.dev/docs/category/grid-system">Grid System</a> |
-  <a href="https://bear-react-grid.pages.dev/docs/category/css-grid">CSS Grid</a>
-</p>
+## Documentation
+
+- [Getting Started](https://bear-react-grid.pages.dev/docs/getting-started)
+- [Config](https://bear-react-grid.pages.dev/docs/config)
+- [Utilities](https://bear-react-grid.pages.dev/docs/utilities)
+- [Breakpoints](https://bear-react-grid.pages.dev/docs/breakpoints)
+- [Container](https://bear-react-grid.pages.dev/docs/container)
+- [Grid System](https://bear-react-grid.pages.dev/docs/category/grid-system)
+- [CSS Grid](https://bear-react-grid.pages.dev/docs/category/css-grid)
 
 
 ## Features
@@ -37,7 +38,7 @@
 - Provide `RWD` Media query method
 - Support `NextJS 13` (v5.0.3+)
 
-## Install
+## installation
 
 ```bash
 yarn add bear-react-grid
@@ -52,7 +53,6 @@ in your packages. (Make the version of styled-component you use match the versio
 ```
 
 
-## Usage
 in your App.js add  
 `see the example/src/App.js`
 
@@ -87,6 +87,8 @@ const gridTheme: IGridSetting = {
     <App/>
 </GridThemeProvider>
 ```
+
+## Examples
 
 use in your page/component:
 ```tsx
