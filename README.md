@@ -6,7 +6,7 @@
     </a>
 </div>
 <p align="center">
-    <font color="#0a66c2" size="4">CSS IN JS following Bootstrap RWD design, composed of React + Styled Component</font>
+    CSS IN JS following Bootstrap RWD design, composed of React + Styled Component
 </p>
 
 <div align="center">
