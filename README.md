@@ -102,6 +102,10 @@ const MyPage = () => {
                 <Col col>col2 (50%) </Col>
                 <Col col>col2 (50%) </Col>
             </Row>
+            <Grid column={2}>
+                <div>Grid Col2</div>
+                <div>Grid Col2</div>
+            </Grid>
         </Container>
     );
 }
