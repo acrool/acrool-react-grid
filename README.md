@@ -3,7 +3,7 @@
 
 
 <div align="center">
-        <a href="https://bear-react-grid.github.io" title="Bear Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
+        <a href="https://bear-react-grid.pages.dev/" title="Bear Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
             <img src="https://github.com/imagine10255/bear-react-grid/blob/main/logo.png" alt="Bear React Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component" />
         </a>
 </div>
