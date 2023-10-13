@@ -20,6 +20,7 @@
 ## Documentation
 
 - [Getting Started](https://bear-react-grid.pages.dev/docs/getting-started)
+- [Faq](https://bear-react-grid.pages.dev/docs/category/faqs)
 - [Config](https://bear-react-grid.pages.dev/docs/config)
 - [Utilities](https://bear-react-grid.pages.dev/docs/utilities)
 - [Breakpoints](https://bear-react-grid.pages.dev/docs/breakpoints)
