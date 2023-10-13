@@ -92,7 +92,7 @@ const gridTheme: IGridSetting = {
 
 use in your page/component:
 ```tsx
-import {Container, Row, Col, media} from 'bear-react-grid';
+import {Container, Row, Col, Grid, Flex, media} from 'bear-react-grid';
 
 const MyPage = () => {
     return (
@@ -102,9 +102,16 @@ const MyPage = () => {
                 <Col col>col2 (50%) </Col>
                 <Col col>col2 (50%) </Col>
             </Row>
-            <Grid column={2}>
+            <Grid columns={2}>
                 <div>Grid Col2</div>
-                <div>Grid Col2</div>
+                <Flex direction="column">
+                    <div>Grid Col3</div>
+                    <div>Grid Col3</div>
+                </Flex>
+            </Grid>
+            <Grid columns="repeat(1, 3fr)">
+                <GridCol>Grid Col3</GridCol>
+                <GridCol colSpan={2}>Grid Col3</GridCol>
             </Grid>
         </Container>
     );
