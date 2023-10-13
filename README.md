@@ -5,11 +5,11 @@
         <img src="https://bear-react-grid.pages.dev/img/banner.webp" alt="Bear React Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component" />
     </a>
 </div>
-<p style="text-align: center;font-size: 20px;color: #0a66c2">
-    CSS IN JS following Bootstrap RWD design, composed of React + Styled Component
+<p align="center">
+    <font color="#0a66c2" size="4">CSS IN JS following Bootstrap RWD design, composed of React + Styled Component</font>
 </p>
 
-<div style="text-align: center;">
+<div align="center">
 
 [![NPM](https://img.shields.io/npm/v/bear-react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/bear-react-grid)
 [![npm downloads](https://img.shields.io/npm/dm/bear-react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/bear-react-grid)
