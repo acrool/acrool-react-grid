@@ -1,7 +1,7 @@
 # Bear React Grid
 
-<a href="https://bear-react-grid.pages.dev/" title="Bear Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
-    <img src="https://bear-react-grid.pages.dev/img/banner.webp" alt="Bear React Grid Logo - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component" />
+<a href="https://bear-react-grid.pages.dev/" title="Bear React Grid - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
+    <img src="https://bear-react-grid.pages.dev/img/banner.webp" alt="Bear React Grid Logo" />
 </a>
 
 <p align="center">
