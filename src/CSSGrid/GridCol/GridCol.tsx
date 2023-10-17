@@ -1,6 +1,6 @@
-import React, {Children} from 'react';
+import React from 'react';
 import styled, {css} from 'styled-components';
-import {TStyledProps, TGridTemplate, IGridColProps, TSpan} from '../../types';
+import {TStyledProps, TGridCols, IGridColProps} from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
 import {getDefaultSizeValue} from '../../utils';
 

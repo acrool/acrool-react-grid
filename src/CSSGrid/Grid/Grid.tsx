@@ -3,12 +3,6 @@ import styled, {css} from 'styled-components';
 import {
     TStyledProps,
     IGridProps,
-    IColProps,
-    TGridTemplate,
-    TGridGaps,
-    NoXsMediaSize,
-    TMediaSize,
-    TGridCol, RecordOption
 } from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
 import {themeName} from '../../config';

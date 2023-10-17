@@ -1,4 +1,4 @@
-import {TStyledProps, IGridProps, TGridGap, TGridTemplate, TGridGaps, TAutoFlow} from '../../types';
+import {TStyledProps, IGridProps, TGridGap, TGridCol, TGridAutoFlow} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
 import {css} from 'styled-components';
@@ -8,9 +8,11 @@ import {repeat} from '../../utils';
 
 
 interface ICSSGetterCss {
-    autoFlow: (gapNum: TAutoFlow) => string
-    columns: (columns: TGridTemplate) => string
-    rows: (rows: TGridTemplate) => string
+    autoFlow: (gapNum: TGridAutoFlow) => string
+
+    columns: (columns: TGridCol) => string
+    rows: (rows: TGridCol) => string
+
     gap: (gapNum: TGridGap) => string
     columnGap: (gapNum: TGridGap) => string
     rowGap: (gapNum: TGridGap) => string

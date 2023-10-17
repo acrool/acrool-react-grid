@@ -108,22 +108,23 @@ export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
 export type TGridColNumberSizeUnit = 'auto'|`${number}${TGridColSizeUnit}`;
 
 export type TGridCol = string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
-export type TGridTemplate = TGridCol|RecordOption<TMediaSize, TGridCol>
+export type TGridCols = TGridCol|RecordOption<TMediaSize, TGridCol>
 
 export type TGridGapUnit = 'px' | 'rem';
 export type TGridGap = 0|`${number}${TGridGapUnit}`
 export type TGridGaps = TGridGap|RecordOption<TMediaSize, TGridGap>
-export type TAutoFlowUnit = 'column'|'row'|'dense'|'revert-layer'
-export type TAutoFlow = TAutoFlowUnit|RecordOption<TMediaSize, TAutoFlowUnit>
+
+export type TGridAutoFlow = 'column'|'row'|'dense'|'revert-layer'
+export type TGridAutoFlows = TGridAutoFlow|RecordOption<TMediaSize, TGridAutoFlow>
 
 export interface IGridProps extends FCChildrenProps{
     gap?: TGridGaps
     columnGap?: TGridGap
     rowGap?: TGridGap
 
-    columns?: TGridTemplate
-    rows?: TGridTemplate
-    autoFlow?: TAutoFlow
+    columns?: TGridCols
+    rows?: TGridCols
+    autoFlow?: TGridAutoFlows
 }
 
 /** -------------------------------

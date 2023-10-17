@@ -1,13 +1,4 @@
-import {
-    TStyledProps,
-    IGridProps,
-    TGridGap,
-    TGridTemplate,
-    TGridGaps,
-    TGridCol,
-    TSpan,
-    IGridColProps, TFlexDirection, IFlexProps, TDirection
-} from '../../types';
+import {TStyledProps, TGridGap, IFlexProps, TDirection} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
 import {css} from 'styled-components';
