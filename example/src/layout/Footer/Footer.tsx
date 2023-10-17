@@ -34,7 +34,7 @@ const Footer = ({
             </Grid>
 
             <Info columns={1} className="align-content-center text-center text-md-left">
-                <p>Site made with React, Gatsby, Netlify and Contentful. Learn how.</p>
+                <p>Site made with React, BearReactGrid and Styled-components. Learn how.</p>
 
                 <p>Design+Code © 2023</p>
 

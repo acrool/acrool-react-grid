@@ -1,4 +1,4 @@
-import {TStyledProps, IGridProps, TGridGap, TGridTemplate, TGridGaps} from '../../types';
+import {TStyledProps, IGridProps, TGridGap, TGridTemplate, TGridGaps, TAutoFlow} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
 import {css} from 'styled-components';
@@ -8,6 +8,7 @@ import {repeat} from '../../utils';
 
 
 interface ICSSGetterCss {
+    autoFlow: (gapNum: TAutoFlow) => string
     columns: (columns: TGridTemplate) => string
     rows: (rows: TGridTemplate) => string
     gap: (gapNum: TGridGap) => string
@@ -17,6 +18,11 @@ interface ICSSGetterCss {
 
 
 export const cssGetter: ICSSGetterCss = {
+    autoFlow: (autoFlow) => {
+        return `
+            grid-auto-flow: ${autoFlow};
+        `;
+    },
     columns: (columns) => {
         if(typeof columns === 'string'){
             return `
@@ -71,6 +77,7 @@ export const cssGetter: ICSSGetterCss = {
 export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
     return noXsMediaSizes
         .map(sizeName => {
+            const mediaAutoFlowProps = typeof props.autoFlow === 'object' ? props.autoFlow[sizeName]: undefined;
             const mediaColumnProps = typeof props.columns === 'object' ? props.columns[sizeName]: undefined;
             const mediaRowProps = typeof props.rows === 'object' ? props.rows[sizeName]: undefined;
 
@@ -79,6 +86,10 @@ export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
             const mediaRowGapProps = typeof props.rowGap === 'object' ? props.rowGap[sizeName]: undefined;
 
             return media[sizeName]`
+            ${typeof mediaAutoFlowProps !== 'undefined' && css`
+                ${cssGetter.autoFlow(mediaAutoFlowProps)};
+            `}
+
             ${typeof mediaColumnProps !== 'undefined' && css`
                 ${cssGetter.columns(mediaColumnProps)};
             `}

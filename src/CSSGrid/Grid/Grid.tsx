@@ -73,11 +73,13 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
   display: grid;
 
   ${(props: TStyledProps<IGridProps>) => {
+        const defaultAutoFlowArg = getDefaultSizeValue(props.autoFlow);
         const defaultColumnArg = getDefaultSizeValue(props.columns);
         const defaultRowArg = getDefaultSizeValue(props.rows);
         const defaultGapArg = getDefaultSizeValue(props.gap);
         const defaultColumnsGapArg = getDefaultSizeValue(props.columnGap);
         const defaultRowsGapArg = getDefaultSizeValue(props.rowGap);
+
         return css`
       gap: ${props.theme[themeName]?.gutter};
       grid-template-rows: auto;
@@ -87,9 +89,11 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
       `}
 
       // 最小尺寸
+      ${defaultAutoFlowArg && cssGetter.rows(defaultAutoFlowArg)};
       ${defaultColumnArg && cssGetter.columns(defaultColumnArg)};
       ${defaultRowArg && cssGetter.rows(defaultRowArg)};
 
+      ${typeof defaultAutoFlowArg !== 'undefined' && cssGetter.autoFlow(defaultAutoFlowArg)};
       ${typeof defaultGapArg !== 'undefined' && cssGetter.gap(defaultGapArg)};
       ${typeof defaultColumnsGapArg !== 'undefined' && cssGetter.columnGap(defaultColumnsGapArg)};
       ${typeof defaultRowsGapArg !== 'undefined' && cssGetter.rowGap(defaultRowsGapArg)};

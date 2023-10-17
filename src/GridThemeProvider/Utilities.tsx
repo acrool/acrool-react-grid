@@ -2,7 +2,7 @@ import {createGlobalStyle, css} from 'styled-components';
 import {TStyledProps, TThemeProps} from '../types';
 import {calcUnitSize, generateRWDStyled} from './utils';
 
-export const GlobalCSSVar = createGlobalStyle`
+export const Utilities = createGlobalStyle`
 
     ${(props: TStyledProps<TThemeProps>) => css`
         :root{

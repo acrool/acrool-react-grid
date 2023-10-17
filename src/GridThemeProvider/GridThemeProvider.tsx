@@ -3,7 +3,7 @@ import {ThemeProvider} from 'styled-components';
 
 import {defaultGridTheme, themeName} from '../config';
 import {IGridThemeProviderProps} from '../types';
-import {GlobalCSSVar} from './GlobalCSSVar';
+import {Utilities} from './Utilities';
 import '../styles.css';
 
 
@@ -35,7 +35,7 @@ const GridThemeProvider = (props: IGridThemeProviderProps) => {
 
     return <ThemeProviderFixed theme={composeGridTheme}>
         {children}
-        <GlobalCSSVar/>
+        <Utilities/>
     </ThemeProviderFixed>;
 };
 
