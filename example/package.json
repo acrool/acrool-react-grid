@@ -15,8 +15,11 @@
         "@swc/plugin-styled-components": "^1.5.68",
         "bear-react-grid": "link:..",
         "dayjs": "^1.11.7",
+        "history": "^5.3.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-router-dom": "6.3.0",
+        "@types/react-router-dom": "^5.3.3",
         "styled-components": "5.3.9"
     },
     "devDependencies": {
