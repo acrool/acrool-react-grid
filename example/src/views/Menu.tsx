@@ -11,7 +11,8 @@ const Menu = ({
     const navigate = useNavigate();
 
     const data = [
-        {text: 'Design Code', path: '/designCode'}
+        {text: 'Design Code', path: '/designCode'},
+        {text: 'Heroes', path: '/heroes'}
     ];
 
     return <MenuRoot className={className}>

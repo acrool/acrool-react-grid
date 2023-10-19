@@ -29,7 +29,7 @@ export const cssGetter: ICSSGetter = {
             colFlexBasis = (100 / gridColumns) * columnNumber;
             return `
             flex: 0 0 auto;
-            width: ${colFlexBasis > 0 ? `${colFlexBasis}%;`: 0};'
+            width: ${colFlexBasis > 0 ? `${colFlexBasis}%`: 0};
         `;
         }
     },

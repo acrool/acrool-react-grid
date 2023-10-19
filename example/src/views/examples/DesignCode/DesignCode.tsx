@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 import Navbar from './layout/Navbar';
 import Header from './layout/Header';
 import WaveWrapper1 from './layout/WaveWrapper';
@@ -19,7 +19,7 @@ import WaveWrapper4 from './layout/WaveWrapper/WaveWrapper4';
 import Footer from './layout/Footer';
 
 
-export default function App() {
+const DesignCode = () => {
 
     return <>
         <WaveWrapper1/>
@@ -56,9 +56,12 @@ export default function App() {
             <Footer/>
         </Wrapper4>
 
+
     </>;
 
-}
+};
+
+export default DesignCode;
 
 
 const Wrapper3 = styled.div`
@@ -93,5 +96,13 @@ const Wrapper = styled.div`
         top: 0;
         z-index: -2;
         height: 100%;
+    }
+`;
+
+
+const GlobalCSS = createGlobalStyle`
+    body{
+        background: rgb(31, 31, 71);
+        color: #fff;
     }
 `;
