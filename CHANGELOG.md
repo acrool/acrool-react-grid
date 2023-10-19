@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.7](https://github.com/imagine10255/bear-react-grid/compare/v5.0.6-alpha.1...v5.0.7) (2023-10-19)
+
+
+### Bug Fixes
+
+* col gen code miss ';' ([a3e84c2](https://github.com/imagine10255/bear-react-grid/commit/a3e84c244acb77587229d4b1bcc0f220d01576e8))
+
 ### [5.0.6-alpha.1](https://github.com/imagine10255/bear-react-grid/compare/v5.0.6-alpha.0...v5.0.6-alpha.1) (2023-10-17)
 
 ### [5.0.6-alpha.0](https://github.com/imagine10255/bear-react-grid/compare/v5.0.5...v5.0.6-alpha.0) (2023-10-17)
