@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './views/App/App';
+import App from './examples/DesignCode';
+
+
+import './index.css';
+import 'bear-react-grid/dist/index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>

@@ -118,7 +118,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:act
 
 
 body{
-    background: #212529;
+    background: rgb(31, 31, 71);
     color: #fff;
 }
 *{
