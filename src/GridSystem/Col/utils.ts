@@ -43,11 +43,10 @@ export const cssGetter: ICSSGetter = {
  */
 export const generateRWDStyled = (props: TStyledProps<IColProps>) => {
     return noXsMediaSizes
+        .filter(sizeName => typeof props[sizeName] !== 'undefined')
         .map(sizeName => {
             return media[sizeName]`
-            ${typeof props[sizeName] !== 'undefined' && css`
                 ${cssGetter.col(props[sizeName], props.theme[themeName]?.gridColumns)};
-            `}
-    `;
+        `;
         });
 };

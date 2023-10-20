@@ -19,7 +19,7 @@ const themeName = 'bearReactGrid';
 const defaultGridTheme: IGridSetting = {
     spacer: '1rem',
     gutter: '0.625rem',
-    gridColumns: 24,
+    gridColumns: 12,
     gridBreakpoints: {
         xs: 0,
         sm: 576,

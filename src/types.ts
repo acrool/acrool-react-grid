@@ -59,7 +59,7 @@ export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: F
  *         GirdProvide
  * ------------------------------ */
 export interface IGridThemeProviderProps {
-    gridTheme: Partial<IGridSetting>
+    gridTheme?: Partial<IGridSetting>
     children: React.ReactNode
 }
 
