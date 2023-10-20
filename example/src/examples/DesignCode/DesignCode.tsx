@@ -1,12 +1,10 @@
 import React from 'react';
-import {Container, Col, Row, GridThemeProvider, Grid, GridCol} from 'bear-react-grid';
-import styled from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 import Navbar from './layout/Navbar';
 import Header from './layout/Header';
 import WaveWrapper1 from './layout/WaveWrapper';
 import CourseSection from './layout/CourseSection';
 
-import gridTheme from '@/config/gridTheme';
 import WaveWrapper2 from './layout/WaveWrapper/WaveWrapper2';
 import TutorialSection from './layout/TutorialSection';
 import Profile from './layout/Profile/Profile';
@@ -25,7 +23,9 @@ import Footer from './layout/Footer';
 
 export default function DesignCode() {
 
-    return <GridThemeProvider gridTheme={gridTheme}>
+    return <DesignCodeRoot>
+        <GlobalCSS/>
+
         <WaveWrapper1/>
         <Wrapper>
             <Navbar className="mb-5"/>
@@ -60,7 +60,7 @@ export default function DesignCode() {
             <Footer/>
         </Wrapper4>
 
-    </GridThemeProvider>;
+    </DesignCodeRoot>;
 
 }
 
@@ -97,5 +97,18 @@ const Wrapper = styled.div`
         top: 0;
         z-index: -2;
         height: 100%;
+    }
+`;
+
+
+const DesignCodeRoot = styled.div`
+
+`;
+
+
+const GlobalCSS = createGlobalStyle`
+    body{
+        background: rgb(31, 31, 71);
+        color: #fff;
     }
 `;
