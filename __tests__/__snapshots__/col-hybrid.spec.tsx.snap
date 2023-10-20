@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hybrid  renders col + col-lg-2 1`] = `
+.c0 {
+  flex: 1 0 0;
+}
+
+@media (min-width:992px) {
+  .c0 {
+    flex: 0 0 auto;
+    width: 16.666666666666668%;
+  }
+}
+
+<div
+  class="c0"
+  data-grid="col-true col-lg-2"
+>
+  col
+</div>
+`;
+
+exports[`Hybrid  renders col-4 + col-md-6 1`] = `
+.c0 {
+  flex: 0 0 auto;
+  width: 33.333333333333336%;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+<div
+  class="c0"
+  data-grid="col-4 col-md-6"
+>
+  col
+</div>
+`;
+
+exports[`Hybrid  renders col-auto + col-md-auto 1`] = `
+.c0 {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+<div
+  class="c0"
+  data-grid="col-auto col-md-auto"
+>
+  col
+</div>
+`;

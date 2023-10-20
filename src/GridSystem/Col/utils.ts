@@ -15,19 +15,19 @@ export const cssGetter: ICSSGetter = {
         let colFlexBasis = 0;
 
         switch (column) {
-            case true:
-                return `
+        case true:
+            return `
           flex: 1 0 0;
         `;
-            case 'auto':
-                return `
+        case 'auto':
+            return `
           flex: 0 0 auto;
           width: auto;
         `;
-            default:
-                const columnNumber = (typeof column === 'number' ? column : 0);
-                colFlexBasis = (100 / gridColumns) * columnNumber;
-                return `
+        default:
+            const columnNumber = (typeof column === 'number' ? column : 0);
+            colFlexBasis = (100 / gridColumns) * columnNumber;
+            return `
             flex: 0 0 auto;
             width: ${colFlexBasis > 0 ? `${colFlexBasis}%`: 0};
         `;
