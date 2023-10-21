@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
 import {TStyledProps, IContainerProps} from '../../types';
-import {generateRWDStyle} from './utils';
+import {createBreakpoint} from './utils';
 
 
 
@@ -53,8 +53,7 @@ const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
          max-width: none;
      `}
 
-     ${generateRWDStyle(props)};
-
+     ${createBreakpoint(props)};
 
   `}
 `;

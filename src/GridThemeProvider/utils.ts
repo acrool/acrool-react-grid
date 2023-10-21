@@ -1,4 +1,4 @@
-import {TStyledProps, IRowProps, NoXsMediaSize} from '../types';
+import {TStyledProps, IRowProps, NoXsMediaSize, IGridThemeProviderProps, IGridSetting} from '../types';
 import {noXsMediaSizes} from '../config';
 import media from '../media';
 
@@ -30,168 +30,314 @@ export const calcUnitSize = (unitSize: string, fn: (num: number) => number): str
     return `${result}${unit}`;
 };
 
-
-const renderMarginStyle = (sizeName: NoXsMediaSize) => {
-    return Array.from({length: 6}).map((row,idx) => {
-        return `
-        .m-${sizeName}-${idx} {margin: var(--bear-spacer-${idx}) !important;}
-        .mt-${sizeName}-${idx}, .my-${sizeName}-${idx} {margin-top: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        .mr-${sizeName}-${idx}, .mx-${sizeName}-${idx} {margin-right: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        .mb-${sizeName}-${idx}, .my-${sizeName}-${idx} {margin-bottom: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        .ml-${sizeName}-${idx}, .mx-${sizeName}-${idx} {margin-left: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        `;
-    }).join('');
+const gutterUnit = [0, .25, .5, 1, 1.5, 3];
+const calcSpacer = (spacer: string ,idx: number|'auto') => {
+    if(typeof idx === 'number'){
+        return calcUnitSize(spacer, num => num * gutterUnit[idx]);
+    }
+    return 'auto';
 };
 
-const renderPaddingStyle = (sizeName: NoXsMediaSize) => {
-    return Array.from({length: 6}).map((row,idx) => {
-        return `
-        .p-${sizeName}-${idx} {padding: var(--bear-spacer-${idx}) !important;}
-        .pt-${sizeName}-${idx}, .py-${sizeName}-${idx} {padding-top: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        .pr-${sizeName}-${idx}, .px-${sizeName}-${idx} {padding-right: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        .pb-${sizeName}-${idx}, .py-${sizeName}-${idx} {padding-bottom: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        .pl-${sizeName}-${idx}, .px-${sizeName}-${idx} {padding-left: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        `;
-    }).join('');
+
+
+
+export const renderRoundStyle = (sizeName?: NoXsMediaSize) => {
+    return `
+      .rounded${suffix({sizeName})} {border-radius: .25rem !important;}
+      .rounded${suffix({code: 'top', sizeName})} {border-top-left-radius: var(--bear-border-radius) !important;border-top-right-radius: var(--bear-border-radius) !important;}
+      .rounded${suffix({code: 'end', sizeName})} {border-top-right-radius: var(--bear-border-radius) !important;border-bottom-right-radius: var(--bear-border-radius) !important;}
+      .rounded${suffix({code: 'bottom', sizeName})} {border-bottom-right-radius: var(--bear-border-radius) !important;border-bottom-left-radius: var(--bear-border-radius) !important;}
+      .rounded${suffix({code: 'start', sizeName})} {border-bottom-left-radius: var(--bear-border-radius) !important;border-top-left-radius: var(--bear-border-radius) !important;}
+      .rounded${suffix({code: 'circle', sizeName})} {border-radius: 50% !important;}
+      .rounded${suffix({code: 0, sizeName})} {border-radius: 0!important;}
+      .rounded${suffix({code: 1, sizeName})} {border-radius: var(--bear-border-radius-sm)!important;}
+      .rounded${suffix({code: 2, sizeName})} {border-radius: var(--bear-border-radius)!important;}
+      .rounded${suffix({code: 3, sizeName})} {border-radius: var(--bear-border-radius-lg)!important;}
+      .rounded${suffix({code: 4, sizeName})} {border-radius: var(--bear-border-radius-xl)!important;}
+      .rounded${suffix({code: 5, sizeName})} {border-radius: var(--bear-border-radius-xxl)!important;}
+      .rounded${suffix({code: 6, sizeName})} {border-radius: var(--bear-border-radius-2xl)!important;}
+    `;
 };
 
-const renderGutterStyle = (sizeName: NoXsMediaSize) => {
-    return Array.from({length: 6}).map((row,idx) => {
-        return `
-        .g-${sizeName}-${idx}, .g-y-${sizeName}-${idx} {--bear-gutter-y: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
-        .g-${sizeName}-${idx}, .g-x-${sizeName}-${idx} {--bear-gutter-x: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
-        `;
-    }).join('');
-};
-const renderGapStyle = (sizeName: NoXsMediaSize) => {
-    return Array.from({length: 6}).map((row,idx) => {
-        return `
-        .gap-${sizeName}-${idx}, .gap-column-${sizeName}-${idx} {row-column: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        .gap-${sizeName}-${idx}, .gap-row-${sizeName}-${idx} {row-gap: ${idx === 0 ? 0: `var(--bear-spacer-${idx})`} !important;}
-        `;
-    }).join('');
+export const renderTextStyle = (sizeName?: NoXsMediaSize) => {
+    return `
+      .text${suffix({code: 'justify', sizeName})} {text-align: justify !important;}
+      .text${suffix({code: 'left', sizeName})} {text-align: left !important;}
+      .text${suffix({code: 'right', sizeName})} {text-align: right !important;}
+      .text${suffix({code: 'center', sizeName})} {text-align: center !important;}
+    `;
 };
 
-const renderOrderStyle = (sizeName: NoXsMediaSize) => {
+
+export const renderPaddingStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) => {
     return Array.from({length: 6}).map((row,idx) => {
         return `
-        .order-${sizeName}-${idx} {order: ${idx}!important;}
+        .p${suffix({code: idx, sizeName})} {padding: ${calcSpacer(setting.spacer, idx)} !important;}
+        .py${suffix({code: idx, sizeName})} {
+            padding-top: ${calcSpacer(setting.spacer, idx)} !important;
+            padding-bottom: ${calcSpacer(setting.spacer, idx)} !important;
+        }
+        .px${suffix({code: idx, sizeName})} {
+            padding-left: ${calcSpacer(setting.spacer, idx)} !important;
+            padding-right: ${calcSpacer(setting.spacer, idx)} !important;
+        }
+        .pt${suffix({code: idx, sizeName})} {padding-top: ${calcSpacer(setting.spacer, idx)} !important;}
+        .pr${suffix({code: idx, sizeName})} {padding-right: ${calcSpacer(setting.spacer, idx)} !important;}
+        .pb${suffix({code: idx, sizeName})} {padding-bottom: ${calcSpacer(setting.spacer, idx)} !important;}
+        .pl${suffix({code: idx, sizeName})} {padding-left: ${calcSpacer(setting.spacer, idx)} !important;}
         `;
-    }).join('');
+    });
 };
+
+export const renderMarginStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) => {
+    const data: Array<number|'auto'> = [0, 1, 2, 3, 4, 5, 'auto'];
+    return data.map((code,idx) => {
+        return `
+        .m${suffix({code, sizeName})} {margin: ${calcSpacer(setting.spacer, code)} !important;}
+        .my${suffix({code, sizeName})} {
+            margin-top: ${calcSpacer(setting.spacer, code)} !important;
+            margin-bottom: ${calcSpacer(setting.spacer, code)} !important;
+        }
+        .mx${suffix({code, sizeName})} {
+            margin-left: ${calcSpacer(setting.spacer, code)} !important;
+            margin-right: ${calcSpacer(setting.spacer, code)} !important;
+        }
+        .mt${suffix({code, sizeName})} {margin-top: ${calcSpacer(setting.spacer, code)} !important;}
+        .mr${suffix({code, sizeName})} {margin-right: ${calcSpacer(setting.spacer, code)} !important;}
+        .mb${suffix({code, sizeName})} {margin-bottom: ${calcSpacer(setting.spacer, code)} !important;}
+        .ml${suffix({code, sizeName})} {margin-left: ${calcSpacer(setting.spacer, code)} !important;}
+        `;
+    });
+};
+
+export const renderGapStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) => {
+    return Array.from({length: 6}).map((row,idx) => {
+        return `
+        .gap${suffix({code: idx, sizeName})} {gap: ${calcSpacer(setting.spacer, idx)} !important;}
+        .gap-column${suffix({code: idx, sizeName})} {column-gap: ${calcSpacer(setting.spacer, idx)} !important;}
+        .gap-row${suffix({code: idx, sizeName})} {row-gap: ${calcSpacer(setting.spacer, idx)} !important;}
+        `;
+    });
+};
+
+export const renderGutterStyle = (sizeName?: NoXsMediaSize) => {
+    return Array.from({length: 6}).map((row,idx) => {
+        return `
+        .g${suffix({code: idx, sizeName})}, .g-y${suffix({code: idx, sizeName})} {--bear-gutter-y: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
+        .g${suffix({code: idx, sizeName})}, .g-x${suffix({code: idx, sizeName})} {--bear-gutter-x: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
+        `;
+    });
+};
+
+
+export const renderGColspanStyle = (sizeName?: NoXsMediaSize) => {
+    return Array.from({length: 5}).map((row,idx) => {
+        return `
+            .g-colspan${suffix({code: idx+1, sizeName})} {grid-column-start: span ${idx+1} !important;}
+        `;
+    });
+};
+
+
+
+export const renderOrderStyle = (sizeName?: NoXsMediaSize) => {
+    const data: Array<{code: string|number, value: number}> = [
+        {code: 0, value: 0},
+        {code: 1, value: 1},
+        {code: 2, value: 2},
+        {code: 3, value: 3},
+        {code: 4, value: 4},
+        {code: 5, value: 5},
+        {code: 'first', value: -1},
+        {code: 'last', value: 6},
+    ];
+    return data.map((row,idx) => {
+        return `
+        .order${suffix({code:row.code, sizeName})} {order: ${row.value} !important;}
+       `;
+    });
+};
+
+export const renderOverflowStyle = (sizeName?: NoXsMediaSize) => {
+    const data: Array<string> = ['initial','hidden','auto'];
+
+    return data.map((code,idx) => {
+        return `
+         .overflow${suffix({code, sizeName})} {overflow: ${code} !important;}
+         .overflow-x${suffix({code, sizeName})} {overflow-x: ${code} !important;}
+         .overflow-y${suffix({code, sizeName})} {overflow-y: ${code} !important;}
+       `;
+    });
+};
+
+export const renderDisplayStyle = (sizeName?: NoXsMediaSize) => {
+    const data: Array<string> = ['none','inline','inline-block', 'block', 'flex', 'inline-flex', 'grid', 'inline-grid'];
+
+    return data.map((code,idx) => {
+        return `
+         .display${suffix({code, sizeName})} {display: ${code} !important;}
+       `;
+    });
+};
+
+export const renderPositionStyle = (sizeName?: NoXsMediaSize) => {
+    const data: Array<string> = ['static','relative'];
+
+    return data.map((code,idx) => {
+        return `
+            .position${suffix({code, sizeName})} {position: ${code} !important;}
+       `;
+    });
+};
+
+export const renderWidthStyle = (sizeName?: NoXsMediaSize) => {
+    const data: Array<{code: string|number, value: string|number}> = [
+        {code: 0, value: 0},
+        {code: 100, value: '100%'},
+        {code: 'auto', value: 'auto'},
+        {code: 'inherit', value: 'inherit'},
+    ];
+
+    return data.map((row,idx) => {
+        return `
+          .w${suffix({code: row.code, sizeName})} {width: ${row.value} !important;}
+       `;
+    });
+};
+
+
+
+export const renderHeightStyle = (sizeName?: NoXsMediaSize) => {
+    const data: Array<{code: string|number, value: string|number}> = [
+        {code: 0, value: 0},
+        {code: 100, value: '100%'},
+        {code: 'auto', value: 'auto'},
+        {code: 'inherit', value: 'inherit'},
+    ];
+
+    return data.map((row,idx) => {
+        return `
+          .h${suffix({code: row.code, sizeName})} {height: ${row.value} !important;}
+       `;
+    });
+};
+
+
+
+export const renderFlexStyle = (sizeName?: NoXsMediaSize) => {
+    return `
+       .flex${suffix({code: 'row', sizeName})} {flex-direction: row !important;}
+       .flex${suffix({code: 'column', sizeName})} {flex-direction: column !important;}
+       .flex${suffix({code: 'row-reverse', sizeName})} {flex-direction: row-reverse !important;}
+       .flex${suffix({code: 'column-reverse', sizeName})} {flex-direction: column-reverse !important;}
+
+       .flex${suffix({code: 'wrap', sizeName})} {flex-wrap: wrap !important;}
+       .flex${suffix({code: 'nowrap', sizeName})} {flex-nowrap: nowrap !important;}
+       .flex${suffix({code: 'wrap-reverse', sizeName})} {flex-nowrap: wrap-reverse !important;}
+
+       .flex${suffix({code: 'fill', sizeName})} {flex: 1 1 auto !important;}
+       .flex${suffix({code: 'grow-0', sizeName})} {flex-grow: 0 !important;}
+       .flex${suffix({code: 'grow-1', sizeName})} {flex-grow: 1 !important;}
+       .flex${suffix({code: 'shrink-0', sizeName})} {flex-shrink: 0 !important;}
+       .flex${suffix({code: 'shrink-1', sizeName})} {flex-shrink: 1 !important;}
+   `;
+};
+
+
+
+export const renderFlexAlignStyle = (sizeName?: NoXsMediaSize) => {
+    return `
+        .justify-content${suffix({code: 'auto', sizeName})} {justify-content: normal !important;}
+        .justify-content${suffix({code: 'start', sizeName})} {justify-content: flex-start !important;}
+        .justify-content${suffix({code: 'end', sizeName})} {justify-content: flex-end !important;}
+        .justify-content${suffix({code: 'center', sizeName})} {justify-content: center !important;}
+        .justify-content${suffix({code: 'between', sizeName})} {justify-content: space-between !important;}
+        .justify-content${suffix({code: 'around', sizeName})} {justify-content: space-around !important;}
+
+        .justify-items${suffix({code: 'auto', sizeName})} {justify-items: normal !important;}
+        .justify-items${suffix({code: 'start', sizeName})} {justify-items: flex-start !important;}
+        .justify-items${suffix({code: 'end', sizeName})} {justify-items: flex-end !important;}
+        .justify-items${suffix({code: 'center', sizeName})} {justify-items: center !important;}
+        .justify-items${suffix({code: 'stretch', sizeName})} {justify-items: stretch !important;}
+
+        .justify-self${suffix({code: 'auto', sizeName})} {justify-self: auto !important;}
+        .justify-self${suffix({code: 'start', sizeName})} {justify-self: flex-start !important;}
+        .justify-self${suffix({code: 'end', sizeName})} {justify-self: flex-end !important;}
+        .justify-self${suffix({code: 'center', sizeName})} {justify-self: center !important;}
+
+        .align-items${suffix({code: 'auto', sizeName})} {align-items: normal !important;}
+        .align-items${suffix({code: 'start', sizeName})} {align-items: flex-start !important;}
+        .align-items${suffix({code: 'end', sizeName})} {align-items: flex-end !important;}
+        .align-items${suffix({code: 'center', sizeName})} {align-items: center !important;}
+        .align-items${suffix({code: 'baseline', sizeName})} {align-items: baseline !important;}
+        .align-items${suffix({code: 'stretch', sizeName})} {align-items: stretch !important;}
+
+        .align-content${suffix({code: 'auto', sizeName})} {align-content: normal !important;}
+        .align-content${suffix({code: 'start', sizeName})} {align-content: start !important;}
+        .align-content${suffix({code: 'end', sizeName})} {align-content: flex-end !important;}
+        .align-content${suffix({code: 'center', sizeName})} {align-content: center !important;}
+        .align-content${suffix({code: 'between', sizeName})} {align-content: between !important;}
+        .align-content${suffix({code: 'around', sizeName})} {align-content: around !important;}
+        .align-content${suffix({code: 'stretch', sizeName})} {align-content: stretch !important;}
+
+        .align-self${suffix({code: 'auto', sizeName})} {align-self: auto !important;}
+        .align-self${suffix({code: 'start', sizeName})} {align-self: flex-start !important;}
+        .align-self${suffix({code: 'end', sizeName})} {align-self: flex-end !important;}
+        .align-self${suffix({code: 'center', sizeName})} {align-self: center !important;}
+        .align-self${suffix({code: 'baseline', sizeName})} {align-self: baseline !important;}
+        .align-self${suffix({code: 'stretch', sizeName})} {align-self: stretch !important;}
+
+        .place-items${suffix({code: 'auto', sizeName})} {place-items: normal !important;}
+        .place-items${suffix({code: 'start', sizeName})} {place-items: start !important;}
+        .place-items${suffix({code: 'end', sizeName})} {place-items: end !important;}
+        .place-items${suffix({code: 'center', sizeName})} {place-items: center !important;}
+   `;
+};
+
+
+
+/**
+ * 判斷是否為空
+ * @param args
+ */
+const suffix = (args: {code?: number|string, sizeName?: NoXsMediaSize}) => {
+    const str = [];
+    if(args?.sizeName) str.push(args.sizeName);
+    if(args?.code) str.push(args.code);
+
+    if(str.length > 0){
+        return `-${str.join('-')}`;
+    }
+    return '';
+};
+
 
 
 /**
  * 產生 RWD 樣式
- * @param props
+ * @param setting
  */
-export const generateRWDStyled = (props: TStyledProps<IRowProps>) => {
+export const generateRWDStyled = (setting: IGridSetting) => {
     return noXsMediaSizes
         .map(sizeName => {
             return media[sizeName]`
-            .w-${sizeName}-0 {width: 0 !important;}
-            .w-${sizeName}-100 {width: 100% !important;}
-            .w-${sizeName}-auto {width: auto !important;}
+            ${renderDisplayStyle(sizeName)}
+            ${renderPositionStyle(sizeName)}
+            ${renderFlexStyle(sizeName)}
+            ${renderFlexAlignStyle(sizeName)}
+            ${renderGColspanStyle(sizeName)}
 
-            .h-${sizeName}-0 {height: 0 !important;}
-            .h-${sizeName}-100 {height: 100% !important;}
-            .h-${sizeName}-auto {height: auto !important;}
-
-            .d-${sizeName}-none {display: none !important;}
-            .d-${sizeName}-inline {display: inline !important;}
-            .d-${sizeName}-inline-block {display: inline-block !important;}
-            .d-${sizeName}-block {display: block !important;}
-            .d-${sizeName}-flex {display: flex !important;}
-            .d-${sizeName}-inline-flex {display: inline-flex !important;}
-            .d-${sizeName}-grid {display: grid !important;}
-            .d-${sizeName}-inline-grid {display: inline-grid !important;}
-
-            .flex-${sizeName}-row {flex-direction: row !important;}
-            .flex-${sizeName}-column {flex-direction: column !important;}
-            .flex-${sizeName}-row-reverse {flex-direction: row-reverse !important;}
-            .flex-${sizeName}-column-reverse {flex-direction: column-reverse !important;}
-
-            .flex-${sizeName}-wrap {flex-wrap: wrap !important;}
-            .flex-${sizeName}-nowrap {flex-nowrap: nowrap !important;}
-            .flex-${sizeName}-wrap-reverse {flex-nowrap: wrap-reverse !important;}
-
-            .flex-${sizeName}-fill {flex: 1 1 auto !important;}
-            .flex-${sizeName}-grow-0 {flex-grow: 0 !important;}
-            .flex-${sizeName}-grow-1 {flex-grow: 1 !important;}
-            .flex-${sizeName}-shrink-0 {flex-shrink: 0 !important;}
-            .flex-${sizeName}-shrink-1 {flex-shrink: 1 !important;}
-
-            .justify-content-${sizeName}-auto {justify-content: normal !important;}
-            .justify-content-${sizeName}-start {justify-content: flex-start !important;}
-            .justify-content-${sizeName}-end {justify-content: flex-end !important;}
-            .justify-content-${sizeName}-center {justify-content: center !important;}
-            .justify-content-${sizeName}-between {justify-content: space-between !important;}
-            .justify-content-${sizeName}-around {justify-content: space-around !important;}
-
-            .justify-items-${sizeName}-auto {justify-items: normal !important;}
-            .justify-items-${sizeName}-start {justify-items: flex-start !important;}
-            .justify-items-${sizeName}-end {justify-items: flex-end !important;}
-            .justify-items-${sizeName}-center {justify-items: center !important;}
-            .justify-items-${sizeName}-stretch {justify-items: stretch !important;}
-
-            .justify-self-${sizeName}-auto {justify-self: auto !important;}
-            .justify-self-${sizeName}-start {justify-self: flex-start !important;}
-            .justify-self-${sizeName}-end {justify-self: flex-end !important;}
-            .justify-self-${sizeName}-center {justify-self: center !important;}
-
-            .align-items-${sizeName}-auto {align-items: normal !important;}
-            .align-items-${sizeName}-start {align-items: flex-start !important;}
-            .align-items-${sizeName}-end {align-items: flex-end !important;}
-            .align-items-${sizeName}-center {align-items: center !important;}
-            .align-items-${sizeName}-baseline {align-items: baseline !important;}
-            .align-items-${sizeName}-stretch {align-items: stretch !important;}
-
-            .align-content-${sizeName}-auto {align-content: normal !important;}
-            .align-content-${sizeName}-start {align-content: start !important;}
-            .align-content-${sizeName}-end {align-content: flex-end !important;}
-            .align-content-${sizeName}-center {align-content: center !important;}
-            .align-content-${sizeName}-between {align-content: between !important;}
-            .align-content-${sizeName}-around {align-content: around !important;}
-            .align-content-${sizeName}-stretch {align-content: stretch !important;}
-
-            .align-self-${sizeName}-auto {align-self: auto !important;}
-            .align-self-${sizeName}-start {align-self: flex-start !important;}
-            .align-self-${sizeName}-end {align-self: flex-end !important;}
-            .align-self-${sizeName}-center {align-self: center !important;}
-            .align-self-${sizeName}-baseline {align-self: baseline !important;}
-            .align-self-${sizeName}-stretch {align-self: stretch !important;}
-
-            .place-items-${sizeName}-auto {place-items: normal !important;}
-            .place-items-${sizeName}-start {place-items: start !important;}
-            .place-items-${sizeName}-end {place-items: end !important;}
-            .place-items-${sizeName}-center {place-items: center !important;}
-
-            .text-${sizeName}-justify {text-align: justify !important;}
-            .text-${sizeName}-left {text-align: left !important;}
-            .text-${sizeName}-right {text-align: right !important;}
-            .text-${sizeName}-center {text-align: center !important;}
-
-            .m-${sizeName}-auto {margin: var(--bear-spacer-auto) !important;}
-            .mt-${sizeName}-auto, .my-${sizeName}-auto {margin-top: auto !important;}
-            .mr-${sizeName}-auto, .mx-${sizeName}-auto {margin-right: auto !important;}
-            .mb-${sizeName}-auto, .my-${sizeName}-auto {margin-bottom: auto !important;}
-            .ml-${sizeName}-auto, .mx-${sizeName}-auto {margin-left: auto !important;}
-
-            ${renderMarginStyle(sizeName)}
-            ${renderPaddingStyle(sizeName)}
+            ${renderHeightStyle(sizeName)}
+            ${renderWidthStyle(sizeName)}
+            ${renderTextStyle(sizeName)}
+            ${renderRoundStyle(sizeName)}
+            ${renderMarginStyle(setting, sizeName)}
+            ${renderPaddingStyle(setting, sizeName)}
+            ${renderGapStyle(setting, sizeName)}
             ${renderGutterStyle(sizeName)}
-            ${renderGapStyle(sizeName)}
             ${renderOrderStyle(sizeName)}
+            ${renderOverflowStyle(sizeName)}
 
-            .order-${sizeName}-first {order: -1 !important;}
-            .order-${sizeName}-last {order: 6 !important;}
-
-            .overflow-${sizeName}-initial, .overflow-x-${sizeName}-initial {overflow-x: initial !important;}
-            .overflow-${sizeName}-initial, .overflow-y-${sizeName}-initial {overflow-x: initial !important;}
-            .overflow-${sizeName}-hidden, .overflow-x-${sizeName}-hidden {overflow-x: hidden !important;}
-            .overflow-${sizeName}-hidden, .overflow-y-${sizeName}-hidden {overflow-y: hidden !important;}
-            .overflow-${sizeName}-auto, .overflow-x-${sizeName}-auto {overflow-x: auto !important;}
-            .overflow-${sizeName}-auto, .overflow-y-${sizeName}-auto {overflow-y: auto !important;}
         `;
         });
 };

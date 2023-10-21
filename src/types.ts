@@ -80,9 +80,11 @@ export type TGridTheme = Partial<IGridSetting>;
 export type TRWDMaxSize = {
     [size in NoXsMediaSize | 'fluid']: boolean
 }
+export type TContainerFluid = boolean|RecordOption<TMediaSize, boolean>
 
-export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMediaSize, boolean>{
-    fluid?: boolean;
+export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TCol>{
+    fluid?: TContainerFluid;
+    col?: TCol
 }
 
 

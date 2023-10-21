@@ -1,6 +1,8 @@
-import {TStyledProps, IContainerProps, TRWDMaxSize} from '../../types';
+import {TStyledProps, IContainerProps, TRWDMaxSize, NoXsMediaSize} from '../../types';
 import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
+import {cssGetter} from '../Col/utils';
+import {css} from 'styled-components';
 
 
 
@@ -9,15 +11,28 @@ import media from '../../media';
  * 產生 RWD Gutter 樣式
  * @param props
  */
-export const generateRWDStyle = (props: TStyledProps<IContainerProps>) => {
+export const createBreakpoint = (props: TStyledProps<IContainerProps>) => {
+    let prevSize: 'col'|NoXsMediaSize = 'col';
     const maxSizeConfig = getRWDMaxSize(props);
-    return noXsMediaSizes
-        .map(sizeName => {
-            return media[sizeName]`
+
+    return noXsMediaSizes.reduce((curr, sizeName) => {
+
+        const baseConfig = css`
             --bear-gutter-x: ${props.theme[themeName]?.gutter};
             max-width: ${maxSizeConfig[sizeName] ? 'none': `${props.theme[themeName]?.containerMaxWidths[sizeName]}px`};
         `;
-        });
+
+        if(typeof props[sizeName] !== 'undefined' && props[sizeName] !== props[prevSize]){
+            prevSize = sizeName;
+            return curr.concat(media[sizeName]`
+                ${baseConfig}
+                ${cssGetter.col(props[sizeName], props.theme[themeName]?.gridColumns)};
+            `);
+        }
+        return curr.concat(media[sizeName]`
+            ${baseConfig}
+        `);
+    }, []);
 };
 
 

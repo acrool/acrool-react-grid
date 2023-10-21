@@ -6,7 +6,7 @@ import {
 } from '../../types';
 import {cssGetter, generateRWDStyled} from './utils';
 import {themeName} from '../../config';
-import {getDefaultSizeValue} from '../../utils';
+import {getDefaultSizeValue, repeat} from '../../utils';
 
 
 
@@ -65,6 +65,7 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-grid': generateDebugData(props),
 }))`
   display: grid;
+  grid-template-columns: repeat(1, 1fr);
 
   ${(props: TStyledProps<IGridProps>) => {
         const defaultAutoFlowArg = getDefaultSizeValue(props.autoFlow);
@@ -78,8 +79,8 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
       gap: ${props.theme[themeName]?.gutter};
       grid-template-rows: auto;
 
-      ${!props.columns && props.children && Array.isArray(props.children) && css`
-          grid-template-columns: ${`repeat(${Children.count(props.children) ?? 1}, auto)`};
+      ${!props.columns && css`
+          grid-template-columns: repeat(1, 1fr);
       `}
 
       // 最小尺寸

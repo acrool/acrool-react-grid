@@ -24,7 +24,6 @@ import Footer from './layout/Footer';
 export default function DesignCode() {
 
     return <DesignCodeRoot>
-        <GlobalCSS/>
 
         <WaveWrapper1/>
         <Wrapper>
@@ -60,6 +59,7 @@ export default function DesignCode() {
             <Footer/>
         </Wrapper4>
 
+        <GlobalCSS/>
     </DesignCodeRoot>;
 
 }
