@@ -143,8 +143,8 @@ export const renderGapStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) 
 export const renderGutterStyle = (sizeName?: NoXsMediaSize) => {
     return Array.from({length: 6}).map((row,idx) => {
         return `
-        .g${suffix({code: idx, sizeName})}, .g-y${suffix({code: idx, sizeName})} {--bear-gutter-y: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
-        .g${suffix({code: idx, sizeName})}, .g-x${suffix({code: idx, sizeName})} {--bear-gutter-x: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
+        .g${suffix({code: idx, sizeName})}, .gy${suffix({code: idx, sizeName})} {--bear-gutter-y: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
+        .g${suffix({code: idx, sizeName})}, .gx${suffix({code: idx, sizeName})} {--bear-gutter-x: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`} !important;}
         `;
     });
 };
@@ -195,7 +195,7 @@ export const renderDisplayStyle = (sizeName?: NoXsMediaSize) => {
 
     return data.map((code,idx) => {
         return `
-         .display${suffix({code, sizeName})} {display: ${code} !important;}
+         .d${suffix({code, sizeName})} {display: ${code} !important;}
        `;
     });
 };

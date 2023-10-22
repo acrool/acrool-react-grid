@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import MyLink from '../CourseSection/_components/MyLink';
 import PreviewCard from '../CourseSection/_components/PreviewCard';
 import React from 'react';
-import {Grid} from 'bear-react-grid';
+import {Col, Flex, Grid, GridCol, GridRow, media, Row} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 
@@ -11,18 +11,21 @@ interface IProps extends FCProps {
 const CourseCard = ({
     className,
 }: IProps) => {
-    return <CourseCardRoot className={className} gap="20px">
+    return <CourseCardRoot className={className}>
 
-        <CurriculumWrapper columns={1} className="h-100">
+        <CurriculumWrapper className="d-flex flex-column h-100 overflow-hidden">
             <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
-            <MyLinkList>
+            <MyLinkList className="filter-mask-b">
                 {Array.from({length: 5}).map((row, index) => {
                     return <MyLink key={`link_${index}`} no={index+1}/>;
                 })}
             </MyLinkList>
         </CurriculumWrapper>
 
-        <PreviewCard/>
+        <div className="flex-grow-0">
+            <PreviewCard/>
+        </div>
+
     </CourseCardRoot>;
 };
 
@@ -34,8 +37,6 @@ export default CourseCard;
 const MyLinkList = styled.div`
   height: 100%;
   overflow: auto;
-
-  mask-image: linear-gradient(rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0) 100%);
 `;
 
 
@@ -46,18 +47,23 @@ const CourseDetailCardTitle = styled.p`
 
 `;
 
-const CurriculumWrapper = styled(Grid)`
-  width: 287px;
-  overflow: hidden;
+const CurriculumWrapper = styled.div`
 
+    width: 287px;
+
+    ${media.md`
+         width: auto;
+    `}
 `;
 
 
-const CourseCardRoot = styled(Grid)`
+const CourseCardRoot = styled.div`
+    display: flex;
     position: relative;
     height: 400px;
     padding: 20px;
     border-radius: 20px;
+    gap: 20px;
 
     background: rgba(15, 14, 71, 0.3);
     box-shadow: rgba(255, 255, 255, 0.2) 0 0 0 0.5px inset;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Container, Grid, GridCol, media} from 'bear-react-grid';
+import {Container, Flex, Grid, GridCol, GridRow, media} from 'bear-react-grid';
 import PreviewCard from './_components/PreviewCard';
 import CourseButton from '../_components/CourseButton';
 import CourseCard from '../_components/CourseCard';
@@ -22,10 +22,8 @@ const CourseSection = ({
     ];
 
     const renderHeader = () => {
-        return  <Grid columns={{xs: 1, xl: 2}}
-            className="align-items-end justify-items-center justify-content-xl-between mb-4"
-        >
-            <Info columns={1} className="mb-4 mb-xl-0 text-center text-xl-left">
+        return  <GridRow col={1} xl={2} className="align-items-end justify-items-center mb-4">
+            <Info direction="column" className="mb-xl-0 text-center text-xl-left gap-3">
                 <Caption>300 HOURS OF COURSES</Caption>
                 <Title>
                     Learn the best tools and platforms
@@ -36,12 +34,12 @@ const CourseSection = ({
                 </Description>
             </Info>
 
-            <Grid>
+            <GridRow col={5} className="justify-self-xl-end">
                 {platFormLogos.map(row => {
                     return <PlatformLogo key={row.text} src={row.imageUrl} alt={row.text}/>;
                 })}
-            </Grid>
-        </Grid>;
+            </GridRow>
+        </GridRow>;
     };
 
 
@@ -50,22 +48,26 @@ const CourseSection = ({
             {renderHeader()}
         </Container>
 
-        <Container className="overflow-x-auto overflow-x-xl-initial">
-            <Grid columns={2} gap="20px">
+        <div className="overflow-x-auto overflow-x-xl-initial mx-auto">
+            <Container>
+                <GridRow col={2}>
+                    {Array.from({length: 2}).map((row, index) => {
+                        return <CourseCard key={`card_${index}`}/>;
+                    })}
+                </GridRow>
+            </Container>
+        </div>
 
-                {Array.from({length: 2}).map((row, index) => {
-                    return <CourseCard key={`card_${index}`}/>;
-                })}
-            </Grid>
-        </Container>
 
-        <Container className="overflow-x-auto overflow-x-xl-initial">
-            <Grid columns={5} className="mb-4">
-                {Array.from({length: 5}).map((row, index) => {
-                    return <PreviewCard key={`preview_${index}`}/>;
-                })}
-            </Grid>
-        </Container>
+        <div className="overflow-x-auto overflow-x-xl-initial mx-auto">
+            <Container>
+                <GridRow col={5} className="mb-4">
+                    {Array.from({length: 5}).map((row, index) => {
+                        return <PreviewCard key={`preview_${index}`}/>;
+                    })}
+                </GridRow>
+            </Container>
+        </div>
 
         <Container>
             <div className="d-flex justify-content-center mx-auto">
@@ -112,7 +114,7 @@ const Caption = styled.p`
 
 `;
 
-const Info = styled(Grid)`
+const Info = styled(Flex)`
     max-width: 700px;
 `;
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Grid, GridCol} from 'bear-react-grid';
+import {auto, Grid, GridCol} from 'bear-react-grid';
 
 interface IProps extends FCProps {
     no?: number
@@ -9,12 +9,12 @@ interface IProps extends FCProps {
 const MyLink = ({
     no,
 }: IProps) => {
-    return <MyLinkRoot gap="10px" columns="repeat(2, auto)">
+    return <MyLinkRoot gap="10px" columns={auto(2)}>
         <No row={2}>{no}</No>
         <Title className="text-ellipsis">
                Design and Code with ChatGPT and Midjourney
         </Title>
-        <Desc className="text-ellipsis">
+        <Desc className="text-area-overflow">
                Design and develop apps using GPT-4 and Midjourney with prompts for SwiftUI, React, CSS, app concepts, icons, and copywriting
         </Desc>
     </MyLinkRoot>;

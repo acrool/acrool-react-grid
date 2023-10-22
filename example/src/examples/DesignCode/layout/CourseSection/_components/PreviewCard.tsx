@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
-import { Grid } from 'bear-react-grid';
+import {Flex, Grid } from 'bear-react-grid';
+import clsx from 'clsx';
 
 interface IProps extends FCProps {
    className?: string
@@ -9,7 +10,7 @@ interface IProps extends FCProps {
 const PreviewCard = ({
     className,
 }: IProps) => {
-    return <PreviewCardRoot columns={1} className={className}>
+    return <PreviewCardRoot className={clsx(className, 'd-flex flex-column')}>
         <CardWrapperImage
             src="https://images.ctfassets.net/ooa29xqb8tix/5jIBVIWEq7QQq1Tm03ViNR/b34fad96046114968b74016a678ac841/ios17-2.png?w=400&q=50"
             alt="Build SwiftUI Apps for iOS 17 icon"
@@ -72,7 +73,7 @@ const CardWrapperImage = styled.img`
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
 `;
 
-const PreviewCardRoot = styled(Grid)`
+const PreviewCardRoot = styled.div`
     position: relative;
     height: 360px;
     width: 200px;

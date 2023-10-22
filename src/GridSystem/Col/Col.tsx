@@ -23,6 +23,7 @@ const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
 
   ${(props: TStyledProps<IColProps>) => css`
      ${props.col && cssGetter.col(props.col, props.theme[themeName]?.gridColumns)};
+
      ${createBreakpoint(props)};
  `}
 `;

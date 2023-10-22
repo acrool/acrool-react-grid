@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Container, Grid, GridCol} from 'bear-react-grid';
+import {Container, Flex, Grid, GridCol} from 'bear-react-grid';
 import Button from './_components/Button';
 
 interface IProps extends FCProps {
@@ -35,7 +35,7 @@ const Header = ({
 
 
     const renderTextWrapper = () => {
-        return <TextWrapper columns={1} gap="20px">
+        return <div className="d-flex flex-column gap-4">
             <Title>
                 Design
                 <div>and code</div>
@@ -52,8 +52,7 @@ const Header = ({
 
             <P>Purchase includes access to 50+ courses, 320+ premium tutorials, 300+ hours of videos, source files and
                 certificates.</P>
-
-        </TextWrapper>;
+        </div>;
     };
 
     const renderAnimationWrapper = () => {
@@ -68,11 +67,11 @@ const Header = ({
 
 
     return <HeaderRoot className={className}>
-        <Grid className="justify-content-between">
+        <div className="d-flex justify-content-between">
             {/*{renderAnimationWrapper()}*/}
             {renderTextWrapper()}
             {renderMockups()}
-        </Grid>
+        </div>
     </HeaderRoot>;
 };
 

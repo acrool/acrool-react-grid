@@ -89,9 +89,17 @@ export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMedia
 
 
 /** -------------------------------
+ *       Grid System - Grid Row
+ * ------------------------------ */
+export interface IGridRowProps extends FCChildrenProps, RecordOption<NoXsMediaSize, number>{
+    col?: number
+}
+
+/** -------------------------------
  *       Grid System - Row
  * ------------------------------ */
-export interface IRowProps extends FCChildrenProps{}
+export interface IRowProps extends FCChildrenProps {
+}
 
 
 /** -------------------------------

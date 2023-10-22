@@ -2,7 +2,7 @@ import {GridThemeProvider, IGridSetting} from 'bear-react-grid';
 
 export const gridTheme: IGridSetting = {
     spacer: '1rem',
-    gutter: '20px',
+    gutter: '1.5rem',
     gridColumns: 12,
     gridBreakpoints: {
         xs: 0,
