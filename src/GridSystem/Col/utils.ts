@@ -1,7 +1,6 @@
 import {TStyledProps, IColProps, TCol, NoXsMediaSize} from '../../types';
 import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
-import {css} from 'styled-components';
 
 
 

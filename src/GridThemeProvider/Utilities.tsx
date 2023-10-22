@@ -55,7 +55,7 @@ export const Utilities = createGlobalStyle`
         :root{
             --bear-border-width: 1px;
             --bear-border-style: solid;
-            --bs-border-color: #495057;
+            --bear-border-color: #495057;
             --bear-border-radius: 0.375rem;
             --bear-border-radius-sm: 0.25rem;
             --bear-border-radius-lg: 0.5rem;

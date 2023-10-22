@@ -4,6 +4,10 @@
 
 /* Border */
 .border {border: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
+.border-top {border-top: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
+.border-right {border-right: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
+.border-bottom {border-bottom: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
+.border-left {border-left: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
 
 /* Rotate */
 .rotate-90 {transform: rotate(90deg) !important;}
@@ -21,6 +25,13 @@
 .filter-gray {filter: grayscale(1) !important;}
 .filter-mask-b{mask-image: linear-gradient(to bottom, white, white, transparent) !important;}
 
+/* FontSize */
+.fs-1 {font-size: 2.5rem !important;}
+.fs-2 {font-size: 2rem !important;}
+.fs-3 {font-size: 1.75rem !important;}
+.fs-4 {font-size: 1.5rem !important;}
+.fs-5 {font-size: 1.25rem !important;}
+.fs-6 {font-size: 1rem !important;}
 
 
 
