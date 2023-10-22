@@ -3,6 +3,26 @@ import {noXsMediaSizes} from '../config';
 import media from '../media';
 
 
+
+
+
+/**
+ * 判斷是否為空
+ * @param args
+ */
+const suffix = (args: {code?: number|string, sizeName?: NoXsMediaSize}) => {
+    const str = [];
+    if(args?.sizeName) str.push(args.sizeName);
+    if(args?.code) str.push(args.code);
+
+    if(str.length > 0){
+        return `-${str.join('-')}`;
+    }
+    return '';
+};
+
+
+
 /**
  * 計算帶單位的數字
  * @param unitSize
@@ -292,53 +312,5 @@ export const renderFlexAlignStyle = (sizeName?: NoXsMediaSize) => {
         .place-items${suffix({code: 'end', sizeName})} {place-items: end !important;}
         .place-items${suffix({code: 'center', sizeName})} {place-items: center !important;}
    `;
-};
-
-
-
-/**
- * 判斷是否為空
- * @param args
- */
-const suffix = (args: {code?: number|string, sizeName?: NoXsMediaSize}) => {
-    const str = [];
-    if(args?.sizeName) str.push(args.sizeName);
-    if(args?.code) str.push(args.code);
-
-    if(str.length > 0){
-        return `-${str.join('-')}`;
-    }
-    return '';
-};
-
-
-
-/**
- * 產生 RWD 樣式
- * @param setting
- */
-export const generateRWDStyled = (setting: IGridSetting) => {
-    return noXsMediaSizes
-        .map(sizeName => {
-            return media[sizeName]`
-            ${renderDisplayStyle(sizeName)}
-            ${renderPositionStyle(sizeName)}
-            ${renderFlexStyle(sizeName)}
-            ${renderFlexAlignStyle(sizeName)}
-            ${renderGColspanStyle(sizeName)}
-
-            ${renderHeightStyle(sizeName)}
-            ${renderWidthStyle(sizeName)}
-            ${renderTextStyle(sizeName)}
-            ${renderRoundStyle(sizeName)}
-            ${renderMarginStyle(setting, sizeName)}
-            ${renderPaddingStyle(setting, sizeName)}
-            ${renderGapStyle(setting, sizeName)}
-            ${renderGutterStyle(sizeName)}
-            ${renderOrderStyle(sizeName)}
-            ${renderOverflowStyle(sizeName)}
-
-        `;
-        });
 };
 

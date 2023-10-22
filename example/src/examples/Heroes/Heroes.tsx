@@ -1,7 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import Button from '@/components/Button';
-import {Col, Container, Grid, Row} from 'bear-react-grid';
-import {auto} from '../../../../src/utils';
+import {Col, Container, Grid, Row, auto} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 
@@ -23,8 +22,8 @@ const Heroes = ({
                     the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                     responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
 
-                <Grid columns={{sm: auto(2)}} className="gap-2 justify-content-center">
-                    <Button className="gap-3">Primary button</Button>
+                <Grid columns={{sm: auto(2)}} className="gap-3 justify-content-center">
+                    <Button>Primary button</Button>
                     <Button>Secondary</Button>
                 </Grid>
             </Col>
@@ -38,8 +37,8 @@ const Heroes = ({
                 <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
                     world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive
                     grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-                <Grid columns={{sm: auto(2)}} className="gap-2 justify-content-center mb-5">
-                    <Button className="gap-3">Primary button</Button>
+                <Grid columns={{sm: auto(2)}} className="gap-3 justify-content-center mb-5">
+                    <Button >Primary button</Button>
                     <Button>Secondary</Button>
                 </Grid>
             </Col>
@@ -72,8 +71,8 @@ const Heroes = ({
                         responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
                     </p>
 
-                    <Grid columns={{md: auto(2)}} className="gap-2 justify-content-start">
-                        <Button className="gap-3">Primary button</Button>
+                    <Grid columns={{md: auto(2)}} className="gap-3 justify-content-start">
+                        <Button>Primary button</Button>
                         <Button>Secondary</Button>
                     </Grid>
                 </Col>
@@ -87,7 +86,7 @@ const Heroes = ({
     const renderSignUp = () => {
         return <Container xl={10} xxl={8} className="px-4 py-5">
             <Row className="align-items-center g-lg-5 py-5">
-                <Col lg={7} className="text-center text-lg-start">
+                <Col lg={7} className="text-center text-lg-left">
                     <h1 className="mb-3">Vertically centered hero sign-up form</h1>
                     <Col lg={10}>
                         <p className="fs-4">Below is an example form built entirely with Bootstrap’s form controls.
@@ -131,8 +130,8 @@ const Heroes = ({
                       world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                       responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
 
-                    <Grid columns={{md: auto(2)}} className="gap-2 justify-content-md-start mb-4 mb-lg-3">
-                        <Button className="px-4 me-md-2">Primary</Button>
+                    <Grid columns={{md: auto(2)}} className="gap-3 justify-content-md-start mb-4 mb-lg-3">
+                        <Button className="px-4">Primary</Button>
                         <Button className="px-4">Default</Button>
                     </Grid>
                 </Col>
@@ -144,6 +143,23 @@ const Heroes = ({
     };
 
 
+    const renderDark = () => {
+        return <div className="bg-dark text-secondary px-4 py-5 text-center">
+            <div className="py-5">
+                <h1>Dark color hero</h1>
+                <div className="col-lg-6 mx-auto">
+                    <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap,
+                        the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <Grid columns={{sm: auto(2)}} className="gap-3 justify-content-sm-center">
+                        <Button className="px-4">Primary</Button>
+                        <Button className="px-4">Default</Button>
+                    </Grid>
+                </div>
+            </div>
+        </div>;
+    };
+
 
     return <HeroesRoot className={className}>
 
@@ -152,6 +168,7 @@ const Heroes = ({
         {renderResponsive()}
         {renderSignUp()}
         {renderBorder()}
+        {renderDark()}
 
         <GlobalCSS/>
     </HeroesRoot>;

@@ -1,8 +1,7 @@
 import {createGlobalStyle, css} from 'styled-components';
-import {TStyledProps, TThemeProps} from '../types';
+import {TStyledProps, TThemeProps, IGridSetting} from '../types';
 import {
     calcUnitSize,
-    generateRWDStyled,
     renderMarginStyle,
     renderPaddingStyle,
     renderGapStyle,
@@ -19,6 +18,36 @@ import {
     renderPositionStyle,
     renderGColspanStyle
 } from './utils';
+import {noXsMediaSizes} from '../config';
+import media from '../media';
+
+
+
+const generateRWDStyled = (setting: IGridSetting) => {
+    return noXsMediaSizes
+        .map(sizeName => {
+            return media[sizeName]`
+            ${renderDisplayStyle(sizeName)}
+            ${renderPositionStyle(sizeName)}
+            ${renderFlexStyle(sizeName)}
+            ${renderFlexAlignStyle(sizeName)}
+            ${renderGColspanStyle(sizeName)}
+
+            ${renderHeightStyle(sizeName)}
+            ${renderWidthStyle(sizeName)}
+            ${renderTextStyle(sizeName)}
+            ${renderRoundStyle(sizeName)}
+            ${renderMarginStyle(setting, sizeName)}
+            ${renderPaddingStyle(setting, sizeName)}
+            ${renderGapStyle(setting, sizeName)}
+            ${renderGutterStyle(sizeName)}
+            ${renderOrderStyle(sizeName)}
+            ${renderOverflowStyle(sizeName)}
+
+        `;
+        });
+};
+
 
 export const Utilities = createGlobalStyle`
 

@@ -132,7 +132,8 @@
     .align-content-lg-auto, .align-content-lg-start, .align-content-lg-end, .align-content-lg-center, .align-content-lg-between, .align-content-lg-around, .align-content-lg-stretch, .align-items-lg-auto, .align-items-lg-start, .align-items-lg-end, .align-items-lg-center, .align-items-lg-baseline, .align-items-lg-stretch, .align-self-lg-auto, .align-self-lg-start, .align-self-lg-end, .align-self-lg-center, .align-self-lg-baseline, .align-self-lg-stretch{box-sizing: border-box;}
 
     .place-items-lg-auto, .place-items-lg-start, .place-items-lg-end, .place-items-lg-center {box-sizing: border-box;}
-    .rounded-sm .rounded-sm-top, .rounded-sm-end, .rounded-sm-bottom, .rounded-sm-start, .rounded-sm-circle, .rounded-sm-0, .rounded-sm-1, .rounded-sm-2, .rounded-sm-3, .rounded-sm-4, .rounded-sm-5, .rounded-sm-6,   .text-sm-justify, .text-sm-left, .text-sm-right, .text-sm-center{box-sizing: border-box;}
+
+    .rounded-lg .rounded-lg-top, .rounded-lg-end, .rounded-lg-bottom, .rounded-lg-start, .rounded-lg-circle, .rounded-lg-0, .rounded-lg-1, .rounded-lg-2, .rounded-lg-3, .rounded-lg-4, .rounded-lg-5, .rounded-lg-6,   .text-lg-justify, .text-lg-left, .text-lg-right, .text-lg-center{box-sizing: border-box;}
 
     .text-lg-justify, .text-lg-left, .text-lg-right, .text-lg-center{box-sizing: border-box;}
 
@@ -159,7 +160,8 @@
     .align-content-xl-auto, .align-content-xl-start, .align-content-xl-end, .align-content-xl-center, .align-content-xl-between, .align-content-xl-around, .align-content-xl-stretch, .align-items-xl-auto, .align-items-xl-start, .align-items-xl-end, .align-items-xl-center, .align-items-xl-baseline, .align-items-xl-stretch, .align-self-xl-auto, .align-self-xl-start, .align-self-xl-end, .align-self-xl-center, .align-self-xl-baseline, .align-self-xl-stretch{box-sizing: border-box;}
 
     .place-items-xl-auto, .place-items-xl-start, .place-items-xl-end, .place-items-xl-center {box-sizing: border-box;}
-    .rounded-sm .rounded-sm-top, .rounded-sm-end, .rounded-sm-bottom, .rounded-sm-start, .rounded-sm-circle, .rounded-sm-0, .rounded-sm-1, .rounded-sm-2, .rounded-sm-3, .rounded-sm-4, .rounded-sm-5, .rounded-sm-6,   .text-sm-justify, .text-sm-left, .text-sm-right, .text-sm-center{box-sizing: border-box;}
+
+    .rounded-xl .rounded-xl-top, .rounded-xl-end, .rounded-xl-bottom, .rounded-xl-start, .rounded-xl-circle, .rounded-xl-0, .rounded-xl-1, .rounded-xl-2, .rounded-xl-3, .rounded-xl-4, .rounded-xl-5, .rounded-xl-6,   .text-xl-justify, .text-xl-left, .text-xl-right, .text-xl-center{box-sizing: border-box;}
 
     .text-xl-justify, .text-xl-left, .text-xl-right, .text-xl-center{box-sizing: border-box;}
 
@@ -185,7 +187,8 @@
     .align-content-xxl-auto, .align-content-xxl-start, .align-content-xxl-end, .align-content-xxl-center, .align-content-xxl-between, .align-content-xxl-around, .align-content-xxl-stretch, .align-items-xxl-auto, .align-items-xxl-start, .align-items-xxl-end, .align-items-xxl-center, .align-items-xxl-baseline, .align-items-xxl-stretch, .align-self-xxl-auto, .align-self-xxl-start, .align-self-xxl-end, .align-self-xxl-center, .align-self-xxl-baseline, .align-self-xxl-stretch{box-sizing: border-box;}
 
     .place-items-xxl-auto, .place-items-xxl-start, .place-items-xxl-end, .place-items-xxl-center {box-sizing: border-box;}
-    .rounded-sm .rounded-sm-top, .rounded-sm-end, .rounded-sm-bottom, .rounded-sm-start, .rounded-sm-circle, .rounded-sm-0, .rounded-sm-1, .rounded-sm-2, .rounded-sm-3, .rounded-sm-4, .rounded-sm-5, .rounded-sm-6,   .text-sm-justify, .text-sm-left, .text-sm-right, .text-sm-center{box-sizing: border-box;}
+
+    .rounded-xxl .rounded-xxl-top, .rounded-xxl-end, .rounded-xxl-bottom, .rounded-xxl-start, .rounded-xxl-circle, .rounded-xxl-0, .rounded-xxl-1, .rounded-xxl-2, .rounded-xxl-3, .rounded-xxl-4, .rounded-xxl-5, .rounded-xxl-6,   .text-xxl-justify, .text-xxl-left, .text-xxl-right, .text-xxl-center{box-sizing: border-box;}
 
     .text-xxl-justify, .text-xxl-left, .text-xxl-right, .text-xxl-center{box-sizing: border-box;}
 
