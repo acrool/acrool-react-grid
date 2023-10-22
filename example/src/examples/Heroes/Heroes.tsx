@@ -144,10 +144,10 @@ const Heroes = ({
 
 
     const renderDark = () => {
-        return <div className="bg-dark text-secondary px-4 py-5 text-center">
+        return <div className="px-4 py-5 text-center">
             <div className="py-5">
                 <h1>Dark color hero</h1>
-                <div className="col-lg-6 mx-auto">
+                <Col lg={6} className="mx-auto">
                     <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap,
                         the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                         responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
@@ -155,7 +155,7 @@ const Heroes = ({
                         <Button className="px-4">Primary</Button>
                         <Button className="px-4">Default</Button>
                     </Grid>
-                </div>
+                </Col>
             </div>
         </div>;
     };
