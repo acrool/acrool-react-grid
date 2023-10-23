@@ -18,8 +18,8 @@ const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
     'data-grid': createInfo(props),
 }))`
   //box-sizing: border-box;
-  //min-height: 1px;
-  //min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
+  min-height: 1px;
+  min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
 
   ${(props: TStyledProps<IColProps>) => css`
      ${props.col && cssGetter.col(props.col, props.theme[themeName]?.gridColumns)};

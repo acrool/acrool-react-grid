@@ -22,7 +22,7 @@ const Row = styled.div.attrs((props: TStyledProps<IRowProps>) => ({
     margin-top: calc(var(--bear-gutter-y) * -1);
     margin-right: calc(var(--bear-gutter-x) * -0.5);
     margin-left: calc(var(--bear-gutter-x) * -0.5);
-    //padding-inline-start: 0; /* 避免 ul 預設樣式位移 */
+    padding-inline-start: 0; /* 避免 ul 預設樣式位移 */
 
     > * {
         flex-shrink: 0;

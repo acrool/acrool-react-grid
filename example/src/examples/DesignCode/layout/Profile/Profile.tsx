@@ -18,7 +18,7 @@ const Profile = ({
                     key={`certificateCard_${index}`}
                 />;
             })}
-        </CertificateCardList>
+        </CertificateCardList>;
     };
 
     return <ProfileRoot className={className}>
@@ -29,7 +29,6 @@ const Profile = ({
             <Col col={12} lg className="order-first order-lg-last">
                 <Info/>
             </Col>
-
         </Row>
     </ProfileRoot>;
 };
