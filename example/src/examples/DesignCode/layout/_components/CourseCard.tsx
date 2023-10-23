@@ -11,9 +11,14 @@ interface IProps extends FCProps {
 const CourseCard = ({
     className,
 }: IProps) => {
-    return <CourseCardRoot className={className}>
+    return <CourseCardRoot
+        columns={{
+            xs: '287px 200px',
+            xl: 'auto 200px'
+        }}
+        className={className}>
 
-        <CurriculumWrapper className="d-flex flex-column h-100 overflow-hidden">
+        <CurriculumWrapper className="d-flex flex-column h-100 overflow-hidden gap-2">
             <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
             <MyLinkList className="filter-mask-b">
                 {Array.from({length: 5}).map((row, index) => {
@@ -22,9 +27,7 @@ const CourseCard = ({
             </MyLinkList>
         </CurriculumWrapper>
 
-        <div className="flex-grow-0">
-            <PreviewCard/>
-        </div>
+        <PreviewCard/>
 
     </CourseCardRoot>;
 };
@@ -49,23 +52,21 @@ const CourseDetailCardTitle = styled.p`
 
 const CurriculumWrapper = styled.div`
 
-    width: 287px;
-
-    ${media.md`
-         width: auto;
-    `}
 `;
 
 
-const CourseCardRoot = styled.div`
-    display: flex;
+const CourseCardRoot = styled(Grid)`
     position: relative;
     height: 400px;
     padding: 20px;
     border-radius: 20px;
     gap: 20px;
+    width: 586px;
 
     background: rgba(15, 14, 71, 0.3);
     box-shadow: rgba(255, 255, 255, 0.2) 0 0 0 0.5px inset;
 
+    ${media.xl`
+        width: auto;
+    `}
 `;

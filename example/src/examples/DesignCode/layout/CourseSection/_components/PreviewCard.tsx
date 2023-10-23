@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Flex, Grid } from 'bear-react-grid';
+import {Flex, Grid, media } from 'bear-react-grid';
 import clsx from 'clsx';
 
 interface IProps extends FCProps {
@@ -32,15 +32,6 @@ const StarImage = styled.img`
   margin: auto;
 `;
 
-const ButtonWrapper = styled.div`
-    position: relative;
-    width: 74px;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin: 10px auto 0;
-`;
-
 const SubTitle = styled.p`
 
     font-size: 15px;
@@ -68,6 +59,7 @@ const CardWrapperImage = styled.img`
   max-width: 200px;
   width: 100%;
   height: 150px;
+    margin: auto;
 
   // opacity: 0;
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
@@ -90,4 +82,8 @@ const PreviewCardRoot = styled.div`
     :hover{
         transform: scale(1.1);
     }
+
+    ${media.xl`
+        width: auto;
+    `}
 `;

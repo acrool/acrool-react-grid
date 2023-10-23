@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Container, Flex, Grid, GridCol, GridRow, media} from 'bear-react-grid';
+import {Container, Flex, Grid, GridCol, GridRow, media, Col} from 'bear-react-grid';
 import PreviewCard from './_components/PreviewCard';
 import CourseButton from '../_components/CourseButton';
 import CourseCard from '../_components/CourseCard';
@@ -22,8 +22,8 @@ const CourseSection = ({
     ];
 
     const renderHeader = () => {
-        return  <GridRow col={1} xl={2} className="align-items-end justify-items-center mb-4">
-            <Info direction="column" className="mb-xl-0 text-center text-xl-left gap-3">
+        return  <GridRow col={1} xl={2} className="align-items-end justify-items-center mb-4 gy-3">
+            <Col col={10} md={12} className="d-flex flex-column mb-xl-0 text-center text-xl-left gap-3">
                 <Caption>300 HOURS OF COURSES</Caption>
                 <Title>
                     Learn the best tools and platforms
@@ -32,7 +32,7 @@ const CourseSection = ({
                     We focus on industry leading platforms so that you can be prepared for your next job. Then we teach
                     all we can about them.
                 </Description>
-            </Info>
+            </Col>
 
             <GridRow col={5} className="justify-self-xl-end">
                 {platFormLogos.map(row => {
@@ -48,7 +48,7 @@ const CourseSection = ({
             {renderHeader()}
         </Container>
 
-        <div className="overflow-x-auto overflow-x-xl-initial mx-auto">
+        <div className="overflow-x-auto overflow-x-xl-initial mx-auto mb-4">
             <Container>
                 <GridRow col={2}>
                     {Array.from({length: 2}).map((row, index) => {
@@ -70,7 +70,7 @@ const CourseSection = ({
         </div>
 
         <Container>
-            <div className="d-flex justify-content-center mx-auto">
+            <div className="d-flex justify-content-center">
                 <CourseButton isOutline href="/">
                     <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
                     <span>Browse courses</span>
@@ -113,11 +113,6 @@ const Caption = styled.p`
   font-size: 15px;
 
 `;
-
-const Info = styled(Flex)`
-    max-width: 700px;
-`;
-
 
 const CourseSectionRoot = styled.div`
 `;
