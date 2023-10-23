@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import Button from '@/components/Button';
-import {Col, Container, Grid, Row, auto, GridRow} from 'bear-react-grid';
+import {Col, Container, Grid, Row, auto} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 
@@ -22,10 +22,10 @@ const Heroes = ({
                     the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                     responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
 
-                <GridRow sm={auto(2)} className="gap-3 justify-content-center">
+                <Grid col={1} sm={auto(2)} className="g-3 justify-content-center">
                     <Button>Primary button</Button>
                     <Button>Secondary</Button>
-                </GridRow>
+                </Grid>
             </Col>
         </div>;
     };
@@ -37,7 +37,7 @@ const Heroes = ({
                 <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
                     world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive
                     grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-                <Grid columns={{sm: auto(2)}} className="gap-3 justify-content-center mb-5">
+                <Grid col={1}  sm={auto(2)} className="gap-3 justify-content-center mb-5">
                     <Button >Primary button</Button>
                     <Button>Secondary</Button>
                 </Grid>
@@ -71,7 +71,7 @@ const Heroes = ({
                         responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
                     </p>
 
-                    <Grid columns={{md: auto(2)}} className="gap-3 justify-content-start">
+                    <Grid col={1}  sm={auto(2)} className="gap-3 justify-content-start">
                         <Button>Primary button</Button>
                         <Button>Secondary</Button>
                     </Grid>
@@ -130,7 +130,7 @@ const Heroes = ({
                       world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                       responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
 
-                    <Grid columns={{md: auto(2)}} className="gap-3 justify-content-md-start mb-4 mb-lg-3">
+                    <Grid col={1}  md={auto(2)} className="gap-3 justify-content-md-start mb-4 mb-lg-3">
                         <Button className="px-4">Primary</Button>
                         <Button className="px-4">Default</Button>
                     </Grid>
@@ -151,7 +151,7 @@ const Heroes = ({
                     <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap,
                         the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                         responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-                    <Grid columns={{sm: auto(2)}} className="gap-3 justify-content-sm-center">
+                    <Grid col={1}  sm={auto(2)} className="gap-3 justify-content-sm-center">
                         <Button className="px-4">Primary</Button>
                         <Button className="px-4">Default</Button>
                     </Grid>

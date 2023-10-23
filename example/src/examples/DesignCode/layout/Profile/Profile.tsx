@@ -26,7 +26,7 @@ const Profile = ({
             <Col col={12} lg="auto">
                 {renderCards()}
             </Col>
-            <Col col={12} lg className="order-first order-lg-last">
+            <Col col={12} lg className="order-first order-lg-last mb-4">
                 <Info/>
             </Col>
         </Row>
@@ -70,7 +70,7 @@ const CustomCertificateCard = styled(CertificateCard)`
     }
 `;
 
-const CertificateCardList = styled(Grid)`
+const CertificateCardList = styled.div`
   position: relative;
   transform-origin: left top;
     width: 100%;

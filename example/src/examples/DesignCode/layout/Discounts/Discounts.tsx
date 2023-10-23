@@ -1,4 +1,4 @@
-import {Container, Grid, Row, Col, Flex, GridRow} from 'bear-react-grid';
+import {Container, Grid, Row, Col, Flex} from 'bear-react-grid';
 import styled from 'styled-components';
 import FeatureCard from './_components/FeatureCard';
 
@@ -21,11 +21,11 @@ const Discounts = ({
 
 
     const renderFeatureList = () => {
-        return <GridRow col={2} md={4} className="justify-content-center">
+        return <Grid col={2} md={4} className="justify-content-center justify-items-center g-3">
             {Array.from({length: 4}).map((row, index) => {
                 return <FeatureCard key={`feature_${index}`}/>;
             })}
-        </GridRow>;
+        </Grid>;
     };
 
 

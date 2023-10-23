@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import MyLink from '../CourseSection/_components/MyLink';
 import PreviewCard from '../CourseSection/_components/PreviewCard';
 import React from 'react';
-import {Col, Flex, Grid, GridCol, GridRow, media, Row} from 'bear-react-grid';
+import {Grid} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 
@@ -58,7 +58,7 @@ const CurriculumWrapper = styled.div`
 `;
 
 
-const CourseCardRoot = styled(GridRow)`
+const CourseCardRoot = styled(Grid)`
     position: relative;
     height: 400px;
     padding: 20px;

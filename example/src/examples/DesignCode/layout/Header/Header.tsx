@@ -35,7 +35,7 @@ const Header = ({
 
 
     const renderTextWrapper = () => {
-        return <div className="d-flex flex-column gap-4">
+        return <Flex className="flex-column gap-4">
             <Title>
                 Design
                 <div>and code</div>
@@ -52,7 +52,7 @@ const Header = ({
 
             <P>Purchase includes access to 50+ courses, 320+ premium tutorials, 300+ hours of videos, source files and
                 certificates.</P>
-        </div>;
+        </Flex>;
     };
 
     const renderAnimationWrapper = () => {

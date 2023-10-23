@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Container, Flex, Grid, GridCol, GridRow, media, Col} from 'bear-react-grid';
+import {Container, Flex, Grid, Col} from 'bear-react-grid';
 import PreviewCard from './_components/PreviewCard';
 import CourseButton from '../_components/CourseButton';
 import CourseCard from '../_components/CourseCard';
@@ -22,7 +22,7 @@ const CourseSection = ({
     ];
 
     const renderHeader = () => {
-        return  <GridRow col={1} xl={2} className="align-items-end justify-items-center mb-4 gy-3">
+        return  <Grid col={1} xl={2} className="align-items-end justify-items-center mb-4 gy-3">
             <Col col={10} md={12} className="d-flex flex-column mb-xl-0 text-center text-xl-left gap-3">
                 <Caption>300 HOURS OF COURSES</Caption>
                 <Title>
@@ -34,12 +34,12 @@ const CourseSection = ({
                 </Description>
             </Col>
 
-            <GridRow col={5} className="justify-self-xl-end">
+            <Grid col={5} className="justify-self-xl-end">
                 {platFormLogos.map(row => {
                     return <PlatformLogo key={row.text} src={row.imageUrl} alt={row.text}/>;
                 })}
-            </GridRow>
-        </GridRow>;
+            </Grid>
+        </Grid>;
     };
 
 
@@ -50,22 +50,22 @@ const CourseSection = ({
 
         <div className="overflow-x-auto overflow-x-xl-initial mx-auto mb-4">
             <Container>
-                <GridRow col={2}>
+                <Grid col={2}>
                     {Array.from({length: 2}).map((row, index) => {
                         return <CourseCard key={`card_${index}`}/>;
                     })}
-                </GridRow>
+                </Grid>
             </Container>
         </div>
 
 
         <div className="overflow-x-auto overflow-x-xl-initial mx-auto">
             <Container>
-                <GridRow col={5} className="mb-4">
+                <Grid col={5} className="mb-4">
                     {Array.from({length: 5}).map((row, index) => {
                         return <PreviewCard key={`preview_${index}`}/>;
                     })}
-                </GridRow>
+                </Grid>
             </Container>
         </div>
 

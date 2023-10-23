@@ -1,4 +1,4 @@
-import { Grid } from 'bear-react-grid';
+import {Grid, Flex} from 'bear-react-grid';
 import styled from 'styled-components';
 
 interface IProps extends FCProps {
@@ -9,19 +9,19 @@ const TutorialCard = ({
     className,
 }: IProps) => {
     return <TutorialCardRoot className={className}>
-        <Card columns={1} className="align-content-start" gap="15px">
+        <Card className="align-content-start gap-2">
 
             <PlatformLogo src="https://designcode.io/images/logos/swiftui-logo.svg" className="justify-self-end"/>
             <Title>SwiftUI Handbook</Title>
-            <Desc className="text-ellipsis">A comprehensive series of tutorials covering Xcode, SwiftUI and all the layout and development techniques</Desc>
+            <Desc className="text-area-overflow">A comprehensive series of tutorials covering Xcode, SwiftUI and all the layout and development techniques</Desc>
 
             {Array.from({length: 2}).map((row, index) => {
-                return <Grid  key={`tutorialCar_${index}`} className="align-items-center justify-content-start" gap="8px">
+                return <Flex key={`tutorialCar_${index}`} className="align-items-center justify-content-start">
                     <ImageRound>
                         <Image src="https://designcode.io/images/icons/file.svg" alt="file icon" />
                     </ImageRound>
                     <span>107 free tutorials</span>
-                </Grid>;
+                </Flex>;
             })}
 
         </Card>
@@ -74,8 +74,9 @@ const Title = styled.h3`
 
 
 
-const Card = styled(Grid)`
+const Card = styled(Flex)`
     width: 240px;
+    flex-direction: column;
 
     position: relative;
     height: 280px;

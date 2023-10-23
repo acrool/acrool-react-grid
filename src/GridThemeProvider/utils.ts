@@ -12,8 +12,8 @@ import media from '../media';
  */
 const suffix = (args: {code?: number|string, sizeName?: NoXsMediaSize}) => {
     const str = [];
-    if(args?.sizeName) str.push(args.sizeName);
-    if(args?.code) str.push(args.code);
+    if(typeof args?.sizeName !== 'undefined') str.push(args.sizeName);
+    if(typeof args?.code !== 'undefined') str.push(args.code);
 
     if(str.length > 0){
         return `-${str.join('-')}`;
@@ -206,6 +206,17 @@ export const renderPositionStyle = (sizeName?: NoXsMediaSize) => {
     return data.map((code,idx) => {
         return `
             .position${suffix({code, sizeName})} {position: ${code} !important;}
+       `;
+    });
+};
+
+
+export const renderAutoFlowStyle = (sizeName?: NoXsMediaSize) => {
+    const data: Array<string> = ['column','row', 'dense'];
+
+    return data.map((code,idx) => {
+        return `
+            .grid-flow-${suffix({code, sizeName})} { grid-auto-flow: column !important;}
        `;
     });
 };

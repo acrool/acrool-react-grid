@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Grid, Container, GridCol, Flex} from 'bear-react-grid';
+import {Grid, Container, GridCol, Flex, Row, Col} from 'bear-react-grid';
 import TrustedCard from './_components/TrustedCard';
 import CourseButton from '../_components/CourseButton';
 
@@ -11,47 +11,28 @@ const Trusted = ({
     className,
 }: IProps) => {
     return <TrustedRoot className={className}>
-        <Grid gap="60px"
-            columns={{xs: 1, xl: 2}}
-            className="align-items-start justify-items-center justify-content-xl-between"
-        >
+        <Row className="g-5">
+            <Col col={12} xl className="order-1 order-xl-0">
+                <FeatureList col={1} md={2}>
+                    {Array.from({length: 2}).map((row, index) => {
+                        return <TrustedCard key={`trusted_${index}`}/>;
+                    })}
+                </FeatureList>
+            </Col>
+            <Col col={8} xl className="mx-auto">
+                <Flex className="flex-column text-center align-items-center text-xl-left mx-auto gap-3">
+                    <SubTitle>TRUSTED BY TEAMS</SubTitle>
+                    <Title>110,000 people</Title>
+                    <Desc>Many startups look for designers who code and developers who design. They use our courses to help train new hires and expand skill sets.</Desc>
 
-            <FeatureList columnGap="60px"
-                columns={{xs: 1, lg: 2}}
-                className="order-1 order-xl-0"
-            >
-                {Array.from({length: 2}).map((row, index) => {
-                    return <TrustedCard key={`trusted_${index}`}/>;
-                })}
-            </FeatureList>
+                    <CourseButton isOutline>
+                        <img src="https://designcode.io/images/icons/chat.svg" alt="Create account"/>
+                        <span>More stories</span>
+                    </CourseButton>
+                </Flex>
+            </Col>
+        </Row>
 
-            <Info columns={1} className="justify-items-center justify-items-xl-start text-center text-xl-left">
-                <SubTitle>TRUSTED BY TEAMS</SubTitle>
-                <Title>110,000 people</Title>
-                <Desc>Many startups look for designers who code and developers who design. They use our courses to help train new hires and expand skill sets.</Desc>
-
-                {/*<Grid columns={1} className="w-100">*/}
-                {/*    <Flex className="justify-content-between">*/}
-                {/*        <div>*/}
-                {/*            sadsd*/}
-                {/*        </div>*/}
-                {/*        <div>*/}
-                {/*            asdasd*/}
-                {/*        </div>*/}
-                {/*    </Flex>*/}
-                {/*<GridCol col={1}>test2</GridCol>*/}
-                {/*<GridCol col={1}>test3</GridCol>*/}
-                {/*<GridCol col={1}>test4</GridCol>*/}
-                {/*<GridCol col={1}>test5</GridCol>*/}
-                {/*<GridCol col={1}>test6</GridCol>*/}
-                {/*</Grid>*/}
-                <CourseButton isOutline>
-                    <img src="https://designcode.io/images/icons/chat.svg" alt="Create account"/>
-                    <span>More stories</span>
-                </CourseButton>
-            </Info>
-
-        </Grid>
     </TrustedRoot>;
 };
 
@@ -77,12 +58,6 @@ const SubTitle = styled.div`
     font-weight: 600;
     font-size: 15px;
 `;
-
-
-const Info = styled(Grid)`
-    max-width: 420px;
-`;
-
 
 
 const TrustedRoot = styled(Container)`

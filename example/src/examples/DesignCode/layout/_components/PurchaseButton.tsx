@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import {Grid, FCChildrenProps} from 'bear-react-grid';
+import clsx from 'clsx';
 
 interface IProps extends FCChildrenProps{
    className?: string
@@ -10,7 +11,8 @@ const PurchaseButton = ({
     className,
     children
 }: IProps) => {
-    return <PurchaseButtonRoot columns="45px auto" gap="10px" className={className} as="button">
+    return <PurchaseButtonRoot col="45px auto"
+        className={clsx(className, 'g-2')} as="button">
         {children}
     </PurchaseButtonRoot>;
 };
@@ -25,7 +27,7 @@ const PurchaseButtonRoot = styled(Grid)`
   border-radius: 20px;
   cursor: pointer;
   position: relative;
-  padding: 4px;
+  padding: 10px;
   color: #000;
 
   text-align: left;

@@ -17,7 +17,7 @@ export function getDefaultSizeValue<D>(column?: RecordOption<TMediaSize, D> | D)
  * @param count
  * @param unit
  */
-export function repeat(count: number, unit: TGridColNumberSizeUnit){
+function repeat(count: number, unit: TGridColNumberSizeUnit){
     return `repeat(${count}, ${unit})`;
 }
 

@@ -19,8 +19,10 @@ const CompanyList = ({
     ];
 
     return <CompanyRoot className={className}>
-        <Grid gap="60px"
-            columns={{xs: 2, md: 3, lg: 6}}
+        <Grid
+            col={2}
+            md={3}
+            lg={6}
             className="justify-content-center place-items-center">
             {data.map(row => {
                 return <Logo key={row.text} src={row.imageUrl} alt={row.imageUrl}/>;

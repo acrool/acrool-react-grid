@@ -10,10 +10,7 @@ const FeatureCard = ({
 }: IProps) => {
     return <FeatureCardRoot>
         <Logo src="https://designcode.io/images/logos/shape-logo.svg"/>
-
-        <Text>
-            50% off Shape.so
-        </Text>
+        <Text>50% off Shape.so</Text>
     </FeatureCardRoot>;
 };
 

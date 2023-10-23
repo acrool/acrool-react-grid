@@ -34,7 +34,7 @@ export default function DesignCode() {
         <CourseSection className="mb-5"/>
 
         <Wrapper2>
-            {/*<TutorialSection/>*/}
+            <TutorialSection/>
             <WaveWrapper2/>
         </Wrapper2>
 
@@ -52,7 +52,7 @@ export default function DesignCode() {
             <WaveWrapper3/>
         </Wrapper3>
 
-        <Price/>
+        {/*<Price/>*/}
 
         <Wrapper4>
             <WaveWrapper4/>

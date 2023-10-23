@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Grid, Container} from 'bear-react-grid';
+import {Grid, Container, Flex} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 }
@@ -8,12 +8,12 @@ const Info = ({
     className,
 }: IProps) => {
 
-    return <InfoRoot className={className}>
-        <Grid columns={1} className="justify-items-center text-center">
+    return <InfoRoot className={className} col={6}>
+        <Flex className="flex-column justify-items-center text-center gap-2">
             <SubTitle>WHO’S BEHIND</SubTitle>
             <Title>Meet the instructors</Title>
             <Desc>We all try to be consistent with our way of teaching step-by-step, providing source files and prioritizing design in our courses.</Desc>
-        </Grid>
+        </Flex>
     </InfoRoot>;
 };
 
@@ -34,6 +34,5 @@ const SubTitle = styled.p`
 `;
 
 const InfoRoot = styled(Container)`
-  max-width: 420px;
     margin-bottom: 40px;
 `;

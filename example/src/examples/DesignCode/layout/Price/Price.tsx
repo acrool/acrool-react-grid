@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Container, Grid, media, GridRow} from 'bear-react-grid';
+import {Container, Grid, media} from 'bear-react-grid';
 import CertificateCard from '../Profile/_components/CertificateCard';
 import Info from './_components/Info';
 import Book, {IData} from './_components/Book';
@@ -64,14 +64,14 @@ const Price = ({
         <div className="d-flex flex-column gap-2">
             <Info/>
 
-            <GridRow
+            <Grid
                 col={1}
                 md={3}
             >
                 {books.map((row, index) => {
                     return <Book key={`price_${index}`} data={row}/>;
                 })}
-            </GridRow>
+            </Grid>
 
             <Pay/>
 

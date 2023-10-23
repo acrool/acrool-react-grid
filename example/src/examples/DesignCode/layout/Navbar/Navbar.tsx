@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Grid, Container, media, GridRow} from 'bear-react-grid';
+import {Grid, Container, media} from 'bear-react-grid';
 import React, {useState} from 'react';
 import CourseButton from '../_components/CourseButton';
 
@@ -41,14 +41,14 @@ const Navbar = ({
         </MobileWrapper>
 
 
-        <GridRow col={5} className="d-none d-md-grid">
+        <Grid col={5} className="d-none d-md-grid">
             {nav.map(row => {
                 return <NavigatorButton href={row.path} key={row.path}>
                     <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
                     <Caption>{row.text}</Caption>
                 </NavigatorButton>;
             })}
-        </GridRow>
+        </Grid>
 
     </NavbarRoot>;
 

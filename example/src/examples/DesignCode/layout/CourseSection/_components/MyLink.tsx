@@ -9,7 +9,7 @@ interface IProps extends FCProps {
 const MyLink = ({
     no,
 }: IProps) => {
-    return <MyLinkRoot gap="10px" columns={auto(2)}>
+    return <MyLinkRoot col={auto(2)} className="gy-1">
         <No row={2}>{no}</No>
         <Title className="text-ellipsis">
                Design and Code with ChatGPT and Midjourney

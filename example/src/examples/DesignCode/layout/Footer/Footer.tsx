@@ -1,4 +1,4 @@
-import {Container, Grid} from 'bear-react-grid';
+import {Container, Flex, Grid, Col, auto} from 'bear-react-grid';
 import styled from 'styled-components';
 import CourseButton from '../_components/CourseButton';
 import React from 'react';
@@ -19,29 +19,26 @@ const Footer = ({
     ];
 
     return <FooterRoot className={className}>
-        <Grid columns={{
-            xs: 1,
-            md: 2,
-        }}
-        className="justify-content-center">
-            <Grid columns={{xs: 2, md: 1}} className="justify-items-start" gap="10px">
-                {nav.map(row => {
-                    return <CourseButton key={`nav_${row.text}`}>
-                        <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
-                        <Caption>{row.text}</Caption>
-                    </CourseButton>;
-                })}
-            </Grid>
+        <Grid col={1} md={2} className="justify-content-center">
+            <Col col={12} md={5} className="ml-md-auto mb-4">
 
-            <Info columns={1} className="align-content-center text-center text-md-left">
+                <Grid col={auto(2)} md={1} className="justify-items-start justify-content-center">
+                    {nav.map(row => {
+                        return <CourseButton key={`nav_${row.text}`}>
+                            <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
+                            <Caption>{row.text}</Caption>
+                        </CourseButton>;
+                    })}
+                </Grid>
+            </Col>
+
+
+            <Flex className="justify-content-center text-center text-md-left gap-2">
                 <p>Site made with React, BearReactGrid and Styled-components. Learn how.</p>
-
                 <p>Design+Code © 2023</p>
-
                 <p>Terms of Service - Privacy Policy</p>
                 <p>Need help? Contact Us</p>
-            </Info>
-
+            </Flex>
         </Grid>
     </FooterRoot>;
 };
@@ -53,10 +50,6 @@ const Caption = styled.p`
   font-weight: 500;
   font-size: 15px;
   margin-left: 10px;
-`;
-
-const Info = styled(Grid)`
-    max-width: 250px;
 `;
 
 

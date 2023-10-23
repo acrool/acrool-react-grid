@@ -5,12 +5,25 @@ import {createBreakpoint} from './utils';
 import {cssGetter} from '../Col/utils';
 
 
+/**
+ * 判斷是否為空
+ * @param value
+ */
+const suffixCol = (value: any) => {
+    if (!!Number(value)) {
+        return `-${value}`;
+    }
+    if (value === 'auto') {
+        return '-auto';
+    }
+    return '';
+};
 
 /**
  * 判斷是否為空
  * @param value
  */
-const suffix = (value: any) => {
+const suffixContainer = (value: any) => {
     if (!!Number(value)) {
         return `-${value}`;
     }
@@ -23,11 +36,14 @@ const suffix = (value: any) => {
  */
 const generateDebugData = (props: TStyledProps<IContainerProps>) => {
     return [
-        props.sm && `container-fluid-sm${suffix(props.sm)}`,
-        props.md && `container-fluid-md${suffix(props.md)}`,
-        props.lg && `container-fluid-lg${suffix(props.lg)}`,
-        props.xl && `container-fluid-xl${suffix(props.xl)}`,
-        props.xxl && `container-fluid-xxl${suffix(props.xxl)}`,
+        'container',
+        props.fluid && `container-fluid${suffixContainer(props.fluid)}`,
+        props.col && `col${suffixCol(props.col)}`,
+        props.sm && `col-sm${suffixCol(props.sm)}`,
+        props.md && `col-md${suffixCol(props.md)}`,
+        props.lg && `col-lg${suffixCol(props.lg)}`,
+        props.xl && `col-xl${suffixCol(props.xl)}`,
+        props.xxl && `col-xxl${suffixCol(props.xxl)}`,
     ]
         .filter(Boolean)
         .join(' ');

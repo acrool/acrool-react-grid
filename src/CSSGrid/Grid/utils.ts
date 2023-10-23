@@ -1,71 +1,25 @@
-import {TStyledProps, IGridProps, TGridGap, TGridCol, TGridAutoFlow} from '../../types';
+import {TStyledProps, IColProps, NoXsMediaSize, TGridCol, IGridProps} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
-import {css} from 'styled-components';
-import {repeat} from '../../utils';
+import {fr} from '../../utils';
 
 
 
 
-interface ICSSGetterCss {
-    autoFlow: (gapNum: TGridAutoFlow) => string
-
-    columns: (columns: TGridCol) => string
-    rows: (rows: TGridCol) => string
-
-    gap: (gapNum: TGridGap) => string
-    columnGap: (gapNum: TGridGap) => string
-    rowGap: (gapNum: TGridGap) => string
+interface ICSSGetter {
+    col: (column: TGridCol) => string
 }
 
-
-export const cssGetter: ICSSGetterCss = {
-    autoFlow: (autoFlow) => {
-        return `
-            grid-auto-flow: ${autoFlow};
-        `;
-    },
-    columns: (columns) => {
-        if(typeof columns === 'string'){
+export const cssGetter: ICSSGetter = {
+    col: (column) => {
+        if(typeof column === 'number'){
             return `
-            grid-template-columns: ${columns};
-            `;
-        }
-        if(typeof columns === 'number'){
-            return `
-                grid-template-columns: ${columns === 1 ? 'auto' : repeat(columns, 'auto')}
+                grid-template-columns: ${fr(column)};
             `;
         }
 
-        return '';
-    },
-    rows: (rows) => {
-        if(typeof rows === 'string'){
-            return `
-            grid-template-rows: ${rows};
-            `;
-        }
-        if(typeof rows === 'number'){
-            return `
-                grid-template-rows: ${rows === 1 ? 'auto' : repeat(rows, 'auto')}
-            `;
-        }
-        return '';
-
-    },
-    gap: (gapNum) => {
         return `
-        gap: ${gapNum};
-        `;
-    },
-    columnGap: (gapNum) => {
-        return `
-        column-gap: ${gapNum};
-        `;
-    },
-    rowGap: (gapNum) => {
-        return `
-        row-gap: ${gapNum};
+            grid-template-columns: ${column};
         `;
     },
 };
@@ -73,43 +27,57 @@ export const cssGetter: ICSSGetterCss = {
 
 
 /**
- * 產生 RWD 樣式
+ * Create Breakpoint
+ */
+export const createBreakpoint = (props: TStyledProps<IGridProps>) => {
+    let prevSize: 'col'|NoXsMediaSize = 'col';
+    return noXsMediaSizes.reduce((curr, sizeName) => {
+        const args = props[sizeName];
+        if(typeof args !== 'undefined' && props[sizeName] !== props[prevSize]){
+            prevSize = sizeName;
+            return curr.concat(media[sizeName]`
+                ${cssGetter.col(args)};
+            `);
+        }
+        return curr;
+    }, []);
+
+};
+
+
+
+/**
+ * 判斷是否為空
+ * @param value
+ */
+const suffix = (value: any) => {
+    if (typeof value === 'number') {
+        return `-${value}`;
+    }
+    if (typeof value === 'string') {
+        return `-[${value}]`;
+    }
+    return '';
+};
+
+
+
+/**
+ * 產生 Debug 資訊
  * @param props
  */
-export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
-    return noXsMediaSizes
-        .map(sizeName => {
-            const mediaAutoFlowProps = typeof props.autoFlow === 'object' ? props.autoFlow[sizeName]: undefined;
-            const mediaColumnProps = typeof props.columns === 'object' ? props.columns[sizeName]: undefined;
-            const mediaRowProps = typeof props.rows === 'object' ? props.rows[sizeName]: undefined;
-
-            const mediaGapProps = typeof props.gap === 'object' ? props.gap[sizeName]: undefined;
-            const mediaColumnGapProps = typeof props.columnGap === 'object' ? props.columnGap[sizeName]: undefined;
-            const mediaRowGapProps = typeof props.rowGap === 'object' ? props.rowGap[sizeName]: undefined;
-
-            return media[sizeName]`
-            ${typeof mediaAutoFlowProps !== 'undefined' && css`
-                ${cssGetter.autoFlow(mediaAutoFlowProps)};
-            `}
-
-            ${typeof mediaColumnProps !== 'undefined' && css`
-                ${cssGetter.columns(mediaColumnProps)};
-            `}
-            ${typeof mediaRowProps !== 'undefined' && css`
-                ${cssGetter.rows(mediaRowProps)};
-            `}
-
-
-            ${typeof mediaGapProps !== 'undefined' && css`
-                ${cssGetter.gap(mediaGapProps)};
-            `}
-            ${typeof mediaColumnGapProps !== 'undefined' && css`
-                ${cssGetter.columnGap(mediaColumnGapProps)};
-            `}
-            ${typeof mediaRowGapProps !== 'undefined' && css`
-                ${cssGetter.rowGap(mediaRowGapProps)};
-            `}
-        `;
-        });
+export const createInfo = (props: TStyledProps<IGridProps>) => {
+    return [
+        props.col && `grid${suffix(props.col)}`,
+        props.sm && `grid-sm${suffix(props.sm)}`,
+        props.md && `grid-md${suffix(props.md)}`,
+        props.lg && `grid-lg${suffix(props.lg)}`,
+        props.xl && `grid-xl${suffix(props.xl)}`,
+        props.xxl && `grid-xxl${suffix(props.xxl)}`,
+    ]
+        .filter(Boolean)
+        .join(' ');
 };
+
+
 

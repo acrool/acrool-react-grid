@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Container, Grid, GridRow, media} from 'bear-react-grid';
+import {Container, Grid, media} from 'bear-react-grid';
 import CertificateCard from '../Profile/_components/CertificateCard';
 import Info from './_components/Info';
 import CourseCard from '../_components/CourseCard';
@@ -17,19 +17,21 @@ const Instructors = ({
         </Container>
 
         <Container md className="overflow-x-auto overflow-x-xl-initial">
-            <GridRow col={2}>
+            <Grid col={2}>
                 {Array.from({length: 2}).map((row, index) => {
                     return <CourseCard
                         key={`certificateCard_${index}`}
                     />;
                 })}
-            </GridRow>
+            </Grid>
         </Container>
 
     </InstructorsRoot>;
 };
 
 export default Instructors;
+
+
 
 
 

@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import Button from '@/components/Button';
-import {Col, Container, Grid, Row, auto, GridRow} from 'bear-react-grid';
+import {Col, Container, Grid, Row, auto} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 
@@ -14,7 +14,7 @@ const Features = ({
     const renderColumnIcons = () => {
         return <Container className="px-4 py-5" id="featured-3">
             <h2 className="pb-2 border-bottom">Columns with icons (Row)</h2>
-            <Row cols={1} lg={3} className="g-4 py-5">
+            <Grid col={1} lg={3} className="g-4 py-5">
                 {Array.from({length: 3}).map((row, idx) => {
                     return <div className="feature" key={`feature_${idx}`}>
                         <div
@@ -31,14 +31,14 @@ const Features = ({
                         </a>
                     </div>;
                 })}
-            </Row>
+            </Grid>
         </Container>;
     };
 
     const renderColumnIcons2 = () => {
         return <Container className="px-4 py-5" id="featured-3">
             <h2 className="pb-2 border-bottom">Columns with icons (GridRow)</h2>
-            <GridRow cols={1} lg={3} className="g-4 py-5">
+            <Grid col={1} lg={3} className="g-4 py-5">
                 {Array.from({length: 3}).map((row, idx) => {
                     return <div className="feature" key={`feature_${idx}`}>
                         <div
@@ -55,7 +55,7 @@ const Features = ({
                         </a>
                     </div>;
                 })}
-            </GridRow>
+            </Grid>
         </Container>;
     };
 
@@ -63,7 +63,7 @@ const Features = ({
     const renderHanding = () => {
         return <Container className="px-4 py-5" id="hanging-icons">
             <h2 className="pb-2 border-bottom">Hanging icons (GridRow)</h2>
-            <GridRow cols={1} lg={3} className="g-4 py-5">
+            <Grid col={1} lg={3} className="g-4 py-5">
                 {Array.from({length: 3}).map((row, idx) => {
                     return <div className="d-flex align-items-start" key={`handing_${idx}`}>
                         <div
@@ -81,7 +81,7 @@ const Features = ({
                     </div>;
                 })}
 
-            </GridRow>
+            </Grid>
         </Container>;
     };
 
@@ -90,7 +90,7 @@ const Features = ({
         return <Container className="px-4 py-5" id="custom-cards">
             <h2 className="pb-2 border-bottom">Custom cards</h2>
 
-            <GridRow cols={1} lg={3} className="align-items-stretch g-4 py-5">
+            <Grid col={1} lg={3} className="align-items-stretch g-4 py-5">
                 {Array.from({length: 3}).map((row, idx) => {
                     return  <div key={`cards_${idx}`}>
                         <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
@@ -121,7 +121,7 @@ const Features = ({
                 })}
 
 
-            </GridRow>
+            </Grid>
         </Container>;
     };
 
@@ -130,7 +130,7 @@ const Features = ({
         return <Container className="px-4 py-5" id="icon-grid">
             <h2 className="pb-2 border-bottom">Icon grid</h2>
 
-            <GridRow cols={1} sm={2} md={3} lg={4} className="g-4 py-5">
+            <Grid col={1} sm={2} md={3} lg={4} className="g-4 py-5">
                 {Array.from({length: 8}).map((row, idx) => {
 
                     return <div className="col d-flex align-items-start" key={`iconGrid_${idx}`}>
@@ -141,7 +141,7 @@ const Features = ({
                         </div>
                     </div>;
                 })}
-            </GridRow>
+            </Grid>
         </Container>;
     };
 
@@ -150,7 +150,7 @@ const Features = ({
         return <Container className="px-4 py-5">
             <h2 className="pb-2 border-bottom">Features with title</h2>
 
-            <GridRow cols={1} md={2} className="align-items-md-center g-5 py-5">
+            <Grid col={1} md={2} className="align-items-md-center g-5 py-5">
                 <div className="d-flex flex-column align-items-start gap-2">
                     <h2 className="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
                     <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading.
@@ -160,7 +160,7 @@ const Features = ({
                     <Button>Primary button</Button>
                 </div>
 
-                <GridRow cols={1} sm={2} className="g-4">
+                <Grid col={1} sm={2} className="g-4">
 
                     {Array.from({length: 4}).map((row, idx) => {
                         return <div className="d-flex flex-column gap-2" key={`feature_${idx}`}>
@@ -175,8 +175,8 @@ const Features = ({
 
 
 
-                </GridRow>
-            </GridRow>
+                </Grid>
+            </Grid>
         </Container>;
     };
 

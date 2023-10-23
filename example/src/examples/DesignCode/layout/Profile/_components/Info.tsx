@@ -1,19 +1,15 @@
 import styled from 'styled-components';
 import CourseButton from '../../_components/CourseButton';
-import {Grid, Container} from 'bear-react-grid';
+import {Grid} from 'bear-react-grid';
 
-interface IProps extends FCProps {
-}
 
-const Info = ({
-    className,
-}: IProps) => {
+const Info = () => {
 
     return <InfoRoot>
-        <Grid columns={1} className="justify-items-center justify-items-xl-start text-center text-xl-left">
+        <Grid col={1} className="gap-2 justify-items-center justify-items-xl-start text-center text-xl-left">
             <SubTitle>CREATE A PROFILE</SubTitle>
             <Title>Get certificates</Title>
-            <Desc>After passing a test, we’ll award you with an online certificate. You can add them to your profile after completing the courses.</Desc>
+            <Desc className="mb-3">After passing a test, we’ll award you with an online certificate. You can add them to your profile after completing the courses.</Desc>
 
             <CourseButton href="/" isOutline>
                 <img src="https://designcode.io/images/icons/account.svg" alt="Create account"/>

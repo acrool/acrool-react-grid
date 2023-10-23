@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import PurchaseButton from '../../_components/PurchaseButton';
+import {Flex} from 'bear-react-grid';
 
 interface IProps {
    className?: string
@@ -27,14 +28,14 @@ const Button = ({
         </RingWrapper>
 
 
-        <div className="d-flex flex-column text-left my-auto ml-2">
+        <Flex className="flex-column text-left my-auto ml-2">
             <Title className="mb-1">
                     Get Pro Access
             </Title>
             <SubTitle>
                     $19 per month
             </SubTitle>
-        </div>
+        </Flex>
 
     </ButtonRoot>;
 };
@@ -96,5 +97,4 @@ const RingWrapper = styled.div`
 
 
 const ButtonRoot = styled(PurchaseButton)`
-  padding: 10px;
 `;

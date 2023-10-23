@@ -9,22 +9,19 @@ const CertificateCard = ({
     style
 }: IProps) => {
     return <CertificateCardRoot
-        className={className} style={style}
-        columns={2}
+        className={className}
+        style={style}
+        col={2}
     >
         <Header>
-            <Title className="mb-2">
-                UI DESIGN
-            </Title>
-            <SubTitle>
-                Certifcate
-            </SubTitle>
+            <Title className="mb-2">UI DESIGN</Title>
+            <SubTitle>Certifcate</SubTitle>
         </Header>
 
         <PlatformLogo src="https://designcode.io/images/logos/swiftui-logo.svg" className="justify-self-end"/>
 
 
-        <Grid columns={1} gap="8px" className="align-self-end">
+        <Grid col={1} className="gy-1 align-self-end">
             {Array.from({length: 4}).map((row, index) => {
                 return <PlaceholderItem key={`placeholderItem_${index}`}/>;
             })}

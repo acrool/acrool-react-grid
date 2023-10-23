@@ -88,12 +88,6 @@ export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMedia
 }
 
 
-/** -------------------------------
- *       Grid System - Grid Row
- * ------------------------------ */
-export interface IGridRowProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TGridCol>{
-    col?: TGridCol
-}
 
 /** -------------------------------
  *       Grid System - Row
@@ -124,18 +118,10 @@ export type TGridGapUnit = 'px' | 'rem';
 export type TGridGap = 0|`${number}${TGridGapUnit}`
 export type TGridGaps = TGridGap|RecordOption<TMediaSize, TGridGap>
 
-export type TGridAutoFlow = 'column'|'row'|'dense'|'revert-layer'
-export type TGridAutoFlows = TGridAutoFlow|RecordOption<TMediaSize, TGridAutoFlow>
-
-export interface IGridProps extends FCChildrenProps{
-    gap?: TGridGaps
-    columnGap?: TGridGap
-    rowGap?: TGridGap
-
-    columns?: TGridCols
-    rows?: TGridCols
-    autoFlow?: TGridAutoFlows
+export interface IGridProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TGridCol>{
+    col?: TGridCol
 }
+
 
 /** -------------------------------
  *       CSS Grid - Grid Col
