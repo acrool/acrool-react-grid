@@ -4,9 +4,7 @@ import {TStyledProps, IFlexProps} from '../../types';
 
 
 /**
- * Row Component
- * align-items 預設加上 flex-start, 會讓鄰居Col高度不會一致
- * ps: 設定會 width 100% 會產生 margin 抵銷失敗
+ * Flex Component
  */
 const Flex = styled.div.attrs((props: TStyledProps<IFlexProps>) => ({
     'data-grid': 'flex',
