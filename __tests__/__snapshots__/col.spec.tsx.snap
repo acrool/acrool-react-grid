@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Col renders col-6 1`] = `
+.c0 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+<div
+  class="c0"
+  data-grid="col-6"
+>
+  col
+</div>
+`;
+
+exports[`Col renders col-auto 1`] = `
+.c0 {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+<div
+  class="c0"
+  data-grid="col-auto"
+>
+  col
+</div>
+`;
+
+exports[`Col renders col-true 1`] = `
+.c0 {
+  flex: 1 0 0;
+}
+
+<div
+  class="c0"
+  data-grid="col-true"
+>
+  col
+</div>
+`;

@@ -18,8 +18,8 @@ import {NoXsMediaSize, IGridSetting, TMediaSize} from './types';
 const themeName = 'bearReactGrid';
 const defaultGridTheme: IGridSetting = {
     spacer: '1rem',
-    gutter: '0.625rem',
-    gridColumns: 24,
+    gutter: '1.5rem',
+    gridColumns: 12,
     gridBreakpoints: {
         xs: 0,
         sm: 576,

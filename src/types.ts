@@ -59,7 +59,7 @@ export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: F
  *         GirdProvide
  * ------------------------------ */
 export interface IGridThemeProviderProps {
-    gridTheme: Partial<IGridSetting>
+    gridTheme?: Partial<IGridSetting>
     children: React.ReactNode
 }
 
@@ -80,16 +80,26 @@ export type TGridTheme = Partial<IGridSetting>;
 export type TRWDMaxSize = {
     [size in NoXsMediaSize | 'fluid']: boolean
 }
+export type TContainerFluid = true|NoXsMediaSize
 
-export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMediaSize, boolean>{
-    fluid?: boolean;
+export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TCol>{
+    fluid?: TContainerFluid;
+    col?: TCol
 }
 
 
 /** -------------------------------
+ *       Grid System - Grid Row
+ * ------------------------------ */
+export interface IGridRowProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TGridCol>{
+    col?: TGridCol
+}
+
+/** -------------------------------
  *       Grid System - Row
  * ------------------------------ */
-export interface IRowProps extends FCChildrenProps{}
+export interface IRowProps extends FCChildrenProps {
+}
 
 
 /** -------------------------------

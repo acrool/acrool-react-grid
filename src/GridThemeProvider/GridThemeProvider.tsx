@@ -1,10 +1,9 @@
 import React, {PropsWithChildren} from 'react';
-import {ThemeProvider} from 'styled-components';
+import {ThemeProvider, StyleSheetManager} from 'styled-components';
 
 import {defaultGridTheme, themeName} from '../config';
 import {IGridThemeProviderProps} from '../types';
 import {Utilities} from './Utilities';
-import '../styles.css';
 
 
 
@@ -33,10 +32,13 @@ const GridThemeProvider = (props: IGridThemeProviderProps) => {
         }
     };
 
-    return <ThemeProviderFixed theme={composeGridTheme}>
-        {children}
-        <Utilities/>
-    </ThemeProviderFixed>;
+    return <StyleSheetManager disableVendorPrefixes>
+        <ThemeProviderFixed theme={composeGridTheme}>
+            {children}
+            <Utilities/>
+        </ThemeProviderFixed>
+    </StyleSheetManager>
+    ;
 };
 
 export default GridThemeProvider;

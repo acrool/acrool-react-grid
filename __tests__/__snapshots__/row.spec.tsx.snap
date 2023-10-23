@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row renders row 1`] = `
+.c0 {
+  --bear-gutter-x: 0.625rem;
+  --bear-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bear-gutter-y) * -1);
+  margin-right: calc(var(--bear-gutter-x) * -0.5);
+  margin-left: calc(var(--bear-gutter-x) * -0.5);
+}
+
+.c0 > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bear-gutter-x) * 0.5);
+  padding-left: calc(var(--bear-gutter-x) * 0.5);
+  margin-top: var(--bear-gutter-y);
+}
+
+<div
+  class="c0"
+  data-grid="row"
+>
+  row
+</div>
+`;
