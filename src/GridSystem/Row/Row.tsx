@@ -16,7 +16,7 @@ const Row = styled.div.attrs((props: TStyledProps<IRowProps>) => ({
 }))`
     --bear-gutter-x: ${props => props.theme[themeName]?.gutter};
     --bear-gutter-y: 0;
-    box-sizing: border-box;
+
     display: flex;
     flex-wrap: wrap;
     margin-top: calc(var(--bear-gutter-y) * -1);

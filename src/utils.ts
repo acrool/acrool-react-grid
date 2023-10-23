@@ -22,6 +22,22 @@ export function repeat(count: number, unit: TGridColNumberSizeUnit){
 }
 
 /**
+ * Grid 產生器 repeat
+ * @param count
+ */
+export function fr(count: number){
+    return repeat(count, '1fr');
+}
+
+/**
+ * Grid 產生器 repeat
+ * @param count
+ */
+export function auto(count: number){
+    return repeat(count, 'auto');
+}
+
+/**
  * Grid 產生器 minmax
  * @param min
  * @param max
