@@ -9,7 +9,7 @@ const Info = ({
     className,
 }: IProps) => {
 
-    return <InfoRoot className={className}>
+    return <InfoRoot>
         <Grid columns={1} className="justify-items-center justify-items-xl-start text-center text-xl-left">
             <SubTitle>CREATE A PROFILE</SubTitle>
             <Title>Get certificates</Title>
@@ -39,6 +39,5 @@ const SubTitle = styled.p`
     font-size: 15px;
 `;
 
-const InfoRoot = styled(Container)`
-  max-width: 420px;
+const InfoRoot = styled.div`
 `;

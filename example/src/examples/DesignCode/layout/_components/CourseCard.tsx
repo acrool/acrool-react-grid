@@ -64,12 +64,8 @@ const CourseCardRoot = styled(GridRow)`
     padding: 20px;
     border-radius: 20px;
     gap: 20px;
-    width: 586px;
 
     background: rgba(15, 14, 71, 0.3);
     box-shadow: rgba(255, 255, 255, 0.2) 0 0 0 0.5px inset;
 
-    ${media.xl`
-        width: auto;
-    `}
 `;

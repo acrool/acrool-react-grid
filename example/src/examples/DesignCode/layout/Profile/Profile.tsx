@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Container, Grid, media} from 'bear-react-grid';
+import {Col, Container, Grid, media, Row} from 'bear-react-grid';
 import CertificateCard from './_components/CertificateCard';
 import Info from './_components/Info';
 
@@ -10,21 +10,27 @@ interface IProps extends FCProps {
 const Profile = ({
     className,
 }: IProps) => {
-    return <ProfileRoot className={className}>
-        <Grid
-            columns={{xs: 1, xl: 2}}
-            className="align-items-start justify-items-center justify-content-xl-between"
-        >
-            <CertificateCardList className="order-1 order-xl-0 mx-auto">
-                {Array.from({length: 4}).map((row, index) => {
-                    return <CustomCertificateCard
-                        key={`certificateCard_${index}`}
-                    />;
-                })}
-            </CertificateCardList>
 
-            <Info/>
-        </Grid>
+    const renderCards = () => {
+        return <CertificateCardList>
+            {Array.from({length: 4}).map((row, index) => {
+                return <CustomCertificateCard
+                    key={`certificateCard_${index}`}
+                />;
+            })}
+        </CertificateCardList>
+    };
+
+    return <ProfileRoot className={className}>
+        <Row className="align-items-start justify-items-center justify-content-xl-between">
+            <Col col={12} lg="auto">
+                {renderCards()}
+            </Col>
+            <Col col={12} lg className="order-first order-lg-last">
+                <Info/>
+            </Col>
+
+        </Row>
     </ProfileRoot>;
 };
 
@@ -70,6 +76,7 @@ const CertificateCardList = styled(Grid)`
   transform-origin: left top;
     width: 100%;
     transform: scale(0.6);
+    height: 350px;
 
     ${media.md`
         transform: scale(1);

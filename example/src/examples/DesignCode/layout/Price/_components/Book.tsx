@@ -1,4 +1,4 @@
-import {Grid} from 'bear-react-grid';
+import {Grid, Flex} from 'bear-react-grid';
 import styled from 'styled-components';
 import PurchaseButton from '../../_components/PurchaseButton';
 
@@ -24,7 +24,7 @@ const Book = ({
 }: IProps) => {
     return <BookRoot className={className}>
         <Bg/>
-        <Card columns={1} gap="20px" className="justify-items-center align-content-start">
+        <Card gap="20px" className="justify-items-center align-content-start">
             <SubTitle>{data.subTitle}</SubTitle>
             <Title>{data.title}</Title>
             <Desc>{data.desc}</Desc>
@@ -107,7 +107,8 @@ const SubTitle = styled.p`
 `;
 
 
-const Card = styled(Grid)`
+const Card = styled(Flex)`
+    flex-direction: column;
     max-width: 360px;
     min-width: 240px;
     width: 100%;
