@@ -11,6 +11,18 @@ interface IProps extends FCProps {
 const CourseCard = ({
     className,
 }: IProps) => {
+
+    const renderList = () => {
+        return <CurriculumWrapper className="d-flex flex-column h-100 overflow-hidden gap-2">
+            <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
+            <MyLinkList className="filter-mask-b">
+                {Array.from({length: 5}).map((row, index) => {
+                    return <MyLink key={`link_${index}`} no={index+1}/>;
+                })}
+            </MyLinkList>
+        </CurriculumWrapper>;
+    };
+
     return <CourseCardRoot
         columns={{
             xs: '287px 200px',
@@ -18,14 +30,7 @@ const CourseCard = ({
         }}
         className={className}>
 
-        <CurriculumWrapper className="d-flex flex-column h-100 overflow-hidden gap-2">
-            <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
-            <MyLinkList className="filter-mask-b">
-                {Array.from({length: 5}).map((row, index) => {
-                    return <MyLink key={`link_${index}`} no={index+1}/>;
-                })}
-            </MyLinkList>
-        </CurriculumWrapper>
+        {renderList()}
 
         <PreviewCard/>
 
