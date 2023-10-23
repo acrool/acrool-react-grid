@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.9-alpha.0](https://github.com/imagine10255/bear-react-grid/compare/v5.0.8...v5.0.9-alpha.0) (2023-10-23)
+
+
+### Features
+
+* remove GridRow, data-grid info, add grid-flow ([c696d40](https://github.com/imagine10255/bear-react-grid/commit/c696d40d5ca6ebf60d3fb885247c9e514b0b77d1))
+
 ### [5.0.8](https://github.com/imagine10255/bear-react-grid/compare/v5.0.7...v5.0.8) (2023-10-23)
 
 
