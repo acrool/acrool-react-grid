@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid Hybrid  renders grid + grid-lg-2 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: var(--bear-gutter-x);
+  row-gap: var(--bear-gutter-y);
+  grid-template-columns: repeat(1,1fr);
+}
+
+@media (min-width:992px) {
+  .c0 {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+<div
+  class="c0"
+  data-grid="grid-1 grid-lg-2"
+>
+  <div>
+    col 1
+  </div>
+  <div>
+    col 2
+  </div>
+</div>
+`;
+
+exports[`Grid Hybrid  renders grid-4 + grid-md-6 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: var(--bear-gutter-x);
+  row-gap: var(--bear-gutter-y);
+  grid-template-columns: repeat(4,auto);
+}
+
+@media (min-width:768px) {
+  .c0 {
+    grid-template-columns: repeat(6,auto);
+  }
+}
+
+<div
+  class="c0"
+  data-grid="grid-[repeat(4, auto)] grid-md-[repeat(6, auto)]"
+>
+  col
+</div>
+`;
+
+exports[`Grid Hybrid  renders grid-auto-2 + grid-md-auto-2 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: var(--bear-gutter-x);
+  row-gap: var(--bear-gutter-y);
+  grid-template-columns: repeat(2,auto);
+}
+
+<div
+  class="c0"
+  data-grid="grid-[repeat(2, auto)] grid-md-[repeat(2, auto)]"
+>
+  <div>
+    col 1
+  </div>
+  <div>
+    col 2
+  </div>
+</div>
+`;

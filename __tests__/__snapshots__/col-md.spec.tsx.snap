@@ -33,6 +33,11 @@ exports[`Md renders col-md-auto 1`] = `
 `;
 
 exports[`Md renders col-md-true 1`] = `
+.c0 {
+  min-height: 1px;
+  min-width: 0;
+}
+
 @media (min-width:768px) {
   .c0 {
     flex: 1 0 0;

@@ -2,13 +2,14 @@
 
 exports[`Row renders row 1`] = `
 .c0 {
-  --bear-gutter-x: 0.625rem;
+  --bear-gutter-x: 1.5rem;
   --bear-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(var(--bear-gutter-y) * -1);
   margin-right: calc(var(--bear-gutter-x) * -0.5);
   margin-left: calc(var(--bear-gutter-x) * -0.5);
+  padding-inline-start: 0;
 }
 
 .c0 > * {

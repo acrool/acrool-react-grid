@@ -5,7 +5,7 @@ import '@testing-library/dom';
 import Col from '../src/GridSystem/Col';
 import GridThemeProvider from '../src/GridThemeProvider';
 
-describe('Md', () => {
+describe('Col Md', () => {
     it('renders col-md-true', () => {
         const {container} = render(<Col md>col</Col>, {wrapper: GridThemeProvider});
         expect(container.firstChild).toMatchSnapshot();
