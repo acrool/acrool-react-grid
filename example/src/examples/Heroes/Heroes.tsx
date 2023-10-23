@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import Button from '@/components/Button';
-import {Col, Container, Grid, Row, auto} from 'bear-react-grid';
+import {Col, Container, Grid, Row, auto, GridRow} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 
@@ -22,10 +22,10 @@ const Heroes = ({
                     the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                     responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
 
-                <Grid columns={{sm: auto(2)}} className="gap-3 justify-content-center">
+                <GridRow sm={auto(2)} className="gap-3 justify-content-center">
                     <Button>Primary button</Button>
                     <Button>Secondary</Button>
-                </Grid>
+                </GridRow>
             </Col>
         </div>;
     };

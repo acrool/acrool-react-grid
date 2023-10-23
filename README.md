@@ -104,10 +104,13 @@ const MyPage = () => {
             </Row>
             <Grid columns={2}>
                 <div>Grid Col2</div>
-                <Flex direction="column">
+                
+                <Flex className="flex-column gap-2">
                     <div>Grid Col3</div>
                     <div>Grid Col3</div>
                 </Flex>
+                
+                
             </Grid>
             <Grid columns="repeat(1, 3fr)">
                 <GridCol>Grid Col3</GridCol>

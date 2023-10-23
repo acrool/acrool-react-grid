@@ -1,4 +1,4 @@
-import {Container, Grid} from 'bear-react-grid';
+import {Container, Grid, Row, Col, Flex, GridRow} from 'bear-react-grid';
 import styled from 'styled-components';
 import FeatureCard from './_components/FeatureCard';
 
@@ -9,32 +9,43 @@ interface IProps extends FCProps {
 const Discounts = ({
     className,
 }: IProps) => {
-    return <DiscountsRoot className={className}>
-        <Grid columns={{xs: 1, lg: 2}}
-            className="align-items-start justify-items-center justify-content-lg-between"
-        >
-            <Info columns={1} className="justify-items-center justify-items-lg-start text-center text-xl-left">
-                <SubTitle>START WITH MORE</SubTitle>
-                <Title>Get discounts</Title>
-                <Desc>We’ve partnered with the biggest design tools on the market to help you get started.</Desc>
-            </Info>
 
-            <FeatureList columns={{xs: 2, lg: 4}}>
-                {Array.from({length: 4}).map((row, index) => {
-                    return <FeatureCard key={`feature_${index}`}/>;
-                })}
-            </FeatureList>
-        </Grid>
+    const renderInfo = () => {
+        return <>
+            <SubTitle>START WITH MORE</SubTitle>
+            <Title>Get discounts</Title>
+            <Desc>We’ve partnered with the biggest design tools on the market to help you get started.</Desc>
+        </>;
+    };
+
+
+
+    const renderFeatureList = () => {
+        return <GridRow col={2} md={4} className="justify-content-center">
+            {Array.from({length: 4}).map((row, index) => {
+                return <FeatureCard key={`feature_${index}`}/>;
+            })}
+        </GridRow>;
+    };
+
+
+    return <DiscountsRoot className={className}>
+        <Row className="justify-content-lg-between">
+            <Col col={12} lg={4}>
+                <Col sm={8} lg={12} className="d-flex flex-column text-center text-lg-left gap-1 mx-auto  mb-4">
+                    {renderInfo()}
+                </Col>
+            </Col>
+            <Col col={12} lg="auto">
+                {renderFeatureList()}
+            </Col>
+        </Row>
     </DiscountsRoot>;
 };
 
 export default Discounts;
 
 
-
-const FeatureList = styled(Grid)`
-
-`;
 
 const Desc = styled.p`
     font-size: 17px;
@@ -49,13 +60,6 @@ const SubTitle = styled.div`
     font-weight: 600;
     font-size: 15px;
 `;
-
-
-const Info = styled(Grid)`
-    max-width: 420px;
-`;
-
-
 
 const DiscountsRoot = styled(Container)`
     margin-bottom: 200px;

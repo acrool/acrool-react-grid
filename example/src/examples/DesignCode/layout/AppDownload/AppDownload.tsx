@@ -1,23 +1,11 @@
 import styled from 'styled-components';
-import {Grid} from 'bear-react-grid';
+import {Flex} from 'bear-react-grid';
 
-interface IProps extends FCProps {
-
-}
-
-const AppDownload = ({
-    className,
-}: IProps) => {
-    return <AppDownloadRoot className="justify-items-center" columns={1}>
-        <SubTitle>
-            NEW RELEASE
-        </SubTitle>
-        <Title>
-            Available on iPhone and iPad
-        </Title>
-        <Desc>
-            Our iOS app has been 100% developed with SwiftUI. If you have an M1 Mac, you can even use it as a desktop app.
-        </Desc>
+const AppDownload = () => {
+    return <AppDownloadRoot className="flex-column align-items-center gap-2">
+        <SubTitle>NEW RELEASE</SubTitle>
+        <Title>Available on iPhone and iPad</Title>
+        <Desc>Our iOS app has been 100% developed with SwiftUI. If you have an M1 Mac, you can even use it as a desktop app.</Desc>
 
         <AppleStoreButton href="/">
             <img className="w-100" src="https://designcode.io/images/components/iosapp/appStore.svg" alt="appStore"/>
@@ -53,7 +41,7 @@ const Title = styled.h2`
 
 
 
-const AppDownloadRoot = styled(Grid)`
+const AppDownloadRoot = styled(Flex)`
     margin: auto;
     max-width: 300px;
     text-align: center;
