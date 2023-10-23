@@ -24,10 +24,8 @@ const CourseCard = ({
     };
 
     return <CourseCardRoot
-        columns={{
-            xs: '287px 200px',
-            xl: 'auto 200px'
-        }}
+        col="287px 200px"
+        xl="auto 200px"
         className={className}>
 
         {renderList()}
@@ -60,7 +58,7 @@ const CurriculumWrapper = styled.div`
 `;
 
 
-const CourseCardRoot = styled(Grid)`
+const CourseCardRoot = styled(GridRow)`
     position: relative;
     height: 400px;
     padding: 20px;

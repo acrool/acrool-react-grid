@@ -1,19 +1,25 @@
-import {TStyledProps, IColProps, NoXsMediaSize, IGridRowProps} from '../../types';
+import {TStyledProps, IColProps, NoXsMediaSize, IGridRowProps, TGridCol} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
-import {fr} from '../../utils';
+import {fr, repeat} from '../../utils';
 
 
 
 
 interface ICSSGetter {
-    col: (column: number) => string
+    col: (column: TGridCol) => string
 }
 
 export const cssGetter: ICSSGetter = {
-    col: (columnNumber) => {
+    col: (column) => {
+        if(typeof column === 'number'){
+            return `
+                grid-template-columns: ${fr(column)};
+            `;
+        }
+
         return `
-            grid-template-columns: ${fr(columnNumber)};
+            grid-template-columns: ${column};
         `;
     },
 };

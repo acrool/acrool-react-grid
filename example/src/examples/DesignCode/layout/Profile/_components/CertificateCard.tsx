@@ -11,7 +11,6 @@ const CertificateCard = ({
     return <CertificateCardRoot
         className={className} style={style}
         columns={2}
-        rows={2}
     >
         <Header>
             <Title className="mb-2">

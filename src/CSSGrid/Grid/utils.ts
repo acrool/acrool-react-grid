@@ -79,7 +79,6 @@ export const cssGetter: ICSSGetterCss = {
 export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
     return noXsMediaSizes
         .map(sizeName => {
-            const mediaAutoFlowProps = typeof props.autoFlow === 'object' ? props.autoFlow[sizeName]: undefined;
             const mediaColumnProps = typeof props.columns === 'object' ? props.columns[sizeName]: undefined;
             const mediaRowProps = typeof props.rows === 'object' ? props.rows[sizeName]: undefined;
 
@@ -88,9 +87,7 @@ export const generateRWDStyled = (props: TStyledProps<IGridProps>) => {
             const mediaRowGapProps = typeof props.rowGap === 'object' ? props.rowGap[sizeName]: undefined;
 
             return media[sizeName]`
-            ${typeof mediaAutoFlowProps !== 'undefined' && css`
-                ${cssGetter.autoFlow(mediaAutoFlowProps)};
-            `}
+
 
             ${typeof mediaColumnProps !== 'undefined' && css`
                 ${cssGetter.columns(mediaColumnProps)};
