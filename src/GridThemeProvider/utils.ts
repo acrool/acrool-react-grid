@@ -134,8 +134,8 @@ export const renderGapStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) 
     return Array.from({length: 6}).map((row,idx) => {
         return `
         .gap${suffix({code: idx, sizeName})} {gap: ${calcSpacer(setting.spacer, idx)} !important;}
-        .gap-column${suffix({code: idx, sizeName})} {column-gap: ${calcSpacer(setting.spacer, idx)} !important;}
-        .gap-row${suffix({code: idx, sizeName})} {row-gap: ${calcSpacer(setting.spacer, idx)} !important;}
+        .column-gap${suffix({code: idx, sizeName})} {column-gap: ${calcSpacer(setting.spacer, idx)} !important;}
+        .row-gap${suffix({code: idx, sizeName})} {row-gap: ${calcSpacer(setting.spacer, idx)} !important;}
         `;
     });
 };
@@ -186,7 +186,7 @@ export const renderOrderStyle = (sizeName?: NoXsMediaSize) => {
 };
 
 export const renderOverflowStyle = (sizeName?: NoXsMediaSize) => {
-    const data: Array<string> = ['initial','hidden','auto'];
+    const data: Array<string> = ['initial','hidden','auto', 'scroll'];
 
     return data.map((code,idx) => {
         return `
