@@ -19,7 +19,7 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
 
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(${props => props.theme[themeName]?.gridColumns}, 1fr);
     column-gap: var(--bear-gutter-x);
     row-gap: var(--bear-gutter-y);
 
