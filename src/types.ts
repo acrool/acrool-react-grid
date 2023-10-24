@@ -82,9 +82,8 @@ export type TRWDMaxSize = {
 }
 export type TContainerFluid = true|NoXsMediaSize
 
-export interface IContainerProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TCol>{
+export interface IContainerProps extends FCChildrenProps{
     fluid?: TContainerFluid;
-    col?: TCol
 }
 
 

@@ -1,9 +1,6 @@
-import {TStyledProps, IContainerProps, TRWDMaxSize, NoXsMediaSize, TContainerFluid} from '../../types';
+import {TStyledProps, IContainerProps, NoXsMediaSize} from '../../types';
 import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
-import {cssGetter} from '../Col/utils';
-import {css} from 'styled-components';
-import {preview} from 'vite';
 
 
 
@@ -13,7 +10,6 @@ import {preview} from 'vite';
  * @param props
  */
 export const createBreakpoint = (props: TStyledProps<IContainerProps>) => {
-    let prevSize: 'col'|NoXsMediaSize = 'col';
     const maxSizeConfig = getRWDMaxSize(props);
 
     return noXsMediaSizes.reduce((curr, sizeName) => {
@@ -22,14 +18,6 @@ export const createBreakpoint = (props: TStyledProps<IContainerProps>) => {
             maxWidth = `
                 max-width: ${props.theme[themeName]?.containerMaxWidths[sizeName]}px;
             `;
-        }
-
-        if(typeof props[sizeName] !== 'undefined' && props[sizeName] !== props[prevSize]){
-            prevSize = sizeName;
-            return curr.concat(media[sizeName]`
-                ${maxWidth}
-                ${cssGetter.col(props[sizeName], props.theme[themeName]?.gridColumns)};
-            `);
         }
         return curr.concat(media[sizeName]`
             ${maxWidth}
@@ -99,12 +87,6 @@ export const createInfo = (props: TStyledProps<IContainerProps>) => {
     return [
         'container',
         props.fluid && `container-fluid${suffixContainer(props.fluid)}`,
-        props.col && `col${suffixCol(props.col)}`,
-        props.sm && `col-sm${suffixCol(props.sm)}`,
-        props.md && `col-md${suffixCol(props.md)}`,
-        props.lg && `col-lg${suffixCol(props.lg)}`,
-        props.xl && `col-xl${suffixCol(props.xl)}`,
-        props.xxl && `col-xxl${suffixCol(props.xxl)}`,
     ]
         .filter(Boolean)
         .join(' ');

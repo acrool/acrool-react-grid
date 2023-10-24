@@ -54,7 +54,7 @@ const Heroes = ({
 
 
     const renderResponsive = () => {
-        return <Container xxl={8} className="px-4 py-5">
+        return <Container className="px-4 py-5">
             <Row className="flex-lg-row-reverse align-items-center g-5 py-5">
                 <Col col={10} sm={8} lg={6}>
                     <img src="https://getbootstrap.com/docs/5.3/examples/heroes/bootstrap-themes.png"
@@ -84,9 +84,9 @@ const Heroes = ({
 
 
     const renderSignUp = () => {
-        return <Container xl={10} xxl={8} className="px-4 py-5">
+        return <Container className="px-4 py-5">
             <Row className="align-items-center g-lg-5 py-5">
-                <Col lg={7} className="text-center text-lg-left">
+                <Col col={12} lg={7} className="text-center text-lg-left">
                     <h1 className="mb-3">Vertically centered hero sign-up form</h1>
                     <Col lg={10}>
                         <p className="fs-4">Below is an example form built entirely with Bootstrap’s form controls.
@@ -147,11 +147,11 @@ const Heroes = ({
         return <div className="px-4 py-5 text-center">
             <div className="py-5">
                 <h1>Dark color hero</h1>
-                <Col lg={6} className="mx-auto">
+                <Col col={12} md={8} lg={6} className="mx-auto">
                     <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap,
                         the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                         responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-                    <Grid col={1}  sm={auto(2)} className="gap-3 justify-content-sm-center">
+                    <Grid col={1} sm={auto(2)} className="gap-3 justify-content-sm-center">
                         <Button className="px-4">Primary</Button>
                         <Button className="px-4">Default</Button>
                     </Grid>

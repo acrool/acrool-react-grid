@@ -16,7 +16,7 @@ const Instructors = ({
             <Info/>
         </Container>
 
-        <Container md className="overflow-x-auto overflow-x-xl-initial">
+        <Container className="overflow-x-auto overflow-x-xl-initial">
             <Grid col={2}>
                 {Array.from({length: 2}).map((row, index) => {
                     return <CourseCard
