@@ -17,22 +17,22 @@ exports[`Grid renders col-6 1`] = `
   data-grid="grid-6"
 >
   <div>
-    col
+    col 1
   </div>
   <div>
-    col
+    col 2
   </div>
   <div>
-    col
+    col 3
   </div>
   <div>
-    col
+    col 4
   </div>
   <div>
-    col
+    col 5
   </div>
   <div>
-    col
+    col 6
   </div>
 </div>
 `;

@@ -3,22 +3,22 @@ import 'jest-styled-components';
 import {render} from '@testing-library/react';
 import '@testing-library/dom';
 import GridThemeProvider from '../src/GridThemeProvider';
-import GridCol from '../src/CSSGrid/GridCol';
+import Grid from '../src/CSSGrid/Grid';
 import {auto} from '../src/utils';
 
 
 
 describe('Grid Col', () => {
     it('renders grid default', () => {
-        const {container} = render(<GridCol col={2}>col</GridCol>, {wrapper: GridThemeProvider});
+        const {container} = render(<Grid col={2}>col</Grid>, {wrapper: GridThemeProvider});
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders col-auto', () => {
-        const {container} = render(<GridCol col={2}>
+        const {container} = render(<Grid col={2}>
             <div>col 1</div>
             <div>col 2</div>
-        </GridCol>, {wrapper: GridThemeProvider});
+        </Grid>, {wrapper: GridThemeProvider});
         expect(container.firstChild).toMatchSnapshot();
     });
 
