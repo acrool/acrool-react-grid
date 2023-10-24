@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.9-alpha.1](https://github.com/imagine10255/bear-react-grid/compare/v5.0.9-alpha.0...v5.0.9-alpha.1) (2023-10-24)
+
+
+### Features
+
+* remove GirdCol, change use g-col-? class ([9bb9d86](https://github.com/imagine10255/bear-react-grid/commit/9bb9d86e262a6056cb1427ffc6b5242c1215d7e2))
+
 ### [5.0.9-alpha.0](https://github.com/imagine10255/bear-react-grid/compare/v5.0.8...v5.0.9-alpha.0) (2023-10-23)
 
 
