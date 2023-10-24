@@ -16,7 +16,7 @@ import {
     renderFlexStyle,
     renderFlexAlignStyle,
     renderPositionStyle,
-    renderGColspanStyle, renderAutoFlowStyle
+    renderAutoFlowStyle, renderGColStyle, renderGRowStyle
 } from './utils';
 import {noXsMediaSizes} from '../config';
 import media from '../media';
@@ -33,7 +33,8 @@ const generateRWDStyled = (setting: IGridSetting) => {
 
             ${renderFlexStyle(sizeName)}
             ${renderFlexAlignStyle(sizeName)}
-            ${renderGColspanStyle(sizeName)}
+            ${renderGColStyle(sizeName)}
+            ${renderGRowStyle(sizeName)}
 
             ${renderHeightStyle(sizeName)}
             ${renderWidthStyle(sizeName)}
@@ -87,7 +88,8 @@ export const Utilities = createGlobalStyle`
 
         ${renderFlexStyle()}
         ${renderFlexAlignStyle()}
-        ${renderGColspanStyle()}
+        ${renderGColStyle()}
+        ${renderGRowStyle()}
 
         ${renderWidthStyle()}
         ${renderHeightStyle()}

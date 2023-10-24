@@ -150,10 +150,17 @@ export const renderGutterStyle = (sizeName?: NoXsMediaSize) => {
 };
 
 
-export const renderGColspanStyle = (sizeName?: NoXsMediaSize) => {
+export const renderGColStyle = (sizeName?: NoXsMediaSize) => {
     return Array.from({length: 5}).map((row,idx) => {
         return `
-            .g-colspan${suffix({code: idx+1, sizeName})} {grid-column-start: span ${idx+1} !important;}
+            .g-col${suffix({code: idx+1, sizeName})} {grid-column: auto/span ${idx+1} !important;}
+        `;
+    });
+};
+export const renderGRowStyle = (sizeName?: NoXsMediaSize) => {
+    return Array.from({length: 5}).map((row,idx) => {
+        return `
+            .g-row${suffix({code: idx+1, sizeName})} {grid-row: auto/span ${idx+1} !important;}
         `;
     });
 };
@@ -212,11 +219,17 @@ export const renderPositionStyle = (sizeName?: NoXsMediaSize) => {
 
 
 export const renderAutoFlowStyle = (sizeName?: NoXsMediaSize) => {
-    const data: Array<string> = ['column','row', 'dense'];
+    const data: Array<{code: string|number, value: string|number}> = [
+        {code: 'col', value: 'column'},
+        {code: 'row', value: 'row'},
+        {code: 'dense', value: 'dense'},
+        {code: 'row-dense', value: 'row dense'},
+        {code: 'col-dense', value: 'column dense'},
+    ];
 
-    return data.map((code,idx) => {
+    return data.map((row,idx) => {
         return `
-            .grid-flow-${suffix({code, sizeName})} { grid-auto-flow: column !important;}
+            .grid-flow-${suffix({code: row.code, sizeName})} { grid-auto-flow: ${row.value} !important;}
        `;
     });
 };
