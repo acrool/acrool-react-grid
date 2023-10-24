@@ -8,9 +8,8 @@ import {createBreakpoint, cssGetter, createInfo} from './utils';
 
 
 /**
- * Row Component
- * align-items 預設加上 flex-start, 會讓鄰居Col高度不會一致
- * ps: 設定會 width 100% 會產生 margin 抵銷失敗
+ * Grid Component
+ * 由外部設定柵欄顯示
  */
 const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-grid': createInfo(props),

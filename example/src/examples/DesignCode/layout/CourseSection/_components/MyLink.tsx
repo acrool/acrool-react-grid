@@ -10,7 +10,7 @@ const MyLink = ({
     no,
 }: IProps) => {
     return <MyLinkRoot col={auto(2)} className="gy-1">
-        <No row={2}>{no}</No>
+        <No className="g-row-2">{no}</No>
         <Title className="text-ellipsis">
                Design and Code with ChatGPT and Midjourney
         </Title>
@@ -36,7 +36,7 @@ const Desc = styled.p`
 
 
 
-const No = styled(GridCol)`
+const No = styled.div`
     width: 36px;
     height: 36px;
     border-radius: 50px;

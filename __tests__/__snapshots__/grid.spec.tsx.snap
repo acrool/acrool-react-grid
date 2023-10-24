@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid renders col-6 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: var(--bear-gutter-x);
+  row-gap: var(--bear-gutter-y);
+  grid-template-columns: repeat(6,1fr);
+}
+
+<div
+  class="c0"
+  data-grid="grid-6"
+>
+  <div>
+    col 1
+  </div>
+  <div>
+    col 2
+  </div>
+  <div>
+    col 3
+  </div>
+  <div>
+    col 4
+  </div>
+  <div>
+    col 5
+  </div>
+  <div>
+    col 6
+  </div>
+</div>
+`;
+
+exports[`Grid renders col-auto 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: var(--bear-gutter-x);
+  row-gap: var(--bear-gutter-y);
+  grid-template-columns: repeat(1,auto);
+}
+
+<div
+  class="c0"
+  data-grid="grid-[repeat(1, auto)]"
+>
+  <div>
+    col 1
+  </div>
+  <div>
+    col 2
+  </div>
+</div>
+`;
+
+exports[`Grid renders grid default 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: var(--bear-gutter-x);
+  row-gap: var(--bear-gutter-y);
+}
+
+<div
+  class="c0"
+  data-grid=""
+>
+  col
+</div>
+`;

@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Md renders col-md-6 1`] = `
+exports[`Col Md renders col-md-6 1`] = `
+.c0 {
+  min-height: 1px;
+  min-width: 0;
+}
+
 @media (min-width:768px) {
   .c0 {
     flex: 0 0 auto;
@@ -16,7 +21,12 @@ exports[`Md renders col-md-6 1`] = `
 </div>
 `;
 
-exports[`Md renders col-md-auto 1`] = `
+exports[`Col Md renders col-md-auto 1`] = `
+.c0 {
+  min-height: 1px;
+  min-width: 0;
+}
+
 @media (min-width:768px) {
   .c0 {
     flex: 0 0 auto;
@@ -32,7 +42,12 @@ exports[`Md renders col-md-auto 1`] = `
 </div>
 `;
 
-exports[`Md renders col-md-true 1`] = `
+exports[`Col Md renders col-md-true 1`] = `
+.c0 {
+  min-height: 1px;
+  min-width: 0;
+}
+
 @media (min-width:768px) {
   .c0 {
     flex: 1 0 0;

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hybrid  renders col + col-lg-2 1`] = `
+exports[`Col Hybrid  renders col + col-lg-2 1`] = `
 .c0 {
+  min-height: 1px;
+  min-width: 0;
   flex: 1 0 0;
 }
 
@@ -20,8 +22,10 @@ exports[`Hybrid  renders col + col-lg-2 1`] = `
 </div>
 `;
 
-exports[`Hybrid  renders col-4 + col-md-6 1`] = `
+exports[`Col Hybrid  renders col-4 + col-md-6 1`] = `
 .c0 {
+  min-height: 1px;
+  min-width: 0;
   flex: 0 0 auto;
   width: 33.333333333333336%;
 }
@@ -41,8 +45,10 @@ exports[`Hybrid  renders col-4 + col-md-6 1`] = `
 </div>
 `;
 
-exports[`Hybrid  renders col-auto + col-md-auto 1`] = `
+exports[`Col Hybrid  renders col-auto + col-md-auto 1`] = `
 .c0 {
+  min-height: 1px;
+  min-width: 0;
   flex: 0 0 auto;
   width: auto;
 }

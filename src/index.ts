@@ -7,7 +7,6 @@ export {default as Row} from './GridSystem/Row';
 export {default as Col} from './GridSystem/Col';
 
 export {default as Grid} from './CSSGrid/Grid';
-export {default as GridCol} from './CSSGrid/GridCol';
 export {default as Flex} from './CSSGrid/Flex';
 
 export {default as GridThemeProvider} from './GridThemeProvider';

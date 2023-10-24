@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex renders flex 1`] = `
+.c0 {
+  display: flex;
+  flex-direction: row;
+}
+
+<div
+  class="c0"
+  data-grid="flex"
+>
+  flex
+</div>
+`;

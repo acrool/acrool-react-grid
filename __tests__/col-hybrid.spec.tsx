@@ -7,7 +7,7 @@ import GridThemeProvider from '../src/GridThemeProvider';
 
 
 
-describe('Hybrid ', () => {
+describe('Col Hybrid ', () => {
     it('renders col + col-lg-2', () => {
         const {container} = render(<Col col lg={2}>col</Col>, {wrapper: GridThemeProvider});
         expect(container.firstChild).toMatchSnapshot();

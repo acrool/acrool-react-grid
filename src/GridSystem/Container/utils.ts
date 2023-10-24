@@ -61,3 +61,51 @@ export const getRWDMaxSize = (props: TStyledProps<IContainerProps>) => {
     }
     return {sm: true, md: true, lg: true, xl: true, xxl: true};
 };
+
+
+
+
+
+/**
+ * 判斷是否為空
+ * @param value
+ */
+const suffixCol = (value: any) => {
+    if (!!Number(value)) {
+        return `-${value}`;
+    }
+    if (value === 'auto') {
+        return '-auto';
+    }
+    return '';
+};
+
+/**
+ * 判斷是否為空
+ * @param value
+ */
+const suffixContainer = (value: any) => {
+    if (!!Number(value)) {
+        return `-${value}`;
+    }
+    return '';
+};
+
+/**
+ * 產生 Debug 資訊
+ * @param props
+ */
+export const createInfo = (props: TStyledProps<IContainerProps>) => {
+    return [
+        'container',
+        props.fluid && `container-fluid${suffixContainer(props.fluid)}`,
+        props.col && `col${suffixCol(props.col)}`,
+        props.sm && `col-sm${suffixCol(props.sm)}`,
+        props.md && `col-md${suffixCol(props.md)}`,
+        props.lg && `col-lg${suffixCol(props.lg)}`,
+        props.xl && `col-xl${suffixCol(props.xl)}`,
+        props.xxl && `col-xxl${suffixCol(props.xxl)}`,
+    ]
+        .filter(Boolean)
+        .join(' ');
+};
