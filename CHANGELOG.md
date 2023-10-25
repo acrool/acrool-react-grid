@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.9-alpha.7](https://github.com/imagine10255/bear-react-grid/compare/v5.0.9-alpha.6...v5.0.9-alpha.7) (2023-10-25)
+
+
+### Features
+
+* add flex component props col sm md lg xl xxl is direction ([1e0a748](https://github.com/imagine10255/bear-react-grid/commit/1e0a74873b9da74d59084d86060502dd56572edb))
+
 ### [5.0.9-alpha.6](https://github.com/imagine10255/bear-react-grid/compare/v5.0.9-alpha.5...v5.0.9-alpha.6) (2023-10-25)
 
 
