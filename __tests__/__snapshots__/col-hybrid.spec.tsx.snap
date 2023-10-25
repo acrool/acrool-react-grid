@@ -53,6 +53,13 @@ exports[`Col Hybrid  renders col-auto + col-md-auto 1`] = `
   width: auto;
 }
 
+@media (min-width:768px) {
+  .c0 {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
 <div
   class="c0"
   data-grid="col-auto col-md-auto"

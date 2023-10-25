@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
-import {cssGetter, createBreakpoint, createInfo} from './utils';
+import {createBreakpoint, createInfo, createCol} from './utils';
 import {TStyledProps, IColProps} from '../../types';
 
 
@@ -21,7 +21,7 @@ const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
   min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
 
   ${(props: TStyledProps<IColProps>) => css`
-     ${props.col && cssGetter.col(props.col, props.theme[themeName]?.gridColumns)};
+     ${props.col && createCol(props.col, props.theme[themeName]?.gridColumns)};
 
      ${createBreakpoint(props)};
  `}

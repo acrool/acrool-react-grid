@@ -99,8 +99,9 @@ export interface IRowProps extends FCChildrenProps {
  *       Grid System - Col
  * ------------------------------ */
 export type TCol = number | true | 'auto' | undefined;
-export interface IColProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TCol>{
-    col?: TCol;
+export type TColOffset = {span: TCol, offset: number};
+export interface IColProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TCol|TColOffset>{
+    col?: TCol|TColOffset;
 }
 
 

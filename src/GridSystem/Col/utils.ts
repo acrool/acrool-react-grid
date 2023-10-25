@@ -1,4 +1,4 @@
-import {TStyledProps, IColProps, TCol, NoXsMediaSize} from '../../types';
+import {TStyledProps, IColProps, TCol, TColOffset} from '../../types';
 import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
 
@@ -6,12 +6,26 @@ import media from '../../media';
 
 
 interface ICSSGetter {
-    col: (column: TCol, gridColumns: number) => string
+    span: (column: TCol, gridColumns: number) => string
+    offset: (column: number, gridColumns: number) => string
 }
 
+const calcCol = (column: TCol, gridColumns: number) => {
+    const columnNumber = (typeof column === 'number' ? column : 0);
+    const colFlexBasis = (100 / gridColumns) * columnNumber;
+    if(colFlexBasis > 0){
+        return `${colFlexBasis}%`;
+    }
+    return 0;
+};
+
 export const cssGetter: ICSSGetter = {
-    col: (column, gridColumns) => {
-        let colFlexBasis = 0;
+    offset: (column, gridColumns) => {
+        return `
+        margin-left: ${calcCol(column, gridColumns)};
+        `;
+    },
+    span: (column, gridColumns) => {
 
         switch (column) {
         case true:
@@ -24,11 +38,9 @@ export const cssGetter: ICSSGetter = {
           width: auto;
         `;
         default:
-            const columnNumber = (typeof column === 'number' ? column : 0);
-            colFlexBasis = (100 / gridColumns) * columnNumber;
             return `
             flex: 0 0 auto;
-            width: ${colFlexBasis > 0 ? `${colFlexBasis}%`: 0};
+            width: ${calcCol(column, gridColumns)};
         `;
         }
     },
@@ -39,18 +51,39 @@ export const cssGetter: ICSSGetter = {
 /**
  * Create Breakpoint
  */
+export const createCol = (args: TCol|TColOffset, gridColumns: number) => {
+
+    if(typeof args !== 'undefined'){
+        if(typeof args === 'object'){
+            return `
+                ${'span' in args && cssGetter.span(args.span, gridColumns)};
+                ${'offset' in args && cssGetter.offset(args.offset, gridColumns)};
+            `;
+        }
+        return `
+            ${cssGetter.span(args, gridColumns)};
+        `;
+    }
+    return undefined;
+};
+
+
+
+/**
+ * Create Breakpoint
+ */
 export const createBreakpoint = (props: TStyledProps<IColProps>) => {
-    let prevSize: 'col'|NoXsMediaSize = 'col';
     return noXsMediaSizes.reduce((curr, sizeName) => {
-        if(typeof props[sizeName] !== 'undefined' && props[sizeName] !== props[prevSize]){
-            prevSize = sizeName;
+        const args = props[sizeName];
+        const gridColumns = props.theme[themeName]?.gridColumns;
+
+        if(typeof args !== 'undefined'){
             return curr.concat(media[sizeName]`
-                ${cssGetter.col(props[sizeName], props.theme[themeName]?.gridColumns)};
+                ${createCol(args, gridColumns)};
             `);
         }
         return curr;
     }, []);
-
 };
 
 
