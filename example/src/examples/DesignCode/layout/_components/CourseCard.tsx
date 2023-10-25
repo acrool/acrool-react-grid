@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import MyLink from '../CourseSection/_components/MyLink';
 import PreviewCard from '../CourseSection/_components/PreviewCard';
 import React from 'react';
-import {Grid} from 'bear-react-grid';
+import {Flex, Grid} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 
@@ -13,14 +13,14 @@ const CourseCard = ({
 }: IProps) => {
 
     const renderList = () => {
-        return <CurriculumWrapper className="d-flex flex-column h-100 overflow-hidden gap-2">
+        return <Flex col="column" className="h-100 overflow-hidden gap-2">
             <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
             <MyLinkList className="filter-mask-b">
                 {Array.from({length: 5}).map((row, index) => {
                     return <MyLink key={`link_${index}`} no={index+1}/>;
                 })}
             </MyLinkList>
-        </CurriculumWrapper>;
+        </Flex>;
     };
 
     return <CourseCardRoot

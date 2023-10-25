@@ -52,7 +52,7 @@ export default function DesignCode() {
             <WaveWrapper3/>
         </Wrapper3>
 
-        {/*<Price/>*/}
+        <Price/>
 
         <Wrapper4>
             <WaveWrapper4/>

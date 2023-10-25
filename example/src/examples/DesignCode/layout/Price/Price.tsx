@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Container, Grid, media} from 'bear-react-grid';
+import {Col, Container, Grid, media} from 'bear-react-grid';
 import CertificateCard from '../Profile/_components/CertificateCard';
 import Info from './_components/Info';
 import Book, {IData} from './_components/Book';
@@ -60,22 +60,26 @@ const Price = ({
         }
     ];
 
-    return <ProfileRoot className={className} fluid="xxl">
-        <div className="d-flex flex-column gap-2">
-            <Info/>
+    return <ProfileRoot className={className}>
+        <Container>
+            <Col col={8} className="mx-auto">
+                <Info/>
+            </Col>
+        </Container>
 
-            <Grid
-                col={1}
-                md={3}
-            >
+        <Container fluid="xxl" className="mb-5">
+            <Grid col={1} md={3}>
                 {books.map((row, index) => {
                     return <Book key={`price_${index}`} data={row}/>;
                 })}
             </Grid>
+        </Container>
 
-            <Pay/>
-
-        </div>
+        <Container>
+            <Col col={4} className="mx-auto">
+                <Pay/>
+            </Col>
+        </Container>
     </ProfileRoot>;
 };
 
@@ -174,6 +178,6 @@ const CertificateCardList = styled(Grid)`
     }
 `;
 
-const ProfileRoot = styled(Container)`
+const ProfileRoot = styled.div`
     margin-bottom: 300px;
 `;

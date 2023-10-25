@@ -3,12 +3,59 @@
 exports[`Flex renders flex 1`] = `
 .c0 {
   display: flex;
+}
+
+<div
+  class="c0"
+  data-grid=""
+>
+  flex
+</div>
+`;
+
+exports[`Flex renders flex column + md row 1`] = `
+.c0 {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    flex-direction: row;
+  }
+}
+
+<div
+  class="c0"
+  data-grid="flex-column flex-md-row"
+>
+  flex
+</div>
+`;
+
+exports[`Flex renders flex column 1`] = `
+.c0 {
+  display: flex;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+  data-grid="flex-column"
+>
+  flex
+</div>
+`;
+
+exports[`Flex renders flex row 1`] = `
+.c0 {
+  display: flex;
   flex-direction: row;
 }
 
 <div
   class="c0"
-  data-grid="flex"
+  data-grid="flex-row"
 >
   flex
 </div>

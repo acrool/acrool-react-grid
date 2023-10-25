@@ -24,19 +24,19 @@ const Book = ({
 }: IProps) => {
     return <BookRoot className={className}>
         <Bg/>
-        <Card gap="20px" className="justify-items-center align-content-start">
+        <Card col="column" className="align-items-center gap-3">
             <SubTitle>{data.subTitle}</SubTitle>
             <Title>{data.title}</Title>
-            <Desc>{data.desc}</Desc>
+            <Desc className="mb-2">{data.desc}</Desc>
 
-            <FeatureList columns={1} gap="10px">
+            <Flex col="column" className="gap-2">
                 {data.features.map((feat, featIndex) => {
-                    return <Feature gap="10px" key={`feat_${data.title}_${featIndex}`}>
+                    return <Feature key={`feat_${data.title}_${featIndex}`} className="gap-2">
                         <img src="https://designcode.io/images/icons/check-dark.svg" alt="check"/>
                         <p dangerouslySetInnerHTML={{__html: feat}}/>
                     </Feature>;
                 })}
-            </FeatureList>
+            </Flex>
 
             <CustomPurchaseButton>
                 <ImageBox>
@@ -71,7 +71,7 @@ const ImageBox = styled.div`
 `;
 
 
-const Feature = styled(Grid)`
+const Feature = styled(Flex)`
     display: flex;
 
     color: #fff;

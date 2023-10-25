@@ -10,5 +10,18 @@ describe('Flex', () => {
         const {container} = render(<Flex>flex</Flex>, {wrapper: GridThemeProvider});
         expect(container.firstChild).toMatchSnapshot();
     });
+    it('renders flex column', () => {
+        const {container} = render(<Flex col="column">flex</Flex>, {wrapper: GridThemeProvider});
+        expect(container.firstChild).toMatchSnapshot();
+    });
+    it('renders flex row', () => {
+        const {container} = render(<Flex col="row">flex</Flex>, {wrapper: GridThemeProvider});
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('renders flex column + md row', () => {
+        const {container} = render(<Flex col="column" md="row">flex</Flex>, {wrapper: GridThemeProvider});
+        expect(container.firstChild).toMatchSnapshot();
+    });
 
 });

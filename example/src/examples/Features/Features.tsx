@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import Button from '@/components/Button';
-import {Col, Container, Grid, Row, auto} from 'bear-react-grid';
+import {Col, Container, Grid, Row, auto, Flex} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 
@@ -65,7 +65,7 @@ const Features = ({
             <h2 className="pb-2 border-bottom">Hanging icons (GridRow)</h2>
             <Grid col={1} lg={3} className="g-4 py-5">
                 {Array.from({length: 3}).map((row, idx) => {
-                    return <div className="d-flex align-items-start" key={`handing_${idx}`}>
+                    return <Flex className="align-items-start" key={`handing_${idx}`}>
                         <div
                             className="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
                             <img src="/vite.svg" style={{width: '1em', height: '1em'}}/>
@@ -78,7 +78,7 @@ const Features = ({
                                 Primary button
                             </a>
                         </div>
-                    </div>;
+                    </Flex>;
                 })}
 
             </Grid>
@@ -96,7 +96,7 @@ const Features = ({
                         <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                             style={{backgroundImage: 'url(https://getbootstrap.com/docs/5.3/examples/features/unsplash-photo-2.jpg)'}}
                         >
-                            <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <Flex col="column" className="h-100 p-5 pb-3 text-white text-shadow-1">
 
                                 <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
 
@@ -115,7 +115,7 @@ const Features = ({
                                     </li>
                                 </ul>
 
-                            </div>
+                            </Flex>
                         </div>
                     </div>;
                 })}
@@ -133,13 +133,13 @@ const Features = ({
             <Grid col={1} sm={2} md={3} lg={4} className="g-4 py-5">
                 {Array.from({length: 8}).map((row, idx) => {
 
-                    return <div className="col d-flex align-items-start" key={`iconGrid_${idx}`}>
+                    return <Flex className="align-items-start" key={`iconGrid_${idx}`}>
                         <img src="/vite.svg" style={{width: '28px'}}/>
                         <div>
                             <h3 className="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
                             <p>Paragraph of text beneath the heading to explain the heading.</p>
                         </div>
-                    </div>;
+                    </Flex>;
                 })}
             </Grid>
         </Container>;
@@ -151,26 +151,26 @@ const Features = ({
             <h2 className="pb-2 border-bottom">Features with title</h2>
 
             <Grid col={1} md={2} className="align-items-md-center g-5 py-5">
-                <div className="d-flex flex-column align-items-start gap-2">
+                <Flex col="column" className="align-items-start gap-2">
                     <h2 className="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
                     <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading.
                         We'll add onto it with another sentence and probably just keep going until we run out of
                         words.</p>
 
                     <Button>Primary button</Button>
-                </div>
+                </Flex>
 
                 <Grid col={1} sm={2} className="g-4">
 
                     {Array.from({length: 4}).map((row, idx) => {
-                        return <div className="d-flex flex-column gap-2" key={`feature_${idx}`}>
+                        return <Flex col="column" className="gap-2" key={`feature_${idx}`}>
                             <FeatureIcon className="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
                                 <img src="/vite.svg" style={{width: '28px'}}/>
                             </FeatureIcon>
                             <h4 className="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
                             <p className="text-body-secondary">Paragraph of text beneath the heading to explain the
                                heading.</p>
-                        </div>;
+                        </Flex>;
                     })}
 
 

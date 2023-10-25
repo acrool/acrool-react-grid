@@ -52,19 +52,15 @@ export const cssGetter: ICSSGetter = {
  * Create Breakpoint
  */
 export const createCol = (args: TCol|TColOffset, gridColumns: number) => {
-
-    if(typeof args !== 'undefined'){
-        if(typeof args === 'object'){
-            return `
-                ${'span' in args && cssGetter.span(args.span, gridColumns)};
-                ${'offset' in args && cssGetter.offset(args.offset, gridColumns)};
-            `;
-        }
+    if(typeof args === 'object'){
         return `
-            ${cssGetter.span(args, gridColumns)};
+            ${'span' in args && cssGetter.span(args.span, gridColumns)};
+            ${'offset' in args && cssGetter.offset(args.offset, gridColumns)};
         `;
     }
-    return undefined;
+    return `
+        ${cssGetter.span(args, gridColumns)};
+    `;
 };
 
 

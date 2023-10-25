@@ -70,12 +70,12 @@ const CourseSection = ({
         </div>
 
         <Container>
-            <div className="d-flex justify-content-center">
+            <Flex className="justify-content-center">
                 <CourseButton isOutline href="/">
                     <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
                     <span>Browse courses</span>
                 </CourseButton>
-            </div>
+            </Flex>
         </Container>
     </CourseSectionRoot>;
 };

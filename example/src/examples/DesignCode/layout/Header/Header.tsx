@@ -67,11 +67,11 @@ const Header = ({
 
 
     return <HeaderRoot className={className}>
-        <div className="d-flex justify-content-between">
+        <Flex className="justify-content-between">
             {/*{renderAnimationWrapper()}*/}
             {renderTextWrapper()}
             {renderMockups()}
-        </div>
+        </Flex>
     </HeaderRoot>;
 };
 

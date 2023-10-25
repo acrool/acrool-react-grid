@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Grid, Container} from 'bear-react-grid';
+import {Grid, Container, Flex} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 }
@@ -9,10 +9,10 @@ const Info = ({
 }: IProps) => {
 
     return <InfoRoot className={className}>
-        <div className="d-flex flex-column justify-items-center text-center gap-3">
+        <Flex col="column" className="justify-items-center text-center gap-3">
             <Title>Ready to start?</Title>
             <Desc>Get access to all our premium courses, tutorials, downloads, certificates and priority support.</Desc>
-        </div>
+        </Flex>
     </InfoRoot>;
 };
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Grid, Container} from 'bear-react-grid';
+import {Grid, Container, Flex} from 'bear-react-grid';
 
 interface IProps extends FCProps {
 }
@@ -9,7 +9,7 @@ const Pay = ({
 }: IProps) => {
 
     return <PayRoot className={className}>
-        <Grid columns={1} className="justify-items-center text-center">
+        <Flex col="column" className="justify-items-center text-center gap-3">
             <Desc>Save 47% on an annual plan. We support PayPal for an individual annual plan only. Any question? <span>contact us</span></Desc>
 
             <Hr/>
@@ -22,7 +22,7 @@ const Pay = ({
             <Desc>
                 This purchase will not auto-renew. You will be taken to PayPal to complete the payment. If you are not logged in, your PayPal purchase will be added to your PayPal email account.
             </Desc>
-        </Grid>
+        </Flex>
     </PayRoot>;
 };
 
@@ -58,6 +58,5 @@ const Desc = styled.p`
 `;
 
 const PayRoot = styled(Container)`
-  max-width: 350px;
     margin-bottom: 40px;
 `;

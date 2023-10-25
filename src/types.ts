@@ -112,11 +112,6 @@ export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
 export type TGridColNumberSizeUnit = 'auto'|`${number}${TGridColSizeUnit}`;
 
 export type TGridCol = string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
-export type TGridCols = TGridCol|RecordOption<TMediaSize, TGridCol>
-
-export type TGridGapUnit = 'px' | 'rem';
-export type TGridGap = 0|`${number}${TGridGapUnit}`
-export type TGridGaps = TGridGap|RecordOption<TMediaSize, TGridGap>
 
 export interface IGridProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TGridCol>{
     col?: TGridCol
@@ -124,29 +119,10 @@ export interface IGridProps extends FCChildrenProps, RecordOption<NoXsMediaSize,
 
 
 /** -------------------------------
- *       CSS Grid - Grid Col
- * ------------------------------ */
-export type TSpan = TGridCol|RecordOption<TMediaSize, TGridCol>;
-
-export interface IGridColProps extends FCChildrenProps{
-    col?: TSpan
-    row?: TSpan
-}
-
-
-
-/** -------------------------------
  *       CSS Grid - Flex
  * ------------------------------ */
 export type TFlexDirection = 'column'|'row';
-
-export type TDirection = TFlexDirection|RecordOption<TMediaSize, TFlexDirection>;
-
-export interface IFlexProps extends FCChildrenProps{
-    direction?: TDirection
-
-    gap?: TGridGaps
-    columnGap?: TGridGap
-    rowGap?: TGridGap
+export interface IFlexProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TFlexDirection>{
+    col?: TFlexDirection
 }
 
