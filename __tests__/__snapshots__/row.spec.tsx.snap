@@ -4,7 +4,12 @@ exports[`Row renders row 1`] = `
 .c0 {
   --bear-gutter-x: 1.5rem;
   --bear-gutter-y: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-top: calc(var(--bear-gutter-y) * -1);
   margin-right: calc(var(--bear-gutter-x) * -0.5);
@@ -13,6 +18,8 @@ exports[`Row renders row 1`] = `
 }
 
 .c0 > * {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;

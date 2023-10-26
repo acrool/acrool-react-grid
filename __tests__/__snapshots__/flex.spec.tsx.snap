@@ -2,6 +2,9 @@
 
 exports[`Flex renders flex 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -15,12 +18,19 @@ exports[`Flex renders flex 1`] = `
 
 exports[`Flex renders flex column + md row 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 @media (min-width:768px) {
   .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
   }
 }
@@ -35,7 +45,12 @@ exports[`Flex renders flex column + md row 1`] = `
 
 exports[`Flex renders flex column 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -49,7 +64,12 @@ exports[`Flex renders flex column 1`] = `
 
 exports[`Flex renders flex row 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 

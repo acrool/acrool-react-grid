@@ -7,6 +7,7 @@ exports[`Grid md  renders grid-md-6 1`] = `
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(12,1fr);
+  -webkit-column-gap: var(--bear-gutter-x);
   column-gap: var(--bear-gutter-x);
   row-gap: var(--bear-gutter-y);
 }
@@ -49,6 +50,7 @@ exports[`Grid md  renders grid-md-auto 1`] = `
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(12,1fr);
+  -webkit-column-gap: var(--bear-gutter-x);
   column-gap: var(--bear-gutter-x);
   row-gap: var(--bear-gutter-y);
 }

@@ -7,6 +7,7 @@ exports[`Grid Col renders col-auto 1`] = `
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(12,1fr);
+  -webkit-column-gap: var(--bear-gutter-x);
   column-gap: var(--bear-gutter-x);
   row-gap: var(--bear-gutter-y);
   grid-template-columns: repeat(2,1fr);
@@ -32,6 +33,7 @@ exports[`Grid Col renders grid default 1`] = `
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(12,1fr);
+  -webkit-column-gap: var(--bear-gutter-x);
   column-gap: var(--bear-gutter-x);
   row-gap: var(--bear-gutter-y);
   grid-template-columns: repeat(2,1fr);
