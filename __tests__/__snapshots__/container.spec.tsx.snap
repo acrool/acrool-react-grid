@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container renders container 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--bear-gutter-x);
+  padding-left: var(--bear-gutter-x);
+}
+
+@media (min-width:576px) {
+  .c0 {
+    max-width: 540px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: 720px;
+  }
+}
+
+@media (min-width:992px) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:1200px) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:1540px) {
+  .c0 {
+    max-width: 1540px;
+  }
+}
+
+<div
+  class="c0"
+  data-grid="container"
+>
+  container
+</div>
+`;
+
+exports[`Container renders container fluid 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--bear-gutter-x);
+  padding-left: var(--bear-gutter-x);
+}
+
+<div
+  class="c0"
+  data-grid="container container-fluid"
+>
+  container fluid
+</div>
+`;
+
+exports[`Container renders container fluid="lg" 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--bear-gutter-x);
+  padding-left: var(--bear-gutter-x);
+}
+
+@media (min-width:992px) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:1200px) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:1540px) {
+  .c0 {
+    max-width: 1540px;
+  }
+}
+
+<div
+  class="c0"
+  data-grid="container container-lg"
+>
+  container-lg
+</div>
+`;
+
+exports[`Container renders container fluid="md" 1`] = `
+.c0 {
+  --bear-gutter-x: 1.5rem;
+  --bear-gutter-y: 0;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--bear-gutter-x);
+  padding-left: var(--bear-gutter-x);
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: 720px;
+  }
+}
+
+@media (min-width:992px) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:1200px) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:1540px) {
+  .c0 {
+    max-width: 1540px;
+  }
+}
+
+<div
+  class="c0"
+  data-grid="container container-md"
+>
+  container-md
+</div>
+`;

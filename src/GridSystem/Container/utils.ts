@@ -13,15 +13,12 @@ export const createBreakpoint = (props: TStyledProps<IContainerProps>) => {
     const maxSizeConfig = getRWDMaxSize(props);
 
     return noXsMediaSizes.reduce((curr, sizeName) => {
-        let maxWidth = '';
         if(maxSizeConfig[sizeName]){
-            maxWidth = `
+            return curr.concat(media[sizeName]`
                 max-width: ${props.theme[themeName]?.containerMaxWidths[sizeName]}px;
-            `;
+            `);
         }
-        return curr.concat(media[sizeName]`
-            ${maxWidth}
-        `);
+        return curr;
     }, []);
 };
 
@@ -73,8 +70,11 @@ const suffixCol = (value: any) => {
  * @param value
  */
 const suffixContainer = (value: any) => {
-    if (!!Number(value)) {
+    if (typeof value !== 'boolean') {
         return `-${value}`;
+    }
+    if(value){
+        return '-fluid';
     }
     return '';
 };
@@ -86,7 +86,7 @@ const suffixContainer = (value: any) => {
 export const createInfo = (props: TStyledProps<IContainerProps>) => {
     return [
         'container',
-        props.fluid && `container-fluid${suffixContainer(props.fluid)}`,
+        props.fluid && `container${suffixContainer(props.fluid)}`,
     ]
         .filter(Boolean)
         .join(' ');
