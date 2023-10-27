@@ -9,7 +9,10 @@ import {createBreakpoint, cssGetter, createInfo} from './utils';
 
 /**
  * Grid Component
- * 由外部設定柵欄顯示
+ *
+ * Displayed by externally set fence
+ *
+ * By [Layout / Grid](https://bear-react-grid.pages.dev/docs/layout/grid)
  */
 const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-grid': createInfo(props),

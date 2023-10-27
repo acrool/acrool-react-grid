@@ -6,6 +6,10 @@ import {createInfo, createBreakpoint, createCol} from './utils';
 
 /**
  * Flex Component
+ *
+ * Used to explicitly display flexbox html tags
+ *
+ * By [Layout Flex](https://bear-react-grid.pages.dev/docs/layout/flex)
  */
 const Flex = styled.div.attrs((props: TStyledProps<IFlexProps>) => ({
     'data-grid': createInfo(props),

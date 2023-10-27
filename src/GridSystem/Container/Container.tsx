@@ -8,6 +8,10 @@ import {createBreakpoint, createInfo} from './utils';
 
 /**
  * Container Component
+ *
+ * Containers are a fundamental building block of Bootstrap that contain, pad, and align your content within a given device or viewport.
+ *
+ * By [Layout Container](https://bear-react-grid.pages.dev/docs/layout/container)
  */
 const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
     'data-grid': createInfo(props),

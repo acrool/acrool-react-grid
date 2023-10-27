@@ -12,12 +12,16 @@ const ThemeProviderFixed = ThemeProvider as unknown as React.FC<PropsWithChildre
 
 /**
  * Grid Theme Provider
- * use :
+ *
+ * ```tsx
  *     <GridThemeProvider gridTheme={{
  *         gutter: 5,
  *     }}>
  *          <Container>, <Row>, <Col> ...then eat this setting
  *     </GridThemeProvider>
+ *  ```
+ *
+ * By [Config](https://bear-react-grid.pages.dev/docs/config)
  */
 const GridThemeProvider = (props: IGridThemeProviderProps) => {
     const {gridTheme, children} = props;
