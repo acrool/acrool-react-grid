@@ -33,7 +33,9 @@
 .fs-5 {font-size: 1.25rem !important;}
 .fs-6 {font-size: 1rem !important;}
 
-
+/* Visible */
+.visible {visibility: visible !important;}
+.invisible {visibility: hidden !important;}
 
 
 
@@ -61,6 +63,7 @@
 
 /* Display */
 .d-none, .d-inline, .d-inline-block, .d-block, .d-flex, .d-inline-flex, .d-grid, .d-inline-grid {box-sizing: border-box;}
+
 
 /* Flex */
 .flex-row, .flex-column, .flex-row-reverse, .flex-column-reverse, .flex-wrap, .flex-nowrap, .flex-wrap-reverse, .flex-fill, .flex-grow-0, .flex-grow-1, .flex-shrink-0, .flex-shrink-1 {box-sizing: border-box;}

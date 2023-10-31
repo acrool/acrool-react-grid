@@ -197,12 +197,7 @@ export const renderOverflowStyle = (sizeName?: NoXsMediaSize) => {
     });
 };
 
-export const renderVisibleStyle = (sizeName?: NoXsMediaSize) => {
-    return `
-     .visible${suffix({sizeName})} {visibility: visible !important;}
-     .invisible${suffix({sizeName})} {visibility: hidden !important;}
-   `;
-};
+
 
 export const renderDisplayStyle = (sizeName?: NoXsMediaSize) => {
     const data: Array<string> = ['none','inline','inline-block', 'block', 'flex', 'inline-flex', 'grid', 'inline-grid'];

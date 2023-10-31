@@ -16,7 +16,7 @@ import {
     renderFlexStyle,
     renderFlexAlignStyle,
     renderPositionStyle,
-    renderAutoFlowStyle, renderGColStyle, renderGRowStyle, renderVisibleStyle
+    renderAutoFlowStyle, renderGColStyle, renderGRowStyle
 } from './utils';
 import {noXsMediaSizes} from '../config';
 import media from '../media';
@@ -46,7 +46,6 @@ const generateRWDStyled = (setting: IGridSetting) => {
             ${renderGutterStyle(sizeName)}
             ${renderOrderStyle(sizeName)}
             ${renderOverflowStyle(sizeName)}
-            ${renderVisibleStyle(sizeName)}
 
         `;
         });
@@ -102,7 +101,6 @@ export const Utilities = createGlobalStyle`
         ${renderGutterStyle()}
         ${renderOrderStyle()}
         ${renderOverflowStyle()}
-        ${renderVisibleStyle()}
 
         ${generateRWDStyled(props.theme.bearReactGrid)}
     `}
