@@ -23,6 +23,7 @@
 
 /* Filter */
 .filter-gray {filter: grayscale(1) !important;}
+.filter-while {filter: brightness(0) invert(1) !important;}
 .filter-mask-b{mask-image: linear-gradient(to bottom, white, white, transparent) !important;}
 
 /* FontSize */
