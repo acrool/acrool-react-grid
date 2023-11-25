@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.12](https://github.com/imagine10255/bear-react-grid/compare/v5.0.11...v5.0.12) (2023-11-25)
+
+
+### Features
+
+* modify text-area-overflow default is 1 line and add .text-area-overflow-2 ([a239ac8](https://github.com/imagine10255/bear-react-grid/commit/a239ac8cc0a78fb893b0880a1332659f0cb1fa95))
+
 ### [5.0.11](https://github.com/imagine10255/bear-react-grid/compare/v5.0.11-alpha.3...v5.0.11) (2023-11-21)
 
 ### [5.0.11-alpha.3](https://github.com/imagine10255/bear-react-grid/compare/v5.0.11-alpha.2...v5.0.11-alpha.3) (2023-11-12)
