@@ -15,11 +15,23 @@
 .rotate-270 {transform: rotate(270deg) !important;}
 
 /* Text Overflow */
-.text-area-overflow{display: -webkit-box !important;overflow: hidden !important;text-overflow: ellipsis !important;-webkit-line-clamp: var(--overflow-line, 2);-webkit-box-orient: vertical !important;}
+.text-overflow{
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+.text-area-overflow{
+    display: -webkit-box !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    -webkit-line-clamp: var(--overflow-line, 1);
+    -webkit-box-orient: vertical !important;
+}
+.text-area-overflow-2{--overflow-line: 2;}
 .text-area-overflow-3{--overflow-line: 3;}
 .text-area-overflow-4{--overflow-line: 4;}
 .text-area-overflow-5{--overflow-line: 5;}
-.text-overflow{white-space: nowrap !important;overflow: hidden !important;text-overflow: ellipsis !important;}
+
 
 /* Filter */
 .filter-gray {filter: grayscale(1) !important;}
