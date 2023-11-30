@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.13-alpha.0](https://github.com/imagine10255/bear-react-grid/compare/v5.0.12...v5.0.13-alpha.0) (2023-11-30)
+
+
+### Features
+
+* modify bs 5.2 container gutter is *.5 ([ba75d7e](https://github.com/imagine10255/bear-react-grid/commit/ba75d7e3e74bf843842dd65303b20bc13a70165a))
+
 ### [5.0.12](https://github.com/imagine10255/bear-react-grid/compare/v5.0.11...v5.0.12) (2023-11-25)
 
 
