@@ -22,8 +22,8 @@ const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--bear-gutter-x);
-  padding-left: var(--bear-gutter-x);
+  padding-right: calc(var(--bear-gutter-x) * .5);
+  padding-left: calc(var(--bear-gutter-x) * .5);
 
   ${(props: TStyledProps<IContainerProps>) => css`
       ${props.fluid !== true && createBreakpoint(props)}
