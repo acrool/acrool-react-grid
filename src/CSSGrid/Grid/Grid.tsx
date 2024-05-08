@@ -17,7 +17,7 @@ import {createBreakpoint, cssGetter, createInfo} from './utils';
 const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-grid': createInfo(props),
 }))`
-    --bear-gutter-x: ${props => props.theme[themeName]?.gutter};
+    --bear-gutter-x: ${props => props.theme[themeName]?.spacer};
     --bear-gutter-y: 0;
 
     display: grid;

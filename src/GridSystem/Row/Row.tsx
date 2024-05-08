@@ -18,7 +18,7 @@ import {themeName} from '../../config';
 const Row = styled.div.attrs((props: TStyledProps<IRowProps>) => ({
     'data-grid': 'row',
 }))`
-    --bear-gutter-x: ${props => props.theme[themeName]?.gutter};
+    --bear-gutter-x: ${props => props.theme[themeName]?.spacer};
     --bear-gutter-y: 0;
 
     display: flex;

@@ -16,7 +16,7 @@ import {createBreakpoint, createInfo} from './utils';
 const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
     'data-grid': createInfo(props),
 }))`
-  --bear-gutter-x: ${props => props.theme[themeName]?.gutter};
+  --bear-gutter-x: ${props => props.theme[themeName]?.spacer};
   --bear-gutter-y: 0;
 
   width: 100%;
