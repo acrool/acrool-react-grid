@@ -1,8 +1,7 @@
-import {GridThemeProvider, IGridSetting} from 'bear-react-grid';
+import {IGridSetting} from 'bear-react-grid';
 
 export const gridTheme: IGridSetting = {
     spacer: '1rem',
-    gutter: '1.5rem',
     gridColumns: 12,
     gridBreakpoints: {
         xs: 0,

@@ -65,7 +65,6 @@ export interface IGridThemeProviderProps {
 
 export interface IGridSetting {
     spacer: TGutterWidth
-    gutter: TGutterWidth
     gridColumns: number
     gridBreakpoints: IBreakpoints
     containerMaxWidths: TContainerMaxWidths

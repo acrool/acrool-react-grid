@@ -67,18 +67,11 @@ export const Utilities = createGlobalStyle`
             --bear-border-radius-2xl: var(--bear-border-radius-xxl);
             --bear-border-radius-pill: 50rem;
 
-            --bear-spacer-1: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .25)};
-            --bear-spacer-2: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .5)};
-            --bear-spacer-3: ${props.theme.bearReactGrid.spacer};
-            --bear-spacer-4: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.5)};
-            --bear-spacer-5: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 3)};
-
-            --bear-gutter-1: ${calcUnitSize(props.theme.bearReactGrid.gutter, num => num * .25)};
-            --bear-gutter-2: ${calcUnitSize(props.theme.bearReactGrid.gutter, num => num * .5)};
-            --bear-gutter-3: ${props.theme.bearReactGrid.gutter};
-            --bear-gutter-4: ${calcUnitSize(props.theme.bearReactGrid.gutter, num => num * 1.5)};
-            --bear-gutter-5: ${calcUnitSize(props.theme.bearReactGrid.gutter, num => num * 3)};
-
+            --bear-gutter-1: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .25)};
+            --bear-gutter-2: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .5)};
+            --bear-gutter-3: ${props.theme.bearReactGrid.spacer};
+            --bear-gutter-4: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.5)};
+            --bear-gutter-5: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 3)};
 
         }
 
