@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {auto, Grid, GridCol} from 'bear-react-grid';
+import {auto, Grid, GridCol} from '@acrool/react-grid';
 
 interface IProps extends FCProps {
     no?: number

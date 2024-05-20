@@ -1,5 +1,5 @@
 {
-  "name": "bear-react-grid",
+  "name": "@acrool/react-grid",
   "version": "5.0.14-alpha.1",
   "description": "Most modern rwd grid system by react + styled-component",
   "keywords": [
@@ -14,14 +14,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/imagine10255/bear-react-grid.git"
+    "url": "https://github.com/@acrool/acrool-react-grid.git"
   },
-  "module": "./dist/bear-react-grid.es.js",
+  "module": "./dist/acrool-react-grid.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "browser": "./dist/bear-react-grid.es.js",
-      "import": "./dist/bear-react-grid.es.js"
+      "browser": "./dist/acrool-react-grid.es.js",
+      "import": "./dist/acrool-react-grid.es.js"
     },
     "./dist/index.css": "./dist/style.css"
   },

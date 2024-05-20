@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Flex, Grid, media } from 'bear-react-grid';
+import {Flex, Grid, media } from '@acrool/react-grid';
 import clsx from 'clsx';
 
 interface IProps extends FCProps {

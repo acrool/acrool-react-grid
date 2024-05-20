@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import MyLink from '../CourseSection/_components/MyLink';
 import PreviewCard from '../CourseSection/_components/PreviewCard';
 import React from 'react';
-import {Flex, Grid} from 'bear-react-grid';
+import {Flex, Grid} from '@acrool/react-grid';
 
 interface IProps extends FCProps {
 

@@ -1,4 +1,4 @@
-import {Grid, media} from 'bear-react-grid';
+import {Grid, media} from '@acrool/react-grid';
 import styled from 'styled-components';
 
 interface IProps extends FCProps {

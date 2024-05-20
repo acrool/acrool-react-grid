@@ -14,7 +14,7 @@
     "dependencies": {
         "@types/styled-components": "5.1.26",
         "@swc/plugin-styled-components": "1.5.115",
-        "bear-react-grid": "link:..",
+        "@acrool/react-grid": "link:..",
         "dayjs": "1.11.7",
         "react": "link:../node_modules/react",
         "react-dom": "link:../node_modules/react-dom",

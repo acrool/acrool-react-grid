@@ -18,23 +18,23 @@ import {themeName} from '../../config';
 const Row = styled.div.attrs((props: TStyledProps<IRowProps>) => ({
     'data-grid': 'row',
 }))`
-    --bear-gutter-x: ${props => props.theme[themeName]?.spacer};
-    --bear-gutter-y: 0;
+    --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
+    --acrool-gutter-y: 0;
 
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(var(--bear-gutter-y) * -1);
-    margin-right: calc(var(--bear-gutter-x) * -0.5);
-    margin-left: calc(var(--bear-gutter-x) * -0.5);
+    margin-top: calc(var(--acrool-gutter-y) * -1);
+    margin-right: calc(var(--acrool-gutter-x) * -0.5);
+    margin-left: calc(var(--acrool-gutter-x) * -0.5);
     padding-inline-start: 0; /* 避免 ul 預設樣式位移 */
 
     > * {
         flex-shrink: 0;
         width: 100%;
         max-width: 100%;
-        padding-right: calc(var(--bear-gutter-x) * 0.5);
-        padding-left: calc(var(--bear-gutter-x) * 0.5);
-        margin-top: var(--bear-gutter-y);
+        padding-right: calc(var(--acrool-gutter-x) * 0.5);
+        padding-left: calc(var(--acrool-gutter-x) * 0.5);
+        margin-top: var(--acrool-gutter-y);
     }
 
 `;

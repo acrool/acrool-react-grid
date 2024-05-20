@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import Button from '@/components/Button';
-import {Col, Container, Grid, Row, auto} from 'bear-react-grid';
+import {Col, Container, Grid, Row, auto} from '@acrool/react-grid';
 
 interface IProps extends FCProps {
 

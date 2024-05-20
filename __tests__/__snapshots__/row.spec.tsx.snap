@@ -2,8 +2,8 @@
 
 exports[`Row renders row 1`] = `
 .c0 {
-  --bear-gutter-x: 1.5rem;
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: 1.5rem;
+  --acrool-gutter-y: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,9 +11,9 @@ exports[`Row renders row 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-top: calc(var(--bear-gutter-y) * -1);
-  margin-right: calc(var(--bear-gutter-x) * -0.5);
-  margin-left: calc(var(--bear-gutter-x) * -0.5);
+  margin-top: calc(var(--acrool-gutter-y) * -1);
+  margin-right: calc(var(--acrool-gutter-x) * -0.5);
+  margin-left: calc(var(--acrool-gutter-x) * -0.5);
   padding-inline-start: 0;
 }
 
@@ -23,9 +23,9 @@ exports[`Row renders row 1`] = `
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  padding-right: calc(var(--bear-gutter-x) * 0.5);
-  padding-left: calc(var(--bear-gutter-x) * 0.5);
-  margin-top: var(--bear-gutter-y);
+  padding-right: calc(var(--acrool-gutter-x) * 0.5);
+  padding-left: calc(var(--acrool-gutter-x) * 0.5);
+  margin-top: var(--acrool-gutter-y);
 }
 
 <div

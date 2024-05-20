@@ -56,22 +56,22 @@ export const Utilities = createGlobalStyle`
 
     ${(props: TStyledProps<TThemeProps>) => css`
         :root{
-            --bear-border-width: 1px;
-            --bear-border-style: solid;
-            --bear-border-color: #495057;
-            --bear-border-radius: 0.375rem;
-            --bear-border-radius-sm: 0.25rem;
-            --bear-border-radius-lg: 0.5rem;
-            --bear-border-radius-xl: 1rem;
-            --bear-border-radius-xxl: 2rem;
-            --bear-border-radius-2xl: var(--bear-border-radius-xxl);
-            --bear-border-radius-pill: 50rem;
+            --acrool-border-width: 1px;
+            --acrool-border-style: solid;
+            --acrool-border-color: #495057;
+            --acrool-border-radius: 0.375rem;
+            --acrool-border-radius-sm: 0.25rem;
+            --acrool-border-radius-lg: 0.5rem;
+            --acrool-border-radius-xl: 1rem;
+            --acrool-border-radius-xxl: 2rem;
+            --acrool-border-radius-2xl: var(--acrool-border-radius-xxl);
+            --acrool-border-radius-pill: 50rem;
 
-            --bear-gutter-1: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .25)};
-            --bear-gutter-2: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .5)};
-            --bear-gutter-3: ${props.theme.bearReactGrid.spacer};
-            --bear-gutter-4: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.5)};
-            --bear-gutter-5: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 3)};
+            --acrool-gutter-1: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .25)};
+            --acrool-gutter-2: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .5)};
+            --acrool-gutter-3: ${props.theme.bearReactGrid.spacer};
+            --acrool-gutter-4: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.5)};
+            --acrool-gutter-5: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 3)};
 
         }
 

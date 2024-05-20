@@ -1,4 +1,4 @@
-import {IGridSetting} from 'bear-react-grid';
+import {IGridSetting} from '@acrool/react-grid';
 
 export const gridTheme: IGridSetting = {
     spacer: '1rem',

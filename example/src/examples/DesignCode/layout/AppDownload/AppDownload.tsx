@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Flex} from 'bear-react-grid';
+import {Flex} from '@acrool/react-grid';
 
 const AppDownload = () => {
     return <AppDownloadRoot className="flex-column align-items-center gap-2">

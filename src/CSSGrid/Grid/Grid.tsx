@@ -17,14 +17,14 @@ import {createBreakpoint, cssGetter, createInfo} from './utils';
 const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-grid': createInfo(props),
 }))`
-    --bear-gutter-x: ${props => props.theme[themeName]?.spacer};
-    --bear-gutter-y: 0;
+    --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
+    --acrool-gutter-y: 0;
 
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(${props => props.theme[themeName]?.gridColumns}, 1fr);
-    column-gap: var(--bear-gutter-x);
-    row-gap: var(--bear-gutter-y);
+    column-gap: var(--acrool-gutter-x);
+    row-gap: var(--acrool-gutter-y);
 
 
     ${(props: TStyledProps<IGridProps>) => css`

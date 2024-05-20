@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Col, Container, Grid, media, Row} from 'bear-react-grid';
+import {Col, Container, Grid, media, Row} from '@acrool/react-grid';
 import CertificateCard from './_components/CertificateCard';
 import Info from './_components/Info';
 

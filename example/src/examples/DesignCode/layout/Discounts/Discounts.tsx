@@ -1,4 +1,4 @@
-import {Container, Grid, Row, Col, Flex} from 'bear-react-grid';
+import {Container, Grid, Row, Col, Flex} from '@acrool/react-grid';
 import styled from 'styled-components';
 import FeatureCard from './_components/FeatureCard';
 

@@ -1,4 +1,4 @@
-import {Container, Flex, Grid, Col, auto} from 'bear-react-grid';
+import {Container, Flex, Grid, Col, auto} from '@acrool/react-grid';
 import styled from 'styled-components';
 import CourseButton from '../_components/CourseButton';
 import React from 'react';

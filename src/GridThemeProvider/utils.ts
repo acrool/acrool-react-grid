@@ -64,18 +64,18 @@ const calcSpacer = (spacer: string ,idx: number|'auto') => {
 export const renderRoundStyle = (sizeName?: NoXsMediaSize) => {
     return `
       .rounded${suffix({sizeName})} {border-radius: .25rem !important;}
-      .rounded${suffix({code: 'top', sizeName})} {border-top-left-radius: var(--bear-border-radius) !important;border-top-right-radius: var(--bear-border-radius) !important;}
-      .rounded${suffix({code: 'end', sizeName})} {border-top-right-radius: var(--bear-border-radius) !important;border-bottom-right-radius: var(--bear-border-radius) !important;}
-      .rounded${suffix({code: 'bottom', sizeName})} {border-bottom-right-radius: var(--bear-border-radius) !important;border-bottom-left-radius: var(--bear-border-radius) !important;}
-      .rounded${suffix({code: 'start', sizeName})} {border-bottom-left-radius: var(--bear-border-radius) !important;border-top-left-radius: var(--bear-border-radius) !important;}
+      .rounded${suffix({code: 'top', sizeName})} {border-top-left-radius: var(--acrool-border-radius) !important;border-top-right-radius: var(--acrool-border-radius) !important;}
+      .rounded${suffix({code: 'end', sizeName})} {border-top-right-radius: var(--acrool-border-radius) !important;border-bottom-right-radius: var(--acrool-border-radius) !important;}
+      .rounded${suffix({code: 'bottom', sizeName})} {border-bottom-right-radius: var(--acrool-border-radius) !important;border-bottom-left-radius: var(--acrool-border-radius) !important;}
+      .rounded${suffix({code: 'start', sizeName})} {border-bottom-left-radius: var(--acrool-border-radius) !important;border-top-left-radius: var(--acrool-border-radius) !important;}
       .rounded${suffix({code: 'circle', sizeName})} {border-radius: 50% !important;}
       .rounded${suffix({code: 0, sizeName})} {border-radius: 0!important;}
-      .rounded${suffix({code: 1, sizeName})} {border-radius: var(--bear-border-radius-sm)!important;}
-      .rounded${suffix({code: 2, sizeName})} {border-radius: var(--bear-border-radius)!important;}
-      .rounded${suffix({code: 3, sizeName})} {border-radius: var(--bear-border-radius-lg)!important;}
-      .rounded${suffix({code: 4, sizeName})} {border-radius: var(--bear-border-radius-xl)!important;}
-      .rounded${suffix({code: 5, sizeName})} {border-radius: var(--bear-border-radius-xxl)!important;}
-      .rounded${suffix({code: 6, sizeName})} {border-radius: var(--bear-border-radius-2xl)!important;}
+      .rounded${suffix({code: 1, sizeName})} {border-radius: var(--acrool-border-radius-sm)!important;}
+      .rounded${suffix({code: 2, sizeName})} {border-radius: var(--acrool-border-radius)!important;}
+      .rounded${suffix({code: 3, sizeName})} {border-radius: var(--acrool-border-radius-lg)!important;}
+      .rounded${suffix({code: 4, sizeName})} {border-radius: var(--acrool-border-radius-xl)!important;}
+      .rounded${suffix({code: 5, sizeName})} {border-radius: var(--acrool-border-radius-xxl)!important;}
+      .rounded${suffix({code: 6, sizeName})} {border-radius: var(--acrool-border-radius-2xl)!important;}
     `;
 };
 
@@ -143,8 +143,8 @@ export const renderGapStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) 
 export const renderGutterStyle = (sizeName?: NoXsMediaSize) => {
     return Array.from({length: 6}).map((row,idx) => {
         return `
-        .g${suffix({code: idx, sizeName})}, .gy${suffix({code: idx, sizeName})} {--bear-gutter-y: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`};}
-        .g${suffix({code: idx, sizeName})}, .gx${suffix({code: idx, sizeName})} {--bear-gutter-x: ${idx === 0 ? 0: `var(--bear-gutter-${idx})`};}
+        .g${suffix({code: idx, sizeName})}, .gy${suffix({code: idx, sizeName})} {--acrool-gutter-y: ${idx === 0 ? 0: `var(--acrool-gutter-${idx})`};}
+        .g${suffix({code: idx, sizeName})}, .gx${suffix({code: idx, sizeName})} {--acrool-gutter-x: ${idx === 0 ? 0: `var(--acrool-gutter-${idx})`};}
         `;
     });
 };
