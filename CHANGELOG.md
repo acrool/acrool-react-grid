@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.14-alpha.2](https://github.com/@acrool/acrool-react-grid/compare/v5.0.14-alpha.1...v5.0.14-alpha.2) (2024-05-20)
+
 ### [5.0.14-alpha.1](https://github.com/imagine10255/bear-react-grid/compare/v5.0.14-alpha.0...v5.0.14-alpha.1) (2024-05-08)
 
 ### [5.0.14-alpha.0](https://github.com/imagine10255/bear-react-grid/compare/v5.0.13...v5.0.14-alpha.0) (2024-05-08)
