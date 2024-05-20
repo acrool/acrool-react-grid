@@ -16,14 +16,14 @@ import {createBreakpoint, createInfo} from './utils';
 const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
     'data-grid': createInfo(props),
 }))`
-  --bear-gutter-x: ${props => props.theme[themeName]?.gutter};
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
+  --acrool-gutter-y: 0;
 
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: calc(var(--bear-gutter-x) * .5);
-  padding-left: calc(var(--bear-gutter-x) * .5);
+  padding-right: calc(var(--acrool-gutter-x) * .5);
+  padding-left: calc(var(--acrool-gutter-x) * .5);
 
   ${(props: TStyledProps<IContainerProps>) => css`
       ${props.fluid !== true && createBreakpoint(props)}

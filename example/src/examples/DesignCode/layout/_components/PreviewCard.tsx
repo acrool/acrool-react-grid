@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Grid} from 'bear-react-grid';
+import {Grid} from '@acrool/react-grid';
 
 interface IProps extends FCProps {
    className?: string

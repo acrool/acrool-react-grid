@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import PurchaseButton from '../../_components/PurchaseButton';
-import {Flex} from 'bear-react-grid';
+import {Flex} from '@acrool/react-grid';
 
 interface IProps {
    className?: string

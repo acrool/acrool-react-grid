@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import App from './examples/DesignCode';
-import App from './examples/Heroes';
+// import App from './examples/Heroes';
+// import App from './examples/FlexOverflow';
+import App from './examples/AutoOverflowAndFlexHeight';
 // import App from './examples/Features';
 
 
 import './index.css';
-import 'bear-react-grid/dist/index.css';
+import '@acrool/react-grid/dist/index.css';
 import gridTheme from '@/config/gridTheme';
-import {GridThemeProvider} from 'bear-react-grid';
+import {GridThemeProvider} from '@acrool/react-grid';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>

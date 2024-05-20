@@ -2,14 +2,14 @@
 
 exports[`Grid renders col-6 1`] = `
 .c0 {
-  --bear-gutter-x: 1.5rem;
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: 1.5rem;
+  --acrool-gutter-y: 0;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--bear-gutter-x);
-  column-gap: var(--bear-gutter-x);
-  row-gap: var(--bear-gutter-y);
+  -webkit-column-gap: var(--acrool-gutter-x);
+  column-gap: var(--acrool-gutter-x);
+  row-gap: var(--acrool-gutter-y);
   grid-template-columns: repeat(6,1fr);
 }
 
@@ -40,14 +40,14 @@ exports[`Grid renders col-6 1`] = `
 
 exports[`Grid renders col-auto 1`] = `
 .c0 {
-  --bear-gutter-x: 1.5rem;
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: 1.5rem;
+  --acrool-gutter-y: 0;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--bear-gutter-x);
-  column-gap: var(--bear-gutter-x);
-  row-gap: var(--bear-gutter-y);
+  -webkit-column-gap: var(--acrool-gutter-x);
+  column-gap: var(--acrool-gutter-x);
+  row-gap: var(--acrool-gutter-y);
   grid-template-columns: repeat(1,auto);
 }
 
@@ -66,14 +66,14 @@ exports[`Grid renders col-auto 1`] = `
 
 exports[`Grid renders grid default 1`] = `
 .c0 {
-  --bear-gutter-x: 1.5rem;
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: 1.5rem;
+  --acrool-gutter-y: 0;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--bear-gutter-x);
-  column-gap: var(--bear-gutter-x);
-  row-gap: var(--bear-gutter-y);
+  -webkit-column-gap: var(--acrool-gutter-x);
+  column-gap: var(--acrool-gutter-x);
+  row-gap: var(--acrool-gutter-y);
 }
 
 <div

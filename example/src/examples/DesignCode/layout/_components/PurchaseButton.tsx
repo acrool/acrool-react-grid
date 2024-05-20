@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Grid, FCChildrenProps} from 'bear-react-grid';
+import {Grid, FCChildrenProps} from '@acrool/react-grid';
 import clsx from 'clsx';
 
 interface IProps extends FCChildrenProps{

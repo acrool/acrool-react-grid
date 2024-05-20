@@ -1,6 +1,6 @@
-# Bear React Grid
+# Acrool React Grid
 
-<a href="https://bear-react-grid.pages.dev/" title="Bear React Grid - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
+<a href="https://acrool-react-grid.pages.dev/" title="Bear React Grid - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
     <img src="https://bear-react-grid.pages.dev/img/banner.webp" alt="Bear React Grid Logo" />
 </a>
 
@@ -10,23 +10,23 @@
 
 <div align="center">
 
-[![NPM](https://img.shields.io/npm/v/bear-react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/bear-react-grid)
-[![npm downloads](https://img.shields.io/npm/dm/bear-react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/bear-react-grid)
-[![npm](https://img.shields.io/npm/dt/bear-react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/bear-react-grid)
-[![npm](https://img.shields.io/npm/l/bear-react-grid?style=for-the-badge)](https://github.com/imagine10255/bear-react-grid/blob/main/LICENSE)
+[![NPM](https://img.shields.io/npm/v/%40acrool%2Freact-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/%40acrool%2Freact-grid)
+[![npm downloads](https://img.shields.io/npm/dm/%40acrool%2Freact-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/%40acrool%2Freact-grid)
+[![npm](https://img.shields.io/npm/dt/%40acrool%2Freact-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/%40acrool%2Freact-grid)
+[![npm](https://img.shields.io/npm/l/%40acrool%2Freact-grid?style=for-the-badge)](https://github.com/imagine10255/%40acrool%2Freact-grid/blob/main/LICENSE)
 
 </div>
 
 ## Documentation
 
-- [Getting Started](https://bear-react-grid.pages.dev/docs/getting-started)
-- [Faq](https://bear-react-grid.pages.dev/docs/category/faqs)
-- [Config](https://bear-react-grid.pages.dev/docs/config)
-- [Utilities](https://bear-react-grid.pages.dev/docs/utilities)
-- [Breakpoints](https://bear-react-grid.pages.dev/docs/breakpoints)
-- [Container](https://bear-react-grid.pages.dev/docs/container)
-- [Grid System](https://bear-react-grid.pages.dev/docs/category/grid-system)
-- [CSS Grid](https://bear-react-grid.pages.dev/docs/category/css-grid)
+- [Getting Started](https://acrool-react-grid.pages.dev/docs/getting-started)
+- [Faq](https://acrool-react-grid.pages.dev/docs/category/faqs)
+- [Config](https://acrool-react-grid.pages.dev/docs/config)
+- [Utilities](https://acrool-react-grid.pages.dev/docs/utilities)
+- [Breakpoints](https://acrool-react-grid.pages.dev/docs/breakpoints)
+- [Container](https://acrool-react-grid.pages.dev/docs/container)
+- [Grid System](https://acrool-react-grid.pages.dev/docs/category/grid-system)
+- [CSS Grid](https://acrool-react-grid.pages.dev/docs/category/css-grid)
 
 
 ## Features
@@ -41,10 +41,10 @@
 ## Installation
 
 ```bash
-yarn add bear-react-grid
+yarn add acrool-react-grid
 ```
 
-in your packages. (Make the version of styled-component you use match the version of styled-component used in bear-react-gird)
+in your packages. (Make the version of styled-component you use match the version of styled-component used in acrool-react-gird)
 
 ```json
 "resolutions": {
@@ -57,8 +57,8 @@ in your App.js add
 `see the example/src/App.js`
 
 ```tsx
-import {GridThemeProvider, IGridSetting} from 'bear-react-grid';
-import 'bear-react-grid/dist/index.css';
+import {GridThemeProvider, IGridSetting} from '@acrool/react-grid';
+import '@acrool/react-grid/dist/index.css';
 
 
 const gridTheme: IGridSetting = {
@@ -92,12 +92,12 @@ const gridTheme: IGridSetting = {
 
 use in your page/component:
 ```tsx
-import {Container, Row, Col, Grid, Flex, media} from 'bear-react-grid';
+import {Container, Row, Col, Grid, Flex, media} from '@acrool/react-grid';
 
 const MyPage = () => {
     return (
         <Container>
-            <MyTitle>bear-react-grid</MyTitle>
+            <MyTitle>acrool-react-grid</MyTitle>
             <Row>
                 <Col col>col2 (50%) </Col>
                 <Col col>col2 (50%) </Col>
@@ -132,12 +132,12 @@ const MyTitle = styled.div`
 
 There is also a codesandbox template that you can fork and play with it:
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/bear-react-grid-lqsn6)
+[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/acrool-react-grid-lqsn6)
 
 Use Nextjs example
 
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/imagine10255/bear-react-grid-nextjs/main)
+[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/imagine10255/acrool-react-grid-nextjs/main)
 
 
 

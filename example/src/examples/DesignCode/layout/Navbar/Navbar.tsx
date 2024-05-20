@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Grid, Container, media} from 'bear-react-grid';
+import {Grid, Container, media} from '@acrool/react-grid';
 import React, {useState} from 'react';
 import CourseButton from '../_components/CourseButton';
 

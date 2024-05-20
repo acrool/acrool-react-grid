@@ -2,13 +2,13 @@
 
 exports[`Container renders container 1`] = `
 .c0 {
-  --bear-gutter-x: 1.5rem;
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: 1.5rem;
+  --acrool-gutter-y: 0;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--bear-gutter-x);
-  padding-left: var(--bear-gutter-x);
+  padding-right: var(--acrool-gutter-x);
+  padding-left: var(--acrool-gutter-x);
 }
 
 @media (min-width:576px) {
@@ -51,13 +51,13 @@ exports[`Container renders container 1`] = `
 
 exports[`Container renders container fluid 1`] = `
 .c0 {
-  --bear-gutter-x: 1.5rem;
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: 1.5rem;
+  --acrool-gutter-y: 0;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--bear-gutter-x);
-  padding-left: var(--bear-gutter-x);
+  padding-right: var(--acrool-gutter-x);
+  padding-left: var(--acrool-gutter-x);
 }
 
 <div
@@ -70,13 +70,13 @@ exports[`Container renders container fluid 1`] = `
 
 exports[`Container renders container fluid="lg" 1`] = `
 .c0 {
-  --bear-gutter-x: 1.5rem;
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: 1.5rem;
+  --acrool-gutter-y: 0;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--bear-gutter-x);
-  padding-left: var(--bear-gutter-x);
+  padding-right: var(--acrool-gutter-x);
+  padding-left: var(--acrool-gutter-x);
 }
 
 @media (min-width:992px) {
@@ -107,13 +107,13 @@ exports[`Container renders container fluid="lg" 1`] = `
 
 exports[`Container renders container fluid="md" 1`] = `
 .c0 {
-  --bear-gutter-x: 1.5rem;
-  --bear-gutter-y: 0;
+  --acrool-gutter-x: 1.5rem;
+  --acrool-gutter-y: 0;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--bear-gutter-x);
-  padding-left: var(--bear-gutter-x);
+  padding-right: var(--acrool-gutter-x);
+  padding-left: var(--acrool-gutter-x);
 }
 
 @media (min-width:768px) {

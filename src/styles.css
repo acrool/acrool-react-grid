@@ -3,11 +3,11 @@
 .img-cover {width: 100% !important;object-fit: cover !important;}
 
 /* Border */
-.border {border: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
-.border-top {border-top: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
-.border-right {border-right: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
-.border-bottom {border-bottom: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
-.border-left {border-left: var(--bear-border-width) var(--bear-border-style) var(--bear-border-color)!important;}
+.border {border: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color)!important;}
+.border-top {border-top: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color)!important;}
+.border-right {border-right: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color)!important;}
+.border-bottom {border-bottom: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color)!important;}
+.border-left {border-left: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color)!important;}
 
 /* Rotate */
 .rotate-90 {transform: rotate(90deg) !important;}

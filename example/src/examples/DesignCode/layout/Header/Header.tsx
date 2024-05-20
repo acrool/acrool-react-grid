@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Container, Flex, Grid, GridCol} from 'bear-react-grid';
+import {Container, Flex, Grid, GridCol} from '@acrool/react-grid';
 import Button from './_components/Button';
 
 interface IProps extends FCProps {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Col, Container, Flex, Grid, GridCol, media, Row, auto} from 'bear-react-grid';
+import {Col, Container, Flex, Grid, GridCol, media, Row, auto} from '@acrool/react-grid';
 import CourseButton from '../_components/CourseButton';
 import TutorialCard from './_components/TutorialCard';
 
