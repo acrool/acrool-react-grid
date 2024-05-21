@@ -32,6 +32,22 @@
 .text-area-overflow-4{--overflow-line: 4;}
 .text-area-overflow-5{--overflow-line: 5;}
 
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.absolute-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.absolute-center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 /* Filter */
 .filter-gray {filter: grayscale(1) !important;}
