@@ -1,6 +1,6 @@
 {
   "name": "@acrool/react-grid",
-  "version": "5.0.14-alpha.3",
+  "version": "5.0.14",
   "description": "Most modern rwd grid system by react + styled-component",
   "keywords": [
     "react",
