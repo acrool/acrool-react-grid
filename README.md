@@ -41,7 +41,7 @@
 ## Installation
 
 ```bash
-yarn add acrool-react-grid
+yarn add styled-components acrool-react-grid
 ```
 
 in your packages. (Make the version of styled-component you use match the version of styled-component used in acrool-react-gird)
