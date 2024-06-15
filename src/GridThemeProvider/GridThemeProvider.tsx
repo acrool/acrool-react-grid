@@ -38,7 +38,7 @@ const GridThemeProvider: React.FC<IGridThemeProviderProps> = (props: IGridThemeP
 
     return <ThemeProviderFixed theme={composeGridTheme}>
         {children}
-        <Utilities/>
+        <Utilities key="gridGlobalStyle"/>
     </ThemeProviderFixed>
     ;
 };

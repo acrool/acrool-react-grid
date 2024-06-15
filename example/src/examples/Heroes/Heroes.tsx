@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import Button from '@/components/Button';
-import {Col, Container, Grid, Row, auto} from '@acrool/react-grid';
+import {Col, Container, Grid, Row, auto, Flex} from '@acrool/react-grid';
 
 interface IProps extends FCProps {
 
@@ -11,6 +11,63 @@ const Heroes = ({
 }: IProps) => {
 
 
+
+    const renderRowSub = () => {
+        return  <div>
+
+
+            <Container fluid>
+                <Row>
+                    <Col col={6}>
+                        <p className="mb-4">
+                        Quickly design and customize responsive mobile-first sites with Bootstrap,
+                        the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
+                        </p>
+                    </Col>
+                    <Col col={6} >
+                        <p className="mb-4">
+                        Quickly design and customize responsive mobile-first sites with Bootstrap,
+                        the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
+                        </p>
+                    </Col>
+                </Row>
+            </Container>
+
+            {/*<Flex className="gap-2">*/}
+            {/*    <Col col={2} className="mx-auto p-0">*/}
+            {/*        <p className="mb-4">*/}
+            {/*            Quickly design and customize responsive mobile-first sites with Bootstrap,*/}
+            {/*            the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,*/}
+            {/*            responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.*/}
+            {/*        </p>*/}
+            {/*    </Col>*/}
+            {/*    <Col col={5} className="mx-auto p-0">*/}
+            {/*        <p className="mb-4">*/}
+            {/*            Quickly design and customize responsive mobile-first sites with Bootstrap,*/}
+            {/*            the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,*/}
+            {/*            responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.*/}
+            {/*        </p>*/}
+            {/*    </Col>*/}
+            {/*    <Col col={5} className="mx-auto p-0">*/}
+            {/*        <p className="mb-4">*/}
+            {/*            Quickly design and customize responsive mobile-first sites with Bootstrap,*/}
+            {/*            the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,*/}
+            {/*            responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.*/}
+            {/*        </p>*/}
+            {/*    </Col>*/}
+            {/*    <Col col={5} className="mx-auto p-0">*/}
+            {/*        <p className="mb-4">*/}
+            {/*            Quickly design and customize responsive mobile-first sites with Bootstrap,*/}
+            {/*            the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,*/}
+            {/*            responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.*/}
+            {/*        </p>*/}
+            {/*    </Col>*/}
+            {/*</Flex>*/}
+
+        </div>;
+    };
 
     const renderHero = () => {
         return  <div className="px-4 py-5 my-5 text-center">
@@ -163,6 +220,7 @@ const Heroes = ({
 
     return <HeroesRoot className={className}>
 
+        {renderRowSub()}
         {renderHero()}
         {renderScreenshot()}
         {renderResponsive()}

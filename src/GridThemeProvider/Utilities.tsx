@@ -67,12 +67,18 @@ export const Utilities = createGlobalStyle`
             --acrool-border-radius-2xl: var(--acrool-border-radius-xxl);
             --acrool-border-radius-pill: 50rem;
 
-            --acrool-gutter-1: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .25)};
-            --acrool-gutter-2: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .5)};
-            --acrool-gutter-3: ${props.theme.bearReactGrid.spacer};
-            --acrool-gutter-4: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.5)};
-            --acrool-gutter-5: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 3)};
+            --acrool-gutter: ${props.theme.bearReactGrid.spacer};
 
+            --acrool-gutter-1: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .25)}; // 4
+            --acrool-gutter-2: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .5)};  // 8
+            --acrool-gutter-3: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .75)};  // 12
+
+            --acrool-gutter-4: var(--acrool-gutter);
+
+            --acrool-gutter-6: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.25)}; // 20
+            --acrool-gutter-7: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.5)}; // 24
+            --acrool-gutter-8: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.75)}; // 28
+            --acrool-gutter-9: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 2)}; // 32
         }
 
         ${renderDisplayStyle()}

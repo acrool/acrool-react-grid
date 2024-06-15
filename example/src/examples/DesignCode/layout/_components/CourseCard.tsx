@@ -15,7 +15,7 @@ const CourseCard = ({
     const renderList = () => {
         return <Flex col="column" className="h-100 overflow-hidden gap-2">
             <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
-            <MyLinkList className="filter-mask-b">
+            <MyLinkList className="rotate-90">
                 {Array.from({length: 5}).map((row, index) => {
                     return <MyLink key={`link_${index}`} no={index+1}/>;
                 })}

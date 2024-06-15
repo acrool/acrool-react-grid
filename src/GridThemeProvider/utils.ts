@@ -1,6 +1,5 @@
-import {TStyledProps, IRowProps, NoXsMediaSize, IGridThemeProviderProps, IGridSetting} from '../types';
-import {noXsMediaSizes} from '../config';
-import media from '../media';
+import {NoXsMediaSize, IGridSetting} from '../types';
+
 
 
 
@@ -90,7 +89,7 @@ export const renderTextStyle = (sizeName?: NoXsMediaSize) => {
 
 
 export const renderPaddingStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) => {
-    return Array.from({length: 6}).map((row,idx) => {
+    return Array.from({length: 10}).map((row,idx) => {
         return `
         .p${suffix({code: idx, sizeName})} {padding: ${calcSpacer(setting.spacer, idx)} !important;}
         .py${suffix({code: idx, sizeName})} {
@@ -110,7 +109,7 @@ export const renderPaddingStyle = (setting: IGridSetting, sizeName?: NoXsMediaSi
 };
 
 export const renderMarginStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) => {
-    const data: Array<number|'auto'> = [0, 1, 2, 3, 4, 5, 'auto'];
+    const data: Array<number|'auto'> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'auto'];
     return data.map((code,idx) => {
         return `
         .m${suffix({code, sizeName})} {margin: ${calcSpacer(setting.spacer, code)} !important;}
@@ -131,7 +130,7 @@ export const renderMarginStyle = (setting: IGridSetting, sizeName?: NoXsMediaSiz
 };
 
 export const renderGapStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) => {
-    return Array.from({length: 6}).map((row,idx) => {
+    return Array.from({length: 10}).map((row,idx) => {
         return `
         .gap${suffix({code: idx, sizeName})} {gap: ${calcSpacer(setting.spacer, idx)} !important;}
         .column-gap${suffix({code: idx, sizeName})} {column-gap: ${calcSpacer(setting.spacer, idx)} !important;}
@@ -141,7 +140,7 @@ export const renderGapStyle = (setting: IGridSetting, sizeName?: NoXsMediaSize) 
 };
 
 export const renderGutterStyle = (sizeName?: NoXsMediaSize) => {
-    return Array.from({length: 6}).map((row,idx) => {
+    return Array.from({length: 10}).map((row,idx) => {
         return `
         .g${suffix({code: idx, sizeName})}, .gy${suffix({code: idx, sizeName})} {--acrool-gutter-y: ${idx === 0 ? 0: `var(--acrool-gutter-${idx})`};}
         .g${suffix({code: idx, sizeName})}, .gx${suffix({code: idx, sizeName})} {--acrool-gutter-x: ${idx === 0 ? 0: `var(--acrool-gutter-${idx})`};}
@@ -151,14 +150,14 @@ export const renderGutterStyle = (sizeName?: NoXsMediaSize) => {
 
 
 export const renderGColStyle = (sizeName?: NoXsMediaSize) => {
-    return Array.from({length: 5}).map((row,idx) => {
+    return Array.from({length: 9}).map((row,idx) => {
         return `
             .g-col${suffix({code: idx+1, sizeName})} {grid-column: auto/span ${idx+1} !important;}
         `;
     });
 };
 export const renderGRowStyle = (sizeName?: NoXsMediaSize) => {
-    return Array.from({length: 5}).map((row,idx) => {
+    return Array.from({length: 9}).map((row,idx) => {
         return `
             .g-row${suffix({code: idx+1, sizeName})} {grid-row: auto/span ${idx+1} !important;}
         `;
@@ -175,6 +174,10 @@ export const renderOrderStyle = (sizeName?: NoXsMediaSize) => {
         {code: 3, value: 3},
         {code: 4, value: 4},
         {code: 5, value: 5},
+        {code: 6, value: 6},
+        {code: 7, value: 7},
+        {code: 8, value: 8},
+        {code: 9, value: 9},
         {code: 'first', value: -1},
         {code: 'last', value: 6},
     ];
@@ -210,7 +213,7 @@ export const renderDisplayStyle = (sizeName?: NoXsMediaSize) => {
 };
 
 export const renderPositionStyle = (sizeName?: NoXsMediaSize) => {
-    const data: Array<string> = ['static','relative'];
+    const data: Array<string> = ['static','relative','absolute','sticky'];
 
     return data.map((code,idx) => {
         return `
