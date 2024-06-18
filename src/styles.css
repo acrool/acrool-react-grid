@@ -52,7 +52,17 @@
 /* Filter */
 .filter-gray {filter: grayscale(1) !important;}
 .filter-while {filter: brightness(0) invert(1) !important;}
-.filter-mask-b{mask-image: linear-gradient(to bottom, white, white, transparent) !important;}
+.filter-mask-b {mask-image: linear-gradient(to bottom, white, white, transparent) !important;}
+.filter-mask-b-80 {mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%) !important;}
+
+/* Radius */
+.radius {var(--acrool-border-radius)}
+.radius-sm {var(--acrool-border-radius-sm)}
+.radius-md {var(--acrool-border-radius-md)}
+.radius-lg {var(--acrool-border-radius-lg)}
+.radius-xl {var(--acrool-border-radius-xl)}
+.radius-xxl {var(--acrool-border-radius-xxl)}
+.radius-pill {var(--acrool-border-radius-pill)}
 
 /* FontSize */
 .fs-1 {font-size: 2.5rem !important;}
@@ -133,7 +143,7 @@
 
 
 /* Flex */
-.flex-row, .flex-column, .flex-row-reverse, .flex-column-reverse, .flex-wrap, .flex-nowrap, .flex-wrap-reverse, .flex-fill, .flex-grow-0, .flex-grow-1, .flex-shrink-0, .flex-shrink-1 {box-sizing: border-box;}
+.flex-row, .flex-column, .flex-row-reverse, .flex-column-reverse, .flex-wrap, .flex-nowrap, .flex-wrap-reverse, .flex-1, .flex-auto, .flex-fill, .flex-grow-0, .flex-grow-1, .flex-shrink-0, .flex-shrink-1 {box-sizing: border-box;}
 .justify-content-auto, .justify-content-start, .justify-content-end, .justify-content-center, .justify-content-between, .justify-content-around, .justify-items-auto, .justify-items-start, .justify-items-end, .justify-items-center, .justify-items-stretch, .justify-self-auto, .justify-self-start, .justify-self-center, .justify-self-end {box-sizing: border-box;}
 .align-content-auto, .align-content-start, .align-content-end, .align-content-center, .align-content-between, .align-content-around, .align-content-stretch, .align-items-auto, .align-items-start, .align-items-end, .align-items-center, .align-items-baseline, .align-items-stretch, .align-self-auto, .align-self-start, .align-self-end, .align-self-center, .align-self-baseline, .align-self-stretch{box-sizing: border-box;}
 .place-items-auto, .place-items-start, .place-items-end, .place-items-center {box-sizing: border-box;}
@@ -159,7 +169,7 @@
     .w-sm-inherit, .w-sm-0, .w-sm-100, .w-sm-auto {box-sizing: border-box;}
 
     .d-sm-none, .d-sm-inline, .d-sm-inline-block, .d-sm-block, .d-sm-flex, .d-sm-inline-flex, .d-sm-grid, .d-sm-inline-grid {box-sizing: border-box;}
-    .flex-sm-row, .flex-sm-column, .flex-sm-row-reverse, .flex-sm-column-reverse, .flex-sm-wrap, .flex-sm-nowrap, .flex-sm-wrap-reverse, .flex-sm-fill, .flex-sm-grow-0, .flex-sm-grow-1, .flex-sm-shrink-0, .flex-sm-shrink-1 {box-sizing: border-box;}
+    .flex-sm-row, .flex-sm-column, .flex-sm-row-reverse, .flex-sm-column-reverse, .flex-sm-wrap, .flex-sm-nowrap, .flex-sm-wrap-reverse, .flex-sm-1, .flex-sm-auto, .flex-sm-fill, .flex-sm-grow-0, .flex-sm-grow-1, .flex-sm-shrink-0, .flex-sm-shrink-1 {box-sizing: border-box;}
     .justify-content-sm-auto, .justify-content-sm-start, .justify-content-sm-end, .justify-content-sm-center, .justify-content-sm-between, .justify-content-sm-around, .justify-items-sm-auto, .justify-items-sm-start, .justify-items-sm-end, .justify-items-sm-center, .justify-items-sm-stretch, .justify-self-sm-auto, .justify-self-sm-start, .justify-self-sm-center, .justify-self-sm-end {box-sizing: border-box;}
     .align-content-sm-auto, .align-content-sm-start, .align-content-sm-end, .align-content-sm-center, .align-content-sm-between, .align-content-sm-around, .align-content-sm-stretch, .align-items-sm-auto, .align-items-sm-start, .align-items-sm-end, .align-items-sm-center, .align-items-sm-baseline, .align-items-sm-stretch, .align-self-sm-auto, .align-self-sm-start, .align-self-sm-end, .align-self-sm-center, .align-self-sm-baseline, .align-self-sm-stretch{box-sizing: border-box;}
 
@@ -228,7 +238,7 @@
     .w-md-inherit, .w-md-0, .w-md-100, .w-md-auto {box-sizing: border-box;}
 
     .d-md-none, .d-md-inline, .d-md-inline-block, .d-md-block, .d-md-flex, .d-md-inline-flex, .d-md-grid, .d-md-inline-grid {box-sizing: border-box;}
-    .flex-md-row, .flex-md-column, .flex-md-row-reverse, .flex-md-column-reverse, .flex-md-wrap, .flex-md-nowrap, .flex-md-wrap-reverse, .flex-md-fill, .flex-md-grow-0, .flex-md-grow-1, .flex-md-shrink-0, .flex-md-shrink-1 {box-sizing: border-box;}
+    .flex-md-row, .flex-md-column, .flex-md-row-reverse, .flex-md-column-reverse, .flex-md-wrap, .flex-md-nowrap, .flex-md-wrap-reverse, .flex-md-1, .flex-md-auto, .flex-md-fill, .flex-md-grow-0, .flex-md-grow-1, .flex-md-shrink-0, .flex-md-shrink-1 {box-sizing: border-box;}
     .justify-content-md-auto, .justify-content-md-start, .justify-content-md-end, .justify-content-md-center, .justify-content-md-between, .justify-content-md-around, .justify-items-md-auto, .justify-items-md-start, .justify-items-md-end, .justify-items-md-center, .justify-items-md-stretch, .justify-self-md-auto, .justify-self-md-start, .justify-self-md-center, .justify-self-md-end {box-sizing: border-box;}
     .align-content-md-auto, .align-content-md-start, .align-content-md-end, .align-content-md-center, .align-content-md-between, .align-content-md-around, .align-content-md-stretch, .align-items-md-auto, .align-items-md-start, .align-items-md-end, .align-items-md-center, .align-items-md-baseline, .align-items-md-stretch, .align-self-md-auto, .align-self-md-start, .align-self-md-end, .align-self-md-center, .align-self-md-baseline, .align-self-md-stretch{box-sizing: border-box;}
 
@@ -299,7 +309,7 @@
 
     .d-lg-none, .d-lg-inline, .d-lg-inline-block, .d-lg-block, .d-lg-flex, .d-lg-inline-flex, .d-lg-grid, .d-lg-inline-grid {box-sizing: border-box;}
 
-    .flex-lg-row, .flex-lg-column, .flex-lg-row-reverse, .flex-lg-column-reverse, .flex-lg-wrap, .flex-lg-nowrap, .flex-lg-wrap-reverse, .flex-lg-fill, .flex-lg-grow-0, .flex-lg-grow-1, .flex-lg-shrink-0, .flex-lg-shrink-1 {box-sizing: border-box;}
+    .flex-lg-row, .flex-lg-column, .flex-lg-row-reverse, .flex-lg-column-reverse, .flex-lg-wrap, .flex-lg-nowrap, .flex-lg-wrap-reverse, .flex-lg-1, .flex-lg-auto, .flex-lg-fill, .flex-lg-grow-0, .flex-lg-grow-1, .flex-lg-shrink-0, .flex-lg-shrink-1 {box-sizing: border-box;}
     .justify-content-lg-auto, .justify-content-lg-start, .justify-content-lg-end, .justify-content-lg-center, .justify-content-lg-between, .justify-content-lg-around, .justify-items-lg-auto, .justify-items-lg-start, .justify-items-lg-end, .justify-items-lg-center, .justify-items-lg-stretch, .justify-self-lg-auto, .justify-self-lg-start, .justify-self-lg-center, .justify-self-lg-end {box-sizing: border-box;}
     .align-content-lg-auto, .align-content-lg-start, .align-content-lg-end, .align-content-lg-center, .align-content-lg-between, .align-content-lg-around, .align-content-lg-stretch, .align-items-lg-auto, .align-items-lg-start, .align-items-lg-end, .align-items-lg-center, .align-items-lg-baseline, .align-items-lg-stretch, .align-self-lg-auto, .align-self-lg-start, .align-self-lg-end, .align-self-lg-center, .align-self-lg-baseline, .align-self-lg-stretch{box-sizing: border-box;}
 
@@ -373,7 +383,7 @@
 
     .d-xl-none, .d-xl-inline, .d-xl-inline-block, .d-xl-block, .d-xl-flex, .d-xl-inline-flex, .d-xl-grid, .d-xl-inline-grid {box-sizing: border-box;}
 
-    .flex-xl-row, .flex-xl-column, .flex-xl-row-reverse, .flex-xl-column-reverse, .flex-xl-wrap, .flex-xl-nowrap, .flex-xl-wrap-reverse, .flex-xl-fill, .flex-xl-grow-0, .flex-xl-grow-1, .flex-xl-shrink-0, .flex-xl-shrink-1 {box-sizing: border-box;}
+    .flex-xl-row, .flex-xl-column, .flex-xl-row-reverse, .flex-xl-column-reverse, .flex-xl-wrap, .flex-xl-nowrap, .flex-xl-wrap-reverse, .flex-xl-1, .flex-xl-auto, .flex-xl-fill, .flex-xl-grow-0, .flex-xl-grow-1, .flex-xl-shrink-0, .flex-xl-shrink-1 {box-sizing: border-box;}
     .justify-content-xl-auto, .justify-content-xl-start, .justify-content-xl-end, .justify-content-xl-center, .justify-content-xl-between, .justify-content-xl-around, .justify-items-xl-auto, .justify-items-xl-start, .justify-items-xl-end, .justify-items-xl-center, .justify-items-xl-stretch, .justify-self-xl-auto, .justify-self-xl-start, .justify-self-xl-center, .justify-self-xl-end {box-sizing: border-box;}
     .align-content-xl-auto, .align-content-xl-start, .align-content-xl-end, .align-content-xl-center, .align-content-xl-between, .align-content-xl-around, .align-content-xl-stretch, .align-items-xl-auto, .align-items-xl-start, .align-items-xl-end, .align-items-xl-center, .align-items-xl-baseline, .align-items-xl-stretch, .align-self-xl-auto, .align-self-xl-start, .align-self-xl-end, .align-self-xl-center, .align-self-xl-baseline, .align-self-xl-stretch{box-sizing: border-box;}
 
@@ -445,7 +455,7 @@
     .w-xxl-inherit, .w-xxl-0, .w-xxl-100, .w-xxl-auto {box-sizing: border-box;}
 
     .d-xxl-none, .d-xxl-inline, .d-xxl-inline-block, .d-xxl-block, .d-xxl-flex, .d-xxl-inline-flex, .d-xxl-grid, .d-xxl-inline-grid {box-sizing: border-box;}
-    .flex-xxl-row, .flex-xxl-column, .flex-xxl-row-reverse, .flex-xxl-column-reverse, .flex-xxl-wrap, .flex-xxl-nowrap, .flex-xxl-wrap-reverse, .flex-xxl-fill, .flex-xxl-grow-0, .flex-xxl-grow-1, .flex-xxl-shrink-0, .flex-xxl-shrink-1 {box-sizing: border-box;}
+    .flex-xxl-row, .flex-xxl-column, .flex-xxl-row-reverse, .flex-xxl-column-reverse, .flex-xxl-wrap, .flex-xxl-nowrap, .flex-xxl-wrap-reverse, .flex-xxl-1, .flex-xxl-auto, .flex-xxl-fill, .flex-xxl-grow-0, .flex-xxl-grow-1, .flex-xxl-shrink-0, .flex-xxl-shrink-1 {box-sizing: border-box;}
     .justify-content-xxl-auto, .justify-content-xxl-start, .justify-content-xxl-end, .justify-content-xxl-center, .justify-content-xxl-between, .justify-content-xxl-around, .justify-items-xxl-auto, .justify-items-xxl-start, .justify-items-xxl-end, .justify-items-xxl-center, .justify-items-xxl-stretch, .justify-self-xxl-auto, .justify-self-xxl-start, .justify-self-xxl-center, .justify-self-xxl-end {box-sizing: border-box;}
     .align-content-xxl-auto, .align-content-xxl-start, .align-content-xxl-end, .align-content-xxl-center, .align-content-xxl-between, .align-content-xxl-around, .align-content-xxl-stretch, .align-items-xxl-auto, .align-items-xxl-start, .align-items-xxl-end, .align-items-xxl-center, .align-items-xxl-baseline, .align-items-xxl-stretch, .align-self-xxl-auto, .align-self-xxl-start, .align-self-xxl-end, .align-self-xxl-center, .align-self-xxl-baseline, .align-self-xxl-stretch{box-sizing: border-box;}
 

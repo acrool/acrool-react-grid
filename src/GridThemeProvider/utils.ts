@@ -284,6 +284,8 @@ export const renderFlexStyle = (sizeName?: NoXsMediaSize) => {
        .flex${suffix({code: 'nowrap', sizeName})} {flex-nowrap: nowrap !important;}
        .flex${suffix({code: 'wrap-reverse', sizeName})} {flex-nowrap: wrap-reverse !important;}
 
+       .flex${suffix({code: '1', sizeName})} {flex: 1 !important;}
+       .flex${suffix({code: 'auto', sizeName})} {flex: 0 0 auto !important;}
        .flex${suffix({code: 'fill', sizeName})} {flex: 1 1 auto !important;}
        .flex${suffix({code: 'grow-0', sizeName})} {flex-grow: 0 !important;}
        .flex${suffix({code: 'grow-1', sizeName})} {flex-grow: 1 !important;}
