@@ -56,13 +56,13 @@
 .filter-mask-b-80 {mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%) !important;}
 
 /* Radius */
-.radius {var(--acrool-border-radius)}
-.radius-sm {var(--acrool-border-radius-sm)}
-.radius-md {var(--acrool-border-radius-md)}
-.radius-lg {var(--acrool-border-radius-lg)}
-.radius-xl {var(--acrool-border-radius-xl)}
-.radius-xxl {var(--acrool-border-radius-xxl)}
-.radius-pill {var(--acrool-border-radius-pill)}
+.radius {border-radius: var(--acrool-border-radius) !important;}
+.radius-sm {border-radius: var(--acrool-border-radius-sm) !important;}
+.radius-md {border-radius: var(--acrool-border-radius-md) !important;}
+.radius-lg {border-radius: var(--acrool-border-radius-lg) !important;}
+.radius-xl {border-radius: var(--acrool-border-radius-xl) !important;}
+.radius-xxl {border-radius: var(--acrool-border-radius-xxl) !important;}
+.radius-pill {border-radius: var(--acrool-border-radius-pill) !important;}
 
 /* FontSize */
 .fs-1 {font-size: 2.5rem !important;}
