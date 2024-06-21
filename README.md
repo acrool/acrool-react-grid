@@ -65,7 +65,7 @@ import '@acrool/react-grid/dist/index.css';
 
 const gridTheme: IGridSetting = {
     spacer: '1rem',
-    gridColumns: 24,
+    gridColumns: 12,
     gridBreakpoints: {
         xs: 0,
         sm: 576,
