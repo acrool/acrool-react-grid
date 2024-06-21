@@ -1,4 +1,4 @@
-import './index.css';
+import './styles.css';
 
 
 export {default as media} from './media';
