@@ -1,7 +1,7 @@
 # Acrool React Grid
 
-<a href="https://acrool-react-grid.pages.dev/" title="Bear React Grid - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
-    <img src="https://bear-react-grid.pages.dev/img/banner.webp" alt="Bear React Grid Logo" />
+<a href="https://acrool-react-grid.pages.dev/" title="Acrool React Grid - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
+    <img src="https://acrool-react-grid.pages.dev/img/banner.webp" alt="Acrool React Grid Logo" />
 </a>
 
 <p align="center">
@@ -27,7 +27,6 @@
 - [Container](https://acrool-react-grid.pages.dev/docs/container)
 - [Grid System](https://acrool-react-grid.pages.dev/docs/category/grid-system)
 - [CSS Grid](https://acrool-react-grid.pages.dev/docs/category/css-grid)
-- [Dev Template Sample](https://github.com/acrool/acrool-react-grid-template)
 
 ## Features
 
@@ -36,7 +35,7 @@
 - Refer to the design of `Bootstrap 5` and change it to `CSS IN JS` method
 - Provides tool CSS for `Bootstrap 5` layout
 - Provide `RWD` Media query method
-- Support `NextJS 13` (v5.0.3+)
+- Support `NextJS 14` (v5.0.3+)
 
 ## Installation
 
@@ -131,12 +130,12 @@ const MyTitle = styled.div`
 
 There is also a codesandbox template that you can fork and play with it:
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/acrool-react-grid-lqsn6)
+[Acrool React Grid Template](https://github.com/acrool/acrool-react-grid-template)
 
 Use Nextjs example
 
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/imagine10255/bear-react-grid-nextjs/main)
+[Acrool React Grid Nextjs Template](https://github.com/acrool/acrool-react-grid-nextjs)
 
 
 
