@@ -40,7 +40,7 @@
 ## Installation
 
 ```bash
-yarn add styled-components acrool-react-grid
+yarn add styled-components @acrool/react-grid
 ```
 
 in your packages. (Make the version of styled-component you use match the version of styled-component used in acrool-react-gird)
@@ -141,5 +141,5 @@ Use Nextjs example
 
 ## License
 
-MIT © [imagine10255](https://github.com/imagine10255)
+MIT © [Acrool](https://github.com/acrool) & [Imagine](https://github.com/imagine10255)
 
