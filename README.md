@@ -1,7 +1,7 @@
 # Acrool React Grid
 
 <a href="https://acrool-react-grid.pages.dev/" title="Acrool React Grid - CSS IN JS following Bootstrap RWD design, composed of React + Styled Component">
-    <img src="https://acrool-react-grid.pages.dev/img/banner.webp" alt="Acrool React Grid Logo" />
+    <img src="https://acrool-react-grid.pages.dev/img/og.webp" alt="Acrool React Grid Logo" />
 </a>
 
 <p align="center">
