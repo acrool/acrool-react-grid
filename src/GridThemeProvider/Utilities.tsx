@@ -61,11 +61,11 @@ export const Utilities = createGlobalStyle`
             --acrool-border-color: #495057;
             --acrool-border-radius: 0.375rem;
             --acrool-border-radius-sm: 0.25rem;
-            --acrool-border-radius-md: 0.5rem;
+            --acrool-border-radius-md: var(--acrool-border-radius);
             --acrool-border-radius-lg: 1rem;
             --acrool-border-radius-xl: 1.5rem;
             --acrool-border-radius-xxl: 2rem;
-            --acrool-border-radius-pill: 99em;
+            --acrool-border-radius-pill: 50%;
 
             --acrool-gutter: ${props.theme.bearReactGrid.spacer};
 

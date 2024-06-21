@@ -62,7 +62,7 @@ const calcSpacer = (spacer: string ,idx: number|'auto') => {
 
 export const renderRoundStyle = (sizeName?: NoXsMediaSize) => {
     return `
-      .rounded${suffix({sizeName})} {border-radius: .25rem !important;}
+      .rounded${suffix({sizeName})} {border-radius: var(--acrool-border-radius) !important;}
       .rounded${suffix({code: 'top', sizeName})} {border-top-left-radius: var(--acrool-border-radius) !important;border-top-right-radius: var(--acrool-border-radius) !important;}
       .rounded${suffix({code: 'end', sizeName})} {border-top-right-radius: var(--acrool-border-radius) !important;border-bottom-right-radius: var(--acrool-border-radius) !important;}
       .rounded${suffix({code: 'bottom', sizeName})} {border-bottom-right-radius: var(--acrool-border-radius) !important;border-bottom-left-radius: var(--acrool-border-radius) !important;}
@@ -70,11 +70,10 @@ export const renderRoundStyle = (sizeName?: NoXsMediaSize) => {
       .rounded${suffix({code: 'circle', sizeName})} {border-radius: 50% !important;}
       .rounded${suffix({code: 0, sizeName})} {border-radius: 0!important;}
       .rounded${suffix({code: 1, sizeName})} {border-radius: var(--acrool-border-radius-sm)!important;}
-      .rounded${suffix({code: 2, sizeName})} {border-radius: var(--acrool-border-radius)!important;}
+      .rounded${suffix({code: 2, sizeName})} {border-radius: var(--acrool-border-radius-md)!important;}
       .rounded${suffix({code: 3, sizeName})} {border-radius: var(--acrool-border-radius-lg)!important;}
       .rounded${suffix({code: 4, sizeName})} {border-radius: var(--acrool-border-radius-xl)!important;}
       .rounded${suffix({code: 5, sizeName})} {border-radius: var(--acrool-border-radius-xxl)!important;}
-      .rounded${suffix({code: 6, sizeName})} {border-radius: var(--acrool-border-radius-2xl)!important;}
     `;
 };
 
