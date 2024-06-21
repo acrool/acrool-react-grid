@@ -136,7 +136,7 @@ There is also a codesandbox template that you can fork and play with it:
 Use Nextjs example
 
 
-[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/imagine10255/acrool-react-grid-nextjs/main)
+[![Edit react-editext-template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/imagine10255/bear-react-grid-nextjs/main)
 
 
 
