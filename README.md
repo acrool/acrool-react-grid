@@ -11,8 +11,8 @@
 <div align="center">
 
 [![NPM](https://img.shields.io/npm/v/@acrool/react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/@acrool/react-grid)
-[![npm](https://img.shields.io/bundlejs/size/@acrool/react-grid?style=for-the-badge)](https://github.com/imagine10255/@acrool/react-grid/blob/main/LICENSE)
-[![npm](https://img.shields.io/npm/l/@acrool/react-grid?style=for-the-badge)](https://github.com/imagine10255/@acrool/react-grid/blob/main/LICENSE)
+[![npm](https://img.shields.io/bundlejs/size/@acrool/react-grid?style=for-the-badge)](https://github.com/acrool/@acrool/react-grid/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/l/@acrool/react-grid?style=for-the-badge)](https://github.com/acrool/react-grid/blob/main/LICENSE)
 
 [![npm downloads](https://img.shields.io/npm/dm/@acrool/react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/@acrool/react-grid)
 [![npm](https://img.shields.io/npm/dt/@acrool/react-grid.svg?style=for-the-badge)](https://www.npmjs.com/package/@acrool/react-grid)
