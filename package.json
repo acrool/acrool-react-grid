@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/@acrool/acrool-react-grid.git"
+    "url": "https://github.com/acrool/acrool-react-grid.git"
   },
   "module": "./dist/acrool-react-grid.es.js",
   "types": "./dist/index.d.ts",
