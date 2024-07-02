@@ -67,18 +67,19 @@ export const Utilities = createGlobalStyle`
             --acrool-border-radius-xxl: 2rem;
             --acrool-border-radius-pill: 50%;
 
-            --acrool-gutter: ${props.theme.bearReactGrid.spacer};
+            --acrool-gutter: ${props.theme.acroolGrid.spacer};
 
-            --acrool-gutter-1: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .25)}; // 4
-            --acrool-gutter-2: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .5)};  // 8
-            --acrool-gutter-3: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * .75)};  // 12
+            --acrool-gutter-1: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * .25)}; // 4
+            --acrool-gutter-2: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * .5)};  // 8
+            --acrool-gutter-3: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * .75)};  // 12
 
             --acrool-gutter-4: var(--acrool-gutter);
 
-            --acrool-gutter-6: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.25)}; // 20
-            --acrool-gutter-7: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.5)}; // 24
-            --acrool-gutter-8: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 1.75)}; // 28
-            --acrool-gutter-9: ${calcUnitSize(props.theme.bearReactGrid.spacer, num => num * 2)}; // 32
+            --acrool-gutter-5: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 1.25)}; // 20
+            --acrool-gutter-6: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 1.5)}; // 24
+            --acrool-gutter-7: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 1.75)}; // 28
+            --acrool-gutter-8: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 2)}; // 32
+            --acrool-gutter-9: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 2.5)};
         }
 
         ${renderDisplayStyle()}
@@ -94,14 +95,14 @@ export const Utilities = createGlobalStyle`
         ${renderHeightStyle()}
         ${renderTextStyle()}
         ${renderRoundStyle()}
-        ${renderMarginStyle(props.theme.bearReactGrid)}
-        ${renderPaddingStyle(props.theme.bearReactGrid)}
-        ${renderGapStyle(props.theme.bearReactGrid)}
+        ${renderMarginStyle(props.theme.acroolGrid)}
+        ${renderPaddingStyle(props.theme.acroolGrid)}
+        ${renderGapStyle(props.theme.acroolGrid)}
         ${renderGutterStyle()}
         ${renderOrderStyle()}
         ${renderOverflowStyle()}
 
-        ${generateRWDStyled(props.theme.bearReactGrid)}
+        ${generateRWDStyled(props.theme.acroolGrid)}
     `}
 
 `;
