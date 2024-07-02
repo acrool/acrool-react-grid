@@ -15,7 +15,7 @@
  */
 import {NoXsMediaSize, IGridSetting, TMediaSize} from './types';
 
-const themeName = 'bearReactGrid';
+const themeName = 'acroolGrid';
 const defaultGridTheme: IGridSetting = {
     spacer: '1.5rem',
     gridColumns: 12,

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.2.2](https://github.com/acrool/acrool-react-grid/compare/v5.2.2-alpha.0...v5.2.2) (2024-07-02)
+
+### [5.2.2-alpha.0](https://github.com/acrool/acrool-react-grid/compare/v5.2.1...v5.2.2-alpha.0) (2024-07-02)
+
+
+### Bug Fixes
+
+* 修正 acrool-gutter-5 未定義 ([a3f6973](https://github.com/acrool/acrool-react-grid/commit/a3f6973c786e91a28698600168eb627bdb4559fe))
+
 ### [5.2.1](https://github.com/@acrool/acrool-react-grid/compare/v5.2.1-alpha.3...v5.2.1) (2024-06-23)
 
 ### [5.2.1-alpha.3](https://github.com/@acrool/acrool-react-grid/compare/v5.2.1-alpha.2...v5.2.1-alpha.3) (2024-06-21)

@@ -34,7 +34,7 @@ const Footer = ({
 
 
             <Flex className="flex-column justify-content-center text-center text-md-left gap-2">
-                <p>Site made with React, BearReactGrid and Styled-components. Learn how.</p>
+                <p>Site made with React, acroolGrid and Styled-components. Learn how.</p>
                 <p>Design+Code © 2023</p>
                 <p>Terms of Service - Privacy Policy</p>
                 <p>Need help? Contact Us</p>
