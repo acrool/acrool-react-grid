@@ -99,6 +99,8 @@ const MyPage = () => {
     return (
         <Container>
             <MyTitle>acrool-react-grid</MyTitle>
+            <Desc isVisible={false}>myDesc</Desc>
+            
             <Row>
                 <Col col>col2 (50%) </Col>
                 <Col col>col2 (50%) </Col>
@@ -126,6 +128,23 @@ const MyTitle = styled.div`
     font-size: 12px;
     ${media.md`
         font-size: 14px;
+    `}
+`
+
+// use rwd props
+const Desc = styled.div<{
+    isVisible: boolean
+}>`
+    ${props => media.md`
+        display: ${props.isVisible ? 'block': 'flex'}
+    `}
+    
+    // or
+    ${props => css`
+        font-size: 12px;
+        ${media.md`
+            display: ${props.isVisible ? 'block': 'flex'}
+        `}
     `}
 `
 
