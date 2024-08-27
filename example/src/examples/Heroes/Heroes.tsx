@@ -261,6 +261,13 @@ const GlobalCSS = createGlobalStyle`
         --bs-btn-disabled-color: #fff;
         --bs-btn-disabled-bg: #0d6efd;
         --bs-btn-disabled-border-color: #0d6efd;
+
+
+        //--acrool-container-max-width-sm: 400px;
+        //--acrool-container-max-width-md: 400px;
+        //--acrool-container-max-width-lg: 400px;
+        //--acrool-container-max-width-xl: 400px;
+        //--acrool-container-max-width-xxl: 400px;
     }
 
     body{

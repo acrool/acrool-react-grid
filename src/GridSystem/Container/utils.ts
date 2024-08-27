@@ -15,7 +15,7 @@ export const createBreakpoint = (props: TStyledProps<IContainerProps>) => {
     return noXsMediaSizes.reduce((curr, sizeName) => {
         if(maxSizeConfig[sizeName]){
             return curr.concat(media[sizeName]`
-                max-width: ${props.theme[themeName]?.containerMaxWidths[sizeName]}px;
+                max-width: var(--acrool-container-max-width-${sizeName}, ${props.theme[themeName]?.containerMaxWidths[sizeName]}px);
             `);
         }
         return curr;
