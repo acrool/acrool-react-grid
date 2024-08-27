@@ -39,6 +39,7 @@
 - Provides tool CSS for `Bootstrap 5` layout
 - Provide `RWD` Media query method
 - Support `NextJS 14` (v5.0.3+)
+- Container max width `--container-max-width-?` Change from the middle level
 
 ## Installation
 
