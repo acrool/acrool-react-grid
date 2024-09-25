@@ -120,8 +120,7 @@ export interface IGridProps extends FCChildrenProps, RecordOption<NoXsMediaSize,
 /** -------------------------------
  *       CSS Grid - Flex
  * ------------------------------ */
-export type TFlexDirection = 'column'|'row';
-export interface IFlexProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TFlexDirection>{
-    col?: TFlexDirection
+export interface IFlexProps extends FCChildrenProps {
+    column?: boolean
 }
 

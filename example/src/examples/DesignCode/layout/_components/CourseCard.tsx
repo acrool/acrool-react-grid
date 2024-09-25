@@ -13,7 +13,7 @@ const CourseCard = ({
 }: IProps) => {
 
     const renderList = () => {
-        return <Flex col="column" className="h-100 overflow-hidden gap-2">
+        return <Flex column className="h-100 overflow-hidden gap-2">
             <CourseDetailCardTitle>FEATURED COURSE</CourseDetailCardTitle>
             <MyLinkList className="rotate-90">
                 {Array.from({length: 5}).map((row, index) => {

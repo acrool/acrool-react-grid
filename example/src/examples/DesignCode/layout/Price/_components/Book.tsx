@@ -24,12 +24,12 @@ const Book = ({
 }: IProps) => {
     return <BookRoot className={className}>
         <Bg/>
-        <Card col="column" className="align-items-center gap-3">
+        <Card column className="align-items-center gap-3">
             <SubTitle>{data.subTitle}</SubTitle>
             <Title>{data.title}</Title>
             <Desc className="mb-2">{data.desc}</Desc>
 
-            <Flex col="column" className="gap-2">
+            <Flex column className="gap-2">
                 {data.features.map((feat, featIndex) => {
                     return <Feature key={`feat_${data.title}_${featIndex}`} className="gap-2">
                         <img src="https://designcode.io/images/icons/check-dark.svg" alt="check"/>

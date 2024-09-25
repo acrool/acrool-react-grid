@@ -12,7 +12,7 @@ import {createBreakpoint, cssGetter, createInfo} from './utils';
  *
  * Displayed by externally set fence
  *
- * By [Layout / Grid](https://bear-react-grid.pages.dev/docs/layout/grid)
+ * By [Layout / Grid](https://acrool-react-grid.pages.dev/docs/layout/grid)
  */
 const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     'data-grid': createInfo(props),

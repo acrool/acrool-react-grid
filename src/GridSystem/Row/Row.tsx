@@ -13,7 +13,7 @@ import {themeName} from '../../config';
  *
  * Rows are wrappers for columns. Each column has horizontal padding (called a gutter) for controlling the space between them. This padding is then counteracted on the rows with negative margins to ensure the content in your columns is visually aligned down the left side. Rows also support modifier classes to uniformly apply column sizing and gutter classes to change the spacing of your content.
  *
- * By [Layout Grid System Row](https://bear-react-grid.pages.dev/docs/layout/grid-system/row)
+ * By [Layout Grid System Row](https://acrool-react-grid.pages.dev/docs/layout/grid-system/row)
  */
 const Row = styled.div.attrs((props: TStyledProps<IRowProps>) => ({
     'data-grid': 'row',

@@ -96,7 +96,7 @@ const Features = ({
                         <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                             style={{backgroundImage: 'url(https://getbootstrap.com/docs/5.3/examples/features/unsplash-photo-2.jpg)'}}
                         >
-                            <Flex col="column" className="h-100 p-5 pb-3 text-white text-shadow-1">
+                            <Flex column className="h-100 p-5 pb-3 text-white text-shadow-1">
 
                                 <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
 
@@ -151,7 +151,7 @@ const Features = ({
             <h2 className="pb-2 border-bottom">Features with title</h2>
 
             <Grid col={1} md={2} className="align-items-md-center g-5 py-5">
-                <Flex col="column" className="align-items-start gap-2">
+                <Flex column className="align-items-start gap-2">
                     <h2 className="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
                     <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading.
                         We'll add onto it with another sentence and probably just keep going until we run out of
@@ -163,7 +163,7 @@ const Features = ({
                 <Grid col={1} sm={2} className="g-4">
 
                     {Array.from({length: 4}).map((row, idx) => {
-                        return <Flex col="column" className="gap-2" key={`feature_${idx}`}>
+                        return <Flex column className="gap-2" key={`feature_${idx}`}>
                             <FeatureIcon className="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
                                 <img src="/vite.svg" style={{width: '28px'}}/>
                             </FeatureIcon>
