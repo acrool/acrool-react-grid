@@ -10,7 +10,7 @@ interface IProps extends FCProps {
 const PreviewCard = ({
     className,
 }: IProps) => {
-    return <PreviewCardRoot className={className} col="column">
+    return <PreviewCardRoot className={className} column>
         <CardWrapperImage
             src="https://images.ctfassets.net/ooa29xqb8tix/5jIBVIWEq7QQq1Tm03ViNR/b34fad96046114968b74016a678ac841/ios17-2.png?w=400&q=50"
             alt="Build SwiftUI Apps for iOS 17 icon"

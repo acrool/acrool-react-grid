@@ -9,7 +9,7 @@ const Pay = ({
 }: IProps) => {
 
     return <PayRoot className={className}>
-        <Flex col="column" className="justify-items-center text-center gap-3">
+        <Flex column className="justify-items-center text-center gap-3">
             <Desc>Save 47% on an annual plan. We support PayPal for an individual annual plan only. Any question? <span>contact us</span></Desc>
 
             <Hr/>

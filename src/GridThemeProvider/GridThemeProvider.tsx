@@ -21,7 +21,7 @@ const ThemeProviderFixed = ThemeProvider as unknown as React.FC<PropsWithChildre
  *     </GridThemeProvider>
  *  ```
  *
- * By [Config](https://bear-react-grid.pages.dev/docs/config)
+ * By [Config](https://acrool-react-grid.pages.dev/docs/config)
  */
 const GridThemeProvider: React.FC<IGridThemeProviderProps> = (props: IGridThemeProviderProps) => {
     const {gridTheme, children} = props;

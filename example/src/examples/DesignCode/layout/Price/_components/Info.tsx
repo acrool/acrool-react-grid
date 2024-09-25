@@ -9,7 +9,7 @@ const Info = ({
 }: IProps) => {
 
     return <InfoRoot className={className}>
-        <Flex col="column" className="justify-items-center text-center gap-3">
+        <Flex column className="justify-items-center text-center gap-3">
             <Title>Ready to start?</Title>
             <Desc>Get access to all our premium courses, tutorials, downloads, certificates and priority support.</Desc>
         </Flex>
