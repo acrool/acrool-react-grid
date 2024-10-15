@@ -48,6 +48,8 @@
     top: 50%;
     transform: translateY(-50%);
 }
+.inset-0{inset: 0;}
+
 
 /* Filter */
 .filter-gray {filter: grayscale(1) !important;}
@@ -128,7 +130,7 @@
 .gap-9, .column-gap-9, .row-gap-9 {box-sizing: border-box;}
 
 /* Position */
-.position-static, .position-relative {box-sizing: border-box;}
+.position-static, .position-relative, .position-fixed, .position-absolute, .position-sticky {box-sizing: border-box;}
 
 /* Display */
 .d-none, .d-inline, .d-inline-block, .d-block, .d-flex, .d-inline-flex, .d-grid, .d-inline-grid {box-sizing: border-box;}

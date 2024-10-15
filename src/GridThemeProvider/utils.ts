@@ -212,7 +212,7 @@ export const renderDisplayStyle = (sizeName?: NoXsMediaSize) => {
 };
 
 export const renderPositionStyle = (sizeName?: NoXsMediaSize) => {
-    const data: Array<string> = ['static','relative','absolute','sticky'];
+    const data: Array<string> = ['static','relative','fixed','absolute','sticky'];
 
     return data.map((code,idx) => {
         return `
