@@ -20,6 +20,7 @@ import {
 } from './utils';
 import {noXsMediaSizes} from '../config';
 import media from '../media';
+import {gutterUnit} from './config';
 
 
 
@@ -69,17 +70,17 @@ export const Utilities = createGlobalStyle`
 
             --acrool-gutter: ${props.theme.acroolGrid.spacer};
 
-            --acrool-gutter-1: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * .25)}; // 4
-            --acrool-gutter-2: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * .5)};  // 8
-            --acrool-gutter-3: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * .75)};  // 12
+            --acrool-gutter-1: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[1])}; // 4
+            --acrool-gutter-2: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[2])};  // 8
+            --acrool-gutter-3: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[3])};  // 12
 
             --acrool-gutter-4: var(--acrool-gutter);
 
-            --acrool-gutter-5: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 1.25)}; // 20
-            --acrool-gutter-6: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 1.5)}; // 24
-            --acrool-gutter-7: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 1.75)}; // 28
-            --acrool-gutter-8: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 2)}; // 32
-            --acrool-gutter-9: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * 2.5)};
+            --acrool-gutter-5: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[5])}; // 20
+            --acrool-gutter-6: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[6])}; // 24
+            --acrool-gutter-7: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[7])}; // 28
+            --acrool-gutter-8: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[8])}; // 32
+            --acrool-gutter-9: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[9])};
         }
 
         ${renderDisplayStyle()}

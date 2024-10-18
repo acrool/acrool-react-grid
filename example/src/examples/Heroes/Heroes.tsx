@@ -19,14 +19,14 @@ const Heroes = ({
             <Container fluid>
                 <Row>
                     <Col col={6}>
-                        <p className="mb-4">
+                        <p className="mb-8">
                         Quickly design and customize responsive mobile-first sites with Bootstrap,
                         the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                         responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
                         </p>
                     </Col>
                     <Col col={6} >
-                        <p className="mb-4">
+                        <p className="mb-8">
                         Quickly design and customize responsive mobile-first sites with Bootstrap,
                         the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                         responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
@@ -37,28 +37,28 @@ const Heroes = ({
 
             {/*<Flex className="gap-2">*/}
             {/*    <Col col={2} className="mx-auto p-0">*/}
-            {/*        <p className="mb-4">*/}
+            {/*        <p className="mb-8">*/}
             {/*            Quickly design and customize responsive mobile-first sites with Bootstrap,*/}
             {/*            the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,*/}
             {/*            responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.*/}
             {/*        </p>*/}
             {/*    </Col>*/}
             {/*    <Col col={5} className="mx-auto p-0">*/}
-            {/*        <p className="mb-4">*/}
+            {/*        <p className="mb-8">*/}
             {/*            Quickly design and customize responsive mobile-first sites with Bootstrap,*/}
             {/*            the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,*/}
             {/*            responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.*/}
             {/*        </p>*/}
             {/*    </Col>*/}
             {/*    <Col col={5} className="mx-auto p-0">*/}
-            {/*        <p className="mb-4">*/}
+            {/*        <p className="mb-8">*/}
             {/*            Quickly design and customize responsive mobile-first sites with Bootstrap,*/}
             {/*            the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,*/}
             {/*            responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.*/}
             {/*        </p>*/}
             {/*    </Col>*/}
             {/*    <Col col={5} className="mx-auto p-0">*/}
-            {/*        <p className="mb-4">*/}
+            {/*        <p className="mb-8">*/}
             {/*            Quickly design and customize responsive mobile-first sites with Bootstrap,*/}
             {/*            the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,*/}
             {/*            responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.*/}
@@ -71,11 +71,11 @@ const Heroes = ({
 
     const renderHero = () => {
         return  <div className="px-4 py-5 my-5 text-center">
-            <img className="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72"
+            <img className="d-block mx-auto mb-8" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72"
                 height="57"/>
-            <h1>Centered hero</h1>
+            <h1 className="mb-9">Centered hero</h1>
             <Col lg={6} className="mx-auto">
-                <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap,
+                <p className="mb-8">Quickly design and customize responsive mobile-first sites with Bootstrap,
                     the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                     responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
 
@@ -91,17 +91,17 @@ const Heroes = ({
         return <div className="px-4 pt-5 my-5 text-center">
             <h1>Centered screenshot</h1>
             <Col lg={6} className="mx-auto">
-                <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                <p className="mb-8">Quickly design and customize responsive mobile-first sites with Bootstrap, the
                     world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive
                     grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-                <Grid col={1}  sm={auto(2)} className="gap-3 justify-content-center mb-5">
+                <Grid col={1}  sm={auto(2)} className="gap-3 justify-content-center mb-9">
                     <Button >Primary button</Button>
                     <Button>Secondary</Button>
                 </Grid>
             </Col>
             <div className="overflow-hidden" style={{maxHeight: '30vh'}}>
                 <Container className="px-5">
-                    <img src="https://getbootstrap.com/docs/5.3/examples/heroes/bootstrap-docs.png" className="img-fluid mb-4"
+                    <img src="https://getbootstrap.com/docs/5.3/examples/heroes/bootstrap-docs.png" className="img-fluid mb-8"
                         alt="Example image" width="700" height="500" loading="lazy"/>
                 </Container>
             </div>
@@ -183,11 +183,11 @@ const Heroes = ({
             <Row className="p-4 pb-0 pr-lg-0 pt-lg-5 align-items-center rounded-3 border">
                 <Col lg={7} className="p-3 p-lg-5 pt-lg-3">
                     <h1>Border hero with cropped image and shadows</h1>
-                    <p>Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                    <p className="mb-9">Quickly design and customize responsive mobile-first sites with Bootstrap, the
                       world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                       responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
 
-                    <Grid col={1}  md={auto(2)} className="gap-3 justify-content-md-start mb-4 mb-lg-3">
+                    <Grid col={1}  md={auto(2)} className="gap-3 justify-content-md-start mb-8 mb-lg-3">
                         <Button className="px-4">Primary</Button>
                         <Button className="px-4">Default</Button>
                     </Grid>
@@ -205,7 +205,7 @@ const Heroes = ({
             <div className="py-5">
                 <h1>Dark color hero</h1>
                 <Col col={12} md={8} lg={6} className="mx-auto">
-                    <p className="mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap,
+                    <p className="mb-8">Quickly1 design and customize responsive mobile-first sites with Bootstrap,
                         the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                         responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
                     <Grid col={1} sm={auto(2)} className="gap-3 justify-content-sm-center">
