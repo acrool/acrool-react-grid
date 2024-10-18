@@ -26,6 +26,7 @@
     "react-dom": "link:../node_modules/react-dom",
     "styled-components": "5.3.9",
     "sass": "^1.77.1",
+    "clsx": "^2.1.1",
     "@chromatic-com/storybook": "^1.5.0",
     "@emotion/is-prop-valid": "^1.2.2",
     "@storybook/addon-essentials": "^8.1.10",
