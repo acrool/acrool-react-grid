@@ -1,6 +1,5 @@
 name: Deploy Storybook to Pages
 
-# 當創建或發佈新的 release 時觸發
 on:
   push:
     tags:
