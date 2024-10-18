@@ -1,27 +1,18 @@
 import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react-swc';
-import path from 'node:path';
+import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
-        react({
-            plugins: [[
-                '@swc/plugin-styled-components', {
-                    'displayName': true,
-                    'ssr': false
-                }
-            ]],
-        }),
+        react(),
+        svgr(),
     ],
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src'),
+    css: {
+        modules: {
+            localsConvention: 'camelCase',
+            scopeBehaviour: 'local',
+            generateScopedName: 'example__[local]',
         }
-    },
-    define: {
-        'process.env': {
-            PUBLIC_URL: JSON.stringify(process.env.PUBLIC_URL),
-        },
     },
 });
