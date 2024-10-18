@@ -7,7 +7,7 @@ export type RecordOption<K extends keyof any, T> = {
     [P in K]?: T;
 };
 
-export interface FCChildrenProps {
+export interface CommonProps {
     style?: CSS.Properties,
     className?: string,
     forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span';
@@ -81,7 +81,7 @@ export type TRWDMaxSize = {
 }
 export type TContainerFluid = true|NoXsMediaSize
 
-export interface IContainerProps extends FCChildrenProps{
+export interface IContainerProps extends CommonProps{
     fluid?: TContainerFluid;
 }
 
@@ -90,7 +90,7 @@ export interface IContainerProps extends FCChildrenProps{
 /** -------------------------------
  *       Grid System - Row
  * ------------------------------ */
-export interface IRowProps extends FCChildrenProps {
+export interface IRowProps extends CommonProps {
 }
 
 
@@ -99,7 +99,7 @@ export interface IRowProps extends FCChildrenProps {
  * ------------------------------ */
 export type TCol = number | true | 'auto' | undefined;
 export type TColOffset = {span: TCol, offset: number};
-export interface IColProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TCol|TColOffset>{
+export interface IColProps extends CommonProps, RecordOption<NoXsMediaSize, TCol|TColOffset>{
     col?: TCol|TColOffset;
 }
 
@@ -112,7 +112,7 @@ export type TGridColNumberSizeUnit = 'auto'|`${number}${TGridColSizeUnit}`;
 
 export type TGridCol = string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
 
-export interface IGridProps extends FCChildrenProps, RecordOption<NoXsMediaSize, TGridCol>{
+export interface IGridProps extends CommonProps, RecordOption<NoXsMediaSize, TGridCol>{
     col?: TGridCol
 }
 
@@ -120,7 +120,20 @@ export interface IGridProps extends FCChildrenProps, RecordOption<NoXsMediaSize,
 /** -------------------------------
  *       CSS Grid - Flex
  * ------------------------------ */
-export interface IFlexProps extends FCChildrenProps {
+export interface IFlexProps extends CommonProps {
     column?: boolean
 }
 
+
+/** -------------------------------
+ *       Global Utils
+ * ------------------------------ */
+export interface FCProps {
+    id?: string
+    style?: CSS.Properties
+    className?: string
+}
+
+export interface FCChildrenProps extends FCProps{
+    children?: ReactNode
+}
