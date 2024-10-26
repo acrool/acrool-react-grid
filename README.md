@@ -162,6 +162,11 @@ Use Nextjs example
 
 
 
+There is also a storybook that you can play with it:
+
+[![Play react-editext-example](https://raw.githubusercontent.com/acrool/acrool-react-grid/main/play-in-example-button.svg)](https://acrool-react-grid-storybook.pages.dev)
+
+
 ## License
 
 MIT © [Acrool](https://github.com/acrool) & [Imagine](https://github.com/imagine10255)
