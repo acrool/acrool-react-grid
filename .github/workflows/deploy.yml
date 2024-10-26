@@ -24,7 +24,7 @@ jobs:
 
       - name: Replace local links with actual versions
         run: |
-          sed -i 's#"@acrool/react-img": "link:.."#"@acrool/react-img": "latest"#' package.json
+          sed -i 's#"@acrool/react-img": "link:.."#"@acrool/react-grid": "latest"#' package.json
           sed -i 's#"react": "link:../node_modules/react"#"react": "^18.0.0"#' package.json
           sed -i 's#"react-dom": "link:../node_modules/react-dom"#"react-dom": "^18.0.0"#' package.json
 
