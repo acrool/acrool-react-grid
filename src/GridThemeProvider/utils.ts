@@ -1,4 +1,5 @@
 import {NoXsMediaSize, IGridSetting} from '../types';
+import {gutterUnit} from './config';
 
 
 
@@ -49,7 +50,6 @@ export const calcUnitSize = (unitSize: string, fn: (num: number) => number): str
     return `${result}${unit}`;
 };
 
-const gutterUnit = [0, .25, .5, 1, 1.5, 3];
 const calcSpacer = (spacer: string ,idx: number|'auto') => {
     if(typeof idx === 'number'){
         return calcUnitSize(spacer, num => num * gutterUnit[idx]);
