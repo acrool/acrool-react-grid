@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@acrool/js-utils": "^3.2.12",
-    "@acrool/react-grid": "link:../",
+    "@acrool/react-grid": "link:..",
     "@swc/core": "^1.3.68",
     "@swc/plugin-styled-components": "^1.5.68",
     "@types/dom-to-image": "^2.6.7",
