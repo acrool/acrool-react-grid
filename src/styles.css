@@ -32,6 +32,9 @@
 .text-area-overflow-4{--overflow-line: 4;}
 .text-area-overflow-5{--overflow-line: 5;}
 
+.text-pre{white-space: pre !important;}
+.text-pre-line{white-space: pre-line !important;}
+
 .absolute-center {
     position: absolute;
     top: 50%;
