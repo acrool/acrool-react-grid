@@ -53,14 +53,14 @@
     "styled-components": "6.x"
   },
   "devDependencies": {
-    "@swc/plugin-styled-components": "1.5.115",
+    "@swc/plugin-styled-components": "7.1.0",
     "@testing-library/dom": "9.3.3",
     "@testing-library/react": "14.0.0",
     "@types/jest": "29.5.0",
     "@types/node": "18.15.11",
     "@types/react": "18.x",
     "@types/react-dom": "18.x",
-    "@vitejs/plugin-react-swc": "3.4.0",
+    "@vitejs/plugin-react-swc": "3.8.1",
     "cz-git": "1.7.1",
     "eslint": "8.37.0",
     "eslint-config-react-app": "7.0.1",
