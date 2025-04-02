@@ -50,10 +50,10 @@
   "peerDependencies": {
     "react": "18.x",
     "react-dom": "18.x",
-    "styled-components": "5.3.x"
+    "styled-components": "6.x"
   },
   "devDependencies": {
-    "@swc/plugin-styled-components": "1.5.115",
+    "@swc/plugin-styled-components": "6.8.2",
     "@testing-library/dom": "9.3.3",
     "@testing-library/react": "14.0.0",
     "@types/jest": "29.5.0",
@@ -73,7 +73,7 @@
     "react-dom": "18.x",
     "rollup-plugin-visualizer": "5.9.0",
     "standard-version": "9.5.0",
-    "styled-components": "5.3.x",
+    "styled-components": "6.x",
     "ts-jest": "29.1.0",
     "typescript": "4.9.5",
     "vite": "4.4.9",
