@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, {css} from 'styled-components';
 import {TStyledProps, IGridProps} from '../../types';
 import {themeName} from '../../config';
@@ -14,7 +13,11 @@ import {createBreakpoint, cssGetter, createInfo} from './utils';
  *
  * By [Layout / Grid](https://acrool-react-grid.pages.dev/docs/layout/grid)
  */
-const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
+const Grid = styled.div.attrs<
+    {
+        'data-grid': string
+    } & TStyledProps<IGridProps>
+>(props => ({
     'data-grid': createInfo(props),
 }))`
     --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
@@ -27,11 +30,11 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     row-gap: var(--acrool-gutter-y);
 
 
-    ${(props: TStyledProps<IGridProps>) => css`
-     ${props.col && cssGetter.col(props.col)};
+    ${props => css`
+        ${props.col && cssGetter.col(props.col)};
 
-     ${createBreakpoint(props)};
-   `}
+        ${createBreakpoint(props)};
+    `}
 
 `;
 

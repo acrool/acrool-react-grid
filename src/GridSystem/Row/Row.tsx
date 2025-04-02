@@ -1,5 +1,4 @@
-import React from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import {TStyledProps, IRowProps} from '../../types';
 import {themeName} from '../../config';
 
@@ -15,7 +14,11 @@ import {themeName} from '../../config';
  *
  * By [Layout Grid System Row](https://acrool-react-grid.pages.dev/docs/layout/grid-system/row)
  */
-const Row = styled.div.attrs((props: TStyledProps<IRowProps>) => ({
+const Row = styled.div.attrs<
+    {
+        'data-grid': string
+    } & TStyledProps<IRowProps>
+>(props => ({
     'data-grid': 'row',
 }))`
     --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};

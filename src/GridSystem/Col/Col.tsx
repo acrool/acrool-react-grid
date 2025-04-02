@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
 import {createBreakpoint, createInfo, createCol} from './utils';
@@ -15,7 +14,11 @@ import {TStyledProps, IColProps} from '../../types';
  *
  * By [Layout Grid System Col](https://acrool-react-grid.pages.dev/docs/layout/grid-system/col)
  */
-const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
+const Col = styled.div.attrs<
+    {
+        'data-grid': string
+    } & TStyledProps<IColProps>
+>(props => ({
     'data-grid': createInfo(props),
 }))`
   min-height: 1px;

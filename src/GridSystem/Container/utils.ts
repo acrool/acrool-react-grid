@@ -38,7 +38,7 @@ export const getRWDMaxSize = (props: TStyledProps<IContainerProps>) => {
         xxl: {sm: false, md: false, lg: false, xl: false, xxl: true},
     };
 
-    if(typeof props.fluid !== 'undefined'){
+    if(typeof props.fluid !== 'undefined' && props.fluid !== false){
         if(props.fluid === true){
             return {sm: false, md: false, lg: false, xl: false, xxl: false};
         }

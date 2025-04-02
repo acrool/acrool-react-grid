@@ -55,7 +55,7 @@ export const createCol = (args: TCol|TColOffset, gridColumns: number) => {
     if(typeof args === 'object'){
         return `
             ${'span' in args && cssGetter.span(args.span, gridColumns)};
-            ${'offset' in args && cssGetter.offset(args.offset, gridColumns)};
+            ${'offset' in args && typeof args.offset !== 'undefined' && cssGetter.offset(args.offset, gridColumns)};
         `;
     }
     return `

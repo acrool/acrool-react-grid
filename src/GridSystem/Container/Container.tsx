@@ -13,7 +13,11 @@ import {createBreakpoint, createInfo} from './utils';
  *
  * By [Layout Container](https://acrool-react-grid.pages.dev/docs/layout/container)
  */
-const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
+const Container = styled.div.attrs<
+    {
+        'data-grid': string
+    } & TStyledProps<IContainerProps>
+>(props => ({
     'data-grid': createInfo(props),
 }))`
   --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
@@ -26,7 +30,7 @@ const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
   padding-right: calc(var(--acrool-gutter-x) * .5);
   padding-left: calc(var(--acrool-gutter-x) * .5);
 
-  ${(props: TStyledProps<IContainerProps>) => css`
+  ${props => css`
       ${props.fluid !== true && createBreakpoint(props)}
   `}
 `;
