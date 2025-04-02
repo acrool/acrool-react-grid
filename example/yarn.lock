@@ -927,7 +927,7 @@
     react-dom "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-essentials@^8.1.10":
+"@storybook/addon-essentials@^8.6.11":
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-8.6.11.tgz#5419e3c8f3f98bd4dfd25fb80a187ff4c49e6662"
   integrity sha512-QII5yTM0cGRryfTSJSK5Hf2CEiAX3atqccHZbPipkqO7dE9YDBvRfVwG0cQpHdv10tP066MDWgVDF5E3pDKecw==
@@ -950,7 +950,7 @@
   dependencies:
     "@storybook/global" "^5.0.0"
 
-"@storybook/addon-interactions@^8.1.10":
+"@storybook/addon-interactions@^8.6.11":
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-8.6.11.tgz#2e76c1c32266492e6e2d80fa95f786b28c34738c"
   integrity sha512-j9wUf8lQF922eC2HbWG4LdeflOu/togry80QB+Sqxs4+dg4iWhjxmN8gWav14/oa0vJBLN7Z2Tr4ifsJUEwRkg==
@@ -961,7 +961,7 @@
     polished "^4.2.2"
     ts-dedent "^2.2.0"
 
-"@storybook/addon-links@^8.1.10":
+"@storybook/addon-links@^8.6.11":
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-8.6.11.tgz#cdd63ee3a38e6c370609bcbf5e5b91fe8b290b4c"
   integrity sha512-1srydJWDiXUkYCbhibvZT3IqzMMiTR1hbC4UYPpvh3vT3G3NcZT17OsIyl/F/cYPWnjtYHZ5RI83h7dm0qK5cg==
@@ -977,7 +977,7 @@
     "@storybook/global" "^5.0.0"
     tiny-invariant "^1.3.1"
 
-"@storybook/addon-onboarding@^8.1.10":
+"@storybook/addon-onboarding@^8.6.11":
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-onboarding/-/addon-onboarding-8.6.11.tgz#a8e39252ec3864aa207478c58eea7b7f3f815ae3"
   integrity sha512-63XPzQ/8tRK7KWeMcRDoId0XSTWo+vEY3sHxhVkyAvIp76z/0QOHkScjf3pQ8tBMXD9Lr5E8d0a/cA0TqwF9tA==
@@ -1002,7 +1002,7 @@
   dependencies:
     memoizerific "^1.11.3"
 
-"@storybook/blocks@8.6.11", "@storybook/blocks@^8.1.10":
+"@storybook/blocks@8.6.11", "@storybook/blocks@^8.6.11":
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/blocks/-/blocks-8.6.11.tgz#b2a995d56c86f138ad173e9a66f42cfbaf697f9f"
   integrity sha512-2IyS3nB6SoEjIt0nWUMxtRIjJRUvDU8EF/eMbM4F/FuwIM402P3kNQ4n4+q1xZtYjvoMr5QUq+K8YF4ZlxIz0A==
@@ -1081,7 +1081,7 @@
   resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-8.6.11.tgz#12ecf78a287416b6ae1a43fd8298b2caa0e6ad3a"
   integrity sha512-giwqwx0PO70SyqoZ25CBM2tpAjJX5sjPm7uWKknYcFGl3H2PYDqqnvH7NfEXENQMq5DpAJisCZ0KkRvNHzLV2w==
 
-"@storybook/react-vite@^8.1.10":
+"@storybook/react-vite@^8.6.11":
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/react-vite/-/react-vite-8.6.11.tgz#9c7659755f3aa41709e094b844cb1ec8f50eb8e6"
   integrity sha512-UjAIzmfmZIhrMB5MYrc4RswTca0oodbG8m3iBBCadjy+rSZ/c9cbZgkI3bU8W5khkCToQoAXNJI8xWYfr/PGxw==
@@ -1096,7 +1096,7 @@
     resolve "^1.22.8"
     tsconfig-paths "^4.2.0"
 
-"@storybook/react@8.6.11", "@storybook/react@^8.1.10":
+"@storybook/react@8.6.11", "@storybook/react@^8.6.11":
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-8.6.11.tgz#28612bceaa9177ea16aefb0b07bc2c7850bb71a4"
   integrity sha512-ZaE2IS5alauWxEvWo8LNEi27QxiRfJrfffDpQJIIvY4WnR+jzgLdtMOAVo/cSM9mJSRLESEYW57b0l7JdQGm1g==
@@ -1108,7 +1108,7 @@
     "@storybook/react-dom-shim" "8.6.11"
     "@storybook/theming" "8.6.11"
 
-"@storybook/test@8.6.11", "@storybook/test@^8.1.10":
+"@storybook/test@8.6.11", "@storybook/test@^8.6.11":
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/test/-/test-8.6.11.tgz#e3cc7c83d46e6fe56292becee1160cd203eb66ba"
   integrity sha512-bk8JCRmVRHjnyt+/YnzCMEd4Y/K2L3uM+sCNuH4pYw6XT2UkR3Dj5mScGnfMvm98lHfpZDcD/AbY2vorOQsq+g==
@@ -1125,6 +1125,11 @@
   version "8.6.11"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.6.11.tgz#c44043311e193e6c5330843f32ec1777692fbe20"
   integrity sha512-G7IK5P9gzofUjfYhMo9Pdgbqcr22eoKFLD808Q8RxJopDoypdZKg4tes2iD+6YnrtnHS0nEoP/soMmfFYl9FIw==
+
+"@storybook/types@^8.6.11":
+  version "8.6.11"
+  resolved "https://registry.yarnpkg.com/@storybook/types/-/types-8.6.11.tgz#b2a1da1a5a561efcb2a4dc13f396f40533e68bd3"
+  integrity sha512-Rg8n6cATtZEZtJxxRhMArpbLKoYOHT/eAZTQH5Il3k4JQUUKEyUlTA/3qVnbU3RTGpaLgpiwMDzc9lOd/fdKDQ==
 
 "@svgr/babel-plugin-add-jsx-attribute@8.0.0":
   version "8.0.0"
