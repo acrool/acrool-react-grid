@@ -1,3 +1,6 @@
+@use "sass:meta";
+@use "sass:map";
+
 // 定义断点
 $breakpoints: (
   sm: 576px,
@@ -26,7 +29,7 @@ $directions: (
   @if $breakpoint == '' {
     @content;
   } @else {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   }
@@ -59,7 +62,7 @@ $directions: (
     }
   } @else {
     .border-#{$direction} {
-      @if type-of($value) == 'list' {
+      @if meta.type-of($value) == 'list' {
         @each $pos in $value {
           border-#{$pos}: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color) !important;
         }
@@ -140,30 +143,214 @@ $directions: (
 .visible { visibility: visible !important; }
 .invisible { visibility: hidden !important; }
 
-// 响应式样式生成
+// 网格系统变量
+$grid-spacer: var(--acrool-gutter);
+$grid-gutters: (
+  1: var(--acrool-gutter-1),
+  2: var(--acrool-gutter-2),
+  3: var(--acrool-gutter-3),
+  4: var(--acrool-gutter-4),
+  5: var(--acrool-gutter-5),
+  6: var(--acrool-gutter-6),
+  7: var(--acrool-gutter-7),
+  8: var(--acrool-gutter-8),
+  9: var(--acrool-gutter-9)
+);
+
+// 显示样式
+@each $display in (none, inline, inline-block, block, flex, inline-flex, grid, inline-grid) {
+  .d-#{$display} { display: #{$display} !important; }
+}
+
+// 位置样式
+@each $position in (static, relative, absolute, fixed, sticky) {
+  .position-#{$position} { position: #{$position} !important; }
+}
+
+// 自动流样式
+.grid-auto-flow {
+  grid-auto-flow: row !important;
+  &.grid-auto-flow-col { grid-auto-flow: column !important; }
+  &.grid-auto-flow-dense { grid-auto-flow: row dense !important; }
+  &.grid-auto-flow-col-dense { grid-auto-flow: column dense !important; }
+}
+
+// Flex 样式
+@each $direction in (row, column, row-reverse, column-reverse) {
+  .flex-#{$direction} { flex-direction: #{$direction} !important; }
+}
+
+// Flex 对齐样式
+@each $align in (start, end, center, between, around) {
+  .justify-content-#{$align} { justify-content: #{$align} !important; }
+  .align-items-#{$align} { align-items: #{$align} !important; }
+}
+
+// 网格列样式
+@for $i from 1 through 12 {
+  .g-col-#{$i} { grid-column: span #{$i} !important; }
+}
+
+// 网格行样式
+@for $i from 1 through 12 {
+  .g-row-#{$i} { grid-row: span #{$i} !important; }
+}
+
+// 高度, 宽度样式
+@each $size in $sizes {
+  .h-#{$size} { height: #{if($size == 0, 0, $size * 25)}\% !important; }
+  .w-#{$size} { width: #{if($size == 0, 0, $size * 25)}\% !important; }
+}
+
+
+// 文本样式
+@each $align in (left, center, right, justify) {
+  .text-#{$align} { text-align: #{$align} !important; }
+}
+
+// 圆角样式
+@each $size in (sm, md, lg, xl, xxl, pill) {
+  .rounded-#{$size} { border-radius: var(--acrool-border-radius-#{$size}) !important; }
+}
+
+// 边距样式
+@each $direction, $value in $directions {
+  @each $size, $gutter in $grid-gutters {
+    @if $direction == '' {
+      .m-#{$size} { margin: #{$gutter} !important; }
+    } @else {
+      .m#{$direction}-#{$size} {
+        @if meta.type-of($value) == 'list' {
+          @each $pos in $value {
+            margin-#{$pos}: #{$gutter} !important;
+          }
+        } @else {
+          margin-#{$value}: #{$gutter} !important;
+        }
+      }
+    }
+  }
+}
+
+// 内边距样式
+@each $direction, $value in $directions {
+  @each $size, $gutter in $grid-gutters {
+    @if $direction == '' {
+      .p-#{$size} { padding: #{$gutter} !important; }
+    } @else {
+      .p#{$direction}-#{$size} {
+        @if meta.type-of($value) == 'list' {
+          @each $pos in $value {
+            padding-#{$pos}: #{$gutter} !important;
+          }
+        } @else {
+          padding-#{$value}: #{$gutter} !important;
+        }
+      }
+    }
+  }
+}
+
+// 间距样式
+@each $size, $gutter in $grid-gutters {
+  .gap-#{$size} { gap: #{$gutter} !important; }
+}
+
+// 网格间距样式
+@each $size, $gutter in $grid-gutters {
+  .gutter-#{$size} { gap: #{$gutter} !important; }
+}
+
+// 排序样式
+@for $i from 1 through 12 {
+  .order-#{$i} { order: #{$i} !important; }
+}
+
+// 溢出样式
+.overflow-auto { overflow: auto !important; }
+.overflow-hidden { overflow: hidden !important; }
+.overflow-scroll { overflow: scroll !important; }
+.overflow-visible { overflow: visible !important; }
+
+// 响应式样式
 @each $breakpoint, $width in $breakpoints {
   @include responsive($breakpoint) {
-    // 尺寸类
-    @each $size in $sizes {
-      .h-#{$breakpoint}-#{$size} { height: #{$size} !important; }
-      .w-#{$breakpoint}-#{$size} { width: #{$size} !important; }
-    }
-    
-    // 显示类
     @each $display in (none, inline, inline-block, block, flex, inline-flex, grid, inline-grid) {
       .d-#{$breakpoint}-#{$display} { display: #{$display} !important; }
     }
-    
-    // Flex 布局类
+
+    @each $position in (static, relative, absolute, fixed, sticky) {
+      .position-#{$breakpoint}-#{$position} { position: #{$position} !important; }
+    }
+
     @each $direction in (row, column, row-reverse, column-reverse) {
       .flex-#{$breakpoint}-#{$direction} { flex-direction: #{$direction} !important; }
     }
-    
-    // 对齐类
+
     @each $align in (start, end, center, between, around) {
       .justify-content-#{$breakpoint}-#{$align} { justify-content: #{$align} !important; }
       .align-items-#{$breakpoint}-#{$align} { align-items: #{$align} !important; }
     }
+
+    @for $i from 1 through 12 {
+      .g-col-#{$breakpoint}-#{$i} { grid-column: span #{$i} !important; }
+      .g-row-#{$breakpoint}-#{$i} { grid-row: span #{$i} !important; }
+    }
+
+    @each $size in $sizes {
+      .h-#{$breakpoint}-#{$size} { height: #{if($size == 0, 0, $size * 25)}\% !important; }
+      .w-#{$breakpoint}-#{$size} { width: #{if($size == 0, 0, $size * 25)}\% !important; }
+    }
+
+    @each $align in (left, center, right, justify) {
+      .text-#{$breakpoint}-#{$align} { text-align: #{$align} !important; }
+    }
+
+    @each $size in (sm, md, lg, xl, xxl, pill) {
+      .rounded-#{$breakpoint}-#{$size} { border-radius: var(--acrool-border-radius-#{$size}) !important; }
+    }
+
+    @each $direction, $value in $directions {
+      @each $size, $gutter in $grid-gutters {
+        @if $direction == '' {
+          .m-#{$breakpoint}-#{$size} { margin: #{$gutter} !important; }
+          .p-#{$breakpoint}-#{$size} { padding: #{$gutter} !important; }
+        } @else {
+          .m#{$direction}-#{$breakpoint}-#{$size} {
+            @if meta.type-of($value) == 'list' {
+              @each $pos in $value {
+                margin-#{$pos}: #{$gutter} !important;
+              }
+            } @else {
+              margin-#{$value}: #{$gutter} !important;
+            }
+          }
+          .p#{$direction}-#{$breakpoint}-#{$size} {
+            @if meta.type-of($value) == 'list' {
+              @each $pos in $value {
+                padding-#{$pos}: #{$gutter} !important;
+              }
+            } @else {
+              padding-#{$value}: #{$gutter} !important;
+            }
+          }
+        }
+      }
+    }
+
+    @each $size, $gutter in $grid-gutters {
+      .gap-#{$breakpoint}-#{$size} { gap: #{$gutter} !important; }
+      .gutter-#{$breakpoint}-#{$size} { gap: #{$gutter} !important; }
+    }
+
+    @for $i from 1 through 12 {
+      .order-#{$breakpoint}-#{$i} { order: #{$i} !important; }
+    }
+
+    .overflow-#{$breakpoint}-auto { overflow: auto !important; }
+    .overflow-#{$breakpoint}-hidden { overflow: hidden !important; }
+    .overflow-#{$breakpoint}-scroll { overflow: scroll !important; }
+    .overflow-#{$breakpoint}-visible { overflow: visible !important; }
   }
 }
 

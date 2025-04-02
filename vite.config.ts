@@ -23,6 +23,16 @@ export default defineConfig({
         }),
         visualizer() as Plugin,
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                implementation: require('sass'),
+                sassOptions: {
+                    outputStyle: 'compressed',
+                },
+            },
+        },
+    },
     build: {
         sourcemap: process.env.NODE_ENV !== 'production',
         lib: {
