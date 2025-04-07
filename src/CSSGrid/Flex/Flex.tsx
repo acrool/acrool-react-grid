@@ -12,7 +12,7 @@ import {createInfo, createCol} from './utils';
  */
 const Flex = styled.div.attrs<
     {
-        'data-grid': string
+        'data-grid'?: string
     } & TStyledProps<IFlexProps>
 >(props => ({
     'data-grid': createInfo(props),

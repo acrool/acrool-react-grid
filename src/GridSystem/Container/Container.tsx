@@ -15,7 +15,7 @@ import {createBreakpoint, createInfo} from './utils';
  */
 const Container = styled.div.attrs<
     {
-        'data-grid': string
+        'data-grid'?: string
     } & TStyledProps<IContainerProps>
 >(props => ({
     'data-grid': createInfo(props),

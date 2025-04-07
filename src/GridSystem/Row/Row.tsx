@@ -16,7 +16,7 @@ import {themeName} from '../../config';
  */
 const Row = styled.div.attrs<
     {
-        'data-grid': string
+        'data-grid'?: string
     } & TStyledProps<IRowProps>
 >(props => ({
     'data-grid': 'row',

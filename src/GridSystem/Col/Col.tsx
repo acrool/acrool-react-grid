@@ -16,7 +16,7 @@ import {TStyledProps, IColProps} from '../../types';
  */
 const Col = styled.div.attrs<
     {
-        'data-grid': string
+        'data-grid'?: string
     } & TStyledProps<IColProps>
 >(props => ({
     'data-grid': createInfo(props),

@@ -180,10 +180,41 @@ $grid-gutters: (
   .flex-#{$direction} { flex-direction: #{$direction} !important; }
 }
 
+// Flex 换行样式
+.flex-wrap { flex-wrap: wrap !important; }
+.flex-nowrap { flex-wrap: nowrap !important; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse !important; }
+
+// Flex 伸缩样式
+.flex-1 { flex: 1 !important; }
+.flex-auto { flex: 0 0 auto !important; }
+.flex-fill { flex: 1 1 auto !important; }
+.flex-grow-0 { flex-grow: 0 !important; }
+.flex-grow-1 { flex-grow: 1 !important; }
+.flex-shrink-0 { flex-shrink: 0 !important; }
+.flex-shrink-1 { flex-shrink: 1 !important; }
+
 // Flex 对齐样式
-@each $align in (start, end, center, between, around) {
-  .justify-content-#{$align} { justify-content: #{$align} !important; }
-  .align-items-#{$align} { align-items: #{$align} !important; }
+@each $align in (auto, start, end, center, between, around, baseline, stretch) {
+  .justify-content-#{$align} { justify-content: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'between', 'space-between', if($align == 'around', 'space-around', if($align == 'auto', 'normal', $align)))))} !important; }
+  .align-items-#{$align} { align-items: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'auto', 'normal', $align)))} !important; }
+  .align-self-#{$align} { align-self: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'auto', 'auto', $align)))} !important; }
+}
+
+// Grid 对齐样式
+@each $align in (auto, start, end, center, stretch) {
+  .justify-items-#{$align} { justify-items: #{if($align == 'auto', 'normal', $align)} !important; }
+  .justify-self-#{$align} { justify-self: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'auto', 'auto', $align)))} !important; }
+}
+
+// Grid 内容对齐样式
+@each $align in (auto, start, end, center, between, around, stretch) {
+  .align-content-#{$align} { align-content: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'between', 'space-between', if($align == 'around', 'space-around', if($align == 'auto', 'normal', $align)))))} !important; }
+}
+
+// Grid 位置样式
+@each $align in (auto, start, end, center) {
+  .place-items-#{$align} { place-items: #{if($align == 'auto', 'normal', $align)} !important; }
 }
 
 // 网格列样式
