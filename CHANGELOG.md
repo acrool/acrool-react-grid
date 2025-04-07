@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0-test.2](https://github.com/acrool/acrool-react-grid/compare/v6.0.0-test.1...v6.0.0-test.2) (2025-04-07)
+
 ## [6.0.0-test.1](https://github.com/acrool/acrool-react-grid/compare/v5.2.6...v6.0.0-test.1) (2025-04-03)
 
 ### [5.2.6](https://github.com/acrool/acrool-react-grid/compare/v5.2.6-alpha.0...v5.2.6) (2024-12-12)
