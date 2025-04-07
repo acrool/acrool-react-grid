@@ -195,27 +195,54 @@ $grid-gutters: (
 .flex-shrink-1 { flex-shrink: 1 !important; }
 
 // Flex 对齐样式
-@each $align in (auto, start, end, center, between, around, baseline, stretch) {
-  .justify-content-#{$align} { justify-content: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'between', 'space-between', if($align == 'around', 'space-around', if($align == 'auto', 'normal', $align)))))} !important; }
-  .align-items-#{$align} { align-items: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'auto', 'normal', $align)))} !important; }
-  .align-self-#{$align} { align-self: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'auto', 'auto', $align)))} !important; }
+$flex-justify: (
+    'auto': 'normal',
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+    'between': 'space-between',
+    'around': 'space-around',
+    'baseline': 'baseline',
+    'stretch': 'stretch'
+);
+
+@each $align, $value in $flex-justify {
+  .justify-content-#{$align} { justify-content: $value !important;}
+  .align-items-#{$align} { align-items: $value !important;}
+  .align-self-#{$align} { align-self: $value !important;}
 }
 
 // Grid 对齐样式
-@each $align in (auto, start, end, center, stretch) {
-  .justify-items-#{$align} { justify-items: #{if($align == 'auto', 'normal', $align)} !important; }
-  .justify-self-#{$align} { justify-self: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'auto', 'auto', $align)))} !important; }
+
+// 定义方向
+$grid-justify: (
+    'auto': 'normal',
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+    'stretch': 'stretch'
+);
+
+@each $align, $value in $grid-justify {
+    .justify-items-#{$align} { justify-items: $value !important;}
+    .justify-self-#{$align} { justify-self: $value !important;}
 }
 
+
+// 定义方向
+$grid-align: (
+    'auto': 'normal',
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+    'between': 'space-betwee',
+    'around': 'space-around',
+    'stretch': 'stretch'
+);
+
 // Grid 内容对齐样式
-@each $align in (auto, start, end, center, between, around, stretch) {
-  .align-content-#{$align} { 
-    align-content: #{if($align == 'start', 'flex-start', 
-      if($align == 'end', 'flex-end', 
-        if($align == 'between', 'space-between', 
-          if($align == 'around', 'space-around', 
-            if($align == 'auto', 'normal', $align)))))} !important; 
-  }
+@each $align, $value in $grid-align {
+    .align-content-#{$align} { align-content: $value !important;}
 }
 
 // Grid 位置样式
@@ -234,9 +261,16 @@ $grid-gutters: (
 }
 
 // 高度, 宽度样式
-@each $size in $sizes {
-  .h-#{$size} { height: #{if($size == 0, 0, $size * 25)}\% !important; }
-  .w-#{$size} { width: #{if($size == 0, 0, $size * 25)}\% !important; }
+$width-height-values: (
+  0: 0,
+  100: 100%,
+  inherit: inherit,
+  auto: auto
+);
+
+@each $key, $value in $width-height-values {
+  .h-#{$key} { height: $value !important; }
+  .w-#{$key} { width: $value !important; }
 }
 
 
@@ -267,6 +301,7 @@ $grid-gutters: (
     @if $direction == '' {
       .m-#{$size} { margin: #{$gutter} !important; }
       .m-auto { margin: auto !important; }
+      .m-0 { margin: 0 !important; }
     } @else {
       .m#{$direction}-#{$size} {
         @if meta.type-of($value) == 'list' {
@@ -286,6 +321,15 @@ $grid-gutters: (
           margin-#{$value}: auto !important;
         }
       }
+      .m#{$direction}-0 {
+        @if meta.type-of($value) == 'list' {
+          @each $pos in $value {
+            margin-#{$pos}: 0 !important;
+          }
+        } @else {
+          margin-#{$value}: 0 !important;
+        }
+      }
     }
   }
 }
@@ -295,6 +339,7 @@ $grid-gutters: (
   @each $size, $gutter in $grid-gutters {
     @if $direction == '' {
       .p-#{$size} { padding: #{$gutter} !important; }
+      .p-0 { padding: 0 !important; }
     } @else {
       .p#{$direction}-#{$size} {
         @if meta.type-of($value) == 'list' {
@@ -303,6 +348,15 @@ $grid-gutters: (
           }
         } @else {
           padding-#{$value}: #{$gutter} !important;
+        }
+      }
+      .p#{$direction}-0 {
+        @if meta.type-of($value) == 'list' {
+          @each $pos in $value {
+            padding-#{$pos}: 0 !important;
+          }
+        } @else {
+          padding-#{$value}: 0 !important;
         }
       }
     }
@@ -315,11 +369,19 @@ $grid-gutters: (
   .column-gap-#{$size} { column-gap: #{$gutter} !important; }
   .row-gap-#{$size} { row-gap: #{$gutter} !important; }
 }
+.gap-0 { gap: 0 !important; }
+.column-gap-0 { column-gap: 0 !important; }
+.row-gap-0 { row-gap: 0 !important; }
 
 // 网格间距样式
 @each $size, $gutter in $grid-gutters {
-  .gutter-#{$size} { gap: #{$gutter} !important; }
+  .g-#{$size} { gap: #{$gutter} !important; }
+  .gx-#{$size} { column-gap: #{$gutter} !important; }
+  .gy-#{$size} { row-gap: #{$gutter} !important; }
 }
+.g-0 { gap: 0 !important; }
+.gx-0 { column-gap: 0 !important; }
+.gy-0 { row-gap: 0 !important; }
 
 // 排序样式
 @for $i from 1 through 12 {
@@ -367,9 +429,10 @@ $grid-gutters: (
       .g-row-#{$breakpoint}-#{$i} { grid-row: span #{$i} !important; }
     }
 
-    @each $size in $sizes {
-      .h-#{$breakpoint}-#{$size} { height: #{if($size == 0, 0, $size * 25)}\% !important; }
-      .w-#{$breakpoint}-#{$size} { width: #{if($size == 0, 0, $size * 25)}\% !important; }
+
+    @each $key, $value in $width-height-values {
+      .h-#{$breakpoint}-#{$key} { height: $value !important; }
+      .w-#{$breakpoint}-#{$key} { width: $value !important; }
     }
 
     @each $align in (left, center, right, justify) {
