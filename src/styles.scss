@@ -376,15 +376,17 @@ $width-height-values: (
 .column-gap-0 { column-gap: 0 !important; }
 .row-gap-0 { row-gap: 0 !important; }
 
+
 // 网格间距样式
+.g-0, .gy-0 { box-sizing: border-box; }
+.g-0, .gx-0 { box-sizing: border-box; }
+
 @each $size, $gutter in $grid-gutters {
-  .g-#{$size} { gap: #{$gutter} !important; }
-  .gx-#{$size} { column-gap: #{$gutter} !important; }
-  .gy-#{$size} { row-gap: #{$gutter} !important; }
+    .g, .gy { box-sizing: border-box; }
+    .g, .gx { box-sizing: border-box; }
 }
-.g-0 { gap: 0 !important; }
-.gx-0 { column-gap: 0 !important; }
-.gy-0 { row-gap: 0 !important; }
+
+
 
 // 排序样式
 @for $i from 1 through 12 {
@@ -469,9 +471,9 @@ $width-height-values: (
 
 
 
-    @for $i from 1 through 12 {
-      .g-col-#{$breakpoint}-#{$i} { grid-column: span #{$i} !important; }
-      .g-row-#{$breakpoint}-#{$i} { grid-row: span #{$i} !important; }
+    @for $i from 1 through 9 {
+      .g-col-#{$breakpoint}-#{$i} { grid-column: auto/span #{$i} !important; }
+      .g-row-#{$breakpoint}-#{$i} { grid-row: auto/span #{$i} !important; }
     }
 
 
@@ -574,14 +576,13 @@ $width-height-values: (
 
 
     // 网格间距样式
-    @each $size, $gutter in $grid-gutters {
-        .g-#{$breakpoint}-#{$size} { gap: #{$gutter} !important; }
-        .gx-#{$breakpoint}-#{$size} { column-gap: #{$gutter} !important; }
-        .gy-#{$breakpoint}-#{$size} { row-gap: #{$gutter} !important; }
+  .g-#{$breakpoint}-0, .gy-#{$breakpoint}-0 { box-sizing: border-box; }
+  .g-#{$breakpoint}-0, .gx-#{$breakpoint}-0 { box-sizing: border-box; }
+
+   @each $size, $gutter in $grid-gutters {
+      .g-#{$breakpoint}, .gy-#{$breakpoint} { box-sizing: border-box; }
+      .g-#{$breakpoint}, .gx-#{$breakpoint} { box-sizing: border-box; }
     }
-    .g-#{$breakpoint}-0 { gap: 0 !important; }
-    .gx-#{$breakpoint}-0 { column-gap: 0 !important; }
-    .gy-#{$breakpoint}-0 { row-gap: 0 !important; }
 
 
     @for $i from 1 through 12 {

@@ -1,3 +1,26 @@
+import {NoXsMediaSize, IGridSetting} from '../types';
+import {gutterUnit} from './config';
+
+
+
+
+
+
+/**
+ * 判斷是否為空
+ * @param args
+ */
+const suffix = (args: {code?: number|string, sizeName?: NoXsMediaSize}) => {
+    const str = [];
+    if(typeof args?.sizeName !== 'undefined') str.push(args.sizeName);
+    if(typeof args?.code !== 'undefined') str.push(args.code);
+
+    if(str.length > 0){
+        return `-${str.join('-')}`;
+    }
+    return '';
+};
+
 
 
 /**
@@ -26,3 +49,23 @@ export const calcUnitSize = (unitSize: string, fn: (num: number) => number): str
     // 將計算結果和單位部分組合成字符串
     return `${result}${unit}`;
 };
+
+const calcSpacer = (spacer: string ,idx: number|'auto') => {
+    if(typeof idx === 'number'){
+        return calcUnitSize(spacer, num => num * gutterUnit[idx]);
+    }
+    return 'auto';
+};
+
+
+export const renderGutterStyle = (sizeName?: NoXsMediaSize) => {
+    return Array.from({length: 10}).map((row,idx) => {
+        return `
+        .g${suffix({code: idx, sizeName})}, .gy${suffix({code: idx, sizeName})} {--acrool-gutter-y: ${idx === 0 ? 0: `var(--acrool-gutter-${idx})`};}
+        .g${suffix({code: idx, sizeName})}, .gx${suffix({code: idx, sizeName})} {--acrool-gutter-x: ${idx === 0 ? 0: `var(--acrool-gutter-${idx})`};}
+        `;
+    });
+};
+
+
+

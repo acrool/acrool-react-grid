@@ -1,6 +1,6 @@
 import {createGlobalStyle, css} from 'styled-components';
 import {TStyledProps, TThemeProps} from '../types';
-import {calcUnitSize} from './utils';
+import {calcUnitSize, renderGutterStyle} from './utils';
 import {gutterUnit} from './config';
 
 export const Utilities = createGlobalStyle`
@@ -31,5 +31,8 @@ export const Utilities = createGlobalStyle`
             --acrool-gutter-8: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[8])}; // 32
             --acrool-gutter-9: ${calcUnitSize(props.theme.acroolGrid.spacer, num => num * gutterUnit[9])};
         }
+
+        ${renderGutterStyle()}
+
     `}
 `;
