@@ -209,7 +209,13 @@ $grid-gutters: (
 
 // Grid 内容对齐样式
 @each $align in (auto, start, end, center, between, around, stretch) {
-  .align-content-#{$align} { align-content: #{if($align == 'start', 'flex-start', if($align == 'end', 'flex-end', if($align == 'between', 'space-between', if($align == 'around', 'space-around', if($align == 'auto', 'normal', $align)))))} !important; }
+  .align-content-#{$align} { 
+    align-content: #{if($align == 'start', 'flex-start', 
+      if($align == 'end', 'flex-end', 
+        if($align == 'between', 'space-between', 
+          if($align == 'around', 'space-around', 
+            if($align == 'auto', 'normal', $align)))))} !important; 
+  }
 }
 
 // Grid 位置样式
@@ -243,12 +249,24 @@ $grid-gutters: (
 @each $size in (sm, md, lg, xl, xxl, pill) {
   .rounded-#{$size} { border-radius: var(--acrool-border-radius-#{$size}) !important; }
 }
+.rounded-circle { border-radius: 50% !important; }
+.rounded-top { border-top-left-radius: var(--acrool-border-radius) !important; border-top-right-radius: var(--acrool-border-radius) !important; }
+.rounded-end { border-top-right-radius: var(--acrool-border-radius) !important; border-bottom-right-radius: var(--acrool-border-radius) !important; }
+.rounded-bottom { border-bottom-right-radius: var(--acrool-border-radius) !important; border-bottom-left-radius: var(--acrool-border-radius) !important; }
+.rounded-start { border-bottom-left-radius: var(--acrool-border-radius) !important; border-top-left-radius: var(--acrool-border-radius) !important; }
+.rounded-0 { border-radius: 0 !important; }
+.rounded-1 { border-radius: var(--acrool-border-radius-sm) !important; }
+.rounded-2 { border-radius: var(--acrool-border-radius-md) !important; }
+.rounded-3 { border-radius: var(--acrool-border-radius-lg) !important; }
+.rounded-4 { border-radius: var(--acrool-border-radius-xl) !important; }
+.rounded-5 { border-radius: var(--acrool-border-radius-xxl) !important; }
 
 // 边距样式
 @each $direction, $value in $directions {
   @each $size, $gutter in $grid-gutters {
     @if $direction == '' {
       .m-#{$size} { margin: #{$gutter} !important; }
+      .m-auto { margin: auto !important; }
     } @else {
       .m#{$direction}-#{$size} {
         @if meta.type-of($value) == 'list' {
@@ -257,6 +275,15 @@ $grid-gutters: (
           }
         } @else {
           margin-#{$value}: #{$gutter} !important;
+        }
+      }
+      .m#{$direction}-auto {
+        @if meta.type-of($value) == 'list' {
+          @each $pos in $value {
+            margin-#{$pos}: auto !important;
+          }
+        } @else {
+          margin-#{$value}: auto !important;
         }
       }
     }
@@ -285,6 +312,8 @@ $grid-gutters: (
 // 间距样式
 @each $size, $gutter in $grid-gutters {
   .gap-#{$size} { gap: #{$gutter} !important; }
+  .column-gap-#{$size} { column-gap: #{$gutter} !important; }
+  .row-gap-#{$size} { row-gap: #{$gutter} !important; }
 }
 
 // 网格间距样式
@@ -302,6 +331,16 @@ $grid-gutters: (
 .overflow-hidden { overflow: hidden !important; }
 .overflow-scroll { overflow: scroll !important; }
 .overflow-visible { overflow: visible !important; }
+
+.overflow-x-auto { overflow-x: auto !important; }
+.overflow-x-hidden { overflow-x: hidden !important; }
+.overflow-x-scroll { overflow-x: scroll !important; }
+.overflow-x-visible { overflow-x: visible !important; }
+
+.overflow-y-auto { overflow-y: auto !important; }
+.overflow-y-hidden { overflow-y: hidden !important; }
+.overflow-y-scroll { overflow-y: scroll !important; }
+.overflow-y-visible { overflow-y: visible !important; }
 
 // 响应式样式
 @each $breakpoint, $width in $breakpoints {
@@ -340,11 +379,13 @@ $grid-gutters: (
     @each $size in (sm, md, lg, xl, xxl, pill) {
       .rounded-#{$breakpoint}-#{$size} { border-radius: var(--acrool-border-radius-#{$size}) !important; }
     }
+    .rounded-#{$breakpoint} { border-radius: var(--acrool-border-radius) !important; }
 
     @each $direction, $value in $directions {
       @each $size, $gutter in $grid-gutters {
         @if $direction == '' {
           .m-#{$breakpoint}-#{$size} { margin: #{$gutter} !important; }
+          .m-#{$breakpoint}-auto { margin: auto !important; }
           .p-#{$breakpoint}-#{$size} { padding: #{$gutter} !important; }
         } @else {
           .m#{$direction}-#{$breakpoint}-#{$size} {
@@ -354,6 +395,15 @@ $grid-gutters: (
               }
             } @else {
               margin-#{$value}: #{$gutter} !important;
+            }
+          }
+          .m#{$direction}-#{$breakpoint}-auto {
+            @if meta.type-of($value) == 'list' {
+              @each $pos in $value {
+                margin-#{$pos}: auto !important;
+              }
+            } @else {
+              margin-#{$value}: auto !important;
             }
           }
           .p#{$direction}-#{$breakpoint}-#{$size} {
@@ -371,6 +421,8 @@ $grid-gutters: (
 
     @each $size, $gutter in $grid-gutters {
       .gap-#{$breakpoint}-#{$size} { gap: #{$gutter} !important; }
+      .column-gap-#{$breakpoint}-#{$size} { column-gap: #{$gutter} !important; }
+      .row-gap-#{$breakpoint}-#{$size} { row-gap: #{$gutter} !important; }
       .gutter-#{$breakpoint}-#{$size} { gap: #{$gutter} !important; }
     }
 
