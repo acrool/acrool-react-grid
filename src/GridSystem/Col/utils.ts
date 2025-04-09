@@ -103,7 +103,7 @@ const suffix = (value: any) => {
  * 產生 Debug 資訊
  * @param props
  */
-export const createInfo = (props: TStyledProps<IColProps>) => {
+export const createInfo = (props: IColProps) => {
     return [
         props.col && `col${suffix(props.col)}`,
         props.sm && `col-sm${suffix(props.sm)}`,
