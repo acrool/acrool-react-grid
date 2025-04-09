@@ -22,17 +22,20 @@ const FlexStd = styled.div<
 `;
 
 
-const Flex = (props: TStyledProps<IFlexProps>) => {
+const Flex = (props: IFlexProps) => {
     const {column, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
     return <FlexStd
         {...htmlProps}
 
         data-grid={createInfo(props)}
-        $column={column}
-        forwardAs={forwardAs}
-        $forwardRef={forwardRef}
+        // as={forwardAs}
+        ref={forwardRef}
+
         children={children}
         onClick={onClick}
+
+        $column={column}
+
     />;
 };
 

@@ -1,4 +1,4 @@
-import {Grid, Flex} from '@acrool/react-grid';
+import {Grid, Flex, FCProps} from '@acrool/react-grid';
 import styled from 'styled-components';
 import PurchaseButton from '../../_components/PurchaseButton';
 

@@ -41,7 +41,13 @@ const Col = (props: TStyledProps<IColProps>) => {
 
     return <ColStd
         {...htmlProps}
+
         data-grid={createInfo(props)}
+        as={forwardAs}
+        ref={forwardRef}
+
+        children={children}
+        onClick={onClick}
 
         $col={col}
         $sm={sm}
@@ -50,10 +56,7 @@ const Col = (props: TStyledProps<IColProps>) => {
         $xl={xl}
         $xxl={xxl}
 
-        forwardAs={forwardAs}
-        $forwardRef={forwardRef}
-        children={children}
-        onClick={onClick}
+
     />;
 };
 

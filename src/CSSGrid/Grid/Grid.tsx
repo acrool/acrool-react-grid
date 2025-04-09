@@ -42,11 +42,18 @@ const GridStd = styled.div<
 `;
 
 
-const Grid = (props: TStyledProps<IGridProps>) => {
+const Grid = (props: IGridProps) => {
     const {col, sm, md, lg, xl, xxl, gap, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
 
     return <GridStd
+        {...htmlProps}
+
         data-grid={createInfo(props)}
+        as={forwardAs}
+        ref={forwardRef}
+
+        children={children}
+        onClick={onClick}
 
         $col={col}
         $sm={sm}
@@ -56,10 +63,7 @@ const Grid = (props: TStyledProps<IGridProps>) => {
         $xxl={xxl}
 
         $gap={gap}
-        forwardAs={forwardAs}
-        $forwardRef={forwardRef}
-        children={children}
-        onClick={onClick}
+
     />;
 };
 

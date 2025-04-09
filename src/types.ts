@@ -10,7 +10,7 @@ export type RecordOption<K extends keyof any, T> = {
 export interface CommonProps {
     style?: CSS.Properties,
     className?: string,
-    id?: string|number;
+    id?: string;
     key?: string|number;
     forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span';
     forwardRef?: any;
@@ -20,10 +20,9 @@ export interface CommonProps {
 export interface CommonStdProps {
     style?: CSS.Properties,
     className?: string,
-    id?: string|number;
+    id?: string;
     key?: string|number;
-    forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span';
-    $forwardRef?: any;
+    ref?: any;
     children?: ReactNode,
     onClick?: (event: MouseEvent<HTMLElement>) => void;
 }

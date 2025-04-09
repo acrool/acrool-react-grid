@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {TStyledProps, IRowProps, IRowStdProps, IContainerProps} from '../../types';
+import {TStyledProps, IRowProps, IRowStdProps} from '../../types';
 import {themeName} from '../../config';
-import {createInfo} from "../Container/utils";
+import {createInfo} from '../Container/utils';
 
 
 // - align-items 若預設加上 flex-start, 會讓鄰居Col高度不會一致
@@ -42,14 +42,15 @@ const RowStd = styled.div<
 
 
 
-const Row = (props: TStyledProps<IRowProps>) => {
+const Row = (props: IRowProps) => {
     const {forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
     return <RowStd
         {...htmlProps}
-        data-grid={createInfo(props)}
 
-        forwardAs={forwardAs}
-        $forwardRef={forwardRef}
+        data-grid={createInfo(props)}
+        as={forwardAs}
+        ref={forwardRef}
+
         children={children}
         onClick={onClick}
     />;

@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
-import {TStyledProps, IContainerProps, IContainerStdProps, IColProps} from '../../types';
+import {TStyledProps, IContainerProps, IContainerStdProps} from '../../types';
 import {createBreakpoint, createInfo} from './utils';
 
 
@@ -37,18 +37,19 @@ const ContainerStd = styled.div<
 
 
 
-const Container = (props: TStyledProps<IContainerProps>) => {
+const Container = (props: IContainerProps) => {
     const {fluid, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
     return <ContainerStd
         {...htmlProps}
+
         data-grid={createInfo(props)}
+        as={forwardAs}
+        ref={forwardRef}
 
-        $fluid={fluid}
-
-        forwardAs={forwardAs}
-        $forwardRef={forwardRef}
         children={children}
         onClick={onClick}
+
+        $fluid={fluid}
     />;
 };
 
