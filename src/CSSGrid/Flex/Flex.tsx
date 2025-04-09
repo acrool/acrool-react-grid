@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import {TStyledProps, IFlexProps} from '../../types';
+import {TStyledProps, IFlexProps, IFlexStdProps} from '../../types';
 import {createInfo, createCol} from './utils';
 
 
@@ -10,19 +10,31 @@ import {createInfo, createCol} from './utils';
  *
  * By [Layout Flex](https://acrool-react-grid.pages.dev/docs/layout/flex)
  */
-const Flex = styled.div.attrs<
-    {
-        'data-grid'?: string
-    } & TStyledProps<IFlexProps>
->(props => ({
-    'data-grid': createInfo(props),
-}))`
+const FlexStd = styled.div<
+    { 'data-grid'?: string } &
+    TStyledProps<IFlexStdProps>
+>`
     display: flex;
 
     ${props => css`
-        ${props.column && createCol()};
+        ${props.$column && createCol()};
     `}
 `;
+
+
+const Flex = (props: TStyledProps<IFlexProps>) => {
+    const {column, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+    return <FlexStd
+        {...htmlProps}
+
+        data-grid={createInfo(props)}
+        $column={column}
+        forwardAs={forwardAs}
+        $forwardRef={forwardRef}
+        children={children}
+        onClick={onClick}
+    />;
+};
 
 export default Flex;
 

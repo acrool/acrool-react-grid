@@ -10,10 +10,20 @@ export type RecordOption<K extends keyof any, T> = {
 export interface CommonProps {
     style?: CSS.Properties,
     className?: string,
-    forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span';
-    forwardRef?: any;
     id?: string|number;
     key?: string|number;
+    forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span';
+    forwardRef?: any;
+    children?: ReactNode,
+    onClick?: (event: MouseEvent<HTMLElement>) => void;
+}
+export interface CommonStdProps {
+    style?: CSS.Properties,
+    className?: string,
+    id?: string|number;
+    key?: string|number;
+    forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span';
+    $forwardRef?: any;
     children?: ReactNode,
     onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
@@ -28,7 +38,9 @@ export type TStyledProps<P> = P & ThemeProps<{[themeName]: IGridSetting}>;
 export type TStrings = TemplateStringsArray | CSSObject;
 
 export type TMediaSize = 'xs'|'sm'|'md'|'lg'|'xl'|'xxl';
+export type TMediaSizeStd = '$xs'|'$sm'|'$md'|'$lg'|'$xl'|'$xxl';
 export type NoXsMediaSize = Exclude<TMediaSize, 'xs'>;
+export type NoXsMediaSizeStd = Exclude<TMediaSizeStd, '$xs'>;
 
 export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: Function };
 
@@ -64,8 +76,13 @@ export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>;
 export interface IContainerProps extends CommonProps{
     fluid?: TContainerFluid;
 }
+export interface IContainerStdProps extends CommonStdProps{
+    $fluid?: TContainerFluid;
+}
 
 export interface IRowProps extends CommonProps {
+}
+export interface IRowStdProps extends CommonStdProps {
 }
 
 export type TCol = number | true | 'auto' | undefined;
@@ -74,6 +91,9 @@ export type TColOffset = {
     offset?: number,
 };
 
+export interface IColStdProps extends CommonStdProps, RecordOption<NoXsMediaSizeStd, TCol|TColOffset>{
+    $col?: TCol|TColOffset;
+}
 export interface IColProps extends CommonProps, RecordOption<NoXsMediaSize, TCol|TColOffset>{
     col?: TCol|TColOffset;
 }
@@ -83,11 +103,18 @@ export type TGridColNumberSizeUnit = 'auto'|`${number}${TGridColSizeUnit}`;
 
 export type TGridCol = string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
 
+export interface IGridStdProps extends CommonStdProps, RecordOption<NoXsMediaSizeStd, TGridCol>{
+    $col?: TGridCol;
+    $gap?: number;
+}
 export interface IGridProps extends CommonProps, RecordOption<NoXsMediaSize, TGridCol>{
     col?: TGridCol;
     gap?: number;
 }
 
+export interface IFlexStdProps extends CommonStdProps {
+    $column?: boolean
+}
 export interface IFlexProps extends CommonProps {
     column?: boolean
 }

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import {TStyledProps, IRowProps} from '../../types';
+import {TStyledProps, IRowProps, IRowStdProps, IContainerProps} from '../../types';
 import {themeName} from '../../config';
+import {createInfo} from "../Container/utils";
 
 
 // - align-items 若預設加上 flex-start, 會讓鄰居Col高度不會一致
@@ -14,13 +15,9 @@ import {themeName} from '../../config';
  *
  * By [Layout Grid System Row](https://acrool-react-grid.pages.dev/docs/layout/grid-system/row)
  */
-const Row = styled.div.attrs<
-    {
-        'data-grid'?: string
-    } & TStyledProps<IRowProps>
->(props => ({
-    'data-grid': 'row',
-}))`
+const RowStd = styled.div<
+    { 'data-grid'?: string } & TStyledProps<IRowStdProps>
+>`
     --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
     --acrool-gutter-y: 0;
 
@@ -41,6 +38,23 @@ const Row = styled.div.attrs<
     }
 
 `;
+
+
+
+
+const Row = (props: TStyledProps<IRowProps>) => {
+    const {forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+    return <RowStd
+        {...htmlProps}
+        data-grid={createInfo(props)}
+
+        forwardAs={forwardAs}
+        $forwardRef={forwardRef}
+        children={children}
+        onClick={onClick}
+    />;
+};
+
 
 export default Row;
 
