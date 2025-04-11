@@ -7,7 +7,6 @@ import {Utilities} from './Utilities';
 
 
 
-const ThemeProviderFixed = ThemeProvider as unknown as React.FC<PropsWithChildren<{ theme: any }>>;
 
 
 /**
@@ -36,10 +35,10 @@ const GridThemeProvider: React.FC<IGridThemeProviderProps> = (props: IGridThemeP
         }
     };
 
-    return <ThemeProviderFixed theme={composeGridTheme}>
+    return <ThemeProvider theme={composeGridTheme}>
         {children}
         <Utilities key="gridGlobalStyle"/>
-    </ThemeProviderFixed>
+    </ThemeProvider>
     ;
 };
 

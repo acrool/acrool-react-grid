@@ -4,7 +4,9 @@ import dts from 'vite-plugin-dts';
 import * as path from 'node:path';
 import {visualizer} from 'rollup-plugin-visualizer';
 import eslint from 'vite-plugin-eslint';
+import {createRequire} from 'node:module';
 
+const require = createRequire(import.meta.url);
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -23,6 +25,18 @@ export default defineConfig({
         }),
         visualizer() as Plugin,
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                silenceDeprecations: ['legacy-js-api'],
+                implementation: require('sass-embedded'),
+                sassOptions: {
+                    outputStyle: 'compressed',
+                    sourceMap: true,
+                },
+            },
+        },
+    },
     build: {
         sourcemap: process.env.NODE_ENV !== 'production',
         lib: {

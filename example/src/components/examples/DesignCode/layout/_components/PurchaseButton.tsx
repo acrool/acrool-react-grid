@@ -12,7 +12,9 @@ const PurchaseButton = ({
     children
 }: IProps) => {
     return <PurchaseButtonRoot col="45px auto"
-        className={clsx(className, 'g-2')} as="button">
+        className={clsx(className, 'g-2')}
+        forwardAs="button"
+    >
         {children}
     </PurchaseButtonRoot>;
 };

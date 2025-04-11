@@ -1,6 +1,5 @@
-import React from 'react';
 import styled, {css} from 'styled-components';
-import {TStyledProps, IGridProps} from '../../types';
+import {TStyledProps, IGridProps, IGridStdProps} from '../../types';
 import {themeName} from '../../config';
 import {createBreakpoint, cssGetter, createInfo} from './utils';
 
@@ -14,9 +13,9 @@ import {createBreakpoint, cssGetter, createInfo} from './utils';
  *
  * By [Layout / Grid](https://acrool-react-grid.pages.dev/docs/layout/grid)
  */
-const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
-    'data-grid': createInfo(props),
-}))`
+const GridStd = styled.div<
+    { 'data-grid'?: string } & TStyledProps<IGridStdProps>
+>`
     --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
     --acrool-gutter-y: 0;
 
@@ -27,13 +26,47 @@ const Grid = styled.div.attrs((props: TStyledProps<IGridProps>) => ({
     row-gap: var(--acrool-gutter-y);
 
 
-    ${(props: TStyledProps<IGridProps>) => css`
-     ${props.col && cssGetter.col(props.col)};
+    ${props => css`
+        ${props.$col && cssGetter.col(props.$col)};
 
-     ${createBreakpoint(props)};
-   `}
+        ${createBreakpoint({
+    theme: props.theme,
+    sm: props.$sm,
+    md: props.$md,
+    lg: props.$lg,
+    xl: props.$xl,
+    xxl: props.$xxl,
+} as TStyledProps<IGridProps>)};
+    `}
 
 `;
+
+
+const Grid = (props: IGridProps) => {
+    const {col, sm, md, lg, xl, xxl, gap, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+
+    return <GridStd
+        {...htmlProps}
+
+        data-grid={createInfo(props)}
+        as={forwardAs}
+        ref={forwardRef}
+
+        children={children}
+        onClick={onClick}
+
+        $col={col}
+        $sm={sm}
+        $md={md}
+        $lg={lg}
+        $xl={xl}
+        $xxl={xxl}
+
+        $gap={gap}
+
+    />;
+};
+
 
 export default Grid;
 

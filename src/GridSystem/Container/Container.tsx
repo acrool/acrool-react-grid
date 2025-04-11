@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
-import {TStyledProps, IContainerProps} from '../../types';
+import {TStyledProps, IContainerProps, IContainerStdProps} from '../../types';
 import {createBreakpoint, createInfo} from './utils';
 
 
@@ -13,9 +13,9 @@ import {createBreakpoint, createInfo} from './utils';
  *
  * By [Layout Container](https://acrool-react-grid.pages.dev/docs/layout/container)
  */
-const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
-    'data-grid': createInfo(props),
-}))`
+const ContainerStd = styled.div<
+    { 'data-grid'?: string } & TStyledProps<IContainerStdProps>
+>`
   --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
   --acrool-gutter-y: 0;
 
@@ -26,9 +26,32 @@ const Container = styled.div.attrs((props: TStyledProps<IContainerProps>) => ({
   padding-right: calc(var(--acrool-gutter-x) * .5);
   padding-left: calc(var(--acrool-gutter-x) * .5);
 
-  ${(props: TStyledProps<IContainerProps>) => css`
-      ${props.fluid !== true && createBreakpoint(props)}
+  ${props => css`
+      ${props.$fluid !== true && createBreakpoint({
+        theme: props.theme,
+        fluid: props.$fluid,
+    } as TStyledProps<IContainerProps>)};
   `}
 `;
+
+
+
+
+const Container = (props: IContainerProps) => {
+    const {fluid, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+    return <ContainerStd
+        {...htmlProps}
+
+        data-grid={createInfo(props)}
+        as={forwardAs}
+        ref={forwardRef}
+
+        children={children}
+        onClick={onClick}
+
+        $fluid={fluid}
+    />;
+};
+
 
 export default Container;

@@ -35,9 +35,13 @@ export const Primary: Story = {
 };
 
 export const With: Story = {
-    args: {},
+    args: {
+        column: true
+    },
     render: function Render(args) {
-        return <Flex className="gap-2 overflow-auto ml-8" style={{width: '100%'}}>
+        return <Flex
+            {...args}
+            className="gap-2 overflow-auto ml-8" style={{width: '100%', height: '20px', background: 'red'}}>
 
         </Flex>;
     },

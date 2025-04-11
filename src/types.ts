@@ -1,6 +1,6 @@
 import React, {MouseEvent, ReactNode} from 'react';
 import CSS from 'csstype';
-import {ThemeProps, CSSObject} from 'styled-components';
+import type {CSSObject} from 'styled-components';
 import {themeName} from './config';
 
 export type RecordOption<K extends keyof any, T> = {
@@ -10,54 +10,52 @@ export type RecordOption<K extends keyof any, T> = {
 export interface CommonProps {
     style?: CSS.Properties,
     className?: string,
+    id?: string;
+    key?: string|number;
     forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span';
     forwardRef?: any;
-    id?: string|number;
+    children?: ReactNode,
+    onClick?: (event: MouseEvent<HTMLElement>) => void;
+}
+export interface CommonStdProps {
+    style?: CSS.Properties,
+    className?: string,
+    id?: string;
     key?: string|number;
+    ref?: any;
     children?: ReactNode,
     onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-
-export type NoXsMediaSize = Exclude<TMediaSize, 'xs'>
+export interface ThemeProps<T> {
+    theme: T;
+}
 
 export type TThemeProps = ThemeProps<{[themeName]: IGridSetting}>;
-export type TStyledProps<P> = TThemeProps & P;
+export type TStyledProps<P> = P & ThemeProps<{[themeName]: IGridSetting}>;
 
+export type TStrings = TemplateStringsArray | CSSObject;
 
+export type TMediaSize = 'xs'|'sm'|'md'|'lg'|'xl'|'xxl';
+export type TMediaSizeStd = '$xs'|'$sm'|'$md'|'$lg'|'$xl'|'$xxl';
+export type NoXsMediaSize = Exclude<TMediaSize, 'xs'>;
+export type NoXsMediaSizeStd = Exclude<TMediaSizeStd, '$xs'>;
 
+export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: Function };
 
-
-/** -------------------------------
- *             Media
- * ------------------------------ */
-
-
-export type TStrings = TemplateStringsArray | CSSObject
-export type TMediaSizeUnit = 'px' | 'rem';
-export type TGutterWidth = `${number}${TMediaSizeUnit}`;
-
-export type TMediaSize = 'xs'|'sm'|'md'|'lg'|'xl'|'xxl'
+export type TGutterWidth = string;
 
 export interface IBreakpoints {
-    xs: number
-    sm: number
-    md: number
-    lg: number
-    xl: number
-    xxl: number
+    xs: number,
+    sm: number,
+    md: number,
+    lg: number,
+    xl: number,
+    xxl: number,
 }
-export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>
 
-export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: Function }
+export type TContainerFluid = boolean|NoXsMediaSize;
 
-
-
-
-
-/** -------------------------------
- *         GirdProvide
- * ------------------------------ */
 export interface IGridThemeProviderProps {
     gridTheme?: Partial<IGridSetting>
     children: React.ReactNode
@@ -69,71 +67,63 @@ export interface IGridSetting {
     gridBreakpoints: IBreakpoints
     containerMaxWidths: TContainerMaxWidths
 }
+
 export type TGridTheme = Partial<IGridSetting>;
 
-
-
-/** -------------------------------
- *             Container
- * ------------------------------ */
-export type TRWDMaxSize = {
-    [size in NoXsMediaSize | 'fluid']: boolean
-}
-export type TContainerFluid = true|NoXsMediaSize
+export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>;
 
 export interface IContainerProps extends CommonProps{
     fluid?: TContainerFluid;
 }
-
-
-
-/** -------------------------------
- *       Grid System - Row
- * ------------------------------ */
-export interface IRowProps extends CommonProps {
+export interface IContainerStdProps extends CommonStdProps{
+    $fluid?: TContainerFluid;
 }
 
+export interface IRowProps extends CommonProps {
+}
+export interface IRowStdProps extends CommonStdProps {
+}
 
-/** -------------------------------
- *       Grid System - Col
- * ------------------------------ */
 export type TCol = number | true | 'auto' | undefined;
-export type TColOffset = {span: TCol, offset: number};
+export type TColOffset = {
+    span?: TCol,
+    offset?: number,
+};
+
+export interface IColStdProps extends CommonStdProps, RecordOption<NoXsMediaSizeStd, TCol|TColOffset>{
+    $col?: TCol|TColOffset;
+}
 export interface IColProps extends CommonProps, RecordOption<NoXsMediaSize, TCol|TColOffset>{
     col?: TCol|TColOffset;
 }
 
-
-/** -------------------------------
- *         CSS Grid - Grid
- * ------------------------------ */
 export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
 export type TGridColNumberSizeUnit = 'auto'|`${number}${TGridColSizeUnit}`;
 
 export type TGridCol = string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
 
+export interface IGridStdProps extends CommonStdProps, RecordOption<NoXsMediaSizeStd, TGridCol>{
+    $col?: TGridCol;
+    $gap?: number;
+}
 export interface IGridProps extends CommonProps, RecordOption<NoXsMediaSize, TGridCol>{
-    col?: TGridCol
+    col?: TGridCol;
+    gap?: number;
 }
 
-
-/** -------------------------------
- *       CSS Grid - Flex
- * ------------------------------ */
+export interface IFlexStdProps extends CommonStdProps {
+    $column?: boolean
+}
 export interface IFlexProps extends CommonProps {
     column?: boolean
 }
 
-
-/** -------------------------------
- *       Global Utils
- * ------------------------------ */
 export interface FCProps {
     id?: string
     style?: CSS.Properties
     className?: string
 }
 
-export interface FCChildrenProps extends FCProps{
+export interface FCChildrenProps extends FCProps {
     children?: ReactNode
 }
