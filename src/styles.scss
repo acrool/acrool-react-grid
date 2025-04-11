@@ -81,6 +81,19 @@ $directions: (
 }
 
 // 文本溢出样式
+.text-pre-wrap {
+  white-space: pre-wrap !important;
+}
+.text-pre-line {
+  white-space: pre-line !important;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+//.text-nowrap {
+//  white-space: nowrap !important;
+//}
+
 .text-overflow {
   white-space: nowrap !important;
   overflow: hidden !important;
