@@ -20,6 +20,13 @@
 
 </div>
 
+
+| Version | Styled-component | React       |
+|---------|------------------|-------------|
+| 6.x     | 6.x              | ^18.3       |
+ | 5.x     | 5.x              | 18.0 ~ 18.3 | 
+
+
 ## Documentation
 
 - [Getting Started](https://acrool-react-grid.pages.dev/docs/getting-started)
