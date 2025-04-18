@@ -48,8 +48,8 @@
     "release:alpha": "standard-version --prerelease alpha"
   },
   "peerDependencies": {
-    "react": "19.x",
-    "react-dom": "19.x",
+    "react": ">=18.3.0 <20.0.0",
+    "react-dom": ">=18.3.0 <20.0.0",
     "styled-components": "6.x"
   },
   "devDependencies": {
