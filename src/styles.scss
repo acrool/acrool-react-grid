@@ -156,15 +156,24 @@ $directions: (
 // 网格系统变量
 $grid-spacer: var(--acrool-gutter);
 $grid-gutters: (
-  1: var(--acrool-gutter-1),
-  2: var(--acrool-gutter-2),
-  3: var(--acrool-gutter-3),
-  4: var(--acrool-gutter-4),
-  5: var(--acrool-gutter-5),
-  6: var(--acrool-gutter-6),
-  7: var(--acrool-gutter-7),
-  8: var(--acrool-gutter-8),
-  9: var(--acrool-gutter-9)
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    7: 1.75rem,
+    8: 2rem,
+    9: 2.25rem,
+    10: 2.5rem,
+    11: 2.75rem,
+    12: 3rem,
+    13: 3.25rem,
+    14: 3.5rem,
+    15: 3.75rem,
+    16: 4rem,
+    17: 4.25rem,
+    18: 4.5rem
 );
 
 // 显示样式
@@ -376,6 +385,20 @@ $width-height-values: (
 }
 
 
+
+// 网格间距样式
+.g-0, .gy-0 { --acrool-gutter-x: 0; }
+.g-0, .gx-0 { --acrool-gutter-y: 0; }
+
+@each $size, $gutter in $grid-gutters {
+    .g-#{$size}, .gx-#{$size} { --acrool-gutter-x: #{$gutter} }
+    .g-#{$size}, .gy-#{$size} { --acrool-gutter-y: #{$gutter} }
+}
+
+
+
+
+
 // 间距样式
 @each $size, $gutter in $grid-gutters {
   .gap-#{$size} { gap: #{$gutter} !important; }
@@ -385,16 +408,6 @@ $width-height-values: (
 .gap-0 { gap: 0 !important; }
 .column-gap-0 { column-gap: 0 !important; }
 .row-gap-0 { row-gap: 0 !important; }
-
-
-// 网格间距样式
-.g-0, .gy-0 { box-sizing: border-box; }
-.g-0, .gx-0 { box-sizing: border-box; }
-
-@each $size, $gutter in $grid-gutters {
-    .g, .gy { box-sizing: border-box; }
-    .g, .gx { box-sizing: border-box; }
-}
 
 
 
