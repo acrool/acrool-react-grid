@@ -47,7 +47,7 @@ const Row = (props: IRowProps) => {
     return <RowStd
         {...htmlProps}
 
-        data-grid={createInfo(props)}
+        data-grid="row"
         as={forwardAs}
         ref={forwardRef}
 
