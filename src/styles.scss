@@ -91,6 +91,15 @@ $directions: (
   white-space: nowrap !important;
 }
 
+// 文本转换样式
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
 .text-overflow {
   white-space: nowrap !important;
   overflow: hidden !important;
@@ -135,6 +144,8 @@ $directions: (
 }
 
 .inset-0 { inset: 0; }
+
+
 
 // 滤镜样式
 .filter-gray { filter: grayscale(1) !important; }
@@ -508,7 +519,6 @@ $width-height-values: (
     @each $align in (left, center, right, justify) {
       .text-#{$breakpoint}-#{$align} { text-align: #{$align} !important; }
     }
-
 
 
     .rounded-#{$breakpoint} { border-radius: var(--acrool-border-radius) !important; }
