@@ -58,14 +58,6 @@ const calcSpacer = (spacer: string ,idx: number|'auto') => {
 };
 
 
-export const renderGutterStyle = (sizeName?: NoXsMediaSize) => {
-    return Array.from({length: 10}).map((row,idx) => {
-        return `
-        .g${suffix({code: idx, sizeName})}, .gy${suffix({code: idx, sizeName})} {--acrool-gutter-y: ${idx === 0 ? 0: `var(--acrool-gutter-${idx})`};}
-        .g${suffix({code: idx, sizeName})}, .gx${suffix({code: idx, sizeName})} {--acrool-gutter-x: ${idx === 0 ? 0: `var(--acrool-gutter-${idx})`};}
-        `;
-    });
-};
 
 
 
