@@ -18,8 +18,6 @@ import {calcUnitSize} from '../../GridThemeProvider/utils';
 const RowStd = styled.div<
     { 'data-grid'?: string } & TStyledProps<IRowStdProps>
 >`
-    --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
-
     display: flex;
     flex-wrap: wrap;
     margin-top: calc(var(--acrool-gutter-y) * -1);
