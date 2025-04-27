@@ -54,7 +54,7 @@ const mediaPx2vw = (strings: TemplateStringsArray | CSSObject, ...interpolations
 `;
 
 /**
- * 產生 Media 的方法
+ * 產生 media 的方法
  * use:
  *   ${media.sm`
  *      width: 20px
