@@ -1,13 +1,13 @@
 import {useTheme} from 'styled-components';
 import {themeName} from '../config';
-import {TMediaSize} from '../types';
+import {NoXsMediaSize, TMediaSize} from '../types';
 import {useEffect, useState} from 'react';
 
 /**
  * 取得目前尺寸
  * @param sizes 要監聽的尺寸陣列，如果未提供則監聽所有尺寸
  */
-const useMedia = (sizes?: TMediaSize[]) => {
+const useMedia = (sizes?: NoXsMediaSize[]) => {
     const theme = useTheme();
     const breakpoints = theme[themeName]?.gridBreakpoints;
     const [currentSize, setCurrentSize] = useState<TMediaSize>('xs');

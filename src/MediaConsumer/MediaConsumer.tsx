@@ -1,11 +1,11 @@
-import {TMediaSize} from '../types';
+import {NoXsMediaSize, TMediaSize} from '../types';
 import useMedia from './useMedia';
 import {JSX} from 'react';
 
 
 interface IProps {
-    children: (size: TMediaSize) => JSX.Element;
-    sizes?: TMediaSize[],
+    children: (mediaSize: TMediaSize) => JSX.Element;
+    sizes?: NoXsMediaSize[],
 }
 
 /**
