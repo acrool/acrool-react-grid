@@ -16,23 +16,8 @@ import {calcUnitSize} from '../../GridThemeProvider/utils';
  * By [Layout Grid System Row](https://acrool-react-grid.pages.dev/docs/layout/grid-system/row)
  */
 const RowStd = styled.div<
-    { 'data-grid'?: string } & TStyledProps<IRowStdProps>
+    { 'data-grid-row'?: string } & TStyledProps<IRowStdProps>
 >`
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(var(--acrool-gutter-y) * -1);
-    margin-right: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * -.5)});
-    margin-left: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * -.5)});
-    padding-inline-start: 0; /* 避免 ul 預設樣式位移 */
-
-    > * {
-        flex-shrink: 0;
-        width: 100%;
-        max-width: 100%;
-        padding-right: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * .5)});
-        padding-left: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * .5)});
-        margin-top: var(--acrool-gutter-y);
-    }
 
 `;
 
