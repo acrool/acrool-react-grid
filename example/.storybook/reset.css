@@ -116,8 +116,82 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:act
 /* 修復 chrome auto輸入之後的樣式 */
 @-webkit-keyframes autofill { to {background: none;} }
 
-:root {
-    /*noinspection CssUnresolvedCustomProperty*/
-    --vh100: calc(var(--vh, 1vh) * 100);
+.font-color-1 {
+    color: #f8fbff;
 }
 
+.font-color-2 {
+    color: #e9f0fe;
+}
+
+.font-color-3 {
+    color: #d4e3fc;
+}
+
+.font-color-4 {
+    color: #b6cff9;
+}
+
+.font-color-5 {
+    color: #92b6f5;
+}
+
+.font-color-6 {
+    color: #6496ef;
+}
+
+.font-color-7 {
+    color: #4072cc;
+}
+
+.font-color-8 {
+    color: #2a53a3;
+}
+
+.font-color-9 {
+    color: #1a3873;
+}
+
+.font-color-10 {
+    color: #0c1d40;
+}
+
+.bg-color-1 {
+    background-color: #f8fbff;
+}
+
+.bg-color-2 {
+    background-color: #e9f0fe;
+}
+
+.bg-color-3 {
+    background-color: #d4e3fc;
+}
+
+.bg-color-4 {
+    background-color: #b6cff9;
+}
+
+.bg-color-5 {
+    background-color: #92b6f5;
+}
+
+.bg-color-6 {
+    background-color: #6496ef;
+}
+
+.bg-color-7 {
+    background-color: #4072cc;
+}
+
+.bg-color-8 {
+    background-color: #2a53a3;
+}
+
+.bg-color-9 {
+    background-color: #1a3873;
+}
+
+.bg-color-10 {
+    background-color: #0c1d40;
+}

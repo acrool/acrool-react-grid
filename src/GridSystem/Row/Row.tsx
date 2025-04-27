@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {TStyledProps, IRowProps, IRowStdProps} from '../../types';
 import {themeName} from '../../config';
-import {createInfo} from '../Container/utils';
+import {calcUnitSize} from '../../GridThemeProvider/utils';
 
 
 // - align-items 若預設加上 flex-start, 會讓鄰居Col高度不會一致
@@ -18,22 +18,19 @@ import {createInfo} from '../Container/utils';
 const RowStd = styled.div<
     { 'data-grid'?: string } & TStyledProps<IRowStdProps>
 >`
-    --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
-    --acrool-gutter-y: 0;
-
     display: flex;
     flex-wrap: wrap;
     margin-top: calc(var(--acrool-gutter-y) * -1);
-    margin-right: calc(var(--acrool-gutter-x) * -0.5);
-    margin-left: calc(var(--acrool-gutter-x) * -0.5);
+    margin-right: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * -.5)});
+    margin-left: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * -.5)});
     padding-inline-start: 0; /* 避免 ul 預設樣式位移 */
 
     > * {
         flex-shrink: 0;
         width: 100%;
         max-width: 100%;
-        padding-right: calc(var(--acrool-gutter-x) * 0.5);
-        padding-left: calc(var(--acrool-gutter-x) * 0.5);
+        padding-right: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * .5)});
+        padding-left: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * .5)});
         margin-top: var(--acrool-gutter-y);
     }
 
