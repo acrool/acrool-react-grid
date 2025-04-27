@@ -2,6 +2,7 @@ import styled, {css} from 'styled-components';
 import {themeName} from '../../config';
 import {TStyledProps, IContainerProps, IContainerStdProps} from '../../types';
 import {createBreakpoint, createInfo} from './utils';
+import {calcUnitSize} from '../../GridThemeProvider/utils';
 
 
 
@@ -16,15 +17,11 @@ import {createBreakpoint, createInfo} from './utils';
 const ContainerStd = styled.div<
     { 'data-grid'?: string } & TStyledProps<IContainerStdProps>
 >`
-  --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
-  --acrool-gutter-y: 0;
-
-
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: calc(var(--acrool-gutter-x) * .5);
-  padding-left: calc(var(--acrool-gutter-x) * .5);
+  padding-right: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * .5)});
+  padding-left: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * .5)});
 
   ${props => css`
       ${props.$fluid !== true && createBreakpoint({
