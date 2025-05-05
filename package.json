@@ -25,7 +25,8 @@
       "browser": "./dist/acrool-react-grid.es.js",
       "import": "./dist/acrool-react-grid.es.js"
     },
-    "./dist/index.css": "./dist/react-grid.css"
+    "./dist/index.css": "./dist/react-grid.css",
+    "./dist/styles.scss": "./dist/styles.scss"
   },
   "files": [
     "dist"
