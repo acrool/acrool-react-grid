@@ -6,15 +6,14 @@ exports[`Grid md  renders grid-md-6 1`] = `
   --acrool-gutter-y: 0;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
+  grid-template-columns: repeat(12, 1fr);
   column-gap: var(--acrool-gutter-x);
   row-gap: var(--acrool-gutter-y);
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
@@ -49,15 +48,14 @@ exports[`Grid md  renders grid-md-auto 1`] = `
   --acrool-gutter-y: 0;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
+  grid-template-columns: repeat(12, 1fr);
   column-gap: var(--acrool-gutter-x);
   row-gap: var(--acrool-gutter-y);
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    grid-template-columns: repeat(2,auto);
+    grid-template-columns: repeat(2, auto);
   }
 }
 

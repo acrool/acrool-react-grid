@@ -29,7 +29,6 @@ const Flex = (props: IFlexProps) => {
         {...htmlProps}
 
         data-grid={createInfo(props)}
-        // as={forwardAs}
         ref={forwardRef}
 
         children={children}

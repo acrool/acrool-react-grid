@@ -6,11 +6,10 @@ exports[`Grid Col renders col-auto 1`] = `
   --acrool-gutter-y: 0;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
+  grid-template-columns: repeat(12, 1fr);
   column-gap: var(--acrool-gutter-x);
   row-gap: var(--acrool-gutter-y);
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 <div
@@ -32,11 +31,10 @@ exports[`Grid Col renders grid default 1`] = `
   --acrool-gutter-y: 0;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
+  grid-template-columns: repeat(12, 1fr);
   column-gap: var(--acrool-gutter-x);
   row-gap: var(--acrool-gutter-y);
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 <div

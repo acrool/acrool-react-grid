@@ -6,10 +6,8 @@ exports[`Col Md renders col-md-6 1`] = `
   min-width: 0;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     width: 50%;
   }
@@ -29,10 +27,8 @@ exports[`Col Md renders col-md-auto 1`] = `
   min-width: 0;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     width: auto;
   }
@@ -52,10 +48,8 @@ exports[`Col Md renders col-md-true 1`] = `
   min-width: 0;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    -webkit-flex: 1 0 0;
-    -ms-flex: 1 0 0;
     flex: 1 0 0;
   }
 }

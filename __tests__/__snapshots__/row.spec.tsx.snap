@@ -1,35 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Row renders row 1`] = `
-.c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-top: calc(var(--acrool-gutter-y) * -1);
-  margin-right: calc(var(--acrool-gutter-x) * -0.5);
-  margin-left: calc(var(--acrool-gutter-x) * -0.5);
-  padding-inline-start: 0;
-}
-
-.c0 > * {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--acrool-gutter-x) * 0.5);
-  padding-left: calc(var(--acrool-gutter-x) * 0.5);
-  margin-top: var(--acrool-gutter-y);
-}
-
 <div
-  class="c0"
+  class=""
   data-grid="row"
 >
   row

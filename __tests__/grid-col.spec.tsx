@@ -1,10 +1,11 @@
-import React from 'react';
 import 'jest-styled-components';
-import {render} from '@testing-library/react';
 import '@testing-library/dom';
-import GridThemeProvider from '../src/GridThemeProvider';
+
+import {render} from '@testing-library/react';
+import React from 'react';
+
 import Grid from '../src/CSSGrid/Grid';
-import {auto} from '../src/utils';
+import GridThemeProvider from '../src/GridThemeProvider';
 
 
 

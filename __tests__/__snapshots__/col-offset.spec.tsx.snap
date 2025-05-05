@@ -4,15 +4,11 @@ exports[`Col Offset renders col-md-offset-2 1`] = `
 .c0 {
   min-height: 1px;
   min-width: 0;
-  -webkit-flex: 1 0 0;
-  -ms-flex: 1 0 0;
   flex: 1 0 0;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     width: 50%;
     margin-left: 33.333333333333336%;
@@ -31,8 +27,6 @@ exports[`Col Offset renders col-offset-3 1`] = `
 .c0 {
   min-height: 1px;
   min-width: 0;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 50%;
   margin-left: 25%;
