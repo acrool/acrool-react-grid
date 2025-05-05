@@ -11,6 +11,7 @@
     "grid-system"
   ],
   "private": false,
+  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -55,8 +56,8 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin-ts": "^3.0.1",
-    "@swc/plugin-styled-components": "7.1.0",
     "@swc/jest": "^0.2.27",
+    "@swc/plugin-styled-components": "7.1.0",
     "@testing-library/dom": "10.3.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "16.0.0",
@@ -81,14 +82,14 @@
     "react-dom": "^19.1.0",
     "rollup-plugin-visualizer": "5.9.0",
     "sass": "^1.87.0",
-    "sass-embedded": "^1.86.2",
     "standard-version": "^9.5.0",
     "styled-components": "6.x",
     "ts-jest": "^29.3.2",
     "ts-node": "10.8.1",
     "vite": "^6.0.11",
     "vite-plugin-dts": "^4.5.3",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-static-copy": "^2.3.1"
   },
   "config": {
     "commitizen": {
