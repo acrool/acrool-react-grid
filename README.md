@@ -57,8 +57,10 @@ yarn add styled-components @acrool/react-grid
 in your packages. (Make the version of styled-component you use match the version of styled-component used in acrool-react-gird)
 
 ```json
-"resolutions": {
-   "styled-components": "5.3.9"
+{
+    "resolutions": {
+        "styled-components": "5.3.9"
+    }
 }
 ```
 
@@ -96,6 +98,23 @@ const gridTheme: IGridSetting = {
     <App/>
 </GridThemeProvider>
 ```
+
+***Override css setting***
+
+create folder and file: `src/library/acrool-react-grid/grid.scss`
+
+```scss
+$breakpoints: (
+      sm: 576px,
+      md: 768px,
+      lg: 992px,
+      xl: 1200px,
+      xxl: 1440px
+);
+
+@import "@acrool/react-grid/dist/styles.scss";
+```
+
 
 ## Examples
 
