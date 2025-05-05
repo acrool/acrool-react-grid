@@ -1,6 +1,6 @@
-import {TStyledProps, IColProps, NoXsMediaSize, TGridCol, IGridProps} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
+import {IColProps, IGridProps,NoXsMediaSize, TGridCol, TStyledProps} from '../../types';
 import {fr} from '../../utils';
 
 

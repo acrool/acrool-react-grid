@@ -13,7 +13,7 @@
  *     gutter: 3,
  * }}>
  */
-import {NoXsMediaSize, IGridSetting, TMediaSize} from './types';
+import {IGridSetting, NoXsMediaSize, TMediaSize} from './types';
 
 const themeName = 'acroolGrid';
 const defaultGridTheme: IGridSetting = {

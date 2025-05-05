@@ -1,7 +1,7 @@
-import {css, Interpolation, CSSObject} from 'styled-components';
-import {themeName} from '../config';
+import {css, CSSObject,Interpolation} from 'styled-components';
 
-import {TMediaSize, TMedia, TStrings} from '../types';
+import {themeName} from '../config';
+import {TMedia, TMediaSize, TStrings} from '../types';
 
 
 

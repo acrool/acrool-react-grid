@@ -1,4 +1,5 @@
 import {createGlobalStyle, css} from 'styled-components';
+
 import {TStyledProps, TThemeProps} from '../types';
 
 

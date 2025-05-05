@@ -1,4 +1,4 @@
-import {NoXsMediaSize, IGridSetting} from '../types';
+import {IGridSetting,NoXsMediaSize} from '../types';
 import {gutterUnit} from './config';
 
 

@@ -1,7 +1,8 @@
+import {useEffect, useState} from 'react';
 import {useTheme} from 'styled-components';
+
 import {themeName} from '../config';
 import {NoXsMediaSize, TMediaSize} from '../types';
-import {useEffect, useState} from 'react';
 
 /**
  * 取得目前尺寸

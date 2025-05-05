@@ -1,6 +1,6 @@
-import {TStyledProps, IContainerProps, NoXsMediaSize} from '../../types';
 import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
+import {IContainerProps, NoXsMediaSize,TStyledProps} from '../../types';
 
 
 

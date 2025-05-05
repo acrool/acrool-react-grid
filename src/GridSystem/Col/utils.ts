@@ -1,6 +1,6 @@
-import {TStyledProps, IColProps, TCol, TColOffset} from '../../types';
 import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
+import {IColProps, TCol, TColOffset,TStyledProps} from '../../types';
 
 
 

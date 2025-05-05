@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import {TStyledProps, IRowProps, IRowStdProps} from '../../types';
+
 import {themeName} from '../../config';
 import {calcUnitSize} from '../../GridThemeProvider/utils';
+import {IRowProps, IRowStdProps,TStyledProps} from '../../types';
 
 
 // - align-items 若預設加上 flex-start, 會讓鄰居Col高度不會一致

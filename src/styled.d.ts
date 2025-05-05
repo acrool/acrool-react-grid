@@ -1,9 +1,10 @@
 import 'styled-components';
-import {IGridSetting} from './types';
+
 import {themeName} from './config';
+import {IGridSetting} from './types';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    [themeName]: IGridSetting;
+    [themeName]: IGridSetting
   }
 } 

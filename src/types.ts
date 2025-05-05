@@ -1,6 +1,7 @@
-import React, {MouseEvent, ReactNode} from 'react';
 import CSS from 'csstype';
+import React, {MouseEvent, ReactNode} from 'react';
 import type {CSSObject} from 'styled-components';
+
 import {themeName} from './config';
 
 export type RecordOption<K extends keyof any, T> = {
@@ -8,27 +9,27 @@ export type RecordOption<K extends keyof any, T> = {
 };
 
 export interface CommonProps {
-    style?: CSS.Properties,
-    className?: string,
-    id?: string;
-    key?: string|number;
-    forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span';
-    forwardRef?: any;
-    children?: ReactNode,
-    onClick?: (event: MouseEvent<HTMLElement>) => void;
+    style?: CSS.Properties
+    className?: string
+    id?: string
+    key?: string|number
+    forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span'
+    forwardRef?: any
+    children?: ReactNode
+    onClick?: (event: MouseEvent<HTMLElement>) => void
 }
 export interface CommonStdProps {
-    style?: CSS.Properties,
-    className?: string,
-    id?: string;
-    key?: string|number;
-    ref?: any;
-    children?: ReactNode,
-    onClick?: (event: MouseEvent<HTMLElement>) => void;
+    style?: CSS.Properties
+    className?: string
+    id?: string
+    key?: string|number
+    ref?: any
+    children?: ReactNode
+    onClick?: (event: MouseEvent<HTMLElement>) => void
 }
 
 export interface ThemeProps<T> {
-    theme: T;
+    theme: T
 }
 
 export type TThemeProps = ThemeProps<{[themeName]: IGridSetting}>;
@@ -46,12 +47,12 @@ export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: F
 export type TGutterWidth = string;
 
 export interface IBreakpoints {
-    xs: number,
-    sm: number,
-    md: number,
-    lg: number,
-    xl: number,
-    xxl: number,
+    xs: number
+    sm: number
+    md: number
+    lg: number
+    xl: number
+    xxl: number
 }
 
 export type TContainerFluid = boolean|NoXsMediaSize;
@@ -73,10 +74,10 @@ export type TGridTheme = Partial<IGridSetting>;
 export type TContainerMaxWidths = Omit<IBreakpoints, 'xs'>;
 
 export interface IContainerProps extends CommonProps{
-    fluid?: TContainerFluid;
+    fluid?: TContainerFluid
 }
 export interface IContainerStdProps extends CommonStdProps{
-    $fluid?: TContainerFluid;
+    $fluid?: TContainerFluid
 }
 
 export interface IRowProps extends CommonProps {
@@ -91,10 +92,10 @@ export type TColOffset = {
 };
 
 export interface IColStdProps extends CommonStdProps, RecordOption<NoXsMediaSizeStd, TCol|TColOffset>{
-    $col?: TCol|TColOffset;
+    $col?: TCol|TColOffset
 }
 export interface IColProps extends CommonProps, RecordOption<NoXsMediaSize, TCol|TColOffset>{
-    col?: TCol|TColOffset;
+    col?: TCol|TColOffset
 }
 
 export type TGridColSizeUnit = 'px' | '%' | 'em' | 'fr' | 'rem';
@@ -103,12 +104,12 @@ export type TGridColNumberSizeUnit = 'auto'|`${number}${TGridColSizeUnit}`;
 export type TGridCol = string|number|TGridColNumberSizeUnit|'min-content'|'max-content'|`minmax('${TGridColNumberSizeUnit}', '${TGridColNumberSizeUnit}')`;
 
 export interface IGridStdProps extends CommonStdProps, RecordOption<NoXsMediaSizeStd, TGridCol>{
-    $col?: TGridCol;
-    $gap?: number;
+    $col?: TGridCol
+    $gap?: number
 }
 export interface IGridProps extends CommonProps, RecordOption<NoXsMediaSize, TGridCol>{
-    col?: TGridCol;
-    gap?: number;
+    col?: TGridCol
+    gap?: number
 }
 
 export interface IFlexStdProps extends CommonStdProps {

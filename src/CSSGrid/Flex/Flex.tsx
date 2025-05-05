@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
-import {TStyledProps, IFlexProps, IFlexStdProps} from '../../types';
-import {createInfo, createCol} from './utils';
+
+import {IFlexProps, IFlexStdProps,TStyledProps} from '../../types';
+import {createCol,createInfo} from './utils';
 
 
 /**

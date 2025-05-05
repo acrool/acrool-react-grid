@@ -1,4 +1,4 @@
-import {TStyledProps, IFlexProps} from '../../types';
+import {IFlexProps,TStyledProps} from '../../types';
 
 
 /**

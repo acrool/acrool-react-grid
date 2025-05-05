@@ -1,7 +1,8 @@
 import styled, {css} from 'styled-components';
+
 import {themeName} from '../../config';
-import {createBreakpoint, createInfo, createCol} from './utils';
-import {TStyledProps, IColProps, IColStdProps} from '../../types';
+import {IColProps, IColStdProps,TStyledProps} from '../../types';
+import {createBreakpoint, createCol,createInfo} from './utils';
 
 
 // about `min-height=1px`

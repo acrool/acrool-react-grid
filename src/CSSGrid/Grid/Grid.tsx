@@ -1,7 +1,8 @@
 import styled, {css} from 'styled-components';
-import {TStyledProps, IGridProps, IGridStdProps} from '../../types';
+
 import {themeName} from '../../config';
-import {createBreakpoint, cssGetter, createInfo} from './utils';
+import {IGridProps, IGridStdProps,TStyledProps} from '../../types';
+import {createBreakpoint, createInfo,cssGetter} from './utils';
 
 
 
