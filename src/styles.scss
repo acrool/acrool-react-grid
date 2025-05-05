@@ -8,7 +8,7 @@ $breakpoints: (
     lg: 992px,
     xl: 1200px,
     xxl: 1540px
-);
+) !default;
 
 // 定义尺寸
 $sizes: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -212,7 +212,7 @@ $directions: (
 
 
 // 网格系统变量
-$grid-spacer: var(--acrool-gutter);
+$grid-spacer: var(--acrool-gutter) !default;
 $grid-gutters: (
     1: 0.25rem,
     2: 0.5rem,
@@ -232,7 +232,7 @@ $grid-gutters: (
     16: 4rem,
     17: 4.25rem,
     18: 4.5rem
-);
+) !default;
 
 // 显示样式
 @each $display in (none, inline, inline-block, block, flex, inline-flex, grid, inline-grid) {
