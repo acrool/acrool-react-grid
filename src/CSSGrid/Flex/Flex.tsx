@@ -28,7 +28,8 @@ const Flex = (props: IFlexProps) => {
     return <FlexStd
         {...htmlProps}
 
-        data-grid={createInfo(props)}
+        data-grid="flex"
+        data-class={createInfo(props)}
         ref={forwardRef}
 
         children={children}

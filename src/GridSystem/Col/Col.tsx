@@ -43,7 +43,8 @@ const Col = (props: IColProps) => {
     return <ColStd
         {...htmlProps}
 
-        data-grid={createInfo(props)}
+        data-grid="col"
+        data-class={createInfo(props)}
         as={forwardAs}
         ref={forwardRef}
 

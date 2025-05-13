@@ -84,7 +84,7 @@ const suffixContainer = (value: any) => {
  */
 export const createInfo = (props: IContainerProps) => {
     return [
-        props.fluid ? `container${suffixContainer(props.fluid)}`: 'container',
+        props.fluid ? `container${suffixContainer(props.fluid)}`: false,
     ]
         .filter(Boolean)
         .join(' ');

@@ -17,15 +17,7 @@ import {createBreakpoint, createInfo,cssGetter} from './utils';
 const GridStd = styled.div<
     { 'data-grid'?: string } & TStyledProps<IGridStdProps>
 >`
-    --acrool-gutter-x: ${props => props.theme[themeName]?.spacer};
-    --acrool-gutter-y: 0;
-
-    display: grid;
-    grid-template-rows: auto;
     grid-template-columns: repeat(${props => props.theme[themeName]?.gridColumns}, 1fr);
-    column-gap: var(--acrool-gutter-x);
-    row-gap: var(--acrool-gutter-y);
-
 
     ${props => css`
         ${props.$col && cssGetter.col(props.$col)};
@@ -49,7 +41,8 @@ const Grid = (props: IGridProps) => {
     return <GridStd
         {...htmlProps}
 
-        data-grid={createInfo(props)}
+        data-grid="grid"
+        data-class={createInfo(props)}
         as={forwardAs}
         ref={forwardRef}
 
