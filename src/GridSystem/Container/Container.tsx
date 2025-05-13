@@ -18,12 +18,6 @@ import {createBreakpoint, createInfo} from './utils';
 const ContainerStd = styled.div<
     { 'data-grid'?: string } & TStyledProps<IContainerStdProps>
 >`
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * .5)});
-  padding-left: var(--acrool-gutter-x, ${props => calcUnitSize(props.theme[themeName].spacer, num => num * .5)});
-
   ${props => css`
       ${props.$fluid !== true && createBreakpoint({
         theme: props.theme,
@@ -40,7 +34,8 @@ const Container = (props: IContainerProps) => {
     return <ContainerStd
         {...htmlProps}
 
-        data-grid={createInfo(props)}
+        data-grid="container"
+        data-class={createInfo(props)}
         as={forwardAs}
         ref={forwardRef}
 

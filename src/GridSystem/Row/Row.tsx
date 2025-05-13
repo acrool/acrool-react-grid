@@ -31,6 +31,7 @@ const Row = (props: IRowProps) => {
         {...htmlProps}
 
         data-grid="row"
+        data-class="row"
         as={forwardAs}
         ref={forwardRef}
 

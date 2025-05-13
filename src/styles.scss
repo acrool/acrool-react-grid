@@ -212,6 +212,17 @@ $directions: (
     visibility: hidden !important;
 }
 
+[data-grid="container"]{
+    --acrool-gutter-x: var(--acrool-gutter);
+    --acrool-gutter-y: 0;
+
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: calc(var(--acrool-gutter-x) * 0.5);
+    padding-left: calc(var(--acrool-gutter-x) * 0.5);
+}
+
 [data-grid="row"]{
     --acrool-gutter-x: var(--acrool-gutter);
     --acrool-gutter-y: 0;
@@ -232,6 +243,18 @@ $directions: (
         margin-top: var(--acrool-gutter-y);
     }
 }
+
+[data-grid="grid"]{
+    --acrool-gutter-x: var(--acrool-gutter);
+    --acrool-gutter-y: 0;
+
+    display: grid;
+    grid-template-rows: auto;
+    column-gap: var(--acrool-gutter-x);
+    row-gap: var(--acrool-gutter-y);
+}
+
+
 
 
 // 显示样式
