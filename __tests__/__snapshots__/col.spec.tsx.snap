@@ -10,7 +10,8 @@ exports[`Col renders col-6 1`] = `
 
 <div
   class="c0"
-  data-grid="col-6"
+  data-class="col-6"
+  data-grid="col"
 >
   col
 </div>
@@ -26,7 +27,8 @@ exports[`Col renders col-auto 1`] = `
 
 <div
   class="c0"
-  data-grid="col-auto"
+  data-class="col-auto"
+  data-grid="col"
 >
   col
 </div>
@@ -41,7 +43,8 @@ exports[`Col renders col-true 1`] = `
 
 <div
   class="c0"
-  data-grid="col-true"
+  data-class="col-true"
+  data-grid="col"
 >
   col
 </div>

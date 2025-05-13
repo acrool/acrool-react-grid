@@ -3,6 +3,7 @@
 exports[`Row renders row 1`] = `
 <div
   class=""
+  data-class="row"
   data-grid="row"
 >
   row

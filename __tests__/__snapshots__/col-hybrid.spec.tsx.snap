@@ -16,7 +16,8 @@ exports[`Col Hybrid  renders col + col-lg-2 1`] = `
 
 <div
   class="c0"
-  data-grid="col-true col-lg-2"
+  data-class="col-true col-lg-2"
+  data-grid="col"
 >
   col
 </div>
@@ -39,7 +40,8 @@ exports[`Col Hybrid  renders col-4 + col-md-6 1`] = `
 
 <div
   class="c0"
-  data-grid="col-4 col-md-6"
+  data-class="col-4 col-md-6"
+  data-grid="col"
 >
   col
 </div>
@@ -62,7 +64,8 @@ exports[`Col Hybrid  renders col-auto + col-md-auto 1`] = `
 
 <div
   class="c0"
-  data-grid="col-auto col-md-auto"
+  data-class="col-auto col-md-auto"
+  data-grid="col"
 >
   col
 </div>

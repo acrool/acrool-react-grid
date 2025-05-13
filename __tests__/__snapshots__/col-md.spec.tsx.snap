@@ -15,7 +15,8 @@ exports[`Col Md renders col-md-6 1`] = `
 
 <div
   class="c0"
-  data-grid="col-md-6"
+  data-class="col-md-6"
+  data-grid="col"
 >
   col
 </div>
@@ -36,7 +37,8 @@ exports[`Col Md renders col-md-auto 1`] = `
 
 <div
   class="c0"
-  data-grid="col-md-auto"
+  data-class="col-md-auto"
+  data-grid="col"
 >
   col
 </div>
@@ -56,7 +58,8 @@ exports[`Col Md renders col-md-true 1`] = `
 
 <div
   class="c0"
-  data-grid="col-md-true"
+  data-class="col-md-true"
+  data-grid="col"
 >
   col
 </div>

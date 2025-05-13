@@ -2,19 +2,14 @@
 
 exports[`Grid renders col-6 1`] = `
 .c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: grid;
-  grid-template-rows: auto;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: var(--acrool-gutter-x);
-  row-gap: var(--acrool-gutter-y);
   grid-template-columns: repeat(6, 1fr);
 }
 
 <div
   class="c0"
-  data-grid="grid-6"
+  data-class="grid-6"
+  data-grid="grid"
 >
   <div>
     col 1
@@ -39,19 +34,14 @@ exports[`Grid renders col-6 1`] = `
 
 exports[`Grid renders col-auto 1`] = `
 .c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: grid;
-  grid-template-rows: auto;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: var(--acrool-gutter-x);
-  row-gap: var(--acrool-gutter-y);
   grid-template-columns: repeat(1, auto);
 }
 
 <div
   class="c0"
-  data-grid="grid-[repeat(1, auto)]"
+  data-class="grid-[repeat(1, auto)]"
+  data-grid="grid"
 >
   <div>
     col 1
@@ -64,18 +54,13 @@ exports[`Grid renders col-auto 1`] = `
 
 exports[`Grid renders grid default 1`] = `
 .c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: grid;
-  grid-template-rows: auto;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: var(--acrool-gutter-x);
-  row-gap: var(--acrool-gutter-y);
 }
 
 <div
   class="c0"
-  data-grid=""
+  data-class=""
+  data-grid="grid"
 >
   col
 </div>

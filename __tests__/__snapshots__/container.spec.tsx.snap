@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Container renders container 1`] = `
-.c0 {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x, 0.75rem);
-  padding-left: var(--acrool-gutter-x, 0.75rem);
-}
-
 @media (min-width: 576px) {
   .c0 {
     max-width: var(--acrool-container-max-width-sm, 540px);
@@ -41,6 +33,7 @@ exports[`Container renders container 1`] = `
 
 <div
   class="c0"
+  data-class=""
   data-grid="container"
 >
   container
@@ -48,31 +41,16 @@ exports[`Container renders container 1`] = `
 `;
 
 exports[`Container renders container fluid 1`] = `
-.c0 {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x, 0.75rem);
-  padding-left: var(--acrool-gutter-x, 0.75rem);
-}
-
 <div
-  class="c0"
-  data-grid="container-fluid"
+  class=""
+  data-class="container-fluid"
+  data-grid="container"
 >
   container fluid
 </div>
 `;
 
 exports[`Container renders container fluid="lg" 1`] = `
-.c0 {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x, 0.75rem);
-  padding-left: var(--acrool-gutter-x, 0.75rem);
-}
-
 @media (min-width: 992px) {
   .c0 {
     max-width: var(--acrool-container-max-width-lg, 960px);
@@ -93,21 +71,14 @@ exports[`Container renders container fluid="lg" 1`] = `
 
 <div
   class="c0"
-  data-grid="container-lg"
+  data-class="container-lg"
+  data-grid="container"
 >
   container-lg
 </div>
 `;
 
 exports[`Container renders container fluid="md" 1`] = `
-.c0 {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x, 0.75rem);
-  padding-left: var(--acrool-gutter-x, 0.75rem);
-}
-
 @media (min-width: 768px) {
   .c0 {
     max-width: var(--acrool-container-max-width-md, 720px);
@@ -134,7 +105,8 @@ exports[`Container renders container fluid="md" 1`] = `
 
 <div
   class="c0"
-  data-grid="container-md"
+  data-class="container-md"
+  data-grid="container"
 >
   container-md
 </div>

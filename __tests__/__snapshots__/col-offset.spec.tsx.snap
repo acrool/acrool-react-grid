@@ -17,7 +17,8 @@ exports[`Col Offset renders col-md-offset-2 1`] = `
 
 <div
   class="c0"
-  data-grid="col-true col-md"
+  data-class="col-true col-md"
+  data-grid="col"
 >
   col
 </div>
@@ -34,6 +35,7 @@ exports[`Col Offset renders col-offset-3 1`] = `
 
 <div
   class="c0"
+  data-class="col"
   data-grid="col"
 >
   col
