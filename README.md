@@ -59,7 +59,7 @@ in your packages. (Make the version of styled-component you use match the versio
 ```json
 {
     "resolutions": {
-        "styled-components": "5.3.9"
+        "styled-components": "6.1.17"
     }
 }
 ```
