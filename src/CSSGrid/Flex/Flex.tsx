@@ -24,13 +24,13 @@ const FlexStd = styled.div<
 
 
 const Flex = (props: IFlexProps) => {
-    const {column, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+    const {column, forwardAs, ref, children, onClick, ...htmlProps} = props;
     return <FlexStd
         {...htmlProps}
 
         data-grid="flex"
         data-class={createInfo(props)}
-        ref={forwardRef}
+        ref={ref}
 
         children={children}
         onClick={onClick}

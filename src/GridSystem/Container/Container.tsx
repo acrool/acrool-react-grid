@@ -30,14 +30,14 @@ const ContainerStd = styled.div<
 
 
 const Container = (props: IContainerProps) => {
-    const {fluid, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+    const {fluid, forwardAs, ref, children, onClick, ...htmlProps} = props;
     return <ContainerStd
         {...htmlProps}
 
         data-grid="container"
         data-class={createInfo(props)}
         as={forwardAs}
-        ref={forwardRef}
+        ref={ref}
 
         children={children}
         onClick={onClick}

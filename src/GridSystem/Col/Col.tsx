@@ -38,7 +38,7 @@ const ColStd = styled.div<
 
 
 const Col = (props: IColProps) => {
-    const {col, sm, md, lg, xl, xxl, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+    const {col, sm, md, lg, xl, xxl, forwardAs, ref, children, onClick, ...htmlProps} = props;
 
     return <ColStd
         {...htmlProps}
@@ -46,7 +46,7 @@ const Col = (props: IColProps) => {
         data-grid="col"
         data-class={createInfo(props)}
         as={forwardAs}
-        ref={forwardRef}
+        ref={ref}
 
         children={children}
         onClick={onClick}

@@ -26,14 +26,14 @@ const RowStd = styled.div<
 
 
 const Row = (props: IRowProps) => {
-    const {forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+    const {forwardAs, ref, children, onClick, ...htmlProps} = props;
     return <RowStd
         {...htmlProps}
 
         data-grid="row"
         data-class="row"
         as={forwardAs}
-        ref={forwardRef}
+        ref={ref}
 
         children={children}
         onClick={onClick}

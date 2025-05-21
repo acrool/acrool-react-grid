@@ -36,7 +36,7 @@ const GridStd = styled.div<
 
 
 const Grid = (props: IGridProps) => {
-    const {col, sm, md, lg, xl, xxl, gap, forwardAs, forwardRef, children, onClick, ...htmlProps} = props;
+    const {col, sm, md, lg, xl, xxl, gap, forwardAs, ref, children, onClick, ...htmlProps} = props;
 
     return <GridStd
         {...htmlProps}
@@ -44,7 +44,7 @@ const Grid = (props: IGridProps) => {
         data-grid="grid"
         data-class={createInfo(props)}
         as={forwardAs}
-        ref={forwardRef}
+        ref={ref}
 
         children={children}
         onClick={onClick}

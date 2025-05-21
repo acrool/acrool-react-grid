@@ -1,5 +1,5 @@
 import CSS from 'csstype';
-import React, {MouseEvent, ReactNode} from 'react';
+import React, {MouseEvent, ReactNode, RefObject} from 'react';
 import type {CSSObject} from 'styled-components';
 
 import {themeName} from './config';
@@ -14,7 +14,7 @@ export interface CommonProps {
     id?: string
     key?: string|number
     forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span'
-    forwardRef?: any
+    ref?: RefObject<HTMLDivElement|null>
     children?: ReactNode
     onClick?: (event: MouseEvent<HTMLElement>) => void
 }
