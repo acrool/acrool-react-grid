@@ -8,7 +8,7 @@ export type RecordOption<K extends keyof any, T> = {
     [P in K]?: T;
 };
 
-export interface CommonProps {
+export interface CommonProps extends React.HTMLAttributes<HTMLDivElement> {
     style?: CSS.Properties
     className?: string
     id?: string
@@ -16,16 +16,15 @@ export interface CommonProps {
     forwardAs?: 'div'|'section'|'ul'|'li'|'a'|'p'|'span'
     ref?: RefObject<HTMLDivElement|null>
     children?: ReactNode
-    onClick?: (event: MouseEvent<HTMLElement>) => void
 }
-export interface CommonStdProps {
+
+export interface CommonStdProps extends React.HTMLAttributes<HTMLDivElement> {
     style?: CSS.Properties
     className?: string
     id?: string
     key?: string|number
-    ref?: any
+    ref?: RefObject<HTMLDivElement|null>
     children?: ReactNode
-    onClick?: (event: MouseEvent<HTMLElement>) => void
 }
 
 export interface ThemeProps<T> {

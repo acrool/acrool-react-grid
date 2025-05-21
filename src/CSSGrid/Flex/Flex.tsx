@@ -24,7 +24,7 @@ const FlexStd = styled.div<
 
 
 const Flex = (props: IFlexProps) => {
-    const {column, forwardAs, ref, children, onClick, ...htmlProps} = props;
+    const {column, forwardAs, ref, children, ...htmlProps} = props;
     return <FlexStd
         {...htmlProps}
 
@@ -33,7 +33,6 @@ const Flex = (props: IFlexProps) => {
         ref={ref}
 
         children={children}
-        onClick={onClick}
 
         $column={column}
 
