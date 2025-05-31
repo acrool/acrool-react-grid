@@ -7,7 +7,7 @@ const meta = {
     title: 'Tests/AutoOverflowAndFlexHeight',
     component: AutoOverflowAndFlexHeight,
     parameters: {
-        layout: 'centered',
+        // layout: 'centered',
     },
     argTypes: {},
     args: {},
