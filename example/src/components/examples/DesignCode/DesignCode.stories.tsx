@@ -7,7 +7,7 @@ const meta = {
     title: 'Examples/DesignCode',
     component: DesignCode,
     parameters: {
-        layout: 'centered',
+        // layout: 'centered',
     },
     argTypes: {},
     args: {},

@@ -1,12 +1,13 @@
-import styled from 'styled-components';
+import {Col, Container, FCProps,Flex, Grid} from '@acrool/react-grid';
 import React from 'react';
-import {Container, Flex, Grid, Col, FCProps} from '@acrool/react-grid';
-import PreviewCard from './_components/PreviewCard';
+import styled from 'styled-components';
+
 import CourseButton from '../_components/CourseButton';
 import CourseCard from '../_components/CourseCard';
+import PreviewCard from './_components/PreviewCard';
 
 interface IProps extends FCProps {
-    className?: string;
+    className?: string
 }
 
 const CourseSection = ({

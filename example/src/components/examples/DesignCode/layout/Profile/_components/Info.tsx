@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import CourseButton from '../../_components/CourseButton';
 import {Grid} from '@acrool/react-grid';
+import styled from 'styled-components';
+
+import CourseButton from '../../_components/CourseButton';
 
 
 const Info = () => {

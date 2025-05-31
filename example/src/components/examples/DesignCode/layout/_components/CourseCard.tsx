@@ -1,8 +1,9 @@
+import {FCProps,Flex, Grid} from '@acrool/react-grid';
+import React from 'react';
 import styled from 'styled-components';
+
 import MyLink from '../CourseSection/_components/MyLink';
 import PreviewCard from '../CourseSection/_components/PreviewCard';
-import React from 'react';
-import {Flex, Grid, FCProps} from '@acrool/react-grid';
 
 interface IProps extends FCProps {
 
@@ -50,10 +51,6 @@ const MyLinkList = styled.div`
 const CourseDetailCardTitle = styled.p`
   font-size: 13px;
   font-weight: 600;
-
-`;
-
-const CurriculumWrapper = styled.div`
 
 `;
 

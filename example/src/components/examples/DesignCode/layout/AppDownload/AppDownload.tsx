@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import {Flex} from '@acrool/react-grid';
+import styled from 'styled-components';
 
 const AppDownload = () => {
     return <AppDownloadRoot className="flex-column align-items-center gap-2">

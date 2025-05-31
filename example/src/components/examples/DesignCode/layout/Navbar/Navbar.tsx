@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import {Grid, Container, FCProps} from '@acrool/react-grid';
+import {Container, FCProps,Grid} from '@acrool/react-grid';
 import React, {useState} from 'react';
+import styled from 'styled-components';
+
 import CourseButton from '../_components/CourseButton';
 
 interface IProps extends FCProps {
@@ -30,7 +31,7 @@ const Navbar = ({
             <MobileButton type="button" onClick={() => setVisible(curr => !curr)}>
                 <img src="https://designcode.io/images/icons/hamburger-menu.svg" alt="menu"/>
             </MobileButton>
-            <TooltipWrapper col={1} gap="10px" data-visible={isVisible ? '': undefined}>
+            <TooltipWrapper col={1} className="gap-5" data-visible={isVisible ? '': undefined}>
                 {nav.map(row => {
                     return <NavigatorButton href={row.path} key={row.path}>
                         <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>

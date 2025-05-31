@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import {FCProps, media} from '@acrool/react-grid';
 import React from 'react';
-import {media} from '@acrool/react-grid';
+import styled from 'styled-components';
 
 interface IProps extends FCProps {
    className?: string
@@ -28,13 +28,6 @@ export default WaveWrapper1;
 
 
 
-
-
-const NavigatorWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(7, auto);
-  gap: 26px;
-`;
 
 
 

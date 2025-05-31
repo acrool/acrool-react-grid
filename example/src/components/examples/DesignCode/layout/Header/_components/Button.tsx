@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import React from 'react';
-import PurchaseButton from '../../_components/PurchaseButton';
 import {Flex} from '@acrool/react-grid';
+import React from 'react';
+import styled from 'styled-components';
+
+import PurchaseButton from '../../_components/PurchaseButton';
 
 interface IProps {
    className?: string

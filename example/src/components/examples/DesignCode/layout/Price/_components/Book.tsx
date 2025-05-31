@@ -1,17 +1,18 @@
-import {Grid, Flex, FCProps} from '@acrool/react-grid';
+import {FCProps,Flex, Grid} from '@acrool/react-grid';
 import styled from 'styled-components';
+
 import PurchaseButton from '../../_components/PurchaseButton';
 
 
 export interface IData {
-    title: string,
-    subTitle: string,
-    desc: string,
+    title: string
+    subTitle: string
+    desc: string
     features: string[]
     button: {
         icon: string,
-        text: string
-    },
+        text: string,
+    }
 };
 
 interface IProps extends FCProps {
@@ -83,10 +84,6 @@ const Feature = styled(Flex)`
 `;
 
 
-const FeatureList = styled(Grid)`
-
-`;
-
 const Desc = styled.p`
     font-weight: 500;
     font-size: 15px;
@@ -147,7 +144,7 @@ const BookRoot = styled.div`
     justify-content: center;
     height: 426px;
 
-    :hover {
+    &:hover {
         ${Bg} {
             transform: skewX(10deg) skewY(-20deg) scaleX(0.8) translateY(-3px);
         }
@@ -157,10 +154,10 @@ const BookRoot = styled.div`
         }
     }
 
-    :nth-child(2) {
+    &:nth-child(2) {
         height: 519px;
 
-        :hover {
+        &:hover {
             ${Bg} {
                 transform: skewX(-10deg) skewY(20deg) scaleX(0.8) translateY(-3px);
             }
@@ -191,9 +188,9 @@ const BookRoot = styled.div`
 
     }
 
-    :nth-child(3) {
+    &:nth-child(3) {
 
-        :hover {
+        &:hover {
             ${Bg} {
                 transform: skewX(-10deg) skewY(20deg) scaleX(0.8) translateY(-3px);
             }

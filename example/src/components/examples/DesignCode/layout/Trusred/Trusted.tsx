@@ -1,7 +1,8 @@
+import {Col, Container, FCProps,Flex, Grid, Row} from '@acrool/react-grid';
 import styled from 'styled-components';
-import {Grid, Container, GridCol, Flex, Row, Col} from '@acrool/react-grid';
-import TrustedCard from './_components/TrustedCard';
+
 import CourseButton from '../_components/CourseButton';
+import TrustedCard from './_components/TrustedCard';
 
 interface IProps extends FCProps {
 

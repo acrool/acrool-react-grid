@@ -88,7 +88,7 @@ const Wrapper = styled.div`
     padding-top: 50px;
     overflow: hidden;
 
-    :before{
+    &:before{
         content: '';
         background: linear-gradient(189.16deg, rgb(67, 22, 219) 13.57%, rgb(144, 118, 231) 98.38%);
         position: absolute;

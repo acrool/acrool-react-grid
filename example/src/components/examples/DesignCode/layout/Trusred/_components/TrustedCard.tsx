@@ -1,3 +1,4 @@
+import {FCProps} from '@acrool/react-grid';
 import styled from 'styled-components';
 
 interface IProps extends FCProps {

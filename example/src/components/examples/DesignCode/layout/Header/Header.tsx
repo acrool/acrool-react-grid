@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import {Container, FCProps, Flex} from '@acrool/react-grid';
 import React from 'react';
-import {Container, Flex, Grid, GridCol} from '@acrool/react-grid';
+import styled from 'styled-components';
+
 import Button from './_components/Button';
 
 interface IProps extends FCProps {
-    className?: string;
+    className?: string
 }
 
 const Header = ({
@@ -82,7 +83,6 @@ const Mockup5Img = styled.img`
   width: 414px;
   height: 273px;
 
-  // opacity: 0;
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
 `;
 
@@ -102,7 +102,6 @@ const Mockup4Img = styled.img`
   width: 400px;
   height: 273px;
 
-  // opacity: 0;
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
 `;
 
@@ -122,7 +121,6 @@ const MockupContentImg = styled.img`
   width: 701px;
   height: 428px;
 
-  // opacity: 0;
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
 `;
 
@@ -142,7 +140,6 @@ const Mockup2Img = styled.img`
   width: 183px;
   height: 120px;
 
-  // opacity: 0;
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
 `;
 
@@ -161,7 +158,6 @@ const Mockup1Img = styled.img`
   width: 183px;
   height: 120px;
 
-  // opacity: 0;
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
 `;
 
@@ -228,14 +224,6 @@ const Title = styled.h1`
 `;
 
 
-const TextWrapper = styled(Grid)`
-  //position: relative;
-  //top: 200px;
-  //display: grid;
-  //  width: 400px;
-  //  grid-column: 1;
-`;
-
 
 const Square = styled.div`
   position: absolute;
@@ -249,56 +237,56 @@ const Square = styled.div`
   transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
   will-change: transform;
 
-  :nth-child(1) {
+  &:nth-child(1) {
     transform: translate(10px, 10px);
     border: 2px solid rgba(255, 255, 255, 0.5);
     animation-delay: 0.2s;
     animation-duration: 25s;
   }
 
-  :nth-child(2) {
+  &:nth-child(2) {
     transform: translate(20px, 20px);
     border: 1.5px solid rgba(255, 255, 255, 0.4);
     animation-delay: 0.4s;
     animation-duration: 24s;
   }
 
-  :nth-child(3) {
+  &:nth-child(3) {
     transform: translate(30px, 30px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     animation-delay: 0.6s;
     animation-duration: 23s;
   }
 
-  :nth-child(4) {
+  &:nth-child(4) {
     transform: translate(40px, 40px);
     border: 0.75px solid rgba(255, 255, 255, 0.3);
     animation-delay: 0.8s;
     animation-duration: 22s;
   }
 
-  :nth-child(5) {
+  &:nth-child(5) {
     transform: translate(50px, 50px);
     border: 0.5px solid rgba(255, 255, 255, 0.3);
     animation-delay: 1s;
     animation-duration: 21s;
   }
 
-  :nth-child(6) {
+  &:nth-child(6) {
     transform: translate(60px, 60px);
     border: 0.5px solid rgba(255, 255, 255, 0.2);
     animation-delay: 1.2s;
     animation-duration: 20s;
   }
 
-  :nth-child(7) {
+  &:nth-child(7) {
     transform: translate(70px, 70px);
     border: 0.5px solid rgba(255, 255, 255, 0.2);
     animation-delay: 1.4s;
     animation-duration: 19s;
   }
 
-  :nth-child(8) {
+  &:nth-child(8) {
     transform: translate(80px, 80px);
     border: 0.5px solid rgba(255, 255, 255, 0.1);
     animation-delay: 1.6s;

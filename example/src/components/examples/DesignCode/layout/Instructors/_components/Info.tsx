@@ -1,5 +1,5 @@
+import {Container, FCProps,Flex} from '@acrool/react-grid';
 import styled from 'styled-components';
-import {Grid, Container, Flex, FCProps} from '@acrool/react-grid';
 
 interface IProps extends FCProps {
 }

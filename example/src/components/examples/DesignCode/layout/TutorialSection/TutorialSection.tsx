@@ -1,11 +1,12 @@
-import styled from 'styled-components';
+import {auto, Col, Container, FCProps,Flex, Grid, Row} from '@acrool/react-grid';
 import React from 'react';
-import {Col, Container, Flex, Grid, Row, auto, FCProps} from '@acrool/react-grid';
+import styled from 'styled-components';
+
 import CourseButton from '../_components/CourseButton';
 import TutorialCard from './_components/TutorialCard';
 
 interface IProps extends FCProps {
-    className?: string;
+    className?: string
 }
 
 const TutorialSection = ({
@@ -59,9 +60,6 @@ const SubTitle = styled.div`
 
 
 
-const Info = styled(Grid)`
-    max-width: 420px;
-`;
 
 const TutorialSectionRoot = styled(Container)`
   margin-bottom: 200px;

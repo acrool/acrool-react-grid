@@ -1,7 +1,8 @@
-import {Container, Flex, Grid, Col, auto, FCProps} from '@acrool/react-grid';
-import styled from 'styled-components';
-import CourseButton from '../_components/CourseButton';
+import {auto, Col, Container, FCProps,Flex, Grid} from '@acrool/react-grid';
 import React from 'react';
+import styled from 'styled-components';
+
+import CourseButton from '../_components/CourseButton';
 
 interface IProps extends FCProps {
 

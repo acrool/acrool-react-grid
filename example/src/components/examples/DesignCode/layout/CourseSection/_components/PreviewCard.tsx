@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import {FCProps, Flex, media} from '@acrool/react-grid';
 import React from 'react';
-import {Flex, Grid, media } from '@acrool/react-grid';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
 interface IProps extends FCProps {
    className?: string
@@ -79,7 +78,7 @@ const PreviewCardRoot = styled(Flex)`
 
     transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 
-    :hover{
+    &:hover{
         transform: scale(1.1);
     }
 

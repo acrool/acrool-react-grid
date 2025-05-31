@@ -1,4 +1,4 @@
-import {Grid, Flex} from '@acrool/react-grid';
+import {FCProps,Flex} from '@acrool/react-grid';
 import styled from 'styled-components';
 
 interface IProps extends FCProps {
@@ -58,10 +58,6 @@ const PlatformLogo = styled.img`
 `;
 
 
-const Item = styled.div`
-
-`;
-
 
 const Desc = styled.p`
     font-size: 13px;
@@ -109,7 +105,7 @@ const CardB = styled.div`
 const TutorialCardRoot = styled.div`
     position: relative;
 
-    :hover{
+    &:hover{
         ${CardB}{
             transform: skewY(15deg);
             width: 200px;
