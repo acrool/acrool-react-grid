@@ -38,7 +38,7 @@
     "react-dom": "link:../node_modules/react-dom",
     "sass": "^1.87.0",
     "storybook": "^8.1.10",
-    "styled-components": "link:../node_modules/styled-components",
+    "styled-components": "6.1.18",
     "typescript": "^5.2.2",
     "vite": "^6.3.4",
     "vite-plugin-svgr": "^4.2.0",
