@@ -1,44 +1,77 @@
+import {Col, Container,Row} from '@acrool/react-grid';
 import type {Meta, StoryObj} from '@storybook/react';
-
-import {Row} from '@acrool/react-grid';
 import React from 'react';
+import styled from 'styled-components';
 
 const meta = {
     title: 'Primary/Row',
-    component: Row,
+    component: Container,
     parameters: {
-        layout: 'centered',
         docs: {
             description: {
-                component: 'Img animation use transform'
+                component: '同 Bootstrap 中的容器 Row'
             },
         },
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {
-        style: {
-            background: '#bdbdbd',
-            width: '100px',
-            height: '100px'
-        }
+        className: '',
     },
+    render: function Render(args) {
+
+        const length = 4;
+
+        return <Container
+            style={{background: '#2c2c2c'}}
+        >
+            <Row
+                {...args}
+                style={{background: '#6a6a6a'}}
+            >
+                {Array.from({length}).map((_, idx) => (
+                    <Col
+                        key={idx}
+                        style={{background: '#bdbdbd'}}
+                        col={3}
+                    >
+                        <Box>
+                            Col {String(idx)}
+                        </Box>
+                    </Col>
+                ))}
+            </Row>
+        </Container>;
+    },
+
 } satisfies Meta<typeof Row>;
 
 export default meta;
+
+
 type Story = StoryObj<typeof meta>;
 
 
 
-export const Primary: Story = {
-    args: {},
-};
+export const Primary: Story = {};
 
-export const With: Story = {
-    args: {},
-    render: function Render(args) {
-        return <Row className="gap-2 overflow-auto ml-8" style={{width: '100%'}}>
-
-        </Row>;
+export const WithNoGutter: Story = {
+    args: {
+        className: 'g-0',
     },
 };
+
+export const WithGutterG4: Story = {
+    args: {
+        className: 'g-4',
+    },
+};
+
+
+
+
+const Box = styled.div`
+    background: #8caf5d;
+    padding: 10px;
+    color: #fff;
+`;
