@@ -4,7 +4,7 @@ import AutoOverflowAndFlexHeight from './AutoOverflowAndFlexHeight';
 import React from 'react';
 
 const meta = {
-    title: 'Tests/AutoOverflowAndFlexHeight',
+    title: 'Laboratory/AutoOverflowAndFlexHeight',
     component: AutoOverflowAndFlexHeight,
     parameters: {
         // layout: 'centered',

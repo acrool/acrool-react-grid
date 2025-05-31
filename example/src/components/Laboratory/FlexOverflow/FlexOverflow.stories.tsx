@@ -4,7 +4,7 @@ import FlexOverflow from './FlexOverflow';
 import React from 'react';
 
 const meta = {
-    title: 'Tests/FlexOverflow',
+    title: 'Laboratory/FlexOverflow',
     component: FlexOverflow,
     parameters: {
         layout: 'centered',

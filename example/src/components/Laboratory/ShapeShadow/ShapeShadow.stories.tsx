@@ -4,13 +4,14 @@ import React from 'react';
 
 
 const meta = {
-    title: 'Tests/ShapeShadow',
+    title: 'Laboratory/ShapeShadow',
     argTypes: {},
     parameters: {
         layout: 'centered',
         docs: {
             description: {
-                component: '測試不規則形狀圖片的陰影，Webp、SVG、PNG可支援'
+                component: `測試不規則形狀圖片的陰影，Webp、SVG、PNG可支援\n
+https://webcode.tools/css-generator/drop-shadow`
             },
         },
     },
