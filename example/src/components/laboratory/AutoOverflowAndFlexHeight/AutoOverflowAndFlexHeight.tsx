@@ -2,15 +2,19 @@ import styled, {createGlobalStyle} from 'styled-components';
 
 interface IProps {
     children?: React.ReactNode
+    isOverflowScroll?: boolean
 }
 
 const AutoOverflowAndFlexHeight = ({
     children,
+    isOverflowScroll,
 }: IProps) => {
 
     return <Root>
         <Navbar>Auto Overflow and Flex Height</Navbar>
-        <Content dangerouslySetInnerHTML={{__html: children as string}}/>
+        <Content
+            $isOverflowScroll={isOverflowScroll}
+            dangerouslySetInnerHTML={{__html: children as string}}/>
         <Footer>Copyright © 2025. All rights reserved.</Footer>
 
         <GlobalCSS/>
@@ -32,10 +36,17 @@ export default AutoOverflowAndFlexHeight;
 
 
 
-const Content = styled.div`
+const Content = styled.div<{
+    $isOverflowScroll?: boolean,
+}>`
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
+
+    ${props => props.$isOverflowScroll && `
+        overflow-y: auto;
+        height: 0;
+    `}
 `;
 
 
