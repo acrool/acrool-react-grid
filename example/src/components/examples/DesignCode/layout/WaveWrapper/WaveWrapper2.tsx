@@ -105,7 +105,7 @@ const Line = styled.div`
     background-position: center top;
     background-repeat: no-repeat;
     top: 380px;
-    background-image: url(https://designcode.io/images/waves/certificate-lines.svg);
+    background-image: url(/static/examples/design_code/images/waves/certificate-lines.svg);
     height: 600px;
     background-size: 1440px;
     width: 100%;

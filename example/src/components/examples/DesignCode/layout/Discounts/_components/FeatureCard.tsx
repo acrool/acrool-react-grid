@@ -9,7 +9,7 @@ const FeatureCard = ({
     className,
 }: IProps) => {
     return <FeatureCardRoot className={className}>
-        <Logo src="https://designcode.io/images/logos/shape-logo.svg"/>
+        <Logo src="/static/examples/design_code/images/logos/shape-logo.svg"/>
         <Text>50% off Shape.so</Text>
     </FeatureCardRoot>;
 };

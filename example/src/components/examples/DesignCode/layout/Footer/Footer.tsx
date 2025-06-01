@@ -26,7 +26,7 @@ const Footer = ({
                 <Grid col={auto(2)} md={1} className="justify-items-start justify-content-center">
                     {nav.map(row => {
                         return <CourseButton key={`nav_${row.text}`}>
-                            <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
+                            <img src="/static/examples/design_code/images/icons/courses.svg" alt="cc"/>
                             <Caption>{row.text}</Caption>
                         </CourseButton>;
                     })}

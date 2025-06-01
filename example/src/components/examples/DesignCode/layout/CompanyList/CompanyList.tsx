@@ -10,12 +10,12 @@ const CompanyList = ({
 }: IProps) => {
 
     const data = [
-        {text: 'square', imageUrl: 'https://designcode.io/images/company/square.svg'},
-        {text: 'apple', imageUrl: 'https://designcode.io/images/company/apple.svg'},
-        {text: 'facebook', imageUrl: 'https://designcode.io/images/company/facebook.svg'},
-        {text: 'airbnb', imageUrl: 'https://designcode.io/images/company/airbnb.svg'},
-        {text: 'google', imageUrl: 'https://designcode.io/images/company/google.svg'},
-        {text: 'amazon', imageUrl: 'https://designcode.io/images/company/amazon.svg'},
+        {text: 'square', imageUrl: '/static/examples/design_code/images/company/square.svg'},
+        {text: 'apple', imageUrl: '/static/examples/design_code/images/company/apple.svg'},
+        {text: 'facebook', imageUrl: '/static/examples/design_code/images/company/facebook.svg'},
+        {text: 'airbnb', imageUrl: '/static/examples/design_code/images/company/airbnb.svg'},
+        {text: 'google', imageUrl: '/static/examples/design_code/images/company/google.svg'},
+        {text: 'amazon', imageUrl: '/static/examples/design_code/images/company/amazon.svg'},
     ];
 
     return <CompanyRoot className={className}>

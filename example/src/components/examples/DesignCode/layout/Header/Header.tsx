@@ -15,20 +15,20 @@ const Header = ({
     const renderMockups = () => {
         return <Mockups>
             <Mockup1>
-                <Mockup1Img src="https://designcode.io/images/mockups/mockup-card2.svg"/>
+                <Mockup1Img src="/static/examples/design_code/images/mockups/mockup-card2.svg"/>
             </Mockup1>
             <Mockup2>
-                <Mockup2Img src="https://designcode.io/images/mockups/mockup-card2.svg"/>
+                <Mockup2Img src="/static/examples/design_code/images/mockups/mockup-card2.svg"/>
             </Mockup2>
             <MockupContent>
-                <MockupContentImg src="https://designcode.io/images/mockups/mockup-content.svg"/>
+                <MockupContentImg src="/static/examples/design_code/images/mockups/mockup-content.svg"/>
             </MockupContent>
 
             <Mockup4>
-                <Mockup4Img src="https://designcode.io/images/mockups/mockup2-bg.svg"/>
+                <Mockup4Img src="/static/examples/design_code/images/mockups/mockup2-bg.svg"/>
             </Mockup4>
             <Mockup5>
-                <Mockup5Img src="https://designcode.io/images/mockups/mockup3-bg.svg"/>
+                <Mockup5Img src="/static/examples/design_code/images/mockups/mockup3-bg.svg"/>
             </Mockup5>
 
         </Mockups>;
@@ -54,16 +54,6 @@ const Header = ({
             <P>Purchase includes access to 50+ courses, 320+ premium tutorials, 300+ hours of videos, source files and
                 certificates.</P>
         </Flex>;
-    };
-
-    const renderAnimationWrapper = () => {
-        return <AnimationWrapper>
-            <SquareAnimation>
-                {Array.from({length: 8}).map(idx => {
-                    return <Square key={`square_${idx}`}/>;
-                })}
-            </SquareAnimation>
-        </AnimationWrapper>;
     };
 
 
@@ -224,92 +214,6 @@ const Title = styled.h1`
 `;
 
 
-
-const Square = styled.div`
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-  top: 0px;
-  // opacity: 0;
-  animation: 50s ease-in-out 0s infinite reverse none paused eoUyJr;
-  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-  will-change: transform;
-
-  &:nth-child(1) {
-    transform: translate(10px, 10px);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    animation-delay: 0.2s;
-    animation-duration: 25s;
-  }
-
-  &:nth-child(2) {
-    transform: translate(20px, 20px);
-    border: 1.5px solid rgba(255, 255, 255, 0.4);
-    animation-delay: 0.4s;
-    animation-duration: 24s;
-  }
-
-  &:nth-child(3) {
-    transform: translate(30px, 30px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    animation-delay: 0.6s;
-    animation-duration: 23s;
-  }
-
-  &:nth-child(4) {
-    transform: translate(40px, 40px);
-    border: 0.75px solid rgba(255, 255, 255, 0.3);
-    animation-delay: 0.8s;
-    animation-duration: 22s;
-  }
-
-  &:nth-child(5) {
-    transform: translate(50px, 50px);
-    border: 0.5px solid rgba(255, 255, 255, 0.3);
-    animation-delay: 1s;
-    animation-duration: 21s;
-  }
-
-  &:nth-child(6) {
-    transform: translate(60px, 60px);
-    border: 0.5px solid rgba(255, 255, 255, 0.2);
-    animation-delay: 1.2s;
-    animation-duration: 20s;
-  }
-
-  &:nth-child(7) {
-    transform: translate(70px, 70px);
-    border: 0.5px solid rgba(255, 255, 255, 0.2);
-    animation-delay: 1.4s;
-    animation-duration: 19s;
-  }
-
-  &:nth-child(8) {
-    transform: translate(80px, 80px);
-    border: 0.5px solid rgba(255, 255, 255, 0.1);
-    animation-delay: 1.6s;
-    animation-duration: 18s;
-  }
-
-`;
-
-
-const SquareAnimation = styled.div`
-  position: relative;
-  perspective: 3000px;
-  animation: 2s linear 2s 1 normal forwards paused gWpsBT;
-  visibility: hidden;
-  will-change: opacity;
-  display: none;
-`;
-
-const AnimationWrapper = styled.div`
-  position: absolute;
-  top: 150px;
-  left: -60px;
-`;
 
 
 const HeaderRoot = styled(Container)`

@@ -23,7 +23,7 @@ const TutorialSection = ({
                     <Desc>Once you’ve completed the courses, learn from our quick design and code tutorials to strengthen your knowledge</Desc>
 
                     <CourseButton href="/" isOutline>
-                        <img src="https://designcode.io/images/icons/tutorials.svg" alt="more"/>
+                        <img src="/static/examples/design_code/images/icons/tutorials.svg" alt="more"/>
                         <span>More tutorials</span>
                     </CourseButton>
                 </Flex>

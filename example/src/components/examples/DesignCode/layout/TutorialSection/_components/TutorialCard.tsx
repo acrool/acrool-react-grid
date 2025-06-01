@@ -11,14 +11,14 @@ const TutorialCard = ({
     return <TutorialCardRoot className={className}>
         <Card className="align-content-start gap-2">
 
-            <PlatformLogo src="https://designcode.io/images/logos/swiftui-logo.svg" className="justify-self-end"/>
+            <PlatformLogo src="/static/examples/design_code/images/logos/swiftui-logo.svg" className="justify-self-end"/>
             <Title>SwiftUI Handbook</Title>
             <Desc className="text-area-overflow">A comprehensive series of tutorials covering Xcode, SwiftUI and all the layout and development techniques</Desc>
 
             {Array.from({length: 2}).map((row, index) => {
                 return <Flex key={`tutorialCar_${index}`} className="align-items-center justify-content-start">
                     <ImageRound>
-                        <Image src="https://designcode.io/images/icons/file.svg" alt="file icon" />
+                        <Image src="/static/examples/design_code/images/icons/file.svg" alt="file icon" />
                     </ImageRound>
                     <span>107 free tutorials</span>
                 </Flex>;

@@ -13,7 +13,7 @@ const Info = () => {
             <Desc className="mb-6">After passing a test, we’ll award you with an online certificate. You can add them to your profile after completing the courses.</Desc>
 
             <CourseButton href="/" isOutline>
-                <img src="https://designcode.io/images/icons/account.svg" alt="Create account"/>
+                <img src="/static/examples/design_code/images/icons/account.svg" alt="Create account"/>
                 <span>Create account</span>
             </CourseButton>
         </Grid>

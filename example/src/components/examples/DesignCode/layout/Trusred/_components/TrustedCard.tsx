@@ -9,7 +9,7 @@ const TrustedCard = ({
     className,
 }: IProps) => {
     return <TrustedCardRoot className={className}>
-        <Avatar src="https://images.ctfassets.net/ooa29xqb8tix/5Xcv2LZcS4seK4GAISkkY4/2e0906431a29b1db536dd8cc19b2b9d0/jMf9VFkU_400x400.jpeg?w=400&q=50"/>
+        <Avatar src="/static/examples/design_code/jMf9VFkU_400x400.jpeg?w=400&q=50"/>
         <Title>
             Kenny Chen
         </Title>

@@ -23,7 +23,7 @@ const Price = ({
                 'Notify me, <span>Favorite</span>',
             ],
             button: {
-                icon: 'https://designcode.io/images/icons/pen-transparent.svg',
+                icon: '/static/examples/design_code/images/icons/pen-transparent.svg',
                 text: 'Sign Up'
             },
         },
@@ -40,7 +40,7 @@ const Price = ({
                 'Commercial, <span>use</span>',
             ],
             button: {
-                icon: 'https://designcode.io/images/icons/credit-transparent.svg',
+                icon: '/static/examples/design_code/images/icons/credit-transparent.svg',
                 text: 'Subscribe'
             },
         },
@@ -54,7 +54,7 @@ const Price = ({
                 'Team, <span>progress</span>',
             ],
             button: {
-                icon: 'https://designcode.io/images/icons/credit-transparent.svg',
+                icon: '/static/examples/design_code/images/icons/credit-transparent.svg',
                 text: 'Subscribe'
             },
         }

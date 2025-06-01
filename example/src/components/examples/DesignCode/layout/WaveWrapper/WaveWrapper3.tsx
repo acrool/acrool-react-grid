@@ -44,7 +44,7 @@ const Wave1 = styled.div`
     background-size: 100%;
     z-index: -1;
     top: 0;
-    background-image: url(https://designcode.io/images/waves/testimonial-wave1.svg);
+    background-image: url(/static/examples/design_code/images/waves/testimonial-wave1.svg);
     height: 800px;
 
 `;
@@ -57,7 +57,7 @@ const Wave2 = styled.div`
     background-size: 100%;
     z-index: -1;
     top: 250px;
-    background-image: url(https://designcode.io/images/waves/testimonial-wave2.svg);
+    background-image: url(/static/examples/design_code/images/waves/testimonial-wave2.svg);
     height: 600px;
 
 
@@ -71,7 +71,7 @@ const Wave3 = styled.div`
     background-size: 100%;
     z-index: -1;
     top: 380px;
-    background-image: url(https://designcode.io/images/waves/testimonial-wave3.svg);
+    background-image: url(/static/examples/design_code/images/waves/testimonial-wave3.svg);
     height: 600px;
 
 
@@ -86,7 +86,7 @@ const Wave4 = styled.div`
     background-size: 100%;
     z-index: -1;
     top: 200px;
-    background-image: url(https://designcode.io/images/waves/testimonial-wave4.svg);
+    background-image: url(/static/examples/design_code/images/waves/testimonial-wave4.svg);
     height: 1000px;
 
 
@@ -100,7 +100,7 @@ const Wave5 = styled.div`
     background-size: 100%;
     z-index: -1;
     top: 450px;
-    background-image: url(https://designcode.io/images/waves/testimonial-wave5.svg);
+    background-image: url(/static/examples/design_code/images/waves/testimonial-wave5.svg);
     height: 1000px;
 
 

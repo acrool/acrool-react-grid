@@ -8,7 +8,7 @@ const AppDownload = () => {
         <Desc>Our iOS app has been 100% developed with SwiftUI. If you have an M1 Mac, you can even use it as a desktop app.</Desc>
 
         <AppleStoreButton href="/">
-            <img className="w-100" src="https://designcode.io/images/components/iosapp/appStore.svg" alt="appStore"/>
+            <img className="w-100" src="/static/examples/design_code/images/app_download/appStore.svg" alt="appStore"/>
         </AppleStoreButton>
 
     </AppDownloadRoot>;

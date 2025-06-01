@@ -11,12 +11,12 @@ const PreviewCard = ({
 }: IProps) => {
     return <PreviewCardRoot col={1} className={className}>
         <CardWrapperImage
-            src="https://images.ctfassets.net/ooa29xqb8tix/5jIBVIWEq7QQq1Tm03ViNR/b34fad96046114968b74016a678ac841/ios17-2.png?w=400&q=50"
+            src="/static/examples/design_code/ios17-2.png?w=400&q=50"
             alt="Build SwiftUI Apps for iOS 17 icon"
         />
         <Title>Build SwiftUI Apps for iOS 17</Title>
         <SubTitle>16 videos - 4 hours</SubTitle>
-        <StarImage src="https://designcode.io/images/icons/star.svg"/>
+        <StarImage src="/static/examples/design_code/images/icons/star.svg"/>
     </PreviewCardRoot>;
 };
 

@@ -33,7 +33,7 @@ const Book = ({
             <Flex column className="gap-2">
                 {data.features.map((feat, featIndex) => {
                     return <Feature key={`feat_${data.title}_${featIndex}`} className="gap-2">
-                        <img src="https://designcode.io/images/icons/check-dark.svg" alt="check"/>
+                        <img src="/static/examples/design_code/images/price/book/check-dark.svg" alt="check"/>
                         <p dangerouslySetInnerHTML={{__html: feat}}/>
                     </Feature>;
                 })}

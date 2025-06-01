@@ -18,7 +18,7 @@ const CertificateCard = ({
             <SubTitle>Certifcate</SubTitle>
         </Header>
 
-        <PlatformLogo src="https://designcode.io/images/logos/swiftui-logo.svg" className="justify-self-end"/>
+        <PlatformLogo src="/static/examples/design_code/images/logos/swiftui-logo.svg" className="justify-self-end"/>
 
 
         <Grid col={1} className="gy-1 align-self-end">
