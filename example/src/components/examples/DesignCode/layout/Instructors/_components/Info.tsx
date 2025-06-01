@@ -1,5 +1,5 @@
+import {Container, FCProps,Flex} from '@acrool/react-grid';
 import styled from 'styled-components';
-import {Grid, Container, Flex} from '@acrool/react-grid';
 
 interface IProps extends FCProps {
 }
@@ -8,7 +8,7 @@ const Info = ({
     className,
 }: IProps) => {
 
-    return <InfoRoot className={className} col={6}>
+    return <InfoRoot className={className} fluid>
         <Flex className="flex-column justify-items-center text-center gap-2">
             <SubTitle>WHO’S BEHIND</SubTitle>
             <Title>Meet the instructors</Title>

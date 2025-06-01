@@ -1,4 +1,4 @@
-import {RecordOption, TMediaSize, TGridColNumberSizeUnit} from './types';
+import {RecordOption, TGridColNumberSizeUnit,TMediaSize} from './types';
 
 /**
  * 取得預設的尺寸(最小的)

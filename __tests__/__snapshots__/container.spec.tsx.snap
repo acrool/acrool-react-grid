@@ -1,48 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Container renders container 1`] = `
-.c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x);
-  padding-left: var(--acrool-gutter-x);
-}
-
-@media (min-width:576px) {
+@media (min-width: 576px) {
   .c0 {
-    max-width: 540px;
+    max-width: var(--acrool-container-max-width-sm, 540px);
   }
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    max-width: 720px;
+    max-width: var(--acrool-container-max-width-md, 720px);
   }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .c0 {
-    max-width: 960px;
+    max-width: var(--acrool-container-max-width-lg, 960px);
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .c0 {
-    max-width: 1140px;
+    max-width: var(--acrool-container-max-width-xl, 1140px);
   }
 }
 
-@media (min-width:1540px) {
+@media (min-width: 1540px) {
   .c0 {
-    max-width: 1540px;
+    max-width: var(--acrool-container-max-width-xxl, 1540px);
   }
 }
 
 <div
   class="c0"
+  data-class=""
   data-grid="container"
 >
   container
@@ -50,99 +41,72 @@ exports[`Container renders container 1`] = `
 `;
 
 exports[`Container renders container fluid 1`] = `
-.c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x);
-  padding-left: var(--acrool-gutter-x);
-}
-
 <div
-  class="c0"
-  data-grid="container container-fluid"
+  class=""
+  data-class="container-fluid"
+  data-grid="container"
 >
   container fluid
 </div>
 `;
 
 exports[`Container renders container fluid="lg" 1`] = `
-.c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x);
-  padding-left: var(--acrool-gutter-x);
-}
-
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .c0 {
-    max-width: 960px;
+    max-width: var(--acrool-container-max-width-lg, 960px);
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .c0 {
-    max-width: 1140px;
+    max-width: var(--acrool-container-max-width-xl, 1140px);
   }
 }
 
-@media (min-width:1540px) {
+@media (min-width: 1540px) {
   .c0 {
-    max-width: 1540px;
+    max-width: var(--acrool-container-max-width-xxl, 1540px);
   }
 }
 
 <div
   class="c0"
-  data-grid="container container-lg"
+  data-class="container-lg"
+  data-grid="container"
 >
   container-lg
 </div>
 `;
 
 exports[`Container renders container fluid="md" 1`] = `
-.c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--acrool-gutter-x);
-  padding-left: var(--acrool-gutter-x);
-}
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    max-width: 720px;
+    max-width: var(--acrool-container-max-width-md, 720px);
   }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .c0 {
-    max-width: 960px;
+    max-width: var(--acrool-container-max-width-lg, 960px);
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .c0 {
-    max-width: 1140px;
+    max-width: var(--acrool-container-max-width-xl, 1140px);
   }
 }
 
-@media (min-width:1540px) {
+@media (min-width: 1540px) {
   .c0 {
-    max-width: 1540px;
+    max-width: var(--acrool-container-max-width-xxl, 1540px);
   }
 }
 
 <div
   class="c0"
-  data-grid="container container-md"
+  data-class="container-md"
+  data-grid="container"
 >
   container-md
 </div>

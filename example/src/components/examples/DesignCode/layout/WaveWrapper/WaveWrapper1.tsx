@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import {FCProps, media} from '@acrool/react-grid';
 import React from 'react';
-import {media} from '@acrool/react-grid';
+import styled from 'styled-components';
 
 interface IProps extends FCProps {
    className?: string
@@ -30,13 +30,6 @@ export default WaveWrapper1;
 
 
 
-const NavigatorWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(7, auto);
-  gap: 26px;
-`;
-
-
 
 const BackgroundBlur = styled.div`
   position: absolute;
@@ -55,7 +48,7 @@ const Wave1 = styled.div`
   background-size: 250%;
   top: 137px;
   height: 900px;
-  background-image: url(https://designcode.io/images/waves/hero-wave1.svg);
+  background-image: url(/static/examples/design_code/images/waves/hero-wave1.svg);
 
     ${media.lg`
         background-size: 100%;
@@ -71,7 +64,7 @@ const Wave2 = styled.div`
   top: 380px;
   left: 0px;
   height: 600px;
-  background-image: url(https://designcode.io/images/waves/hero-wave2.svg);
+  background-image: url(/static/examples/design_code/images/waves/hero-wave2.svg);
 `;
 
 const Wave3 = styled.div`
@@ -93,7 +86,7 @@ const Stars = styled.div`
     width: 100%;
     background-position: center top;
     background-repeat: repeat;
-    background-image: url(https://designcode.io/images/backgrounds/stars.svg);
+    background-image: url(/static/examples/design_code/images/backgrounds/stars.svg);
     height: 224px;
     top: 10px;
 `;

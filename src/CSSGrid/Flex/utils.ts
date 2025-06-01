@@ -1,4 +1,4 @@
-import {TStyledProps, IFlexProps} from '../../types';
+import {IFlexProps,TStyledProps} from '../../types';
 
 
 /**
@@ -13,7 +13,7 @@ export const createCol = () => {
  * 產生 Debug 資訊
  * @param props
  */
-export const createInfo = (props: TStyledProps<IFlexProps>) => {
+export const createInfo = (props: IFlexProps) => {
     return props.column ? 'flex-column': undefined;
 };
 

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import React from 'react';
 import {auto, FCProps, Grid} from '@acrool/react-grid';
+import React from 'react';
+import styled from 'styled-components';
 
 interface IProps extends FCProps {
     no?: number
@@ -58,7 +58,7 @@ const MyLinkRoot = styled(Grid)`
   padding: 10px;
   border-radius: 10px;
 
-  :hover {
+  &:hover {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
   }

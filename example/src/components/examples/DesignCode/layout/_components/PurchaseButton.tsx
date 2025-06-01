@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import React from 'react';
-import {Grid, FCChildrenProps} from '@acrool/react-grid';
+import {FCChildrenProps,Grid} from '@acrool/react-grid';
 import clsx from 'clsx';
+import React from 'react';
+import styled from 'styled-components';
 
 interface IProps extends FCChildrenProps{
    className?: string
@@ -12,7 +12,9 @@ const PurchaseButton = ({
     children
 }: IProps) => {
     return <PurchaseButtonRoot col="45px auto"
-        className={clsx(className, 'g-2')} as="button">
+        className={clsx(className, 'g-2')}
+        as="button"
+    >
         {children}
     </PurchaseButtonRoot>;
 };

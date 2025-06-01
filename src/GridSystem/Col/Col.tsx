@@ -1,8 +1,8 @@
-import React from 'react';
 import styled, {css} from 'styled-components';
+
 import {themeName} from '../../config';
-import {createBreakpoint, createInfo, createCol} from './utils';
-import {TStyledProps, IColProps} from '../../types';
+import {IColProps, IColStdProps,TStyledProps} from '../../types';
+import {createBreakpoint, createCol,createInfo} from './utils';
 
 
 // about `min-height=1px`
@@ -15,17 +15,52 @@ import {TStyledProps, IColProps} from '../../types';
  *
  * By [Layout Grid System Col](https://acrool-react-grid.pages.dev/docs/layout/grid-system/col)
  */
-const Col = styled.div.attrs((props: TStyledProps<IColProps>) => ({
-    'data-grid': createInfo(props),
-}))`
+const ColStd = styled.div<
+    { 'data-grid'?: string } & TStyledProps<IColStdProps>
+>`
   min-height: 1px;
   min-width: 0; // 解決下層有使用 white-space: nowrap; 產生衝突跑版
 
-  ${(props: TStyledProps<IColProps>) => css`
-     ${props.col && createCol(props.col, props.theme[themeName]?.gridColumns)};
+  ${props => css`
+     ${props.$col && createCol(props.$col, props.theme[themeName]?.gridColumns)};
 
-     ${createBreakpoint(props)};
- `}
+      ${createBreakpoint({
+    theme: props.theme,
+    sm: props.$sm,
+    md: props.$md,
+    lg: props.$lg,
+    xl: props.$xl,
+    xxl: props.$xxl,
+} as TStyledProps<IColProps>)};
+  `}
 `;
+
+
+
+const Col = (props: IColProps) => {
+    const {col, sm, md, lg, xl, xxl, forwardAs, ref, children, onClick, ...htmlProps} = props;
+
+    return <ColStd
+        {...htmlProps}
+
+        data-grid="col"
+        data-class={createInfo(props)}
+        as={forwardAs}
+        ref={ref}
+
+        children={children}
+        onClick={onClick}
+
+        $col={col}
+        $sm={sm}
+        $md={md}
+        $lg={lg}
+        $xl={xl}
+        $xxl={xxl}
+
+
+    />;
+};
+
 
 export default Col;

@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import React from 'react';
-import PurchaseButton from '../../_components/PurchaseButton';
 import {Flex} from '@acrool/react-grid';
+import React from 'react';
+import styled from 'styled-components';
+
+import PurchaseButton from '../../_components/PurchaseButton';
 
 interface IProps {
    className?: string
@@ -13,7 +14,7 @@ const Button = ({
     return <ButtonRoot className={className}>
         <RingWrapper>
             <IconWrapper>
-                <Icon src="https://designcode.io/images/icons/pricing-large.svg"/>
+                <Icon src="/static/examples/design_code/images/icons/pricing-large.svg"/>
             </IconWrapper>
 
             <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">

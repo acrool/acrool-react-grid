@@ -1,44 +1,72 @@
+import {Col, Container,Row} from '@acrool/react-grid';
 import type {Meta, StoryObj} from '@storybook/react';
-
-import {Col} from '@acrool/react-grid';
 import React from 'react';
+import styled from 'styled-components';
 
 const meta = {
-    title: 'Primary/Col',
+    title: 'Components/Col',
     component: Col,
     parameters: {
-        layout: 'centered',
         docs: {
             description: {
-                component: 'Img animation use transform'
+                component: '同 Bootstrap 中的網格 Col'
             },
         },
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {
-        style: {
-            background: '#bdbdbd',
-            width: '100px',
-            height: '100px'
-        }
+        col: 4,
+        sm: 5,
+        md: 6,
+        lg: 6,
+        xl: 4,
+        xxl: 4,
+
     },
+    render: function Render(args) {
+
+        const length = 3;
+
+        return <Container style={{background: '#2c2c2c'}}>
+            <Row style={{background: '#6a6a6a'}} className="gy-3">
+                {Array.from({length}).map((_, idx) => (
+                    <Col
+                        key={idx}
+                        {...args}
+                        style={{background: '#bdbdbd'}}
+                    >
+                        <Box>
+                            Col {String(idx)}
+                        </Box>
+                    </Col>
+                ))}
+            </Row>
+        </Container>;
+    },
+
 } satisfies Meta<typeof Col>;
 
 export default meta;
+
+
 type Story = StoryObj<typeof meta>;
 
 
 
-export const Primary: Story = {
-    args: {},
-};
+export const Primary: Story = {};
 
-export const With: Story = {
-    args: {},
-    render: function Render(args) {
-        return <Col className="gap-2 overflow-auto ml-8" style={{width: '100%'}}>
-
-        </Col>;
+export const WithFill: Story = {
+    args: {
+        col: true,
     },
 };
+
+
+
+
+const Box = styled.div`
+    background: #8caf5d;
+    padding: 10px;
+    color: #fff;
+`;

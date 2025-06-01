@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import {FCProps} from '@acrool/react-grid';
 import React from 'react';
+import styled from 'styled-components';
 
 interface IProps extends FCProps {
-    className?: string;
+    className?: string
 }
 
 const WaveWrapper2 = ({
@@ -44,20 +45,6 @@ export default WaveWrapper2;
 
 
 
-const NavigatorWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(7, auto);
-    gap: 26px;
-`;
-
-
-const BackgroundBlur = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 800px;
-    backdrop-filter: blur(60px);
-`;
-
 
 const Wave1 = styled.div`
     position: absolute;
@@ -85,7 +72,6 @@ const Wave2 = styled.div`
     transform-origin: left top;
     clip-path: url(#wave2);
     top: 80px;
-    //height: 250px;
     background: linear-gradient(132.86deg, rgb(255, 36, 36) -4.28%, rgb(193, 52, 122) 14.43%, rgb(73, 30, 184) 34.1%);
 
 
@@ -103,8 +89,6 @@ const Wave3 = styled.div`
     transform-origin: left top;
     clip-path: url(#wave3);
     top: 40px;
-    //height: 500px;
-    //background: linear-gradient(rgba(242, 246, 255, 0.5) 0%, rgb(242, 246, 255) 40%);
     backdrop-filter: saturate(200%);
     background: linear-gradient(rgba(31, 31, 71, 0.25) -18.72%, rgb(31, 31, 71) 37.6%);
 
@@ -121,7 +105,7 @@ const Line = styled.div`
     background-position: center top;
     background-repeat: no-repeat;
     top: 380px;
-    background-image: url(https://designcode.io/images/waves/certificate-lines.svg);
+    background-image: url(/static/examples/design_code/images/waves/certificate-lines.svg);
     height: 600px;
     background-size: 1440px;
     width: 100%;

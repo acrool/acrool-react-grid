@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import {FCProps} from '@acrool/react-grid';
 import React from 'react';
+import styled from 'styled-components';
 
 interface IProps extends FCProps {
-    className?: string;
+    className?: string
 }
 
 const WaveWrapper4 = ({

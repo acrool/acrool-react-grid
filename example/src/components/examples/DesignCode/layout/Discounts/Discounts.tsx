@@ -1,5 +1,6 @@
-import {Container, Grid, Row, Col, Flex, FCProps} from '@acrool/react-grid';
+import {Col, Container, FCProps,Grid, Row} from '@acrool/react-grid';
 import styled from 'styled-components';
+
 import FeatureCard from './_components/FeatureCard';
 
 interface IProps extends FCProps {

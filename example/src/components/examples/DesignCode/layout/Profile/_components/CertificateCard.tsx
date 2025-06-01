@@ -1,4 +1,4 @@
-import {Grid, media} from '@acrool/react-grid';
+import {FCProps, Grid, media} from '@acrool/react-grid';
 import styled from 'styled-components';
 
 interface IProps extends FCProps {
@@ -18,7 +18,7 @@ const CertificateCard = ({
             <SubTitle>Certifcate</SubTitle>
         </Header>
 
-        <PlatformLogo src="https://designcode.io/images/logos/swiftui-logo.svg" className="justify-self-end"/>
+        <PlatformLogo src="/static/examples/design_code/images/logos/swiftui-logo.svg" className="justify-self-end"/>
 
 
         <Grid col={1} className="gy-1 align-self-end">
@@ -40,13 +40,13 @@ const PlaceholderItem = styled.div`
     background: white;
     opacity: 0.3;
 
-    :nth-child(2){
+    &:nth-child(2){
         width: 90px;
     }
-    :nth-child(3){
+    &:nth-child(3){
         width: 80px;
     }
-    :nth-child(4){
+    &:nth-child(4){
         width: 120px;
     }
 `;

@@ -2,20 +2,14 @@
 
 exports[`Grid Col renders col-auto 1`] = `
 .c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
-  column-gap: var(--acrool-gutter-x);
-  row-gap: var(--acrool-gutter-y);
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 <div
   class="c0"
-  data-grid="grid-2"
+  data-class="grid-2"
+  data-grid="grid"
 >
   <div>
     col 1
@@ -28,20 +22,14 @@ exports[`Grid Col renders col-auto 1`] = `
 
 exports[`Grid Col renders grid default 1`] = `
 .c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
-  column-gap: var(--acrool-gutter-x);
-  row-gap: var(--acrool-gutter-y);
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 <div
   class="c0"
-  data-grid="grid-2"
+  data-class="grid-2"
+  data-grid="grid"
 >
   col
 </div>

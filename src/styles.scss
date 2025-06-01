@@ -1,0 +1,982 @@
+@use "sass:meta";
+@use "sass:map";
+
+// 定义断点
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1540px
+) !default;
+
+
+// 网格系统变量
+$grid-spacer: var(--acrool-gutter) !default;
+$grid-gutters: (
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    7: 1.75rem,
+    8: 2rem,
+    9: 2.25rem,
+    10: 2.5rem,
+    11: 2.75rem,
+    12: 3rem,
+    13: 3.25rem,
+    14: 3.5rem,
+    15: 3.75rem,
+    16: 4rem,
+    17: 4.25rem,
+    18: 4.5rem
+) !default;
+
+
+// 定义方向
+$directions: (
+    '': '',
+    't': 'top',
+    'r': 'right',
+    'b': 'bottom',
+    'l': 'left',
+    'x': ('left', 'right'),
+    'y': ('top', 'bottom')
+);
+
+
+
+// Mixins
+@mixin responsive($breakpoint) {
+    @if $breakpoint == '' {
+        @content;
+    } @else {
+        @media (min-width: map.get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+@mixin generate-utility($prefix, $property, $values) {
+    @each $value in $values {
+        .#{$prefix}-#{$value} {
+            #{$property}: #{$value} !important;
+        }
+    }
+}
+
+// 基础样式
+.img-fluid {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.img-cover {
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+// 边框样式
+@each $direction, $value in $directions {
+    @if $direction == '' {
+        .border {
+            border: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color) !important;
+        }
+    } @else {
+        .border-#{$direction} {
+            @if meta.type-of($value) == 'list' {
+                @each $pos in $value {
+                    border-#{$pos}: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color) !important;
+                }
+            } @else {
+                border-#{$value}: var(--acrool-border-width) var(--acrool-border-style) var(--acrool-border-color) !important;
+            }
+        }
+    }
+}
+
+// 旋转样式
+@for $i from 1 through 3 {
+    .rotate-#{$i * 90} {
+        transform: rotate(#{$i * 90}deg) !important;
+    }
+}
+
+// 文本溢出样式
+.text-pre-wrap {
+    white-space: pre-wrap !important;
+}
+
+.text-pre-line {
+    white-space: pre-line !important;
+}
+
+.text-nowrap {
+    white-space: nowrap !important;
+}
+
+// 文本转换样式
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.text-overflow {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.text-area-overflow {
+    display: -webkit-box !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    -webkit-line-clamp: var(--overflow-line, 1);
+    -webkit-box-orient: vertical !important;
+}
+
+@for $i from 2 through 5 {
+    .text-area-overflow-#{$i} {
+        --overflow-line: #{$i};
+    }
+}
+
+.text-pre {
+    white-space: pre !important;
+}
+
+.text-pre-line {
+    white-space: pre-line !important;
+}
+
+// 定位样式
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.absolute-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.absolute-center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.inset-0 {
+    inset: 0;
+}
+
+
+// 滤镜样式
+.filter-gray {
+    filter: grayscale(1) !important;
+}
+
+.filter-while {
+    filter: brightness(0) invert(1) !important;
+}
+
+.filter-mask-b {
+    mask-image: linear-gradient(to bottom, white, white, transparent) !important;
+}
+
+.filter-mask-b-80 {
+    mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%) !important;
+}
+
+// 字体大小
+@for $i from 1 through 6 {
+    .fs-#{$i} {
+        font-size: #{2.5 - ($i - 1) * 0.5}rem !important;
+    }
+}
+
+// 可见性
+.visible {
+    visibility: visible !important;
+}
+
+.invisible {
+    visibility: hidden !important;
+}
+
+[data-grid="container"]{
+    --acrool-gutter-x: var(--acrool-gutter);
+    --acrool-gutter-y: 0;
+
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: calc(var(--acrool-gutter-x) * 0.5);
+    padding-left: calc(var(--acrool-gutter-x) * 0.5);
+}
+
+[data-grid="row"]{
+    --acrool-gutter-x: var(--acrool-gutter);
+    --acrool-gutter-y: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--acrool-gutter-y) * -1);
+    margin-right: calc(var(--acrool-gutter-x) * -0.5);
+    margin-left: calc(var(--acrool-gutter-x) * -0.5);
+    padding-inline-start: 0;
+
+    > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--acrool-gutter-x) * 0.5);
+        padding-left: calc(var(--acrool-gutter-x) * 0.5);
+        margin-top: var(--acrool-gutter-y);
+    }
+}
+
+[data-grid="grid"]{
+    --acrool-gutter-x: var(--acrool-gutter);
+    --acrool-gutter-y: 0;
+
+    display: grid;
+    grid-template-rows: auto;
+    column-gap: var(--acrool-gutter-x);
+    row-gap: var(--acrool-gutter-y);
+}
+
+
+
+
+// 显示样式
+@each $display in (none, inline, inline-block, block, flex, inline-flex, grid, inline-grid) {
+    .d-#{$display} {
+        display: #{$display} !important;
+    }
+}
+
+// 位置样式
+@each $position in (static, relative, absolute, fixed, sticky) {
+    .position-#{$position} {
+        position: #{$position} !important;
+    }
+}
+
+// 自动流样式
+.grid-auto-flow {
+    grid-auto-flow: row !important;
+
+    &.grid-auto-flow-col {
+        grid-auto-flow: column !important;
+    }
+
+    &.grid-auto-flow-dense {
+        grid-auto-flow: row dense !important;
+    }
+
+    &.grid-auto-flow-col-dense {
+        grid-auto-flow: column dense !important;
+    }
+}
+
+// Flex 样式
+@each $direction in (row, column, row-reverse, column-reverse) {
+    .flex-#{$direction} {
+        flex-direction: #{$direction} !important;
+    }
+}
+
+// Flex 换行样式
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+}
+
+// Flex 伸缩样式
+.flex-1 {
+    flex: 1 !important;
+}
+
+.flex-auto {
+    flex: 0 0 auto !important;
+}
+
+.flex-fill {
+    flex: 1 1 auto !important;
+}
+
+.flex-grow-0 {
+    flex-grow: 0 !important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0 !important;
+}
+
+.flex-shrink-1 {
+    flex-shrink: 1 !important;
+}
+
+// Flex 对齐样式
+$flex-justify: (
+    'auto': 'normal',
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+    'between': 'space-between',
+    'around': 'space-around',
+    'baseline': 'baseline',
+    'stretch': 'stretch'
+);
+
+@each $align, $value in $flex-justify {
+    .justify-content-#{$align} {
+        justify-content: #{$value} !important;
+    }
+    .align-items-#{$align} {
+        align-items: #{$value} !important;
+    }
+    .align-self-#{$align} {
+        align-self: #{$value} !important;
+    }
+}
+
+// 定义方向
+$grid-justify: (
+    'auto': 'normal',
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+    'stretch': 'stretch'
+);
+
+@each $align, $value in $grid-justify {
+    .justify-items-#{$align} {
+        justify-items: #{$value} !important;
+    }
+    .justify-self-#{$align} {
+        justify-self: #{$value} !important;
+    }
+}
+
+
+// 定义方向
+$grid-align: (
+    'auto': 'normal',
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+    'between': 'space-betwee',
+    'around': 'space-around',
+    'stretch': 'stretch'
+);
+
+// Grid 内容对齐样式
+@each $align, $value in $grid-align {
+    .align-content-#{$align} {
+        align-content: #{$value} !important;
+    }
+}
+
+
+$grid-place: (
+    'auto': 'normal',
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+);
+
+// Grid 位置样式
+@each $align, $value in $grid-place {
+    .place-items-#{$align} {
+        place-items: #{$value} !important;
+    }
+}
+
+// 网格列样式
+@for $i from 1 through 12 {
+    .g-col-#{$i} {
+        grid-column: span #{$i} !important;
+    }
+}
+
+// 网格行样式
+@for $i from 1 through 12 {
+    .g-row-#{$i} {
+        grid-row: span #{$i} !important;
+    }
+}
+
+// 高度, 宽度样式
+$width-height-values: (
+    0: 0,
+    100: 100%,
+    inherit: inherit,
+    auto: auto
+);
+
+@each $key, $value in $width-height-values {
+    .h-#{$key} {
+        height: #{$value} !important;
+    }
+    .w-#{$key} {
+        width: #{$value} !important;
+    }
+}
+
+
+// 文本样式
+@each $align in (left, center, right, justify) {
+    .text-#{$align} {
+        text-align: #{$align} !important;
+    }
+}
+
+// 圆角样式
+.rounded {
+    border-radius: var(--acrool-border-radius) !important;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.rounded-top {
+    border-top-left-radius: var(--acrool-border-radius) !important;
+    border-top-right-radius: var(--acrool-border-radius) !important;
+}
+
+.rounded-end {
+    border-top-right-radius: var(--acrool-border-radius) !important;
+    border-bottom-right-radius: var(--acrool-border-radius) !important;
+}
+
+.rounded-bottom {
+    border-bottom-right-radius: var(--acrool-border-radius) !important;
+    border-bottom-left-radius: var(--acrool-border-radius) !important;
+}
+
+.rounded-start {
+    border-bottom-left-radius: var(--acrool-border-radius) !important;
+    border-top-left-radius: var(--acrool-border-radius) !important;
+}
+
+.rounded-0 {
+    border-radius: 0 !important;
+}
+
+.rounded-1 {
+    border-radius: var(--acrool-border-radius-sm) !important;
+}
+
+.rounded-2 {
+    border-radius: var(--acrool-border-radius-md) !important;
+}
+
+.rounded-3 {
+    border-radius: var(--acrool-border-radius-lg) !important;
+}
+
+.rounded-4 {
+    border-radius: var(--acrool-border-radius-xl) !important;
+}
+
+.rounded-5 {
+    border-radius: var(--acrool-border-radius-xxl) !important;
+}
+
+
+// 边距样式
+@each $direction, $value in $directions {
+    @each $size, $gutter in $grid-gutters {
+        @if $direction == '' {
+            .m-#{$size} {
+                margin: #{$gutter} !important;
+            }
+            .m-auto {
+                margin: auto !important;
+            }
+            .m-0 {
+                margin: 0 !important;
+            }
+
+            .p-#{$size} {
+                padding: #{$gutter} !important;
+            }
+            .p-0 {
+                padding: 0 !important;
+            }
+
+        } @else {
+            .m#{$direction}-#{$size} {
+                @if meta.type-of($value) == 'list' {
+                    @each $pos in $value {
+                        margin-#{$pos}: #{$gutter} !important;
+                    }
+                } @else {
+                    margin-#{$value}: #{$gutter} !important;
+                }
+            }
+            .m#{$direction}-auto {
+                @if meta.type-of($value) == 'list' {
+                    @each $pos in $value {
+                        margin-#{$pos}: auto !important;
+                    }
+                } @else {
+                    margin-#{$value}: auto !important;
+                }
+            }
+            .m#{$direction}-0 {
+                @if meta.type-of($value) == 'list' {
+                    @each $pos in $value {
+                        margin-#{$pos}: 0 !important;
+                    }
+                } @else {
+                    margin-#{$value}: 0 !important;
+                }
+            }
+
+            .p#{$direction}-#{$size} {
+                @if meta.type-of($value) == 'list' {
+                    @each $pos in $value {
+                        padding-#{$pos}: #{$gutter} !important;
+                    }
+                } @else {
+                    padding-#{$value}: #{$gutter} !important;
+                }
+            }
+            .p#{$direction}-0 {
+                @if meta.type-of($value) == 'list' {
+                    @each $pos in $value {
+                        padding-#{$pos}: 0 !important;
+                    }
+                } @else {
+                    padding-#{$value}: 0 !important;
+                }
+            }
+
+        }
+    }
+}
+
+
+// 网格间距样式
+@each $size, $gutter in $grid-gutters {
+    .g-#{$size}, .gx-#{$size} {
+        --acrool-gutter-x: #{$gutter};
+    }
+    .g-#{$size}, .gy-#{$size} {
+        --acrool-gutter-y: #{$gutter};
+    }
+    .g-0, .gx-0 {
+        --acrool-gutter-x: 0;
+    }
+    .g-0, .gy-0 {
+        --acrool-gutter-y: 0;
+    }
+}
+
+
+
+// 间距样式
+@each $size, $gutter in $grid-gutters {
+    .gap-#{$size} {
+        gap: #{$gutter} !important;
+    }
+    .column-gap-#{$size} {
+        column-gap: #{$gutter} !important;
+    }
+    .row-gap-#{$size} {
+        row-gap: #{$gutter} !important;
+    }
+}
+
+.gap-0 {
+    gap: 0 !important;
+}
+
+.column-gap-0 {
+    column-gap: 0 !important;
+}
+
+.row-gap-0 {
+    row-gap: 0 !important;
+}
+
+
+// 排序样式
+@for $i from 1 through 12 {
+    .order-#{$i} {
+        order: #{$i} !important;
+    }
+}
+
+// 溢出样式
+.overflow-auto {
+    overflow: auto !important;
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+.overflow-scroll {
+    overflow: scroll !important;
+}
+
+.overflow-visible {
+    overflow: visible !important;
+}
+
+.overflow-x-auto {
+    overflow-x: auto !important;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden !important;
+}
+
+.overflow-x-scroll {
+    overflow-x: scroll !important;
+}
+
+.overflow-x-visible {
+    overflow-x: visible !important;
+}
+
+.overflow-y-auto {
+    overflow-y: auto !important;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden !important;
+}
+
+.overflow-y-scroll {
+    overflow-y: scroll !important;
+}
+
+.overflow-y-visible {
+    overflow-y: visible !important;
+}
+
+
+// ============================================================================================
+//                                 RWD響應式
+// ============================================================================================
+@each $breakpoint, $width in $breakpoints {
+    @include responsive($breakpoint) {
+        @each $display in (none, inline, inline-block, block, flex, inline-flex, grid, inline-grid) {
+            .d-#{$breakpoint}-#{$display} {
+                display: #{$display} !important;
+            }
+        }
+
+        @each $position in (static, relative, absolute, fixed, sticky) {
+            .position-#{$breakpoint}-#{$position} {
+                position: #{$position} !important;
+            }
+        }
+
+        @each $direction in (row, column, row-reverse, column-reverse) {
+            .flex-#{$breakpoint}-#{$direction} {
+                flex-direction: #{$direction} !important;
+            }
+        }
+
+
+        @each $align, $value in $flex-justify {
+            .justify-content-#{$breakpoint}-#{$align} {
+                justify-content: #{$value} !important;
+            }
+            .align-items-#{$breakpoint}-#{$align} {
+                align-items: #{$value} !important;
+            }
+            .align-self-#{$breakpoint}-#{$align} {
+                align-self: #{$value} !important;
+            }
+        }
+
+        @each $align, $value in $grid-justify {
+            .justify-items-#{$breakpoint}-#{$align} {
+                justify-items: #{$value} !important;
+            }
+            .justify-self-#{$breakpoint}-#{$align} {
+                justify-self: #{$value} !important;
+            }
+        }
+
+        // Grid 内容对齐样式
+        @each $align, $value in $grid-align {
+            .align-content-#{$breakpoint}-#{$align} {
+                align-content: #{$value} !important;
+            }
+        }
+
+        // Grid 位置样式
+        @each $align, $value in $grid-place {
+            .place-items-#{$breakpoint}-#{$align} {
+                place-items: #{$value} !important;
+            }
+        }
+
+
+        @for $i from 1 through 9 {
+            .g-col-#{$breakpoint}-#{$i} {
+                grid-column: auto/span #{$i} !important;
+            }
+            .g-row-#{$breakpoint}-#{$i} {
+                grid-row: auto/span #{$i} !important;
+            }
+        }
+
+
+        @each $key, $value in $width-height-values {
+            .h-#{$breakpoint}-#{$key} {
+                height: $value !important;
+            }
+            .w-#{$breakpoint}-#{$key} {
+                width: $value !important;
+            }
+        }
+
+        @each $align in (left, center, right, justify) {
+            .text-#{$breakpoint}-#{$align} {
+                text-align: #{$align} !important;
+            }
+        }
+
+
+        .rounded-#{$breakpoint} {
+            border-radius: var(--acrool-border-radius) !important;
+        }
+        .rounded-#{$breakpoint}-circle {
+            border-radius: 50% !important;
+        }
+        .rounded-#{$breakpoint}-top {
+            border-top-left-radius: var(--acrool-border-radius) !important;
+            border-top-right-radius: var(--acrool-border-radius) !important;
+        }
+        .rounded-#{$breakpoint}-end {
+            border-top-right-radius: var(--acrool-border-radius) !important;
+            border-bottom-right-radius: var(--acrool-border-radius) !important;
+        }
+        .rounded-#{$breakpoint}-bottom {
+            border-bottom-right-radius: var(--acrool-border-radius) !important;
+            border-bottom-left-radius: var(--acrool-border-radius) !important;
+        }
+        .rounded-#{$breakpoint}-start {
+            border-bottom-left-radius: var(--acrool-border-radius) !important;
+            border-top-left-radius: var(--acrool-border-radius) !important;
+        }
+        .rounded-#{$breakpoint}-0 {
+            border-radius: 0 !important;
+        }
+        .rounded-#{$breakpoint}-1 {
+            border-radius: var(--acrool-border-radius-sm) !important;
+        }
+        .rounded-#{$breakpoint}-2 {
+            border-radius: var(--acrool-border-radius-md) !important;
+        }
+        .rounded-#{$breakpoint}-3 {
+            border-radius: var(--acrool-border-radius-lg) !important;
+        }
+        .rounded-#{$breakpoint}-4 {
+            border-radius: var(--acrool-border-radius-xl) !important;
+        }
+        .rounded-#{$breakpoint}-5 {
+            border-radius: var(--acrool-border-radius-xxl) !important;
+        }
+
+
+        // 邊距
+        @each $direction, $value in $directions {
+            @each $size, $gutter in $grid-gutters {
+                @if $direction == '' {
+                    .m-#{$breakpoint}-#{$size} {
+                        margin: #{$gutter} !important;
+                    }
+                    .m-#{$breakpoint}-auto {
+                        margin: auto !important;
+                    }
+                    .m-#{$breakpoint}-0 {
+                        margin: 0 !important;
+                    }
+
+                    .p-#{$breakpoint}-#{$size} {
+                        padding: #{$gutter} !important;
+                    }
+                    .p-#{$breakpoint}-0 {
+                        padding: 0 !important;
+                    }
+
+                } @else {
+                    .m#{$direction}-#{$breakpoint}-#{$size} {
+                        @if meta.type-of($value) == 'list' {
+                            @each $pos in $value {
+                                margin-#{$pos}: #{$gutter} !important;
+                            }
+                        } @else {
+                            margin-#{$value}: #{$gutter} !important;
+                        }
+                    }
+                    .m#{$direction}-#{$breakpoint}-auto {
+                        @if meta.type-of($value) == 'list' {
+                            @each $pos in $value {
+                                margin-#{$pos}: auto !important;
+                            }
+                        } @else {
+                            margin-#{$value}: auto !important;
+                        }
+                    }
+                    .m#{$direction}-#{$breakpoint}-0 {
+                        @if meta.type-of($value) == 'list' {
+                            @each $pos in $value {
+                                margin-#{$pos}: 0 !important;
+                            }
+                        } @else {
+                            margin-#{$value}: 0 !important;
+                        }
+                    }
+
+                    .p#{$direction}-#{$breakpoint}-#{$size} {
+                        @if meta.type-of($value) == 'list' {
+                            @each $pos in $value {
+                                padding-#{$pos}: #{$gutter} !important;
+                            }
+                        } @else {
+                            padding-#{$value}: #{$gutter} !important;
+                        }
+                    }
+
+                    .p#{$direction}-#{$breakpoint}-0 {
+                        @if meta.type-of($value) == 'list' {
+                            @each $pos in $value {
+                                padding-#{$pos}: 0 !important;
+                            }
+                        } @else {
+                            padding-#{$value}: 0 !important;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        @each $size, $gutter in $grid-gutters {
+            .gap-#{$breakpoint}-#{$size} {
+                gap: #{$gutter} !important;
+            }
+            .column-gap-#{$breakpoint}-#{$size} {
+                column-gap: #{$gutter} !important;
+            }
+            .row-gap-#{$breakpoint}-#{$size} {
+                row-gap: #{$gutter} !important;
+            }
+            .gutter-#{$breakpoint}-#{$size} {
+                gap: #{$gutter} !important;
+            }
+        }
+
+
+        // 网格间距样式
+        @each $size, $gutter in $grid-gutters {
+            .g-#{$breakpoint}-#{$size}, .gx-#{$breakpoint}-#{$size} {
+                --acrool-gutter-x: #{$gutter};
+            }
+            .g-#{$breakpoint}-#{$size}, .gy-#{$breakpoint}-#{$size} {
+                --acrool-gutter-y: #{$gutter};
+            }
+            .g-#{$breakpoint}-0, .gx-#{$breakpoint}-0 {
+                --acrool-gutter-x: 0;
+            }
+            .g-#{$breakpoint}-0, .gy-#{$breakpoint}-0 {
+                --acrool-gutter-y: 0;
+            }
+        }
+
+
+        @for $i from 1 through 12 {
+            .order-#{$breakpoint}-#{$i} {
+                order: #{$i} !important;
+            }
+        }
+
+
+        // 溢出样式
+        .overflow-#{$breakpoint}-auto {
+            overflow: auto !important;
+        }
+        .overflow-#{$breakpoint}-hidden {
+            overflow: hidden !important;
+        }
+        .overflow-#{$breakpoint}-scroll {
+            overflow: scroll !important;
+        }
+        .overflow-#{$breakpoint}-visible {
+            overflow: visible !important;
+        }
+
+        .overflow-x-#{$breakpoint}-auto {
+            overflow-x: auto !important;
+        }
+        .overflow-x-#{$breakpoint}-hidden {
+            overflow-x: hidden !important;
+        }
+        .overflow-x-#{$breakpoint}-scroll {
+            overflow-x: scroll !important;
+        }
+        .overflow-x-#{$breakpoint}-visible {
+            overflow-x: visible !important;
+        }
+
+        .overflow-y-#{$breakpoint}-auto {
+            overflow-y: auto !important;
+        }
+        .overflow-y-#{$breakpoint}-hidden {
+            overflow-y: hidden !important;
+        }
+        .overflow-y-#{$breakpoint}-scroll {
+            overflow-y: scroll !important;
+        }
+        .overflow-y-#{$breakpoint}-visible {
+            overflow-y: visible !important;
+        }
+
+
+    }
+}
+
+
+// ============================================================================================
+//                                 Print 列印
+// ============================================================================================
+@media print {
+    @each $display in (none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex) {
+        .d-print-#{$display} {
+            display: #{$display} !important;
+        }
+    }
+}
+
+

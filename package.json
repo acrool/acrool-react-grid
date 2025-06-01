@@ -1,6 +1,6 @@
 {
   "name": "@acrool/react-grid",
-  "version": "5.2.5",
+  "version": "6.0.9",
   "description": "Most modern rwd grid system by react + styled-component",
   "keywords": [
     "react",
@@ -11,19 +11,22 @@
     "grid-system"
   ],
   "private": false,
+  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/acrool/acrool-react-grid.git"
+    "url": "git+https://github.com/acrool/acrool-react-grid.git"
   },
   "module": "./dist/acrool-react-grid.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "browser": "./dist/acrool-react-grid.es.js",
       "import": "./dist/acrool-react-grid.es.js"
     },
-    "./dist/index.css": "./dist/style.css"
+    "./dist/index.css": "./dist/react-grid.css",
+    "./dist/styles.scss": "./dist/styles.scss"
   },
   "files": [
     "dist"
@@ -48,37 +51,46 @@
     "release:alpha": "standard-version --prerelease alpha"
   },
   "peerDependencies": {
-    "react": "18.x",
-    "react-dom": "18.x",
-    "styled-components": "5.3.x"
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0",
+    "styled-components": "6.x"
   },
   "devDependencies": {
-    "@swc/plugin-styled-components": "1.5.115",
-    "@testing-library/dom": "9.3.3",
-    "@testing-library/react": "14.0.0",
-    "@types/jest": "29.5.0",
-    "@types/node": "18.15.11",
-    "@types/react": "18.x",
-    "@types/react-dom": "18.x",
-    "@types/styled-components": "5.1.26",
-    "@vitejs/plugin-react-swc": "3.4.0",
-    "cz-git": "1.7.1",
-    "eslint": "8.37.0",
-    "eslint-config-react-app": "7.0.1",
-    "jest": "29.5.0",
-    "jest-environment-jsdom": "29.7.0",
+    "@stylistic/eslint-plugin-ts": "^3.0.1",
+    "@swc/jest": "^0.2.27",
+    "@swc/plugin-styled-components": "7.1.0",
+    "@testing-library/dom": "10.3.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "16.0.0",
+    "@types/jest": "^29.5.0",
+    "@types/node": "20.17.32",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "@typescript-eslint/parser": "^8.23.0",
+    "@vitejs/plugin-react-swc": "3.8.1",
+    "cz-conventional-changelog": "3.3.0",
+    "cz-customizable": "6.6.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "jest-styled-components": "7.2.0",
     "npm-run-all": "4.1.5",
-    "react": "18.x",
-    "react-dom": "18.x",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "rollup-plugin-visualizer": "5.9.0",
-    "standard-version": "9.5.0",
-    "styled-components": "5.3.x",
-    "ts-jest": "29.1.0",
-    "typescript": "4.9.5",
-    "vite": "4.4.9",
-    "vite-plugin-dts": "2.1.0",
-    "vite-plugin-eslint": "1.8.1"
+    "sass": "^1.87.0",
+    "standard-version": "^9.5.0",
+    "styled-components": "6.x",
+    "ts-jest": "^29.3.2",
+    "ts-node": "10.8.1",
+    "vite": "^6.0.11",
+    "vite-plugin-dts": "^4.5.3",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-static-copy": "^2.3.1"
   },
   "config": {
     "commitizen": {

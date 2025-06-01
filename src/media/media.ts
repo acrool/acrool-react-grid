@@ -1,7 +1,7 @@
-import {css, SimpleInterpolation, CSSObject, FlattenSimpleInterpolation} from 'styled-components';
-import {themeName} from '../config';
+import {css, CSSObject,Interpolation} from 'styled-components';
 
-import {TMediaSize, TMedia, TStrings} from '../types';
+import {themeName} from '../config';
+import {TMedia, TMediaSize, TStrings} from '../types';
 
 
 
@@ -20,10 +20,10 @@ function px2vwCalc(pixels: number, pixelTotal: number = 320) {
  * 尋找PX取代為VW
  * @param css
  */
-const replacePx2Vw = (css: FlattenSimpleInterpolation) => {
+const replacePx2Vw = (css: Interpolation<object>[]) => {
     let re = /(\d+)+(px)/gi;
 
-    return css.map(styleObj =>{
+    return css.map((styleObj) => {
         if(typeof styleObj === 'string'){
             return styleObj.replace(re, (match, offset, string) => {
                 const px = Number(offset);
@@ -47,14 +47,14 @@ const replacePx2Vw = (css: FlattenSimpleInterpolation) => {
  *      width: 20px
  *   `}
  */
-const mediaPx2vw = (strings: TemplateStringsArray | CSSObject, ...interpolations: SimpleInterpolation[]) => css`
+const mediaPx2vw = (strings: TemplateStringsArray | CSSObject, ...interpolations: Interpolation<object>[]) => css`
   @media (max-width: ${(props: any) => props.theme[themeName]?.gridBreakpoints.sm}px) {
       ${replacePx2Vw(css(strings, ...interpolations))};
   }
 `;
 
 /**
- * 產生 Media 的方法
+ * 產生 media 的方法
  * use:
  *   ${media.sm`
  *      width: 20px
@@ -62,7 +62,7 @@ const mediaPx2vw = (strings: TemplateStringsArray | CSSObject, ...interpolations
  * @param size
  */
 const mediaSize = (size: TMediaSize) => {
-    return (strings: TStrings, ...interpolations: SimpleInterpolation[]) => css`
+    return (strings: TStrings, ...interpolations: Interpolation<object>[]) => css`
           @media (min-width: ${(props: any) => props.theme[themeName]?.gridBreakpoints[size]}px) {
             ${css(strings, ...interpolations)};
           };

@@ -20,6 +20,13 @@
 
 </div>
 
+
+| Version | Styled-component | React       |
+|---------|------------------|-------------|
+| 6.x     | 6.x              | ^18.3       |
+ | 5.x     | 5.x              | 18.0 ~ 18.3 | 
+
+
 ## Documentation
 
 - [Getting Started](https://acrool-react-grid.pages.dev/docs/getting-started)
@@ -30,6 +37,7 @@
 - [Container](https://acrool-react-grid.pages.dev/docs/container)
 - [Grid System](https://acrool-react-grid.pages.dev/docs/category/grid-system)
 - [CSS Grid](https://acrool-react-grid.pages.dev/docs/category/css-grid)
+- [Storybook](https://acrool-react-grid-storybook.pages.dev)
 
 ## Features
 
@@ -50,8 +58,10 @@ yarn add styled-components @acrool/react-grid
 in your packages. (Make the version of styled-component you use match the version of styled-component used in acrool-react-gird)
 
 ```json
-"resolutions": {
-   "styled-components": "5.3.9"
+{
+    "resolutions": {
+        "styled-components": "6.1.17"
+    }
 }
 ```
 
@@ -89,6 +99,44 @@ const gridTheme: IGridSetting = {
     <App/>
 </GridThemeProvider>
 ```
+
+***Override css setting***
+
+create folder and file: `src/library/acrool-react-grid/grid.scss`
+
+```scss
+$breakpoints: (
+      sm: 576px,
+      md: 768px,
+      lg: 992px,
+      xl: 1200px,
+      xxl: 1440px
+);
+
+$grid-gutters: (
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    7: 1.75rem,
+    8: 2rem,
+    9: 2.25rem,
+    10: 2.5rem,
+    11: 2.75rem,
+    12: 3rem,
+    13: 3.25rem,
+    14: 3.5rem,
+    15: 3.75rem,
+    16: 4rem,
+    17: 4.25rem,
+    18: 4.5rem
+);
+
+@import "@acrool/react-grid/dist/styles.scss";
+```
+
 
 ## Examples
 
@@ -150,6 +198,33 @@ const Desc = styled.div<{
 `
 
 ```
+
+## MediaConsumer
+
+```tsx
+<MediaConsumer sizes={['xxl']}>
+    {(mediaSize)=> {
+
+        if(mediaSize === 'xxl'){
+            return <Marquee
+                autoFill
+                play={hoverId === null}
+                className="py-8"
+            >
+                {renderCards(true)}
+            </Marquee>;
+        }
+
+
+        return <Container fluid>
+            <Flex column className="gap-8">
+                {renderCards(false)}
+            </Flex>
+        </Container>;
+    }}
+</MediaConsumer>
+```
+
 
 There is also a codesandbox template that you can fork and play with it:
 

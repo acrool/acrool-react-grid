@@ -1,12 +1,13 @@
-import styled from 'styled-components';
+import {Col, Container, FCProps,Flex, Grid} from '@acrool/react-grid';
 import React from 'react';
-import {Container, Flex, Grid, Col, FCProps} from '@acrool/react-grid';
-import PreviewCard from './_components/PreviewCard';
+import styled from 'styled-components';
+
 import CourseButton from '../_components/CourseButton';
 import CourseCard from '../_components/CourseCard';
+import PreviewCard from './_components/PreviewCard';
 
 interface IProps extends FCProps {
-    className?: string;
+    className?: string
 }
 
 const CourseSection = ({
@@ -14,11 +15,11 @@ const CourseSection = ({
 }: IProps) => {
 
     const platFormLogos = [
-        {text: 'swiftui', imageUrl: 'https://designcode.io/images/logos/swiftui-logo.svg'},
-        {text: 'react', imageUrl: 'https://designcode.io/images/logos/react-logo.svg'},
-        {text: 'figma', imageUrl: 'https://designcode.io/images/logos/figma-logo.svg'},
-        {text: 'sketch', imageUrl: 'https://designcode.io/images/logos/sketch-logo.svg'},
-        {text: 'webflow', imageUrl: 'https://designcode.io/images/logos/webflow-logo.svg'},
+        {text: 'swiftui', imageUrl: '/static/examples/design_code/images/logos/swiftui-logo.svg'},
+        {text: 'react', imageUrl: '/static/examples/design_code/images/logos/react-logo.svg'},
+        {text: 'figma', imageUrl: '/static/examples/design_code/images/logos/figma-logo.svg'},
+        {text: 'sketch', imageUrl: '/static/examples/design_code/images/logos/sketch-logo.svg'},
+        {text: 'webflow', imageUrl: '/static/examples/design_code/images/logos/webflow-logo.svg'},
     ];
 
     const renderHeader = () => {
@@ -72,7 +73,7 @@ const CourseSection = ({
         <Container>
             <Flex className="justify-content-center">
                 <CourseButton isOutline href="/">
-                    <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
+                    <img src="/static/examples/design_code/images/icons/courses.svg" alt="cc"/>
                     <span>Browse courses</span>
                 </CourseButton>
             </Flex>

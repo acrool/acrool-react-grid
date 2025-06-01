@@ -1,6 +1,6 @@
-import {TStyledProps, IContainerProps, NoXsMediaSize} from '../../types';
 import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
+import {IContainerProps, NoXsMediaSize,TStyledProps} from '../../types';
 
 
 
@@ -11,7 +11,6 @@ import media from '../../media';
  */
 export const createBreakpoint = (props: TStyledProps<IContainerProps>) => {
     const maxSizeConfig = getRWDMaxSize(props);
-
     return noXsMediaSizes.reduce((curr, sizeName) => {
         if(maxSizeConfig[sizeName]){
             return curr.concat(media[sizeName]`
@@ -38,7 +37,7 @@ export const getRWDMaxSize = (props: TStyledProps<IContainerProps>) => {
         xxl: {sm: false, md: false, lg: false, xl: false, xxl: true},
     };
 
-    if(typeof props.fluid !== 'undefined'){
+    if(typeof props.fluid !== 'undefined' && props.fluid !== false){
         if(props.fluid === true){
             return {sm: false, md: false, lg: false, xl: false, xxl: false};
         }
@@ -83,10 +82,9 @@ const suffixContainer = (value: any) => {
  * 產生 Debug 資訊
  * @param props
  */
-export const createInfo = (props: TStyledProps<IContainerProps>) => {
+export const createInfo = (props: IContainerProps) => {
     return [
-        'container',
-        props.fluid && `container${suffixContainer(props.fluid)}`,
+        props.fluid ? `container${suffixContainer(props.fluid)}`: false,
     ]
         .filter(Boolean)
         .join(' ');

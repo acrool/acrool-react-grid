@@ -1,7 +1,8 @@
+import {Col, Container, FCProps,Flex, Grid, Row} from '@acrool/react-grid';
 import styled from 'styled-components';
-import {Grid, Container, GridCol, Flex, Row, Col} from '@acrool/react-grid';
-import TrustedCard from './_components/TrustedCard';
+
 import CourseButton from '../_components/CourseButton';
+import TrustedCard from './_components/TrustedCard';
 
 interface IProps extends FCProps {
 
@@ -26,7 +27,7 @@ const Trusted = ({
                     <Desc>Many startups look for designers who code and developers who design. They use our courses to help train new hires and expand skill sets.</Desc>
 
                     <CourseButton isOutline>
-                        <img src="https://designcode.io/images/icons/chat.svg" alt="Create account"/>
+                        <img src="/static/examples/design_code/images/icons/chat.svg" alt="Create account"/>
                         <span>More stories</span>
                     </CourseButton>
                 </Flex>

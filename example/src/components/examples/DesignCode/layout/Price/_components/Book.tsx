@@ -1,17 +1,18 @@
-import {Grid, Flex} from '@acrool/react-grid';
+import {FCProps,Flex, Grid} from '@acrool/react-grid';
 import styled from 'styled-components';
+
 import PurchaseButton from '../../_components/PurchaseButton';
 
 
 export interface IData {
-    title: string,
-    subTitle: string,
-    desc: string,
+    title: string
+    subTitle: string
+    desc: string
     features: string[]
     button: {
         icon: string,
-        text: string
-    },
+        text: string,
+    }
 };
 
 interface IProps extends FCProps {
@@ -32,7 +33,7 @@ const Book = ({
             <Flex column className="gap-2">
                 {data.features.map((feat, featIndex) => {
                     return <Feature key={`feat_${data.title}_${featIndex}`} className="gap-2">
-                        <img src="https://designcode.io/images/icons/check-dark.svg" alt="check"/>
+                        <img src="/static/examples/design_code/images/price/book/check-dark.svg" alt="check"/>
                         <p dangerouslySetInnerHTML={{__html: feat}}/>
                     </Feature>;
                 })}
@@ -82,10 +83,6 @@ const Feature = styled(Flex)`
     }
 `;
 
-
-const FeatureList = styled(Grid)`
-
-`;
 
 const Desc = styled.p`
     font-weight: 500;
@@ -147,7 +144,7 @@ const BookRoot = styled.div`
     justify-content: center;
     height: 426px;
 
-    :hover {
+    &:hover {
         ${Bg} {
             transform: skewX(10deg) skewY(-20deg) scaleX(0.8) translateY(-3px);
         }
@@ -157,10 +154,10 @@ const BookRoot = styled.div`
         }
     }
 
-    :nth-child(2) {
+    &:nth-child(2) {
         height: 519px;
 
-        :hover {
+        &:hover {
             ${Bg} {
                 transform: skewX(-10deg) skewY(20deg) scaleX(0.8) translateY(-3px);
             }
@@ -191,9 +188,9 @@ const BookRoot = styled.div`
 
     }
 
-    :nth-child(3) {
+    &:nth-child(3) {
 
-        :hover {
+        &:hover {
             ${Bg} {
                 transform: skewX(-10deg) skewY(20deg) scaleX(0.8) translateY(-3px);
             }

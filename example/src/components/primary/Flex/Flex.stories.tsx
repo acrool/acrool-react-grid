@@ -1,44 +1,65 @@
-import type {Meta, StoryObj} from '@storybook/react';
-
 import {Flex} from '@acrool/react-grid';
+import type {Meta, StoryObj} from '@storybook/react';
 import React from 'react';
 
 const meta = {
-    title: 'Primary/Flex',
+    title: 'Components/Flex',
     component: Flex,
     parameters: {
         layout: 'centered',
         docs: {
             description: {
-                component: 'Img animation use transform'
+                component: '方便使用的 Flexbox'
             },
         },
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {
-        style: {
-            background: '#bdbdbd',
-            width: '200px',
-            height: '100px'
-        }
     },
+    render: function Render(args) {
+        return <Flex
+            {...args}
+        >
+            <img src="/static/acrool_logo.svg"
+                width={100}
+                height={100}
+                alt="acrool logo"
+            />
+            <img src="/static/acrool_logo.svg"
+                width={100}
+                height={100}
+                alt="acrool logo"
+            />
+        </Flex>;
+    },
+
 } satisfies Meta<typeof Flex>;
 
 export default meta;
+
+
+
 type Story = StoryObj<typeof meta>;
 
 
 
-export const Primary: Story = {
-    args: {},
-};
+export const Primary: Story = {};
 
-export const With: Story = {
-    args: {},
-    render: function Render(args) {
-        return <Flex className="gap-2 overflow-auto ml-8" style={{width: '100%'}}>
 
-        </Flex>;
+export const WithFlexDirectColumn: Story = {
+    args: {
+        column: true,
     },
 };
+
+
+
+export const WithGap4: Story = {
+    args: {
+        column: true,
+        className: 'gap-4',
+    },
+};
+
+

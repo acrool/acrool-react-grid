@@ -1,6 +1,6 @@
-import {TStyledProps, IColProps, NoXsMediaSize, TGridCol, IGridProps} from '../../types';
 import {noXsMediaSizes} from '../../config';
 import media from '../../media';
+import {IColProps, IGridProps,NoXsMediaSize, TGridCol, TStyledProps} from '../../types';
 import {fr} from '../../utils';
 
 
@@ -66,7 +66,7 @@ const suffix = (value: any) => {
  * 產生 Debug 資訊
  * @param props
  */
-export const createInfo = (props: TStyledProps<IGridProps>) => {
+export const createInfo = (props: IGridProps) => {
     return [
         props.col && `grid${suffix(props.col)}`,
         props.sm && `grid-sm${suffix(props.sm)}`,

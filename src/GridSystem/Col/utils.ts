@@ -1,6 +1,6 @@
-import {TStyledProps, IColProps, TCol, TColOffset} from '../../types';
 import {noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
+import {IColProps, TCol, TColOffset,TStyledProps} from '../../types';
 
 
 
@@ -55,7 +55,7 @@ export const createCol = (args: TCol|TColOffset, gridColumns: number) => {
     if(typeof args === 'object'){
         return `
             ${'span' in args && cssGetter.span(args.span, gridColumns)};
-            ${'offset' in args && cssGetter.offset(args.offset, gridColumns)};
+            ${'offset' in args && typeof args.offset !== 'undefined' && cssGetter.offset(args.offset, gridColumns)};
         `;
     }
     return `
@@ -103,7 +103,7 @@ const suffix = (value: any) => {
  * 產生 Debug 資訊
  * @param props
  */
-export const createInfo = (props: TStyledProps<IColProps>) => {
+export const createInfo = (props: IColProps) => {
     return [
         props.col && `col${suffix(props.col)}`,
         props.sm && `col-sm${suffix(props.sm)}`,

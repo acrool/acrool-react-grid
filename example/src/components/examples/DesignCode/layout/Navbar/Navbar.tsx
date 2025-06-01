@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import {Grid, Container, FCProps} from '@acrool/react-grid';
+import {Container, FCProps,Grid} from '@acrool/react-grid';
 import React, {useState} from 'react';
+import styled from 'styled-components';
+
 import CourseButton from '../_components/CourseButton';
 
 interface IProps extends FCProps {
@@ -23,17 +24,17 @@ const Navbar = ({
 
     return <NavbarRoot className={className}>
         <a href="/">
-            <Logo src="https://designcode.io/images/logos/logo.svg" alt="logo"/>
+            <Logo src="/static/examples/design_code/images/logos/logo.svg" alt="logo"/>
         </a>
 
         <MobileWrapper className="d-md-none">
             <MobileButton type="button" onClick={() => setVisible(curr => !curr)}>
-                <img src="https://designcode.io/images/icons/hamburger-menu.svg" alt="menu"/>
+                <img src="/static/examples/design_code/images/icons/hamburger-menu.svg" alt="menu"/>
             </MobileButton>
-            <TooltipWrapper columns={1} gap="10px" data-visible={isVisible ? '': undefined}>
+            <TooltipWrapper col={1} className="gap-5" data-visible={isVisible ? '': undefined}>
                 {nav.map(row => {
                     return <NavigatorButton href={row.path} key={row.path}>
-                        <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
+                        <img src="/static/examples/design_code/images/icons/courses.svg" alt="cc"/>
                         <Caption>{row.text}</Caption>
                     </NavigatorButton>;
                 })}
@@ -44,7 +45,7 @@ const Navbar = ({
         <Grid col={5} className="d-none d-md-grid">
             {nav.map(row => {
                 return <NavigatorButton href={row.path} key={row.path}>
-                    <img src="https://designcode.io/images/icons/courses.svg" alt="cc"/>
+                    <img src="/static/examples/design_code/images/icons/courses.svg" alt="cc"/>
                     <Caption>{row.text}</Caption>
                 </NavigatorButton>;
             })}

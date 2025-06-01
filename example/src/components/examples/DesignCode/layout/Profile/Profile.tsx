@@ -1,5 +1,6 @@
+import {Col, Container, FCProps, media, Row} from '@acrool/react-grid';
 import styled from 'styled-components';
-import {Col, Container, Grid, media, Row} from '@acrool/react-grid';
+
 import CertificateCard from './_components/CertificateCard';
 import Info from './_components/Info';
 
@@ -45,7 +46,7 @@ const CustomCertificateCard = styled(CertificateCard)`
     z-index: 4;
 
 
-    :nth-child(2) {
+    &:nth-child(2) {
         top: 20px;
         left: 200px;
         z-index: 3;
@@ -53,7 +54,7 @@ const CustomCertificateCard = styled(CertificateCard)`
         box-shadow: rgba(39, 77, 153, 0.2) 0 30px 60px, rgba(0, 0, 0, 0.2) 0 0 0 0.5px inset;
     }
 
-    :nth-child(3) {
+    &:nth-child(3) {
         top: 40px;
         left: 280px;
         z-index: 2;
@@ -61,7 +62,7 @@ const CustomCertificateCard = styled(CertificateCard)`
         box-shadow: rgba(39, 77, 153, 0.2) 0 30px 60px, rgba(0, 0, 0, 0.2) 0 0 0 0.5px inset;
     }
 
-    :nth-child(4) {
+    &:nth-child(4) {
         top: 60px;
         left: 310px;
         z-index: 1;
@@ -82,7 +83,7 @@ const CertificateCardList = styled.div`
         width: 700px;
     `}
 
-    :hover{
+    &:hover{
         ${CustomCertificateCard}:nth-child(1){
           transform: translate(-30px, 0px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
 

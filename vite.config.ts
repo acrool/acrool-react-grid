@@ -1,10 +1,11 @@
-import {defineConfig} from 'vite';
-import react from '@vitejs/plugin-react-swc';
-import dts from 'vite-plugin-dts';
 import * as path from 'node:path';
-import {visualizer} from 'rollup-plugin-visualizer';
-import eslint from 'vite-plugin-eslint';
 
+import react from '@vitejs/plugin-react-swc';
+import {visualizer} from 'rollup-plugin-visualizer';
+import {defineConfig} from 'vite';
+import dts from 'vite-plugin-dts';
+import eslint from 'vite-plugin-eslint';
+import {viteStaticCopy} from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,7 +23,23 @@ export default defineConfig({
             insertTypesEntry: true,
         }),
         visualizer() as Plugin,
+        viteStaticCopy({
+            targets: [
+                {
+                    src: 'src/styles.scss',
+                    dest: '.' // 複製到 dist 根目錄
+                }
+            ]
+        }),
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                silenceDeprecations: ['legacy-js-api'],
+                outputStyle: 'compressed',
+            },
+        },
+    },
     build: {
         sourcemap: process.env.NODE_ENV !== 'production',
         lib: {

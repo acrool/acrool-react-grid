@@ -2,26 +2,20 @@
 
 exports[`Grid Hybrid  renders grid + grid-lg-2 1`] = `
 .c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
-  column-gap: var(--acrool-gutter-x);
-  row-gap: var(--acrool-gutter-y);
-  grid-template-columns: repeat(1,1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .c0 {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 <div
   class="c0"
-  data-grid="grid-1 grid-lg-2"
+  data-class="grid-1 grid-lg-2"
+  data-grid="grid"
 >
   <div>
     col 1
@@ -34,26 +28,20 @@ exports[`Grid Hybrid  renders grid + grid-lg-2 1`] = `
 
 exports[`Grid Hybrid  renders grid-4 + grid-md-6 1`] = `
 .c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
-  column-gap: var(--acrool-gutter-x);
-  row-gap: var(--acrool-gutter-y);
-  grid-template-columns: repeat(4,auto);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(4, auto);
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .c0 {
-    grid-template-columns: repeat(6,auto);
+    grid-template-columns: repeat(6, auto);
   }
 }
 
 <div
   class="c0"
-  data-grid="grid-[repeat(4, auto)] grid-md-[repeat(6, auto)]"
+  data-class="grid-[repeat(4, auto)] grid-md-[repeat(6, auto)]"
+  data-grid="grid"
 >
   col
 </div>
@@ -61,20 +49,20 @@ exports[`Grid Hybrid  renders grid-4 + grid-md-6 1`] = `
 
 exports[`Grid Hybrid  renders grid-auto-2 + grid-md-auto-2 1`] = `
 .c0 {
-  --acrool-gutter-x: 1.5rem;
-  --acrool-gutter-y: 0;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(12,1fr);
-  -webkit-column-gap: var(--acrool-gutter-x);
-  column-gap: var(--acrool-gutter-x);
-  row-gap: var(--acrool-gutter-y);
-  grid-template-columns: repeat(2,auto);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-template-columns: repeat(2, auto);
+  }
 }
 
 <div
   class="c0"
-  data-grid="grid-[repeat(2, auto)] grid-md-[repeat(2, auto)]"
+  data-class="grid-[repeat(2, auto)] grid-md-[repeat(2, auto)]"
+  data-grid="grid"
 >
   <div>
     col 1

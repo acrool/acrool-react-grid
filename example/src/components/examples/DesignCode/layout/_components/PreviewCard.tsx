@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import {FCProps, Grid} from '@acrool/react-grid';
 import React from 'react';
-import {Grid} from '@acrool/react-grid';
+import styled from 'styled-components';
 
 interface IProps extends FCProps {
    className?: string
@@ -9,14 +9,14 @@ interface IProps extends FCProps {
 const PreviewCard = ({
     className,
 }: IProps) => {
-    return <PreviewCardRoot columns={1} className={className}>
+    return <PreviewCardRoot col={1} className={className}>
         <CardWrapperImage
-            src="https://images.ctfassets.net/ooa29xqb8tix/5jIBVIWEq7QQq1Tm03ViNR/b34fad96046114968b74016a678ac841/ios17-2.png?w=400&q=50"
+            src="/static/examples/design_code/ios17-2.png?w=400&q=50"
             alt="Build SwiftUI Apps for iOS 17 icon"
         />
         <Title>Build SwiftUI Apps for iOS 17</Title>
         <SubTitle>16 videos - 4 hours</SubTitle>
-        <StarImage src="https://designcode.io/images/icons/star.svg"/>
+        <StarImage src="/static/examples/design_code/images/icons/star.svg"/>
     </PreviewCardRoot>;
 };
 
@@ -31,14 +31,6 @@ const StarImage = styled.img`
   margin: auto;
 `;
 
-const ButtonWrapper = styled.div`
-    position: relative;
-    width: 74px;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin: 10px auto 0;
-`;
 
 const SubTitle = styled.p`
 
@@ -68,7 +60,6 @@ const CardWrapperImage = styled.img`
   width: 100%;
   height: 150px;
 
-  // opacity: 0;
   animation: 1s ease 0s 1 normal forwards running jBcSpD;
 `;
 
@@ -86,7 +77,7 @@ const PreviewCardRoot = styled(Grid)`
 
     transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 
-    :hover{
+    &:hover{
         transform: scale(1.1);
     }
 `;

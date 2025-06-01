@@ -1,44 +1,69 @@
+import {Col, Container,Row} from '@acrool/react-grid';
 import type {Meta, StoryObj} from '@storybook/react';
-
-import {Container} from '@acrool/react-grid';
 import React from 'react';
+import styled from 'styled-components';
 
 const meta = {
-    title: 'Primary/Container',
+    title: 'Components/Container',
     component: Container,
     parameters: {
-        layout: 'centered',
         docs: {
             description: {
-                component: 'Img animation use transform'
+                component: '同 Bootstrap 中的容器 Container'
             },
         },
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {
-        style: {
-            background: '#bdbdbd',
-            width: '100px',
-            height: '100px'
-        }
+        fluid: false,
     },
+    render: function Render(args) {
+
+        const length = 4;
+
+        return <Container
+            style={{background: '#2c2c2c'}}
+            {...args}
+        >
+            <Row style={{background: '#6a6a6a'}} className="gy-3">
+                {Array.from({length}).map((_, idx) => (
+                    <Col
+                        key={idx}
+                        style={{background: '#bdbdbd'}}
+                        col={3}
+                    >
+                        <Box>
+                            Col {String(idx)}
+                        </Box>
+                    </Col>
+                ))}
+            </Row>
+        </Container>;
+    },
+
 } satisfies Meta<typeof Container>;
 
 export default meta;
+
+
 type Story = StoryObj<typeof meta>;
 
 
 
-export const Primary: Story = {
-    args: {},
-};
+export const Primary: Story = {};
 
-export const With: Story = {
-    args: {},
-    render: function Render(args) {
-        return <Container className="gap-2 overflow-auto ml-8" style={{width: '100%'}}>
-
-        </Container>;
+export const WithFullPage: Story = {
+    args: {
+        fluid: true,
     },
 };
+
+
+
+
+const Box = styled.div`
+    background: #8caf5d;
+    padding: 10px;
+    color: #fff;
+`;

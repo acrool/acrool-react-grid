@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import {FCProps, Flex, media} from '@acrool/react-grid';
 import React from 'react';
-import {Flex, Grid, media } from '@acrool/react-grid';
-import clsx from 'clsx';
+import styled from 'styled-components';
 
 interface IProps extends FCProps {
    className?: string
@@ -12,12 +11,12 @@ const PreviewCard = ({
 }: IProps) => {
     return <PreviewCardRoot className={className} column>
         <CardWrapperImage
-            src="https://images.ctfassets.net/ooa29xqb8tix/5jIBVIWEq7QQq1Tm03ViNR/b34fad96046114968b74016a678ac841/ios17-2.png?w=400&q=50"
+            src="/static/examples/design_code/ios17-2.png?w=400&q=50"
             alt="Build SwiftUI Apps for iOS 17 icon"
         />
         <Title>Build SwiftUI Apps for iOS 17</Title>
         <SubTitle>16 videos - 4 hours</SubTitle>
-        <StarImage src="https://designcode.io/images/icons/star.svg"/>
+        <StarImage src="/static/examples/design_code/images/icons/star.svg"/>
     </PreviewCardRoot>;
 };
 
@@ -79,7 +78,7 @@ const PreviewCardRoot = styled(Flex)`
 
     transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 
-    :hover{
+    &:hover{
         transform: scale(1.1);
     }
 

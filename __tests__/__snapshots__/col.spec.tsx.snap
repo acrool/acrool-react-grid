@@ -4,15 +4,14 @@ exports[`Col renders col-6 1`] = `
 .c0 {
   min-height: 1px;
   min-width: 0;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 50%;
 }
 
 <div
   class="c0"
-  data-grid="col-6"
+  data-class="col-6"
+  data-grid="col"
 >
   col
 </div>
@@ -22,15 +21,14 @@ exports[`Col renders col-auto 1`] = `
 .c0 {
   min-height: 1px;
   min-width: 0;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: auto;
 }
 
 <div
   class="c0"
-  data-grid="col-auto"
+  data-class="col-auto"
+  data-grid="col"
 >
   col
 </div>
@@ -40,14 +38,13 @@ exports[`Col renders col-true 1`] = `
 .c0 {
   min-height: 1px;
   min-width: 0;
-  -webkit-flex: 1 0 0;
-  -ms-flex: 1 0 0;
   flex: 1 0 0;
 }
 
 <div
   class="c0"
-  data-grid="col-true"
+  data-class="col-true"
+  data-grid="col"
 >
   col
 </div>

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import React from 'react';
+import styled from 'styled-components';
 
 interface IProps {
    className?: string
@@ -8,8 +8,8 @@ interface IProps {
 const FeatureCard = ({
     className,
 }: IProps) => {
-    return <FeatureCardRoot>
-        <Logo src="https://designcode.io/images/logos/shape-logo.svg"/>
+    return <FeatureCardRoot className={className}>
+        <Logo src="/static/examples/design_code/images/logos/shape-logo.svg"/>
         <Text>50% off Shape.so</Text>
     </FeatureCardRoot>;
 };
