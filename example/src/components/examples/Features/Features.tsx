@@ -19,14 +19,14 @@ const Features = ({
                     return <div className="feature" key={`feature_${idx}`}>
                         <div
                             className="d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                            <img src="/vite.svg" style={{width: '1em', height: '1em'}}/>
+                            <img src="/logo.svg" style={{width: '1em', height: '1em'}}/>
                         </div>
                         <h3 className="fs-2">Featured title</h3>
                         <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
                             sentence and probably just keep going until we run out of words.</p>
                         <a href="#" className="icon-link">
                             Call to action
-                            <img src="/vite.svg" style={{width: '1em', height: '1em'}}/>
+                            <img src="/logo.svg" style={{width: '1em', height: '1em'}}/>
 
                         </a>
                     </div>;
@@ -43,14 +43,14 @@ const Features = ({
                     return <div className="feature" key={`feature_${idx}`}>
                         <div
                             className="d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                            <img src="/vite.svg" style={{width: '1em', height: '1em'}}/>
+                            <img src="/logo.svg" style={{width: '1em', height: '1em'}}/>
                         </div>
                         <h3 className="fs-2">Featured title</h3>
                         <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
                             sentence and probably just keep going until we run out of words.</p>
                         <a href="#" className="icon-link">
                             Call to action
-                            <img src="/vite.svg" style={{width: '1em', height: '1em'}}/>
+                            <img src="/logo.svg" style={{width: '1em', height: '1em'}}/>
 
                         </a>
                     </div>;
@@ -68,7 +68,7 @@ const Features = ({
                     return <Flex className="align-items-start" key={`handing_${idx}`}>
                         <div
                             className="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                            <img src="/vite.svg" style={{width: '1em', height: '1em'}}/>
+                            <img src="/logo.svg" style={{width: '1em', height: '1em'}}/>
                         </div>
                         <div>
                             <h3 className="fs-2 text-body-emphasis">Featured title</h3>
@@ -106,11 +106,11 @@ const Features = ({
                                             className="rounded-circle border border-white"/>
                                     </li>
                                     <li className="d-flex align-items-center mr-3">
-                                        <img src="/vite.svg" style={{width: '1em', height: '1em'}}/>
+                                        <img src="/logo.svg" style={{width: '1em', height: '1em'}}/>
                                         <small>Earth</small>
                                     </li>
                                     <li className="d-flex align-items-center">
-                                        <img src="/vite.svg" style={{width: '1em', height: '1em'}}/>
+                                        <img src="/logo.svg" style={{width: '1em', height: '1em'}}/>
                                         <small>3d</small>
                                     </li>
                                 </ul>
@@ -134,7 +134,7 @@ const Features = ({
                 {Array.from({length: 8}).map((row, idx) => {
 
                     return <Flex className="align-items-start" key={`iconGrid_${idx}`}>
-                        <img src="/vite.svg" style={{width: '28px'}}/>
+                        <img src="/logo.svg" style={{width: '28px'}}/>
                         <div>
                             <h3 className="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
                             <p>Paragraph of text beneath the heading to explain the heading.</p>
@@ -165,7 +165,7 @@ const Features = ({
                     {Array.from({length: 4}).map((row, idx) => {
                         return <Flex column className="gap-2" key={`feature_${idx}`}>
                             <FeatureIcon className="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="/vite.svg" style={{width: '28px'}}/>
+                                <img src="/logo.svg" style={{width: '28px'}}/>
                             </FeatureIcon>
                             <h4 className="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
                             <p className="text-body-secondary">Paragraph of text beneath the heading to explain the
