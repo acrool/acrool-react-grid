@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const meta = {
-    title: 'Primary/Col',
+    title: 'Components/Col',
     component: Col,
     parameters: {
         docs: {
