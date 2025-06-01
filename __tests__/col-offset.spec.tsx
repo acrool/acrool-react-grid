@@ -1,7 +1,9 @@
-import React from 'react';
 import 'jest-styled-components';
-import {render} from '@testing-library/react';
 import '@testing-library/dom';
+
+import {render} from '@testing-library/react';
+import React from 'react';
+
 import Col from '../src/GridSystem/Col';
 import GridThemeProvider from '../src/GridThemeProvider';
 
