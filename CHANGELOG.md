@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.1.0-alpha.0](https://github.com/acrool/acrool-react-grid/compare/v6.0.9...v6.1.0-alpha.0) (2025-06-15)
+
+
+### Features
+
+* add overflow control to AutoOverflowAndFlexHeight component and optimize story data ([6e173cd](https://github.com/acrool/acrool-react-grid/commit/6e173cd5ffd16238894a542f635b8f2c5df3f48d))
+
 ### [6.0.9](https://github.com/acrool/acrool-react-grid/compare/v6.0.9-alpha.0...v6.0.9) (2025-05-31)
 
 ### [6.0.9-alpha.0](https://github.com/acrool/acrool-react-grid/compare/v6.0.8...v6.0.9-alpha.0) (2025-05-31)
