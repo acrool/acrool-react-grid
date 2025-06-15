@@ -328,6 +328,30 @@ There is also a storybook that you can play with it:
 [![Play react-editext-example](https://raw.githubusercontent.com/acrool/acrool-react-grid/main/play-in-example-button.svg)](https://acrool-react-grid-storybook.pages.dev)
 
 
+## Common Props
+
+```tsx
+export interface FCProps {
+    id?: string
+    style?: CSS.Properties
+    className?: string
+}
+
+export interface FCChildrenProps extends FCProps {
+    children?: ReactNode
+}
+
+export interface IFormFieldProps<G extends HTMLElement, T = string> {
+    ref?: RefObject<G> | RefCallback<G>
+    name?: string
+    value?: T
+    onChange?: ChangeEventHandler<G>
+    placeholder?: string
+}
+
+export type TSetState<T> = (newValue: T) => void | Dispatch<SetStateAction<T>>
+```
+
 ## Experiments
 
 https://github.com/acrool/acrool-frontend-experiments
