@@ -1,5 +1,5 @@
 import CSS from 'csstype';
-import React, {MouseEvent, ReactNode, RefObject} from 'react';
+import React, {ChangeEventHandler, MouseEvent, ReactNode, RefCallback, RefObject} from 'react';
 import type {CSSObject} from 'styled-components';
 
 import {themeName} from './config';
@@ -126,4 +126,13 @@ export interface FCProps {
 
 export interface FCChildrenProps extends FCProps {
     children?: ReactNode
+}
+
+
+export interface IFormFieldProps<G extends HTMLElement, T = string> {
+    ref?: RefObject<G> | RefCallback<G>
+    name?: string
+    value?: T
+    onChange?: ChangeEventHandler<G>
+    placeholder?: string
 }
