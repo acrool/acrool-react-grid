@@ -1,5 +1,12 @@
 import CSS from 'csstype';
-import React, {ChangeEventHandler, MouseEvent, ReactNode, RefCallback, RefObject} from 'react';
+import React, {
+    ChangeEventHandler,
+    Dispatch,
+    ReactNode,
+    RefCallback,
+    RefObject,
+    SetStateAction
+} from 'react';
 import type {CSSObject} from 'styled-components';
 
 import {themeName} from './config';
@@ -136,3 +143,5 @@ export interface IFormFieldProps<G extends HTMLElement, T = string> {
     onChange?: ChangeEventHandler<G>
     placeholder?: string
 }
+
+export type TSetState<T> = (newValue: T) => void | Dispatch<SetStateAction<T>>

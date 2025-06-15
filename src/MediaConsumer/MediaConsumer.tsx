@@ -5,7 +5,7 @@ import useMedia from './useMedia';
 
 
 interface IProps {
-    children: (mediaSize: TMediaSize) => JSX.Element
+    children: (mediaSize: TMediaSize) => JSX.Element|null
     sizes?: NoXsMediaSize[]
 }
 

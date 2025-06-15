@@ -15,4 +15,4 @@ export {minmax, auto, fr} from './utils';
 
 export * from './config';
 
-export type {IGridSetting, FCProps, FCChildrenProps, IFormFieldProps} from './types';
+export type {IGridSetting, FCProps, FCChildrenProps, IFormFieldProps, TSetState} from './types';
