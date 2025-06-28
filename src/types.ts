@@ -1,11 +1,7 @@
 import CSS from 'csstype';
 import React, {
-    ChangeEventHandler,
-    Dispatch,
     ReactNode,
-    RefCallback,
     RefObject,
-    SetStateAction
 } from 'react';
 import type {CSSObject} from 'styled-components';
 
@@ -124,24 +120,3 @@ export interface IFlexStdProps extends CommonStdProps {
 export interface IFlexProps extends CommonProps {
     column?: boolean
 }
-
-export interface FCProps {
-    id?: string
-    style?: CSS.Properties
-    className?: string
-}
-
-export interface FCChildrenProps extends FCProps {
-    children?: ReactNode
-}
-
-
-export interface IFormFieldProps<G extends HTMLElement, T = string> {
-    ref?: RefObject<G> | RefCallback<G>
-    name?: string
-    value?: T
-    onChange?: ChangeEventHandler<G>
-    placeholder?: string
-}
-
-export type TSetState<T> = (newValue: T) => void | Dispatch<SetStateAction<T>>
