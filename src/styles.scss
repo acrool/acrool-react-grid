@@ -258,7 +258,7 @@ $directions: (
 
 
 // 显示样式
-@each $display in (none, inline, inline-block, block, flex, inline-flex, grid, inline-grid) {
+@each $display in (none, inline, inline-block, block, flex, inline-flex, grid, inline-grid, contents) {
     .d-#{$display} {
         display: #{$display} !important;
     }
