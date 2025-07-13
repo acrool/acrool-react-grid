@@ -13,7 +13,7 @@ const useMedia = (sizes?: NoXsMediaSize[]) => {
     const breakpoints = theme[themeName]?.gridBreakpoints;
 
     const getResize = () => {
-        const width = window.innerWidth;
+        const width = typeof window !== 'undefined' ? window.innerWidth: 0;
         let size: TMediaSize = 'xs';
 
         if ((!sizes || sizes?.includes('xxl')) && width >= breakpoints.xxl) {
