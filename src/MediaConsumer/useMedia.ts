@@ -11,29 +11,34 @@ import {NoXsMediaSize, TMediaSize} from '../types';
 const useMedia = (sizes?: NoXsMediaSize[]) => {
     const theme = useTheme();
     const breakpoints = theme[themeName]?.gridBreakpoints;
-    const [currentSize, setCurrentSize] = useState<TMediaSize>('xs');
+
+    const getResize = () => {
+        const width = window.innerWidth;
+        let size: TMediaSize = 'xs';
+
+        if ((!sizes || sizes?.includes('xxl')) && width >= breakpoints.xxl) {
+            size = 'xxl';
+        } else if ((!sizes || sizes?.includes('xl')) && width >= breakpoints.xl) {
+            size = 'xl';
+        } else if ((!sizes || sizes?.includes('lg')) && width >= breakpoints.lg) {
+            size = 'lg';
+        } else if ((!sizes || sizes?.includes('md')) && width >= breakpoints.md) {
+            size = 'md';
+        } else if ((!sizes || sizes?.includes('sm')) && width >= breakpoints.sm) {
+            size = 'sm';
+        }
+
+        return size;
+    };
+
+    const [currentSize, setCurrentSize] = useState<TMediaSize>(getResize());
 
     useEffect(() => {
         const handleResize = () => {
-            const width = window.innerWidth;
-            let size: TMediaSize = 'xs';
-
-            if ((!sizes || sizes?.includes('xxl')) && width >= breakpoints.xxl) {
-                size = 'xxl';
-            } else if ((!sizes || sizes?.includes('xl')) && width >= breakpoints.xl) {
-                size = 'xl';
-            } else if ((!sizes || sizes?.includes('lg')) && width >= breakpoints.lg) {
-                size = 'lg';
-            } else if ((!sizes || sizes?.includes('md')) && width >= breakpoints.md) {
-                size = 'md';
-            } else if ((!sizes || sizes?.includes('sm')) && width >= breakpoints.sm) {
-                size = 'sm';
-            }
-
+            const size = getResize();
             setCurrentSize(size);
         };
 
-        handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [breakpoints, sizes]);

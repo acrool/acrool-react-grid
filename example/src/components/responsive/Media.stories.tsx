@@ -27,6 +27,8 @@ export const Media: Story = {
             sizes={['sm','md']}
         >
             {size => {
+                console.log('size', size);
+
                 if(size === 'md'){
                     return <div className="bg-color-4">
                         MD ({size})
