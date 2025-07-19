@@ -35,7 +35,7 @@ $grid-gutters: (
 ) !default;
 
 
-// 定义方向
+// 定義方向
 $directions: (
     '': '',
     't': 'top',
@@ -67,7 +67,7 @@ $directions: (
     }
 }
 
-// 基础样式
+// 基礎樣式
 .img-fluid {
     max-width: 100% !important;
     height: auto !important;
@@ -78,7 +78,7 @@ $directions: (
     object-fit: cover !important;
 }
 
-// 边框样式
+// 邊框樣式
 @each $direction, $value in $directions {
     @if $direction == '' {
         .border {
@@ -188,13 +188,52 @@ $directions: (
     filter: brightness(0) invert(1) !important;
 }
 
-.filter-mask-b {
-    mask-image: linear-gradient(to bottom, white, white, transparent) !important;
+.filter-mask-b-80 {mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%) !important;}
+
+
+// 遮罩樣式
+@each $direction, $value in $directions {
+    @if $direction != '' {
+        @if meta.type-of($value) == 'list' {
+            @if $direction == 'x' {
+                .filter-mask-#{$direction} {
+                    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent) !important;
+                }
+            } @else if $direction == 'y' {
+                .filter-mask-#{$direction} {
+                    mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent) !important;
+                }
+            }
+        } @else {
+            .filter-mask-#{$direction} {
+                mask-image: linear-gradient(to #{$value}, white, white, transparent) !important;
+            }
+        }
+    }
 }
 
-.filter-mask-b-80 {
-    mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%) !important;
+// 遮罩樣式 80
+@each $direction, $value in $directions {
+    @if $direction != '' {
+        @if meta.type-of($value) == 'list' {
+            @if $direction == 'x' {
+                .filter-mask-#{$direction}-80 {
+                    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent) !important;
+                }
+            } @else if $direction == 'y' {
+                .filter-mask-#{$direction}-80 {
+                    mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent) !important;
+                }
+            }
+        } @else {
+            .filter-mask-#{$direction}-80 {
+                mask-image: linear-gradient(to #{$value}, white 0%, white 80%, transparent) !important;
+            }
+        }
+    }
 }
+
+
 
 // 字体大小
 @for $i from 1 through 6 {
