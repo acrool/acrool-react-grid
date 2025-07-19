@@ -18,8 +18,7 @@ export const createFluidBreakpoint = (props: TStyledProps<IContainerProps>) => {
 
     if(typeof containerFluidMargin === 'string'){
         return `
-            margin-left: ${containerFluidMargin};
-            margin-right: ${containerFluidMargin};
+            --acrool-container-fluid-padding: ${containerFluidMargin};
         `;
     }
 
@@ -29,14 +28,12 @@ export const createFluidBreakpoint = (props: TStyledProps<IContainerProps>) => {
         if(rwdContainerFluidMargin){
             if(sizeName === 'xs'){
                 return curr.concat(`
-                    margin-left: ${rwdContainerFluidMargin};
-                    margin-right: ${rwdContainerFluidMargin};
+                    --acrool-container-fluid-padding: ${rwdContainerFluidMargin};
                 `);
             }
 
             return curr.concat(media[sizeName]`
-                   margin-left: ${rwdContainerFluidMargin};
-                   margin-right: ${rwdContainerFluidMargin};
+                   --acrool-container-fluid-padding: ${rwdContainerFluidMargin};
             `);
         }
 
