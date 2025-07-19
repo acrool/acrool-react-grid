@@ -1,14 +1,9 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import Button from '../../atoms/Button';
-import {Container, Grid, Flex, FCProps} from '@acrool/react-grid';
+import {Container, GridThemeProvider, Grid, Flex} from '@acrool/react-grid';
 
-interface IProps extends FCProps {
 
-}
-
-const Features = ({
-    className,
-}: IProps) => {
+const Features = () => {
 
 
     const renderColumnIcons = () => {
@@ -180,20 +175,20 @@ const Features = ({
         </Container>;
     };
 
-    return <FeaturesRoot className={className}>
+    return <GridThemeProvider>
+        <FeaturesRoot>
 
-        {renderColumnIcons()}
-        {renderColumnIcons2()}
-        {renderHanding()}
-        {renderCustomCards()}
-        {renderIconGrid()}
-        {renderFeatureWithTitle()}
+            {renderColumnIcons()}
+            {renderColumnIcons2()}
+            {renderHanding()}
+            {renderCustomCards()}
+            {renderIconGrid()}
+            {renderFeatureWithTitle()}
 
+            <GlobalCSS/>
+        </FeaturesRoot>
+    </GridThemeProvider>;
 
-
-
-        <GlobalCSS/>
-    </FeaturesRoot>;
 };
 
 export default Features;

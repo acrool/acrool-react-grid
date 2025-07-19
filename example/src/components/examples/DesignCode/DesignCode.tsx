@@ -1,4 +1,5 @@
 import React from 'react';
+import {GridThemeProvider} from '@acrool/react-grid';
 import styled, {createGlobalStyle} from 'styled-components';
 import Navbar from './layout/Navbar';
 import Header from './layout/Header';
@@ -23,44 +24,46 @@ import Footer from './layout/Footer';
 
 export default function DesignCode() {
 
-    return <DesignCodeRoot>
+    return <GridThemeProvider>
+        <DesignCodeRoot>
 
-        <WaveWrapper1/>
-        <Wrapper>
-            <Navbar className="mb-9"/>
-            <Header/>
-        </Wrapper>
+            <WaveWrapper1/>
+            <Wrapper>
+                <Navbar className="mb-9"/>
+                <Header/>
+            </Wrapper>
 
-        <CourseSection className="mb-9"/>
+            <CourseSection className="mb-9"/>
 
-        <Wrapper2>
-            <TutorialSection/>
-            <WaveWrapper2/>
-        </Wrapper2>
+            <Wrapper2>
+                <TutorialSection/>
+                <WaveWrapper2/>
+            </Wrapper2>
 
-        <Profile/>
+            <Profile/>
 
-        <AppDownload/>
+            <AppDownload/>
 
-        <Discounts/>
+            <Discounts/>
 
-        <Wrapper3>
-            <Trusted/>
-            <CompanyList/>
-            <Instructors/>
+            <Wrapper3>
+                <Trusted/>
+                <CompanyList/>
+                <Instructors/>
 
-            <WaveWrapper3/>
-        </Wrapper3>
+                <WaveWrapper3/>
+            </Wrapper3>
 
-        <Price/>
+            <Price/>
 
-        <Wrapper4>
-            <WaveWrapper4/>
-            <Footer/>
-        </Wrapper4>
+            <Wrapper4>
+                <WaveWrapper4/>
+                <Footer/>
+            </Wrapper4>
 
-        <GlobalCSS/>
-    </DesignCodeRoot>;
+            <GlobalCSS/>
+        </DesignCodeRoot>
+    </GridThemeProvider>;
 
 }
 

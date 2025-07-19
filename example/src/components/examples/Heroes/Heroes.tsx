@@ -1,6 +1,7 @@
+import {auto, Col, Container, Grid, GridThemeProvider,Row} from '@acrool/react-grid';
 import styled, {createGlobalStyle} from 'styled-components';
+
 import Button from '../../atoms/Button';
-import {Col, Container, Grid, Row, auto} from '@acrool/react-grid';
 
 
 const Heroes = () => {
@@ -213,18 +214,20 @@ const Heroes = () => {
     };
 
 
-    return <HeroesRoot>
+    return <GridThemeProvider>
+        <HeroesRoot>
 
-        {renderRowSub()}
-        {renderHero()}
-        {renderScreenshot()}
-        {renderResponsive()}
-        {renderSignUp()}
-        {renderBorder()}
-        {renderDark()}
+            {renderRowSub()}
+            {renderHero()}
+            {renderScreenshot()}
+            {renderResponsive()}
+            {renderSignUp()}
+            {renderBorder()}
+            {renderDark()}
 
-        <GlobalCSS/>
-    </HeroesRoot>;
+            <GlobalCSS/>
+        </HeroesRoot>
+    </GridThemeProvider>;
 };
 
 export default Heroes;

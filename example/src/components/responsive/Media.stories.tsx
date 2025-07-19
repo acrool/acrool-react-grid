@@ -12,6 +12,7 @@ const meta = {
         },
     },
     tags: ['autodocs'],
+
     args: {},
 } satisfies Meta<typeof MediaConsumer>;
 

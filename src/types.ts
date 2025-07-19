@@ -48,6 +48,14 @@ export type TMedia = Omit<{ [size in TMediaSize]: Function }, 'xs'> & { px2vw: F
 
 export type TGutterWidth = string;
 
+export interface IBreakpointsTGutterWidth {
+    xs: TGutterWidth
+    sm: TGutterWidth
+    md: TGutterWidth
+    lg: TGutterWidth
+    xl: TGutterWidth
+    xxl: TGutterWidth
+}
 export interface IBreakpoints {
     xs: number
     sm: number
@@ -65,7 +73,7 @@ export interface IGridThemeProviderProps {
 }
 
 export interface IGridSetting {
-    spacer: TGutterWidth
+    spacer: TGutterWidth|Partial<IBreakpointsTGutterWidth>
     gridColumns: number
     gridBreakpoints: IBreakpoints
     containerMaxWidths: TContainerMaxWidths

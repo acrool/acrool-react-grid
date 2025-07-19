@@ -1,4 +1,4 @@
-import {Col, Container,Row} from '@acrool/react-grid';
+import {Col, Container,GridThemeProvider,Row} from '@acrool/react-grid';
 import type {Meta, StoryObj} from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
@@ -18,6 +18,11 @@ const meta = {
     args: {
         fluid: false,
     },
+    decorators:  (Story) => (
+        <GridThemeProvider>
+            <Story />
+        </GridThemeProvider>
+    ),
     render: function Render(args) {
 
         const length = 4;
@@ -56,6 +61,36 @@ export const Primary: Story = {};
 export const WithFullPage: Story = {
     args: {
         fluid: true,
+    },
+};
+
+export const WithOneSizeSpacer: Story = {
+    decorators:  (Story) => (
+        <GridThemeProvider gridTheme={{
+            spacer: '20px',
+        }}>
+            <Story />
+        </GridThemeProvider>
+    ),
+    args: {
+        fluid: false,
+    },
+};
+
+export const WithBreakpointsSpacer: Story = {
+    decorators:  (Story) => (
+        <GridThemeProvider gridTheme={{
+            // spacer: '20px',
+            spacer: {
+                xs: '20px',
+                lg: '40px',
+            },
+        }}>
+            <Story />
+        </GridThemeProvider>
+    ),
+    args: {
+        fluid: false,
     },
 };
 

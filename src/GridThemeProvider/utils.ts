@@ -1,8 +1,40 @@
-import {IGridSetting,NoXsMediaSize} from '../types';
+import {mediaSizes} from '../config';
+import media from '../media';
+import {IGridSetting, NoXsMediaSize} from '../types';
 import {gutterUnit} from './config';
 
 
 
+
+
+/**
+ * 產生 Breakpoint Spacer 樣式
+ * @param spacer
+ */
+export const createBreakpointSpacer = (spacer: IGridSetting['spacer']) => {
+
+    if(typeof spacer === 'string'){
+        return `
+            --acrool-gutter: ${spacer};
+        `;
+    }
+
+    return mediaSizes.reduce<string[]>((curr, sizeName) => {
+
+        const rwdSpacer = spacer[sizeName];
+        if(rwdSpacer){
+            if(sizeName === 'xs'){
+                return curr.concat(`--acrool-gutter: ${rwdSpacer}`);
+            }
+
+            return curr.concat(media[sizeName]`
+                --acrool-gutter: ${rwdSpacer};
+            `);
+        }
+
+        return curr;
+    }, []);
+};
 
 
 

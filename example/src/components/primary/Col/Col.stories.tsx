@@ -1,4 +1,4 @@
-import {Col, Container,Row} from '@acrool/react-grid';
+import {Col, Container,Row, GridThemeProvider} from '@acrool/react-grid';
 import type {Meta, StoryObj} from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
@@ -24,6 +24,11 @@ const meta = {
         xxl: 4,
 
     },
+    decorators:  (Story) => (
+        <GridThemeProvider>
+            <Story />
+        </GridThemeProvider>
+    ),
     render: function Render(args) {
 
         const length = 3;

@@ -1,26 +1,25 @@
-import type { Preview } from "@storybook/react";
 import './reset.css';
 import '@acrool/react-grid/dist/index.css';
-import {GridThemeProvider} from "@acrool/react-grid";
+
+import {GridThemeProvider} from '@acrool/react-grid';
+import type {Preview} from '@storybook/react';
 
 
 const preview: Preview = {
-  parameters: {
-    layout: 'fullscreen',
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+    parameters: {
+        layout: 'fullscreen',
+        controls: {
+            matchers: {
+                color: /(background|color)$/i,
+                date: /Date$/i,
+            },
+        },
     },
-  },
-  decorators: [
-      (Story) => (
-          <GridThemeProvider>
-            <Story />
-          </GridThemeProvider>
-      ),
-  ],
+    decorators: [
+        (Story) => (
+                <Story />
+        ),
+    ],
 };
 
 export default preview;

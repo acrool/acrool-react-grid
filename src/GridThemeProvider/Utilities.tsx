@@ -1,6 +1,7 @@
 import {createGlobalStyle, css} from 'styled-components';
 
 import {TStyledProps, TThemeProps} from '../types';
+import {createBreakpointSpacer} from './utils';
 
 
 export const Utilities = createGlobalStyle`
@@ -17,7 +18,7 @@ export const Utilities = createGlobalStyle`
             --acrool-border-radius-xxl: 2rem;
             --acrool-border-radius-pill: 50%;
 
-            --acrool-gutter: ${props.theme.acroolGrid.spacer};
+            ${createBreakpointSpacer(props.theme.acroolGrid.spacer)}
         }
 
     `}

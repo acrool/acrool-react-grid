@@ -1,7 +1,5 @@
 import styled, {css} from 'styled-components';
 
-import {themeName} from '../../config';
-import {calcUnitSize} from '../../GridThemeProvider/utils';
 import {IContainerProps, IContainerStdProps,TStyledProps} from '../../types';
 import {createBreakpoint, createInfo} from './utils';
 

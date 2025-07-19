@@ -6,7 +6,7 @@ import {IContainerProps, NoXsMediaSize,TStyledProps} from '../../types';
 
 
 /**
- * 產生 RWD Gutter 樣式
+ * 產生 Breakpoint MaxSize 樣式
  * @param props
  */
 export const createBreakpoint = (props: TStyledProps<IContainerProps>) => {

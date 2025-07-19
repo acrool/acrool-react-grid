@@ -1,4 +1,4 @@
-import {FCChildrenProps} from '@acrool/react-grid';
+import {FCChildrenProps} from '@acrool/react-types';
 import styled from 'styled-components';
 
 interface IProps extends FCChildrenProps {

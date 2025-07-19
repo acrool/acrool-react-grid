@@ -14,6 +14,11 @@
   version "0.0.0"
   uid ""
 
+"@acrool/react-types@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@acrool/react-types/-/react-types-0.0.4.tgz#79534d3f53349ab4c3c4813a581cee5bd3eb6c9c"
+  integrity sha512-ZmbYlenVJRMTKwfWwwma9n28vMg9Tn79MKtSCug2MX3aZ6l1zDovKX/BcC//q5bMhlhTWDG4+N80FlzNAoHH2A==
+
 "@adobe/css-tools@^4.4.0":
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.4.3.tgz#beebbefb0264fdeb32d3052acae0e0d94315a9a2"

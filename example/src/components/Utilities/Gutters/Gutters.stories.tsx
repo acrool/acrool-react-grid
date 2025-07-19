@@ -1,14 +1,17 @@
+import {GridThemeProvider, Col, Container, Flex, Row} from '@acrool/react-grid';
 import type {Meta, StoryObj} from '@storybook/react';
-
-import {Col, Container, Flex, Row} from '@acrool/react-grid';
 import React from 'react';
-import styled from 'styled-components';
 
 const meta = {
     title: 'Utilities/Gutters',
     parameters: {},
     argTypes: {},
     args: {},
+    decorators:  (Story) => (
+        <GridThemeProvider>
+            <Story />
+        </GridThemeProvider>
+    ),
 } satisfies Meta<typeof Flex>;
 
 export default meta;
