@@ -24,7 +24,7 @@ export const createBreakpointSpacer = (spacer: IGridSetting['spacer']) => {
         const rwdSpacer = spacer[sizeName];
         if(rwdSpacer){
             if(sizeName === 'xs'){
-                return curr.concat(`--acrool-gutter: ${rwdSpacer}`);
+                return curr.concat(`--acrool-gutter: ${rwdSpacer};`);
             }
 
             return curr.concat(media[sizeName]`

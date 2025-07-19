@@ -82,8 +82,8 @@ export const WithBreakpointsSpacer: Story = {
         <GridThemeProvider gridTheme={{
             // spacer: '20px',
             spacer: {
-                xs: '20px',
-                lg: '40px',
+                xs: '40px',
+                lg: '80px',
             },
         }}>
             <Story />

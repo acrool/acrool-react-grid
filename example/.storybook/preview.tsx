@@ -1,7 +1,6 @@
 import './reset.css';
 import '@acrool/react-grid/dist/index.css';
 
-import {GridThemeProvider} from '@acrool/react-grid';
 import type {Preview} from '@storybook/react';
 
 
@@ -17,7 +16,7 @@ const preview: Preview = {
     },
     decorators: [
         (Story) => (
-                <Story />
+            <Story />
         ),
     ],
 };
