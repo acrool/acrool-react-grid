@@ -19,6 +19,10 @@ export const MediaConsumer = ({
     sizes
 }: IProps) => {
     const currentSize = useMedia(sizes);
+
+    if(!currentSize){
+        return null;
+    }
     return children(currentSize);
 };
 

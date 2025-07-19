@@ -13,7 +13,10 @@ const useMedia = (sizes?: NoXsMediaSize[]) => {
     const breakpoints = theme[themeName]?.gridBreakpoints;
 
     const getResize = () => {
-        const width = typeof window !== 'undefined' ? window.innerWidth: 0;
+        if(typeof window === 'undefined'){
+            return null;
+        }
+        const width = window.innerWidth;
         let size: TMediaSize = 'xs';
 
         if ((!sizes || sizes?.includes('xxl')) && width >= breakpoints.xxl) {
@@ -31,7 +34,7 @@ const useMedia = (sizes?: NoXsMediaSize[]) => {
         return size;
     };
 
-    const [currentSize, setCurrentSize] = useState<TMediaSize>(getResize());
+    const [currentSize, setCurrentSize] = useState<TMediaSize|null>(getResize());
 
     useEffect(() => {
         const handleResize = () => {
