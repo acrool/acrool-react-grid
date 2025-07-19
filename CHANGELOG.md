@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.3-alpha.7](https://github.com/acrool/acrool-react-grid/compare/v6.1.3-alpha.6...v6.1.3-alpha.7) (2025-07-19)
+
+
+### Bug Fixes
+
+* **styles:** correct CSS variable fallback value for container-fluid padding units ([a34bc14](https://github.com/acrool/acrool-react-grid/commit/a34bc14fa94c90d5b5d96f4249b0c528d5f3b410))
+
 ### [6.1.3-alpha.6](https://github.com/acrool/acrool-react-grid/compare/v6.1.3-alpha.5...v6.1.3-alpha.6) (2025-07-19)
 
 ### [6.1.3-alpha.5](https://github.com/acrool/acrool-react-grid/compare/v6.1.3-alpha.4...v6.1.3-alpha.5) (2025-07-19)
