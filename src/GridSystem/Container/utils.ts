@@ -1,4 +1,4 @@
-import {noXsMediaSizes, themeName} from '../../config';
+import {mediaSizes, noXsMediaSizes, themeName} from '../../config';
 import media from '../../media';
 import {IContainerProps, NoXsMediaSize,TStyledProps} from '../../types';
 
@@ -9,9 +9,49 @@ import {IContainerProps, NoXsMediaSize,TStyledProps} from '../../types';
  * 產生 Breakpoint MaxSize 樣式
  * @param props
  */
+export const createFluidBreakpoint = (props: TStyledProps<IContainerProps>) => {
+    const containerFluidMargin = props.theme[themeName]?.containerFluidMargin;
+
+    if(!containerFluidMargin){
+        return undefined;
+    }
+
+    if(typeof containerFluidMargin === 'string'){
+        return `
+            margin-left: ${containerFluidMargin};
+            margin-right: ${containerFluidMargin};
+        `;
+    }
+
+    return mediaSizes.reduce<string[]>((curr, sizeName) => {
+
+        const rwdContainerFluidMargin = containerFluidMargin[sizeName];
+        if(rwdContainerFluidMargin){
+            if(sizeName === 'xs'){
+                return curr.concat(`
+                    margin-left: ${rwdContainerFluidMargin};
+                    margin-right: ${rwdContainerFluidMargin};
+                `);
+            }
+
+            return curr.concat(media[sizeName]`
+                   margin-left: ${rwdContainerFluidMargin};
+                   margin-right: ${rwdContainerFluidMargin};
+            `);
+        }
+
+        return curr;
+    }, []);
+};
+
+
+/**
+ * 產生 Breakpoint MaxSize 樣式
+ * @param props
+ */
 export const createBreakpoint = (props: TStyledProps<IContainerProps>) => {
     const maxSizeConfig = getRWDMaxSize(props);
-    return noXsMediaSizes.reduce((curr, sizeName) => {
+    return noXsMediaSizes.reduce<string[]>((curr, sizeName) => {
         if(maxSizeConfig[sizeName]){
             return curr.concat(media[sizeName]`
                 max-width: var(--acrool-container-max-width-${sizeName}, ${props.theme[themeName]?.containerMaxWidths[sizeName]}px);

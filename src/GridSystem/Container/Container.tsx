@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
 import {IContainerProps, IContainerStdProps,TStyledProps} from '../../types';
-import {createBreakpoint, createInfo} from './utils';
+import {createBreakpoint, createFluidBreakpoint, createInfo} from './utils';
 
 
 
@@ -17,10 +17,10 @@ const ContainerStd = styled.div<
     { 'data-grid'?: string } & TStyledProps<IContainerStdProps>
 >`
   ${props => css`
-      ${props.$fluid !== true && createBreakpoint({
-        theme: props.theme,
-        fluid: props.$fluid,
-    } as TStyledProps<IContainerProps>)};
+      ${props.$fluid ?
+        createFluidBreakpoint(props):
+        createBreakpoint({theme: props.theme, fluid: props.$fluid} as TStyledProps<IContainerProps>)
+};
   `}
 `;
 

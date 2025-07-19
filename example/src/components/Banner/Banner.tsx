@@ -14,8 +14,8 @@ interface IProps {
 
 
 
-const name = 'Acrool React Img';
-const repositoryUrl = 'https://github.com/acrool/acrool-react-img';
+const name = 'Acrool React Grid';
+const repositoryUrl = 'https://github.com/acrool/acrool-react-grid';
 
 
 const Banner = ({

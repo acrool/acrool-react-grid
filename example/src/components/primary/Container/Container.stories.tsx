@@ -77,7 +77,7 @@ export const WithOneSizeSpacer: Story = {
     },
 };
 
-export const WithBreakpointsSpacer: Story = {
+export const WithSpacerBreakpoints: Story = {
     decorators:  (Story) => (
         <GridThemeProvider gridTheme={{
             // spacer: '20px',
@@ -91,6 +91,37 @@ export const WithBreakpointsSpacer: Story = {
     ),
     args: {
         fluid: false,
+    },
+};
+
+
+export const WithContainerFluidMargin: Story = {
+    decorators:  (Story) => (
+        <GridThemeProvider gridTheme={{
+            containerFluidMargin: '20px',
+        }}>
+            <Story />
+        </GridThemeProvider>
+    ),
+    args: {
+        fluid: true,
+    },
+};
+
+
+export const WithContainerFluidMarginBreakpoints: Story = {
+    decorators:  (Story) => (
+        <GridThemeProvider gridTheme={{
+            containerFluidMargin: {
+                xs: '40px',
+                lg: '80px',
+            },
+        }}>
+            <Story />
+        </GridThemeProvider>
+    ),
+    args: {
+        fluid: true,
     },
 };
 
