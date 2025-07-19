@@ -262,8 +262,8 @@ $directions: (
     padding-left: calc(var(--acrool-gutter-x) * 0.5);
 
     &[data-class="container-fluid"]{
-        padding-right: calc((var(--acrool-gutter-x) * 0.5) + var(--acrool-container-fluid-padding, 0));
-        padding-left: calc((var(--acrool-gutter-x) * 0.5) + var(--acrool-container-fluid-padding, 0));
+        padding-right: calc((var(--acrool-gutter-x) * 0.5) + var(--acrool-container-fluid-padding, 0px));
+        padding-left: calc((var(--acrool-gutter-x) * 0.5) + var(--acrool-container-fluid-padding, 0px));
     }
 }
 
