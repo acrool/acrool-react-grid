@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.3-alpha.8](https://github.com/acrool/acrool-react-grid/compare/v6.1.3-alpha.7...v6.1.3-alpha.8) (2025-07-21)
+
+
+### Bug Fixes
+
+* **container:** consolidate fluid breakpoint styles and simplify padding calculation ([f70b6eb](https://github.com/acrool/acrool-react-grid/commit/f70b6eb84b6a8f2a7f5b027a33b45e1a4854dba4))
+
 ### [6.1.3-alpha.7](https://github.com/acrool/acrool-react-grid/compare/v6.1.3-alpha.6...v6.1.3-alpha.7) (2025-07-19)
 
 
