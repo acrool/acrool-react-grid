@@ -17,10 +17,8 @@ const ContainerStd = styled.div<
     { 'data-grid'?: string } & TStyledProps<IContainerStdProps>
 >`
   ${props => css`
-      ${props.$fluid ?
-        createFluidBreakpoint(props):
-        createBreakpoint({theme: props.theme, fluid: props.$fluid} as TStyledProps<IContainerProps>)
-};
+      ${createFluidBreakpoint(props)}
+      ${createBreakpoint({theme: props.theme, fluid: props.$fluid} as TStyledProps<IContainerProps>)}
   `}
 `;
 
