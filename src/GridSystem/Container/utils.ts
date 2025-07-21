@@ -10,30 +10,30 @@ import {IContainerProps, NoXsMediaSize,TStyledProps} from '../../types';
  * @param props
  */
 export const createFluidBreakpoint = (props: TStyledProps<IContainerProps>) => {
-    const containerFluidMargin = props.theme[themeName]?.containerFluidMargin;
+    const containerMargin = props.theme[themeName]?.containerMargin;
 
-    if(!containerFluidMargin){
+    if(!containerMargin){
         return undefined;
     }
 
-    if(typeof containerFluidMargin === 'string'){
+    if(typeof containerMargin === 'string'){
         return `
-            --acrool-container-fluid-padding: ${containerFluidMargin};
+            --acrool-container-padding: ${containerMargin};
         `;
     }
 
     return mediaSizes.reduce<string[]>((curr, sizeName) => {
 
-        const rwdContainerFluidMargin = containerFluidMargin[sizeName];
-        if(rwdContainerFluidMargin){
+        const rwdContainerMargin = containerMargin[sizeName];
+        if(rwdContainerMargin){
             if(sizeName === 'xs'){
                 return curr.concat(`
-                    --acrool-container-fluid-padding: ${rwdContainerFluidMargin};
+                    --acrool-container-padding: ${rwdContainerMargin};
                 `);
             }
 
             return curr.concat(media[sizeName]`
-                   --acrool-container-fluid-padding: ${rwdContainerFluidMargin};
+                   --acrool-container-padding: ${rwdContainerMargin};
             `);
         }
 

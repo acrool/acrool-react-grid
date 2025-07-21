@@ -258,8 +258,8 @@ $directions: (
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: calc((var(--acrool-gutter-x) * 0.5) + var(--acrool-container-fluid-padding, 0px));
-    padding-left: calc((var(--acrool-gutter-x) * 0.5) + var(--acrool-container-fluid-padding, 0px));
+    padding-right: calc((var(--acrool-gutter-x) * 0.5) + var(--acrool-container-padding, 0px));
+    padding-left: calc((var(--acrool-gutter-x) * 0.5) + var(--acrool-container-padding, 0px));
 }
 
 [data-grid="row"]{

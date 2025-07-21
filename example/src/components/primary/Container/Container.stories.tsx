@@ -95,10 +95,10 @@ export const WithSpacerBreakpoints: Story = {
 };
 
 
-export const WithContainerFluidMargin: Story = {
+export const WithContainerMargin: Story = {
     decorators:  (Story) => (
         <GridThemeProvider gridTheme={{
-            containerFluidMargin: '20px',
+            containerMargin: '20px',
         }}>
             <Story />
         </GridThemeProvider>
@@ -109,10 +109,10 @@ export const WithContainerFluidMargin: Story = {
 };
 
 
-export const WithContainerFluidMarginBreakpoints: Story = {
+export const WithContainerMarginBreakpoints: Story = {
     decorators:  (Story) => (
         <GridThemeProvider gridTheme={{
-            containerFluidMargin: {
+            containerMargin: {
                 xs: '40px',
                 lg: '80px',
             },

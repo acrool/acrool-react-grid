@@ -74,7 +74,7 @@ export interface IGridThemeProviderProps {
 
 export interface IGridSetting {
     spacer: TGutterWidth|Partial<IBreakpointsTGutterWidth>
-    containerFluidMargin?: TGutterWidth|Partial<IBreakpointsTGutterWidth>
+    containerMargin?: TGutterWidth|Partial<IBreakpointsTGutterWidth>
     gridColumns: number
     gridBreakpoints: IBreakpoints
     containerMaxWidths: TContainerMaxWidths
