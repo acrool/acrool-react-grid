@@ -310,22 +310,6 @@ $directions: (
     }
 }
 
-// 自动流样式
-.grid-auto-flow {
-    grid-auto-flow: row !important;
-
-    &.grid-auto-flow-col {
-        grid-auto-flow: column !important;
-    }
-
-    &.grid-auto-flow-dense {
-        grid-auto-flow: row dense !important;
-    }
-
-    &.grid-auto-flow-col-dense {
-        grid-auto-flow: column dense !important;
-    }
-}
 
 // Flex 样式
 @each $direction in (row, column, row-reverse, column-reverse) {
