@@ -80,8 +80,8 @@ const gridTheme: IGridSetting = {
     //   xs: '1rem',
     //   lg: '40px',  
     // },
-    containerFluidPadding: '40px',
-    // containerFluidMargin: {
+    containerMargin: '40px',
+    // containerMargin: {
     //     xs: '40px',
     //     lg: '80px',
     // },
