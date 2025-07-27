@@ -1,12 +1,12 @@
 import {JSX} from 'react';
 
-import {NoXsMediaSize, TMediaSize} from '../types';
+import {NoXsMediaSize} from '../types';
 import useMedia from './useMedia';
 
 
 interface IProps {
-    children: (mediaSize: TMediaSize) => JSX.Element|null
-    sizes?: NoXsMediaSize[]
+    children: (eq: (size: NoXsMediaSize) => boolean) => JSX.Element|null
+    debounceDelay?: number
 }
 
 /**
@@ -16,14 +16,11 @@ interface IProps {
  */
 export const MediaConsumer = ({
     children,
-    sizes
+    debounceDelay,
 }: IProps) => {
-    const currentSize = useMedia(sizes);
+    const {eq} = useMedia(debounceDelay);
 
-    if(!currentSize){
-        return null;
-    }
-    return children(currentSize);
+    return children(eq);
 };
 
 export default MediaConsumer;
